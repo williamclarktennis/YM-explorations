@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This website was created on December 9, 2025 to host stuff about my Master’s thesis on and (hopefully) post-Master’s exploration of YM lattice gauge theory, or more generally, the Yang Mills Millenium problem."
+  },
+  {
+    "objectID": "about.html#some-developer-details",
+    "href": "about.html#some-developer-details",
+    "title": "About",
+    "section": "Some developer details:",
+    "text": "Some developer details:\nThis website is built using Quarto.\n\nHere are the instructions on how to render to github pages: https://quarto.org/docs/publishing/github-pages.html#render-to-docs.\non how to implement page navigation: https://quarto.org/docs/websites/website-navigation.html"
+  }
+]
