@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – William’s Lattice YM Explorations</title>
+<title>End of Day Reviews – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,47 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,8 +89,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -80,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">William’s Lattice YM Explorations</span>
     </a>
   </div>
@@ -91,15 +140,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./end-of-day-reviews/EOD-reviews.html"> 
+    <a class="nav-link active" href="../end-of-day-reviews/EOD-reviews.html" aria-current="page"> 
 <span class="menu-text">EOD reiews</span></a>
   </li>  
 </ul>
@@ -118,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#some-developer-details" id="toc-some-developer-details" class="nav-link active" data-scroll-target="#some-developer-details">Some developer details:</a></li>
+  <li><a href="#december-11-2025" id="toc-december-11-2025" class="nav-link active" data-scroll-target="#december-11-2025">December 11, 2025</a></li>
   </ul>
 </nav>
     </div>
@@ -127,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">End of Day Reviews</h1>
 </div>
 
 
@@ -144,19 +193,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This website was created on December 9, 2025 to host stuff about my Master’s thesis on and (hopefully) post-Master’s exploration of YM lattice gauge theory, or more generally, the Yang Mills Millenium problem.</p>
-<section id="some-developer-details" class="level2">
-<h2 class="anchored" data-anchor-id="some-developer-details">Some developer details:</h2>
-<p>This website is built using Quarto.</p>
-<ul>
-<li>Here are the instructions on how to render to github pages: <a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs" class="uri">https://quarto.org/docs/publishing/github-pages.html#render-to-docs</a>.</li>
-<li>on how to implement page navigation: <a href="https://quarto.org/docs/websites/website-navigation.html" class="uri">https://quarto.org/docs/websites/website-navigation.html</a></li>
-</ul>
+<section id="december-11-2025" class="level3">
+<h3 class="anchored" data-anchor-id="december-11-2025">December 11, 2025</h3>
+<p>Today I visited <span class="citation" data-cites="GlimmJaffe87">Glimm and Jaffe (<a href="#ref-GlimmJaffe87" role="doc-biblioref">1987</a>)</span>. It is a technical work. It explains the program of constructive quantum field theory. One idea was the following: partial differential equations generalize ordinary differential equations and quantum field theories generalize partial differential equations. ODEs have one degree of freedom, usually time <span class="math inline">\(t\)</span>. PDEs usually have 3 or 4 degrees of freedom, say, <span class="math inline">\(t, x, y,\)</span> and <span class="math inline">\(z\)</span>. But quantum fields have infinitely many degrees of freedom.</p>
+<pre><code>ODE -&gt; PDE -&gt; Quantum Fields</code></pre>
+<p>Recall briefly that in a classical field, say, a vector field, one attaches a vector to each point in space. The prototypical example of a classical field is an electromagnetic field. In classical mechanics, one observes the trajectory of a particle, and its state is described by 6 degrees of freedom: 3 coordinates of position and 3 coordinates of momentum.</p>
+<p>So, what are the degrees of freedom for a classical field? Note that each point in space should have a vector attached to it, say, a 3-vector. Wait, what is meant by degree of freedom for the case of a PDE depending on <span class="math inline">\(x_1, x_2, x_3, p_1, p_2, p_3\)</span>? It should mean that, when values for these degrees of freedom are chosen, then all other observables are determined, so there is no more freedom left. In a classical field, then, we expect that the phase space again has something like 6 degrees of freedom. Once position and momentum are fixed, then all the vectors attached to any point in the phase space are determined.</p>
+<p>So how could it be that a quantum field has infinitely many degrees of freedom? A quantum field is morally an operator attached to each point in space. I feel like there are still only finitely many degrees of freedom. Shouldn’t the operators be determined by whichever point in 4-space you are in?</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-GlimmJaffe87" class="csl-entry" role="listitem">
+Glimm, James, and Arthur Jaffe. 1987. <em>Quantum Physics: A Functional Integral Point of View</em>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

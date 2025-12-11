@@ -12,5 +12,12 @@
     "title": "About",
     "section": "Some developer details:",
     "text": "Some developer details:\nThis website is built using Quarto.\n\nHere are the instructions on how to render to github pages: https://quarto.org/docs/publishing/github-pages.html#render-to-docs.\non how to implement page navigation: https://quarto.org/docs/websites/website-navigation.html"
+  },
+  {
+    "objectID": "end-of-day-reviews/EOD-reviews.html",
+    "href": "end-of-day-reviews/EOD-reviews.html",
+    "title": "End of Day Reviews",
+    "section": "",
+    "text": "December 11, 2025\nToday I visited Glimm and Jaffe (1987). It is a technical work. It explains the program of constructive quantum field theory. One idea was the following: partial differential equations generalize ordinary differential equations and quantum field theories generalize partial differential equations. ODEs have one degree of freedom, usually time \\(t\\). PDEs usually have 3 or 4 degrees of freedom, say, \\(t, x, y,\\) and \\(z\\). But quantum fields have infinitely many degrees of freedom.\nODE -&gt; PDE -&gt; Quantum Fields\nRecall briefly that in a classical field, say, a vector field, one attaches a vector to each point in space. The prototypical example of a classical field is an electromagnetic field. In classical mechanics, one observes the trajectory of a particle, and its state is described by 6 degrees of freedom: 3 coordinates of position and 3 coordinates of momentum.\nSo, what are the degrees of freedom for a classical field? Note that each point in space should have a vector attached to it, say, a 3-vector. Wait, what is meant by degree of freedom for the case of a PDE depending on \\(x_1, x_2, x_3, p_1, p_2, p_3\\)? It should mean that, when values for these degrees of freedom are chosen, then all other observables are determined, so there is no more freedom left. In a classical field, then, we expect that the phase space again has something like 6 degrees of freedom. Once position and momentum are fixed, then all the vectors attached to any point in the phase space are determined.\nSo how could it be that a quantum field has infinitely many degrees of freedom? A quantum field is morally an operator attached to each point in space. I feel like there are still only finitely many degrees of freedom. Shouldn’t the operators be determined by whichever point in 4-space you are in?\n\n\n\n\n\nReferences\n\nGlimm, James, and Arthur Jaffe. 1987. Quantum Physics: A Functional Integral Point of View."
   }
 ]
