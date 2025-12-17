@@ -168,6 +168,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#december-11-2025" id="toc-december-11-2025" class="nav-link active" data-scroll-target="#december-11-2025">December 11, 2025</a></li>
+  <li><a href="#december-15-2025" id="toc-december-15-2025" class="nav-link" data-scroll-target="#december-15-2025">December 15, 2025</a></li>
+  <li><a href="#december-17-2025" id="toc-december-17-2025" class="nav-link" data-scroll-target="#december-17-2025">December 17, 2025</a></li>
   </ul>
 </nav>
     </div>
@@ -200,12 +202,36 @@ window.Quarto = {
 <p>Recall briefly that in a classical field, say, a vector field, one attaches a vector to each point in space. The prototypical example of a classical field is an electromagnetic field. In classical mechanics, one observes the trajectory of a particle, and its state is described by 6 degrees of freedom: 3 coordinates of position and 3 coordinates of momentum.</p>
 <p>So, what are the degrees of freedom for a classical field? Note that each point in space should have a vector attached to it, say, a 3-vector. Wait, what is meant by degree of freedom for the case of a PDE depending on <span class="math inline">\(x_1, x_2, x_3, p_1, p_2, p_3\)</span>? It should mean that, when values for these degrees of freedom are chosen, then all other observables are determined, so there is no more freedom left. In a classical field, then, we expect that the phase space again has something like 6 degrees of freedom. Once position and momentum are fixed, then all the vectors attached to any point in the phase space are determined.</p>
 <p>So how could it be that a quantum field has infinitely many degrees of freedom? A quantum field is morally an operator attached to each point in space. I feel like there are still only finitely many degrees of freedom. Shouldn’t the operators be determined by whichever point in 4-space you are in?</p>
+</section>
+<section id="december-15-2025" class="level3">
+<h3 class="anchored" data-anchor-id="december-15-2025">December 15, 2025</h3>
+<p>Today I spent some time reading <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>. I feel like I have learned a little after spending time on other literature in the Communications of Mathematical Physics and <span class="citation" data-cites="GlimmJaffe87">Glimm and Jaffe (<a href="#ref-GlimmJaffe87" role="doc-biblioref">1987</a>)</span>, but it felt very weak while reading <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> again.</p>
+<p>I would like to understand the meaning of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>’s Theorem 2.1 statement and how it implies the results for the leading term of the free energy for <span class="math inline">\(d = 3\)</span> and <span class="math inline">\(d = 4\)</span>, and also why one cannot conclude as much in the <span class="math inline">\(d=4\)</span> case.</p>
+<p>I do see, vaguely, how Theorem 2.1 involves a renormalization (subtracting off <span class="math inline">\(d\)</span> and <span class="math inline">\(1/n\)</span> and so forth). I could see as well the results from section 8 and 9 on the a priori bounds, but they seemed not that impressive because the upper bound was quite huge.</p>
+</section>
+<section id="december-17-2025" class="level3">
+<h3 class="anchored" data-anchor-id="december-17-2025">December 17, 2025</h3>
+<p>Today I spent time reading <span class="citation" data-cites="BrenneckeQM">Brennecke (<a href="#ref-BrenneckeQM" role="doc-biblioref">2024</a>)</span> and <span class="citation" data-cites="BenneckeCQFT">Brennecke (<a href="#ref-BenneckeCQFT" role="doc-biblioref">2025</a>)</span>. I’m not sure whether it is appropriate to cite lecture notes, but I mainly wanted to point out that I read Brennecke’s notes today.</p>
+<p>I’ve been mulling over representations. Let <span class="math inline">\(G\)</span> be a group and let <span class="math inline">\(V\)</span> be a vector space. A representation of <span class="math inline">\(G\)</span> is a map <span class="math inline">\(\rho: G \to GL(V)\)</span>, where <span class="math inline">\(GL(V)\)</span> is the set of invertible linear maps from the vector space <span class="math inline">\(V\)</span> to itself. A finite dimensional representation is a representation where <span class="math inline">\(V\)</span> is finite-dimensional.</p>
+<p>I’m confused about whether finite-dimensional representations arise in the context of the state transformation law for quantum fields. The state transformation law for a quantum field is a representation of the Poincaré group on the state space of the quantum system. In symbols: <span class="math display">\[\begin{equation}
+(a,L) \ni \mathcal{P} \to U(a,L) \in \mathcal{U}(\mathcal{H}).
+\end{equation}\]</span> Thus, <span class="math inline">\(U(a,L)\)</span> is a mapping from the infinite dimensional space <span class="math inline">\(\mathcal{H}\)</span> to itself. So I don’t see how a finite dimensional representation could arise from the state transformation law.</p>
+<p>My next guess as for where finite dimensional representations would arise in a quantum field theory is in the field transformation law. That is because one considers <span class="math inline">\(n\)</span> by <span class="math inline">\(n\)</span> matrices to describe the field transformation law. I need to recall field transformations in classical fields. Recall the notion of a vector field. And recall the transformation rules for derivations. I think the point is to describe the fields in different coordinate systems.</p>
 
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BrenneckeQM" class="csl-entry" role="listitem">
+Brennecke, Christian. 2024. <span>“Mathematical Quantum Mechanics with Applications.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
+</div>
+<div id="ref-BenneckeCQFT" class="csl-entry" role="listitem">
+———. 2025. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
+</div>
+<div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
+Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
+</div>
 <div id="ref-GlimmJaffe87" class="csl-entry" role="listitem">
 Glimm, James, and Arthur Jaffe. 1987. <em>Quantum Physics: A Functional Integral Point of View</em>.
 </div>
