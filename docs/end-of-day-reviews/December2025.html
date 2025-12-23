@@ -207,6 +207,7 @@ window.Quarto = {
   <li><a href="#december-17-2025" id="toc-december-17-2025" class="nav-link" data-scroll-target="#december-17-2025">December 17, 2025</a></li>
   <li><a href="#december-18-2025" id="toc-december-18-2025" class="nav-link" data-scroll-target="#december-18-2025">December 18, 2025</a></li>
   <li><a href="#december-19-2025" id="toc-december-19-2025" class="nav-link" data-scroll-target="#december-19-2025">December 19, 2025</a></li>
+  <li><a href="#december-22-2025" id="toc-december-22-2025" class="nav-link" data-scroll-target="#december-22-2025">December 22, 2025</a></li>
   </ul>
 </nav>
     </div>
@@ -316,9 +317,49 @@ e^{-|B_n'|} \sigma_{B_n} \{ U: S_{B_n}(U) \le |B_n'|/\beta \}
 \end{equation}\]</span> I’m tired, so I won’t finish except to write that the product Haar measure (<span class="math inline">\(\sigma_{B_n}\)</span>) of configurations where the contribution of each plaquette to the Wilson action is on average less than <span class="math inline">\(\beta\)</span>, is lower bounded as <span class="math display">\[\begin{equation}
 \sigma_{B_n} \{ U: S_{B_n}(U) \le |B_n'|/\beta \} \ge \exp(-Cn^d \log \beta).
 \end{equation}\]</span> I still need to figure out how to explain the term <span class="math inline">\(\log \beta\)</span> in the first equation in today’s entry.</p>
+</section>
+<section id="december-22-2025" class="level3">
+<h3 class="anchored" data-anchor-id="december-22-2025">December 22, 2025</h3>
+<p>In this post I want to write a detailed proof on the same content from my December 19th post. This follows Sections 6,7, and 8 from <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+<section id="lemma-from-proof-of-thm-7.1" class="level4">
+<h4 class="anchored" data-anchor-id="lemma-from-proof-of-thm-7.1">Lemma (from Proof of Thm 7.1):</h4>
+<p>Suppose <span class="math inline">\(\beta \ge 2\)</span>, <span class="math inline">\(\delta \in (0,\sqrt N)\)</span>, and <span class="math inline">\(8 \delta^2 = \frac{1}{\beta}\)</span>. Then there exists a constant <span class="math inline">\(C\)</span> depending only on <span class="math inline">\(N\)</span> and <span class="math inline">\(d\)</span> such that <span class="math display">\[\begin{equation}
+\sigma_{B_n}(\{ U: S_{B_n}(U) \le |B_n'|/ \beta \}) \ge e^{-Cn^d \log \beta}.
+\end{equation}\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The inequality <span class="math display">\[\begin{align*}
+\sigma_{B_n}(\{ U: S_{B_n}(U) \le |B_n'|/ \beta \}) &amp;\ge \prod_{i=1}^{|E_n|} \sigma(\{ U: \lVert I - U \rVert \le \delta \}) &amp;&amp; \text{where }8 \delta^2 = \frac{1}{\beta}
+\end{align*}\]</span> means that under product Haar measure, the probability that the average contribution of plaquettes to the Wilson action being less than <span class="math inline">\(\frac{1}{\beta}\)</span>, is approximated from below by the probability of edges carrying unitary matrices that are <span class="math inline">\(\delta = \frac{1}{\sqrt{8\beta}}\)</span>-close to the identity matrix. Next, from the lower bound on the small ball probabilities for unitary matrices, we have <span class="math display">\[\begin{align*}
+\prod_{i=1}^{|E_n|} \sigma(\{ U: \lVert I - U \rVert \le \delta \}) &amp;\ge \prod_{i=1}^{|E_n|} C_1 \delta^{N^2} \\
+&amp;= \prod_{i=1}^{|E_n|} (\sqrt[N^2]{C_1}^2 \delta^2)^{N^2/2} \\
+&amp;= \prod_{i=1}^{|E_n|} (\sqrt[N^2]{C_1}^2 \frac{1}{8 \beta})^{N^2/2} \\
+&amp;= \prod_{i=1}^{|E_n|\frac{N^2}{2}} \frac{\sqrt[N^2]{C_1}^2}{8} \frac{1}{\beta}.
+\end{align*}\]</span> We may assume without loss of generality that <span class="math inline">\(C_1 &lt; 1\)</span> because <span class="math inline">\(C_1\)</span> is a factor for the lower bound in Corollary 6.3. Thus, <span class="math inline">\(\frac{\sqrt[N^2]{C_1}^2}{8} &lt; 1\)</span>, so taking more powers decreases the value. Also, <span class="math inline">\(\beta \ge 2\)</span> by assumption, so taking more powers of <span class="math inline">\(\frac{1}{\beta}\)</span> also decreases the value. By Lemma 17.1, we have that <span class="math inline">\(|E_n| \le dn^d\)</span>, so replacing <span class="math inline">\(|E_n|\)</span> by <span class="math inline">\(dn^d\)</span> leads to <span class="math display">\[\begin{align*}
+\prod_{i=1}^{|E_n|\frac{N^2}{2}} \frac{\sqrt[N^2]{C_1}^2}{8} \frac{1}{\beta} &amp; \ge \prod_{i=1}^{\frac{N^2}{2}dn^d} \frac{\sqrt[N^2]{C_1}^2}{8} \prod_{i=1}^{\frac{N^2}{2} dn^d} \frac{1}{\beta}.
+\end{align*}\]</span> Next, observe that we can take enough powers of <span class="math inline">\(\frac{1}{2}\)</span> to lower bound <span class="math inline">\(\frac{\sqrt[N^2]{C_1}^2}{8}\)</span>, and the number of powers that are taken depends only on <span class="math inline">\(N\)</span> and <span class="math inline">\(d\)</span>, as <span class="math inline">\(C_1\)</span> only depended on <span class="math inline">\(N\)</span>. Thus, for some positive constant <span class="math inline">\(C\)</span> depending only on <span class="math inline">\(N\)</span> and <span class="math inline">\(d\)</span>, we know that <span class="math display">\[\begin{align*}
+\prod_{i=1}^{\frac{N^2}{2}dn^d} \frac{\sqrt[N^2]{C_1}^2}{8} \prod_{i=1}^{\frac{N^2}{2} dn^d} \frac{1}{\beta} &amp;\ge \prod_{i=1}^{\frac{N^2}{2}dn^d} \prod_{j=1}^C \frac{1}{2} \prod_{i=1}^{\frac{N^2}{2} dn^d} \frac{1}{\beta} \\
+&amp; \ge \prod_{i=1}^{C \frac{N^2}{2} dn^d} \frac{1}{\beta},
+\end{align*}\]</span> where <span class="math inline">\(\beta \ge 2\)</span> was used in the last step. Finally, we get <span class="math display">\[\begin{align*}
+\prod_{i=1}^{C \frac{N^2}{2} dn^d} \frac{1}{\beta} &amp;= (e^{-\log \beta})^{Cn^d} &amp;&amp; C \mapsto C \frac{N^2}{2} d \\
+&amp;= e^{-Cn^d \log \beta}.
+\end{align*}\]</span> Recalling the beginning of the proof, we conclude <span class="math display">\[\begin{align*}
+\sigma_{B_n}(\{ U: S_{B_n}(U) \le |B_n'|/ \beta \}) &amp;\ge e^{-Cn^d \log \beta}.
+\end{align*}\]</span></p>
+</div>
+</div>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
