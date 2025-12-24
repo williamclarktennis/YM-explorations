@@ -19,5 +19,12 @@
     "title": "About",
     "section": "Some developer details:",
     "text": "Some developer details:\nThis website is built using Quarto.\n\nHere are the instructions on how to render to github pages: https://quarto.org/docs/publishing/github-pages.html#render-to-docs.\non how to implement page navigation: https://quarto.org/docs/websites/website-navigation.html\n\nHere is a guide on citations using biblatex: https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex."
+  },
+  {
+    "objectID": "phone-notes.html",
+    "href": "phone-notes.html",
+    "title": "Twitter-like feed",
+    "section": "",
+    "text": "December 24, 2025\nConditional probabilities are where you fix some prior knowledge/variables and then you ask about the probability for the remaining variables.\nThat seems like the right framework for axial gauge fixing. You fix the variables for the tree edges, then figure out the rest of the variables."
   }
 ]
