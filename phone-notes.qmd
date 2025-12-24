@@ -7,3 +7,14 @@ This file is edited from mobile.
 Do not overwrite without pulling first.
 -->
 
+### December 24, 2025 
+
+Conditional probabilities are where
+you fix some prior knowledge/variables and 
+then you ask about the probability 
+for the remaining variables.
+
+That seems like the right framework for
+axial gauge fixing. You fix the variables
+for the tree edges, then figure out
+the rest of the variables. 
