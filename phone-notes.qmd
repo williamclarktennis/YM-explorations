@@ -18,3 +18,17 @@ That seems like the right framework for
 axial gauge fixing. You fix the variables
 for the tree edges, then figure out
 the rest of the variables. 
+
+### December 25, 2025
+
+The log beta term in the formula for the
+free energy is related to 
+the 1/beta smallness of the 
+Wilson action.
+
+Also, even though the math of cqft is
+very eclectic and broad, it also
+feels like a niche field. At least
+I get that feeling when looking 
+at one of the early papers by Fröhlich
+and Brydges. 
