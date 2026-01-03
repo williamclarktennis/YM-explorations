@@ -1,0 +1,145 @@
+---
+title: "Yang-Mills Lattice Gauge Theory - William's Explorations"
+
+bibliography: references.bib
+
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+### January 3, 2026
+
+I'm studying section 12 in 
+@Chatterjee2016, which is titled Some Standard Results About Gaussian 
+Measures. I'd like to understand why
+$Q$ being a positive definite $n$ by $n$ 
+real matrix implies that 
+$$x^TQx + v^Tx + C =: P(x) \ge c \lVert x \rVert^2$$
+for some positive constant $c$, 
+for all $\Vert x \rVert$ sufficiently large, where 
+$x = (x_1, \cdots, x_n) \in \mathbb R^n$. 
+Maybe I should first mention what this is saying. 
+When a real matrix $Q$ is positive definite, 
+it means that the polynomial 
+$$ \begin{matrix}
+Q_{11} x_1^2 &+& \cdots &+& Q_{1n} x_1 x_n\\
+\vdots && \ddots && \vdots \\
+Q_{n1} x_1x_n &+& \cdots &+& Q_{nn} x_n^2
+\end{matrix}$$
+is strictly positive for all $x \ne 0$. So 
+the matrix $Q$ is the coefficient matrix of the 
+degree 2 monomials. Oh yeah, and $P(x)$ above is
+just a general degree 2 polynomial in 
+the real variables $x_1, \cdots, x_n$. 
+I'll mention that the variables commute, so 
+we can just assume that $Q$ is symmetric, 
+because we can break up the coefficients 
+into two equal halves. The main point of all this 
+is that $P(x) \ge c \lVert x \rVert^2$
+is a necessary and sufficient criterion for
+the integrability of a Gaussian density term
+for a Gaussian measure (see section 12), 
+so knowing that $Q$ being positive definite 
+is equivalent allows you to later bring in 
+stuff about smallest eigenvalues of $Q$, linear algebra
+stuff, and other information that is not obvious 
+from first glance. 
+
+This implication of $Q$ positive definite implies
+$P(x) \ge c \lVert x \rVert^2$ is too hard for my 
+little brain, so as a first step I need 
+to consider an easier case: assume $v = 0$ and 
+$C = 0$, so the polynomial $P$ is just 
+made up of the terms in $x^TQx$. 
+So I want to show that 
+$$P(x) = x^T Qx \ge c \lVert x \rVert^2$$
+for some 
+$c > 0$ and for all $\lVert x \rVert > r > 0$, 
+where $r$ is some radius that is big enough. 
+
+Let's assume that 
+$$R_* := \inf_{\lVert x \rVert = 1} x^TQx > 0.$$
+Hopefully I can prove later on that 
+$Q$ being positive definite implies this infimum 
+statement truly does hold, but I believe $Q$ being 
+symmetric is also needed. 
+
+If this infimum statement does truly hold, then 
+since the infimum is a lower bound, 
+then for any $\lVert x \rVert = 1$, we 
+get the inequality
+$$x^TQx \ge R_*$$
+and since $\lVert x \rVert^2 = 1$, 
+we also have 
+$$x^TQx \ge R_* \lVert x \rVert^2.$$
+
+Then take some arbitrary $x \in \mathbb R^n \setminus \overline{B}(0,1)$, that is, 
+$\lVert x \rVert > 1.$
+Scaling down $x$, we see that $\frac{x}{\lVert x \rVert}$ is 
+on the sphere of radius 1. 
+So it holds that 
+$$\frac{x}{\lVert x \rVert}^T Q \frac{x}{\lVert x \rVert} \ge R_* \lVert \frac{x}{\lVert x \rVert} \rVert^2.$$
+Then multiplying through by $\lVert x \rVert^2$, 
+we see that 
+$$x^T Q x \ge R_* \lVert x \rVert^2.$$
+We have thus shown that 
+with $c := R_*$ and 
+$r = 1$, then for all
+$\lVert x \rVert \ge r$, 
+we have $P(x) = x^T Qx \ge c \lVert x \rVert^2,$
+the desired conclusion.
+
+Here are some other observations that
+don't fit anywhere yet: 
+
+#### Random Oberservations
+
+Observation 1: $c\lVert x \rVert^2 = cx_1^2 + \cdots + cx_n^2.$
+
+Observation 2: Consider the expression $x^TQx$ as being built of 
+$$x^TQx = \text{diagonal}(Q,x) + \text{off-diagonal}(Q,x),$$
+where 
+$$\text{diagonal}(Q,x) = Q_{11}x_1^2 + \cdots + Q_{nn} x_n^2$$
+and 
+$$\text{off-diagonal}(Q,x) = \sum_{i \ne j} Q_{ij}x_ix_j.$$
+
+Observation 3: I notice that the diagonal entries of $Q$ must be positive. 
+Here's why. If $e_i = (0, \cdots, 1, \cdots, 0) \in \mathbb R^n$ is 
+the vector with $0$ at every index besides the $i$th index, 
+then 
+$Q_{ii} = e_i^{T} Q e_i > 0$, 
+by positive definiteness. 
+
+#### Further Discussion
+
+I wish I had time to graph some of the simpler 
+cases. For instance, the case of $\mathbb R^n = \mathbb R^2$,
+where we can name the variables $x$ and $y$, 
+and then we can see the conic sections. 
+Then the off diagonal part 
+looks like
+\begin{align*}
+\text{off-diagonal}(Q,(x,y)) = Q_{12}xy + Q_{21}xy,
+\end{align*}
+which, when plotted as the graph of the 
+function $z(x,y) = (Q_{12}+Q_{21})xy$ in $\mathbb R^3$, 
+looks like a hyperbolic parabaloid. 
+The diagonal part, being 
+a quadratic form with positive coefficients, is always positive, 
+and then 
+$x^TQx> 0$ takes the geometric meaning
+that the negaative part of the hyperbolic parabaloid
+is dominated by the 
+diagonal part.
+
+#### Still Needed
+
+Next I need to show that $Q$ being 
+positive definite (and symmetric)
+implies that $$R_* := \inf_{\lVert x \rVert = 1} x^TQx > 0.$$
+
+Then I need to tackle the case where the linear part $v^Tx$ is 
+non zero and the constant $C$ is also non-zero.
+
