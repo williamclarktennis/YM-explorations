@@ -7,6 +7,49 @@ This file is edited from mobile.
 Do not overwrite without pulling first.
 -->
 
+### January 6, 2025
+
+When the coupling constant 
+of U(N) lattice gauge theory is
+small, then beta is big. 
+When beta is big, the format of the
+Yang mills probability density 
+forces the Wilson action
+to be very small if there
+is to be any probability mass
+associated to a given configuration.
+The Wilson action being small 
+means that most unitary matrices
+are equal to the identity matrix.
+Matrices mostly being equal to
+identity matrices implies
+that parallel transporting
+along plaquettes does not do
+anything. So the gauge field has 
+no effect. I think that the gauge
+field having little effect 
+and the coupling constant being
+small are related concepts. 
+By analogy, smallness of the coupling
+constant for gravity means that 
+gravity has little role. 
+
+I was previously confused because
+I noticed that when the coupling constant 
+is large, then the Yang Mills gauge measure
+is just a product Haar measure. 
+I figured product Haar measure means
+that there is no interaction, a contradiction
+to the coupling constant being large. 
+Perhaps the reason that this is
+not a contradiction is that
+unitary matrices under Haar measure
+are not concentrated near the identity matrix,
+so during parallel transport, the gauge 
+field plays a bigger role. And the gauge field 
+taking stronger role fits with 
+the coupling constant being larger. 
+
 ### December 24, 2025 
 
 Conditional probabilities are where
@@ -32,3 +75,5 @@ feels like a niche field. At least
 I get that feeling when looking 
 at one of the early papers by Fröhlich
 and Brydges. 
+
+
