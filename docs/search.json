@@ -33,5 +33,12 @@
     "title": "About",
     "section": "Some developer details:",
     "text": "Some developer details:\nThis website is built using Quarto.\n\nHere are the instructions on how to render to github pages: https://quarto.org/docs/publishing/github-pages.html#render-to-docs.\non how to implement page navigation: https://quarto.org/docs/websites/website-navigation.html\n\nHere is a guide on citations using biblatex: https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex."
+  },
+  {
+    "objectID": "KleinGordon.html",
+    "href": "KleinGordon.html",
+    "title": "Wightman Axioms for free scalar quantum field",
+    "section": "",
+    "text": "I’m writing this article so that I can learn Theorem 3.1 of Prof. Christian Brennecke’s constructive quantum field theory notes. The statement of the theorem is as follows.\n\n\n\n\n\n\nNoteTheorem 3.1\n\n\n\nConsider the strongly continuous unitary representation \\(\\Gamma(U)\\) (gamma of U) of \\(\\mathcal{P}_{+}^{\\uparrow}\\) (P plus up) on \\(\\mathcal{H} = \\mathcal{F}_s(L^2(S_m^+))\\) (Bosonic Fock space built over \\(L^2\\) of the mass shell of mass \\(m\\)) with Fock space vacuum \\(\\Omega = (1,0,0,\\cdots) \\in \\mathcal{H}\\) and let \\(\\phi = (\\phi(f))_{f \\in \\mathcal{S}(\\mathbb R^4)}\\) (family of operators indexed by Schwartz functions on \\(\\mathbb R^4\\)) be defined as in (3.14). Then \\((\\mathcal{H}, \\Gamma(U), \\Omega, \\phi)\\) satisfies the Wightman axioms and \\[\\begin{equation}\n(\\square + m^2) \\phi = 0\n\\end{equation}\\] in the sense of operator-valued distributions."
   }
 ]
