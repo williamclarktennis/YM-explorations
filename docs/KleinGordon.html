@@ -209,7 +209,7 @@ window.Quarto = {
 </header>
 
 
-<p>Article last updated: January 9, 2026</p>
+<p>Article last updated: January 10, 2026</p>
 <p>I’m writing this article so that I can learn Theorem 3.1 of Prof.&nbsp;Christian Brennecke’s constructive quantum field theory notes <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. The statement of the theorem is as follows.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Theorem 3.1">
 <div class="callout-header d-flex align-content-center">
@@ -228,29 +228,62 @@ window.Quarto = {
 \end{equation}\]</span> in the sense of operator-valued distributions.</p>
 </div>
 </div>
-<p>First I want to distill the formula (3.14), which is not exactly well-defined as written, but corresponds to something that is well-defined. Thus, I will solve here an exercise in Brennecke’s notes that I expect will transfer to the situation of (3.14). The main theme will be to interpret things in a distributional sense.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Exercise 1">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise 1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that we define the free scalar field <span class="math inline">\((\phi(f))_{f \in S(\mathbb R^4)}\)</span> of mass <span class="math inline">\(m &gt; 0\)</span> by <span class="math display">\[\begin{equation}
-\phi(f) = \int_{\mathbb R} \frac{dt}{(2\pi)^{3/2}} \big(a(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) + a^*(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) \big).
-\end{equation}\]</span> Identifying heuristically <span class="math inline">\(\phi(f) = \int_{\mathbb R^4} dx \phi_x f(x)\)</span>, show that this means that <span class="math display">\[\begin{equation}
-\phi_x = \int_{\mathbb R^3} \frac{dp}{(2\pi)^{3/2}} \left( \frac{e^{-i(\omega(p)t - p\mathbf x)}}{\sqrt{2\omega(p)}} a_p + \frac{e^{i(\omega(p)t - p \mathbf{x})}}{\sqrt{2\omega(p)}}a_p^*  \right)
-\end{equation}\]</span> for all <span class="math inline">\(x = (t, \mathbf x) \in \mathbb R^4\)</span>.</p>
-</div>
-</div>
-<p>I will use the identities <span class="math display">\[\begin{equation}
-a(f) = \int_{\mathbb R^d} dx \overline{f}(x) a_x
+<p>Let me clarify (3.14) for myself. Recall that the creation and annihilation operators depend on some function <span class="math inline">\(f \in L^2(\mathcal{M})\)</span>, where in this case <span class="math inline">\(\mathcal{M} = S_m^+\)</span>. Only once you have some <span class="math inline">\(f\)</span> can you talk about an operator from the infinite tensor product space <span class="math inline">\(\mathcal{F}_s\)</span> to itself. That is why I can write <span class="math display">\[\begin{equation}
+a(\sqrt{ 2 \pi } \tilde{f} ) : \mathcal{F}_s \to \mathcal{F}_s,
+\end{equation}\]</span> and this object is defined in section 2.4 in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<p>Next, I want to phrase (3.14) directly in terms of rigorously defined objects. I’ll use the identities <span class="math display">\[\begin{equation}
+a(f) =: \int_{\mathbb R^d} dx \overline{f}(x) a_x
 \end{equation}\]</span> and <span class="math display">\[\begin{equation}
+a^*(g) =: \int_{\mathbb R^d} dx g(x) a_x^*
+\end{equation}\]</span> found in section 2.4 of Brennecke’s notes. It follows that <span class="math display">\[\begin{equation}
+(2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p := a(\sqrt{2\pi} \overline{\tilde{f}}).
+\end{equation}\]</span> This is nice because now I can just refer back to section 2.4 to see how <span class="math inline">\(a(\sqrt{2\pi} \overline{\tilde{f}})\)</span> acts on a tensor product on some dense subset in the Fock space.</p>
+<!--
+First I want to distill the formula (3.14), 
+which is not exactly well-defined as written, 
+but corresponds to something that is well-defined.
+Thus, I will solve here an exercise in Brennecke's
+notes that I expect will transfer to 
+the situation of (3.14). The main theme will
+be to interpret things in a distributional sense. 
+
+::: {.callout-note title="Exercise 1"}
+Suppose that we define the free 
+scalar field $(\phi(f))_{f \in S(\mathbb R^4)}$ of mass $m > 0$ 
+by 
+\begin{equation}
+\phi(f) = \int_{\mathbb R} \frac{dt}{(2\pi)^{3/2}} \big(a(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) + a^*(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) \big).
+\end{equation}
+Identifying heuristically $\phi(f) = \int_{\mathbb R^4} dx \phi_x f(x)$, 
+show that this means that 
+\begin{equation}
+\phi_x = \int_{\mathbb R^3} \frac{dp}{(2\pi)^{3/2}} \left( \frac{e^{-i(\omega(p)t - p\mathbf x)}}{\sqrt{2\omega(p)}} a_p + \frac{e^{i(\omega(p)t - p \mathbf{x})}}{\sqrt{2\omega(p)}}a_p^*  \right)
+\end{equation}
+for all $x = (t, \mathbf x) \in \mathbb R^4$.
+:::
+
+I will use the identities
+\begin{equation}
+a(f) = \int_{\mathbb R^d} dx \overline{f}(x) a_x
+\end{equation}
+and 
+\begin{equation}
 a^*(g) = \int_{\mathbb R^d} dx g(x) a_x^*
-\end{equation}\]</span> found in section 2.4 of Brennecke’s notes. They are motivated by the content of Chapter 3 in <span class="citation" data-cites="Talagrand">Talagrand (<a href="#ref-Talagrand" role="doc-biblioref">2023</a>)</span>, which is at most 30 pages of reading.</p>
+\end{equation}
+found in section 2.4 of Brennecke's notes. 
+They are motivated by the content of Chapter
+3 in @Talagrand, which is at most 30 pages of 
+reading. 
+
+
+The conjugate in the right hand side of the first
+identity comes from the fact that
+the map from $f \maps to a(f)$ is anti-linear. 
+Why would this imply the identity above? 
+Recall that a map
+which is anti-linear satisfies additivity
+and conjugate homogenity: $\text{map}(\lambda v) = \overline{}
+-->
 
 
 
@@ -258,9 +291,6 @@ a^*(g) = \int_{\mathbb R^d} dx g(x) a_x^*
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
 Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
-</div>
-<div id="ref-Talagrand" class="csl-entry" role="listitem">
-Talagrand, Michel. 2023. <em>What Is a QFT?</em>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
