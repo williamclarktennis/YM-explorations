@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -189,7 +209,8 @@ window.Quarto = {
 </header>
 
 
-<p>I’m writing this article so that I can learn Theorem 3.1 of Prof.&nbsp;Christian Brennecke’s constructive quantum field theory notes. The statement of the theorem is as follows.</p>
+<p>Article last updated: January 9, 2026</p>
+<p>I’m writing this article so that I can learn Theorem 3.1 of Prof.&nbsp;Christian Brennecke’s constructive quantum field theory notes <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. The statement of the theorem is as follows.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Theorem 3.1">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -200,15 +221,48 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider the strongly continuous unitary representation <span class="math inline">\(\Gamma(U)\)</span> (gamma of U) of <span class="math inline">\(\mathcal{P}_{+}^{\uparrow}\)</span> (P plus up) on <span class="math inline">\(\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))\)</span> (Bosonic Fock space built over <span class="math inline">\(L^2\)</span> of the mass shell of mass <span class="math inline">\(m\)</span>) with Fock space vacuum <span class="math inline">\(\Omega = (1,0,0,\cdots) \in \mathcal{H}\)</span> and let <span class="math inline">\(\phi = (\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}\)</span> (family of operators indexed by Schwartz functions on <span class="math inline">\(\mathbb R^4\)</span>) be defined as in (3.14). Then <span class="math inline">\((\mathcal{H}, \Gamma(U), \Omega, \phi)\)</span> satisfies the Wightman axioms and <span class="math display">\[\begin{equation}
+<p>Consider the strongly continuous unitary representation <span class="math inline">\(\Gamma(U)\)</span> (gamma of U) of <span class="math inline">\(\mathcal{P}_{+}^{\uparrow}\)</span> (P plus up) on <span class="math inline">\(\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))\)</span> (Bosonic Fock space built over <span class="math inline">\(L^2\)</span> of the mass shell of mass <span class="math inline">\(m\)</span>) with Fock space vacuum <span class="math inline">\(\Omega = (1,0,0,\cdots) \in \mathcal{H}\)</span> and let <span class="math inline">\(\phi = (\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}\)</span> (family of operators indexed by Schwartz functions on <span class="math inline">\(\mathbb R^4\)</span>) be defined as (3.14): <span class="math display">\[\begin{equation}
+\phi(f) = (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p + (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p^*.
+\end{equation}\]</span> Then <span class="math inline">\((\mathcal{H}, \Gamma(U), \Omega, \phi)\)</span> satisfies the Wightman axioms and <span class="math display">\[\begin{equation}
 (\square + m^2) \phi = 0
 \end{equation}\]</span> in the sense of operator-valued distributions.</p>
 </div>
 </div>
+<p>First I want to distill the formula (3.14), which is not exactly well-defined as written, but corresponds to something that is well-defined. Thus, I will solve here an exercise in Brennecke’s notes that I expect will transfer to the situation of (3.14). The main theme will be to interpret things in a distributional sense.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Exercise 1">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Exercise 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that we define the free scalar field <span class="math inline">\((\phi(f))_{f \in S(\mathbb R^4)}\)</span> of mass <span class="math inline">\(m &gt; 0\)</span> by <span class="math display">\[\begin{equation}
+\phi(f) = \int_{\mathbb R} \frac{dt}{(2\pi)^{3/2}} \big(a(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) + a^*(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) \big).
+\end{equation}\]</span> Identifying heuristically <span class="math inline">\(\phi(f) = \int_{\mathbb R^4} dx \phi_x f(x)\)</span>, show that this means that <span class="math display">\[\begin{equation}
+\phi_x = \int_{\mathbb R^3} \frac{dp}{(2\pi)^{3/2}} \left( \frac{e^{-i(\omega(p)t - p\mathbf x)}}{\sqrt{2\omega(p)}} a_p + \frac{e^{i(\omega(p)t - p \mathbf{x})}}{\sqrt{2\omega(p)}}a_p^*  \right)
+\end{equation}\]</span> for all <span class="math inline">\(x = (t, \mathbf x) \in \mathbb R^4\)</span>.</p>
+</div>
+</div>
+<p>I will use the identities <span class="math display">\[\begin{equation}
+a(f) = \int_{\mathbb R^d} dx \overline{f}(x) a_x
+\end{equation}\]</span> and <span class="math display">\[\begin{equation}
+a^*(g) = \int_{\mathbb R^d} dx g(x) a_x^*
+\end{equation}\]</span> found in section 2.4 of Brennecke’s notes. They are motivated by the content of Chapter 3 in <span class="citation" data-cites="Talagrand">Talagrand (<a href="#ref-Talagrand" role="doc-biblioref">2023</a>)</span>, which is at most 30 pages of reading.</p>
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
+Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
+</div>
+<div id="ref-Talagrand" class="csl-entry" role="listitem">
+Talagrand, Michel. 2023. <em>What Is a QFT?</em>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
