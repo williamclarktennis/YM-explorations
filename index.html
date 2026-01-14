@@ -189,7 +189,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#january-13-2026" id="toc-january-13-2026" class="nav-link active" data-scroll-target="#january-13-2026">January 13, 2026</a></li>
+  <li><a href="#january-14-2026" id="toc-january-14-2026" class="nav-link active" data-scroll-target="#january-14-2026">January 14, 2026</a></li>
+  <li><a href="#january-13-2026" id="toc-january-13-2026" class="nav-link" data-scroll-target="#january-13-2026">January 13, 2026</a></li>
   <li><a href="#january-3-2026" id="toc-january-3-2026" class="nav-link" data-scroll-target="#january-3-2026">January 3, 2026</a></li>
   </ul>
 </nav>
@@ -216,6 +217,62 @@ window.Quarto = {
 </header>
 
 
+<section id="january-14-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-14-2026">January 14, 2026</h3>
+<section id="literature-reflection-aka-rabbit-hole-reflection" class="level4">
+<h4 class="anchored" data-anchor-id="literature-reflection-aka-rabbit-hole-reflection">Literature Reflection (aka rabbit hole reflection)</h4>
+<p>I want to reflect in this post about one rabbbit hole I went down.</p>
+<p>The story begins when I was looking for notation to describe the tree that is implicit in the <span class="math inline">\(E_n^0\)</span> edges of the box <span class="math inline">\(B_n\)</span>, as described in <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>. So I visited first my old repository of pdfs from my Davidson times. In that repository I looked at Bruce Sagan’s “The Art of Counting,” which did not have what I needed in terms of describing a lattice tree, although I could use the definition of tree mentioned there. Then I visited Bonas’s “A Walk through Combinatorics,” which didn’t have anything on lattices <span class="math inline">\(\mathbb Z^d\)</span>, but had the definitions of graphs and such. Then I remembered the book Prof.&nbsp;Brennecke recommended, namely, “Statistical Mechanics of Lattice Systems” by Friedli and Velenik. That book was written in 2019, and I noticed a general difference between the notation in Chatterjee’s 2016 paper and the Lattice Systems book. This got me a bit worried because it suggested that that notation I’m learning via the 2016 paper is outdated.</p>
+<p>Then the rabbit hole officially began because I was no longer looking for notation for the tree. I couldn’t help myself and I looked up Velenik’s website because I was so impressed by the lattice systems book and I wondered if Velenik was already famous. Then, fueled by a lust for fame, I looked up Dominil-Copin, who also works at the same place as Velenik. I downloaded the article: “Marginal Triviality of the scaling limits …” by Copin and Aizenman. The one upshot of this is that I discovered what Prof.&nbsp;Brennecke meant when he said a Field’s medal was awarded to proving the triviality of some quantum field model. Unable to stop my fame lust, I also looked up Chatterjee’s website, and saw the Yang-Mills program he has concocted together with S. Cao. At this point I was very burnt out and desperate to break the loop.</p>
+<p>Anyways, I think I’ll continue to look at some of the current articles for ideas on notation, but hopefully I won’t feel stuck in a loop like I did today.</p>
+</section>
+<section id="notation" class="level4">
+<h4 class="anchored" data-anchor-id="notation">Notation</h4>
+<p>I think it is better to make a list of the possible notations for lattice gauge theory. I’ll allow myself to write down multiple notations and see later which ones stick.</p>
+<ul>
+<li><p>Fix <span class="math inline">\(\mathbb Z^d\)</span> as the d-dimensional integer lattice.</p></li>
+<li><p>Let <span class="math inline">\(e_1, \cdots, e_d\)</span> be the standard basis vectors in <span class="math inline">\(\mathbb R^d\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(\mathfrak{E}\)</span> (mathfrak E) be the underlying undirected edge set, which can be written <span class="math display">\[
+\mathfrak{E} = \{\{i,j\} \subset \mathbb Z^d \mid |i-j|_1 = 1\}.
+\]</span> Note that <span class="math inline">\(|i-j|_1 = \sum_{k=1}^d |i_k-j_k|\)</span>, where <span class="math inline">\(i = (i_1, \cdots, i_d)\)</span> and similarly for <span class="math inline">\(j\)</span>. The metric <span class="math inline">\(|\cdot|_1\)</span> can be called the <span class="math inline">\(l_1\)</span> norm or the taxi-cab metric. Hence, <span class="math inline">\(\mathfrak{E}\)</span> is the set of nearest neighbor edges of the lattice <span class="math inline">\(\mathbb Z^d\)</span>.</p></li>
+<li><p>Thus, <span class="math inline">\((\mathbb Z^d, \mathfrak{E})\)</span> is a graph.</p></li>
+<li><p>Let <span class="math inline">\(\Lambda \subset \mathbb Z^d\)</span>.</p></li>
+<li><p>Let <span class="math display">\[
+\mathfrak{E}_{\Lambda} = \{\{i,j\} \subset \mathbb \Lambda \mid |i-j|_1 = 1\}
+\]</span> be the nearest neighbor undirected edge set of the sublattice <span class="math inline">\(\Lambda\)</span>.</p></li>
+<li><p>Let <span class="math display">\[
+E'_{\Lambda} = \{(i,j) \in \Lambda^2 \mid |i-j|_1 = 1 \}
+\]</span> denote the positively and negatively oriented nearest neighbor edges and let <span class="math display">\[
+E_{\Lambda} = \{(i,j) \in \Lambda^2 \mid |i-j|_1 = 1, i &lt; j \}
+\]</span> denote the positively oriented directed edge set of the lattice <span class="math inline">\(\Lambda\)</span>, where <span class="math inline">\(i &lt; j\)</span> denotes the lexicographic ordering on <span class="math inline">\(\mathbb Z^d\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(B_n = \{0, \cdots, n-1\}^d \subset \mathbb Z^d\)</span></p></li>
+<li><p>Let <span class="math display">\[\begin{align*}
+E_n^0 = \{ (i,j) &amp; \in B_n \times B_n \mid |i-j|_1 = 1, \text{ and for some } \\
+               &amp; 1 \le k \le d \text{ and for some } i_1, \cdots, i_k: \\
+               &amp; i = (i_1, \cdots, i_k, 0, \cdots, 0) \text{ and } j = i + e_k \}
+\end{align*}\]</span></p></li>
+<li><p>Let <span class="math inline">\(E_n\)</span> be defined as in <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> Section 2. Then <span class="math inline">\(E_n = E_{B_n}\)</span>.</p></li>
+<li><p>Let <span class="math display">\[\begin{align*}
+\mathfrak{E}_n^0 = \{ \{i,j\} &amp; \subset B_n \mid |i-j|_1 = 1, \text{ and for some } \\
+               &amp; 1 \le k \le d \text{ and for some } i_1, \cdots, i_k: \\
+               &amp; i = (i_1, \cdots, i_k, 0, \cdots, 0) \text{ and } j = i + e_k \}
+\end{align*}\]</span> be the undirected version of <span class="math inline">\(E_n^0\)</span>.</p></li>
+<li><p>The pair <span class="math inline">\((B_n, \mathfrak{E}_n^0)\)</span> is a tree, or in other words, the underlying undirected graph of <span class="math inline">\((B_n, E_n^0)\)</span> is a tree.</p></li>
+<li><p>A graph <span class="math inline">\((V,E)\)</span> is a pair consisting of a vertex set <span class="math inline">\(V\)</span> and an edge set <span class="math inline">\(E \subset \{\{v_1,v_2\} \subset V \mid v_1 \ne v_2 \}\)</span></p></li>
+<li><p>A finite sequence <span class="math inline">\(v_1, \cdots, v_k\)</span> of distinct vertices is called a path from <span class="math inline">\(v_1\)</span> to <span class="math inline">\(v_k\)</span> assuming <span class="math inline">\(\{v_i, v_{i+1} \} \in E\)</span> for all <span class="math inline">\(i = 1, \cdots, k-1\)</span>. Similarly, to each path we can associate one and only one list of edges <span class="math inline">\(v_1v_2, v_2v_3, \cdots, v_{k-1}v_k\)</span>, where we have used the convention of writing an edge without the set bars.</p></li>
+<li><p>We say that a graph is connected if for all <span class="math inline">\(x,y \in V\)</span>, there is a path from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span></p></li>
+<li><p>Theorem (Sagan 1.10.2). Let <span class="math inline">\(T\)</span> be a graph with <span class="math inline">\(|V| = n\)</span> and <span class="math inline">\(|E| = m\)</span>. The following are equivalent conditions for <span class="math inline">\(T\)</span> to be a tree:</p>
+<ul>
+<li><span class="math inline">\(T\)</span> is connected and acyclic</li>
+<li><span class="math inline">\(T\)</span> is acyclic and <span class="math inline">\(n = m+1\)</span></li>
+<li><span class="math inline">\(T\)</span> is connected and <span class="math inline">\(n = m+1\)</span></li>
+<li>For every pair of vertices <span class="math inline">\(u,v\)</span>, there is a unique path from <span class="math inline">\(u\)</span> to <span class="math inline">\(v\)</span>.</li>
+</ul></li>
+<li><p>Assume that <span class="math inline">\((B_n, \mathfrak{E}_n^0)\)</span> is connected. One has <span class="math inline">\(|E_n^0| = n^d - 1\)</span> as in section 17 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>. Thus, condition 3 of the theorem is satisfied, so it follows that <span class="math inline">\((B_n, \mathfrak{E}_n^0)\)</span>, or the underlying graph of <span class="math inline">\((B_n, E_n^0)\)</span>, is a tree.</p></li>
+<li><p>One can see that <span class="math inline">\((B_n, \mathfrak{E}_n^0)\)</span> is connected in the following way. Fix some vertex <span class="math inline">\(x \in B_n\)</span>. We want to find a path to <span class="math inline">\(y \in B_n\)</span>. First, find a path to <span class="math inline">\(0\)</span> in the following way. For each step, find the largest index <span class="math inline">\(k\)</span> which is non-zero, and subtract <span class="math inline">\(e_k\)</span> to obtain the next vertex. If the next vertex is <span class="math inline">\(y\)</span>, then stop. Else, continue to the 0 vertex. If <span class="math inline">\(y\)</span> is not reached before <span class="math inline">\(0\)</span>, then proceed in the same way starting from <span class="math inline">\(y\)</span> and concatenate the paths.</p></li>
+</ul>
+</section>
+</section>
 <section id="january-13-2026" class="level3">
 <h3 class="anchored" data-anchor-id="january-13-2026">January 13, 2026</h3>
 <p>I have written down on paper a ridiculous amount about Lemma 9.3 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>, so it’s about time I start typing some of it.</p>
@@ -285,7 +342,7 @@ V_i(U_e)_{e \in E_n} = U_0 \cdots U_0 U(i) U_0 \cdots U_0
 \mathbb E [ f(V_i) g(V_j) ] &amp;= \mathbb E [ \mathbb E[ f(V_i) g(V_j) \mid U_0(B_n) ]] \\
 &amp;= \int_{U(B_n)} \mathbb E_{U'} [f(U'(i)) g(U'(j))] \prod_{e \in E_n} d\sigma(U_e)\\
 &amp;= \mathbb E_{U'} [f(U'(i)) g(U'(j))] \int_{U(B_n)} 1 \prod_{e \in E_n} d\sigma(U_e),
-\end{align*}\]</span> where we pulled a “constant” out of the integral. Then again by Haar invariance, we conclude the result <span class="math display">\[\begin{equation}
+\end{align*}\]</span> where we pulled a “constant” out of the integral. Then by Haar invariance and Fubini a couple times to split up <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>, we conclude the result <span class="math display">\[\begin{equation}
 \mathbb E [ f(V_i) g(V_j) ] = \mathbb E [ f(V_i) ] \mathbb E [ g(V_j) ].
 \end{equation}\]</span></p>
 <p>I’m tired of this article for today, but one improvement would be to write out explicitly what the product <span class="math inline">\(U_0 \cdots U_0\)</span> actually is. In particular, I should first write down the tree with root at the origin in the lattice. Then I should rewrite <span class="math inline">\(i \in E_n^1\)</span> as an edge of the form <span class="math inline">\((i_l, i_r)\)</span>, and then <span class="math inline">\(G_U(i_l)\)</span> will just be the product of <span class="math inline">\(U_0\)</span> matrices indexed by the edges from the origin <span class="math inline">\(0\)</span> to <span class="math inline">\(i_l\)</span> along the tree. So if these tree edges are <span class="math inline">\(t_0, \cdots, t_{i_l}\)</span>, then the product would be <span class="math display">\[

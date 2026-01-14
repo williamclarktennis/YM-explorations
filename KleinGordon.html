@@ -228,6 +228,8 @@ window.Quarto = {
 \end{equation}\]</span> in the sense of operator-valued distributions.</p>
 </div>
 </div>
+<section id="the-operator-valued-distribution-3.14" class="level4">
+<h4 class="anchored" data-anchor-id="the-operator-valued-distribution-3.14">The operator valued distribution (3.14)</h4>
 <p>Let me clarify (3.14) for myself. Recall that the creation and annihilation operators depend on some function <span class="math inline">\(f \in L^2(\mathcal{M})\)</span>, where in this case <span class="math inline">\(\mathcal{M} = S_m^+\)</span>. Only once you have some <span class="math inline">\(f\)</span> can you talk about an operator from the infinite tensor product space <span class="math inline">\(\mathcal{F}_s\)</span> to itself. That is why I can write <span class="math display">\[\begin{equation}
 a(\sqrt{ 2 \pi } \tilde{f} ) : \mathcal{F}_s \to \mathcal{F}_s,
 \end{equation}\]</span> and this object is defined in section 2.4 in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
@@ -238,6 +240,14 @@ a^*(g) =: \int_{\mathbb R^d} dx g(x) a_x^*
 \end{equation}\]</span> found in section 2.4 of Brennecke’s notes. It follows that <span class="math display">\[\begin{equation}
 (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p := a(\sqrt{2\pi} \overline{\tilde{f}}).
 \end{equation}\]</span> This is nice because now I can just refer back to section 2.4 to see how <span class="math inline">\(a(\sqrt{2\pi} \overline{\tilde{f}})\)</span> acts on a tensor product on some dense subset in the Fock space.</p>
+<p>In summary, (3.14) says <span class="math display">\[
+\phi(f) = \sqrt{2 \pi } a(\overline{\tilde{f}}) + \sqrt{2 \pi } a^*( \tilde{f}).
+\]</span></p>
+</section>
+<section id="the-unitary-representation-gamma" class="level4">
+<h4 class="anchored" data-anchor-id="the-unitary-representation-gamma">The unitary representation Gamma</h4>
+<p>Consider the phrase “strongly continuous unitary representation <span class="math inline">\(\Gamma(U)\)</span> of <span class="math inline">\(\mathcal{P}_+^\uparrow\)</span> on <span class="math inline">\(\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))\)</span>.” We understand this phrase through the following discussion. Given an abstract group <span class="math inline">\(G\)</span> and a vector space <span class="math inline">\(V\)</span>, a unitary representation (of <span class="math inline">\(G\)</span> on <span class="math inline">\(V\)</span>) is a homomorphism <span class="math inline">\(\rho: G \to U(V)\)</span>, where <span class="math inline">\(U(V)\)</span> denotes the set of all unitary maps from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, equipped with composition as the multiplication operation (or matrix multiplication). What is a natural topology to put on <span class="math inline">\(U(V)\)</span>? Perhaps an operator topology?</p>
+<p>Equipping <span class="math inline">\(G\)</span> with a topology, we say that <span class="math inline">\(\rho\)</span> is strongly continuous if for all <span class="math inline">\(v \in V\)</span> <span class="math display">\[G \ni g \mapsto \rho(g)v \in V\]</span> is continuous. For example, if <span class="math inline">\(G = SU(2)\)</span> and <span class="math inline">\(\rho : SU(2) \to U(2)\)</span>, then strong continuity means <span class="math display">\[SU(2) \ni A \mapsto Av \in U(2)\]</span> is continuous for all <span class="math inline">\(v \in U(2)\)</span>.</p>
 <!--
 First I want to distill the formula (3.14), 
 which is not exactly well-defined as written, 
@@ -287,6 +297,7 @@ and conjugate homogenity: $\text{map}(\lambda v) = \overline{}
 
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
