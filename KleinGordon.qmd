@@ -1,0 +1,113 @@
+---
+title: "Wightman Axioms for free scalar quantum field"
+bibliography: references.bib
+---
+Article last updated: January 10, 2026
+
+I'm writing this article so that I can learn Theorem 3.1 of 
+Prof. Christian Brennecke's constructive quantum field theory
+notes @BrenneckeCQFT. The statement of the theorem is as follows. 
+
+::: {.callout-note title="Theorem 3.1"}
+Consider the strongly continuous unitary representation $\Gamma(U)$ (gamma of U)
+of $\mathcal{P}_{+}^{\uparrow}$ (P plus up) on 
+$\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))$ (Bosonic Fock space built over $L^2$
+of the mass shell of mass $m$)
+with Fock space vacuum $\Omega = (1,0,0,\cdots) \in \mathcal{H}$
+and let $\phi = (\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}$
+(family of operators indexed by 
+Schwartz functions on $\mathbb R^4$)
+be defined as (3.14):
+\begin{equation}
+\phi(f) = (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p + (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p^*.
+\end{equation}
+Then $(\mathcal{H}, \Gamma(U), \Omega, \phi)$ 
+satisfies the Wightman axioms and 
+\begin{equation}
+(\square + m^2) \phi = 0
+\end{equation}
+in the sense of operator-valued distributions.
+:::
+
+Let me clarify (3.14) for myself.
+Recall that the creation and annihilation
+operators depend on some function $f \in L^2(\mathcal{M})$, 
+where in this case $\mathcal{M} = S_m^+$.
+Only once you have some $f$ can you talk about
+an operator from the infinite tensor product 
+space $\mathcal{F}_s$ to itself.
+That is why I can write
+\begin{equation}
+a(\sqrt{ 2 \pi } \tilde{f} ) : \mathcal{F}_s \to \mathcal{F}_s,
+\end{equation}
+and this object is defined in section 2.4
+in @BrenneckeCQFT.
+
+Next, I want to phrase (3.14) directly 
+in terms of rigorously defined objects. 
+I'll use the identities
+\begin{equation}
+a(f) =: \int_{\mathbb R^d} dx \overline{f}(x) a_x
+\end{equation}
+and 
+\begin{equation}
+a^*(g) =: \int_{\mathbb R^d} dx g(x) a_x^*
+\end{equation}
+found in section 2.4 of Brennecke's notes. 
+It follows that 
+\begin{equation}
+(2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p := a(\sqrt{2\pi} \overline{\tilde{f}}).
+\end{equation}
+This is nice because now I can just
+refer back to section 2.4 to see how
+$a(\sqrt{2\pi} \overline{\tilde{f}})$ acts 
+on a tensor product on some dense subset in 
+the Fock space.
+
+
+<!--
+First I want to distill the formula (3.14), 
+which is not exactly well-defined as written, 
+but corresponds to something that is well-defined.
+Thus, I will solve here an exercise in Brennecke's
+notes that I expect will transfer to 
+the situation of (3.14). The main theme will
+be to interpret things in a distributional sense. 
+
+::: {.callout-note title="Exercise 1"}
+Suppose that we define the free 
+scalar field $(\phi(f))_{f \in S(\mathbb R^4)}$ of mass $m > 0$ 
+by 
+\begin{equation}
+\phi(f) = \int_{\mathbb R} \frac{dt}{(2\pi)^{3/2}} \big(a(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) + a^*(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) \big).
+\end{equation}
+Identifying heuristically $\phi(f) = \int_{\mathbb R^4} dx \phi_x f(x)$, 
+show that this means that 
+\begin{equation}
+\phi_x = \int_{\mathbb R^3} \frac{dp}{(2\pi)^{3/2}} \left( \frac{e^{-i(\omega(p)t - p\mathbf x)}}{\sqrt{2\omega(p)}} a_p + \frac{e^{i(\omega(p)t - p \mathbf{x})}}{\sqrt{2\omega(p)}}a_p^*  \right)
+\end{equation}
+for all $x = (t, \mathbf x) \in \mathbb R^4$.
+:::
+
+I will use the identities
+\begin{equation}
+a(f) = \int_{\mathbb R^d} dx \overline{f}(x) a_x
+\end{equation}
+and 
+\begin{equation}
+a^*(g) = \int_{\mathbb R^d} dx g(x) a_x^*
+\end{equation}
+found in section 2.4 of Brennecke's notes. 
+They are motivated by the content of Chapter
+3 in @Talagrand, which is at most 30 pages of 
+reading. 
+
+
+The conjugate in the right hand side of the first
+identity comes from the fact that
+the map from $f \maps to a(f)$ is anti-linear. 
+Why would this imply the identity above? 
+Recall that a map
+which is anti-linear satisfies additivity
+and conjugate homogenity: $\text{map}(\lambda v) = \overline{}
+-->

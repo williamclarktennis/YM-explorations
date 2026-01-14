@@ -9,7 +9,7 @@ format:
 jupyter: python3
 ---
 
-### January 12, 2026
+### January 13, 2026
 
 I have written down on paper a ridiculous 
 amount about Lemma 9.3 of @Chatterjee2016, so 

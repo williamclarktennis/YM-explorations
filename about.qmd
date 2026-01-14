@@ -1,0 +1,14 @@
+---
+title: "About"
+---
+
+This website was created on December 9, 2025 to host stuff about my Master's thesis on and (hopefully) post-Master's exploration of YM lattice gauge theory, or more generally, the Yang Mills Millenium problem. 
+
+## Some developer details: 
+This website is built using Quarto.
+
+* Here are the instructions on how to render to github pages: <https://quarto.org/docs/publishing/github-pages.html#render-to-docs>. 
+* on how to implement page navigation: <https://quarto.org/docs/websites/website-navigation.html>
+
+Here is a guide on citations using biblatex: <https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex>.
+

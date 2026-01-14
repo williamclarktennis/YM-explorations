@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "William's Lattice YM Explorations"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - text: "Older Posts"
+        menu: 
+          - href: December2025.qmd
+      - phone-notes.qmd
+      - text: "Other"
+        menu: 
+          - href: KleinGordon.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+
