@@ -29,6 +29,7 @@ satisfies the Wightman axioms and
 in the sense of operator-valued distributions.
 :::
 
+#### The operator valued distribution (3.14)
 Let me clarify (3.14) for myself.
 Recall that the creation and annihilation
 operators depend on some function $f \in L^2(\mathcal{M})$, 
@@ -63,6 +64,37 @@ refer back to section 2.4 to see how
 $a(\sqrt{2\pi} \overline{\tilde{f}})$ acts 
 on a tensor product on some dense subset in 
 the Fock space.
+
+In summary, (3.14) says
+$$
+\phi(f) = \sqrt{2 \pi } a(\overline{\tilde{f}}) + \sqrt{2 \pi } a^*( \tilde{f}).
+$$
+
+#### The unitary representation Gamma
+
+Consider the phrase "strongly continuous unitary representation $\Gamma(U)$
+of $\mathcal{P}_+^\uparrow$ on $\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))$."
+We understand this phrase through the following discussion. 
+Given an abstract group $G$ and a vector space $V$, a
+unitary representation (of $G$ on $V$) is a homomorphism 
+$\rho: G \to U(V)$, where $U(V)$ denotes the set 
+of all unitary maps from $V$ to $V$, equipped
+with composition as the multiplication operation (or matrix
+multiplication). What is a natural topology to put 
+on $U(V)$? Perhaps an operator topology?
+
+Equipping $G$ with a topology, we say that $\rho$ is strongly continuous
+if for all $v \in V$
+$$G \ni g \mapsto \rho(g)v \in V$$
+is continuous. 
+For example, if $G = SU(2)$ and $\rho : SU(2) \to U(2)$, then
+strong continuity means 
+$$SU(2) \ni A \mapsto Av \in U(2)$$
+is continuous
+for all $v \in U(2)$. 
+
+
+
 
 
 <!--

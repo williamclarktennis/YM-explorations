@@ -3,11 +3,179 @@ title: "Yang-Mills Lattice Gauge Theory - William's Explorations"
 
 bibliography: references.bib
 
-format:
-  html:
-    code-fold: true
-jupyter: python3
+# format:
+#   html:
+#     code-fold: true
+# jupyter: python3
 ---
+
+### January 14, 2026
+
+#### Literature Reflection (aka rabbit hole reflection)
+I want to reflect in this post about
+one rabbbit hole I went down. 
+
+The story begins when I was looking
+for notation to describe the tree that is
+implicit in the $E_n^0$ edges of the box $B_n$, 
+as described in @Chatterjee2016. 
+So I visited first my old 
+repository of pdfs from my Davidson times. In
+that repository I looked 
+at Bruce Sagan's "The Art of Counting," which
+did not have what I needed in terms 
+of describing a lattice tree, although 
+I could use the definition of tree mentioned there. 
+Then I visited Bonas's "A Walk through Combinatorics,"
+which didn't have anything on lattices $\mathbb Z^d$, 
+but had the definitions of graphs and such. 
+Then I remembered the 
+book Prof. Brennecke recommended, namely, 
+"Statistical Mechanics of Lattice Systems" by Friedli and
+Velenik. 
+That book was written in 2019, and
+I noticed a general difference between the 
+notation in Chatterjee's 2016 paper
+and the Lattice Systems book.
+This got me a bit worried because 
+it suggested that that notation I'm learning 
+via the 2016 paper is outdated. 
+
+Then the rabbit hole officially began because I 
+was no longer looking for notation for the tree. 
+I couldn't help myself and I looked up
+Velenik's website because I was so impressed 
+by the lattice systems book and I wondered 
+if Velenik was already famous. Then, 
+fueled by a lust for fame, I looked up 
+Dominil-Copin, who also works at the same place 
+as Velenik. I downloaded the article: 
+"Marginal Triviality of the scaling limits ..."
+by Copin and Aizenman. The one upshot of this 
+is that I discovered what Prof. Brennecke meant 
+when he said a Field's medal was awarded to 
+proving the triviality of some 
+quantum field model. 
+Unable to stop my fame lust, 
+I also looked up Chatterjee's website, and 
+saw the Yang-Mills program he has concocted 
+together with S. Cao. At this point
+I was very burnt out and 
+desperate to break the loop. 
+
+Anyways, I think I'll continue to look
+at some of the current articles for
+ideas on notation, but hopefully I 
+won't feel stuck in a loop like I did today.
+
+#### Notation
+
+I think it is better to make a list
+of the possible notations for lattice gauge
+theory. I'll allow myself
+to write down multiple notations and see later
+which ones stick. 
+
+- Fix $\mathbb Z^d$ as the d-dimensional integer lattice.
+
+- Let $e_1, \cdots, e_d$ be the standard basis
+vectors in $\mathbb R^d$.
+- Let $\mathfrak{E}$ (mathfrak E) be the underlying undirected edge set, which 
+can be written
+$$
+\mathfrak{E} = \{\{i,j\} \subset \mathbb Z^d \mid |i-j|_1 = 1\}. 
+$$
+Note that $|i-j|_1 = \sum_{k=1}^d |i_k-j_k|$, where $i = (i_1, \cdots, i_d)$ and similarly for $j$. 
+The metric $|\cdot|_1$ can be called the $l_1$ norm or the taxi-cab metric. 
+Hence, $\mathfrak{E}$ is the set of 
+nearest neighbor edges of the lattice $\mathbb Z^d$.
+
+- Thus, $(\mathbb Z^d, \mathfrak{E})$ is a graph. 
+
+- Let $\Lambda \subset \mathbb Z^d$. 
+
+- Let
+$$
+\mathfrak{E}_{\Lambda} = \{\{i,j\} \subset \mathbb \Lambda \mid |i-j|_1 = 1\}
+$$
+be the nearest neighbor undirected edge set of the sublattice 
+$\Lambda$. 
+
+- Let 
+$$
+E'_{\Lambda} = \{(i,j) \in \Lambda^2 \mid |i-j|_1 = 1 \} 
+$$
+denote the 
+positively and negatively oriented nearest neighbor edges and let 
+$$
+E_{\Lambda} = \{(i,j) \in \Lambda^2 \mid |i-j|_1 = 1, i < j \} 
+$$
+denote the positively oriented directed edge set of the lattice $\Lambda$, where 
+$i < j$ denotes the lexicographic ordering on $\mathbb Z^d$. 
+
+- Let $B_n = \{0, \cdots, n-1\}^d \subset \mathbb Z^d$
+
+- Let 
+\begin{align*}
+E_n^0 = \{ (i,j) & \in B_n \times B_n \mid |i-j|_1 = 1, \text{ and for some } \\
+                 & 1 \le k \le d \text{ and for some } i_1, \cdots, i_k: \\
+                 & i = (i_1, \cdots, i_k, 0, \cdots, 0) \text{ and } j = i + e_k \}
+\end{align*}
+
+- Let $E_n$ be defined as in @Chatterjee2016 Section 2. Then $E_n = E_{B_n}$. 
+
+- Let
+\begin{align*}
+\mathfrak{E}_n^0 = \{ \{i,j\} & \subset B_n \mid |i-j|_1 = 1, \text{ and for some } \\
+                 & 1 \le k \le d \text{ and for some } i_1, \cdots, i_k: \\
+                 & i = (i_1, \cdots, i_k, 0, \cdots, 0) \text{ and } j = i + e_k \}
+\end{align*}
+be the undirected version of $E_n^0$. 
+
+- The pair $(B_n, \mathfrak{E}_n^0)$ is a tree, or in other words, the underlying
+undirected graph of $(B_n, E_n^0)$ is a tree. 
+
+- A graph $(V,E)$ is a pair consisting of a vertex set $V$ and
+an edge set $E \subset \{\{v_1,v_2\} \subset V \mid v_1 \ne v_2 \}$ 
+
+- A finite sequence $v_1, \cdots, v_k$ of distinct vertices 
+is called a path from $v_1$ to $v_k$ assuming 
+$\{v_i, v_{i+1} \} \in E$ for all $i = 1, \cdots, k-1$. 
+Similarly, 
+to each path we can associate one and only one
+list of edges
+$v_1v_2, v_2v_3, \cdots, v_{k-1}v_k$, where
+we have used the convention of writing an edge 
+without the set bars. 
+
+- We say that a graph is connected if for all $x,y \in V$, 
+there is a path from $x$ to $y$
+
+- Theorem (Sagan 1.10.2). Let $T$ be a graph with 
+$|V| = n$ and $|E| = m$. The following are equivalent conditions
+for $T$ to be a tree: 
+  - $T$ is connected and acyclic
+  - $T$ is acyclic and $n = m+1$
+  - $T$ is connected and $n = m+1$
+  - For every pair of vertices $u,v$, there is a unique path 
+  from $u$ to $v$.
+
+- Assume that $(B_n, \mathfrak{E}_n^0)$ is connected. One has
+$|E_n^0| = n^d - 1$ as in section 17 of @Chatterjee2016. 
+Thus, condition 3 of the theorem is satisfied, so it follows that 
+$(B_n, \mathfrak{E}_n^0)$, or the underlying graph of $(B_n, E_n^0)$, is a tree.
+
+- One can see that $(B_n, \mathfrak{E}_n^0)$ is connected in
+the following way. Fix some vertex $x \in B_n$. We want 
+to find a path to $y \in B_n$. First, 
+find a path to $0$ in the following way. 
+For each step, find the largest index $k$ which is non-zero, 
+and subtract $e_k$ to obtain the next vertex. If the next vertex is
+$y$, then stop. Else, continue to the 0 vertex. 
+If $y$ is not reached before $0$, 
+then proceed in the same way starting from 
+$y$ and concatenate the paths. 
+
 
 ### January 13, 2026
 
@@ -162,7 +330,8 @@ Then,
 &= \int_{U(B_n)} \mathbb E_{U'} [f(U'(i)) g(U'(j))] \prod_{e \in E_n} d\sigma(U_e)\\
 &= \mathbb E_{U'} [f(U'(i)) g(U'(j))] \int_{U(B_n)} 1 \prod_{e \in E_n} d\sigma(U_e),
 \end{align*}
-where we pulled a "constant" out of the integral. Then again by Haar invariance, we conclude
+where we pulled a "constant" out of the integral. Then by Haar invariance and Fubini
+a couple times to split up $f$ and $g$, we conclude
 the result 
 \begin{equation}
 \mathbb E [ f(V_i) g(V_j) ] = \mathbb E [ f(V_i) ] \mathbb E [ g(V_j) ].
