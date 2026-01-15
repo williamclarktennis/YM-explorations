@@ -9,6 +9,104 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### January 15, 2026
+
+Fix the box size $n \in \mathbb N$ and 
+the dimension $d \in \mathbb N$.
+Let $a = |E_n^0|$ and let $r = |E_n^1|$. 
+
+Let $\phi_n: \{1, \cdots, a\} \to E_n^0$ be 
+a bijection 
+and let $\psi_n: \{1, \cdots, r\} \to E_n^1$
+be a bijection as well, but 
+let me suppress the $n$ from the notation, leaving
+us with $\phi$ and $\psi$.
+
+A configuration is an assignment 
+$E_n \to U(N)$, or 
+a sequence $(u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)} )$, 
+where
+$u_{\phi(l)} \in U(N)$ for all $l \in \{1, \cdots, a\}$
+and $u_{\psi(l)} \in U(N)$ for all $l \in \{1, \cdots, r\}$.
+
+Next we consider notation for axial gauge fixing. 
+Recall that the set of all configurations on $(B_n, E_n)$ 
+is denoted $U(B_n)$.
+Let $G_n: U(B_n) \times B_n \to U(N)$ 
+be defined by 
+$$G_n((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)}), x) = 
+\begin{cases}
+I & \text{if } x = 0 \\
+u_{\phi(i_1(x))} \cdots u_{\phi(i_k(x))} & \text{if } x \ne 0.
+\end{cases}
+$$
+where $k = |x|_1$ and 
+$i_1(x), \cdots, i_k(x)$ is the unique sequence of integers taken from the set 
+$\{1, \cdots, a\}$ such that 
+$\phi(i_1(x)), \cdots, \phi(i_k(x))$ is the
+path of bonds in $E_n^0$ leading from vertex $0 \in B_n$ to 
+vertex $x \in B_n$.
+
+::: {.callout-note title="Lemma"}
+$G_n$ agrees with the definition of gauge fixing given in section 9 
+of @Chatterjee2016.
+:::
+
+Proof. We have fixed the box size $n$. Next, fix a configuration $U \in U(B_n)$, or 
+we may write $U = (u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)} )$
+for some $u \in U(N)$. 
+
+We proceed by induction using the lexicographic ordering 
+$\prec$ on the box lattice sites to show that 
+$$G_U(x) = G_n(U,x)$$
+ for all $x \in B_n$, where the
+left hand side is Chatterjee's notation for axial 
+gauge fixing.
+
+The base case is $x = 0$. 
+We indeed have
+$G_U(0) = I = G_n(U,0)$. 
+
+Now assume the induction hypothesis
+that $G_U(y) = G_n((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)}), y)$
+for all $y \prec x$, for some $x = (x_1, \cdots, x_d) \in B_n$.
+
+Let $j \in \{1, \cdots, d\}$ be the largest 
+index such that $x_j \ne 0$. 
+Let $y := x - e_j$.
+Then $x \in B_n$ and $y \prec x$.
+Hence, 
+\begin{align*}
+G_U(x) &= G_U(y)U(y,x) \\
+&= G_n((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)}), y) U(y,x) \\
+&= u_{\phi(i_1(y))} \cdots u_{\phi(i_k(y))} U(y,x)
+\end{align*}
+where $k = |y|_1$ and 
+$i_1(y), \cdots, i_k(y)$ is the unique sequence of integers taken from the set 
+$\{1, \cdots, a\}$ such that 
+$\phi(i_1(y)), \cdots, \phi(i_k(y))$ is the
+path of bonds in $E_n^0$ leading from vertex $0 \in B_n$ to 
+vertex $y \in B_n$. Observe that $(y,x) \in E_n^0$. 
+Hence, the sequence $\phi(i_1(y)), \cdots, \phi(i_k(y)), (y,x)$
+is a path from $0 \in B_n$ to $x \in B_n$ in the graph $(B_n, E_n^0)$. But
+$(B_n, E_n^0)$ is a tree, so it is a unique path. 
+Define $i_1(x) := i_1(y)$ and 
+so forth until $i_k(x) := i_k(y)$. 
+Then let $i_{k+1}(x)$ be the unique integer 
+in the set $\{1, \cdots, a\} \setminus \{i_1(y), \cdots, i_k(y))\}$
+such that $\phi(i_{k+1}(x)) = (y,x)$. Based on this, we conclude that
+\begin{align*}
+u_{\phi(i_1(y))} \cdots u_{\phi(i_k(y))} U(y,x) &= u_{\phi(i_1(x))} \cdots u_{\phi(i_k(x))} u_{\phi(i_{k+1}(x))} \\
+&= G_n((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)}), x)
+\end{align*}
+which closes the induction. $\square$
+
+Tomorrow, I want to use the notation 
+$G_n$ and the notion of paths to 
+rewrite my journal entry from January 13, 2026.
+
+
+
 ### January 14, 2026
 
 #### Literature Reflection (aka rabbit hole reflection)
