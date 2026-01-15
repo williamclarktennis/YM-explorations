@@ -77,22 +77,71 @@ of $\mathcal{P}_+^\uparrow$ on $\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))$."
 We understand this phrase through the following discussion. 
 Given an abstract group $G$ and a vector space $V$, a
 unitary representation (of $G$ on $V$) is a homomorphism 
-$\rho: G \to U(V)$, where $U(V)$ denotes the set 
+$\rho: G \to \mathcal{U}(V)$, where $\mathcal{U}(V)$ denotes the set 
 of all unitary maps from $V$ to $V$, equipped
 with composition as the multiplication operation (or matrix
 multiplication). What is a natural topology to put 
-on $U(V)$? Perhaps an operator topology?
+on $\mathcal{U}(V)$? Perhaps an operator topology?
 
 Equipping $G$ with a topology, we say that $\rho$ is strongly continuous
 if for all $v \in V$
 $$G \ni g \mapsto \rho(g)v \in V$$
 is continuous. 
-For example, if $G = SU(2)$ and $\rho : SU(2) \to U(2)$, then
+For example, if $G = SU(2)$ and $\iota : SU(2) \to U(2)$ is a strongly continuous
+unitary representation of $SU(2)$ on $\mathbb C^2$, then
 strong continuity means 
-$$SU(2) \ni A \mapsto Av \in U(2)$$
+$$SU(2) \ni A \mapsto Av \in \mathbb C^2$$
 is continuous
-for all $v \in U(2)$. 
+for all $v \in \mathbb C^2$. 
 
+Thus, $\Gamma(U): \mathcal{P}_+^\uparrow \to \mathcal{U}(\mathcal{F}_s(L^2(S_m^+)))$
+should satisfy 
+$$\mathcal{P}_+^\uparrow \ni (a,L) \mapsto \Gamma(U)((a,L))v \in \mathcal{F}_s(L^2(S_m^+))$$
+is continuous, where $v$ is a fixed and arbitrary element 
+of the Bosonic Fock space built over the mass
+shell. Observe that $\Gamma(U)((a,L))$ is a unitary operator on Bosonic
+Fock space, so it makes sense that applying it 
+to $v$ gives a Bosonic function. 
+Observe that $\Gamma(U)$ is not a finite dimensional 
+representation because Fock space is 
+not finite dimensional. 
+
+It turns out that the unitary representation 
+Gamma actually has a name: the second quantization 
+of the unitary representation 
+$U= (U(a,L))_{(a,L) \in \mathcal{P}_+^{\uparrow}}$. 
+Thus, completely understanding $\Gamma(U)$ entails
+understanding the representation $U$ of 
+the proper Poincaré group $\mathcal{P}_+^{\uparrow}$ 
+on $L^2$ of the mass shell $S_m^+$,
+which can be seen in
+definition (3.4) in the section 
+on the quantization of a massive relativistic particle. 
+To this end, let me look at the following exercise, which is 
+Probem 3.1 (a) in @BrenneckeCQFT. 
+
+::: {.callout-note title="Exercise 1"}
+For $(a,L) \in \mathcal{P}_+^{\uparrow}$, let $U(a,L)$ be defined as in (3.4): 
+for $\psi \in L^2(S_m^+, \mathcal{B}(S_m^+), \lambda_m)$, we set
+$$
+(U(a,L)\psi)(p) = e^{ip^{\mu}a_{\mu}} \psi(L^{-1}p) 
+$$
+for almost every $p \in S_m^+$ and for all $(a,L) \in \mathcal{P}_+^{\uparrow}$.
+Show that 
+$\mathcal{P}_+^\uparrow \ni (a,L) \mapsto U(a,L) \in \mathcal{U}(L^2(S_m^+))$
+defines a strongly continuous, unitary representation 
+of $\mathcal{P}_+^\uparrow$ on $L^2(S_m^+) = L^2(S_m^+, \mathcal{B}(S_m^+), \lambda_m)$. 
+:::
+
+Proof. Step one is to
+verify the homomorphism property
+$$
+U((a,L)(a'L'))\psi(p) = U(a,L)U(a',L')\psi(p)
+$$ {#eq-1}
+for all $(a,L), (a',L') \in \mathcal{P}_+^\uparrow$. 
+By definition, 
+$(a,L)(a',L') = (a+La', LL')$, so we make the appropriate substitution 
+on the left hand side of @eq-1.
 
 
 
