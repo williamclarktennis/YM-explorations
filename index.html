@@ -189,7 +189,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#january-14-2026" id="toc-january-14-2026" class="nav-link active" data-scroll-target="#january-14-2026">January 14, 2026</a></li>
+  <li><a href="#january-15-2026" id="toc-january-15-2026" class="nav-link active" data-scroll-target="#january-15-2026">January 15, 2026</a></li>
+  <li><a href="#january-14-2026" id="toc-january-14-2026" class="nav-link" data-scroll-target="#january-14-2026">January 14, 2026</a></li>
   <li><a href="#january-13-2026" id="toc-january-13-2026" class="nav-link" data-scroll-target="#january-13-2026">January 13, 2026</a></li>
   <li><a href="#january-3-2026" id="toc-january-3-2026" class="nav-link" data-scroll-target="#january-3-2026">January 3, 2026</a></li>
   </ul>
@@ -217,6 +218,44 @@ window.Quarto = {
 </header>
 
 
+<section id="january-15-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-15-2026">January 15, 2026</h3>
+<p>Fix the box size <span class="math inline">\(n \in \mathbb N\)</span> and the dimension <span class="math inline">\(d \in \mathbb N\)</span>. Let <span class="math inline">\(a = |E_n^0|\)</span> and let <span class="math inline">\(r = |E_n^1|\)</span>.</p>
+<p>Let <span class="math inline">\(\phi_n: \{1, \cdots, a\} \to E_n^0\)</span> be a bijection and let <span class="math inline">\(\psi_n: \{1, \cdots, r\} \to E_n^1\)</span> be a bijection as well, but let me suppress the <span class="math inline">\(n\)</span> from the notation, leaving us with <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\psi\)</span>.</p>
+<p>A configuration is an assignment <span class="math inline">\(E_n \to U(N)\)</span>, or a sequence <span class="math inline">\((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)} )\)</span>, where <span class="math inline">\(u_{\phi(l)} \in U(N)\)</span> for all <span class="math inline">\(l \in \{1, \cdots, a\}\)</span> and <span class="math inline">\(u_{\psi(l)} \in U(N)\)</span> for all <span class="math inline">\(l \in \{1, \cdots, r\}\)</span>.</p>
+<p>Next we consider notation for axial gauge fixing. Recall that the set of all configurations on <span class="math inline">\((B_n, E_n)\)</span> is denoted <span class="math inline">\(U(B_n)\)</span>. Let <span class="math inline">\(G_n: U(B_n) \times B_n \to U(N)\)</span> be defined by <span class="math display">\[G_n((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)}), x) =
+\begin{cases}
+I &amp; \text{if } x = 0 \\
+u_{\phi(i_1(x))} \cdots u_{\phi(i_k(x))} &amp; \text{if } x \ne 0.
+\end{cases}
+\]</span> where <span class="math inline">\(k = |x|_1\)</span> and <span class="math inline">\(i_1(x), \cdots, i_k(x)\)</span> is the unique sequence of integers taken from the set <span class="math inline">\(\{1, \cdots, a\}\)</span> such that <span class="math inline">\(\phi(i_1(x)), \cdots, \phi(i_k(x))\)</span> is the path of bonds in <span class="math inline">\(E_n^0\)</span> leading from vertex <span class="math inline">\(0 \in B_n\)</span> to vertex <span class="math inline">\(x \in B_n\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Lemma">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Lemma
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(G_n\)</span> agrees with the definition of gauge fixing given in section 9 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+</div>
+</div>
+<p>Proof. We have fixed the box size <span class="math inline">\(n\)</span>. Next, fix a configuration <span class="math inline">\(U \in U(B_n)\)</span>, or we may write <span class="math inline">\(U = (u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)} )\)</span> for some <span class="math inline">\(u \in U(N)\)</span>.</p>
+<p>We proceed by induction using the lexicographic ordering <span class="math inline">\(\prec\)</span> on the box lattice sites to show that <span class="math display">\[G_U(x) = G_n(U,x)\]</span> for all <span class="math inline">\(x \in B_n\)</span>, where the left hand side is Chatterjee’s notation for axial gauge fixing.</p>
+<p>The base case is <span class="math inline">\(x = 0\)</span>. We indeed have <span class="math inline">\(G_U(0) = I = G_n(U,0)\)</span>.</p>
+<p>Now assume the induction hypothesis that <span class="math inline">\(G_U(y) = G_n((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)}), y)\)</span> for all <span class="math inline">\(y \prec x\)</span>, for some <span class="math inline">\(x = (x_1, \cdots, x_d) \in B_n\)</span>.</p>
+<p>Let <span class="math inline">\(j \in \{1, \cdots, d\}\)</span> be the largest index such that <span class="math inline">\(x_j \ne 0\)</span>. Let <span class="math inline">\(y := x - e_j\)</span>. Then <span class="math inline">\(x \in B_n\)</span> and <span class="math inline">\(y \prec x\)</span>. Hence, <span class="math display">\[\begin{align*}
+G_U(x) &amp;= G_U(y)U(y,x) \\
+&amp;= G_n((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)}), y) U(y,x) \\
+&amp;= u_{\phi(i_1(y))} \cdots u_{\phi(i_k(y))} U(y,x)
+\end{align*}\]</span> where <span class="math inline">\(k = |y|_1\)</span> and <span class="math inline">\(i_1(y), \cdots, i_k(y)\)</span> is the unique sequence of integers taken from the set <span class="math inline">\(\{1, \cdots, a\}\)</span> such that <span class="math inline">\(\phi(i_1(y)), \cdots, \phi(i_k(y))\)</span> is the path of bonds in <span class="math inline">\(E_n^0\)</span> leading from vertex <span class="math inline">\(0 \in B_n\)</span> to vertex <span class="math inline">\(y \in B_n\)</span>. Observe that <span class="math inline">\((y,x) \in E_n^0\)</span>. Hence, the sequence <span class="math inline">\(\phi(i_1(y)), \cdots, \phi(i_k(y)), (y,x)\)</span> is a path from <span class="math inline">\(0 \in B_n\)</span> to <span class="math inline">\(x \in B_n\)</span> in the graph <span class="math inline">\((B_n, E_n^0)\)</span>. But <span class="math inline">\((B_n, E_n^0)\)</span> is a tree, so it is a unique path. Define <span class="math inline">\(i_1(x) := i_1(y)\)</span> and so forth until <span class="math inline">\(i_k(x) := i_k(y)\)</span>. Then let <span class="math inline">\(i_{k+1}(x)\)</span> be the unique integer in the set <span class="math inline">\(\{1, \cdots, a\} \setminus \{i_1(y), \cdots, i_k(y))\}\)</span> such that <span class="math inline">\(\phi(i_{k+1}(x)) = (y,x)\)</span>. Based on this, we conclude that <span class="math display">\[\begin{align*}
+u_{\phi(i_1(y))} \cdots u_{\phi(i_k(y))} U(y,x) &amp;= u_{\phi(i_1(x))} \cdots u_{\phi(i_k(x))} u_{\phi(i_{k+1}(x))} \\
+&amp;= G_n((u_{\phi(1)}, \cdots, u_{\phi(a)}, u_{\psi(1)}, \cdots, u_{\psi(r)}), x)
+\end{align*}\]</span> which closes the induction. <span class="math inline">\(\square\)</span></p>
+<p>Tomorrow, I want to use the notation <span class="math inline">\(G_n\)</span> and the notion of paths to rewrite my journal entry from January 13, 2026.</p>
+</section>
 <section id="january-14-2026" class="level3">
 <h3 class="anchored" data-anchor-id="january-14-2026">January 14, 2026</h3>
 <section id="literature-reflection-aka-rabbit-hole-reflection" class="level4">
