@@ -20,14 +20,15 @@ Haar measure,
 define $V(x,y) = G_U(x)U(x,y)G_U(y)^*$
 and $V(v,w) = G_U(v)U(v,w)G_U(w)^*$.
 
-Thus, $V(x,y)$ is a random variable
-from the probability space
-$\left( \prod_{E_n} U(N), \mathcal{B}(\prod_{E_n} U(N)), du_{\phi(1)} \cdots du_{\phi(a)} du_{\psi(1)} \cdots du_{\psi(r)} \right)$.
-
 Let $a = |E_n^0|$ and let $r = |E_n^1|$. 
 Let $\phi: \{1,\cdots, a\} \to E_n^0$ be a bijection
 and let $\psi: \{1, \cdots, r\} \to E_n^1$
 be a bijection as well. 
+
+Thus, $V(x,y)$ is a random variable
+from the probability space
+$\left( \prod_{E_n} U(N), \mathcal{B}(\prod_{E_n} U(N)), du_{\phi(1)} \cdots du_{\phi(a)} du_{\psi(1)} \cdots du_{\psi(r)} \right)$ to the probability space $(U(N), \mathcal{B}(U(N)), \sigma)$, where $\sigma$ denotes Haar measure.
+ 
 For the vertex $x$, let 
 $$
 i_1(x), \cdots, i_{|x|_1}(x)
@@ -74,10 +75,7 @@ and
 V(v, w) &= U_{\phi(i_1(v))} \cdots U_{\phi(i_{|v|_1}(v))} U(v,w) U_{\phi(i_{|w|_1}(w))}^* \cdots U_{\phi(i_{1}(w))}^*.
 \end{align*}
 
-
-::: {.callout-note title="Lemma"}
-For all 
-:::
+I'll have to continue another day.
 
 
 ### January 15, 2026

@@ -2,7 +2,7 @@
 title: "Wightman Axioms for free scalar quantum field"
 bibliography: references.bib
 ---
-Article last updated: January 10, 2026
+Article last updated: January 16, 2026
 
 I'm writing this article so that I can learn Theorem 3.1 of 
 Prof. Christian Brennecke's constructive quantum field theory
@@ -136,12 +136,111 @@ of $\mathcal{P}_+^\uparrow$ on $L^2(S_m^+) = L^2(S_m^+, \mathcal{B}(S_m^+), \lam
 Proof. Step one is to
 verify the homomorphism property
 $$
-U((a,L)(a'L'))\psi(p) = U(a,L)U(a',L')\psi(p)
+(U((a,L)(a',L'))\psi)(p) = ((U(a,L)U(a',L'))\psi)(p)
 $$ {#eq-1}
 for all $(a,L), (a',L') \in \mathcal{P}_+^\uparrow$. 
 By definition, 
 $(a,L)(a',L') = (a+La', LL')$, so we make the appropriate substitution 
 on the left hand side of @eq-1.
+Then we have by (3.4) that
+\begin{align*}
+(U(a+La', LL')\psi)(p) = e^{ip^\mu(a+La')_{\mu}}\psi((LL')^{-1}p).
+\end{align*}
+We compute for the right hand side using (3.4):
+\begin{align*}
+((U(a,L)U(a',L'))\psi)(p) &= (U(a,L)(U(a',L')\psi(\cdot)))(p) && \text{i.e. composition law}\\
+&= (U(a,L)e^{i(\cdot)^\mu a'_{\mu}}\psi(L'^{-1} (\cdot)) )(p) \\
+&= e^{ip^\mu a_{\mu}} e^{i(L^{-1}p)^\mu a'_{\mu}} \psi(L'^{-1}L^{-1}(p)) \\
+&= e^{i (p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu)} \psi((LL')^{-1}p).
+\end{align*}
+For the homomorphism property, it remains to prove that 
+$$
+p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu = p^\mu(a+La')_{\mu}. 
+$$
+Note the following facts and observations about
+
+##### Interlude about O(1,3)
+$O(1,3)$, the group of isometries on Minkowski space, 
+of which $L$ is an element by defintion of 
+the Poincaré group. First, Minkowski space 
+$\mathbb R^4$ is equipped with a bilinear form 
+$\eta = \text{diag}({1,-1,-1,-1})$, 
+which means that $\eta(x,y) = x^T \eta y$, where $x$ and 
+$y$ are column vectors with 4 entries. 
+Next, an isometry $L \in O(1,3)$ is a linear map $\mathbb R^4 \to \mathbb R^4$
+that preserves the geometry in the sense that
+$\eta(Lx,Ly) = \eta(x,y)$ for all $x,y \in \mathbb R^4$. 
+Rewriting gives the equation 
+$x^TL^T\eta Ly = x^T\eta y$ for all $x$ and $y$, and 
+by choosing $x$ and $y$ as the 
+various combinations of basis vectors in order
+to single out the matrix entries of 
+$L^T\eta L$ on the left and $\eta$ on the right, 
+the isometry condition on $L$ can be expressed equivalently 
+as $L^T \eta L = \eta$. 
+Another useful thing to note is that 
+$a^\mu b_\mu = a^T \eta b$ for column vectors
+$a$ and $b$ in $\mathbb R^4$.
+
+##### End of Interlude, back to the proof. 
+
+Let's rewrite the equation $p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu = p^\mu(a+La')_{\mu}$ 
+using $\eta$ as
+$$
+p^T \eta a + (L^{-1}p)^T \eta a' = p^T \eta (a+La').
+$$
+So we want to prove that this equation holds, given 
+that $L \in O(1,3)$ and 
+that $p \in S_m^+$. 
+By linearity and cancellation, the equation becomes
+$$
+(L^{-1}p)^T \eta a' =  p^T \eta La'.
+$$
+But using that $L^{-1} \in O(1,3)$, which
+implies that $(L^{-1})^T \eta L^{-1} = \eta$, which
+implies $(L^{-1})^T \eta = \eta L$, 
+gives confirmation. 
+But why is $L^{-1} \in O(1,3)?$ Well, $L \in 
+O(1,3)$ implies 
+$L^T \eta L = \eta$, which
+implies that $\eta^T = L^T \eta^T L$ because $\eta$ is symmetric, 
+which implies that 
+$\eta^T L^{-1} = L^T \eta^T$, which implies that
+$(L^{-1})^T \eta = \eta L$ after transposing both sides, 
+which implies that 
+$(L^{-1})^T \eta L^{-1}= \eta$, which
+implies that $L^{-1} \in O(1,3)$. This concludes step one, the homomorphism 
+property of the representation. 
+
+Next, I'd like to check the unitary property, which
+states that for all $(a,L) \in \mathcal{P}_+^\uparrow$,
+that $U(a,L)$ is a unitary operator on $L^2(S_m^+)$, which means that
+$$
+\langle \psi, \phi \rangle_{L^2(S_m^+)} = \langle U(a,L) \psi, U(a,L) \phi \rangle_{L^2(S_m^+)}
+$$
+for all $\psi, \phi \in L^2(S_m^+)$. 
+
+I'm not super sure if 
+functions in $L^2(S_m^+)$ are supposed to have a codomain of $\mathbb C$, 
+but I'll guess that for now based on the imaginary 
+$i$ in the exponent in the formula (3.4).
+
+\begin{align*}
+\langle U(a,L) \psi, U(a,L) \phi \rangle_{L^2(S_m^+)} &= \int_{S_m^+} d\lambda_m(p) \overline{U(a,L)\psi} (p) U(a,L) \phi (p)  \\
+&= \int_{S_m^+} d \lambda_m(p) \overline{e^{ip^\mu a_\mu} \psi (L^{-1}p)} e^{ip^\mu a_\mu} \phi(L^{-1}p) \\
+&= \int_{S_m^+} d \lambda_m(p)  e^{-ip^\mu a_\mu} \overline{ \psi (L^{-1}p)} e^{ip^\mu a_\mu} \phi(L^{-1}p) \\
+&= \int_{S_m^+} d \lambda_m(p) \overline{ \psi (L^{-1}p)} \phi(L^{-1}p) \\
+&= \int_{L^{-1}S_m^+} d (\lambda_m \circ L)(h) \overline {\psi(h)} \phi(h) && \text{ change of variables }\\
+&= \int_{S_m^+} d \lambda_m (h) \overline {\psi(h)} \phi(h) && \text{ Lemma 3.1 of Brennecke's notes} \\
+&= \langle \psi, \phi \rangle_{L^2(S_m^+)}. 
+\end{align*}
+
+Here is why $L^{-1}S_m^+ = S_m^+$. 
+The definition of the mass shell is $S_m^+ = \{p \in \mathbb R^4: p^T\eta p = m^2, p_0 > 0\}$.
+Begin with an element 
+$a := L^{-1}p \in L^{-1}S_m^+$. 
+Then $L^{-1} \in \mathcal{P}_+^\uparrow$ implies
+that $L^{-1}_{00} > 0$ and also $p_0 > 0$, 
 
 
 
