@@ -209,7 +209,7 @@ window.Quarto = {
 </header>
 
 
-<p>Article last updated: January 10, 2026</p>
+<p>Article last updated: January 16, 2026</p>
 <p>I’m writing this article so that I can learn Theorem 3.1 of Prof.&nbsp;Christian Brennecke’s constructive quantum field theory notes <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. The statement of the theorem is as follows.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Theorem 3.1">
 <div class="callout-header d-flex align-content-center">
@@ -266,8 +266,43 @@ a^*(g) =: \int_{\mathbb R^d} dx g(x) a_x^*
 </div>
 </div>
 <p>Proof. Step one is to verify the homomorphism property <span id="eq-1"><span class="math display">\[
-U((a,L)(a'L'))\psi(p) = U(a,L)U(a',L')\psi(p)
-\tag{1}\]</span></span> for all <span class="math inline">\((a,L), (a',L') \in \mathcal{P}_+^\uparrow\)</span>. By definition, <span class="math inline">\((a,L)(a',L') = (a+La', LL')\)</span>, so we make the appropriate substitution on the left hand side of <a href="#eq-1" class="quarto-xref">Equation&nbsp;1</a>.</p>
+(U((a,L)(a',L'))\psi)(p) = ((U(a,L)U(a',L'))\psi)(p)
+\tag{1}\]</span></span> for all <span class="math inline">\((a,L), (a',L') \in \mathcal{P}_+^\uparrow\)</span>. By definition, <span class="math inline">\((a,L)(a',L') = (a+La', LL')\)</span>, so we make the appropriate substitution on the left hand side of <a href="#eq-1" class="quarto-xref">Equation&nbsp;1</a>. Then we have by (3.4) that <span class="math display">\[\begin{align*}
+(U(a+La', LL')\psi)(p) = e^{ip^\mu(a+La')_{\mu}}\psi((LL')^{-1}p).
+\end{align*}\]</span> We compute for the right hand side using (3.4): <span class="math display">\[\begin{align*}
+((U(a,L)U(a',L'))\psi)(p) &amp;= (U(a,L)(U(a',L')\psi(\cdot)))(p) &amp;&amp; \text{i.e. composition law}\\
+&amp;= (U(a,L)e^{i(\cdot)^\mu a'_{\mu}}\psi(L'^{-1} (\cdot)) )(p) \\
+&amp;= e^{ip^\mu a_{\mu}} e^{i(L^{-1}p)^\mu a'_{\mu}} \psi(L'^{-1}L^{-1}(p)) \\
+&amp;= e^{i (p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu)} \psi((LL')^{-1}p).
+\end{align*}\]</span> For the homomorphism property, it remains to prove that <span class="math display">\[
+p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu = p^\mu(a+La')_{\mu}.
+\]</span> Note the following facts and observations about</p>
+<section id="interlude-about-o13" class="level5">
+<h5 class="anchored" data-anchor-id="interlude-about-o13">Interlude about O(1,3)</h5>
+<p><span class="math inline">\(O(1,3)\)</span>, the group of isometries on Minkowski space, of which <span class="math inline">\(L\)</span> is an element by defintion of the Poincaré group. First, Minkowski space <span class="math inline">\(\mathbb R^4\)</span> is equipped with a bilinear form <span class="math inline">\(\eta = \text{diag}({1,-1,-1,-1})\)</span>, which means that <span class="math inline">\(\eta(x,y) = x^T \eta y\)</span>, where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are column vectors with 4 entries. Next, an isometry <span class="math inline">\(L \in O(1,3)\)</span> is a linear map <span class="math inline">\(\mathbb R^4 \to \mathbb R^4\)</span> that preserves the geometry in the sense that <span class="math inline">\(\eta(Lx,Ly) = \eta(x,y)\)</span> for all <span class="math inline">\(x,y \in \mathbb R^4\)</span>. Rewriting gives the equation <span class="math inline">\(x^TL^T\eta Ly = x^T\eta y\)</span> for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and by choosing <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> as the various combinations of basis vectors in order to single out the matrix entries of <span class="math inline">\(L^T\eta L\)</span> on the left and <span class="math inline">\(\eta\)</span> on the right, the isometry condition on <span class="math inline">\(L\)</span> can be expressed equivalently as <span class="math inline">\(L^T \eta L = \eta\)</span>. Another useful thing to note is that <span class="math inline">\(a^\mu b_\mu = a^T \eta b\)</span> for column vectors <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in <span class="math inline">\(\mathbb R^4\)</span>.</p>
+</section>
+<section id="end-of-interlude-back-to-the-proof." class="level5">
+<h5 class="anchored" data-anchor-id="end-of-interlude-back-to-the-proof.">End of Interlude, back to the proof.</h5>
+<p>Let’s rewrite the equation <span class="math inline">\(p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu = p^\mu(a+La')_{\mu}\)</span> using <span class="math inline">\(\eta\)</span> as <span class="math display">\[
+p^T \eta a + (L^{-1}p)^T \eta a' = p^T \eta (a+La').
+\]</span> So we want to prove that this equation holds, given that <span class="math inline">\(L \in O(1,3)\)</span> and that <span class="math inline">\(p \in S_m^+\)</span>. By linearity and cancellation, the equation becomes <span class="math display">\[
+(L^{-1}p)^T \eta a' =  p^T \eta La'.
+\]</span> But using that <span class="math inline">\(L^{-1} \in O(1,3)\)</span>, which implies that <span class="math inline">\((L^{-1})^T \eta L^{-1} = \eta\)</span>, which implies <span class="math inline">\((L^{-1})^T \eta = \eta L\)</span>, gives confirmation. But why is <span class="math inline">\(L^{-1} \in O(1,3)?\)</span> Well, <span class="math inline">\(L \in
+O(1,3)\)</span> implies <span class="math inline">\(L^T \eta L = \eta\)</span>, which implies that <span class="math inline">\(\eta^T = L^T \eta^T L\)</span> because <span class="math inline">\(\eta\)</span> is symmetric, which implies that <span class="math inline">\(\eta^T L^{-1} = L^T \eta^T\)</span>, which implies that <span class="math inline">\((L^{-1})^T \eta = \eta L\)</span> after transposing both sides, which implies that <span class="math inline">\((L^{-1})^T \eta L^{-1}= \eta\)</span>, which implies that <span class="math inline">\(L^{-1} \in O(1,3)\)</span>. This concludes step one, the homomorphism property of the representation.</p>
+<p>Next, I’d like to check the unitary property, which states that for all <span class="math inline">\((a,L) \in \mathcal{P}_+^\uparrow\)</span>, that <span class="math inline">\(U(a,L)\)</span> is a unitary operator on <span class="math inline">\(L^2(S_m^+)\)</span>, which means that <span class="math display">\[
+\langle \psi, \phi \rangle_{L^2(S_m^+)} = \langle U(a,L) \psi, U(a,L) \phi \rangle_{L^2(S_m^+)}
+\]</span> for all <span class="math inline">\(\psi, \phi \in L^2(S_m^+)\)</span>.</p>
+<p>I’m not super sure if functions in <span class="math inline">\(L^2(S_m^+)\)</span> are supposed to have a codomain of <span class="math inline">\(\mathbb C\)</span>, but I’ll guess that for now based on the imaginary <span class="math inline">\(i\)</span> in the exponent in the formula (3.4).</p>
+<p><span class="math display">\[\begin{align*}
+\langle U(a,L) \psi, U(a,L) \phi \rangle_{L^2(S_m^+)} &amp;= \int_{S_m^+} d\lambda_m(p) \overline{U(a,L)\psi} (p) U(a,L) \phi (p)  \\
+&amp;= \int_{S_m^+} d \lambda_m(p) \overline{e^{ip^\mu a_\mu} \psi (L^{-1}p)} e^{ip^\mu a_\mu} \phi(L^{-1}p) \\
+&amp;= \int_{S_m^+} d \lambda_m(p)  e^{-ip^\mu a_\mu} \overline{ \psi (L^{-1}p)} e^{ip^\mu a_\mu} \phi(L^{-1}p) \\
+&amp;= \int_{S_m^+} d \lambda_m(p) \overline{ \psi (L^{-1}p)} \phi(L^{-1}p) \\
+&amp;= \int_{L^{-1}S_m^+} d (\lambda_m \circ L)(h) \overline {\psi(h)} \phi(h) &amp;&amp; \text{ change of variables }\\
+&amp;= \int_{S_m^+} d \lambda_m (h) \overline {\psi(h)} \phi(h) &amp;&amp; \text{ Lemma 3.1 of Brennecke's notes} \\
+&amp;= \langle \psi, \phi \rangle_{L^2(S_m^+)}.
+\end{align*}\]</span></p>
+<p>Here is why <span class="math inline">\(L^{-1}S_m^+ = S_m^+\)</span>. The definition of the mass shell is <span class="math inline">\(S_m^+ = \{p \in \mathbb R^4: p^T\eta p = m^2, p_0 &gt; 0\}\)</span>. Begin with an element <span class="math inline">\(a := L^{-1}p \in L^{-1}S_m^+\)</span>. Then <span class="math inline">\(L^{-1} \in \mathcal{P}_+^\uparrow\)</span> implies that <span class="math inline">\(L^{-1}_{00} &gt; 0\)</span> and also <span class="math inline">\(p_0 &gt; 0\)</span>,</p>
 <!--
 First I want to distill the formula (3.14), 
 which is not exactly well-defined as written, 
@@ -317,6 +352,7 @@ and conjugate homogenity: $\text{map}(\lambda v) = \overline{}
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
