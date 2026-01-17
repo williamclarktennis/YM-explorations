@@ -242,6 +242,38 @@ $a := L^{-1}p \in L^{-1}S_m^+$.
 Then $L^{-1} \in \mathcal{P}_+^\uparrow$ implies
 that $L^{-1}_{00} > 0$ and also $p_0 > 0$, 
 
+##### Interlude on proper Poincaré group
+
+First, it will be helpful to understand the 
+following statement found on page 46 of @BrenneckeCQFT: 
+If $L \in O(1,3)$, then 
+$$
+\eta^{\mu \nu} L_{\mu \lambda} L_{\nu \kappa} = 
+\eta_{\lambda \kappa} = \eta^{\mu \nu } L_{\lambda \mu} L_{\kappa \nu}.
+$$
+The conclusion uses the Einstein summation 
+convention. As a simple example of that, consider 
+two matrices $A \in \mathbb F^{m \times n}$ and 
+$B \in \mathbb F^{n \times p}$. Then the formula
+for the $(\lambda,\kappa)$ entry, or in other words, the 
+$\lambda$-th row and $\kappa$-th column  of the product
+$AB$ is $AB_{\lambda \kappa} = \sum_{\nu = 1}^n A^{\lambda \nu}B_{\nu \kappa} = A^{\lambda \nu} B_{\nu \kappa}$,
+because entries that appear once up high and 
+once down low in the symbolism are taken to be summed over.
+
+To guide myself, let me ask: does $(L^T \eta L)_{\lambda \kappa} = \eta^{\mu \nu} L_{\mu \lambda} L_{\nu \kappa}$?
+We have 
+\begin{align*}
+(L^T \eta L)_{\lambda \kappa} &= ((L^T \eta) L)_{\lambda \kappa}\\
+&= (L^T \eta)^{\lambda \nu} L_{\nu \kappa} \\
+&= ((L^T)^{\lambda \mu} \eta_{\mu \nu}) L_{\nu \kappa} \\
+&= (L^{\mu \lambda} \eta_{\mu \nu}) L_{\nu \kappa} && \text{transpose def} \\
+&= (L^{\mu \lambda} \eta_{\nu \mu}) L_{\nu \kappa} && \eta \text{ symmetric} \\
+&= (\eta_{\nu \mu} L^{\mu \lambda}) L_{\nu \kappa} && \text{ multiplication commutative} \\
+&= \eta^{\nu \mu} L_{\mu \lambda} L_{\nu \kappa},
+\end{align*}
+so the answer is yes.
+
 
 
 
