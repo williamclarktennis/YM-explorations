@@ -189,7 +189,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#january-16-2026" id="toc-january-16-2026" class="nav-link active" data-scroll-target="#january-16-2026">January 16, 2026</a></li>
+  <li><a href="#january-19-2026" id="toc-january-19-2026" class="nav-link active" data-scroll-target="#january-19-2026">January 19, 2026</a></li>
+  <li><a href="#january-16-2026" id="toc-january-16-2026" class="nav-link" data-scroll-target="#january-16-2026">January 16, 2026</a></li>
   <li><a href="#january-15-2026" id="toc-january-15-2026" class="nav-link" data-scroll-target="#january-15-2026">January 15, 2026</a></li>
   <li><a href="#january-14-2026" id="toc-january-14-2026" class="nav-link" data-scroll-target="#january-14-2026">January 14, 2026</a></li>
   <li><a href="#january-13-2026" id="toc-january-13-2026" class="nav-link" data-scroll-target="#january-13-2026">January 13, 2026</a></li>
@@ -219,6 +220,120 @@ window.Quarto = {
 </header>
 
 
+<section id="january-19-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-19-2026">January 19, 2026</h3>
+<section id="diagonalizability" class="level4">
+<h4 class="anchored" data-anchor-id="diagonalizability">Diagonalizability</h4>
+<p>In this post I want to learn about Fourier transforms as coordinate changes. It is also often said that the Fourier transform diagonalizes operators, so that is why I have titled this section accordingly.</p>
+<p>Let <span class="math inline">\(A\)</span> be a two by two real matrix. Suppose that there exist an orthonormal matrix <span class="math inline">\(U \in O(2)\)</span> and a diagonal matrix <span class="math inline">\(D = \begin{bmatrix} \lambda_1 &amp; 0 \\
+0 &amp; \lambda_2 \end{bmatrix} \in \mathbb R^{2 \times 2},\)</span> such that <span class="math inline">\(A = UDU^T.\)</span> <strong>Then the <span class="math inline">\(i\)</span>th column of <span class="math inline">\(U\)</span> is an eigenvector of <span class="math inline">\(A\)</span> with corresponding eigenvalue <span class="math inline">\(\lambda_i\)</span>.</strong> Recall that a non-zero column vector <span class="math inline">\(x = [x_1, x_2]^T \in \mathbb R^{2}\)</span> is called an eigenvector of <span class="math inline">\(A\)</span> with corresponding eigenvalue <span class="math inline">\(\lambda \in \mathbb R\)</span> if <span class="math display">\[Ax = \lambda x.\]</span> Here is how to see that <span class="math inline">\(U_{\cdot, i}\)</span> satisfies <span class="math inline">\(A U_{\cdot, i} = \lambda_i U_{\cdot, i}\)</span>. Let <span class="math inline">\(i = 1\)</span>. We compute <span class="math display">\[\begin{align*}
+(UDU^T)(U_{\cdot,1}) &amp;= (UD) \begin{bmatrix}
+                              1 \\ 0 \end{bmatrix} &amp;&amp; \text{orthonormality}\\
+                     &amp;= U \begin{bmatrix}
+                              \lambda_1 \\ 0 \end{bmatrix} \\
+                     &amp;= \lambda_1 U_{\cdot, 1}.
+\end{align*}\]</span> A similar computation follows for <span class="math inline">\(i = 2\)</span>. In conclusion, when <span class="math inline">\(A = UDU^T\)</span> for an orthonormal matrix <span class="math inline">\(U\)</span> (used orthonormality in first step), then the columns of <span class="math inline">\(U\)</span> are eigenvectors of <span class="math inline">\(A\)</span>.</p>
+<p>Let <span class="math inline">\(T: V \to V\)</span> be a linear operator on an abstract two dimensional vector space <span class="math inline">\(V\)</span> over the field <span class="math inline">\(\mathbb R\)</span>. Let <span class="math inline">\(v_1, v_2\)</span> and <span class="math inline">\(w_1, w_2\)</span> be two bases of <span class="math inline">\(V\)</span>. Suppose <span class="math display">\[
+\text{Mat}_{v_1, v_2}^{w_1, w_2}(T) = A,
+\]</span> which means that <span class="math inline">\(T(v_1) = A_{1,1} w_1 + A_{2,1} w_2\)</span> and <span class="math inline">\(T(v_2) = A_{1,2} w_1 + A_{2,2} w_2\)</span>. In other words, the first column of <span class="math inline">\(A\)</span> holds the components of the abstract vector <span class="math inline">\(T(v_1)\)</span> in the basis <span class="math inline">\(w_1,w_2\)</span>, and the second column of <span class="math inline">\(A\)</span> holds the components of the abstract vector <span class="math inline">\(T(v_2)\)</span> in the basis <span class="math inline">\(w_1, w_2\)</span>. This could be written in the language of coordinate functions for manifolds, but let me not go there. One more way to visualize <span class="math inline">\(\text{Mat}_{v_1, v_2}^{w_1, w_2}(T) = A\)</span> is via <span class="math display">\[
+A = \begin{bmatrix}
+(Tv_1)_{w_1,w_2} &amp; (Tv_2)_{w_1,w_2}
+\end{bmatrix}.
+\]</span></p>
+<p>We say that the operator <span class="math inline">\(T\)</span> is diagonalizable if there exists a basis <span class="math inline">\(e_1, e_2\)</span> of <span class="math inline">\(V\)</span> such that <span class="math inline">\(e_1, e_2\)</span> are eigenvectors of <span class="math inline">\(T\)</span>: <span class="math inline">\(Te_1 = \lambda_1 e_1\)</span> and <span class="math inline">\(T e_2 = \lambda_2 e_2\)</span>. Then we see that <span class="math display">\[
+\text{Mat}_{e_1,e_2}^{e_1,e_2}(T) = \begin{bmatrix}
+(Te_1)_{e_1,e_2} &amp; (Te_2)_{e_1, e_2} \end{bmatrix}
+= \begin{bmatrix} \lambda_1 &amp; 0 \\ 0 &amp; \lambda_2 \end{bmatrix}.
+\]</span></p>
+<p>Suppose we know that <span class="math inline">\(T\)</span> is diagonalizable. Fix two bases <span class="math inline">\(v_1, v_2\)</span> and <span class="math inline">\(w_1, w_2\)</span> of <span class="math inline">\(V\)</span>. Then the input space for the matrix <span class="math inline">\(A = \text{Mat}_{v_1, v_2}^{w_1, w_2}(T)\)</span> is the space of all possible coordinates (i.e.&nbsp;<span class="math inline">\(\mathbb R^2\)</span>) in the basis <span class="math inline">\(v_1, v_2\)</span>.<br>
+Meanwhile, the output space for the matrix <span class="math inline">\(A\)</span> is the space of all possible coordinates in the basis <span class="math inline">\(w_1, w_2\)</span>.</p>
+<p>Then an equation of the form <span class="math display">\[
+A = UDV,
+\]</span> or more explicitly <span class="math display">\[
+\text{Mat}_{v_1, v_2}^{w_1, w_2}(T) = U \cdot \text{Mat}_{e_1,e_2}^{e_1,e_2}(T) \cdot V
+\]</span> would suggest that <span class="math inline">\(V\)</span> is a change of basis matrix from the basis <span class="math inline">\(v_1, v_2\)</span> to the basis <span class="math inline">\(e_1, e_2\)</span> and <span class="math inline">\(U\)</span> is a change of basis matrix from the basis <span class="math inline">\(e_1, e_2\)</span> to the basis <span class="math inline">\(w_1, w_2\)</span>.</p>
+<p>Let me review the idea of change of basis matrices. Suppose <span class="math inline">\(U\)</span> is a change of basis matrix from the basis <span class="math inline">\((e_1,e_2)\)</span> to the basis <span class="math inline">\((w_1,w_2)\)</span> of the abstract vector space <span class="math inline">\(V\)</span>. Then we should be able to deduce how <span class="math inline">\(U\)</span> looks based on the one property it should satisfy, which is the following. <span class="math inline">\(U\)</span> should take the components of some abstract vector <span class="math inline">\(v \in V\)</span> in the first basis <span class="math inline">\(e_1, e_2\)</span>, and rewrite such coordinates with respect to the second basis <span class="math inline">\(w_1, w_2\)</span>. In particular, this should work for the special cases of <span class="math inline">\(v = e_1\)</span> and <span class="math inline">\(v = e_2\)</span>.</p>
+<p>Suppose <span class="math inline">\(e_1 = U_{11}w_1 + U_{21}w_2\)</span> and that <span class="math inline">\(e_2 = U_{12}w_1 + U_{22}w_2\)</span> for some real numbers <span class="math inline">\(U_{11}, U_{21}, U_{12}, U_{22},\)</span> which are suggestively written. Then the desired property of a change of basis matrix says that <span class="math display">\[
+U (e_1)_{e_1,e_2} = U \begin{bmatrix} 1 \\ 0 \end{bmatrix} = (e_1)_{w_1,w_2} = \begin{bmatrix} U_{11} \\ U_{21} \end{bmatrix}
+\]</span> and <span class="math display">\[
+U (e_2)_{e_1,e_2} = U \begin{bmatrix} 0 \\ 1 \end{bmatrix} = (e_2)_{w_1,w_2} = \begin{bmatrix} U_{12} \\ U_{22} \end{bmatrix}.
+\]</span> This actually determines that <span class="math display">\[ U = \begin{bmatrix} (e_1)_{w_1,w_2} &amp; (e_2)_{w_1, w_2} \end{bmatrix}
+= \begin{bmatrix} U_{11} &amp; U_{12} \\ U_{21} &amp; U_{22} \end{bmatrix}.
+\]</span></p>
+<p>Let that conclude my discussion on change of basis matrices, and let me now rewrite an earlier equation as <span class="math display">\[
+\text{Mat}_{v_1, v_2}^{w_1, w_2}(T) = \begin{bmatrix} (e_1)_{w_1,w_2} &amp; (e_2)_{w_1, w_2} \end{bmatrix} \cdot \text{Mat}_{e_1,e_2}^{e_1,e_2}(T) \cdot \begin{bmatrix} (v_1)_{e_1,e_2} &amp; (v_2)_{e_1, e_2} \end{bmatrix}
+\]</span> From here, we see that, if <span class="math inline">\(T: V \to V\)</span> is diagonalizable, meaning that there exists a basis of <span class="math inline">\(V\)</span> consisting of eigenvectors of <span class="math inline">\(T\)</span>, then any matrix of <span class="math inline">\(T\)</span> in arbitrary bases <span class="math inline">\(v_1, v_2\)</span> and <span class="math inline">\(w_1, w_2\)</span> will also be diagonalizable in the sense of matrices. Why? Because change of basis matrices always exist, and then we just multiply the diagonal matrix on either side accordingly to get equality with <span class="math inline">\(A\)</span>.</p>
+<p>Now let me approach things from a different perspective to learn about multiplication operators. I want to learn about the folklore that the Fourier transform turns a differentiation operator into a multiplication operator, and to see how this connects to the discussion above of diagonalization.</p>
+<p>Consider the following watered down statement of the spectral theorem, based on the rigorous version found at the beginning of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. Let <span class="math inline">\(T_A: V \to V\)</span> be self-adjoint. Then there is a measure space <span class="math inline">\(\Omega\)</span>, a unitary map <span class="math inline">\(U: V \to L^2(\Omega)\)</span> and a real-valued measurable function <span class="math inline">\(f: \Omega \to
+\mathbb R\)</span> such that <span class="math display">\[
+(U T_A U^*) \phi = f \phi =: \mathcal{M}_f (\phi)
+\]</span> for all <span class="math inline">\(\phi \in L^2(\Omega)\)</span>. In other words, conjugation of <span class="math inline">\(T_A\)</span> by <span class="math inline">\(U\)</span> results in a multiplication operator, i.e., <span class="math inline">\(\mathcal{M}_f\)</span>.</p>
+<p>As a side note, I have used the notation <span class="math inline">\(T_A\)</span> because I want the matrix of <span class="math inline">\(T_A\)</span> in the canonical basis to be the matrix <span class="math inline">\(A\)</span>, when <span class="math inline">\(V = \mathbb R^n\)</span>.</p>
+<p>I can already say that the equation <span class="math inline">\((U T_A U^*) \phi = \mathcal{M}_f(\phi)\)</span> reminds me of the equation <span class="math inline">\(UAU^T = D\)</span>, which comes from <span class="math inline">\(A = U^TDU\)</span>, a variant of what I saw earlier, which would suggest that a diagonal matrix <span class="math inline">\(D\)</span> would correspond to the multiplication operator <span class="math inline">\(\mathcal{M}_f\)</span> in some way. It also suggests that the unitary operator <span class="math inline">\(U: V \to L^2(\Omega)\)</span> corresponds to a change of basis: the input basis could be the usual basis of <span class="math inline">\(V\)</span> (if there is one), and the output basis would be the canonical basis of the <span class="math inline">\(L^2\)</span> space given by the theorem, which (I hope) would be something like a basis of characters in the sense of Fourier analysis. But all of this is what I want to find out.</p>
+<p>To move this discussion into the setting of diagonalization of finite dimensional operators, as I began with in this post, let me try to understand the following section from <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Quote">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Quote
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Theorem generalizes the well-known fact from linear algebra that every Hermitian matrix <span class="math inline">\(H = H^* \in \mathbb C^{n \times n}\)</span> can be diagonalized and admits an orthonornal eigenbasis <span class="math inline">\((\phi_i)_{i=1}^n\)</span> so that <span class="math inline">\(H(\phi_i) = \lambda_i \phi_i\)</span> for suitable (real) eigenvalues <span class="math inline">\(\lambda_i \in \mathbb R\)</span>. In this case, the spectral projection valued measure representation of <span class="math inline">\(H\)</span> is simply given by <span class="math display">\[
+H = \sum \lambda_i |\phi_i \rangle \langle \phi_i |.
+\]</span> The map <span class="math inline">\(U\)</span> can be defined by linearly extending <span class="math inline">\(\mathbb C^n \ni \phi_i \mapsto \chi_{\{ \lambda_i \}} \in L^2(\Omega, \mathcal{B}(\Omega), \mu)\)</span>, where <span class="math inline">\(\Omega = \{\lambda_i: i = 1, \cdots, n \}\)</span> and where <span class="math inline">\(\mu\)</span> denotes the counting measure on <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+</div>
+<p>In the case of the quote, the map <span class="math display">\[
+f: \Omega = \{\lambda_i : i \in [n]\} \to \mathbb R
+\]</span> in the spectral theorem is given by <span class="math display">\[
+f(x) = x, \text{ i.e., } f = id.
+\]</span> Note also that when <span class="math inline">\(\Omega = \{\lambda_i : i \in [n]\}\)</span>, it follows that <span class="math inline">\(L^2(\Omega) = \mathbb C^{\Omega} = \mathbb C^n\)</span>, assuming the functions in <span class="math inline">\(L^2\)</span> are complex valued.</p>
+<p>Let <span class="math inline">\(T_H: V \to V\)</span> be a linear operator from a complex vector space <span class="math inline">\(V\)</span> of dimension <span class="math inline">\(n\)</span>, and let <span class="math inline">\(H\)</span> be the matrix of <span class="math inline">\(T_H\)</span> in the sense that <span class="math display">\[
+\text{Mat}_{\bf{e}_1, \cdots, \bf{e}_n}^{\bf{e}_1, \cdots, \bf{e}_n}(T_H) = H,
+\]</span> where the boldface list <span class="math inline">\(\bf{e}_1, \cdots, \bf{e}_n\)</span> is the standard basis of <span class="math inline">\(\mathbb C^n\)</span>. And assume <span class="math inline">\(H\)</span> is Hermitian, as in the quote, with eigenbasis <span class="math inline">\((\phi_i)_{i=1}^n\)</span> and correponding eigenvalues <span class="math inline">\((\lambda_i)_{i=1}^n\)</span>. The statement of the spectral theorem, taking into account <span class="math inline">\(f\)</span> and <span class="math inline">\(U\)</span> from above, reads as follows: <span id="eq-diag"><span class="math display">\[
+(U T_H U^*) \phi = \mathcal{M}_{id} \phi \text{ pointwise on }\Omega
+\tag{1}\]</span></span> for all <span class="math inline">\(\phi \in L^2(\Omega) = \mathbb C^n\)</span>.</p>
+<p>Let me try to interpret <a href="#eq-diag" class="quarto-xref">Equation&nbsp;1</a> in terms of diagonal matrices. So <span class="math inline">\(\phi\)</span> in an assignment of a complex number to each eigenvalue <span class="math inline">\(\lambda_i\)</span>, for <span class="math inline">\(i \in [n]\)</span>. Thus, <span class="math display">\[
+[\phi(\lambda_i), \cdots, \phi(\lambda_n)]^T \in \mathbb C^n.
+\]</span> Next, <span class="math inline">\(\mathcal{M}_{id} \phi\)</span> is a function from <span class="math inline">\(\Omega \to \mathbb C\)</span>. So there are <span class="math inline">\(n = |\Omega|\)</span> possible inputs, and the corresponding outputs, in vector form, are <span class="math display">\[
+[(\mathcal{M}_{id}\phi)(\lambda_1), \cdots, (\mathcal{M}_{id}\phi)(\lambda_n) ]^T = [\lambda_1 \phi(\lambda_1), \cdots, \lambda_n \phi(\lambda_n) ]^T \in \mathbb C.
+\]</span> Thus, <span class="math display">\[
+[(\mathcal{M}_{id}\phi)(\lambda_1), \cdots, (\mathcal{M}_{id}\phi)(\lambda_n) ]^T = \begin{bmatrix} \lambda_1 &amp; \cdots &amp; 0 \\
+\vdots &amp; \ddots &amp; \vdots \\
+0 &amp; \cdots &amp; \lambda_n
+\end{bmatrix} [\phi(\lambda_i), \cdots, \phi(\lambda_n)]^T.
+\]</span> This shows how the multiplication operator <span class="math inline">\(\mathcal{M}_{id}\)</span> corresponds to a diagonal matrix with the eigenvalues on the diagonal. In other words, <a href="#eq-diag" class="quarto-xref">Equation&nbsp;1</a> corresponds to the equation <span class="math inline">\(UHU^* = D\)</span> in matrix langauge, where <span class="math inline">\(H\)</span> may not be diaganal with respect to the standard basis <span class="math inline">\(\bf{e}_1, \cdots, \bf{e}_n\)</span>. Continuing the change of basis analogy, it would be that <span class="math inline">\(U^*\)</span> is a change of basis from the basis <span class="math inline">\((\chi_{\{\lambda_i\}})_{i=1}^n\)</span> of <span class="math inline">\(L^2(\Omega)\)</span> to the basis <span class="math inline">\(\bf{e}_1, \cdots, \bf{e}_n\)</span> of <span class="math inline">\(\mathbb C^n\)</span>, and <span class="math inline">\(U\)</span> is a change of basis from the standard basis of <span class="math inline">\(\mathbb C^n\)</span> to the eigenvalue point functions.</p>
+<p>If diagonalizing the operator <span class="math inline">\(T_H\)</span> means conjugating by a unitary map <span class="math inline">\(U\)</span>, then I think via the above paragraphs, I have understood diagonalization. But I think it also instructive to check that I actually chose the correct <span class="math inline">\(f\)</span> in the spectral theorem (<span class="math inline">\(f = id\)</span>) by verifying the eigenvalue equations in the following way.</p>
+<p>Since <span class="math inline">\(UT_HU^* = \mathcal{M}_{id}\)</span>, it stands to reason that <span class="math inline">\(T_H = U^* \mathcal{M}_{id} U\)</span>. Let’s check this on the eigenbasis, where we know the left hand side will read: <span class="math display">\[
+T_H \phi_i = \lambda_i \phi_i.
+\]</span> On the right hand side, fix <span class="math inline">\(i=1\)</span>. We compute <span class="math display">\[\begin{align*}
+(U^* \mathcal{M}_{id} U )(\phi_1) &amp;= U^* (\mathcal{M}_{id}(U(\phi_1))) \\
+&amp;= U^*(id(\cdot) \chi_{\{\lambda_1\}}(\cdot) )\\
+&amp;= \lambda_1 \phi_1.
+\end{align*}\]</span> The last equality is least clear, so let me delve further into it. Note that <span class="math inline">\(U(\lambda_1 \phi_1) = \lambda_1 U(\phi_1) = \lambda_1 \chi_{\{\lambda_1 \}}(\cdot) \in L^2(\Omega)\)</span> by linearity. But by definition of the indicator function <span class="math inline">\(\chi_{\{\lambda_1 \}}(\cdot)\)</span>, it turns out that <span class="math inline">\(\lambda_i \mapsto \lambda_i \chi_{\{\lambda_1 \}}(\lambda_i)\)</span>, or equivalently, the function <span class="math inline">\(id(\cdot) \chi_{\{\lambda_1\}}(\cdot) \in L^2(\Omega)\)</span>, is actually equal to the function <span class="math inline">\(\lambda_1 \chi_{\{\lambda_1 \}}(\cdot)\)</span>. That is, <span class="math display">\[
+id(\cdot) \chi_{\{\lambda_1\}}(\cdot) = \lambda_1 \chi_{\{\lambda_1 \}}(\cdot).
+\]</span> Thus, it makes sense to write <span class="math inline">\(U^*(id(\cdot) \chi_{\{\lambda_1\}}(\cdot)) = \lambda_1 \phi_1\)</span>. The upshot is that this then extends to when <span class="math inline">\(i \ne 1\)</span>: <span class="math inline">\(U^*(id(\cdot) \chi_{\{\lambda_i\}}(\cdot)) = \lambda_i \phi_i\)</span>. This confirms that <span class="math display">\[
+T_H \phi_i = (U^* \mathcal{M}_{id} U) \phi_i
+\]</span> for all <span class="math inline">\(i \in [n]\)</span>. Then we get equality on all of <span class="math inline">\(V\)</span> by unique linear extension.</p>
+</section>
+<section id="fourier-transform-as-a-diagonalizer" class="level4">
+<h4 class="anchored" data-anchor-id="fourier-transform-as-a-diagonalizer">Fourier Transform as a diagonalizer</h4>
+<p>Let me sketch out what I’m thinking. There is some function space (or a dense subset of one), call it <span class="math inline">\(C^1(\mathbb R/\mathbb Z)\)</span>, on which the differentiation operator <span class="math inline">\(-i \frac{d}{dt}\)</span> is self-adjoint. Also, if <span class="math inline">\(e_n(x) = e^{-2\pi i n x}\)</span> are characters, and the Fourier transform of <span class="math inline">\(f \in C^1(\mathbb R/\mathbb Z)\)</span> is given by <span class="math display">\[
+\mathcal{F}(f)(n) = \langle f, e_n \rangle_{L^2}
+\]</span> such that <span class="math inline">\(\mathcal{F}f : \mathbb Z \to \mathbb C\)</span>, or equivalently, <span class="math inline">\(\mathcal{F}f \in \mathbb C^{\mathbb Z}\)</span> is an absolutely summable sequence, then <span class="math display">\[
+(\mathcal{F} \circ -i\frac{d}{dt}) f (n) = -i \cdot i n (\mathcal{F}f)(n) = \mathcal{M}_{id}(n) (\mathcal{F}f)(n)
+\]</span> for all integers <span class="math inline">\(n\)</span>. If we let <span class="math inline">\(A = -i \frac{d}{dt}\)</span>, then this is the statement that <span class="math display">\[
+\mathcal{F} \circ A = \mathcal{M}_{id} \circ \mathcal{F},
+\]</span> or that <span class="math display">\[
+\mathcal{F} \circ A \circ \mathcal{F}^* = \mathcal{M}_{id}.
+\]</span> Thus, we see that the fourier transform diagonalizes the momentum operator <span class="math inline">\(A\)</span>. We can also see that the Fourier transform corresponds to the change of basis matrix <span class="math inline">\(U\)</span> from the beginning of the post, at least positionally. In this case, I think the Fourier transform maps the basis <span class="math inline">\((e_n)_{n \in \mathbb N}\)</span> of characters to the standard basis of <span class="math inline">\(\mathbb C^{\mathbb N}\)</span> (elements with 1 in the ith position, 0 everywhere else). Indeed, <span class="math display">\[
+(\mathcal{F}e_i)(n) = \langle e_i, e_n \rangle = \delta_{i}(n).
+\]</span> The fact that the list of characters <span class="math inline">\((e_n(\cdot))\)</span> is a basis of, for example, <span class="math inline">\(L^2(\mathbb R/\mathbb Z)\)</span>, is the Fourier theorem in Tao’s Analysis 2 book <span class="citation" data-cites="TaoAna2">Tao (<a href="#ref-TaoAna2" role="doc-biblioref">2006</a>)</span>.</p>
+</section>
+</section>
 <section id="january-16-2026" class="level3">
 <h3 class="anchored" data-anchor-id="january-16-2026">January 16, 2026</h3>
 <p>Let <span class="math inline">\(x,y,v,w \in B_n\)</span> such that <span class="math inline">\((x,y) \in E_n^1\)</span> and <span class="math inline">\((v,w) \in E_n^1\)</span>, and so that these are distinct edges. As in section 9 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>, for a configuration <span class="math inline">\(U \in U(B_n)\)</span> drawn from the product Haar measure, define <span class="math inline">\(V(x,y) = G_U(x)U(x,y)G_U(y)^*\)</span> and <span class="math inline">\(V(v,w) = G_U(v)U(v,w)G_U(w)^*\)</span>.</p>
@@ -361,10 +476,10 @@ G_U': U(B_n) \to U_0(B_n),
 <p>where as in Chatterjee, we wrote <span class="math inline">\(\text{Haar} = d\sigma\)</span>, for compactness of notation. By the definition of conditional expectation, we have that</p>
 <p><span id="eq-1"><span class="math display">\[
 \mathbb E [ f(V_i) g(V_j) ] = \mathbb E [ \mathbb E[ f(V_i) g(V_j) \mid U_0(B_n) ]]
-\tag{1}\]</span></span></p>
+\tag{2}\]</span></span></p>
 <p>Indeed, <span class="math inline">\(Z(\omega) = \mathbb E[ f(V_i) g(V_j) \mid U_0(B_n) ] (\omega)\)</span> is the almost surely unique random variable such that <span class="math display">\[\begin{equation}
 \mathbb E[ 1_B( f(V_i) g(V_j) )] = \mathbb E[ 1_B( Z(\omega) )]
-\end{equation}\]</span> for all <span class="math inline">\(B \in \sigma(U_0(B_n))\)</span>, the sigma algebra generated by <span class="math inline">\(U_0(B_n)\)</span>, viewed as a collection of random variables <span class="math inline">\((U_e)_{e \in E_n^0}\)</span> on the product space <span class="math inline">\(U(B_n)\)</span>. Of course, <span class="math inline">\(U(B_n) \in \sigma(U_0(B_n))\)</span>, so we get <a href="#eq-1" class="quarto-xref">Equation&nbsp;1</a>.</p>
+\end{equation}\]</span> for all <span class="math inline">\(B \in \sigma(U_0(B_n))\)</span>, the sigma algebra generated by <span class="math inline">\(U_0(B_n)\)</span>, viewed as a collection of random variables <span class="math inline">\((U_e)_{e \in E_n^0}\)</span> on the product space <span class="math inline">\(U(B_n)\)</span>. Of course, <span class="math inline">\(U(B_n) \in \sigma(U_0(B_n))\)</span>, so we get <a href="#eq-1" class="quarto-xref">Equation&nbsp;2</a>.</p>
 <p>Next, consider the following lemma from Prof.&nbsp;Eberle’s notes:</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Lemma (Eberle)">
 <div class="callout-header d-flex align-content-center">
@@ -455,8 +570,14 @@ Q_{n1} x_1x_n &amp;+&amp; \cdots &amp;+&amp; Q_{nn} x_n^2
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
+Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
+</div>
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
+</div>
+<div id="ref-TaoAna2" class="csl-entry" role="listitem">
+Tao, Terence. 2006. <em>Analysis 2</em>. Hindustan.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
