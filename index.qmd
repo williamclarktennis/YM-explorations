@@ -9,6 +9,378 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### January 19, 2026
+
+#### Diagonalizability
+
+In this post I want to learn about 
+Fourier transforms as coordinate changes. It
+is also often said that the Fourier transform
+diagonalizes operators, so that is
+why I have titled this section accordingly. 
+
+Let $A$ be a two by two real matrix. 
+Suppose that there exist an orthonormal matrix
+$U \in O(2)$ and a diagonal matrix $D = \begin{bmatrix} \lambda_1 & 0 \\
+0 & \lambda_2 \end{bmatrix} \in \mathbb R^{2 \times 2},$
+such that 
+$A = UDU^T.$
+**Then the $i$th column of $U$ is an eigenvector 
+of $A$ with corresponding eigenvalue $\lambda_i$.**
+Recall that a non-zero column vector $x = [x_1, x_2]^T \in \mathbb R^{2}$ 
+is called an eigenvector of $A$ with corresponding 
+eigenvalue $\lambda \in \mathbb R$ if 
+$$Ax = \lambda x.$$
+Here is how to see that $U_{\cdot, i}$ satisfies 
+$A U_{\cdot, i} = \lambda_i U_{\cdot, i}$.
+Let $i = 1$. 
+We compute
+\begin{align*}
+(UDU^T)(U_{\cdot,1}) &= (UD) \begin{bmatrix}
+                              1 \\ 0 \end{bmatrix} && \text{orthonormality}\\
+                     &= U \begin{bmatrix}
+                              \lambda_1 \\ 0 \end{bmatrix} \\
+                     &= \lambda_1 U_{\cdot, 1}.
+\end{align*}
+A similar computation follows for $i = 2$.
+In conclusion, when $A = UDU^T$ for an orthonormal matrix $U$ (used orthonormality in first step),
+then the columns of $U$ are eigenvectors of $A$.
+
+Let $T: V \to V$ be a linear operator 
+on an abstract two dimensional 
+vector space $V$ over the field $\mathbb R$. 
+Let $v_1, v_2$ and $w_1, w_2$ be two bases of 
+$V$.
+Suppose 
+$$ 
+\text{Mat}_{v_1, v_2}^{w_1, w_2}(T) = A,
+$$
+which means that 
+$T(v_1) = A_{1,1} w_1 + A_{2,1} w_2$
+and 
+$T(v_2) = A_{1,2} w_1 + A_{2,2} w_2$. 
+In other words, the first column of $A$ 
+holds the components of the abstract 
+vector $T(v_1)$ in the basis $w_1,w_2$, 
+and the second column of $A$ holds the 
+components of the abstract vector $T(v_2)$ 
+in the basis $w_1, w_2$. This could be written 
+in the language of coordinate functions
+for manifolds, but let me not go there. 
+One more way to visualize $\text{Mat}_{v_1, v_2}^{w_1, w_2}(T) = A$
+is via
+$$
+A = \begin{bmatrix}
+(Tv_1)_{w_1,w_2} & (Tv_2)_{w_1,w_2}
+\end{bmatrix}.
+$$
+
+We say that 
+the operator $T$ is diagonalizable if there exists
+a basis $e_1, e_2$ of $V$ 
+such that 
+$e_1, e_2$ are eigenvectors of $T$: 
+$Te_1 = \lambda_1 e_1$ and $T e_2 = \lambda_2 e_2$.
+Then we see that 
+$$
+\text{Mat}_{e_1,e_2}^{e_1,e_2}(T) = \begin{bmatrix} 
+(Te_1)_{e_1,e_2} & (Te_2)_{e_1, e_2} \end{bmatrix} 
+= \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{bmatrix}.
+$$
+
+Suppose we know that $T$ is diagonalizable. 
+Fix two bases 
+$v_1, v_2$ and $w_1, w_2$ of $V$. 
+Then the input space for the matrix 
+$A = \text{Mat}_{v_1, v_2}^{w_1, w_2}(T)$
+is the space of all possible
+coordinates (i.e. $\mathbb R^2$) in the basis $v_1, v_2$.  
+Meanwhile, the output space for the matrix $A$ 
+is the space of all possible 
+coordinates in the basis $w_1, w_2$. 
+
+Then an equation of the form
+$$
+A = UDV,
+$$
+or more explicitly 
+$$
+\text{Mat}_{v_1, v_2}^{w_1, w_2}(T) = U \cdot \text{Mat}_{e_1,e_2}^{e_1,e_2}(T) \cdot V
+$$
+would suggest that 
+$V$ is a change of basis matrix
+from the basis $v_1, v_2$ to the basis $e_1, e_2$
+and $U$ is a change of basis
+matrix from the basis $e_1, e_2$ to the basis 
+$w_1, w_2$. 
+
+Let me review the idea of change of basis matrices. 
+Suppose $U$ is a change of basis 
+matrix from the basis $(e_1,e_2)$ to the basis 
+$(w_1,w_2)$ of the abstract vector space $V$. 
+Then we should be able to deduce how $U$ looks based on 
+the one property it should satisfy, which is the following. 
+$U$ should take the components of some abstract
+vector $v \in V$ in the first basis $e_1, e_2$, and 
+rewrite such coordinates with respect to the second basis
+$w_1, w_2$. 
+In particular, this should work for the special 
+cases of $v = e_1$ and $v = e_2$. 
+
+Suppose $e_1 = U_{11}w_1 + U_{21}w_2$ and that 
+$e_2 = U_{12}w_1 + U_{22}w_2$ for some real numbers 
+$U_{11}, U_{21}, U_{12}, U_{22},$ which are suggestively written. 
+Then the desired property of a change of basis 
+matrix says that 
+$$
+U (e_1)_{e_1,e_2} = U \begin{bmatrix} 1 \\ 0 \end{bmatrix} = (e_1)_{w_1,w_2} = \begin{bmatrix} U_{11} \\ U_{21} \end{bmatrix}
+$$
+and 
+$$
+U (e_2)_{e_1,e_2} = U \begin{bmatrix} 0 \\ 1 \end{bmatrix} = (e_2)_{w_1,w_2} = \begin{bmatrix} U_{12} \\ U_{22} \end{bmatrix}.
+$$
+This actually determines that 
+$$ U = \begin{bmatrix} (e_1)_{w_1,w_2} & (e_2)_{w_1, w_2} \end{bmatrix} 
+= \begin{bmatrix} U_{11} & U_{12} \\ U_{21} & U_{22} \end{bmatrix}.
+$$
+
+Let that conclude my discussion on change of basis matrices, 
+and let me now rewrite an earlier equation as
+$$
+\text{Mat}_{v_1, v_2}^{w_1, w_2}(T) = \begin{bmatrix} (e_1)_{w_1,w_2} & (e_2)_{w_1, w_2} \end{bmatrix} \cdot \text{Mat}_{e_1,e_2}^{e_1,e_2}(T) \cdot \begin{bmatrix} (v_1)_{e_1,e_2} & (v_2)_{e_1, e_2} \end{bmatrix}
+$$
+From here, we see that, if $T: V \to V$ is diagonalizable, meaning that there exists 
+a basis of $V$ consisting of eigenvectors of $T$, then 
+any matrix of $T$ in arbitrary bases $v_1, v_2$ and $w_1, w_2$ will
+also be diagonalizable 
+in the sense of matrices. Why? Because change of basis
+matrices always exist, and then we just 
+multiply the diagonal matrix on either side accordingly 
+to get equality with $A$.
+
+Now let me approach things from a different perspective to 
+learn about multiplication operators. I want to learn about
+the folklore that the Fourier 
+transform turns a differentiation operator
+into a multiplication operator, and to see how
+this connects to the discussion 
+above of diagonalization. 
+
+Consider the following watered down statement of the spectral theorem, 
+based on the rigorous version found at the beginning of @BrenneckeCQFT. 
+Let $T_A: V \to V$ be self-adjoint. Then there is a measure space
+$\Omega$, a unitary map $U: V \to L^2(\Omega)$ 
+and a real-valued measurable function $f: \Omega \to 
+\mathbb R$ such that 
+$$
+(U T_A U^*) \phi = f \phi =: \mathcal{M}_f (\phi)
+$$
+for all $\phi \in L^2(\Omega)$. 
+In other words, conjugation of $T_A$ by $U$ results in 
+a multiplication operator, i.e., $\mathcal{M}_f$.
+
+As a side note, I have used the notation $T_A$ 
+because I want the matrix of $T_A$ in the canonical 
+basis to be the matrix $A$, when $V = \mathbb R^n$. 
+
+I can already say that the equation 
+$(U T_A U^*) \phi = \mathcal{M}_f(\phi)$ reminds me of the equation
+$UAU^T = D$, which comes from $A = U^TDU$, a variant of what I saw earlier, which would suggest that a diagonal matrix $D$ would
+correspond to the multiplication operator $\mathcal{M}_f$ in some way. 
+It also suggests that the unitary operator $U: V \to L^2(\Omega)$ corresponds
+to a change of basis: the input basis could be the usual basis
+of $V$ (if there is one), and the output basis would
+be the canonical basis of the $L^2$ space given by the theorem, 
+which (I hope) would be something 
+like a basis of characters in the sense of Fourier analysis. 
+But all of this is what I want to find out.
+
+To move this discussion into the 
+setting of diagonalization of finite dimensional operators, as I began 
+with in this post, 
+let me try to understand the following section from 
+@BrenneckeCQFT: 
+
+::: {.callout-note title="Quote"}
+The Theorem generalizes the well-known fact from 
+linear algebra that every Hermitian matrix $H = H^* \in \mathbb C^{n \times n}$
+can be diagonalized and admits an orthonornal eigenbasis $(\phi_i)_{i=1}^n$ so that
+$H(\phi_i) = \lambda_i \phi_i$ for suitable 
+(real) eigenvalues $\lambda_i \in \mathbb R$. 
+In this case, the spectral projection valued measure representation
+of $H$ is simply given by
+$$
+H = \sum \lambda_i |\phi_i \rangle \langle \phi_i |.
+$$
+The map $U$ can be defined by linearly extending 
+$\mathbb C^n \ni \phi_i \mapsto \chi_{\{ \lambda_i \}} \in L^2(\Omega, \mathcal{B}(\Omega), \mu)$, 
+where $\Omega = \{\lambda_i: i = 1, \cdots, n \}$ and
+where $\mu$ denotes the counting measure on $\Omega$.
+:::
+
+In the case of the quote, the map 
+$$
+f: \Omega = \{\lambda_i : i \in [n]\} \to \mathbb R
+$$
+in the spectral theorem 
+is given by 
+$$
+f(x) = x, \text{ i.e., } f = id.
+$$
+Note also that 
+when $\Omega = \{\lambda_i : i \in [n]\}$, 
+it follows that 
+$L^2(\Omega) = \mathbb C^{\Omega} = \mathbb C^n$, assuming the functions in $L^2$ are complex
+valued. 
+
+Let $T_H: V \to V$ be a linear operator from 
+a complex vector space $V$ of dimension $n$, 
+and let $H$ be the matrix of $T_H$ in the sense 
+that 
+$$
+\text{Mat}_{\bf{e}_1, \cdots, \bf{e}_n}^{\bf{e}_1, \cdots, \bf{e}_n}(T_H) = H,
+$$
+where the boldface list $\bf{e}_1, \cdots, \bf{e}_n$ 
+is the standard basis of $\mathbb C^n$.
+And assume $H$ is Hermitian, as in the quote, with
+eigenbasis $(\phi_i)_{i=1}^n$ and correponding eigenvalues 
+$(\lambda_i)_{i=1}^n$. 
+The statement of the spectral theorem, taking into account $f$ and $U$ from above, 
+reads as follows: 
+$$
+(U T_H U^*) \phi = \mathcal{M}_{id} \phi \text{ pointwise on }\Omega
+$$ {#eq-diag}
+for all $\phi \in L^2(\Omega) = \mathbb C^n$.
+
+Let me try to interpret @eq-diag
+in terms of diagonal matrices. 
+So $\phi$ in an assignment of a complex number
+to each eigenvalue $\lambda_i$, for $i \in [n]$. 
+Thus, 
+$$
+[\phi(\lambda_i), \cdots, \phi(\lambda_n)]^T \in \mathbb C^n.
+$$
+Next, 
+$\mathcal{M}_{id} \phi$ is a function 
+from $\Omega \to \mathbb C$. 
+So there are $n = |\Omega|$ possible inputs, and the corresponding outputs, in vector form, are
+$$
+[(\mathcal{M}_{id}\phi)(\lambda_1), \cdots, (\mathcal{M}_{id}\phi)(\lambda_n) ]^T = [\lambda_1 \phi(\lambda_1), \cdots, \lambda_n \phi(\lambda_n) ]^T \in \mathbb C.
+$$
+Thus, 
+$$
+[(\mathcal{M}_{id}\phi)(\lambda_1), \cdots, (\mathcal{M}_{id}\phi)(\lambda_n) ]^T = \begin{bmatrix} \lambda_1 & \cdots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & \lambda_n
+\end{bmatrix} [\phi(\lambda_i), \cdots, \phi(\lambda_n)]^T.
+$$
+This shows how 
+the multiplication operator $\mathcal{M}_{id}$ corresponds to 
+a diagonal matrix with the eigenvalues on the diagonal.
+In other words, @eq-diag corresponds to the equation
+$UHU^* = D$ in matrix langauge, where $H$ may not be 
+diaganal with respect to the standard basis $\bf{e}_1, \cdots, \bf{e}_n$. 
+Continuing the change of basis analogy, 
+it would be that 
+$U^*$ is a change of basis from the basis 
+$(\chi_{\{\lambda_i\}})_{i=1}^n$ of $L^2(\Omega)$
+to the basis 
+$\bf{e}_1, \cdots, \bf{e}_n$ of $\mathbb C^n$, 
+and $U$ is a change of basis from the standard basis of 
+$\mathbb C^n$ to the eigenvalue point functions. 
+
+If diagonalizing the operator $T_H$ means conjugating
+by a unitary map $U$, then I think via the above paragraphs, 
+I have understood diagonalization. 
+But I think it also instructive
+to check that I actually chose the correct $f$ in the spectral theorem 
+($f = id$) by verifying the eigenvalue equations in the following way.
+
+Since $UT_HU^* = \mathcal{M}_{id}$,
+it stands to reason that 
+$T_H = U^* \mathcal{M}_{id} U$. Let's check this
+on the eigenbasis, where we know the left hand side
+will read: 
+$$
+T_H \phi_i = \lambda_i \phi_i.
+$$
+On the right hand side, fix $i=1$. We compute
+\begin{align*}
+(U^* \mathcal{M}_{id} U )(\phi_1) &= U^* (\mathcal{M}_{id}(U(\phi_1))) \\
+&= U^*(id(\cdot) \chi_{\{\lambda_1\}}(\cdot) )\\
+&= \lambda_1 \phi_1.
+\end{align*}
+The last equality is least clear, so let
+me delve further into it. 
+Note that $U(\lambda_1 \phi_1) = \lambda_1 U(\phi_1) = \lambda_1 \chi_{\{\lambda_1 \}}(\cdot) \in L^2(\Omega)$ by linearity.
+But by definition of the indicator function 
+$\chi_{\{\lambda_1 \}}(\cdot)$, it turns out that
+$\lambda_i \mapsto \lambda_i \chi_{\{\lambda_1 \}}(\lambda_i)$, 
+or equivalently, the function 
+$id(\cdot) \chi_{\{\lambda_1\}}(\cdot) \in L^2(\Omega)$, is actually
+equal to the function $\lambda_1 \chi_{\{\lambda_1 \}}(\cdot)$.
+That is, 
+$$
+id(\cdot) \chi_{\{\lambda_1\}}(\cdot) = \lambda_1 \chi_{\{\lambda_1 \}}(\cdot).
+$$
+Thus, it makes sense to write
+$U^*(id(\cdot) \chi_{\{\lambda_1\}}(\cdot)) = \lambda_1 \phi_1$. 
+The upshot is that 
+this then extends to when $i \ne 1$: 
+$U^*(id(\cdot) \chi_{\{\lambda_i\}}(\cdot)) = \lambda_i \phi_i$. 
+This confirms 
+that 
+$$
+T_H \phi_i = (U^* \mathcal{M}_{id} U) \phi_i
+$$
+for all $i \in [n]$.
+Then we get equality on all of $V$ by unique linear extension.
+
+#### Fourier Transform as a diagonalizer
+
+Let me sketch out what I'm thinking. 
+There is some function space (or a dense subset of one),
+call it $C^1(\mathbb R/\mathbb Z)$, 
+on which the differentiation
+operator $-i \frac{d}{dt}$ is self-adjoint. 
+Also, if $e_n(x) = e^{-2\pi i n x}$ are characters, 
+and the Fourier transform of $f \in C^1(\mathbb R/\mathbb Z)$ is 
+given by 
+$$
+\mathcal{F}(f)(n) = \langle f, e_n \rangle_{L^2}
+$$
+such that $\mathcal{F}f : \mathbb Z \to \mathbb C$, or 
+equivalently, $\mathcal{F}f \in \mathbb C^{\mathbb Z}$ is an 
+absolutely summable sequence, then 
+$$
+(\mathcal{F} \circ -i\frac{d}{dt}) f (n) = -i \cdot i n (\mathcal{F}f)(n) = \mathcal{M}_{id}(n) (\mathcal{F}f)(n)
+$$
+for all integers $n$. 
+If we let $A = -i \frac{d}{dt}$, then this is 
+the statement that
+$$
+\mathcal{F} \circ A = \mathcal{M}_{id} \circ \mathcal{F},
+$$
+or that 
+$$
+\mathcal{F} \circ A \circ \mathcal{F}^* = \mathcal{M}_{id}.
+$$
+Thus, we see that the fourier transform 
+diagonalizes the momentum operator $A$.
+We can also see that the Fourier transform corresponds to 
+the change of basis matrix $U$ from the beginning of the post, at
+least positionally. In this case, I think the Fourier transform 
+maps the basis $(e_n)_{n \in \mathbb N}$ of characters
+to the standard basis of $\mathbb C^{\mathbb N}$ (elements
+with 1 in the ith position, 0 everywhere else). Indeed, 
+$$
+(\mathcal{F}e_i)(n) = \langle e_i, e_n \rangle = \delta_{i}(n).
+$$
+The fact that the list of characters $(e_n(\cdot))$ is a basis 
+of, for example, $L^2(\mathbb R/\mathbb Z)$, is the Fourier
+theorem in Tao's Analysis 2 book @TaoAna2.
+
+
 ### January 16, 2026
 
 Let $x,y,v,w \in B_n$ such that 
