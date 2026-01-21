@@ -9,6 +9,180 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### January 21, 2026
+
+:::{.callout-note title="Axial graph is a tree"}
+The underlying undirected graph of 
+the pair $(B_n, E_n^0)$ is a tree. In particular, given 
+any vertex $x \in B_n,$ there is a unique sequence of $E_n^0$ edges
+$e(x,1), \cdots, e(x,|x|_1)$ leading from the origin $0 \in B_n$ to 
+$x$.
+:::
+
+:::{.callout-note title="Definition of Axial Gauge Fixing"}
+We define 
+$G_n: U(B_n) \times B_n$ by 
+$$
+G_n(U, x) = G_n((U_e)_{e \in E_n},x) = \begin{cases}
+I & \text{if }x = 0 \\
+U_{e(x,1)}U_{e(x,2)} \cdots U_{e(x,|x|_1)} & \text{if }x \ne 0
+\end{cases}
+$$
+for all $U = (U_e)_{e \in E_n} \in U(B_n)$.
+Observe that, $G_n(U, \cdot) \in G(B_n)$
+defines a gauge transform, that is, an assignment
+of unitary matrices to vertices.
+
+Then, given $(U_e)_{e \in E_n} = U \in U(B_n)$,
+and $G_U(x)$ defined as in Section 9 of @Chatterjee2016 for all
+$x \in B_n$, we have the equality
+$G_U(x) = G_n(U, x)$
+for all $x \in B_n$. In other words, 
+$G_U$ and $G_n$ produce the same gauge transform
+for a given configuration $U$.  
+
+Fix a unitary configuration $(U_e)_{e \in E_n} = U \in U(B_n)$
+and pick a gauge transform $G \in G(B_n)$. 
+Then another configuration $V:= GU$ is defined as
+$$
+V(x,y) = G(x)U(x,y)G(y)^{-1}
+$$
+for all $(x,y) \in E_n$. In particular, 
+$V$ is a function of the configuration $U$, but this
+is not expressed in the notation $V(x,y)$.
+
+In particular, $V := G_UU$ and $V' := G_n(U, \cdot)U$ define the same
+unitary configuration: $V_e = V'_e$ for all $e \in E_n$.
+Also, for any $(x,y) \in E_n$, we note that
+$$
+V(x,y) = 
+\begin{cases}
+U_{e(x,1)} \cdots U_{e(x,|x|_1)} U(x,y) U^*_{e(y,|y|_1)} \cdots U^*_{e(y,1)} & \text{if } x \ne 0 \\
+U(x,y) U^*_{e(y,1)} & \text{if } x = 0.
+\end{cases}
+$$
+:::
+
+Take $(x,y), (v,w) \in E_n^1$ distinct and assume 
+that $x,y,w,v \ne 0$. I want to go through a proof that
+the $U(N)$-valued random variables
+$$
+V(x,y), V(v,w): \left(\prod_{e \in E_n} U(N), \bigotimes_{e \in E_n} \mathcal{B}, \prod_{e \in E_n} d\sigma(U_e) \right) \to (U(N), \mathcal{B}, d\sigma)
+$$
+on the probability space
+$$
+(\Omega, \mathcal{F}, P) := (U(B_n), \mathcal{B}^{\otimes E_n}, \prod_{e \in E_n} d\sigma_e) = \left(\prod_{e \in E_n} U(N), \bigotimes_{e \in E_n} \mathcal{B}, \prod_{e \in E_n} d\sigma(U_e) \right)
+$$
+are independent.
+Let $\Pi_{E_n^1}: U(B_n) \to \prod_{e \in E_n^1} U(N) =: U(E_n^1)$
+denote the projection onto the $E_n^1$ coordinates, meaning
+$$
+\Pi_{E_n^1}((U_e)_{e \in E_n}) = (U_e)_{e \in E_n^1}.
+$$
+
+Let $\Pi_{E_n^0}: U(B_n) \to \prod_{e \in E_n^0} U(N) =: U(E_n^0)$
+denote the projection onto the $E_n^0$ coordinates, meaning 
+$$
+\Pi_{E_n^0}((U_e)_{e \in E_n}) = (U_e)_{e \in E_n^0}.
+$$
+
+Then $\Pi_{E_n^0}$ and $\Pi_{E_n^1}$ are random variables on the probability space 
+$\Omega = U(B_n)$, and 
+$\Pi_{E_n^0}$ is $\mathcal{B}^{\otimes E_n^0}$ measurable, 
+while $\Pi_{E_n^1}$ is $\mathcal{B}^{\otimes E_n^1}$ measurable. 
+Furthermore, $\Pi_{E_n^0}$ and $\Pi_{E_n^1}$ are independent. 
+
+Recalling the definiton of $(\Omega, \mathcal{F}, P)$ above, 
+and given a real-valued $L^1$ random variable $f: \Omega = U(B_n) \to \mathbb R$, then 
+the following relations are all just definitions: 
+
+\begin{align*}
+\mathbb E_P[f] & = \int_{\Omega} f(\omega) dP (\omega) \\
+&= \int_{U(B_n)} f((U_e)_{e \in E_n}) \prod_{e \in E_n} d \sigma (U_e)
+\end{align*}
+
+By Fubini, we also have
+\begin{align*}
+\mathbb E_P[f] &= \int_{U(E_n^0)} \left( \int_{U(E_n^1)} f((U_e)_{e \in E_n}) \prod_{e \in E_n^1} d \sigma (U_e) \right) \prod_{e \in E_n^0} d \sigma (U_e) \\
+&= \int_{U(E_n^1)} \left( \int_{U(E_n^0)} f((U_e)_{e \in E_n}) \prod_{e \in E_n^0} d \sigma (U_e) \right)\prod_{e \in E_n^1} d \sigma (U_e).
+\end{align*}
+
+Using the definitions of $\Pi_{E_n^0}$ and $\Pi_{E_n^1}$, we also have
+\begin{align*}
+\mathbb E_P[f] &= \int_{U(B_n)} f(\Pi_{E_n^0}(\omega), \Pi_{E_n^1}(\omega)) dP(\omega).
+\end{align*}
+
+Since $f$ is product measurable and $\Pi_{E_n^0}$ and $\Pi_{E_n^1}$ are independent, 
+then 
+\begin{align*}
+\mathbb E_P[f \mid U(E_n^0)](\omega) &= \mathbb E_P[f(\Pi_{E_n^0}(\omega),\Pi_{E_n^1})] \\
+&= \int_{U(B_n)} f(\Pi_{E_n^0}(\omega),\Pi_{E_n^1}(\omega')) dP(\omega') \\
+&= \int_{U(B_n)} f((U_e)_{e \in E_n^0}, (U'_e)_{e \in E_n^1}) \prod_{e \in E_n} d\sigma(U'_e) \\
+&= \int_{U(E_n^0)} \left(   \int_{U(E_n^1)}  f((U_e)_{e \in E_n^0}, (U'_e)_{e \in E_n^1})   \prod_{e \in E_n^1} d\sigma(U'_e)     \right) \prod_{e \in E_n^0} d\sigma(U'_e) \\
+&= \int_{U(E_n^1)}  f((U_e)_{e \in E_n^0}, (U'_e)_{e \in E_n^1})   \prod_{e \in E_n^1} d\sigma(U'_e) \times 
+\int_{U(E_n^0)}  1   \prod_{e \in E_n^0} d\sigma(U'_e)\\
+&= \int_{U(E_n^1)}  f((U_e)_{e \in E_n^0}, (U'_e)_{e \in E_n^1})   \prod_{e \in E_n^1} d\sigma(U'_e)
+\end{align*}
+for almost all $\omega = (U_e)_{e \in E_n} \in \Omega = U(B_n)$.
+Equality number 5 above is key. It shows that conditioning
+on $E_n^0$ edges allows us to break up
+integrals into products and reduce the degrees of freedom. 
+Without conditioning, we cannot
+treat $f(U_e)_{e \in E_n}$ as a constant
+with respect to the $U(E_n^0)$ variables.
+
+:::{.callout-note title="Lemma"}
+$V(x,y)$ and $V(v,w)$ are independent.
+:::
+
+##### Proof. 
+Let $f,g: (U(N), \mathcal{B}) \to \mathbb R_{\ge 0}$ be $\mathcal{B}$-measurable.
+We want to show that 
+$$\mathbb E_P[f(V(x,y)) \times g(V(v,w))] = \mathbb E_P[f(V(x,y))] \mathbb E_P[g(V(v,w))].$$
+We begin with
+\begin{align*}
+E_P[f(V(x,y)) \times g(V(v,w))] =& E_P[E_P[f(V(x,y)) \times g(V(v,w)) \mid U(E_n^0)]]\\
+=& \int_{U(B_n)} E_P[f(V(x,y)) \times g(V(v,w)) \mid U(E_n^0)](\omega) dP(\omega) \\
+=& \int_{U(B_n)} E_P[f(G_n(U,x)U(x,y)G_n(U,y)^*) \\
+ &                   \times g(G_n(U,v)U(v,w)G_n(U,w)^*) \mid U(E_n^0)](U) \prod_{e \in E_n}d\sigma(U_e) \\
+=& \int_{U(B_n)} E_P[f(U_{e(x,1)} \cdots U_{e(x,|x|_1)} U(x,y) U_{e(y,|y|_1)}^* \cdots U_{e(y,1)}^* ) \\
+ &                   \times g(U_{e(v,1)} \cdots U_{e(v,|v|_1)} U(v,w) U_{e(w,|w|_1)}^* \cdots U_{e(w,1)}^* ) \mid U(E_n^0)](U) \prod_{e \in E_n}d\sigma(U_e) \\
+\end{align*}
+(then by independence)
+\begin{align*}
+=& \int_{U(B_n)} \bigg ( \int_{ U(E_n^1) } f(U_{e(x,1)} \cdots U_{e(x,|x|_1)} U'(x,y) U_{e(y,|y|_1)}^* \cdots U_{e(y,1)}^* ) \\
+& \times g(U_{e(v,1)} \cdots U_{e(v,|v|_1)} U'(v,w) U_{e(w,|w|_1)}^* \cdots U_{e(w,1)}^* ) \prod_{e \in E_n^1} d \sigma (U'_e) \bigg ) \prod_{e \in E_n} d\sigma(U_e)\\
+\end{align*}
+(then by Haar invariance)
+\begin{align*}
+=& \int_{U(B_n)} \bigg ( \int_{ U(E_n^1) } f( U'(x,y) ) \times g( U'(v,w) ) \prod_{e \in E_n^1} d \sigma (U'_e) \bigg ) \prod_{e \in E_n} d\sigma(U_e)\\
+\end{align*}
+(then by pulling a constant out of the integral)
+\begin{align*}
+=& \bigg ( \int_{ U(E_n^1) } f( U'(x,y) ) \times g( U'(v,w) ) \prod_{e \in E_n^1} d \sigma (U'_e) \bigg ) \times \int_{U(B_n)} 1 \prod_{e \in E_n} d\sigma(U_e)\\
+\end{align*}
+(then by Fubini)
+\begin{align*}
+=& \int_{ U(N)^2 } f( U'(x,y) ) \times g( U'(v,w) ) d \sigma (U'_{(x,y)}) d \sigma (U'_{(v,w)}) \\
+=& \int_{U(N)} f( U'(x,y) ) d\sigma(U'_{(x,y)}) \times \int_{U(N)} g( U'(v,w) ) d \sigma (U'_{(v,w)})
+\end{align*}
+(then since Haar measure is a probability measure and Fubini)
+\begin{align*}
+=& \int_{U(B_n)} f( U'(x,y) ) \prod_{e \in E_n} d\sigma(U'_e) \times \int_{U(B_n)} g( U'(v,w) ) \prod_{e \in E_n} d\sigma(U'_e)
+\end{align*}
+(then by Haar invariance)
+\begin{align*}
+=& \int_{U(B_n)} f( U_{e(x,1)}' \cdots U_{e(x,|x|_1)}' U'(x,y) U_{e(y,|y|_1)}'^* \cdots U_{e(y,1)}'^* ) \prod_{e \in E_n} d\sigma(U'_e) \\
+& \times \int_{U(B_n)} g( U_{e(v,1)}' \cdots U_{e(v,|v|_1)}' U'(v,w) U_{e(w,|w|_1)}'^* \cdots U_{e(w,1)}'^* ) \prod_{e \in E_n} d\sigma(U'_e) \\
+\end{align*}
+(and by definition of $V(x,y)$ and $V(v,w)$ )
+\begin{align*}
+=& \int_{U(B_n)} f( V(x,y) ) \prod_{e \in E_n} d\sigma(U'_e) \times \int_{U(B_n)} g( V(v,w) ) \prod_{e \in E_n} d\sigma(U'_e) \\
+=& \mathbb E_P[f(V(x,y))] \mathbb E_P[g(V(v,w))].
+\end{align*}
+
+QED
+
 ### January 19, 2026
 
 #### Diagonalizability
