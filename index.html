@@ -189,7 +189,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#january-19-2026" id="toc-january-19-2026" class="nav-link active" data-scroll-target="#january-19-2026">January 19, 2026</a></li>
+  <li><a href="#january-21-2026" id="toc-january-21-2026" class="nav-link active" data-scroll-target="#january-21-2026">January 21, 2026</a></li>
+  <li><a href="#january-19-2026" id="toc-january-19-2026" class="nav-link" data-scroll-target="#january-19-2026">January 19, 2026</a></li>
   <li><a href="#january-16-2026" id="toc-january-16-2026" class="nav-link" data-scroll-target="#january-16-2026">January 16, 2026</a></li>
   <li><a href="#january-15-2026" id="toc-january-15-2026" class="nav-link" data-scroll-target="#january-15-2026">January 15, 2026</a></li>
   <li><a href="#january-14-2026" id="toc-january-14-2026" class="nav-link" data-scroll-target="#january-14-2026">January 14, 2026</a></li>
@@ -220,6 +221,126 @@ window.Quarto = {
 </header>
 
 
+<section id="january-21-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-21-2026">January 21, 2026</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Axial graph is a tree">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Axial graph is a tree
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The underlying undirected graph of the pair <span class="math inline">\((B_n, E_n^0)\)</span> is a tree. In particular, given any vertex <span class="math inline">\(x \in B_n,\)</span> there is a unique sequence of <span class="math inline">\(E_n^0\)</span> edges <span class="math inline">\(e(x,1), \cdots, e(x,|x|_1)\)</span> leading from the origin <span class="math inline">\(0 \in B_n\)</span> to <span class="math inline">\(x\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition of Axial Gauge Fixing">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition of Axial Gauge Fixing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We define <span class="math inline">\(G_n: U(B_n) \times B_n\)</span> by <span class="math display">\[
+G_n(U, x) = G_n((U_e)_{e \in E_n},x) = \begin{cases}
+I &amp; \text{if }x = 0 \\
+U_{e(x,1)}U_{e(x,2)} \cdots U_{e(x,|x|_1)} &amp; \text{if }x \ne 0
+\end{cases}
+\]</span> for all <span class="math inline">\(U = (U_e)_{e \in E_n} \in U(B_n)\)</span>. Observe that, <span class="math inline">\(G_n(U, \cdot) \in G(B_n)\)</span> defines a gauge transform, that is, an assignment of unitary matrices to vertices.</p>
+<p>Then, given <span class="math inline">\((U_e)_{e \in E_n} = U \in U(B_n)\)</span>, and <span class="math inline">\(G_U(x)\)</span> defined as in Section 9 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> for all <span class="math inline">\(x \in B_n\)</span>, we have the equality <span class="math inline">\(G_U(x) = G_n(U, x)\)</span> for all <span class="math inline">\(x \in B_n\)</span>. In other words, <span class="math inline">\(G_U\)</span> and <span class="math inline">\(G_n\)</span> produce the same gauge transform for a given configuration <span class="math inline">\(U\)</span>.</p>
+<p>Fix a unitary configuration <span class="math inline">\((U_e)_{e \in E_n} = U \in U(B_n)\)</span> and pick a gauge transform <span class="math inline">\(G \in G(B_n)\)</span>. Then another configuration <span class="math inline">\(V:= GU\)</span> is defined as <span class="math display">\[
+V(x,y) = G(x)U(x,y)G(y)^{-1}
+\]</span> for all <span class="math inline">\((x,y) \in E_n\)</span>. In particular, <span class="math inline">\(V\)</span> is a function of the configuration <span class="math inline">\(U\)</span>, but this is not expressed in the notation <span class="math inline">\(V(x,y)\)</span>.</p>
+<p>In particular, <span class="math inline">\(V := G_UU\)</span> and <span class="math inline">\(V' := G_n(U, \cdot)U\)</span> define the same unitary configuration: <span class="math inline">\(V_e = V'_e\)</span> for all <span class="math inline">\(e \in E_n\)</span>. Also, for any <span class="math inline">\((x,y) \in E_n\)</span>, we note that <span class="math display">\[
+V(x,y) =
+\begin{cases}
+U_{e(x,1)} \cdots U_{e(x,|x|_1)} U(x,y) U^*_{e(y,|y|_1)} \cdots U^*_{e(y,1)} &amp; \text{if } x \ne 0 \\
+U(x,y) U^*_{e(y,1)} &amp; \text{if } x = 0.
+\end{cases}
+\]</span></p>
+</div>
+</div>
+<p>Take <span class="math inline">\((x,y), (v,w) \in E_n^1\)</span> distinct and assume that <span class="math inline">\(x,y,w,v \ne 0\)</span>. I want to go through a proof that the <span class="math inline">\(U(N)\)</span>-valued random variables <span class="math display">\[
+V(x,y), V(v,w): \left(\prod_{e \in E_n} U(N), \bigotimes_{e \in E_n} \mathcal{B}, \prod_{e \in E_n} d\sigma(U_e) \right) \to (U(N), \mathcal{B}, d\sigma)
+\]</span> on the probability space <span class="math display">\[
+(\Omega, \mathcal{F}, P) := (U(B_n), \mathcal{B}^{\otimes E_n}, \prod_{e \in E_n} d\sigma_e) = \left(\prod_{e \in E_n} U(N), \bigotimes_{e \in E_n} \mathcal{B}, \prod_{e \in E_n} d\sigma(U_e) \right)
+\]</span> are independent. Let <span class="math inline">\(\Pi_{E_n^1}: U(B_n) \to \prod_{e \in E_n^1} U(N) =: U(E_n^1)\)</span> denote the projection onto the <span class="math inline">\(E_n^1\)</span> coordinates, meaning <span class="math display">\[
+\Pi_{E_n^1}((U_e)_{e \in E_n}) = (U_e)_{e \in E_n^1}.
+\]</span></p>
+<p>Let <span class="math inline">\(\Pi_{E_n^0}: U(B_n) \to \prod_{e \in E_n^0} U(N) =: U(E_n^0)\)</span> denote the projection onto the <span class="math inline">\(E_n^0\)</span> coordinates, meaning <span class="math display">\[
+\Pi_{E_n^0}((U_e)_{e \in E_n}) = (U_e)_{e \in E_n^0}.
+\]</span></p>
+<p>Then <span class="math inline">\(\Pi_{E_n^0}\)</span> and <span class="math inline">\(\Pi_{E_n^1}\)</span> are random variables on the probability space <span class="math inline">\(\Omega = U(B_n)\)</span>, and <span class="math inline">\(\Pi_{E_n^0}\)</span> is <span class="math inline">\(\mathcal{B}^{\otimes E_n^0}\)</span> measurable, while <span class="math inline">\(\Pi_{E_n^1}\)</span> is <span class="math inline">\(\mathcal{B}^{\otimes E_n^1}\)</span> measurable. Furthermore, <span class="math inline">\(\Pi_{E_n^0}\)</span> and <span class="math inline">\(\Pi_{E_n^1}\)</span> are independent.</p>
+<p>Recalling the definiton of <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> above, and given a real-valued <span class="math inline">\(L^1\)</span> random variable <span class="math inline">\(f: \Omega = U(B_n) \to \mathbb R\)</span>, then the following relations are all just definitions:</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb E_P[f] &amp; = \int_{\Omega} f(\omega) dP (\omega) \\
+&amp;= \int_{U(B_n)} f((U_e)_{e \in E_n}) \prod_{e \in E_n} d \sigma (U_e)
+\end{align*}\]</span></p>
+<p>By Fubini, we also have <span class="math display">\[\begin{align*}
+\mathbb E_P[f] &amp;= \int_{U(E_n^0)} \left( \int_{U(E_n^1)} f((U_e)_{e \in E_n}) \prod_{e \in E_n^1} d \sigma (U_e) \right) \prod_{e \in E_n^0} d \sigma (U_e) \\
+&amp;= \int_{U(E_n^1)} \left( \int_{U(E_n^0)} f((U_e)_{e \in E_n}) \prod_{e \in E_n^0} d \sigma (U_e) \right)\prod_{e \in E_n^1} d \sigma (U_e).
+\end{align*}\]</span></p>
+<p>Using the definitions of <span class="math inline">\(\Pi_{E_n^0}\)</span> and <span class="math inline">\(\Pi_{E_n^1}\)</span>, we also have <span class="math display">\[\begin{align*}
+\mathbb E_P[f] &amp;= \int_{U(B_n)} f(\Pi_{E_n^0}(\omega), \Pi_{E_n^1}(\omega)) dP(\omega).
+\end{align*}\]</span></p>
+<p>Since <span class="math inline">\(f\)</span> is product measurable and <span class="math inline">\(\Pi_{E_n^0}\)</span> and <span class="math inline">\(\Pi_{E_n^1}\)</span> are independent, then <span class="math display">\[\begin{align*}
+\mathbb E_P[f \mid U(E_n^0)](\omega) &amp;= \mathbb E_P[f(\Pi_{E_n^0}(\omega),\Pi_{E_n^1})] \\
+&amp;= \int_{U(B_n)} f(\Pi_{E_n^0}(\omega),\Pi_{E_n^1}(\omega')) dP(\omega') \\
+&amp;= \int_{U(B_n)} f((U_e)_{e \in E_n^0}, (U'_e)_{e \in E_n^1}) \prod_{e \in E_n} d\sigma(U'_e) \\
+&amp;= \int_{U(E_n^0)} \left(   \int_{U(E_n^1)}  f((U_e)_{e \in E_n^0}, (U'_e)_{e \in E_n^1})   \prod_{e \in E_n^1} d\sigma(U'_e)     \right) \prod_{e \in E_n^0} d\sigma(U'_e) \\
+&amp;= \int_{U(E_n^1)}  f((U_e)_{e \in E_n^0}, (U'_e)_{e \in E_n^1})   \prod_{e \in E_n^1} d\sigma(U'_e) \times
+\int_{U(E_n^0)}  1   \prod_{e \in E_n^0} d\sigma(U'_e)\\
+&amp;= \int_{U(E_n^1)}  f((U_e)_{e \in E_n^0}, (U'_e)_{e \in E_n^1})   \prod_{e \in E_n^1} d\sigma(U'_e)
+\end{align*}\]</span> for almost all <span class="math inline">\(\omega = (U_e)_{e \in E_n} \in \Omega = U(B_n)\)</span>. Equality number 5 above is key. It shows that conditioning on <span class="math inline">\(E_n^0\)</span> edges allows us to break up integrals into products and reduce the degrees of freedom. Without conditioning, we cannot treat <span class="math inline">\(f(U_e)_{e \in E_n}\)</span> as a constant with respect to the <span class="math inline">\(U(E_n^0)\)</span> variables.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Lemma">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Lemma
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(V(x,y)\)</span> and <span class="math inline">\(V(v,w)\)</span> are independent.</p>
+</div>
+</div>
+<section id="proof." class="level5">
+<h5 class="anchored" data-anchor-id="proof.">Proof.</h5>
+<p>Let <span class="math inline">\(f,g: (U(N), \mathcal{B}) \to \mathbb R_{\ge 0}\)</span> be <span class="math inline">\(\mathcal{B}\)</span>-measurable. We want to show that <span class="math display">\[\mathbb E_P[f(V(x,y)) \times g(V(v,w))] = \mathbb E_P[f(V(x,y))] \mathbb E_P[g(V(v,w))].\]</span> We begin with <span class="math display">\[\begin{align*}
+E_P[f(V(x,y)) \times g(V(v,w))] =&amp; E_P[E_P[f(V(x,y)) \times g(V(v,w)) \mid U(E_n^0)]]\\
+=&amp; \int_{U(B_n)} E_P[f(V(x,y)) \times g(V(v,w)) \mid U(E_n^0)](\omega) dP(\omega) \\
+=&amp; \int_{U(B_n)} E_P[f(G_n(U,x)U(x,y)G_n(U,y)^*) \\
+&amp;                   \times g(G_n(U,v)U(v,w)G_n(U,w)^*) \mid U(E_n^0)](U) \prod_{e \in E_n}d\sigma(U_e) \\
+=&amp; \int_{U(B_n)} E_P[f(U_{e(x,1)} \cdots U_{e(x,|x|_1)} U(x,y) U_{e(y,|y|_1)}^* \cdots U_{e(y,1)}^* ) \\
+&amp;                   \times g(U_{e(v,1)} \cdots U_{e(v,|v|_1)} U(v,w) U_{e(w,|w|_1)}^* \cdots U_{e(w,1)}^* ) \mid U(E_n^0)](U) \prod_{e \in E_n}d\sigma(U_e) \\
+\end{align*}\]</span> (then by independence) <span class="math display">\[\begin{align*}
+=&amp; \int_{U(B_n)} \bigg ( \int_{ U(E_n^1) } f(U_{e(x,1)} \cdots U_{e(x,|x|_1)} U'(x,y) U_{e(y,|y|_1)}^* \cdots U_{e(y,1)}^* ) \\
+&amp; \times g(U_{e(v,1)} \cdots U_{e(v,|v|_1)} U'(v,w) U_{e(w,|w|_1)}^* \cdots U_{e(w,1)}^* ) \prod_{e \in E_n^1} d \sigma (U'_e) \bigg ) \prod_{e \in E_n} d\sigma(U_e)\\
+\end{align*}\]</span> (then by Haar invariance) <span class="math display">\[\begin{align*}
+=&amp; \int_{U(B_n)} \bigg ( \int_{ U(E_n^1) } f( U'(x,y) ) \times g( U'(v,w) ) \prod_{e \in E_n^1} d \sigma (U'_e) \bigg ) \prod_{e \in E_n} d\sigma(U_e)\\
+\end{align*}\]</span> (then by pulling a constant out of the integral) <span class="math display">\[\begin{align*}
+=&amp; \bigg ( \int_{ U(E_n^1) } f( U'(x,y) ) \times g( U'(v,w) ) \prod_{e \in E_n^1} d \sigma (U'_e) \bigg ) \times \int_{U(B_n)} 1 \prod_{e \in E_n} d\sigma(U_e)\\
+\end{align*}\]</span> (then by Fubini) <span class="math display">\[\begin{align*}
+=&amp; \int_{ U(N)^2 } f( U'(x,y) ) \times g( U'(v,w) ) d \sigma (U'_{(x,y)}) d \sigma (U'_{(v,w)}) \\
+=&amp; \int_{U(N)} f( U'(x,y) ) d\sigma(U'_{(x,y)}) \times \int_{U(N)} g( U'(v,w) ) d \sigma (U'_{(v,w)})
+\end{align*}\]</span> (then since Haar measure is a probability measure and Fubini) <span class="math display">\[\begin{align*}
+=&amp; \int_{U(B_n)} f( U'(x,y) ) \prod_{e \in E_n} d\sigma(U'_e) \times \int_{U(B_n)} g( U'(v,w) ) \prod_{e \in E_n} d\sigma(U'_e)
+\end{align*}\]</span> (then by Haar invariance) <span class="math display">\[\begin{align*}
+=&amp; \int_{U(B_n)} f( U_{e(x,1)}' \cdots U_{e(x,|x|_1)}' U'(x,y) U_{e(y,|y|_1)}'^* \cdots U_{e(y,1)}'^* ) \prod_{e \in E_n} d\sigma(U'_e) \\
+&amp; \times \int_{U(B_n)} g( U_{e(v,1)}' \cdots U_{e(v,|v|_1)}' U'(v,w) U_{e(w,|w|_1)}'^* \cdots U_{e(w,1)}'^* ) \prod_{e \in E_n} d\sigma(U'_e) \\
+\end{align*}\]</span> (and by definition of <span class="math inline">\(V(x,y)\)</span> and <span class="math inline">\(V(v,w)\)</span> ) <span class="math display">\[\begin{align*}
+=&amp; \int_{U(B_n)} f( V(x,y) ) \prod_{e \in E_n} d\sigma(U'_e) \times \int_{U(B_n)} g( V(v,w) ) \prod_{e \in E_n} d\sigma(U'_e) \\
+=&amp; \mathbb E_P[f(V(x,y))] \mathbb E_P[g(V(v,w))].
+\end{align*}\]</span></p>
+<p>QED</p>
+</section>
+</section>
 <section id="january-19-2026" class="level3">
 <h3 class="anchored" data-anchor-id="january-19-2026">January 19, 2026</h3>
 <section id="diagonalizability" class="level4">
