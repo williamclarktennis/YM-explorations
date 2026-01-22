@@ -9,6 +9,145 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### January 22, 2026
+
+In this post I want to learn about the spectral theorem. 
+Let me begin with a specific point of confusion 
+in @BrenneckeCQFT, which I hope I can overcome 
+using some propositions about the spectral calculus
+from the notes of my Dirichlet Forms on Graphs course. The following
+quote is a passage from @BrenneckeCQFT.
+
+"Based on the spectral theorem, let us point
+out how, in the context of quantum mechanics, observables like the
+position or the momentum of a particle are connected 
+with self-adjoint operators. Suppose that 
+$A: D_A \to \mathcal{H}$ represents some observable $\mathcal{O}$
+and that the system is in state $\psi \in \mathcal{H}$. Then, 
+based on the normalization $\lvert \psi \rvert = 1$ and 
+on the spectral decomposition (1.11) of $A$, one identifies
+$\mathcal{O}$ with a real-valued random variable (ranging 
+almost surely in the spectrum $\sigma(A) \subset \mathbb R$ of $A$)
+and the probability $\mathbb P$ that $\mathcal{O}$ takes a 
+specific value in some measurable set $\Omega \in \mathcal{B}(\mathbb R)$
+is defined as 
+$$
+\mathbb P(\mathcal{O} \in \Omega) = \int_{\Omega} \langle \psi, \chi_{d\lambda}(A) \psi \rangle
+= \langle \psi, \chi_{\Omega}(A) \psi \rangle.
+$$ {#eq-obser}
+
+Notice that the law $\Omega \mapsto \mathcal{O}_*(\mathbb P)(\Omega)
+= \mathbb P(\mathcal{O} \in \Omega)$ defines indeed 
+a Borel probability measure on $\mathbb R$" (p 12).
+
+For easy reference, 
+(1.11) of @BrenneckeCQFT says: 
+"In terms of the projection-valued 
+measure, $A: D_A \to \mathcal{H}$ has the spectral decomposition
+$$
+A = \int_{\sigma(A)} \lambda \chi_{d\lambda}(A),
+$$
+where $\sigma(A) \subset \mathbb R$ denotes the spectrum 
+of $A$."
+
+If $A$ is finite dimensional, 
+then $\sigma(A)$ just consists of a total of $\text{rank}(A)$ points, 
+and then the spectral decomposition (1.11) 
+reads
+$$
+A  = \int_{\sigma(A)} \lambda \chi_{d\lambda}(A) = \sum_{\lambda \in \sigma(A)} \lambda U^* (\chi_{\{\lambda\}}) U = \sum_{\lambda \in \sigma(A)} \lambda \langle \phi_\lambda, \cdot \rangle \phi_\lambda
+$$
+where $\phi_\lambda$ is an eigenvector associated to the eigenvalue $\lambda$.
+
+How do you use the formula $A  = \int_{\sigma(A)} \lambda \chi_{d\lambda}(A)$ 
+to compute $A v$ for some $v \in D_A$? When $A$ is finite dimensional, 
+it is 
+$Av = \sum_{\lambda \in \sigma(A)} \lambda \langle \phi_\lambda, v \rangle \phi_\lambda.$
+For the infinite dimensional case, 
+does @eq-obser provide a clue?
+
+Here's a guess: 
+$$
+A v = \int_{\sigma(A)} \lambda \langle v, \chi_{d\lambda}(A)v \rangle.
+$$
+How do I check whether or not this guess is correct?
+Well, the left hand side $Av$ is a vector 
+in the Hilbert space $\mathcal{H}$, whereas
+the right hand side is just a sum of complex numbers, 
+which is not a Hilbert space element. Thus, the guess is incorrect.
+Let me make another guess based on the 
+notion that $\chi_{d\lambda}(A)$ is a spectral projection
+valued measure. In analogy to the finite dimensional case, 
+$\chi_{d\lambda}(A)$ should project $v$ onto 
+the subspace of $\mathcal{H}$ consisting of eigenvectors
+associated to eigenvalues $\lambda \in d\lambda$, where $d\lambda$ I think
+of as a very small interval on the real line. 
+Anyways, based on this analogy, my next guess is: 
+$$
+Av = \int_{\sigma(A)} \lambda \left( \chi_{d\lambda}(A)v \right).
+$$
+Actually, this must be correct, and it does
+agree with the finite dimensional case (identifying 
+$\chi_{d\lambda}(A)v$ and $\langle \phi_\lambda, \cdot \rangle \phi_\lambda$
+from above),
+but can I make sense of the integral on the right hand
+side based on my knowledge of integration theory? 
+The issue is, given that $\chi_{\Omega}(A)v \in \mathcal{H}$ 
+for any subset $\Omega \subset \sigma(A)$, 
+then I'm looking at an infinite sum of Hilbert space 
+elements. Thus, not only is this 
+a vector-valued integral for vectors
+in a finite-dimensional space, where the integral 
+can just be treated component-wise, but 
+it is vector-valued for vectors in an 
+infinite-dimensional space.
+Time to pull out @Amann. 
+There it is defined a so called Bochner-Lebesgue 
+integral of a Banach-space-valued function $f$ over 
+a measure space $X$ in Chapter X section 2.
+There is a lot of theory there, but I think 
+what would help me in this post is to look 
+at integrals of simple functions as approximators 
+of the final integral 
+$\int_{\sigma(A)} \lambda \left( \chi_{d\lambda}(A)v \right)$.
+Indeed, the idea behind the
+definition of the Bochner integral 
+is to define the integral for simple 
+functions, then set up a notion 
+of a Cauchy sequence of these vector-valued simple functions
+(distinct from the notion that 
+is available, for say, metric spaces
+like $L^2$ with equivalence 
+classes of functions that are not vector-valued) based 
+on a seminorm defined by the integral of a simple function, 
+then to say that the Bochner integral of 
+a general function $f$, where $f$ is 
+approached by the simple functions
+$\phi_j$ in the sense of $\mu$-a.e. pointwise
+convergence, has Bochner integral defined
+by the limit $\int \phi_j$, as long as
+the $\phi_j$ are a Cauchy sequence. 
+So it is implied that it is a-priori 
+possible for $\phi_j$ to approach $f$ pointwise, 
+but for $\phi_j$ to not form a Cauchy sequence, and thus
+to face ill-definedness of $\int f$. 
+Otherwise, the Cauchy condition would be superfluous. 
+
+So to understand $\int_{\sigma(A)} \lambda \left( \chi_{d\lambda}(A)v \right)$, 
+what would be the function $f$, and what would be the simple
+functions $\phi_j$? It is not clear to me 
+how to write the integrand 
+$\lambda \left( \chi_{d\lambda}(A)v \right)$
+as an $\mathcal{H}$-valued function of the 
+variable $\lambda$ in the spectrum because 
+$\chi_{d\lambda}(A)$ is defined on subsets containing 
+$\lambda$, not $\lambda$ pointwise. But assuming
+singleton sets are measurable, then let me 
+tentatively write
+$f(\lambda) =  \left( \chi_{\{\lambda\}}(A)v \right)$. 
+
+
+
 ### January 21, 2026
 
 :::{.callout-note title="Axial graph is a tree"}
