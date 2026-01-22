@@ -11,13 +11,19 @@ bibliography: references.bib
 
 ### January 22, 2026
 
-In this post I want to learn about the spectral theorem. 
-Let me begin with a specific point of confusion 
+In this post I want to learn about the spectral theorem in the 
+context of quantum mechanics.
+
+[//]: <> (Let me begin with a specific point of confusion 
 in @BrenneckeCQFT, which I hope I can overcome 
 using some propositions about the spectral calculus
-from the notes of my Dirichlet Forms on Graphs course. The following
-quote is a passage from @BrenneckeCQFT.
+from the notes of my Dirichlet Forms on Graphs course.)
 
+[//]: <> (This is also a comment.)
+
+The following quote is a passage from @BrenneckeCQFT.
+
+:::{.callout-note title="Passage from Brennecke notes"}
 "Based on the spectral theorem, let us point
 out how, in the context of quantum mechanics, observables like the
 position or the momentum of a particle are connected 
@@ -40,8 +46,7 @@ Notice that the law $\Omega \mapsto \mathcal{O}_*(\mathbb P)(\Omega)
 = \mathbb P(\mathcal{O} \in \Omega)$ defines indeed 
 a Borel probability measure on $\mathbb R$" (p 12).
 
-For easy reference, 
-(1.11) of @BrenneckeCQFT says: 
+Also, for easy reference, (1.11) says,
 "In terms of the projection-valued 
 measure, $A: D_A \to \mathcal{H}$ has the spectral decomposition
 $$
@@ -49,6 +54,57 @@ A = \int_{\sigma(A)} \lambda \chi_{d\lambda}(A),
 $$
 where $\sigma(A) \subset \mathbb R$ denotes the spectrum 
 of $A$."
+:::
+
+#### Explanation of the probability part
+
+First, the quantum system is in state $\psi \in \mathcal{H}$. 
+We want to know the chance that
+some observable $\mathcal{O}$ takes values in 
+the subset $\Omega \subset \sigma(A)$, based on the fact
+that the system is in state $\psi$. 
+For instance, if $A$ has actual discrete eigenvalues,
+say $(\lambda_i)_{i \in [n]}$, then 
+we might want to know the chance that $\mathcal{O} = \lambda_i$ 
+for some $i$. 
+
+Well, the spectral theorem says roughly that
+the Hilbert space $\mathcal{H}$ can be decomposed
+based on the spectrum of $A$: 
+$$
+\mathcal{H} = \oplus_{\lambda \in \sigma(A)}E_\lambda
+$$
+where $E_\lambda$ is the subspace spanned by eigenvectors
+associated to $\lambda$. 
+
+When looking only at a subset $\Omega$, 
+then $H_{\Omega} := \oplus_{\lambda \in \Omega} E_\lambda$
+forms some subspace of $\mathcal{H}$. My thinking is then
+that this subspace $H_\Omega$ is the set of
+quantum states that are associated to 
+the observable $\mathcal{O}$ ranging in $\Omega$.
+
+Next, note that $\chi_\Omega(A)$ is the orthogonal projection 
+onto the subspace $H_\Omega$. 
+Let's assume the case that 
+$\psi$ is not already in the subspace $H_\Omega$. 
+Then we get the following picture.
+![Caption](./pics/IMG_0585.jpeg)
+
+Given the picture, which shows 
+an orthogonal decomposition of the vector $\psi$, 
+how do we interpret $\langle \psi , \chi_{\Omega}(A) \psi \rangle$
+as a probability?
+Note that, using $\lVert \psi \rVert = 1$, it follows that  
+$\langle \psi, \chi_\Omega(A) \psi \rangle = \cos \theta \lVert \chi_\Omega(A) \psi \rVert.$ 
+From here, it makes sense to me that
+$\psi$ being closer to the subspace $H_\Omega$, which corresponds
+to the observable $\mathcal{O}$ being more likely to take values in $\Omega$, 
+is reflected by an higher value of 
+$\langle \psi, \chi_{\Omega} \psi \rangle$, because $\theta \to 0$ in this case. 
+
+
+#### Further Ramblings about definitions
 
 If $A$ is finite dimensional, 
 then $\sigma(A)$ just consists of a total of $\text{rank}(A)$ points, 
@@ -64,9 +120,7 @@ to compute $A v$ for some $v \in D_A$? When $A$ is finite dimensional,
 it is 
 $Av = \sum_{\lambda \in \sigma(A)} \lambda \langle \phi_\lambda, v \rangle \phi_\lambda.$
 For the infinite dimensional case, 
-does @eq-obser provide a clue?
-
-Here's a guess: 
+does @eq-obser provide a clue? If so, then here's my guess: 
 $$
 A v = \int_{\sigma(A)} \lambda \langle v, \chi_{d\lambda}(A)v \rangle.
 $$
