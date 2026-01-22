@@ -189,7 +189,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#january-21-2026" id="toc-january-21-2026" class="nav-link active" data-scroll-target="#january-21-2026">January 21, 2026</a></li>
+  <li><a href="#january-22-2026" id="toc-january-22-2026" class="nav-link active" data-scroll-target="#january-22-2026">January 22, 2026</a></li>
+  <li><a href="#january-21-2026" id="toc-january-21-2026" class="nav-link" data-scroll-target="#january-21-2026">January 21, 2026</a></li>
   <li><a href="#january-19-2026" id="toc-january-19-2026" class="nav-link" data-scroll-target="#january-19-2026">January 19, 2026</a></li>
   <li><a href="#january-16-2026" id="toc-january-16-2026" class="nav-link" data-scroll-target="#january-16-2026">January 16, 2026</a></li>
   <li><a href="#january-15-2026" id="toc-january-15-2026" class="nav-link" data-scroll-target="#january-15-2026">January 15, 2026</a></li>
@@ -221,6 +222,55 @@ window.Quarto = {
 </header>
 
 
+<section id="january-22-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-22-2026">January 22, 2026</h3>
+<p>In this post I want to learn about the spectral theorem in the context of quantum mechanics.</p>
+<p>The following quote is a passage from <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Passage from Brennecke notes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Passage from Brennecke notes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Based on the spectral theorem, let us point out how, in the context of quantum mechanics, observables like the position or the momentum of a particle are connected with self-adjoint operators. Suppose that <span class="math inline">\(A: D_A \to \mathcal{H}\)</span> represents some observable <span class="math inline">\(\mathcal{O}\)</span> and that the system is in state <span class="math inline">\(\psi \in \mathcal{H}\)</span>. Then, based on the normalization <span class="math inline">\(\lvert \psi \rvert = 1\)</span> and on the spectral decomposition (1.11) of <span class="math inline">\(A\)</span>, one identifies <span class="math inline">\(\mathcal{O}\)</span> with a real-valued random variable (ranging almost surely in the spectrum <span class="math inline">\(\sigma(A) \subset \mathbb R\)</span> of <span class="math inline">\(A\)</span>) and the probability <span class="math inline">\(\mathbb P\)</span> that <span class="math inline">\(\mathcal{O}\)</span> takes a specific value in some measurable set <span class="math inline">\(\Omega \in \mathcal{B}(\mathbb R)\)</span> is defined as <span id="eq-obser"><span class="math display">\[
+\mathbb P(\mathcal{O} \in \Omega) = \int_{\Omega} \langle \psi, \chi_{d\lambda}(A) \psi \rangle
+= \langle \psi, \chi_{\Omega}(A) \psi \rangle.
+\tag{1}\]</span></span></p>
+<p>Notice that the law <span class="math inline">\(\Omega \mapsto \mathcal{O}_*(\mathbb P)(\Omega)
+= \mathbb P(\mathcal{O} \in \Omega)\)</span> defines indeed a Borel probability measure on <span class="math inline">\(\mathbb R\)</span>” (p 12).</p>
+<p>Also, for easy reference, (1.11) says, “In terms of the projection-valued measure, <span class="math inline">\(A: D_A \to \mathcal{H}\)</span> has the spectral decomposition <span class="math display">\[
+A = \int_{\sigma(A)} \lambda \chi_{d\lambda}(A),
+\]</span> where <span class="math inline">\(\sigma(A) \subset \mathbb R\)</span> denotes the spectrum of <span class="math inline">\(A\)</span>.”</p>
+</div>
+</div>
+<section id="explanation-of-the-probability-part" class="level4">
+<h4 class="anchored" data-anchor-id="explanation-of-the-probability-part">Explanation of the probability part</h4>
+<p>First, the quantum system is in state <span class="math inline">\(\psi \in \mathcal{H}\)</span>. We want to know the chance that some observable <span class="math inline">\(\mathcal{O}\)</span> takes values in the subset <span class="math inline">\(\Omega \subset \sigma(A)\)</span>, based on the fact that the system is in state <span class="math inline">\(\psi\)</span>. For instance, if <span class="math inline">\(A\)</span> has actual discrete eigenvalues, say <span class="math inline">\((\lambda_i)_{i \in [n]}\)</span>, then we might want to know the chance that <span class="math inline">\(\mathcal{O} = \lambda_i\)</span> for some <span class="math inline">\(i\)</span>.</p>
+<p>Well, the spectral theorem says roughly that the Hilbert space <span class="math inline">\(\mathcal{H}\)</span> can be decomposed based on the spectrum of <span class="math inline">\(A\)</span>: <span class="math display">\[
+\mathcal{H} = \oplus_{\lambda \in \sigma(A)}E_\lambda
+\]</span> where <span class="math inline">\(E_\lambda\)</span> is the subspace spanned by eigenvectors associated to <span class="math inline">\(\lambda\)</span>.</p>
+<p>When looking only at a subset <span class="math inline">\(\Omega\)</span>, then <span class="math inline">\(H_{\Omega} := \oplus_{\lambda \in \Omega} E_\lambda\)</span> forms some subspace of <span class="math inline">\(\mathcal{H}\)</span>. My thinking is then that this subspace <span class="math inline">\(H_\Omega\)</span> is the set of quantum states that are associated to the observable <span class="math inline">\(\mathcal{O}\)</span> ranging in <span class="math inline">\(\Omega\)</span>.</p>
+<p>Next, note that <span class="math inline">\(\chi_\Omega(A)\)</span> is the orthogonal projection onto the subspace <span class="math inline">\(H_\Omega\)</span>. Let’s assume the case that <span class="math inline">\(\psi\)</span> is not already in the subspace <span class="math inline">\(H_\Omega\)</span>. Then we get the following picture. <img src="./pics/IMG_0585.jpeg" class="img-fluid" alt="Caption"></p>
+<p>Given the picture, which shows an orthogonal decomposition of the vector <span class="math inline">\(\psi\)</span>, how do we interpret <span class="math inline">\(\langle \psi , \chi_{\Omega}(A) \psi \rangle\)</span> as a probability? Note that, using <span class="math inline">\(\lVert \psi \rVert = 1\)</span>, it follows that<br>
+<span class="math inline">\(\langle \psi, \chi_\Omega(A) \psi \rangle = \cos \theta \lVert \chi_\Omega(A) \psi \rVert.\)</span> From here, it makes sense to me that <span class="math inline">\(\psi\)</span> being closer to the subspace <span class="math inline">\(H_\Omega\)</span>, which corresponds to the observable <span class="math inline">\(\mathcal{O}\)</span> being more likely to take values in <span class="math inline">\(\Omega\)</span>, is reflected by an higher value of <span class="math inline">\(\langle \psi, \chi_{\Omega} \psi \rangle\)</span>, because <span class="math inline">\(\theta \to 0\)</span> in this case.</p>
+</section>
+<section id="further-ramblings-about-definitions" class="level4">
+<h4 class="anchored" data-anchor-id="further-ramblings-about-definitions">Further Ramblings about definitions</h4>
+<p>If <span class="math inline">\(A\)</span> is finite dimensional, then <span class="math inline">\(\sigma(A)\)</span> just consists of a total of <span class="math inline">\(\text{rank}(A)\)</span> points, and then the spectral decomposition (1.11) reads <span class="math display">\[
+A  = \int_{\sigma(A)} \lambda \chi_{d\lambda}(A) = \sum_{\lambda \in \sigma(A)} \lambda U^* (\chi_{\{\lambda\}}) U = \sum_{\lambda \in \sigma(A)} \lambda \langle \phi_\lambda, \cdot \rangle \phi_\lambda
+\]</span> where <span class="math inline">\(\phi_\lambda\)</span> is an eigenvector associated to the eigenvalue <span class="math inline">\(\lambda\)</span>.</p>
+<p>How do you use the formula <span class="math inline">\(A  = \int_{\sigma(A)} \lambda \chi_{d\lambda}(A)\)</span> to compute <span class="math inline">\(A v\)</span> for some <span class="math inline">\(v \in D_A\)</span>? When <span class="math inline">\(A\)</span> is finite dimensional, it is <span class="math inline">\(Av = \sum_{\lambda \in \sigma(A)} \lambda \langle \phi_\lambda, v \rangle \phi_\lambda.\)</span> For the infinite dimensional case, does <a href="#eq-obser" class="quarto-xref">Equation&nbsp;1</a> provide a clue? If so, then here’s my guess: <span class="math display">\[
+A v = \int_{\sigma(A)} \lambda \langle v, \chi_{d\lambda}(A)v \rangle.
+\]</span> How do I check whether or not this guess is correct? Well, the left hand side <span class="math inline">\(Av\)</span> is a vector in the Hilbert space <span class="math inline">\(\mathcal{H}\)</span>, whereas the right hand side is just a sum of complex numbers, which is not a Hilbert space element. Thus, the guess is incorrect. Let me make another guess based on the notion that <span class="math inline">\(\chi_{d\lambda}(A)\)</span> is a spectral projection valued measure. In analogy to the finite dimensional case, <span class="math inline">\(\chi_{d\lambda}(A)\)</span> should project <span class="math inline">\(v\)</span> onto the subspace of <span class="math inline">\(\mathcal{H}\)</span> consisting of eigenvectors associated to eigenvalues <span class="math inline">\(\lambda \in d\lambda\)</span>, where <span class="math inline">\(d\lambda\)</span> I think of as a very small interval on the real line. Anyways, based on this analogy, my next guess is: <span class="math display">\[
+Av = \int_{\sigma(A)} \lambda \left( \chi_{d\lambda}(A)v \right).
+\]</span> Actually, this must be correct, and it does agree with the finite dimensional case (identifying <span class="math inline">\(\chi_{d\lambda}(A)v\)</span> and <span class="math inline">\(\langle \phi_\lambda, \cdot \rangle \phi_\lambda\)</span> from above), but can I make sense of the integral on the right hand side based on my knowledge of integration theory? The issue is, given that <span class="math inline">\(\chi_{\Omega}(A)v \in \mathcal{H}\)</span> for any subset <span class="math inline">\(\Omega \subset \sigma(A)\)</span>, then I’m looking at an infinite sum of Hilbert space elements. Thus, not only is this a vector-valued integral for vectors in a finite-dimensional space, where the integral can just be treated component-wise, but it is vector-valued for vectors in an infinite-dimensional space. Time to pull out <span class="citation" data-cites="Amann">Herbert Amann (<a href="#ref-Amann" role="doc-biblioref">2009</a>)</span>. There it is defined a so called Bochner-Lebesgue integral of a Banach-space-valued function <span class="math inline">\(f\)</span> over a measure space <span class="math inline">\(X\)</span> in Chapter X section 2. There is a lot of theory there, but I think what would help me in this post is to look at integrals of simple functions as approximators of the final integral <span class="math inline">\(\int_{\sigma(A)} \lambda \left( \chi_{d\lambda}(A)v \right)\)</span>. Indeed, the idea behind the definition of the Bochner integral is to define the integral for simple functions, then set up a notion of a Cauchy sequence of these vector-valued simple functions (distinct from the notion that is available, for say, metric spaces like <span class="math inline">\(L^2\)</span> with equivalence classes of functions that are not vector-valued) based on a seminorm defined by the integral of a simple function, then to say that the Bochner integral of a general function <span class="math inline">\(f\)</span>, where <span class="math inline">\(f\)</span> is approached by the simple functions <span class="math inline">\(\phi_j\)</span> in the sense of <span class="math inline">\(\mu\)</span>-a.e. pointwise convergence, has Bochner integral defined by the limit <span class="math inline">\(\int \phi_j\)</span>, as long as the <span class="math inline">\(\phi_j\)</span> are a Cauchy sequence. So it is implied that it is a-priori possible for <span class="math inline">\(\phi_j\)</span> to approach <span class="math inline">\(f\)</span> pointwise, but for <span class="math inline">\(\phi_j\)</span> to not form a Cauchy sequence, and thus to face ill-definedness of <span class="math inline">\(\int f\)</span>. Otherwise, the Cauchy condition would be superfluous.</p>
+<p>So to understand <span class="math inline">\(\int_{\sigma(A)} \lambda \left( \chi_{d\lambda}(A)v \right)\)</span>, what would be the function <span class="math inline">\(f\)</span>, and what would be the simple functions <span class="math inline">\(\phi_j\)</span>? It is not clear to me how to write the integrand <span class="math inline">\(\lambda \left( \chi_{d\lambda}(A)v \right)\)</span> as an <span class="math inline">\(\mathcal{H}\)</span>-valued function of the variable <span class="math inline">\(\lambda\)</span> in the spectrum because <span class="math inline">\(\chi_{d\lambda}(A)\)</span> is defined on subsets containing <span class="math inline">\(\lambda\)</span>, not <span class="math inline">\(\lambda\)</span> pointwise. But assuming singleton sets are measurable, then let me tentatively write <span class="math inline">\(f(\lambda) =  \left( \chi_{\{\lambda\}}(A)v \right)\)</span>.</p>
+</section>
+</section>
 <section id="january-21-2026" class="level3">
 <h3 class="anchored" data-anchor-id="january-21-2026">January 21, 2026</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="Axial graph is a tree">
@@ -416,8 +466,8 @@ f(x) = x, \text{ i.e., } f = id.
 \text{Mat}_{\bf{e}_1, \cdots, \bf{e}_n}^{\bf{e}_1, \cdots, \bf{e}_n}(T_H) = H,
 \]</span> where the boldface list <span class="math inline">\(\bf{e}_1, \cdots, \bf{e}_n\)</span> is the standard basis of <span class="math inline">\(\mathbb C^n\)</span>. And assume <span class="math inline">\(H\)</span> is Hermitian, as in the quote, with eigenbasis <span class="math inline">\((\phi_i)_{i=1}^n\)</span> and correponding eigenvalues <span class="math inline">\((\lambda_i)_{i=1}^n\)</span>. The statement of the spectral theorem, taking into account <span class="math inline">\(f\)</span> and <span class="math inline">\(U\)</span> from above, reads as follows: <span id="eq-diag"><span class="math display">\[
 (U T_H U^*) \phi = \mathcal{M}_{id} \phi \text{ pointwise on }\Omega
-\tag{1}\]</span></span> for all <span class="math inline">\(\phi \in L^2(\Omega) = \mathbb C^n\)</span>.</p>
-<p>Let me try to interpret <a href="#eq-diag" class="quarto-xref">Equation&nbsp;1</a> in terms of diagonal matrices. So <span class="math inline">\(\phi\)</span> in an assignment of a complex number to each eigenvalue <span class="math inline">\(\lambda_i\)</span>, for <span class="math inline">\(i \in [n]\)</span>. Thus, <span class="math display">\[
+\tag{2}\]</span></span> for all <span class="math inline">\(\phi \in L^2(\Omega) = \mathbb C^n\)</span>.</p>
+<p>Let me try to interpret <a href="#eq-diag" class="quarto-xref">Equation&nbsp;2</a> in terms of diagonal matrices. So <span class="math inline">\(\phi\)</span> in an assignment of a complex number to each eigenvalue <span class="math inline">\(\lambda_i\)</span>, for <span class="math inline">\(i \in [n]\)</span>. Thus, <span class="math display">\[
 [\phi(\lambda_i), \cdots, \phi(\lambda_n)]^T \in \mathbb C^n.
 \]</span> Next, <span class="math inline">\(\mathcal{M}_{id} \phi\)</span> is a function from <span class="math inline">\(\Omega \to \mathbb C\)</span>. So there are <span class="math inline">\(n = |\Omega|\)</span> possible inputs, and the corresponding outputs, in vector form, are <span class="math display">\[
 [(\mathcal{M}_{id}\phi)(\lambda_1), \cdots, (\mathcal{M}_{id}\phi)(\lambda_n) ]^T = [\lambda_1 \phi(\lambda_1), \cdots, \lambda_n \phi(\lambda_n) ]^T \in \mathbb C.
@@ -426,7 +476,7 @@ f(x) = x, \text{ i.e., } f = id.
 \vdots &amp; \ddots &amp; \vdots \\
 0 &amp; \cdots &amp; \lambda_n
 \end{bmatrix} [\phi(\lambda_i), \cdots, \phi(\lambda_n)]^T.
-\]</span> This shows how the multiplication operator <span class="math inline">\(\mathcal{M}_{id}\)</span> corresponds to a diagonal matrix with the eigenvalues on the diagonal. In other words, <a href="#eq-diag" class="quarto-xref">Equation&nbsp;1</a> corresponds to the equation <span class="math inline">\(UHU^* = D\)</span> in matrix langauge, where <span class="math inline">\(H\)</span> may not be diaganal with respect to the standard basis <span class="math inline">\(\bf{e}_1, \cdots, \bf{e}_n\)</span>. Continuing the change of basis analogy, it would be that <span class="math inline">\(U^*\)</span> is a change of basis from the basis <span class="math inline">\((\chi_{\{\lambda_i\}})_{i=1}^n\)</span> of <span class="math inline">\(L^2(\Omega)\)</span> to the basis <span class="math inline">\(\bf{e}_1, \cdots, \bf{e}_n\)</span> of <span class="math inline">\(\mathbb C^n\)</span>, and <span class="math inline">\(U\)</span> is a change of basis from the standard basis of <span class="math inline">\(\mathbb C^n\)</span> to the eigenvalue point functions.</p>
+\]</span> This shows how the multiplication operator <span class="math inline">\(\mathcal{M}_{id}\)</span> corresponds to a diagonal matrix with the eigenvalues on the diagonal. In other words, <a href="#eq-diag" class="quarto-xref">Equation&nbsp;2</a> corresponds to the equation <span class="math inline">\(UHU^* = D\)</span> in matrix langauge, where <span class="math inline">\(H\)</span> may not be diaganal with respect to the standard basis <span class="math inline">\(\bf{e}_1, \cdots, \bf{e}_n\)</span>. Continuing the change of basis analogy, it would be that <span class="math inline">\(U^*\)</span> is a change of basis from the basis <span class="math inline">\((\chi_{\{\lambda_i\}})_{i=1}^n\)</span> of <span class="math inline">\(L^2(\Omega)\)</span> to the basis <span class="math inline">\(\bf{e}_1, \cdots, \bf{e}_n\)</span> of <span class="math inline">\(\mathbb C^n\)</span>, and <span class="math inline">\(U\)</span> is a change of basis from the standard basis of <span class="math inline">\(\mathbb C^n\)</span> to the eigenvalue point functions.</p>
 <p>If diagonalizing the operator <span class="math inline">\(T_H\)</span> means conjugating by a unitary map <span class="math inline">\(U\)</span>, then I think via the above paragraphs, I have understood diagonalization. But I think it also instructive to check that I actually chose the correct <span class="math inline">\(f\)</span> in the spectral theorem (<span class="math inline">\(f = id\)</span>) by verifying the eigenvalue equations in the following way.</p>
 <p>Since <span class="math inline">\(UT_HU^* = \mathcal{M}_{id}\)</span>, it stands to reason that <span class="math inline">\(T_H = U^* \mathcal{M}_{id} U\)</span>. Let’s check this on the eigenbasis, where we know the left hand side will read: <span class="math display">\[
 T_H \phi_i = \lambda_i \phi_i.
@@ -597,10 +647,10 @@ G_U': U(B_n) \to U_0(B_n),
 <p>where as in Chatterjee, we wrote <span class="math inline">\(\text{Haar} = d\sigma\)</span>, for compactness of notation. By the definition of conditional expectation, we have that</p>
 <p><span id="eq-1"><span class="math display">\[
 \mathbb E [ f(V_i) g(V_j) ] = \mathbb E [ \mathbb E[ f(V_i) g(V_j) \mid U_0(B_n) ]]
-\tag{2}\]</span></span></p>
+\tag{3}\]</span></span></p>
 <p>Indeed, <span class="math inline">\(Z(\omega) = \mathbb E[ f(V_i) g(V_j) \mid U_0(B_n) ] (\omega)\)</span> is the almost surely unique random variable such that <span class="math display">\[\begin{equation}
 \mathbb E[ 1_B( f(V_i) g(V_j) )] = \mathbb E[ 1_B( Z(\omega) )]
-\end{equation}\]</span> for all <span class="math inline">\(B \in \sigma(U_0(B_n))\)</span>, the sigma algebra generated by <span class="math inline">\(U_0(B_n)\)</span>, viewed as a collection of random variables <span class="math inline">\((U_e)_{e \in E_n^0}\)</span> on the product space <span class="math inline">\(U(B_n)\)</span>. Of course, <span class="math inline">\(U(B_n) \in \sigma(U_0(B_n))\)</span>, so we get <a href="#eq-1" class="quarto-xref">Equation&nbsp;2</a>.</p>
+\end{equation}\]</span> for all <span class="math inline">\(B \in \sigma(U_0(B_n))\)</span>, the sigma algebra generated by <span class="math inline">\(U_0(B_n)\)</span>, viewed as a collection of random variables <span class="math inline">\((U_e)_{e \in E_n^0}\)</span> on the product space <span class="math inline">\(U(B_n)\)</span>. Of course, <span class="math inline">\(U(B_n) \in \sigma(U_0(B_n))\)</span>, so we get <a href="#eq-1" class="quarto-xref">Equation&nbsp;3</a>.</p>
 <p>Next, consider the following lemma from Prof.&nbsp;Eberle’s notes:</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Lemma (Eberle)">
 <div class="callout-header d-flex align-content-center">
@@ -696,6 +746,9 @@ Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field 
 </div>
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
+</div>
+<div id="ref-Amann" class="csl-entry" role="listitem">
+Herbert Amann, Joachim Escher. 2009. <em>Analysis III</em>. Birkhäuser.
 </div>
 <div id="ref-TaoAna2" class="csl-entry" role="listitem">
 Tao, Terence. 2006. <em>Analysis 2</em>. Hindustan.
