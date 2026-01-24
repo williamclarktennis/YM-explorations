@@ -1,0 +1,11 @@
+---
+title: "List of results from CQFT 2"
+bibliography: references.bib
+---
+
+On this page, I will learn about the contents of
+@BrenneckeCQFT via the method of lists. 
+
+I apologize to Jaques Ellul for 
+performing this technisized extraction of information. 
+

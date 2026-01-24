@@ -15,6 +15,7 @@ website:
       - text: "Other"
         menu: 
           - href: KleinGordon.qmd
+          - href: list-cqft.qmd
 
 format:
   html:
