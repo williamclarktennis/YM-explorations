@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Twitter-like feed – William’s Lattice YM Explorations</title>
+<title>List of results from CQFT 2 – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -69,6 +89,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -110,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./phone-notes.html" aria-current="page"> 
+    <a class="nav-link" href="./phone-notes.html"> 
 <span class="menu-text">Twitter-like feed</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -139,23 +188,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#january-6-2025" id="toc-january-6-2025" class="nav-link active" data-scroll-target="#january-6-2025">January 6, 2025</a></li>
-  <li><a href="#december-24-2025" id="toc-december-24-2025" class="nav-link" data-scroll-target="#december-24-2025">December 24, 2025</a></li>
-  <li><a href="#december-25-2025" id="toc-december-25-2025" class="nav-link" data-scroll-target="#december-25-2025">December 25, 2025</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Twitter-like feed</h1>
+<h1 class="title">List of results from CQFT 2</h1>
 </div>
 
 
@@ -172,29 +213,125 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!--
-This file is edited from mobile.
-Do not overwrite without pulling first.
--->
-<section id="january-6-2025" class="level3">
-<h3 class="anchored" data-anchor-id="january-6-2025">January 6, 2025</h3>
-<p>When the coupling constant of U(N) lattice gauge theory is small, then beta is big. When beta is big, the format of the Yang mills probability density forces the Wilson action to be very small if there is to be any probability mass associated to a given configuration. The Wilson action being small means that most unitary matrices are equal to the identity matrix. Matrices mostly being equal to identity matrices implies that parallel transporting along plaquettes does not do anything. So the gauge field has no effect. I think that the gauge field having little effect and the coupling constant being small are related concepts. By analogy, smallness of the coupling constant for gravity means that gravity has little role.</p>
-<p>I was previously confused because I noticed that when the coupling constant is large, then the Yang Mills gauge measure is just a product Haar measure. I figured product Haar measure means that there is no interaction, a contradiction to the coupling constant being large. Perhaps the reason that this is not a contradiction is that unitary matrices under Haar measure are not concentrated near the identity matrix, so during parallel transport, the gauge field plays a bigger role. And the gauge field taking stronger role fits with the coupling constant being larger.</p>
-</section>
-<section id="december-24-2025" class="level3">
-<h3 class="anchored" data-anchor-id="december-24-2025">December 24, 2025</h3>
-<p>Conditional probabilities are where you fix some prior knowledge/variables and then you ask about the probability for the remaining variables.</p>
-<p>That seems like the right framework for axial gauge fixing. You fix the variables for the tree edges, then figure out the rest of the variables.</p>
-</section>
-<section id="december-25-2025" class="level3">
-<h3 class="anchored" data-anchor-id="december-25-2025">December 25, 2025</h3>
-<p>The log beta term in the formula for the free energy is related to the 1/beta smallness of the Wilson action.</p>
-<p>Also, even though the math of cqft is very eclectic and broad, it also feels like a niche field. At least I get that feeling when looking at one of the early papers by Fröhlich and Brydges.</p>
+<p>On this page, I will learn about the contents of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span> via the method of lists.</p>
+<p>I apologize to Jaques Ellul for performing this technisized extraction of information.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Result: Hamilton's equations from Classical Mechanics">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Result: Hamilton’s equations from Classical Mechanics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\frac{dx}{dt} = \nabla_p H, \hspace{0.5cm} \frac{dp}{dt} = - \nabla_x H
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Maxwell's equations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Maxwell’s equations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\nabla \cdot E = \rho, \hspace{0.5cm} \nabla \times E = - \frac{1}{c} \partial_t B,
+\]</span> <span class="math display">\[
+\nabla \cdot B = 0, \hspace{0.5cm} \nabla \times B = \frac{1}{c}(\partial_t E + j)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Charge and Current Densities as Distributions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Charge and Current Densities as Distributions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+t \mapsto \rho(t,x) = e \delta_{x(t)} \in \mathcal{D}'(\mathbb R^3)
+\]</span> and <span class="math display">\[
+t \mapsto j(x,t) = e \delta_{x(t)} \frac{dx}{dt}(t) \in \mathcal{D}'(\mathbb R^3, \mathbb R^3)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Observables are conserved when Poisson bracket with Hamiltonian vanishes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Observables are conserved when Poisson bracket with Hamiltonian vanishes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\(F \in C^{\infty}(\mathcal{P})\)</span> and that <span class="math inline">\(\{F,H\} = 0\)</span>. Then <span class="math display">\[
+\frac{d}{dt} F \circ (x(t), p(t)) = 0.
+\]</span></p>
+</div>
+</div>
+<p>In this case, <span class="math inline">\(F\)</span> is called a conserved quantity under the Hamiltonian dynamics.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Criterion to ensure vanishing of Poission Bracket with Hamiltonian">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Criterion to ensure vanishing of Poission Bracket with Hamiltonian
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(F \in C^{\infty}(\mathcal{P})\)</span> is invariant under the Hamiltionian flow associated to the Hamiltonian vector field <span class="math inline">\(X_H\)</span>, meaning that <span class="math display">\[
+\Phi_{X_H}(t,\cdot)^*F = F,
+\]</span> then <span class="math inline">\(\{F,H\} = 0\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hamiltionian vector field flows are coordinate transformations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Hamiltionian vector field flows are coordinate transformations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(F \in C^{\infty}(\mathcal{P})\)</span> be an observable (possibly the Hamiltonian). Then the flow, <span class="math inline">\(\Phi_{X_H}(t, \cdot)\)</span>, of the Hamiltonian vector field <span class="math inline">\(X_H = \mathbf{J} \nabla H\)</span> is equal to a canonical transformation <span class="math inline">\(\phi \in C^{\infty}(\mathcal{P}, \mathbb R^{2n})\)</span> for any time <span class="math inline">\(t\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Symmetry of Hamiltionian implies observable is conserved">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Symmetry of Hamiltionian implies observable is conserved
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(F \in C^{\infty}(\mathcal{P})\)</span>. If the Hamilitionian <span class="math inline">\(H\)</span> is invariant under the flow generated by <span class="math inline">\(X_F = \mathbf{J} \nabla F\)</span>, i.e., <span class="math display">\[
+H = \Phi_{X_F}(t, \cdot)^* H,
+\]</span> then <span class="math inline">\(\{F,H\} = 0\)</span>.</p>
+</div>
+</div>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
+Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
