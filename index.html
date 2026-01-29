@@ -193,7 +193,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#january-22-2026" id="toc-january-22-2026" class="nav-link active" data-scroll-target="#january-22-2026">January 22, 2026</a></li>
+  <li><a href="#january-29-2026" id="toc-january-29-2026" class="nav-link active" data-scroll-target="#january-29-2026">January 29, 2026</a></li>
+  <li><a href="#january-22-2026" id="toc-january-22-2026" class="nav-link" data-scroll-target="#january-22-2026">January 22, 2026</a></li>
   <li><a href="#january-21-2026" id="toc-january-21-2026" class="nav-link" data-scroll-target="#january-21-2026">January 21, 2026</a></li>
   <li><a href="#january-19-2026" id="toc-january-19-2026" class="nav-link" data-scroll-target="#january-19-2026">January 19, 2026</a></li>
   <li><a href="#january-16-2026" id="toc-january-16-2026" class="nav-link" data-scroll-target="#january-16-2026">January 16, 2026</a></li>
@@ -226,9 +227,36 @@ window.Quarto = {
 </header>
 
 
+<section id="january-29-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-29-2026">January 29, 2026</h3>
+<p>In this post, I want to learn about section 2.4 in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>, called Operators on Fock space.</p>
+<section id="integral-kernels-related-to-annihilation-operators" class="level4">
+<h4 class="anchored" data-anchor-id="integral-kernels-related-to-annihilation-operators">Integral Kernels related to Annihilation Operators</h4>
+<p>I believe the annihilation operators <span class="math inline">\((a(f))_{f \in S(\mathbb R^d)}\)</span> define an operator valued distribution. Typically this would imply that <span class="math inline">\(a_x\)</span> doesn’t exist for <span class="math inline">\(x \in \mathbb R^d\)</span> and that it has to be understood in the smeared out sense using test functions: <span class="math display">\[
+a(f) = \int_{\mathbb R^d} dx \overline{f}(x) a_x.
+\]</span> But it turns out that <span class="math inline">\(a_x\)</span> actually can be defined as an operator on some subspace of the Bosonic Fock space. This is defined in equation (2.22) of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. Not only this, but even taking powers of <span class="math inline">\(a_x\)</span> is allowed: <span class="math inline">\(a_xa_x \cdots a_x = a_x \circ a_x \cdots \circ a_x\)</span>, understood in terms of composition of linear operators on the certain subspace of Fock space mentioned above. This is usually prohibited for quantum fields because of domain issues for unbounded operators.</p>
+<p>Next, fix a measurable function <span class="math inline">\(\Lambda: \mathbb R^{dk+dl} \to \mathbb C\)</span>, which will be interpreted as an integral kernel. What is an integral kernel? Here is a link to an explanation: <a href="https://en.wikipedia.org/wiki/Integral_transform" class="uri">https://en.wikipedia.org/wiki/Integral_transform</a>. My takeaway is that integral kernels are extremely important for understanding CQFT on a heuristic level. There are integral kernels of distributions <span class="math inline">\(\Phi: S(\mathbb R^n) \to \mathbb C\)</span>, there are integral kernels of transforms: <span class="math inline">\(\Phi: S(\mathbb R^d) \to S(\mathbb R^d)\)</span>, and there are integral kernels of quadratic forms: <span class="math inline">\(\Phi: \mathcal{H} \times \mathcal{H} \to \mathbb C\)</span>. In all these cases, one wants to turn functions, or pairs of functions, into something else, and to do so you integrate these input functions against an integral kernel. In which way is <span class="math inline">\(\Lambda\)</span> to be understood as an integral kernel? Based on the fact that <span class="math inline">\(a_x\)</span> can be understood as an operator valued function on the dense domain <span class="math inline">\(\mathcal{D}_{S}\)</span>, that powers of <span class="math inline">\(a_x\)</span> make sense, and letting <span class="math inline">\(\langle \cdot, \cdot \rangle: \mathcal{F}_s \times \mathcal{F}_s \to \mathbb C\)</span> denote the inner product on Bosonic Fock space, one can define the quadratic form (see 2.23) <span class="math display">\[
+Q_\Lambda(\phi, \psi) = \int_{\mathbb R^{dk+dl}} (dx)_{i=1}^k(dy)_{j=1}^l \Lambda((x_i)_{i=1}^k, (y_j)_{j=1}^l) \langle \prod_{i=1}^k a_{x_i} \phi, \prod_{j=1}^l a_{y_j} \psi \rangle \in \mathbb C
+\]</span> for all <span class="math inline">\((\phi, \psi) \in \mathcal{D}_{S} \times \mathcal{D}_{S}\)</span>.</p>
+<p>Why is <span class="math inline">\(Q_\Lambda\)</span> useful? The notes <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span> say that identifications (such as <span class="math inline">\(a^*(f) =: \int dx f(x) a^*(x)\)</span> can be made precise) using statements about densely defined quadratic forms. So, which heuristic identification does <span class="math inline">\(Q_\Lambda\)</span> make precise? Well, it’s not an identification that is made precise. Rather it’s the expression <span class="math display">\[
+\int_{\mathbb R^{dk+dl}} dx_1 \cdots dx_k dy_1 \cdots dy_l \Lambda (x_1, \cdots, x_k, y_1, \cdots, y_l) a_{x_1}^* \cdots a_{x_k}^* a_{y_1} \cdots a_{y_l}
+\]</span> (from the left hand side of 2.23) which is to be understood as the quadratic form <span class="math inline">\(Q_\Lambda\)</span>. The point is that even though the <span class="math inline">\(a^*\)</span> are not well-defined pointwise (according to the notes), the integral can still be understood in a rigorous sense using <span class="math inline">\(Q_{\Lambda}\)</span>.</p>
+<p>Perhaps a more comprehensible example from Section 5.4.2 of <span class="citation" data-cites="Dimock">Dimock (<a href="#ref-Dimock" role="doc-biblioref">2011</a>)</span> is helpful to hammer in the point. This section agrees that <span class="math inline">\(a_x\)</span> is well-defined on a dense subspace, but that the adjoint <span class="math inline">\(a^*\)</span> is not well-defined as an operator on the subspace <span class="math inline">\(\mathcal{D}_{\mathcal{S}}\)</span>. Nevertheless, recalling that to each “nice” quadratic form is a linear operator given in the second slot, we define <span class="math inline">\(a^*\)</span> via the quadratic form <span class="math display">\[
+\langle \phi, a^*(x) \psi \rangle := \langle a(x) \phi, \psi \rangle
+\]</span> for <span class="math inline">\(\phi, \psi \in \mathcal{D}_{\mathcal{S}}\)</span>. The point is that a quadratic form was used to give a rigorous meaning to <span class="math inline">\(a^*\)</span>.</p>
+</section>
+</section>
 <section id="january-22-2026" class="level3">
 <h3 class="anchored" data-anchor-id="january-22-2026">January 22, 2026</h3>
 <p>In this post I want to learn about the spectral theorem in the context of quantum mechanics.</p>
+<!-- (Let me begin with a specific point of confusion 
+in @BrenneckeCQFT, which I hope I can overcome 
+using some propositions about the spectral calculus
+from the notes of my Dirichlet Forms on Graphs course.)
+-->
+<!--
+[//]: <> (This is also a comment.)
+-->
 <p>The following quote is a passage from <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Passage from Brennecke notes">
 <div class="callout-header d-flex align-content-center">
@@ -750,6 +778,9 @@ Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field 
 </div>
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
+</div>
+<div id="ref-Dimock" class="csl-entry" role="listitem">
+Dimock, Jonathan. 2011. <em>Quantum Mechanics and Quantum Field Theory: A Mathematical Primer</em>. Cambridge University Press.
 </div>
 <div id="ref-Amann" class="csl-entry" role="listitem">
 Herbert Amann, Joachim Escher. 2009. <em>Analysis III</em>. Birkhäuser.
