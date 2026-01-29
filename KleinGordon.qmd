@@ -2,7 +2,7 @@
 title: "Wightman Axioms for free scalar quantum field"
 bibliography: references.bib
 ---
-Article last updated: January 16, 2026
+Article last updated: January 29, 2026
 
 I'm writing this article so that I can learn Theorem 3.1 of 
 Prof. Christian Brennecke's constructive quantum field theory
@@ -304,13 +304,10 @@ $i$ in the exponent in the formula (3.4).
 &= \langle \psi, \phi \rangle_{L^2(S_m^+)}. 
 \end{align*}
 
-Here is why $L^{-1}S_m^+ = S_m^+$. 
-The definition of the mass shell is $S_m^+ = \{p \in \mathbb R^4: p^T\eta p = m^2, p_0 > 0\}$.
-Begin with an element 
-$a := L^{-1}p \in L^{-1}S_m^+$. 
-Then $L^{-1} \in \mathcal{P}_+^\uparrow$ implies
-that $L^{-1}_{00} > 0$ and also $p_0 > 0$, 
+I still need to learn about why $L^{-1}S_m^+ = S_m^+$. 
 
+
+<!--
 ##### Interlude on proper Poincaré group
 
 First, it will be helpful to understand the 
@@ -342,7 +339,7 @@ We have
 &= \eta^{\nu \mu} L_{\mu \lambda} L_{\nu \kappa},
 \end{align*}
 so the answer is yes.
-
+-->
 
 
 

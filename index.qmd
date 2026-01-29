@@ -9,17 +9,108 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### January 29, 2026
+
+In this post, I want to learn about section 2.4 in @BrenneckeCQFT, called 
+Operators on Fock space. 
+
+#### Integral Kernels related to Annihilation Operators
+
+I believe the annihilation operators
+$(a(f))_{f \in S(\mathbb R^d)}$ define an operator 
+valued distribution. Typically this would imply that 
+$a_x$ doesn't exist for $x \in \mathbb R^d$ and that it has
+to be understood in the smeared
+out sense using test functions: 
+$$
+a(f) = \int_{\mathbb R^d} dx \overline{f}(x) a_x.
+$$
+But it turns out that $a_x$ actually can be defined 
+as an operator on some subspace of the Bosonic Fock space. 
+This is defined in equation (2.22) of @BrenneckeCQFT. 
+Not only this, but even taking
+powers of $a_x$ is allowed: $a_xa_x \cdots a_x = a_x \circ a_x \cdots \circ a_x$,
+understood in terms of composition of linear operators
+on the certain subspace of Fock space mentioned above.  This is 
+usually prohibited for quantum fields because of 
+domain issues for unbounded operators. 
+
+Next, fix a measurable function $\Lambda: \mathbb R^{dk+dl} \to \mathbb C$, 
+which will be interpreted as an integral kernel.
+What is an integral kernel? Here is a link to an explanation: 
+<https://en.wikipedia.org/wiki/Integral_transform>. 
+My takeaway is that integral kernels 
+are extremely important for understanding CQFT
+on a heuristic level. There are integral kernels 
+of distributions $\Phi: S(\mathbb R^n) \to \mathbb C$, 
+there are integral kernels of 
+transforms: $\Phi: S(\mathbb R^d) \to S(\mathbb R^d)$, 
+and there are integral kernels of 
+quadratic forms: $\Phi: \mathcal{H} \times \mathcal{H} \to \mathbb C$.
+In all these cases, one wants to turn 
+functions, or pairs of functions, into something else, 
+and to do so you integrate these input functions against
+an integral kernel. 
+In which way is $\Lambda$ to be understood as
+an integral kernel?
+Based on the fact that $a_x$ can be understood
+as an operator valued function on the dense domain 
+$\mathcal{D}_{S}$, that powers of $a_x$ make sense, and letting 
+$\langle \cdot, \cdot \rangle: \mathcal{F}_s \times \mathcal{F}_s \to \mathbb C$
+denote the inner product on Bosonic Fock space, 
+one can define the quadratic form (see 2.23)
+$$
+Q_\Lambda(\phi, \psi) = \int_{\mathbb R^{dk+dl}} (dx)_{i=1}^k(dy)_{j=1}^l \Lambda((x_i)_{i=1}^k, (y_j)_{j=1}^l) \langle \prod_{i=1}^k a_{x_i} \phi, \prod_{j=1}^l a_{y_j} \psi \rangle \in \mathbb C
+$$
+for all $(\phi, \psi) \in \mathcal{D}_{S} \times \mathcal{D}_{S}$. 
+
+Why is $Q_\Lambda$ useful? The notes @BrenneckeCQFT say that
+identifications (such as $a^*(f) =: \int dx f(x) a^*(x)$ can be 
+made precise) using statements about densely defined quadratic forms. 
+So, which heuristic identification does
+$Q_\Lambda$ make precise?
+Well, it's not an identification that is made precise. 
+Rather it's the expression 
+$$
+\int_{\mathbb R^{dk+dl}} dx_1 \cdots dx_k dy_1 \cdots dy_l \Lambda (x_1, \cdots, x_k, y_1, \cdots, y_l) a_{x_1}^* \cdots a_{x_k}^* a_{y_1} \cdots a_{y_l}
+$$
+(from the left hand side of 2.23)
+which is to be understood as the quadratic form $Q_\Lambda$. 
+The point is that even though the $a^*$ are not well-defined pointwise (according to the notes),
+the integral can still be understood in a rigorous sense using $Q_{\Lambda}$. 
+
+Perhaps a more comprehensible example from
+Section 5.4.2 of @Dimock is helpful to hammer in the point. 
+This section agrees that $a_x$ is well-defined on 
+a dense subspace, but that the adjoint $a^*$ is not well-defined as
+an operator on the subspace $\mathcal{D}_{\mathcal{S}}$. 
+Nevertheless, recalling that
+to each "nice" quadratic form 
+is a linear operator given in the second slot, 
+we define $a^*$ via the quadratic form
+$$
+\langle \phi, a^*(x) \psi \rangle := \langle a(x) \phi, \psi \rangle
+$$
+for $\phi, \psi \in \mathcal{D}_{\mathcal{S}}$. 
+The point is that a quadratic form was used to
+give a rigorous meaning to $a^*$. 
+
+
+
 ### January 22, 2026
 
 In this post I want to learn about the spectral theorem in the 
 context of quantum mechanics.
 
-[//]: <> (Let me begin with a specific point of confusion 
+<!-- (Let me begin with a specific point of confusion 
 in @BrenneckeCQFT, which I hope I can overcome 
 using some propositions about the spectral calculus
 from the notes of my Dirichlet Forms on Graphs course.)
+-->
 
+<!--
 [//]: <> (This is also a comment.)
+-->
 
 The following quote is a passage from @BrenneckeCQFT.
 
