@@ -69,6 +69,75 @@ In summary, (3.14) says
 $$
 \phi(f) = \sqrt{2 \pi } a(\overline{\tilde{f}}) + \sqrt{2 \pi } a^*( \tilde{f}).
 $$
+(where the constant factors of pi can be taken in and out of
+the annihilation and creation operators because $a$ and $a^*$ are
+linear in $f \in L^2(\mathcal{M})$.)
+
+Let me also discuss the name "operator valued distribution."
+An operator valued distribution is a family
+$(\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}$, where
+for each $f \in \mathcal{S}(\mathbb R^4)$, the symbol
+$\phi(f)$ denotes a linear operator on some Hilbert space $\mathcal{H}$. 
+But how does this connect to another notion of 
+a distribution, namely a map
+$\Phi: \mathcal{S}(\mathbb R^4) \to \mathbb C$, 
+with the stereotypical example being the dirac distribution
+$\delta_0: \mathcal{S}(\mathbb R^4) \to \mathbb C$ 
+centered at $0 \in \mathbb R^4$? 
+To see the connection, observe that
+we can rewrite the quantum field $(\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}$
+as a map: 
+$$
+\Phi: \mathcal{S}(\mathbb R^4) \to \mathcal{L}(\mathcal{H}).
+$$
+Rewriting in this way allows me to 
+see that a quantum field is just
+a distribution, but with values in $\mathcal{L}(\mathcal{H}) =
+\{f: \mathcal{H} \to \mathcal{H} \mid f \text{ linear} \}$
+instead of $\mathbb C$. 
+
+On this note, one situation that happens a lot
+is the following. One writes down an integral
+$$
+\int_{\mathbb R^4}dp f(p) a^*_p,
+$$
+and then says that the integral should be interpreted in 
+a distributional sense (because the annihilation 
+operator is not actually defined at each $p$, and 
+even if it were, the vector valued integral would
+be difficult to make sense of because the annihiliation 
+operators are not bounded operators, so a Bochner interpretation
+is not immediate.)
+How is this connected to intepreting an analogous 
+integral 
+$$
+\int_{\mathbb R^4} dp f(p) \delta_0(p)
+$$
+in the sense of distributions? Well, the latter integral is 
+actually defined by 
+$$
+\delta_0(f) =: \int_{\mathbb R^4} dp f(p) \delta_0(p),
+$$
+because the delta function is not defined 
+at the origin, and you can't ignore the singularity at
+the origin (as you would for 
+$L^p$ functions by ignoring null sets) because 
+the null set $\{0\}$ actually affects the value of the integral. 
+The main point is this, we've intepreted the original integral 
+in a distributional sense, because $\delta_0(f)$ is a well-defined
+complex number: it is just $\delta_0(f) = f(0) \in \mathbb C$. 
+To see the analogy for the operator valued distributional case, 
+just replace the $\delta_0$ by $a$ on the left hand side
+and the $\delta_0(p)$ inside the integral on the right hand side by $a^*_p$. 
+Then: 
+$$
+a(f) =: \int_{\mathbb R^4} dp f(p) a^*_p, 
+$$
+so the right hand side is defined 
+by $a(f)$, which is no longer a complex number, 
+but an operator. This explains how
+the interpretations of the identities used above from section 2.4 of @BrenneckeCQFT
+are called 'distributional interpretations.'
 
 #### The unitary representation Gamma
 
