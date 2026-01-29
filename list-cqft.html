@@ -188,8 +188,16 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-1-classical-mechanics" id="toc-chapter-1-classical-mechanics" class="nav-link active" data-scroll-target="#chapter-1-classical-mechanics">Chapter 1: Classical Mechanics</a></li>
+  <li><a href="#chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces" id="toc-chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces" class="nav-link" data-scroll-target="#chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces">Chapter 2.1: Mathematical Interlude: Locally Convex Topological Vector Spaces</a></li>
+  <li><a href="#chapter-2.2-distributions-and-tempered-distributions" id="toc-chapter-2.2-distributions-and-tempered-distributions" class="nav-link" data-scroll-target="#chapter-2.2-distributions-and-tempered-distributions">Chapter 2.2: Distributions and Tempered Distributions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -215,6 +223,8 @@ window.Quarto = {
 
 <p>On this page, I will learn about the contents of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span> via the method of lists.</p>
 <p>I apologize to Jaques Ellul for performing this technisized extraction of information.</p>
+<section id="chapter-1-classical-mechanics" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-1-classical-mechanics">Chapter 1: Classical Mechanics</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="Result: Hamilton's equations from Classical Mechanics">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -323,9 +333,173 @@ H = \Phi_{X_F}(t, \cdot)^* H,
 \]</span> then <span class="math inline">\(\{F,H\} = 0\)</span>.</p>
 </div>
 </div>
+</section>
+<section id="chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces">Chapter 2.1: Mathematical Interlude: Locally Convex Topological Vector Spaces</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a locally convex topological vector space?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a locally convex topological vector space?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(X = (X,\mathbb K, +, \cdot, \tau)\)</span> be a topological vector space, which is the data of a vector space <span class="math inline">\((X, \mathbb K, +, \cdot)\)</span> together with a topology <span class="math inline">\(\tau\)</span> of open subsets of <span class="math inline">\(X\)</span> such that <span class="math inline">\(+\)</span> (addition) and <span class="math inline">\(\cdot\)</span> (scalar multiplication) are continuous (from the product topology in the case of addition).</p>
+<p>We don’t need any new data to say that <span class="math inline">\(X\)</span> is locally convex, but there must be a local base <span class="math inline">\(\mathcal{B}\)</span> whose elements are convex.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a local base at 0?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a local base at 0?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\((X,\tau)\)</span> be a topological vector space. A local base at <span class="math inline">\(0\)</span>, call it <span class="math inline">\(\mathcal{B}\)</span>, is the following: <span class="math inline">\(\mathcal{B} \subset \tau\)</span>, <span class="math inline">\(0 \in B\)</span> for all <span class="math inline">\(B \in \mathcal{B}\)</span>, and for any open subset <span class="math inline">\(A\)</span> containing <span class="math inline">\(0\)</span>, there exists some <span class="math inline">\(B \in \mathcal{B}\)</span> such that <span class="math inline">\(B \subset A\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="For locally convex definition, only need local base at 0.">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For locally convex definition, only need local base at 0.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\((X,\mathbb K, \tau)\)</span> is a topological vector space with a local base at <span class="math inline">\(0\)</span>, <span class="math inline">\(\mathcal{B}\)</span>, then <span class="math inline">\(\tau\)</span> is completely determined by <span class="math inline">\(\mathcal{B}\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a Semi-norm?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a Semi-norm?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A semi-norm on a vector space <span class="math inline">\(X\)</span> is a real-valued function <span class="math inline">\(p: X \to [0,\infty)\)</span> such that <span class="math inline">\(p(x+y) \le p(x) + p(y)\)</span> and <span class="math inline">\(p(\lambda x) = |\lambda|p(x)\)</span> for all <span class="math inline">\(x,y \in X\)</span> and <span class="math inline">\(\lambda \in \mathbb K\)</span>. In other words, <span class="math inline">\(p\)</span> would be a norm, other than for the possibility that <span class="math inline">\(p(x) = 0\)</span> when <span class="math inline">\(x \ne 0\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Consider a family of seminorms. When is it separating?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Consider a family of seminorms. When is it separating?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\(\mathcal{P} = (p_n)_{n \in \mathbb N}\)</span> is a family of seminorms, where <span class="math inline">\(p_n: X \to [0,\infty)\)</span> is a real-valued function on a <span class="math inline">\(\mathbb K\)</span>-vector space for all <span class="math inline">\(n\)</span>. Then <span class="math inline">\(\mathcal{P}\)</span> is said to be separating if for any <span class="math inline">\(x \ne 0\)</span> in <span class="math inline">\(X\)</span>, there is some <span class="math inline">\(p \in \mathcal{P}\)</span> such that <span class="math inline">\(p(x) \ne 0\)</span>. In particular, when two elements <span class="math inline">\(f, g \in X\)</span> are distinct, in that <span class="math inline">\(f - g \ne 0\)</span>, then <span class="math inline">\(\mathcal{P}\)</span> will know this, in the sense that at least one <span class="math inline">\(p\)</span> thinks that <span class="math inline">\(p(f-g) \ne p(0) = 0\)</span>.</p>
+</div>
+</div>
+<p>For example, consider the family of the Schwartz seminorms <span class="math inline">\(|\cdot|_{\alpha, \beta} = \sup_{x \in \mathbb R^n} |(x^{\alpha} \partial^{\beta} \varphi)(x)|\)</span>, indexed by multi indices <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>. Some of these seminorms might not be able to tell the difference between two Schwartz functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> in the sense that <span class="math inline">\(f - g \ne 0\)</span> and yet <span class="math inline">\(|f-g|_{\alpha, \beta} = 0\)</span>. For instance, polynomials, after taking enough derivatives, evaluate to the zero function, so they would vanish under the Schwartz semi norms for high enough <span class="math inline">\(|\beta|\)</span>. Moreover, the <span class="math inline">\(L^2\)</span> norm does not separate functions, but it does separate equivalence classes of functions.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="The space of Temperered Distributions arising as dual space of Schwarz functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The space of Temperered Distributions arising as dual space of Schwarz functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Schwarz functions on <span class="math inline">\(\mathbb R^n\)</span>, denoted <span class="math inline">\(\mathcal{S}(\mathbb R^n)\)</span>, with function addition and scalar multiplication, and with a locally convex topology generated by the separating family of seminorms <span class="math inline">\(|\cdot|_{\alpha,\beta}\)</span>, is a locally convex topological vector space.</p>
+<p>The dual space of <span class="math inline">\(\mathcal{S}(\mathbb R^n)\)</span>, denoted <span class="math inline">\(\mathcal{S}'(\mathbb R^n)\)</span> and called the space of tempered distributions, is the vector space of continuous (in the sense of the convex topology on Schwartz function space) linear functionals <span class="math inline">\(\Lambda: \mathcal{S}(\mathbb R^n) \to \mathbb C\)</span> under pointwise addition and scalar multiplication. Furthermore, this dual space comes with a topology that turns the space of tempered distributions from merely a vector space into a locally convex topological vector space. It is the topology generated by the family of seminorms <span class="math inline">\((\text{eval}_f)_{f \in S(\mathbb R^n)}\)</span> where <span class="math inline">\(\text{eval}_f: \mathcal{S}'(\mathbb R^n) \to [0,\infty)\)</span> is defined via <span class="math display">\[
+\text{eval}_f(\Lambda) = |\Lambda(f)|
+\]</span> for all test functions <span class="math inline">\(f \in \mathcal{S}(\mathbb R^n)\)</span>. This is precisely the weak* topology <span class="math inline">\(\sigma(X^*,X) = \sigma(S'(\mathbb R^n), S(\mathbb R^n))\)</span>.</p>
+</div>
+</div>
+<p>Recall that <span class="math inline">\(\sigma(X,X^*)\)</span> denotes a topology on the set <span class="math inline">\(X\)</span> determined by the following condition involving <span class="math inline">\(X^* = \{\Lambda: X \to \mathbb C, \Lambda \text{ linear and bounded}\}\)</span>. It is the weakest topology on <span class="math inline">\(X\)</span> such that the maps <span class="math inline">\(\text{eval}_\Lambda: X \to [0,\infty)\)</span> defined by <span class="math inline">\(\text{eval}_\Lambda(x) = |\Lambda(x)|\)</span> are continuous as <span class="math inline">\(\Lambda\)</span> ranges in <span class="math inline">\(X^*\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="The convex toplogy on Schwartz space is not the weak topology">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The convex toplogy on Schwartz space is not the weak topology
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\tau\)</span> denote the convex topology on <span class="math inline">\(\mathcal{S}(\mathbb R^n)\)</span> generated by the family of seminorms <span class="math inline">\(|\cdot|_{\alpha,\beta}\)</span>. Then <span class="math inline">\(\tau \ne \sigma(\mathcal{S}(\mathbb R^n), \mathcal{S}'(\mathbb R^n)),\)</span> the weak topology on Schwartz space with respect to the dual space of tempered distributions.</p>
+</div>
+</div>
+</section>
+<section id="chapter-2.2-distributions-and-tempered-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-2.2-distributions-and-tempered-distributions">Chapter 2.2: Distributions and Tempered Distributions</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="How do you identify a function by duality?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How do you identify a function by duality?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a function <span class="math inline">\(f\)</span>, we identify <span class="math inline">\(f\)</span> with <span class="math display">\[
+\Lambda_f: \text{Test Functions} \to \mathbb K, \hspace{0.5cm} \varphi \mapsto \int f \varphi.
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is irregularity for a distribution?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is irregularity for a distribution?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Dirac distribution, centered at a point <span class="math inline">\(x \in \Omega \subset \mathbb R^n\)</span>, is the prime example of an “irregular” distribution, because there is no “nice” function <span class="math inline">\(f\)</span> such that <span class="math inline">\(\delta_x = f (= \Lambda_f)\)</span> in the sense of duality/distributions.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a singularity in the context of the theory of distributions?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a singularity in the context of the theory of distributions?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the Dirac distribution <span class="math inline">\(\delta_{x_0}\)</span>. Then you can define heuristally <span class="math inline">\(\delta_{x_0}(x \ne x_0) = 0\)</span> and <span class="math inline">\(\delta_{x_0}(x_0) = \infty\)</span>, and in this case, there is a singularity at <span class="math inline">\(x_0\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is the regularity of tempered distributions?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is the regularity of tempered distributions?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In short, tempered distributions correspond (via duality) to (weak) derivatives of polynomially bounded continuous functions.</p>
+<p>The precise statement is as follows. Let <span class="math inline">\(\Lambda \in \mathcal{S}'(\mathbb R^n)\)</span>. Then there exists a polynomially bounded and continuous function <span class="math inline">\(f \in C(\mathbb R^n)\)</span> such that <span class="math display">\[\partial^{\alpha}f = \Lambda,\]</span> which, means that <span class="math display">\[\Lambda(\cdot) = \partial^{\alpha} \Lambda_f(\cdot) := (-1)^{|\alpha|} \Lambda(f \partial^{\alpha}(\cdot)),
+\]</span> which means the for any Schwartz function <span class="math inline">\(\phi \in \mathcal{S}(\mathbb R^n)\)</span>, <span class="math display">\[
+\Lambda(\phi) = (-1)^{|\alpha|} \int_{\mathbb R^n} dx f(x) (\partial^{\alpha} \phi)(x)
+\]</span></p>
+</div>
+</div>
+<p>(I got confused by <span class="math inline">\((\partial^{\alpha} \phi)(x)\)</span>, so for that just remember that for real-valued functions, the partial derivative at a point is just a number, not a linear map.)</p>
+<p>For example, the Dirac delta function centered at <span class="math inline">\(0\)</span>, as a tempered distribition on <span class="math inline">\(\mathbb R\)</span>, is the 2nd weak/distributional derivative of <span class="math inline">\(\max{(0,x)}\)</span>. This is because <span class="math inline">\(\delta_0\)</span> is the weak derivative of the Heaviside function <span class="math inline">\(H(x) = \chi_{[0,\infty]}\)</span>, which is the weak derivative of <span class="math inline">\(\max{(0,x)}\)</span>.</p>
 
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
