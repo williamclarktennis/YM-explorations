@@ -193,7 +193,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#january-29-2026" id="toc-january-29-2026" class="nav-link active" data-scroll-target="#january-29-2026">January 29, 2026</a></li>
+  <li><a href="#january-31-2026" id="toc-january-31-2026" class="nav-link active" data-scroll-target="#january-31-2026">January 31, 2026</a></li>
+  <li><a href="#january-30-2026" id="toc-january-30-2026" class="nav-link" data-scroll-target="#january-30-2026">January 30, 2026</a></li>
+  <li><a href="#january-29-2026" id="toc-january-29-2026" class="nav-link" data-scroll-target="#january-29-2026">January 29, 2026</a></li>
   <li><a href="#january-22-2026" id="toc-january-22-2026" class="nav-link" data-scroll-target="#january-22-2026">January 22, 2026</a></li>
   <li><a href="#january-21-2026" id="toc-january-21-2026" class="nav-link" data-scroll-target="#january-21-2026">January 21, 2026</a></li>
   <li><a href="#january-19-2026" id="toc-january-19-2026" class="nav-link" data-scroll-target="#january-19-2026">January 19, 2026</a></li>
@@ -227,6 +229,85 @@ window.Quarto = {
 </header>
 
 
+<section id="january-31-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-31-2026">January 31, 2026</h3>
+<section id="summary-of-the-lorentz-and-poincaré-groups" class="level4">
+<h4 class="anchored" data-anchor-id="summary-of-the-lorentz-and-poincaré-groups">Summary of the Lorentz and Poincaré groups</h4>
+<p>In this section I would like to breifly summarize Section 2.3 “The Lorentz and Poincaré Groups” from <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<p>The Poincaré group and the Lorentz group <span class="math inline">\(O(1,3)\)</span> are mathematical objects that have physical meaning in special relativity. For instance, Lorentz transformations describe special relativistic coordinate changes of Minkowski spacetime. But from a mathematical point of view, these two groups have certain structure and properties. For example, viewed as a set, <span class="math display">\[
+\mathcal{P} = \{(a,L) \mid a \in \mathbb R^4, L \in O(1,3)\}.
+\]</span> Viewed as an abstract group, one writes <span class="math display">\[(a,L)(a',L') = (a + La', LL')\]</span> for the group law, with the identity element <span class="math inline">\((0, 1_{\mathbb R^4})\)</span>. In view of defining strongly continuous projective representations of the proper Poincare group <span class="math inline">\(\mathcal{P}_+^\uparrow\)</span> on some vector space, and by inspecting the definition of strong continuity, we consider the subspace topology on <span class="math inline">\(O(1,3)\)</span> inherited from <span class="math inline">\(\mathbb R^{4 \times 4}\)</span>. This topological structure admits a notion of connectivity, which is often mentioned. Connectivity is a desirable property because of the following result:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Bargmann's Theorem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Bargmann’s Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(G\)</span> be a connected, simply connected and compact Lie group. Then every finite dimensional stronly continuous projective unitary representation of <span class="math inline">\(G\)</span> can be lifted to a strongly continuous unitary representation of <span class="math inline">\(G\)</span>.</p>
+</div>
+</div>
+<p>Connectivity is shown in section 2.3 through a discussion of parametrizations. Additionally, based on the theorem, the Lorentz and Poincaré groups ought to have a smooth structure to turn them into Lie groups.</p>
+<p>Okay I will not conclude this section because I’m too tired.</p>
+</section>
+<section id="lemma-2.4-discussion" class="level4">
+<h4 class="anchored" data-anchor-id="lemma-2.4-discussion">Lemma 2.4 Discussion</h4>
+<p>The strategy to construct an analytic atlas for <span class="math inline">\(O(1,3)\)</span> is as follows. First one asks, if <span class="math inline">\(O(1,3)\)</span> is truly a Lie group, then what would be <em>its</em> Lie algebra? (Recall that the notion of a Lie algebra associated to a Lie group is distinct from the notion of a standalone Lie algebra.) The candidate is the matrix group <span class="math inline">\(\mathfrak{so}(1,3)\)</span>. One then establishes that <span class="math inline">\(\mathfrak{so}(1,3)\)</span> is a Lie algebra. One then finishes the proof by using the exponential and logarithm maps together with the Lie algebra <span class="math inline">\(\mathfrak{so}(1,3)\)</span> to establish an analytic atlas for <span class="math inline">\(O(1,3)\)</span>. This explains one reason why the Lie algebra is of interest: it is used to establish charts for the (to-be) Lie group.</p>
+</section>
+<section id="scattered-thoughts" class="level4">
+<h4 class="anchored" data-anchor-id="scattered-thoughts">Scattered Thoughts</h4>
+<ul>
+<li><p>One equips <span class="math inline">\(O(1,3)\)</span> with the subspace topology inhereted from <span class="math inline">\(\mathbb R^4\)</span>. Matrix multiplication <span class="math inline">\(\cdot: O(1,3)^2 \to O(1,3)\)</span> is continuous with respect to this topology and so is matrix inverse: <span class="math inline">\(L \mapsto L^{-1}\)</span>.</p></li>
+<li><p>Example 1.5 is important because it defines the generators <span class="math inline">\(X_1, X_2,\)</span> and <span class="math inline">\(X_3\)</span> of <span class="math inline">\(SO(3)\)</span>. The three matrices are also a basis for <span class="math inline">\(\mathfrak{so}(3)\)</span>, and the exponential map <span class="math inline">\(\exp: \mathfrak{so}(3) \to SO(3)\)</span> is surjective.</p></li>
+<li><p>What is the role of the analytic structure of <span class="math inline">\(O(1,3)\)</span> and its Lie algebra?</p></li>
+<li><p>I see where connectedness comes in now. It is a condition in the hypothesis of Proposition 1.2, which says that you can lift a projective representation to a unitary representation.</p></li>
+<li><p>How do unitary representations arise in the setting of quantum mechanics? Rotating the domain of wave functions using the group <span class="math inline">\(SO(3)\)</span> gives you a unitary representation.</p></li>
+<li><p>Discuss <em>irreducible</em> representations. A reducible representation of <span class="math inline">\(G\)</span> on a vector space <span class="math inline">\(V\)</span> would be one for which there is a non-trivial subspace <span class="math inline">\(S \subset V\)</span> for which <span class="math inline">\(\rho(g)S \subset S\)</span> for all <span class="math inline">\(g \in G\)</span>. In plain english, the vector space <span class="math inline">\(V\)</span> can not be broken up in a way that is compatible with all the maps implemented via the group <span class="math inline">\(G\)</span>. For example, by Lemma 3.2, the representation <span class="math display">\[
+\mathcal{P}_+^{\uparrow} \ni (a,L) \mapsto U(a,L) \in \mathcal{U}(L^2(S_m^+))
+\]</span> is irreducible. Just from the definition of irreducibility, this means that there is no non-trivial invariant subspace of <span class="math inline">\(L^2(S_m^+)\)</span> under <span class="math inline">\(U(a,L)\)</span> for all <span class="math inline">\((a,L)\)</span>.</p></li>
+</ul>
+</section>
+<section id="remarks-about-analysis-and-geometry-on-manifolds" class="level4">
+<h4 class="anchored" data-anchor-id="remarks-about-analysis-and-geometry-on-manifolds">Remarks about Analysis and Geometry on Manifolds</h4>
+<p>Stokes’s Theorem is the big theorem in the intro lecture course called Analysis and Geometry on Manifolds at Uni. Bonn. Recall the fundamental theorem of calculus: <span class="math display">\[
+\int_{[a,b]} f' = f|_a^b.
+\]</span> Stokes’s theorem generalizes this: <span class="math display">\[
+\int_{M} d\omega = \int_{\partial M} \omega.
+\]</span> Recall also Gauss’s theorem for a vector field <span class="math inline">\(F: U \to \mathbb R^n\)</span>, where the outward pointing normal is denoted by <span class="math inline">\(\nu\)</span>: <span class="math display">\[
+\int_{U} \text{Div} F = -\int_{\partial U} \langle F, \nu \rangle.
+\]</span> Gauss’s theorem says that summing up the divergence of a physical field inside a sphere is the same as summing up the dot product of the field arrows with the arrows that are normal to the sphere on the outer surface of the sphere. For example, the electric flux of an electric field through a spherical shell can be viewed mathematically in the expressions <span class="math display">\[
+\int_{\partial S} \langle E, \nu \rangle
+\]</span> or <span class="math display">\[
+\int_{\theta, \phi} E \cdot (d\theta \times d\phi) dA(\phi, \theta).
+\]</span> Then supposing there is a point charge in the interior of the sphere, from which infinitesimal electric field divergences can be computed, one gets from Gauss’s theorem that the electric flux (the surface integral) is proportional to the total enclosed charge, <span class="math inline">\(Q_0\)</span>.</p>
+<p>The question remains how to view Gauss’s theorem as a version of Stoke’s theorem. By analogy, one would want there to be a differential form <span class="math inline">\(\omega\)</span> that can be identified with <span class="math inline">\(\text{Div} F dx\)</span>, and satisfying the property that the exterior derivative <span class="math inline">\(d\omega\)</span> corresponds to <span class="math inline">\(F \cdot \nu dS\)</span>, (<span class="math inline">\(dS\)</span> denoting surface measure), or equivalently for <span class="math inline">\(d\omega\)</span> to correspond to <span class="math inline">\(F \cdot (d\theta \times d\phi) dA = F \cdot d\mathbf{A}\)</span>, where <span class="math inline">\(d\mathbf{A}\)</span> denotes a directed surface area element.</p>
+<p>I was not able to figure this out in time before tennis practice, but the following resources are relevant:</p>
+<ul>
+<li><a href="https://sites.ualberta.ca/~vbouchar/MATH215/section_divergence.html" class="uri">https://sites.ualberta.ca/~vbouchar/MATH215/section_divergence.html</a>. As an aside, I am inspired how the author, Vincent Bouchard, lists out all the results of the calculus course.</li>
+<li>Exercise 8 in Section 6 of Chapter I: Calculus on Euclidean space in the book <span class="citation" data-cites="OneillElem">O’Neill (<a href="#ref-OneillElem" role="doc-biblioref">1966</a>)</span></li>
+<li>section called Exterior Derivatives and Vector Calculus in <span class="math inline">\(\mathbb R^3\)</span> in Chapter 14 of <span class="citation" data-cites="LeeSM">Lee (<a href="#ref-LeeSM" role="doc-biblioref">2013</a>)</span></li>
+<li>section called Divergence Theorem in Chapter 16 of <span class="citation" data-cites="LeeSM">Lee (<a href="#ref-LeeSM" role="doc-biblioref">2013</a>)</span></li>
+</ul>
+</section>
+</section>
+<section id="january-30-2026" class="level3">
+<h3 class="anchored" data-anchor-id="january-30-2026">January 30, 2026</h3>
+<section id="dyson-brownian-motion" class="level4">
+<h4 class="anchored" data-anchor-id="dyson-brownian-motion">Dyson Brownian Motion</h4>
+<p>In this subsection I want to learn about Dyson Brownian motion. Let me learn about it from a high-level/superficial point of view.</p>
+<p>I’m going to follow the article here: <a href="https://terrytao.wordpress.com/2010/01/18/254a-notes-3b-brownian-motion-and-dyson-brownian-motion/" class="uri">https://terrytao.wordpress.com/2010/01/18/254a-notes-3b-brownian-motion-and-dyson-brownian-motion/</a>.</p>
+<p>Supposedly, Dyson Brownian motion is Brownian motion defined on the spectrum of <span class="math inline">\(n \times n\)</span> Hermitian matrices. To make sense of this previous sentence, what is <em>usual</em> Brownian motion defined on? The answer is that BM is defined on <span class="math inline">\(\mathbb R\)</span> in the sense that BM is a family of random variables <span class="math inline">\((X_t)_{t \in \mathcal{I}}\)</span> where each random variable <span class="math inline">\(X_t\)</span> for fixed <span class="math inline">\(t \in \mathcal{I}\)</span> takes values in <span class="math inline">\(\mathbb R\)</span>. Next, Brownian motion can be defined on vector spaces of matrices. What does this mean? This means that Brownian motion can be seen as a family of random variables <span class="math inline">\((X_t)_{t \in \mathcal{I}}\)</span> where each random variable <span class="math inline">\(X_t\)</span> for fixed <span class="math inline">\(t\)</span> is no longer a random real number, but a random matrix. That is, if <span class="math inline">\(\text{Mat}\)</span> denotes a vector space of matrices, then <span class="math inline">\(X_t(\omega) \in \text{Mat}\)</span> for any <span class="math inline">\(t \in \mathcal{I}\)</span> and any <span class="math inline">\(\omega\)</span> in the underlying probability state space. Now suppose that <span class="math inline">\(\text{Mat} = H(N)\)</span>, the space of <span class="math inline">\(N \times N\)</span> complex Hermitian matrices. Hermitian matrices are diagonalizable, meaning that <span class="math inline">\(H \in H(N)\)</span> implies the existence of a unitary matrix <span class="math inline">\(U\)</span> and a diagonal matrix <span class="math inline">\(D\)</span> such that <span class="math inline">\(H = U^* D U\)</span>, where the diagonal of <span class="math inline">\(D\)</span> consists of the eigenvalues of <span class="math inline">\(H\)</span>, which are all real. These eigenvalues form the spectrum of <span class="math inline">\(H\)</span>, denoted <span class="math inline">\(\sigma(H) = \{\lambda_1 \le \cdots \le \lambda_N\}\)</span>, where the ordering is made possible by virtue of <span class="math inline">\(\lambda_i \in \mathbb R\)</span> for all <span class="math inline">\(i\)</span>. To be precise, Dyson Brownian motion is defined on a quotient space of equivalence classes of Hermitian matrices, where the equivalence relation if given by unitary matrix conjugation. That is, we say <span class="math inline">\(H_1 \sim H_2\)</span> if and only if there exists a unitary matrix <span class="math inline">\(U\)</span> such that <span class="math inline">\(H_1 = UH_2U^*\)</span>. This is the same as the equivalence relation <span class="math inline">\(H_1 \sim H_2\)</span> if and only if <span class="math inline">\(\sigma(H_1) = \sigma(H_2)\)</span>. Thus, we should expect that for a Dyson Brownian motion <span class="math inline">\((X_t)_{t \in \mathcal{I}}\)</span>, that <span class="math inline">\(X_t \in H(N) / \sim\)</span>, or identifying equivalences classes with possible spectra, then <span class="math inline">\(X_t \in \{x \in \mathbb R^N \mid x_1 \le \cdots \le x_N\}.\)</span></p>
+<p>Now recall that for Brownian motion <span class="math inline">\((B_t)_{t \in \mathcal{I}}\)</span> on <span class="math inline">\(\mathbb R\)</span> starting at <span class="math inline">\(0\)</span>, each random variable <span class="math inline">\(B_t\)</span> for fixed <span class="math inline">\(t\)</span> has a Gaussian distribution, and that the finite dimensional distributions are Gaussian vectors. And a multi-dimensional Brownian motion can be viewed as multiple one-dimensional Brownian motions tupled together. It remains to be shown what kind of finite dimensional distributions a Dyson Brownian Motion ought to have. For instance, suppose a Brownian motion is defined on Hermitian matrices <span class="math inline">\(H(N)\)</span>. How are certain eigenvalues weighted according to Brownian motion on Hermitian matrices? For instance, does one spectrum have a higher probability density than another spectrum? This needs to be answered.</p>
+</section>
+<section id="learning-about-representation-theory-of-poincare-group" class="level4">
+<h4 class="anchored" data-anchor-id="learning-about-representation-theory-of-poincare-group">Learning about Representation theory of Poincare Group</h4>
+<p>In this section I want to learn about Section 3.2 of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<p>The Poincaré group is</p>
+</section>
+</section>
 <section id="january-29-2026" class="level3">
 <h3 class="anchored" data-anchor-id="january-29-2026">January 29, 2026</h3>
 <p>In this post, I want to learn about section 2.4 in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>, called Operators on Fock space.</p>
@@ -784,6 +865,12 @@ Dimock, Jonathan. 2011. <em>Quantum Mechanics and Quantum Field Theory: A Mathem
 </div>
 <div id="ref-Amann" class="csl-entry" role="listitem">
 Herbert Amann, Joachim Escher. 2009. <em>Analysis III</em>. Birkhäuser.
+</div>
+<div id="ref-LeeSM" class="csl-entry" role="listitem">
+Lee, John. 2013. <em>An Introduction to Smooth Manifolds</em>. Springer.
+</div>
+<div id="ref-OneillElem" class="csl-entry" role="listitem">
+O’Neill, Barrett. 1966. <em>Elementary Differential Geometry</em>. Academic Press.
 </div>
 <div id="ref-TaoAna2" class="csl-entry" role="listitem">
 Tao, Terence. 2006. <em>Analysis 2</em>. Hindustan.
