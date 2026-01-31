@@ -14,12 +14,15 @@ bibliography: references.bib
 #### Summary of the Lorentz and Poincaré groups
 
 In this section I would like to breifly summarize Section 2.3
-"The Lorentz and Poincaré Groups" from @BrenneckeCQFT. 
-Let me start with the Poincaré group. 
-The Poincaré group is a mathematical object with certain structure 
-and properties. 
-It arises as a symmetry group from special relativity. 
-Viewed as a set, 
+"The Lorentz and Poincaré Groups" from @BrenneckeCQFT.
+
+The Poincaré group and the Lorentz group $O(1,3)$ are mathematical objects
+that have physical meaning in special relativity.
+For instance, Lorentz transformations describe special relativistic 
+coordinate changes of Minkowski spacetime. But from a mathematical 
+point of view, these two groups have certain structure 
+and properties. For example,
+viewed as a set, 
 $$
 \mathcal{P} = \{(a,L) \mid a \in \mathbb R^4, L \in O(1,3)\}.
 $$
@@ -28,34 +31,83 @@ $$(a,L)(a',L') = (a + La', LL')$$
 for the group law, 
 with the identity element
 $(0, 1_{\mathbb R^4})$.
-As an aside, one can obtain a Hamiltonian by
-differentiating the time component of the related 
-representation $U(te_0, 1_{\mathbb R^4})$ by bringing 
-down the first component of the four momentum, which
-is the generator of spacetime translations in 
-a quantum field theory according to the Wightman axioms (see section 3.1). 
+In view of defining strongly continuous projective 
+representations of the proper Poincare group $\mathcal{P}_+^\uparrow$ on
+some vector space, 
+and by inspecting the definition of strong continuity, 
+we consider the subspace topology on 
+$O(1,3)$ inherited from $\mathbb R^{4 \times 4}$. 
+This topological structure admits a notion of connectivity, 
+which is often mentioned. Connectivity is a desirable property
+because of the following result:
 
-Whereas Section 1.4 on special relativity describes
-the physical motivation behind 
-deductions that one can make from 
-various assumptions (for example, if $L$ is in the proper
-Lorentz group, then a forward oriented vector $x \in \mathbb R^4$ 
-is mapped back to another forward oriented vector $Lx$)
-there is not as much emphasis on 
-the topological and differential structure
-of the Poincaré group. There is 
-a mention of connectivity, but 
-it is not described explicitly how to equip 
-the Poincare group with a topology. 
-In view of the Wightman axioms, for instance, 
-what structure is needed on the Poincaré group? 
-Since the state transformation law 
-is to be implemented using a projective representation
-of the proper Poincaré group, this implies at least that
-$\mathcal{P}$ can be viewed 
-as a topological group: recall that a representation
-of a group $G$ on a vector space $V$ is a group homomorphism 
-$$\rho: G \to GL(V),$$
+:::{.callout-note title="Bargmann's Theorem"}
+Let $G$ be a connected, simply connected and compact Lie group. 
+Then every finite dimensional stronly continuous projective unitary
+representation of $G$ can be lifted to a strongly continuous unitary representation
+of $G$. 
+:::
+
+Connectivity is shown in section 2.3 through a discussion
+of parametrizations. 
+Additionally, based on the theorem, 
+the Lorentz and Poincaré groups ought to 
+have a smooth structure to turn them into 
+Lie groups. 
+
+Okay I will not conclude this section because I'm too tired.
+
+#### Lemma 2.4 Discussion
+
+The strategy to construct 
+an analytic atlas for $O(1,3)$ is as follows. 
+First one asks, if $O(1,3)$ is truly a Lie group, then what would be *its* Lie algebra?
+(Recall that the notion of a Lie algebra associated to a Lie group
+is distinct from the notion of a standalone Lie algebra.) 
+The candidate is the matrix group $\mathfrak{so}(1,3)$. 
+One then establishes that $\mathfrak{so}(1,3)$ is a Lie algebra. 
+One then finishes the proof by using the exponential and logarithm maps
+together with the Lie algebra $\mathfrak{so}(1,3)$ 
+to establish an analytic atlas for $O(1,3)$. 
+This explains one reason why the Lie algebra is of interest: it is
+used to establish charts for the (to-be) Lie group.
+
+#### Scattered Thoughts
+
+- One equips $O(1,3)$ with the subspace topology inhereted from $\mathbb R^4$. 
+Matrix multiplication $\cdot: O(1,3)^2 \to O(1,3)$ is continuous
+with respect to this topology and so is matrix inverse: $L \mapsto L^{-1}$.
+
+- Example 1.5 is important because it defines the generators $X_1, X_2,$ and $X_3$ 
+of $SO(3)$. The three matrices are also a basis 
+for $\mathfrak{so}(3)$, and the exponential map 
+$\exp: \mathfrak{so}(3) \to SO(3)$ is surjective. 
+
+- What is the role of the analytic structure of $O(1,3)$ and its Lie algebra?
+
+- I see where connectedness comes in now. It is a condition in the hypothesis
+of Proposition 1.2, which says that you can lift a projective representation
+to a unitary representation. 
+
+- How do unitary representations arise in the setting of quantum mechanics? 
+Rotating the domain of wave functions using the group $SO(3)$ gives you a unitary
+representation.
+
+- Discuss *irreducible* representations. A reducible representation of $G$ on 
+a vector space $V$ 
+would be one for which there is a non-trivial subspace $S \subset V$ for which 
+$\rho(g)S \subset S$ for all $g \in G$. In plain english, 
+the vector space $V$ can not be broken up in a
+way that is compatible with all the maps implemented via the group $G$. 
+For example, by Lemma 3.2, the representation
+$$
+\mathcal{P}_+^{\uparrow} \ni (a,L) \mapsto U(a,L) \in \mathcal{U}(L^2(S_m^+))
+$$
+is irreducible. Just from the definition of irreducibility, 
+this means that 
+there is no non-trivial invariant subspace of $L^2(S_m^+)$ under $U(a,L)$ for 
+all $(a,L)$.
+
 
 
 #### Remarks about Analysis and Geometry on Manifolds
