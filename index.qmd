@@ -9,6 +9,194 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### January 31, 2026
+
+#### Summary of the Lorentz and Poincaré groups
+
+In this section I would like to breifly summarize Section 2.3
+"The Lorentz and Poincaré Groups" from @BrenneckeCQFT. 
+Let me start with the Poincaré group. 
+The Poincaré group is a mathematical object with certain structure 
+and properties. 
+It arises as a symmetry group from special relativity. 
+Viewed as a set, 
+$$
+\mathcal{P} = \{(a,L) \mid a \in \mathbb R^4, L \in O(1,3)\}.
+$$
+Viewed as an abstract group, one writes
+$$(a,L)(a',L') = (a + La', LL')$$
+for the group law, 
+with the identity element
+$(0, 1_{\mathbb R^4})$.
+As an aside, one can obtain a Hamiltonian by
+differentiating the time component of the related 
+representation $U(te_0, 1_{\mathbb R^4})$ by bringing 
+down the first component of the four momentum, which
+is the generator of spacetime translations in 
+a quantum field theory according to the Wightman axioms (see section 3.1). 
+
+Whereas Section 1.4 on special relativity describes
+the physical motivation behind 
+deductions that one can make from 
+various assumptions (for example, if $L$ is in the proper
+Lorentz group, then a forward oriented vector $x \in \mathbb R^4$ 
+is mapped back to another forward oriented vector $Lx$)
+there is not as much emphasis on 
+the topological and differential structure
+of the Poincaré group. There is 
+a mention of connectivity, but 
+it is not described explicitly how to equip 
+the Poincare group with a topology. 
+In view of the Wightman axioms, for instance, 
+what structure is needed on the Poincaré group? 
+Since the state transformation law 
+is to be implemented using a projective representation
+of the proper Poincaré group, this implies at least that
+$\mathcal{P}$ can be viewed 
+as a topological group: recall that a representation
+of a group $G$ on a vector space $V$ is a group homomorphism 
+$$\rho: G \to GL(V),$$
+
+
+#### Remarks about Analysis and Geometry on Manifolds
+
+Stokes's Theorem is the big theorem in the intro lecture
+course called Analysis and Geometry on Manifolds at Uni. Bonn. 
+Recall the fundamental theorem of calculus: 
+$$
+\int_{[a,b]} f' = f|_a^b.
+$$
+Stokes's theorem generalizes this: 
+$$
+\int_{M} d\omega = \int_{\partial M} \omega.
+$$
+Recall also Gauss's theorem for a vector field $F: U \to \mathbb R^n$, 
+where the outward pointing normal is denoted by $\nu$:
+$$
+\int_{U} \text{Div} F = -\int_{\partial U} \langle F, \nu \rangle.
+$$
+Gauss's theorem says that 
+summing up the divergence of a physical field inside a sphere
+is the same as summing up the dot product of the field arrows
+with the arrows that are normal to the sphere on the outer surface
+of the sphere. 
+For example, the electric flux of an electric field through 
+a spherical shell can be viewed mathematically in the expressions
+$$
+\int_{\partial S} \langle E, \nu \rangle 
+$$
+or 
+$$
+\int_{\theta, \phi} E \cdot (d\theta \times d\phi) dA(\phi, \theta).
+$$
+Then supposing there is a point charge in the 
+interior of the sphere, from which infinitesimal 
+electric field divergences can be computed, 
+one gets from Gauss's theorem that the 
+electric  flux (the surface integral)
+is proportional to the total enclosed charge, $Q_0$. 
+
+The question remains how to view Gauss's theorem as a version 
+of Stoke's theorem. By analogy, one would want there 
+to be a differential form 
+$\omega$ that can be identified with $\text{Div} F dx$, and satisfying 
+the property that the exterior derivative $d\omega$ corresponds
+to $F \cdot \nu dS$, ($dS$ denoting surface measure), or equivalently
+for $d\omega$ to correspond to 
+$F \cdot (d\theta \times d\phi) dA = F \cdot d\mathbf{A}$, where 
+$d\mathbf{A}$ denotes a directed surface area element. 
+
+I was not able to figure this out in time before tennis practice, but
+the following resources are relevant: 
+
+- <https://sites.ualberta.ca/~vbouchar/MATH215/section_divergence.html>. 
+As an aside, I am inspired how the author, Vincent Bouchard, lists out all the results of the calculus course. 
+- Exercise 8 in Section 6 of Chapter I: 
+Calculus on Euclidean space in the book @OneillElem
+- section called Exterior Derivatives and Vector Calculus 
+in $\mathbb R^3$ in Chapter 14 of @LeeSM
+- section called Divergence Theorem in Chapter 16 of @LeeSM
+
+
+
+
+
+### January 30, 2026
+
+#### Dyson Brownian Motion
+
+In this subsection I want to learn about Dyson Brownian motion. 
+Let me learn about it from a high-level/superficial point of view. 
+
+I'm going to follow the article here: <https://terrytao.wordpress.com/2010/01/18/254a-notes-3b-brownian-motion-and-dyson-brownian-motion/>.
+
+Supposedly, Dyson Brownian motion is 
+Brownian motion defined on the spectrum of 
+$n \times n$ Hermitian matrices. 
+To make sense of this previous sentence, what is *usual* Brownian motion defined on? 
+The answer is that BM is defined on 
+$\mathbb R$ in the sense that 
+BM is a family of random variables 
+$(X_t)_{t \in \mathcal{I}}$ where each random variable 
+$X_t$ for fixed $t \in \mathcal{I}$ takes values in $\mathbb R$.
+Next, Brownian motion can be defined on vector spaces of 
+matrices. What does this mean? 
+This means that 
+Brownian motion can be seen as a family of 
+random variables $(X_t)_{t \in \mathcal{I}}$ where each 
+random variable $X_t$ for fixed $t$ is no longer a random real number, 
+but a random matrix. That is, if $\text{Mat}$ denotes
+a vector space of matrices, then 
+$X_t(\omega) \in \text{Mat}$ for any $t \in \mathcal{I}$ and any $\omega$ in 
+the underlying probability state space. 
+Now suppose that $\text{Mat} = H(N)$, the space of
+$N \times N$ complex Hermitian matrices. 
+Hermitian matrices are diagonalizable, 
+meaning that $H \in H(N)$ implies the existence
+of a unitary matrix $U$ and a diagonal matrix $D$
+such that $H = U^* D U$, where the diagonal of $D$ consists 
+of the eigenvalues of $H$, which are all real. These eigenvalues form 
+the spectrum of $H$, denoted 
+$\sigma(H) = \{\lambda_1 \le \cdots \le \lambda_N\}$, 
+where the ordering is made possible by virtue of $\lambda_i \in \mathbb R$ 
+for all $i$.
+To be precise, Dyson Brownian motion is 
+defined on a quotient space of equivalence 
+classes of Hermitian matrices, where the equivalence relation
+if given by unitary matrix conjugation. 
+That is, 
+we say $H_1 \sim H_2$ if and only if there exists 
+a unitary matrix $U$ such that $H_1 = UH_2U^*$. 
+This is the same as the equivalence relation
+$H_1 \sim H_2$ if and only if $\sigma(H_1) = \sigma(H_2)$.
+Thus, we should expect that for a Dyson Brownian 
+motion $(X_t)_{t \in \mathcal{I}}$, that $X_t \in H(N) / \sim$, or 
+identifying equivalences classes with possible spectra,
+then $X_t \in \{x \in \mathbb R^N \mid x_1 \le \cdots \le x_N\}.$
+
+Now recall that for Brownian motion $(B_t)_{t \in \mathcal{I}}$ on $\mathbb R$
+starting at $0$,
+each random variable $B_t$ for fixed $t$ 
+has a Gaussian distribution, and that 
+the finite dimensional distributions are 
+Gaussian vectors. And a multi-dimensional 
+Brownian motion can be viewed as multiple one-dimensional 
+Brownian motions tupled together. 
+It remains to be shown what kind
+of finite dimensional distributions a Dyson Brownian Motion 
+ought to have. For instance, suppose 
+a Brownian motion is defined on Hermitian matrices $H(N)$. 
+How are certain eigenvalues weighted according 
+to Brownian motion on Hermitian matrices? 
+For instance, does one spectrum have a higher probability density 
+than another spectrum? This needs to be answered. 
+
+#### Learning about Representation theory of Poincare Group
+
+In this section I want to learn about Section 3.2 of @BrenneckeCQFT. 
+
+The Poincaré group is 
+
 ### January 29, 2026
 
 In this post, I want to learn about section 2.4 in @BrenneckeCQFT, called 
