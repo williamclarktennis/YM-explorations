@@ -8,8 +8,9 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - text: "Older Posts"
+      - text: "Monthly Archive"
         menu: 
+          - href: January2026.qmd
           - href: December2025.qmd
       - phone-notes.qmd
       - text: "Other"
@@ -24,6 +25,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-
