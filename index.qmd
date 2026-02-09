@@ -9,6 +9,80 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### February 8, 2026
+
+In (3.14), we have for $f \in S(\mathbb R^4)$ that 
+$$
+\phi(f) = \sqrt{2 \pi} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p + h.c.
+$$
+Straying slightly from the exact formulation (2.21), which 
+is over $\mathbb R^4$ instead of the mass shell, let us identify
+$$
+a(g) = \int_{S_m^+} \lambda_m(dp) \overline{g}(p) a_p. 
+$$
+This suggests to write,
+$$
+\phi(f) = a(\sqrt{2 \pi} \overline{\tilde{f}(\cdot)}) + h.c. 
+$$
+But then the issue is that $\sqrt{2 \pi} \overline{\tilde{f}(\cdot)}$ is 
+a Schwartz function on $\mathbb R^4$, and in this setting, we want 
+annihilation operators to be defined by $L^2(S_m^+)$ functions. 
+
+Does it work to simply write (?): 
+$$
+\phi(f) = a(\sqrt{2 \pi} \overline{\tilde{f}(\cdot)}|_{S_m^+}) + h.c. 
+$$
+where
+$\sqrt{2 \pi} \overline{\tilde{f}(\cdot)}|_{S_m^+}$ denotes the restriction 
+to $S_m^+$? 
+
+
+### February 4, 2026
+
+In this section I want collect short summaries of ideas 
+and arguments from the Wightman axioms. I'll just write a bunch of short
+little paragraphs. I want to be tolerant of mistakes. In particular, 
+I want to make mistakes and not over-verify that things are correct. 
+
+Let me start with the state transformation law for the Wightman axioms. 
+The main idea is that you collect a Hilbert space $\mathcal{H}$, 
+a representation $U$ of the covering group of the Poincaré group, 
+and a vacuum state $\Omega$. But the mathematically demanding 
+part is to invoke self-adjoint operator theory 
+to obtain the 4-momentum $P$, and to use ideas from special relativity 
+to 
+
+One establishes a Hilbert space of states $\mathbb H$. 
+Then the state transformation law with regards to change of reference frames 
+is given WLOG by an ordinary representation of the inhomogeneous $SL(2, \mathbb C)$.
+So we can just write $U(a,L(A))$ for $(a,A)$ in the covering space.  
+
+We can obtain one coordinate of the 
+4 momentum $P$ by partial diffentiating the strongly continuous family 
+of unitary operators $U(a,L(1_{\mathbb C^{2 \times 2}}))_{a \in \mathbb R^4}$
+at $(0,0,0,0)$ and multiplying by $i$.  
+
+
+
+
+Notes:
+
+- Note that for lifing the representation $U(\cdot, \cdot)$
+of $\mathcal{P_+^\uparrow}$ to the 
+cover $\mathbb R^4 \rtimes SL(2, \mathbb C)$
+with the covering map $L: SL(2, \mathbb C) \to \mathcal{L}_+^{\uparrow}$, 
+I can just think of the equation $$
+U(a,(\cdot)) \circ L(\cdot) = \tilde{U}(a,(\cdot))
+$$
+on the covering space $SL(2,\mathbb C)$.
+- To see the difference between direct product and tensor product,
+form a basis of $\mathbb R^2 \oplus \mathbb R^3$ by concatenation, 
+but form a basis of $\mathbb R^2 \otimes \mathbb R^3$ by
+forming all combinations of elementary elements $e_i \otimes e_j$ for 
+$i \in \{1,2\}$ and $j \in \{1,2,3\}$. 
+ 
+
+
 ### February 2, 2026
 
 Here is a list of "high-level" questions that
@@ -60,9 +134,8 @@ the land of distribution theory, the land of operator theory (Fock space, spectr
 theorem, quantum mechanics, quantization, unitary dynamics), and representation
 theory?
 
-#### Answer...
 
-##### to Question 1
+##### Answer to Question 1
 
 It seems the analytic structure of the covering group of the Poincaré 
 group is used in the proof of Lemma 3.11. Basically, 
@@ -77,24 +150,3 @@ Such an analytic structure does not appear to be related to
 the Laplace transform or any of its related support requirements 
 in QFT. 
 
-##### to Question 2
-
-##### to Question 3
-
-##### to Question 4
-
-##### to Question 5
-
-##### to Question 6
-
-##### to Question 7
-
-##### to Question 8
-
-##### to Question 9
-
-##### to Question 10
-
-##### to Question 11
-
-Pass
