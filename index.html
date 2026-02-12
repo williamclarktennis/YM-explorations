@@ -197,7 +197,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#february-2-2026" id="toc-february-2-2026" class="nav-link active" data-scroll-target="#february-2-2026">February 2, 2026</a></li>
+  <li><a href="#february-12-2026" id="toc-february-12-2026" class="nav-link active" data-scroll-target="#february-12-2026">February 12, 2026</a></li>
+  <li><a href="#february-8-2026" id="toc-february-8-2026" class="nav-link" data-scroll-target="#february-8-2026">February 8, 2026</a></li>
+  <li><a href="#february-4-2026" id="toc-february-4-2026" class="nav-link" data-scroll-target="#february-4-2026">February 4, 2026</a></li>
+  <li><a href="#february-2-2026" id="toc-february-2-2026" class="nav-link" data-scroll-target="#february-2-2026">February 2, 2026</a></li>
   </ul>
 </nav>
     </div>
@@ -223,6 +226,50 @@ window.Quarto = {
 </header>
 
 
+<section id="february-12-2026" class="level3">
+<h3 class="anchored" data-anchor-id="february-12-2026">February 12, 2026</h3>
+<p>For <span class="math inline">\(x \in (-1,1)\)</span>, we know that <span class="math display">\[
+\log(1-x) = - \sum_{i=1}^{\infty} \frac{c^i}{i}.
+\]</span></p>
+<p>Also, in functional analysis, bounded operators from one Hilbert space to another can be viewed as points in a Banach space.</p>
+<p>Using this abstraction, would we define, treating <span class="math inline">\(L: \mathcal{H} \to \mathcal{H}\)</span> like <span class="math inline">\(x\)</span> as above,<br>
+for <span class="math inline">\(\lVert L \rVert_{op} \in (-1,1)\)</span>, the following? <span class="math display">\[
+\log(1-L) = - \sum_{i=1}^{\infty} \frac{L^i}{i}
+\]</span></p>
+<p>Or more useful could be the following. For <span class="math inline">\(c \in (0,2)\)</span> we know that <span class="math display">\[
+\log(c) = -\sum_{i=1}^{\infty} \frac{(1-c)^i}{i} = \sum_{i=1}^{\infty} (-1)^{i+1} \frac{(c-1)^i}{i},
+\]</span> so would we then define for <span class="math inline">\(\lVert L \rVert_{op} \in (0,2)\)</span>, that <span class="math display">\[
+\log(L) =  \sum_{i=1}^{\infty} \frac{(-1)^{i+1}}{i} (L-I)^i,
+\]</span> where <span class="math inline">\(I\)</span> denotes the identity operator?</p>
+</section>
+<section id="february-8-2026" class="level3">
+<h3 class="anchored" data-anchor-id="february-8-2026">February 8, 2026</h3>
+<p>The following post is regarding <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<p>In (3.14), we have for <span class="math inline">\(f \in S(\mathbb R^4)\)</span> that <span class="math display">\[
+\phi(f) = \sqrt{2 \pi} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p + h.c.
+\]</span> Straying slightly from the exact formulation (2.21), which is over <span class="math inline">\(\mathbb R^4\)</span> instead of the mass shell, let us identify <span class="math display">\[
+a(g) = \int_{S_m^+} \lambda_m(dp) \overline{g}(p) a_p.
+\]</span> This suggests to write, <span class="math display">\[
+\phi(f) = a(\sqrt{2 \pi} \overline{\tilde{f}(\cdot)}) + h.c.
+\]</span> But then the issue is that <span class="math inline">\(\sqrt{2 \pi} \overline{\tilde{f}(\cdot)}\)</span> is a Schwartz function on <span class="math inline">\(\mathbb R^4\)</span>, and in this setting, we want annihilation operators to be defined by <span class="math inline">\(L^2(S_m^+)\)</span> functions.</p>
+<p>Does it work to simply write (?): <span class="math display">\[
+\phi(f) = a(\sqrt{2 \pi} \overline{\tilde{f}(\cdot)}|_{S_m^+}) + h.c.
+\]</span> where <span class="math inline">\(\sqrt{2 \pi} \overline{\tilde{f}(\cdot)}|_{S_m^+}\)</span> denotes the restriction to <span class="math inline">\(S_m^+\)</span>?</p>
+</section>
+<section id="february-4-2026" class="level3">
+<h3 class="anchored" data-anchor-id="february-4-2026">February 4, 2026</h3>
+<p>In this section I want collect short summaries of ideas and arguments from the Wightman axioms. I’ll just write a bunch of short little paragraphs. I want to be tolerant of mistakes. In particular, I want to make mistakes and not over-verify that things are correct.</p>
+<p>Let me start with the state transformation law for the Wightman axioms. The main idea is that you collect a Hilbert space <span class="math inline">\(\mathcal{H}\)</span>, a representation <span class="math inline">\(U\)</span> of the covering group of the Poincaré group, and a vacuum state <span class="math inline">\(\Omega\)</span>. But the mathematically demanding part is to invoke self-adjoint operator theory to obtain the 4-momentum <span class="math inline">\(P\)</span>, and to use ideas from special relativity to</p>
+<p>One establishes a Hilbert space of states <span class="math inline">\(\mathbb H\)</span>. Then the state transformation law with regards to change of reference frames is given WLOG by an ordinary representation of the inhomogeneous <span class="math inline">\(SL(2, \mathbb C)\)</span>. So we can just write <span class="math inline">\(U(a,L(A))\)</span> for <span class="math inline">\((a,A)\)</span> in the covering space.</p>
+<p>We can obtain one coordinate of the 4 momentum <span class="math inline">\(P\)</span> by partial diffentiating the strongly continuous family of unitary operators <span class="math inline">\(U(a,L(1_{\mathbb C^{2 \times 2}}))_{a \in \mathbb R^4}\)</span> at <span class="math inline">\((0,0,0,0)\)</span> and multiplying by <span class="math inline">\(i\)</span>.</p>
+<p>Notes:</p>
+<ul>
+<li>Note that for lifing the representation <span class="math inline">\(U(\cdot, \cdot)\)</span> of <span class="math inline">\(\mathcal{P_+^\uparrow}\)</span> to the cover <span class="math inline">\(\mathbb R^4 \rtimes SL(2, \mathbb C)\)</span> with the covering map <span class="math inline">\(L: SL(2, \mathbb C) \to \mathcal{L}_+^{\uparrow}\)</span>, I can just think of the equation <span class="math display">\[
+U(a,(\cdot)) \circ L(\cdot) = \tilde{U}(a,(\cdot))
+\]</span> on the covering space <span class="math inline">\(SL(2,\mathbb C)\)</span>.</li>
+<li>To see the difference between direct product and tensor product, form a basis of <span class="math inline">\(\mathbb R^2 \oplus \mathbb R^3\)</span> by concatenation, but form a basis of <span class="math inline">\(\mathbb R^2 \otimes \mathbb R^3\)</span> by forming all combinations of elementary elements <span class="math inline">\(e_i \otimes e_j\)</span> for <span class="math inline">\(i \in \{1,2\}\)</span> and <span class="math inline">\(j \in \{1,2,3\}\)</span>.</li>
+</ul>
+</section>
 <section id="february-2-2026" class="level3">
 <h3 class="anchored" data-anchor-id="february-2-2026">February 2, 2026</h3>
 <p>Here is a list of “high-level” questions that will guide me as I try to learn the contents of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
@@ -240,47 +287,13 @@ window.Quarto = {
 <li><p>What is the role of the parity operator? What even is it?</p></li>
 <li><p>Is there a bridge between the following three lands: the land of distribution theory, the land of operator theory (Fock space, spectral theorem, quantum mechanics, quantization, unitary dynamics), and representation theory?</p></li>
 </ol>
-<section id="answer" class="level4">
-<h4 class="anchored" data-anchor-id="answer">Answer…</h4>
-<section id="to-question-1" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-1">to Question 1</h5>
+<section id="answer-to-question-1" class="level5">
+<h5 class="anchored" data-anchor-id="answer-to-question-1">Answer to Question 1</h5>
 <p>It seems the analytic structure of the covering group of the Poincaré group is used in the proof of Lemma 3.11. Basically, one analyzes the Lie algebra of <span class="math inline">\(SL(2, \mathbb C)\)</span> in order to find finite dimensional irreducible representations of <span class="math inline">\(SL(2,\mathbb C),\)</span> but one needs an extra lemma regarding a local diffeomorphism property of an exponential map from Lie algebra to Lie group, which requires a smooth structure on <span class="math inline">\(SL(2, \mathbb C)\)</span> (the Lie group in this case).</p>
 <p>Such an analytic structure does not appear to be related to the Laplace transform or any of its related support requirements in QFT.</p>
-</section>
-<section id="to-question-2" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-2">to Question 2</h5>
-</section>
-<section id="to-question-3" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-3">to Question 3</h5>
-</section>
-<section id="to-question-4" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-4">to Question 4</h5>
-</section>
-<section id="to-question-5" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-5">to Question 5</h5>
-</section>
-<section id="to-question-6" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-6">to Question 6</h5>
-</section>
-<section id="to-question-7" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-7">to Question 7</h5>
-</section>
-<section id="to-question-8" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-8">to Question 8</h5>
-</section>
-<section id="to-question-9" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-9">to Question 9</h5>
-</section>
-<section id="to-question-10" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-10">to Question 10</h5>
-</section>
-<section id="to-question-11" class="level5">
-<h5 class="anchored" data-anchor-id="to-question-11">to Question 11</h5>
-<p>Pass</p>
 
 
 
-</section>
 </section>
 </section>
 
