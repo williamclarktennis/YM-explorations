@@ -9,7 +9,40 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### February 12, 2026
+
+For $x \in (-1,1)$, we know that 
+$$
+\log(1-x) = - \sum_{i=1}^{\infty} \frac{c^i}{i}.
+$$
+
+Also, in functional analysis, bounded operators from one Hilbert 
+space to another can be viewed as points in a Banach space. 
+
+Using this abstraction, would we define, treating $L: \mathcal{H} \to \mathcal{H}$ like 
+$x$ as above,  
+for $\lVert L \rVert_{op} \in (-1,1)$, 
+the following?
+$$
+\log(1-L) = - \sum_{i=1}^{\infty} \frac{L^i}{i}
+$$
+
+Or more useful could be the following. 
+For $c \in (0,2)$ we know that
+$$
+\log(c) = -\sum_{i=1}^{\infty} \frac{(1-c)^i}{i} = \sum_{i=1}^{\infty} (-1)^{i+1} \frac{(c-1)^i}{i},
+$$
+so would we then define for 
+$\lVert L \rVert_{op} \in (0,2)$,
+that
+$$
+\log(L) =  \sum_{i=1}^{\infty} \frac{(-1)^{i+1}}{i} (L-I)^i,
+$$
+where $I$ denotes the identity operator?
+
 ### February 8, 2026
+
+The following post is regarding @BrenneckeCQFT. 
 
 In (3.14), we have for $f \in S(\mathbb R^4)$ that 
 $$
