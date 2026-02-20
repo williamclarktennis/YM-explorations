@@ -9,6 +9,95 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### February 20, 2026
+
+#### Notes on Chatterjee Leading Term paper
+
+I want to compute the matrix of 
+the form $M_n^0$ in some simple cases. 
+Note that $M_n^0: \mathbb R^{E_n^1} \times \mathbb R^{E_n^1} \to \mathbb R$, 
+and the matrix to $M_n^0$, denote it $l_n^0$, satisfies 
+$l_n^0 : E_n^1 \times E_n^1 \to \mathbb R.$ Note that this is a slightly
+ambiguous definition of a matrix because we haven't
+defined an ordering on the edges. This will become 
+important for defining a determinant of $l_n^0$.
+Furthermore, the matrix to the form satisfies
+$$l_n^0(e_i, e_j) = M_n^0(1_{e_i}, 1_{e_j}),$$
+where 
+$1_{e_j} : E_n^1 \to \mathbb R$ is given by 
+$$
+1_{e_j}(e) = \begin{cases}
+1 & \text{if }e = e_j\\
+0 & \text{if }e \ne e_j
+\end{cases}
+$$
+for all $e \in E_n^1$.
+Recall also that 
+$$M_n^0(t,s) = \sum_{p \in \mathcal{P}} t(p) s(p)$$
+for $(t,s) \in \mathbb R^{E_n^1} \times \mathbb R^{E_n^1}$, 
+where $t(p) = t(p^{1}) + t(p^{2}) - t(p^{3}) - t(p^{4})$, 
+where $p$ is a plaquette and $p^i$ are the positively oriented
+edges comprising the plaquette. 
+Note also that 
+$M_n^0$ is symmetric:
+$$
+M_n^0(t,s) = M_n^0(s,t).
+$$
+
+When $n=4$, 
+the matrix to $M_4^0$ is a $9$ by $9$ matrix 
+because there are $9$ edges in $E_4^1$. When
+$n=3$, the matrix to $M_3^0$ is a $4$ by $4$ matrix
+because there are $4$ edges in $E_3^1$. In this case, by symmetry, 
+we need to compute 
+$10$ entries of a $16$ entry matrix.
+
+Thus, let's compute $l_3^0$. So we consider the box $B_3$.
+Let 
+$$e_1 = ((0,1),(1,1))$$
+$$e_2 = ((1,1),(2,1))$$
+$$e_3 = ((0,2),(1,2))$$
+$$e_4 = ((1,2),(2,2))$$
+be shorthand notation 
+for the edges in $E_3^1$.
+The plaquettes are 
+$$p_1 = ((0,0), 1,2)$$
+$$p_2 = ((1,0), 1,2)$$
+$$p_3 = ((0,1), 1,2)$$
+and
+$$p_4 = ((1,1), 1,2).$$
+
+![Names of edges and plaquettes for this example](./pics/B3.jpeg)
+
+Then 
+$$
+l_3^0 = \begin{bmatrix}
+2 & 0 & -1 & 0 \\
+0 & 2 & 0 & -1 \\
+-1 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+\end{bmatrix}
+$$
+where row $i$ and column $j$ has $l_3^0(e_i,e_j)$, 
+which was an arbitrary way to arrange the matrix, based on
+the choice of the shorthand notation 
+for the edges in $E_3^1$.
+
+As an example computation, we have
+\begin{align*}
+l_3^0(e_1, e_1) &= M_n^0(1_{e_1},1_{e_1})\\
+&= 1_{e_1}(p_1)1_{e_1}(p_1) + \cdots + 1_{e_1}(p_4)1_{e_1}(p_4)\\
+&= (-1)(-1) + (0)(0) + (1)(1) + (0)(0)\\
+&= 2.
+\end{align*}
+
+It is interesting how the edges $e_3$ and $e_4$ on 
+the boundary only have one plaquette that 
+gives a non-zero term, 
+where the edges $e_1$ and $e_2$ which are in the interior of
+the box, have two plaquettes, $p_1$ and $p_3$, and $p_2$ and $p_4$, respectively, 
+whcih give a non-zero term in the quadratic form on the diagonal.
+
 ### February 12, 2026
 
 For $x \in (-1,1)$, we know that 
