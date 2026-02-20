@@ -7,6 +7,26 @@ This file is edited from mobile.
 Do not overwrite without pulling first.
 -->
 
+### February 20, 2026
+
+The matrix of the form 
+in section 2 of Chatterjee has a 
+determinant which is invariant under
+a change of the ordering of
+the elements of the edge set. 
+If you permute the edge set,
+this permutation corresponds to a 
+sequence of transpositions. Each 
+transposition corresponds to 
+swapping two rows then two columns. When you
+swap two rows, the determinant changes by 
+a factor or negative one. Swapping 
+the corresponding columns changes the
+determinant back to what it was originally.
+This shows the the determinant is well defined
+regardless of the choice of 
+ordering of the edges. 
+
 ### February 3, 2026
 
 Today in my lecture we learned about the
