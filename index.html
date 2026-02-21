@@ -179,6 +179,10 @@ window.Quarto = {
     <a class="dropdown-item" href="./list-cqft.html">
  <span class="dropdown-text">List of results from CQFT 2</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./def-list-chatterjee.html">
+ <span class="dropdown-text">Definitions in Chatterjee’s Leading Term Paper</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -197,7 +201,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#february-12-2026" id="toc-february-12-2026" class="nav-link active" data-scroll-target="#february-12-2026">February 12, 2026</a></li>
+  <li><a href="#february-20-2026" id="toc-february-20-2026" class="nav-link active" data-scroll-target="#february-20-2026">February 20, 2026</a></li>
+  <li><a href="#february-12-2026" id="toc-february-12-2026" class="nav-link" data-scroll-target="#february-12-2026">February 12, 2026</a></li>
   <li><a href="#february-8-2026" id="toc-february-8-2026" class="nav-link" data-scroll-target="#february-8-2026">February 8, 2026</a></li>
   <li><a href="#february-4-2026" id="toc-february-4-2026" class="nav-link" data-scroll-target="#february-4-2026">February 4, 2026</a></li>
   <li><a href="#february-2-2026" id="toc-february-2-2026" class="nav-link" data-scroll-target="#february-2-2026">February 2, 2026</a></li>
@@ -226,6 +231,43 @@ window.Quarto = {
 </header>
 
 
+<section id="february-20-2026" class="level3">
+<h3 class="anchored" data-anchor-id="february-20-2026">February 20, 2026</h3>
+<section id="notes-on-chatterjee-leading-term-paper" class="level4">
+<h4 class="anchored" data-anchor-id="notes-on-chatterjee-leading-term-paper">Notes on Chatterjee Leading Term paper</h4>
+<p>I want to compute the matrix of the form <span class="math inline">\(M_n^0\)</span> in some simple cases. Note that <span class="math inline">\(M_n^0: \mathbb R^{E_n^1} \times \mathbb R^{E_n^1} \to \mathbb R\)</span>, and the matrix to <span class="math inline">\(M_n^0\)</span>, denote it <span class="math inline">\(l_n^0\)</span>, satisfies <span class="math inline">\(l_n^0 : E_n^1 \times E_n^1 \to \mathbb R.\)</span> Note that this is a slightly ambiguous definition of a matrix because we haven’t defined an ordering on the edges. This will become important for defining a determinant of <span class="math inline">\(l_n^0\)</span>. Furthermore, the matrix to the form satisfies <span class="math display">\[l_n^0(e_i, e_j) = M_n^0(1_{e_i}, 1_{e_j}),\]</span> where <span class="math inline">\(1_{e_j} : E_n^1 \to \mathbb R\)</span> is given by <span class="math display">\[
+1_{e_j}(e) = \begin{cases}
+1 &amp; \text{if }e = e_j\\
+0 &amp; \text{if }e \ne e_j
+\end{cases}
+\]</span> for all <span class="math inline">\(e \in E_n^1\)</span>. Recall also that <span class="math display">\[M_n^0(t,s) = \sum_{p \in \mathcal{P}} t(p) s(p)\]</span> for <span class="math inline">\((t,s) \in \mathbb R^{E_n^1} \times \mathbb R^{E_n^1}\)</span>, where <span class="math inline">\(t(p) = t(p^{1}) + t(p^{2}) - t(p^{3}) - t(p^{4})\)</span>, where <span class="math inline">\(p\)</span> is a plaquette and <span class="math inline">\(p^i\)</span> are the positively oriented edges comprising the plaquette. Note also that <span class="math inline">\(M_n^0\)</span> is symmetric: <span class="math display">\[
+M_n^0(t,s) = M_n^0(s,t).
+\]</span></p>
+<p>When <span class="math inline">\(n=4\)</span>, the matrix to <span class="math inline">\(M_4^0\)</span> is a <span class="math inline">\(9\)</span> by <span class="math inline">\(9\)</span> matrix because there are <span class="math inline">\(9\)</span> edges in <span class="math inline">\(E_4^1\)</span>. When <span class="math inline">\(n=3\)</span>, the matrix to <span class="math inline">\(M_3^0\)</span> is a <span class="math inline">\(4\)</span> by <span class="math inline">\(4\)</span> matrix because there are <span class="math inline">\(4\)</span> edges in <span class="math inline">\(E_3^1\)</span>. In this case, by symmetry, we need to compute <span class="math inline">\(10\)</span> entries of a <span class="math inline">\(16\)</span> entry matrix.</p>
+<p>Thus, let’s compute <span class="math inline">\(l_3^0\)</span>. So we consider the box <span class="math inline">\(B_3\)</span>. Let <span class="math display">\[e_1 = ((0,1),(1,1))\]</span> <span class="math display">\[e_2 = ((1,1),(2,1))\]</span> <span class="math display">\[e_3 = ((0,2),(1,2))\]</span> <span class="math display">\[e_4 = ((1,2),(2,2))\]</span> be shorthand notation for the edges in <span class="math inline">\(E_3^1\)</span>. The plaquettes are <span class="math display">\[p_1 = ((0,0), 1,2)\]</span> <span class="math display">\[p_2 = ((1,0), 1,2)\]</span> <span class="math display">\[p_3 = ((0,1), 1,2)\]</span> and <span class="math display">\[p_4 = ((1,1), 1,2).\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./pics/B3.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Names of edges and plaquettes for this example</figcaption>
+</figure>
+</div>
+<p>Then <span class="math display">\[
+l_3^0 = \begin{bmatrix}
+2 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 2 &amp; 0 &amp; -1 \\
+-1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; -1 &amp; 0 &amp; 1 \\
+\end{bmatrix}
+\]</span> where row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span> has <span class="math inline">\(l_3^0(e_i,e_j)\)</span>, which was an arbitrary way to arrange the matrix, based on the choice of the shorthand notation for the edges in <span class="math inline">\(E_3^1\)</span>.</p>
+<p>As an example computation, we have <span class="math display">\[\begin{align*}
+l_3^0(e_1, e_1) &amp;= M_n^0(1_{e_1},1_{e_1})\\
+&amp;= 1_{e_1}(p_1)1_{e_1}(p_1) + \cdots + 1_{e_1}(p_4)1_{e_1}(p_4)\\
+&amp;= (-1)(-1) + (0)(0) + (1)(1) + (0)(0)\\
+&amp;= 2.
+\end{align*}\]</span></p>
+<p>It is interesting how the edges <span class="math inline">\(e_3\)</span> and <span class="math inline">\(e_4\)</span> on the boundary only have one plaquette that gives a non-zero term, where the edges <span class="math inline">\(e_1\)</span> and <span class="math inline">\(e_2\)</span> which are in the interior of the box, have two plaquettes, <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_3\)</span>, and <span class="math inline">\(p_2\)</span> and <span class="math inline">\(p_4\)</span>, respectively, whcih give a non-zero term in the quadratic form on the diagonal.</p>
+</section>
+</section>
 <section id="february-12-2026" class="level3">
 <h3 class="anchored" data-anchor-id="february-12-2026">February 12, 2026</h3>
 <p>For <span class="math inline">\(x \in (-1,1)\)</span>, we know that <span class="math display">\[
