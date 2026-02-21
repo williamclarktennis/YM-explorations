@@ -1,0 +1,30 @@
+---
+title: "Definitions in Chatterjee's Leading Term Paper"
+bibliography: references.bib
+---
+
+I am using formatting from this article: <https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections>. 
+
+I am listing out relevant definitions from @Chatterjee2016.
+
+### Section 2. Results.
+
+<details>
+
+<summary>lattice gauge theory on $\epsilon \mathbb Z^d$ </summary>
+
+Fix $\epsilon > 0$. 
+We note $\epsilon \mathbb Z = \{ a \in \mathbb R: a = \epsilon k
+\text{ for some } k \in \mathbb Z\}$. Then 
+$\epsilon \mathbb Z^d = \{(a_1, \cdots, a_d) \in \mathbb R^d: a_i \in \epsilon \mathbb Z \}$.
+We say two vertices $x,y \in \epsilon \mathbb Z^d$ are adjacent 
+if $x = y \pm \epsilon e_i$ for some $i \in [d]$. In this case 
+we write $x \sim y$.
+Let $\Lambda \subset \epsilon \mathbb Z^d$ be a finite subset. 
+Let $E_{\Lambda} = \{(x,y) \in \Lambda^2: x \sim y \text{ and } x < y \}$, 
+where $x < y$ means that $\frac{1}{\epsilon} x < \frac{1}{\epsilon} y$ in the 
+lexicographical ordering.
+A configuration is a map $U: E_\Lambda \to U(N)$, where we also
+define $U(y,x) = U(x,y)^*$ for $(x,y) \in E_\Lambda$.
+
+</details>
