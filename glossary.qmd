@@ -8,6 +8,27 @@ bibliography: references.bib
 
 </details>
 
+<details><summary> Operation/action on a set/object/module </summary>
+
+Let $G$ be a group and let $S$ be a set. An operation or
+an action of $G$ on $S$ is a homomorphism
+$$\pi: G \to \text{Perm}(S)$$
+of $G$ into the group of permutations of $S$.
+We then call $S$ a $G$-set. 
+We denote the permutation associated with an element 
+$x \in G$ by $\pi_x$. Thus the homomorphism is denoted by
+$x \mapsto \pi_x$.
+That is,
+$$
+\pi_{g_1 g_2} = \pi_{g_1} \circ \pi_{g_2} \in \text{Perm}(S).
+$$
+Given $s \in S$, the image of $s$ under the permutation 
+$\pi_x$ is $\pi_x(s)$. From such an operation 
+we obtain a mapping
+$$G \times S \to S$$
+$$G \times S \ni (x,s) \mapsto \pi_x(s) =: xs \in S.$$
+
+</details>
 
 <details><summary> Algebra </summary>
 
@@ -42,7 +63,7 @@ We view such a map as a law of composition on $E$.
 
 
 
-<details><summary> Module </summary>
+<details><summary> Module, Submodule </summary>
 
 Let $A$ be a ring. 
 A left-module over $A$, denoted by $M$, 
@@ -58,6 +79,9 @@ One can prove that
 $a(-x) = -(ax)$ and that $0x = 0$.
 By definition of an operation, we
 have $1x = x$. 
+
+Let $M$ be a module. By a submodule $N$ of $M$ we mean an additive
+subgroup such that $AN \subset N$. 
 
 </details>
 
@@ -289,5 +313,49 @@ $x^{-1} \in G$. That is, if $x \in G$, then $xx^{-1} = x^{-1}x = e$.
 A subgroup $H$ of $G$
 is a subset of $G$ which is closed
 under taking inverses and the law of composition, and contains the unit element.
+
+</details>
+
+<details><summary> Group Homomorphism, Isomorphism, Automorphism, Endomorphism </summary>
+
+Let $G, G'$ be monoids.
+A homomorphism is a mapping 
+$f: G \to G'$ such that 
+$f(xy) = f(x)f(y)$ for all $x,y \in G$. 
+If in addition $G, G'$ are groups, 
+then $f$ is called a group homomorphism.
+
+A homomophism $f: G \to G'$ is called an isomorphism
+if there exists a homomorphism $g: G' \to G$ such that 
+$f \circ g$ and $g \circ f$ are the identity mappings
+(in $G'$ and $G$ respectively).
+
+An isomorphism $f: G \to G$ is called 
+an automorphism. 
+
+A homomorphism of $G$ into itself is called an endomorphism. 
+
+</details>
+
+<details><summary> Left/right coset </summary>
+
+p. 12 Lang
+
+Let $G$ be a group and let $H$ be a subgroup. 
+A left coset of $H$ in $G$ is a subset 
+of $G$ of type $aH$, for some element
+$a$ of $G$. An element of $aH$ is called a coset 
+representative of $aH$. The map $x \mapsto ax$ induces
+a bijection of $H$ onto $aH$. 
+Hence any two left cosets have the same cardinality. 
+
+Observe that if $a,b$ are elements in $G$
+and $aH$, $bH$ are cosets having one element 
+in common, then they are equal. Indeed, let $ax = by$ with $x,y \in H$.
+Then $a = byx^{-1}$. But $yx^{-1} \in H$. Hence, $aH = b(yx^{-1})H = bH$, because 
+for any $z \in H$ we have $zH = H$.
+
+We conclude that $G$ is the disjoint union of the left cosets of $H$. 
+A similar remark applies to the right cosets (subsets of $G$ of type $Ha$).
 
 </details>
