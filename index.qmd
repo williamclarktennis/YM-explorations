@@ -9,6 +9,143 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### February 24, 2026
+
+I'm going to type out the rest of @SerreLie Chapter 1: Lie Algebras: Definitions and Examples.
+
+Examples.
+
+(i) Let $k$ be a complete field with respect to an absolute value, 
+let $G$ be an analytic group over $k$, and let $\mathfrak{g}$ 
+be the set of tangent vectors to $G$ at the origin. 
+There is a natural structure of a Lie algebra on $\mathfrak{g}$.
+
+(ii) Let $\mathfrak{g}$ be any $k$-module.
+Define $[x,y] = 0$ for all $x, y \in \mathfrak{g}$. 
+Such a $\mathfrak{g}$ is called a commutative Lie Algebra.
+
+(iii) If in the preceding example we take
+$\mathfrak{g} \oplus \bigwedge^2 \mathfrak{g}$ 
+and define 
+$$[x,y] = x \wedge y$$
+$$[x, y \wedge z] = 0$$
+$$[x \wedge y, z] = 0$$
+$$[x \wedge y, z \wedge t] = 0$$
+for all $x,y,z,t \in \mathfrak{g}$, then $\mathfrak{g} \oplus \bigwedge^2 \mathfrak{g}$ is 
+a Lie algebra.
+
+(iv) Let $A$ be an associative algebra over $k$
+and define $[x,y] = xy - yx$, for all $x,y \in A$. 
+Clearly $A$ with this product satisfies the axioms 1) and 2).
+
+Definition 2. Let $A$ be an algebra over $k$.
+A derivation $D: A \to A$ is a $k$-linear map
+with the property $D(x \cdot y) = Dx \cdot y + x \cdot Dy$.
+
+(v) The set $\text{Der}(A)$ of all derivations of an algebra
+$A$ is a Lie algebra with the product $[D,D'] = DD' - D'D$. 
+We will prove this by computation: 
+\begin{align*}
+[D,D'](x \cdot y) &= DD'(x \cdot y) - D'D(x \cdot y) \\
+&= D(D'x \cdot y + x \cdot D'y) - D'(Dx \cdot y + x \cdot Dy) \\
+&= DD'x \cdot y + D'x \cdot Dy + Dx \cdot D'y + x \cdot DD'y \\
+&- D'Dx \cdot y - Dx \cdot D'y - D'x \cdot Dy - x D'Dy \\
+&= DD'x \cdot y + x \cdot DD'y - D'Dx \cdot y - x \cdot D'Dy \\
+&= [D,D'] x \cdot y + x \cdot [D,D'] y.
+\end{align*}
+
+Theorem 3. Let $\mathfrak{g}$ be a Lie algebra. For any $x \in \mathfrak{g}$
+define a map $\text{ad}x: \mathfrak{g} \to \mathfrak{g}$ by 
+$$\text{ad}x(y) = [x,y],$$
+then 
+
+1. $\text{ad}x$ is a derivation of $\mathfrak{g}$.
+
+2. The map $x \mapsto \text{ad}x$ is a Lie homomorphism
+of $\mathfrak{g}$ into $\text{Der}(\mathfrak{g})$.
+
+Proof. 
+\begin{align*}
+\text{ad}x[y,z] &= [x,[y,z]] \\
+&= -[y,[z,x]] - [z,[x,y]] \\
+&= [[x,y],z] + [y,[x,z]] \\
+&= [\text{ad}x(y), z] + [y, \text{ad}x(z)],
+\end{align*}
+hence 1. is equivalent to the Jacobi identity.
+
+Now 
+\begin{align*}
+\text{ad}[x,y](z) &= [[x,y],z] \\
+&= -[[y,z],x] - [[z,x],y] \\
+&= [x,[y,z]] - [y,[x,z]] \\
+&= \text{ ad}x \text{ ad}y(z) - \text{ ad}y \text{ ad} x(z) \\
+&= [\text{ ad}x, \text{ ad}y](z),
+\end{align*}
+hence (2) is also equivalent to the Jacobi identity.
+
+(vi) The Lie Algebra of an algebraic matrix group.
+
+Let $k$ be a commutative ring and let $A = M_n(k)$ be the algebra of 
+$n \times n$ matrices over $k$. Given a set of polynomials
+$P_\alpha(X_{ij})$ for $1 \le i,j \le n$, a zero of $(P_\alpha)$
+is a matrix $x = (x_{ij})$ such that $x_{ij} \in k$ and $P_\alpha(x_{ij}) = 0$ for all $\alpha$.
+
+Let $G(k)$ denote the set of zeroes of $(P_\alpha)$.
+If $k'$ is any associative, commutative $k$-algebra, we have analogously 
+that $G(k') \subset M_n(k')$.
+
+Definition 4. The set $(P_\alpha)$ defines an algebraic
+group over $k$ if $G(k')$ is a subgroup of $GL_n(k')$ for all associative, 
+commutative $k$-algebras $k'$.
+
+The orthogonal group is an example of an algebraic group (equation: $X^t \cdot X = 1$.)
+
+Now let $k'$ be the $k$-algebra which is free over $k$
+with basis $\{1, \epsilon \}$ where $\epsilon^2 = 0$, i.e., $k' = k[\epsilon]$.
+
+Theorem 5. Let $\mathfrak{g}$ be the set of matrices
+$X \in M_n(k)$ such that $1 + \epsilon X \in G(k[\epsilon])$. Then
+$\mathfrak{g}$ is a Lie subalgebra of $M_n(k)$.
+
+Proof. We have to prove that $X, Y \in \mathfrak{g}$ implies that 
+$\lambda X + \mu Y \in \mathfrak{g},$ for $\lambda, \mu \in k$
+and $XY - YX \in \mathfrak{g}$. 
+
+To prove that, note first that
+$$P_{\alpha} (1 + \epsilon X) = 0 \text{ for all } \alpha \Leftrightarrow X \in \mathfrak{g}$$
+and since $\epsilon^2 = 0$, we have 
+$$P_\alpha(1 + \epsilon X) = P_\alpha(1) + dP_\alpha(1) \epsilon X.$$
+But $1 \in G(k)$, i.e. $P_\alpha(1) = 0$; therefore
+$$P_{\alpha}(1 + \epsilon X) = dP_\alpha(1) \epsilon X.$$
+Hence, $\mathfrak{g}$ is a submodule of $M_n(k)$.
+
+We introduce now an auxilliary algebra $k''$ given by
+$k'' = [\epsilon, \epsilon', \epsilon'\epsilon]$
+where $\epsilon^2 = \epsilon'^2 = 0$ and 
+$\epsilon' \epsilon = \epsilon \epsilon'$, 
+i.e., $k'' = k[\epsilon] \otimes_k k[\epsilon']$.
+
+Let $X,Y \in \mathfrak{g}$, so we have 
+$$g = 1+ \epsilon X \in G(k[\epsilon]) \subset G(k'')$$
+$$g' = 1 + \epsilon' Y \in G(k[\epsilon']) \subset G(k'')$$
+$$gg' = (1 + \epsilon X)(1 + \epsilon' Y) = 1 + \epsilon X + \epsilon Y' + \epsilon \epsilon' XY$$
+$$g'g = 1 + \epsilon X + \epsilon' Y + \epsilon \epsilon' YX.$$
+
+Write $Z = [X,Y]$; 
+$$gg' = g'g(1+\epsilon \epsilon' Z).$$
+Since $gg', g'g \in G(k'')$, it follows that
+$$1 + \epsilon \epsilon' Z \in G(k'').$$
+But the subalgebra $k[\epsilon \epsilon']$ of $k''$ may be identified
+with $k[\epsilon]$. It then
+follows that 
+$1 + \epsilon Z \in G(k[\epsilon])$, hence $Z \in \mathfrak{g}$. q.e.d.
+
+Example. The Lie Algebra of the orthogonal group is the set of matrices 
+$X$ such that $(1 + \epsilon X) (1 + \epsilon X^t) = 1$, i.e., $X + X^t = 0$.
+
+
+
+
 ### February 23, 2026
 
 #### Tensor and Exterior Algebras
