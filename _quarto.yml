@@ -18,6 +18,7 @@ website:
           - href: KleinGordon.qmd
           - href: list-cqft.qmd
           - href: def-list-chatterjee.qmd
+          - href: glossary.qmd
 
 format:
   html:
