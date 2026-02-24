@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Twitter-like feed – William’s Lattice YM Explorations</title>
+<title>Glossary of Common Terms – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -114,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./phone-notes.html" aria-current="page"> 
+    <a class="nav-link" href="./phone-notes.html"> 
 <span class="menu-text">Twitter-like feed</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -151,25 +180,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#february-20-2026" id="toc-february-20-2026" class="nav-link active" data-scroll-target="#february-20-2026">February 20, 2026</a></li>
-  <li><a href="#february-3-2026" id="toc-february-3-2026" class="nav-link" data-scroll-target="#february-3-2026">February 3, 2026</a></li>
-  <li><a href="#january-6-2025" id="toc-january-6-2025" class="nav-link" data-scroll-target="#january-6-2025">January 6, 2025</a></li>
-  <li><a href="#december-24-2025" id="toc-december-24-2025" class="nav-link" data-scroll-target="#december-24-2025">December 24, 2025</a></li>
-  <li><a href="#december-25-2025" id="toc-december-25-2025" class="nav-link" data-scroll-target="#december-25-2025">December 25, 2025</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Twitter-like feed</h1>
+<h1 class="title">Glossary of Common Terms</h1>
 </div>
 
 
@@ -186,41 +205,138 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!--
-This file is edited from mobile.
-Do not overwrite without pulling first.
--->
-<section id="february-20-2026" class="level3">
-<h3 class="anchored" data-anchor-id="february-20-2026">February 20, 2026</h3>
-<p>The matrix of the form in section 2 of Chatterjee has a determinant which is invariant under a change of the ordering of the elements of the edge set. If you permute the edge set, this permutation corresponds to a sequence of transpositions. Each transposition corresponds to swapping two rows then two columns. When you swap two rows, the determinant changes by a factor or negative one. Swapping the corresponding columns changes the determinant back to what it was originally. This shows the the determinant is well defined regardless of the choice of ordering of the edges.</p>
-</section>
-<section id="february-3-2026" class="level3">
-<h3 class="anchored" data-anchor-id="february-3-2026">February 3, 2026</h3>
-<p>Today in my lecture we learned about the equivalence between Green’s function G(x,y) on a graph being finite and a graph being transient, meaning that a random walk won’t come back infinitely often to the same point. I also thought about how G(x,y) can be thought of as the total heat seen by the point x, as you propogate a heat flow with initial heat data defined by a value of 1 at y and a value of 0 everywhere else.</p>
-<p>Note that for dimension greater than 2, the infinite volume lattice is transient, meaning that Green’s function on the infinite volume lattice is finite.</p>
-<p>There was also a result about transience for tree graphs. I wonder if I can use that result in the context of the axial graph in lattice gauge theory.</p>
-<p>Balaban wrote a paper about Green’s functions, and this paper led to his ultraviolet stability proof. Green’s function in the sense of distributions is formally speaking the two point quantum field expecation, where you formally insert a dirac delta into the quantum field distribution.</p>
-<p>Brennecke saw that something in the Chatterjee paper is related to a differential operator. Also Balaban defined a 2nd order differential operator on the lattice. Also there is the Poincare inequality in Section 10 of the Chatterjee paper. I wonder if there is a bridge between Green’s functions and these operators. And between Dirichlet forms on graphs and these differential operators. Recalling the graph Laplacian, you just take local differences of the function argument.</p>
-<p>Also, there is the so called Yang Mills heat flow in the continuum. What is the Yang Mill’s heat flow on a lattice? The heat kernel for a Laplacian on a graph is just e to the negative t times L. It is the heat semigroup.</p>
-<p>Oh another interesting thing from today was that the Laplace transform provided a bridge between the land of resolvents and the land of heat semigroups or heat equation or Green’s functions. As long as alpha is in the resolvent set, meaning that alpha cannot be an eigenvalue of the Laplace operator, or that alpha lies below the smallest eigenvalue, then you can consider the inverse map (L+alpha)^{-1} and do spectral stuff with it.</p>
-</section>
-<section id="january-6-2025" class="level3">
-<h3 class="anchored" data-anchor-id="january-6-2025">January 6, 2025</h3>
-<p>When the coupling constant of U(N) lattice gauge theory is small, then beta is big. When beta is big, the format of the Yang mills probability density forces the Wilson action to be very small if there is to be any probability mass associated to a given configuration. The Wilson action being small means that most unitary matrices are equal to the identity matrix. Matrices mostly being equal to identity matrices implies that parallel transporting along plaquettes does not do anything. So the gauge field has no effect. I think that the gauge field having little effect and the coupling constant being small are related concepts. By analogy, smallness of the coupling constant for gravity means that gravity has little role.</p>
-<p>I was previously confused because I noticed that when the coupling constant is large, then the Yang Mills gauge measure is just a product Haar measure. I figured product Haar measure means that there is no interaction, a contradiction to the coupling constant being large. Perhaps the reason that this is not a contradiction is that unitary matrices under Haar measure are not concentrated near the identity matrix, so during parallel transport, the gauge field plays a bigger role. And the gauge field taking stronger role fits with the coupling constant being larger.</p>
-</section>
-<section id="december-24-2025" class="level3">
-<h3 class="anchored" data-anchor-id="december-24-2025">December 24, 2025</h3>
-<p>Conditional probabilities are where you fix some prior knowledge/variables and then you ask about the probability for the remaining variables.</p>
-<p>That seems like the right framework for axial gauge fixing. You fix the variables for the tree edges, then figure out the rest of the variables.</p>
-</section>
-<section id="december-25-2025" class="level3">
-<h3 class="anchored" data-anchor-id="december-25-2025">December 25, 2025</h3>
-<p>The log beta term in the formula for the free energy is related to the 1/beta smallness of the Wilson action.</p>
-<p>Also, even though the math of cqft is very eclectic and broad, it also feels like a niche field. At least I get that feeling when looking at one of the early papers by Fröhlich and Brydges.</p>
+<details>
+<summary>
+</summary>
+</details>
+<details>
+<summary>
+Operation/action on a set/object/module
+</summary>
+<p>Let <span class="math inline">\(G\)</span> be a group and let <span class="math inline">\(S\)</span> be a set. An operation or an action of <span class="math inline">\(G\)</span> on <span class="math inline">\(S\)</span> is a homomorphism <span class="math display">\[\pi: G \to \text{Perm}(S)\]</span> of <span class="math inline">\(G\)</span> into the group of permutations of <span class="math inline">\(S\)</span>. We then call <span class="math inline">\(S\)</span> a <span class="math inline">\(G\)</span>-set. We denote the permutation associated with an element <span class="math inline">\(x \in G\)</span> by <span class="math inline">\(\pi_x\)</span>. Thus the homomorphism is denoted by <span class="math inline">\(x \mapsto \pi_x\)</span>. That is, <span class="math display">\[
+\pi_{g_1 g_2} = \pi_{g_1} \circ \pi_{g_2} \in \text{Perm}(S).
+\]</span> Given <span class="math inline">\(s \in S\)</span>, the image of <span class="math inline">\(s\)</span> under the permutation <span class="math inline">\(\pi_x\)</span> is <span class="math inline">\(\pi_x(s)\)</span>. From such an operation we obtain a mapping <span class="math display">\[G \times S \to S\]</span> <span class="math display">\[G \times S \ni (x,s) \mapsto \pi_x(s) =: xs \in S.\]</span></p>
+</details>
+<details>
+<summary>
+Algebra
+</summary>
+<p>Let <span class="math inline">\(A\)</span> be a commutative ring. Let <span class="math inline">\(E\)</span>, <span class="math inline">\(F\)</span> be modules. By a bilinear map <span class="math display">\[g: E \times E \to F\]</span> we mean a map such that given <span class="math inline">\(x \in E\)</span>, the map <span class="math inline">\(g(x, \cdot)\)</span> is <span class="math inline">\(A\)</span>-linear: <span class="math display">\[
+g(x,y_1+y_2) = g(x,y_1) + g(x, y_2)
+\]</span> for all <span class="math inline">\(y_1, y_2 \in E\)</span> (additive group homomorphism) and <span class="math display">\[
+g(x,a y_1) = a g(x, y_1),
+\]</span> for all <span class="math inline">\(a \in A\)</span> and <span class="math inline">\(y_1 \in E\)</span>, and given <span class="math inline">\(y \in E\)</span>, the map <span class="math inline">\(g(\cdot, y)\)</span> is also <span class="math inline">\(A\)</span>-linear.</p>
+<p>By an <span class="math inline">\(A\)</span>-algebra, we mean a module <span class="math inline">\(E\)</span> together with a bilinear map <span class="math inline">\(g: E \times E \to E\)</span>. We view such a map as a law of composition on <span class="math inline">\(E\)</span>.</p>
+</details>
+<details>
+<summary>
+Module, Submodule
+</summary>
+<p>Let <span class="math inline">\(A\)</span> be a ring. A left-module over <span class="math inline">\(A\)</span>, denoted by <span class="math inline">\(M\)</span>, is an abelian group, usually written additively, together with an operation of <span class="math inline">\(A\)</span> on <span class="math inline">\(M\)</span> (viewing <span class="math inline">\(A\)</span> as a multiplicative monoid by R2), such that, for all <span class="math inline">\(a,b \in A\)</span> and <span class="math inline">\(x,y \in M\)</span>, we have <span class="math inline">\((a+b)x = ax + bx\)</span> and <span class="math inline">\(a(x+y) = ax + ay\)</span>.</p>
+<p>One can prove that <span class="math inline">\(a(-x) = -(ax)\)</span> and that <span class="math inline">\(0x = 0\)</span>. By definition of an operation, we have <span class="math inline">\(1x = x\)</span>.</p>
+<p>Let <span class="math inline">\(M\)</span> be a module. By a submodule <span class="math inline">\(N\)</span> of <span class="math inline">\(M\)</span> we mean an additive subgroup such that <span class="math inline">\(AN \subset N\)</span>.</p>
+</details>
+<details>
+<summary>
+Vector Space
+</summary>
+<p>A vector space <span class="math inline">\(V\)</span> is a module <span class="math inline">\(V\)</span> over a field <span class="math inline">\(\mathbb F\)</span>.</p>
+</details>
+<details>
+<summary>
+Free Module
+</summary>
+<p>A free module <span class="math inline">\(M\)</span> is a module which admits a basis or the zero module.</p>
+<p>A vector space is always free.</p>
+</details>
+<details>
+<summary>
+Ring
+</summary>
+<p>A Ring <span class="math inline">\(A\)</span> is a set, together with two laws of composition called multiplication and addition respectively, and written as a product and as a sum respectively, satisfying the following conditions</p>
+<p>(R1) With respect to addition, <span class="math inline">\(A\)</span> is a commutative group.</p>
+<p>(R2) The multiplication is associative, and has a unit element.</p>
+<p>(R3) For all <span class="math inline">\(x,y,z \in A\)</span>, we have <span class="math inline">\((x+y)z = xz + yz\)</span> and <span class="math inline">\(z(x+y) = zx + zy\)</span>. This is called distributivity.</p>
+<p>We denote the unit element for addition by <span class="math inline">\(0\)</span> and the unit element for multiplication by <span class="math inline">\(1\)</span>.</p>
+<p>We say <span class="math inline">\(A\)</span> is commutative if <span class="math inline">\(xy = yx\)</span> for all <span class="math inline">\(x,y \in A\)</span>.</p>
+</details>
+<details>
+<summary>
+Convolution Product
+</summary>
+<p>Page 85 Lang Algebra.</p>
+</details>
+<details>
+<summary>
+Universal Objects
+</summary>
+<p>Let <span class="math inline">\(\mathfrak{C}\)</span> be a category. An object <span class="math inline">\(P\)</span> of <span class="math inline">\(\mathfrak{C}\)</span> is called universally attracting if there exists a unique morphism of each object of <span class="math inline">\(\mathfrak{C}\)</span> into <span class="math inline">\(P\)</span>, and is called universally repelling if for every object of <span class="math inline">\(\mathfrak{C}\)</span> there exists a unique morphism of <span class="math inline">\(P\)</span> into this object.</p>
+<p>When the context is clear, we call objects <span class="math inline">\(P\)</span> as above universal. Since a universal object <span class="math inline">\(P\)</span> admits the identity morphism into itself, it is clear that if <span class="math inline">\(P\)</span>, <span class="math inline">\(P'\)</span> are two universal objects in <span class="math inline">\(\mathfrak{C}\)</span>, then there exists a unique isomorphism between them.</p>
+</details>
+<details>
+<summary>
+Free abelian group generated by <span class="math inline">\(S\)</span>
+</summary>
+<p>Page 38 Lang.</p>
+<p>Let <span class="math inline">\(S\)</span> be a set. We shall define the abelian group generated by <span class="math inline">\(S\)</span> as follows. Let <span class="math inline">\(\mathbb Z\langle S \rangle\)</span> be the set of maps <span class="math inline">\(\phi: S \to \mathbb Z\)</span> such that <span class="math inline">\(\phi(x) = 0\)</span> for almost all <span class="math inline">\(x \in S\)</span>. Then <span class="math inline">\(\mathbb Z \langle S \rangle\)</span> is an abelian group (addition being the usual addition of maps). If <span class="math inline">\(k\)</span> is an integer and <span class="math inline">\(x\)</span> is an element of <span class="math inline">\(S\)</span>, we denote by <span class="math inline">\(k \cdot x\)</span> the map <span class="math inline">\(\phi\)</span> such that <span class="math inline">\(\phi(x) = k\)</span> and <span class="math inline">\(\phi(y) = 0\)</span> if <span class="math inline">\(y \ne x\)</span>. Then it is obvious that every element <span class="math inline">\(\phi\)</span> of <span class="math inline">\(\mathbb Z \langle S \rangle\)</span> can be written in the form <span class="math display">\[
+\phi = k_1 \cdot x_1 + \cdots + k_n \cdot x_n
+\]</span> for some integers <span class="math inline">\(k_i\)</span> and elements <span class="math inline">\(x_i \in S\)</span> for <span class="math inline">\(i \in [n]\)</span>, all the <span class="math inline">\(x_i\)</span> being distinct. Furthermore, <span class="math inline">\(\phi\)</span> admits a unique such expression, because if we have <span class="math display">\[
+\phi = \sum_{x \in S}k_x \cdot x = \sum_{x \in S} k_x' \cdot x
+\]</span> then <span class="math inline">\(0 = \sum_{x \in S} (k_x - k_x') \cdot x\)</span>, whence <span class="math inline">\(k_x' = k_x\)</span> for all <span class="math inline">\(x \in S\)</span>. We map <span class="math inline">\(S\)</span> into <span class="math inline">\(\mathbb Z \langle S \rangle\)</span> by the map <span class="math inline">\(f_S = f\)</span> such that <span class="math inline">\(f(x) = 1 \cdot x\)</span>. It is then clear that <span class="math inline">\(f\)</span> is injective, and that <span class="math inline">\(f(S)\)</span> generates <span class="math inline">\(\mathbb Z \langle S \rangle\)</span>. If <span class="math inline">\(g: S \to B\)</span> is a mapping of <span class="math inline">\(S\)</span> into some abelian group <span class="math inline">\(B\)</span>, then we can define a map <span class="math display">\[
+g_*: \mathbb Z \langle S \rangle \to B
+\]</span> such that <span class="math display">\[
+g_* \left( \sum_{x \in S} k_x \cdot x \right) = \sum_{x \in S} k_x g(x).
+\]</span> This map is a homomorphism (trivial) and we have <span class="math inline">\(g_* \circ f = g\)</span> (also trivial). It is the only homomorphism which has this property, for any such homomorphism <span class="math inline">\(g_*\)</span> must be such that <span class="math inline">\(g_*(1 \cdot x) = g(x)\)</span>.</p>
+<p>It is customary to identify <span class="math inline">\(S\)</span> in <span class="math inline">\(\mathbb Z(S)\)</span>, and we sometimes omit the dot when we write <span class="math inline">\(k_x x\)</span> or a sum <span class="math inline">\(\sum k_x x\)</span>.</p>
+<p>If <span class="math inline">\(\lambda: S \to S'\)</span> is a mapping of sets, there is a unique homomorphism <span class="math inline">\(\overline{\lambda}\)</span> making a certain diagram commutative. The diagram implements the relation <span class="math display">\[
+\overline{\lambda} \circ f_S = f_{S'} \circ \lambda,
+\]</span> where <span class="math display">\[f_S: S \to \mathbb Z \langle S \rangle,\]</span> <span class="math display">\[f_{S'}: S' \to \mathbb Z \langle S' \rangle,\]</span> <span class="math display">\[\lambda: S \to S',\]</span> <span class="math display">\[\overline{\lambda}: \mathbb Z \langle S \rangle \to \mathbb Z \langle S \rangle.\]</span></p>
+<p>In fact <span class="math inline">\(\overline{\lambda}\)</span> is none other than <span class="math inline">\((f_{S'} \circ \lambda)_*\)</span>, with the notation of the preceding paragraph. The proof of this statement is a trivial exercise.</p>
+<p>We shall denote <span class="math inline">\(\mathbb Z \langle S \rangle\)</span> also by <span class="math inline">\(F_{ab}(S)\)</span>, and call <span class="math inline">\(F_{ab}(S)\)</span> the free abelian group generated by <span class="math inline">\(S\)</span>. We call elements of <span class="math inline">\(S\)</span> its free generators.</p>
+<p>As an exercise, show that every abelian group <span class="math inline">\(A\)</span> is a factor group of a free abelian group <span class="math inline">\(F\)</span>. If <span class="math inline">\(A\)</span> is finitely generated, show that one can select <span class="math inline">\(F\)</span> to be finitely generated also.</p>
+<p>If the set <span class="math inline">\(S\)</span> consists of <span class="math inline">\(n\)</span> elements, then we say that the free abelian group <span class="math inline">\(F_{ab}(S)\)</span> is the free abelian group on <span class="math inline">\(n\)</span> generators. If <span class="math inline">\(S\)</span> is the set of <span class="math inline">\(n\)</span> letters <span class="math inline">\(x_1, \cdots, x_n\)</span>, we say that <span class="math inline">\(F_{ab}(S)\)</span> is the free abelian group with free generators <span class="math inline">\(x_1, \cdots, x_n\)</span>.</p>
+<p>An abelian group is free if and only if it is isomorphic to a free abelian group <span class="math inline">\(F_{ab}(S)\)</span> for some set <span class="math inline">\(S\)</span>. Let <span class="math inline">\(A\)</span> be an abelian group, and let <span class="math inline">\(S\)</span> be a basis for <span class="math inline">\(A\)</span>. Then it is clear that <span class="math inline">\(A\)</span> is isomorphic to the free abelian group <span class="math inline">\(F_{ab}(S)\)</span>.</p>
+</details>
+<details>
+<summary>
+Group <span class="math inline">\(G\)</span> generated by a set <span class="math inline">\(S\)</span>
+</summary>
+<p>Let <span class="math inline">\(G\)</span> be a group and <span class="math inline">\(S\)</span> a subset of <span class="math inline">\(G\)</span>. We say that <span class="math inline">\(S\)</span> generates <span class="math inline">\(G\)</span>, or that <span class="math inline">\(S\)</span> is a set of generators of <span class="math inline">\(G\)</span>, if every element of <span class="math inline">\(G\)</span> can be expressed as a product of elements of <span class="math inline">\(S\)</span> or inverses of elements of <span class="math inline">\(S\)</span>, i.e., as a product <span class="math inline">\(x_1 \cdots x_n\)</span> where each <span class="math inline">\(x_i\)</span> or <span class="math inline">\(x_i^{-1}\)</span> is in <span class="math inline">\(S\)</span>. The set of all such products is a subgroup of <span class="math inline">\(G\)</span> (the empty product is the unit element), and is the smallest subgroup of <span class="math inline">\(G\)</span> containing <span class="math inline">\(S\)</span>. Thus <span class="math inline">\(S\)</span> generates <span class="math inline">\(G\)</span> if and only if the smallest subgroup of <span class="math inline">\(G\)</span> containing <span class="math inline">\(S\)</span> is <span class="math inline">\(G\)</span> itself. If <span class="math inline">\(G\)</span> is generated by <span class="math inline">\(S\)</span>, we write <span class="math inline">\(G = \langle S \rangle\)</span>.</p>
+</details>
+<details>
+<summary>
+Monoid, submonoid
+</summary>
+<p>A monoid is a set <span class="math inline">\(G\)</span>, with a law of composition which is associative, and having a unit element (so that in particular <span class="math inline">\(G\)</span> is non-empty). A law of composition is just a map <span class="math inline">\(G \times G \ni (x,y) \mapsto xy \in G\)</span> which is denoted multiplicatively as above, or additively, as in <span class="math inline">\(G \times G \ni (x,y) \mapsto x+y \in G\)</span>. An element <span class="math inline">\(e \in G\)</span> such that <span class="math inline">\(ex = xe = x\)</span> for all <span class="math inline">\(x \in G\)</span> is called a unit element. A unit element is unique. When the law of composition is additive, then we write <span class="math inline">\(0 \in G\)</span> for the unit element. Given <span class="math inline">\(x,y,z \in G\)</span>, the product of these elements can be formed in two ways <span class="math inline">\((xy)z\)</span> and <span class="math inline">\(x(yz)\)</span>. <span class="math inline">\(G\)</span> being associative means these two ways produce the same element in <span class="math inline">\(G\)</span>.</p>
+<p>A submonoid <span class="math inline">\(H\)</span> of <span class="math inline">\(G\)</span> is a subset of <span class="math inline">\(G\)</span> containing the unit element and which is closed under the law of composition. That is, <span class="math inline">\(x,y \in H\)</span> implies that <span class="math inline">\(xy \in H\)</span>. <span class="math inline">\(H\)</span> is itself a monoid under the law of composition induced by <span class="math inline">\(G\)</span>, i.e.&nbsp;the restriction to <span class="math inline">\(H \times H \to H\)</span>.</p>
+</details>
+<details>
+<summary>
+Group, subgroup
+</summary>
+<p>A group <span class="math inline">\(G\)</span> is a monoid (set, law of composition is associative, and there is a unit element) such that every element <span class="math inline">\(x \in G\)</span> has an inverse <span class="math inline">\(x^{-1} \in G\)</span>. That is, if <span class="math inline">\(x \in G\)</span>, then <span class="math inline">\(xx^{-1} = x^{-1}x = e\)</span>.</p>
+<p>A subgroup <span class="math inline">\(H\)</span> of <span class="math inline">\(G\)</span> is a subset of <span class="math inline">\(G\)</span> which is closed under taking inverses and the law of composition, and contains the unit element.</p>
+</details>
+<details>
+<summary>
+Group Homomorphism, Isomorphism, Automorphism, Endomorphism
+</summary>
+<p>Let <span class="math inline">\(G, G'\)</span> be monoids. A homomorphism is a mapping <span class="math inline">\(f: G \to G'\)</span> such that <span class="math inline">\(f(xy) = f(x)f(y)\)</span> for all <span class="math inline">\(x,y \in G\)</span>. If in addition <span class="math inline">\(G, G'\)</span> are groups, then <span class="math inline">\(f\)</span> is called a group homomorphism.</p>
+<p>A homomophism <span class="math inline">\(f: G \to G'\)</span> is called an isomorphism if there exists a homomorphism <span class="math inline">\(g: G' \to G\)</span> such that <span class="math inline">\(f \circ g\)</span> and <span class="math inline">\(g \circ f\)</span> are the identity mappings (in <span class="math inline">\(G'\)</span> and <span class="math inline">\(G\)</span> respectively).</p>
+<p>An isomorphism <span class="math inline">\(f: G \to G\)</span> is called an automorphism.</p>
+<p>A homomorphism of <span class="math inline">\(G\)</span> into itself is called an endomorphism.</p>
+</details>
+<details>
+<summary>
+Left/right coset
+</summary>
+<p>p.&nbsp;12 Lang</p>
+<p>Let <span class="math inline">\(G\)</span> be a group and let <span class="math inline">\(H\)</span> be a subgroup. A left coset of <span class="math inline">\(H\)</span> in <span class="math inline">\(G\)</span> is a subset of <span class="math inline">\(G\)</span> of type <span class="math inline">\(aH\)</span>, for some element <span class="math inline">\(a\)</span> of <span class="math inline">\(G\)</span>. An element of <span class="math inline">\(aH\)</span> is called a coset representative of <span class="math inline">\(aH\)</span>. The map <span class="math inline">\(x \mapsto ax\)</span> induces a bijection of <span class="math inline">\(H\)</span> onto <span class="math inline">\(aH\)</span>. Hence any two left cosets have the same cardinality.</p>
+<p>Observe that if <span class="math inline">\(a,b\)</span> are elements in <span class="math inline">\(G\)</span> and <span class="math inline">\(aH\)</span>, <span class="math inline">\(bH\)</span> are cosets having one element in common, then they are equal. Indeed, let <span class="math inline">\(ax = by\)</span> with <span class="math inline">\(x,y \in H\)</span>. Then <span class="math inline">\(a = byx^{-1}\)</span>. But <span class="math inline">\(yx^{-1} \in H\)</span>. Hence, <span class="math inline">\(aH = b(yx^{-1})H = bH\)</span>, because for any <span class="math inline">\(z \in H\)</span> we have <span class="math inline">\(zH = H\)</span>.</p>
+<p>We conclude that <span class="math inline">\(G\)</span> is the disjoint union of the left cosets of <span class="math inline">\(H\)</span>. A similar remark applies to the right cosets (subsets of <span class="math inline">\(G\)</span> of type <span class="math inline">\(Ha\)</span>).</p>
+</details>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
