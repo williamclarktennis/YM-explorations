@@ -485,6 +485,146 @@ An element $f \in \text{Mor}(A,B)$ is also written
 $f: A \to B$ or 
 $$A \xrightarrow{f} B.$$
 A morphism $f$ is called an isomorphism if there exists
-a morphism $g: B \to A$ such that $g \circ f$ and $f \circ g$ are the identities.
+a morphism $g: B \to A$ such that $g \circ f$ and $f \circ g$ are the identities
+in $\text{Mor}(A,A)$ and $\text{Mor}(B,B)$ respectively. 
+If $A = B$, then we also say that the 
+isomorphism is an automorphism. 
+
+A morphism of an object $A$ into itself is called an 
+endomorphism. The set of endomorphisms of $A$ is denoted by
+$\text{End}(A)$. It follows at once from our axioms that 
+$\text{End}(A)$ is a monoid.
+
+Let $A$ be an object of a category $\mathfrak C$.
+We denote by $\text{Aut}(A)$ the set of automorphisms
+of $A$. 
+
+</details>
+
+<details><summary> Direct Product </summary>
+p. 9 Lang.
+
+Let $G_1, G_2$ be groups. 
+Let $G_1 \times G_2$ be the direct product as sets, 
+so $G_1 \times G_2$ is the set of all pairs
+$(x_1, x_2)$ with $x_i \in G_i$. We define the product 
+componentwise by
+$$(x_1, x_2)(y_1,y_2) = (x_1y_1, x_2y_2).$$
+Then $G_1 \times G_2$ is a group, whose unit element
+is $(e_1, e_2)$ (where $e_i$ is the unit element of $G_i$.)
+Similarly, for $n$ groups we define 
+$G_1 \times \cdots G_n$ to be the set of $n$-tuples
+with $x_i \in G_i$ ($i=1,\cdots,n$), 
+and componentwise multiplication. 
+Even more generally, 
+let $I$ be a set, and for each $i \in I$, let $G_i$ be a group. 
+Let $G = \prod G_i$ be the set theoretic product
+of the sets $G_i$. Then $G$ is the set of all 
+families $(x_i)_{i \in I}$ with $x_i \in G_i$. 
+We can define a group structure on $G$ 
+by componentwise multiplication, namely, if $(x_i)_{i \in I}$
+and $(y_i)_{i \in I}$ are two elements of $G$, 
+we define their product
+to be $(x_iy_i)_{i \in I}$. 
+We define the inverse of $(x_i)_{i \in I}$ to be $(x_i^{-1})_{i \in I}$. 
+It is then obvious that $G$ is a group 
+called the direct product
+of the family. 
+
+</details>
+
+<details><summary> Direct Sum </summary>
+
+p. 36 Lang.
+
+Let $(A_i)_{i \in I}$ be a family of abelian groups. 
+We define their direct sum 
+$$A = \bigoplus_{i \in I} A_i$$
+to be the subset of the direct product
+$\Prod A_i$ consisting of all the families 
+$(x_i)_{i \in I}$ with 
+$x_i \in A_i$ such that $x_i = 0$ for all but a finite number of indices $i$. 
+Then it is clear that $A$ is a subgroup
+of the product. For each index $j \in I$, we map
+$$\lamba_j: A_j \to A$$
+by letting 
+$\lambda_j(x)$ be the element whose $j$-th component is $x$, 
+and having all other components equal to $0$. 
+Then $\lambda_j$ is an injective homomorphism. 
+
+Proposition 7.1. Let $\{f_i: A_i \to B\}$ be a family of homomorphisms
+into an abelian group $B$. Let $A = \bigoplus A_i$. There exists
+a unique homomorphism
+$$f: A \to B$$
+such that 
+$f \circ \lambda_j = f_j$ for all $j$.
+
+Proof. Define $f: A \to B$ 
+by 
+$$
+f((x_i)_{i \in I}) = \sum_{i \in I} f_i(x_i), 
+$$
+and argue accordingly. q.e.d.
+
+The property in Prop 7.1 is called the 
+universal property of the direct sum. 
+
+p.37 Lang
+
+Let $A$ be an abelian group
+and $B,C$ subgroups. If $B+C = A$
+and $B \cap C = \{0\}$ then the map 
+$$B \times C \to A$$
+given by
+$(x,y) \mapsto x+y$
+is an isomorphism (as we already noted in the non-commutative case).
+Instead of writing 
+$A = B \times C$, 
+we shall write
+$$A = B \oplus C$$
+and say that $A$ is the direct sum 
+of $B$ and $C$. We use a similar notation
+for the direct sum 
+of a finite number 
+of subgroups $B_1, \cdots, B_n$ such that 
+$$B_1 + \cdots + B_n = A$$
+and $$B_{i+1} \cap (B_1 + \cdots + B_i) = 0.$$
+In that case we write
+$A = B_1 \oplus \cdots \oplus B_n.$
+
+
+</details>
+
+
+<details><summary> Graded Algebra </summary>
+
+p. 172 Lang.
+
+Let $A$ be an algebra over a field $k$. 
+By a filtration of $A$ we mean 
+a sequence of $k$-vector spaces
+$A_i$ $(i=0,1,\cdots)$ such that 
+$$
+A_0 \subset A_1 \subset A_2 \subset \cdots
+$$
+and 
+$$\cup A_i = A,$$
+and $A_iA_j \subset A_{i+j}$
+for all $i,j \ge 0$.
+In particular, $A$ is an $A_0$-algebra (why?). 
+We then call
+$A$ a filtered algebra. Let $R$ 
+be an algebra. 
+We say that $R$ is graded if
+$R$ is a direct sum 
+$R = \bigoplus R_i$ of subspaces
+such that
+$R_iR_j \subset R_{i+j}$ for all
+$i,j \ge 0$.
+
+
+(Note that $A_iA_j$ uses the 
+$k$-bilinear form in the definition of the $k$-algebra $A$.)
+
 
 </details>
