@@ -9,6 +9,18 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### February 26, 2026
+
+I can probably tackle the beginning of section 3
+of @Chatterjee2016
+with 
+Lang's Algebra and 
+Chapter 1 of Mirror Symmetry, which covers
+Hodge Star, Curvature form, and more, 
+in 25 pages or so, but at a very advanced 
+level, with much of the algebra taken for granted. 
+
+
 ### February 24, 2026
 
 I'm going to type out the rest of @SerreLie Chapter 1: Lie Algebras: Definitions and Examples.
@@ -203,6 +215,22 @@ a bilinear map with the above universal mapping property,
 then there exists an isomorphism 
 $\alpha: V \otimes W \to X$ such that 
 $\alpha \circ \phi = \tilde{\phi}$. 
+
+<details><summary>Proof </summary>
+
+Note that $(v \otimes w)_{(v,w) \in V \times W}$ generates $V \otimes W$.
+Let $x \in V \otimes W$ be arbitrary. 
+Then $x = \sum_{i=1}^n a_i(v_i \otimes w_i)$
+for some $a_i \in \mathbb R$, and $(v_i,w_i) \in V \times W$.
+For $v \otimes w \in V \otimes W$, define
+$\tilde{l}(v \otimes w) = l(v,w)$. 
+Then extend by linearity to an abitrary $x$ by: 
+$$
+\tilde{l}(x) := \sum_{i=1}^n a_i l(v_i,w_i).
+$$
+
+
+</details>
 
 (b) $V \otimes W$ is canonically isomorphic to $W \otimes V$. 
 

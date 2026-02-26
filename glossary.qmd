@@ -625,6 +625,44 @@ $i,j \ge 0$.
 
 (Note that $A_iA_j$ uses the 
 $k$-bilinear form in the definition of the $k$-algebra $A$.)
+</details>
+
+<details><summary>Basis  </summary>
+
+p.38 Lang. 
+
+Let $A$ be an abelian
+group. Let $\{e_i\}_{i \in I}$
+be a family of elements of $A$. 
+We say that this family is a basis 
+for $A$ if the family is not empty, and if every 
+element of $A$ has a unique expression 
+as a linear combination
+$$x = \sum x_ie_i$$
+with $x_i \in \mathbb Z$, 
+and almost all $x_i = 0$. Thus the sum 
+is actually a finite sum. An abelian group
+is said to be free if it has a basis. 
+If that is the case, it is immediate that
+if we let $Z_i = \mathbb Z$ for all $i \in I$, 
+then $A$ is isomorphic to the direct sum
+$$A \cong \bigoplus_{i \in I} A_i.$$
+
+p. 135 Lang.
+
+Let $M$ be a module over a ring $A$
+and let $S$ be a subset of $M$. 
+We shall say that $S$ is a basis of $M$
+if $S$ is not empty, if $S$ generates $M$, and if 
+$S$ is linearly independent. 
+If $S$ is a basis of $M$, then in particular
+$M \ne \{0\}$ if $A \ne \{0\}$ 
+and every element of $M$ has a unique expression
+as a linear combination of elements of $S$. Similarly, let 
+$\{x_i\}_{i \in I}$ be a non-empty family
+of elements of $M$. We say that it is a basis
+of $M$ if it is linearly independent and generates $M$.
+
 
 
 </details>
