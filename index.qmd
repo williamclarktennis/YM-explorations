@@ -248,6 +248,14 @@ $$
 \dim V \otimes W = (\dim V)(\dim W).
 $$
 
+<details><summary>Proof </summary>
+$\alpha$ is defined similarly as in (a). 
+We must find a linear map (morphism of vector spaces) $g: Hom(V,W) \to V^* \otimes W$
+such that $\alpha \circ g = I \in \text{Mor}(\text{Hom}(V,W),\text{Hom}(V,W))$
+and $g \circ \alpha = I \in \text{Mor}(V^* \otimes W, V^* \otimes W).$
+
+</details>
+
 (e) Let $\{e_i: i = 1, \cdots, c\}$ and 
 $\{f_j: j = 1, \cdots, d\}$ be bases for $V$ and $W$ respectively. 
 Then $\{e_i \otimes f_j: i = 1, \cdots, c \text{ and } j = 1, \cdots, d\}$

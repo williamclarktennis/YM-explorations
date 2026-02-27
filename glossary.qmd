@@ -663,6 +663,41 @@ $\{x_i\}_{i \in I}$ be a non-empty family
 of elements of $M$. We say that it is a basis
 of $M$ if it is linearly independent and generates $M$.
 
+</details>
+
+<details><summary> Dual Space and Dual Module </summary>
+
+p. 142 Lang
+
+Let $E$ be a free module over a commutative ring $A$. 
+We view $A$ as a free module of rank 1 over itself. By
+the dual module $E^\vee$ of $E$ we shall mean the module
+$\text{Hom}(E,A)$. Its elements will be called functionals.
+Thus a functional on $E$ is an $A$-linear map
+$f: E \to A$. If $x \in E$ and $f \in E^\vee$, we sometimes denote
+$f(x)$ by $\langle x, f \rangle$. Keeping $x$ fixed, we see that the symbol
+$\langle x, f \rangle$ as a function of $f \in E^\vee$ is $A$-linear
+in its second argument, and hence that $x$ induces a linear map
+on $E^\vee$, which is $0$ if and only if $x = 0$. 
+Hence we get an injection $E \to E^{\vee \vee}$ which is not always an
+injection. 
+
+Let $(x_i)_{i \in I}$ be a basis of $E$. 
+For each $i \in I$, let $f_i$ be the unique functional such that 
+$f(x_i) = \delta_{ij}$. Such a linear map exists by general properties
+of bases. 
+
+Theorem 6.1. Let $E$ be a finite free module over the commutative ring
+$A$, of finite dimension $n$. Then $E^\vee$ is also free, and
+$\dim E^\vee = n$. If $\{x_1, \cdots, x_n\}$ is a basis for $E$, 
+and $f_i$ is the functional such that $f_i(x_j) = \delta_{ij}$, then
+$\{f_1, \cdots, f_n\}$ is a basis for $E^\vee$. 
+
+Proof. Show that the $f_i$ generate the dual space 
+and are linearly independent in the dual space. Be careful, 
+$f_i$ is only the indicator function on the basis $x_i$, 
+but scales appropriately. q.e.d.
+
 
 
 </details>
