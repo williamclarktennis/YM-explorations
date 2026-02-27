@@ -227,6 +227,7 @@ g(x,y_1+y_2) = g(x,y_1) + g(x, y_2)
 g(x,a y_1) = a g(x, y_1),
 \]</span> for all <span class="math inline">\(a \in A\)</span> and <span class="math inline">\(y_1 \in E\)</span>, and given <span class="math inline">\(y \in E\)</span>, the map <span class="math inline">\(g(\cdot, y)\)</span> is also <span class="math inline">\(A\)</span>-linear.</p>
 <p>By an <span class="math inline">\(A\)</span>-algebra, we mean a module <span class="math inline">\(E\)</span> together with a bilinear map <span class="math inline">\(g: E \times E \to E\)</span>. We view such a map as a law of composition on <span class="math inline">\(E\)</span>.</p>
+<p>A non-commutative, non-associative algebra is one for which the law of composition <span class="math inline">\(g\)</span> is non-commutative: <span class="math inline">\(g(e_1, e_1) \ne g(e_2,e_1)\)</span> for some <span class="math inline">\(e_1,e_2 \in E\)</span>, and for which the law of composition <span class="math inline">\(g\)</span> is also not associative: <span class="math inline">\(g(g(e_1,e_2),e_3) \ne g(e_1, g(e_2,e_3))\)</span> for some <span class="math inline">\(e_1, e_2, e_3 \in E\)</span>.</p>
 </details>
 <details>
 <summary>
@@ -337,6 +338,15 @@ Left/right coset
 </details>
 <details>
 <summary>
+Factor Ring
+</summary>
+<p>p.89 Lang</p>
+<p>Let <span class="math inline">\(\mathfrak{a}\)</span> be an ideal of the ring <span class="math inline">\(A\)</span>. We can construct the factor ring <span class="math inline">\(A/\mathfrak{a}\)</span> as follows. Viewing <span class="math inline">\(A\)</span> and <span class="math inline">\(\mathfrak{a}\)</span> as additive groups, let <span class="math inline">\(A/\mathfrak{a}\)</span> be the factor group. We define a multiplicative law of composition on <span class="math inline">\(A/\mathfrak{a}\)</span>: If <span class="math inline">\(x + \mathfrak{a}\)</span> and <span class="math inline">\(y + \mathfrak{a}\)</span> are two cosets of <span class="math inline">\(\mathfrak{a}\)</span>, we define <span class="math inline">\((x + \mathfrak{a})(y+\mathfrak{a})\)</span> to be the coset <span class="math inline">\((xy+ \mathfrak{a})\)</span>. This coset is well-defined, for if <span class="math inline">\(x_1, y_1\)</span> are in the same coset as <span class="math inline">\(x,y\)</span> respectively, then one verifies at once that <span class="math inline">\(x_1y_1\)</span> is in the same coset as <span class="math inline">\(xy\)</span>.</p>
+<p>p.91</p>
+<p>The factor ring <span class="math inline">\(A/\mathfrak{a}\)</span> is also called a residue class ring. Cosets of <span class="math inline">\(\mathfrak{a}\)</span> in <span class="math inline">\(A\)</span> are called residue classes modulo <span class="math inline">\(\mathfrak{a}\)</span>, and if <span class="math inline">\(x \in A\)</span>, then the coset <span class="math inline">\(x + \mathfrak{a}\)</span> is called the residue class of <span class="math inline">\(x\)</span> modulo <span class="math inline">\(\mathfrak{a}\)</span>.</p>
+</details>
+<details>
+<summary>
 Factor module
 </summary>
 <p>p.&nbsp;119 Lang</p>
@@ -430,6 +440,14 @@ Dual Space and Dual Module
 <p>Let <span class="math inline">\((x_i)_{i \in I}\)</span> be a basis of <span class="math inline">\(E\)</span>. For each <span class="math inline">\(i \in I\)</span>, let <span class="math inline">\(f_i\)</span> be the unique functional such that <span class="math inline">\(f(x_i) = \delta_{ij}\)</span>. Such a linear map exists by general properties of bases.</p>
 <p>Theorem 6.1. Let <span class="math inline">\(E\)</span> be a finite free module over the commutative ring <span class="math inline">\(A\)</span>, of finite dimension <span class="math inline">\(n\)</span>. Then <span class="math inline">\(E^\vee\)</span> is also free, and <span class="math inline">\(\dim E^\vee = n\)</span>. If <span class="math inline">\(\{x_1, \cdots, x_n\}\)</span> is a basis for <span class="math inline">\(E\)</span>, and <span class="math inline">\(f_i\)</span> is the functional such that <span class="math inline">\(f_i(x_j) = \delta_{ij}\)</span>, then <span class="math inline">\(\{f_1, \cdots, f_n\}\)</span> is a basis for <span class="math inline">\(E^\vee\)</span>.</p>
 <p>Proof. Show that the <span class="math inline">\(f_i\)</span> generate the dual space and are linearly independent in the dual space. Be careful, <span class="math inline">\(f_i\)</span> is only the indicator function on the basis <span class="math inline">\(x_i\)</span>, but scales appropriately. q.e.d.</p>
+</details>
+<details>
+<summary>
+Ideal
+</summary>
+<p>p.&nbsp;86 Lang.</p>
+<p>A left ideal <span class="math inline">\(\mathfrak{a}\)</span> in a ring <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(A\)</span> which is a subgroup of the additive group of <span class="math inline">\(A\)</span>, such that <span class="math inline">\(A \mathfrak{a} \subset \mathfrak{a}\)</span> and hence <span class="math inline">\(A \mathfrak{a} = A\)</span>, since <span class="math inline">\(A\)</span> contains <span class="math inline">\(1\)</span>). To define a right ideal, we require <span class="math inline">\(\mathfrak{a}A = \mathfrak{a},\)</span> and a two-sided ideal is a subset which is both a left and a right ideal. A two-sided ideal is called simply an ideal in this section.</p>
+<p>A ring <span class="math inline">\(A\)</span> is said to be commutative if <span class="math inline">\(yx = xy\)</span> for all <span class="math inline">\(x,y \in A\)</span>. In that case, every left or right ideal is two-sided.</p>
 </details>
 
 
