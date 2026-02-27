@@ -254,6 +254,42 @@ We must find a linear map (morphism of vector spaces) $g: Hom(V,W) \to V^* \otim
 such that $\alpha \circ g = I \in \text{Mor}(\text{Hom}(V,W),\text{Hom}(V,W))$
 and $g \circ \alpha = I \in \text{Mor}(V^* \otimes W, V^* \otimes W).$
 
+Let $v_1, \cdots, v_n$ and $w_1, \cdots, w_k$ be bases
+for $V$ and $W$ respectively. Let $f_1, \cdots, f_n$ be the 
+dual basis of $V^*$ with respect to $v_1, \cdots, v_n$. 
+By Theorem 4.1 Lang Algebra, for each $i \in [n]$ and $j \in [m]$, 
+there is a unique linear map $f_{ij}: V \to W$ such that
+$$
+f_{ij}(v_l) = \begin{cases}
+w_j & \text{ if l = i} \\
+0 & \text{ if } l \ne i.
+\end{cases}
+$$
+In other words, $f_{ij}$ maps $v_i$ to $w_j$ and 
+otherwise sends the other basis elements of $V$ to $0 \in W$.
+Then $f_{ij}$ can be written in terms of the 
+dual basis as 
+$$f_{ij}(x) = f_i(x)w_j,$$
+for any $x \in V$.
+
+Now let $g: Hom(V,W) \to V^* \otimes W$ 
+map $f_{ij} = f_i \cdot w_j$ to $f_i \otimes w_j$, 
+and extend by linearity to the rest of $\text{Hom}(V,W)$.
+
+Then for $\sum_i x_i (d_i \otimes w_i)$ where 
+$x_i \in \mathbb R$, $d_i \in V^*$, and $w_i \in W$ are arbitrary
+for $i \in [k]$ for some $k$, we have that
+\begin{align*}
+g \circ \alpha (\sum_i x_i (d_i \otimes w_i)) &= \sum_i x_i g \circ \alpha(d_i \otimes w_i) \\
+&= \sum_i x_i g \circ \alpha(\sum_l d_{il}f_l \otimes \sum_m w_{im} w_m)\\
+&= \sum_i x_i g \circ \alpha(\sum_{l,m} d_{il} w_{im} (f_l \otimes w_m))\\
+&= \sum_i x_i \sum_{l,m} d_{il} w_{im} g \circ \alpha (f_l \otimes w_m) \\
+&= \sum_i x_i \sum_{l,m} d_{il} w_{im} g (f_{lm}) \\
+&= \sum_i x_i \sum_{l,m} d_{il} w_{im} (f_l \otimes w_m) \\
+&= \sum_i x_i (d_i \otimes w_i).
+\end{align*}
+
+
 </details>
 
 (e) Let $\{e_i: i = 1, \cdots, c\}$ and 
