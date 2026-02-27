@@ -368,6 +368,31 @@ A similar remark applies to the right cosets (subsets of $G$ of type $Ha$).
 
 </details>
 
+<details><summary> Factor Ring </summary>
+
+p.89 Lang
+
+Let $\mathfrak{a}$ be an ideal of the ring $A$. 
+We can construct the factor ring $A/\mathfrak{a}$
+as follows. Viewing $A$ and $\mathfrak{a}$ as additive
+groups, let $A/\mathfrak{a}$ be the factor group. 
+We define a multiplicative law of composition on $A/\mathfrak{a}$: 
+If $x + \mathfrak{a}$ and $y + \mathfrak{a}$ are two cosets
+of $\mathfrak{a}$, we define $(x + \mathfrak{a})(y+\mathfrak{a})$
+to be the coset $(xy+ \mathfrak{a})$. This coset is well-defined, 
+for if $x_1, y_1$ are in the same coset as $x,y$ respectively, 
+then one verifies at once that $x_1y_1$ is in the same coset as $xy$. 
+
+p.91
+
+The factor ring $A/\mathfrak{a}$ is also called a residue class ring. 
+Cosets of $\mathfrak{a}$ in $A$ are called residue classes modulo 
+$\mathfrak{a}$, and if $x \in A$, then the coset $x + \mathfrak{a}$
+is called the residue class of $x$ modulo $\mathfrak{a}$.
+
+
+</details>
+
 <details><summary> Factor module </summary>
 p. 119 Lang
 
