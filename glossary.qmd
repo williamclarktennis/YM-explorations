@@ -57,6 +57,14 @@ a module $E$ together with a bilinear map
 $g: E \times E \to E$. 
 We view such a map as a law of composition on $E$.
 
+A non-commutative, non-associative algebra is one for which 
+the law of composition $g$ is non-commutative: 
+$g(e_1, e_1) \ne g(e_2,e_1)$ for some $e_1,e_2 \in E$, 
+and for which the law of composition $g$ is also not
+associative: 
+$g(g(e_1,e_2),e_3) \ne g(e_1, g(e_2,e_3))$
+for some $e_1, e_2, e_3 \in E$.
+
 </details>
 
 
@@ -698,6 +706,23 @@ and are linearly independent in the dual space. Be careful,
 $f_i$ is only the indicator function on the basis $x_i$, 
 but scales appropriately. q.e.d.
 
+</details>
 
+<details><summary> Ideal </summary>
+
+p. 86 Lang. 
+
+A left ideal $\mathfrak{a}$ in a ring $A$ is a subset of $A$ which 
+is a subgroup of the additive group of $A$, such that
+$A \mathfrak{a} \subset \mathfrak{a}$ and hence 
+$A \mathfrak{a} = A$, since $A$ contains $1$).
+To define a right ideal, we require $\mathfrak{a}A = \mathfrak{a},$
+and a two-sided ideal is a subset which is both a left and a right ideal. 
+A two-sided ideal is called simply an ideal in this section. 
+
+
+A ring $A$ is said to be commutative if $yx = xy$ for all $x,y \in A$. 
+In that case, every left or right ideal is two-sided.
 
 </details>
+
