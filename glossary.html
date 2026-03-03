@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -167,6 +187,10 @@ window.Quarto = {
     <a class="dropdown-item" href="./glossary.html">
  <span class="dropdown-text">Glossary of Common Terms</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./glossary1.html">
+ <span class="dropdown-text">Glossary of Common Terms 1</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -221,12 +245,15 @@ Operation/action on a set/object/module
 <summary>
 Algebra
 </summary>
+<p>p.&nbsp;121 <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.</p>
 <p>Let <span class="math inline">\(A\)</span> be a commutative ring. Let <span class="math inline">\(E\)</span>, <span class="math inline">\(F\)</span> be modules. By a bilinear map <span class="math display">\[g: E \times E \to F\]</span> we mean a map such that given <span class="math inline">\(x \in E\)</span>, the map <span class="math inline">\(g(x, \cdot)\)</span> is <span class="math inline">\(A\)</span>-linear: <span class="math display">\[
 g(x,y_1+y_2) = g(x,y_1) + g(x, y_2)
 \]</span> for all <span class="math inline">\(y_1, y_2 \in E\)</span> (additive group homomorphism) and <span class="math display">\[
 g(x,a y_1) = a g(x, y_1),
 \]</span> for all <span class="math inline">\(a \in A\)</span> and <span class="math inline">\(y_1 \in E\)</span>, and given <span class="math inline">\(y \in E\)</span>, the map <span class="math inline">\(g(\cdot, y)\)</span> is also <span class="math inline">\(A\)</span>-linear.</p>
 <p>By an <span class="math inline">\(A\)</span>-algebra, we mean a module <span class="math inline">\(E\)</span> together with a bilinear map <span class="math inline">\(g: E \times E \to E\)</span>. We view such a map as a law of composition on <span class="math inline">\(E\)</span>.</p>
+<p>We note that the group ring <span class="math inline">\(A[G]\)</span> (or monoid ring when <span class="math inline">\(G\)</span> is a monoid) is an <span class="math inline">\(A\)</span>-algebra, also called the group (or monoid) algebra. Actually the group algebra can be viewed as a special case of the following situation.</p>
+<p>Let <span class="math inline">\(f: A \to B\)</span> be a ring homomorphism such that <span class="math inline">\(f(A)\)</span> is contained in the center of <span class="math inline">\(B\)</span>, i.e., <span class="math inline">\(f(a)\)</span> commutes with every element of <span class="math inline">\(B\)</span> for every <span class="math inline">\(a \in A\)</span>. Then we may view <span class="math inline">\(B\)</span> as an <span class="math inline">\(A\)</span>-module (how?), defining the operation of <span class="math inline">\(A\)</span> on <span class="math inline">\(B\)</span> by the map <span class="math display">\[(a,b) \mapsto f(a)b\]</span> for all <span class="math inline">\(a \in A\)</span> and <span class="math inline">\(b \in B\)</span>. The axioms for a module are trivially satisfied (why?), and the multiplicative law of composition <span class="math inline">\(B \times B \to B\)</span> (what is this? <span class="math inline">\(B\)</span> is a-priori a ring, so it is just the multiplicative law) is clearly bilinear (i.e.&nbsp;<span class="math inline">\(A\)</span>-bilinear). In this book, unless otherwise specified, by an algebra over <span class="math inline">\(A\)</span>, we shall always mean a ring homomorphism as above. We say that the algebra is finitely-generated if <span class="math inline">\(B\)</span> is finitely generated as a ring over <span class="math inline">\(f(A)\)</span>.</p>
 <p>A non-commutative, non-associative algebra is one for which the law of composition <span class="math inline">\(g\)</span> is non-commutative: <span class="math inline">\(g(e_1, e_1) \ne g(e_2,e_1)\)</span> for some <span class="math inline">\(e_1,e_2 \in E\)</span>, and for which the law of composition <span class="math inline">\(g\)</span> is also not associative: <span class="math inline">\(g(g(e_1,e_2),e_3) \ne g(e_1, g(e_2,e_3))\)</span> for some <span class="math inline">\(e_1, e_2, e_3 \in E\)</span>.</p>
 </details>
 <details>
@@ -254,13 +281,21 @@ Free Module
 <summary>
 Ring
 </summary>
+<section id="basic-definition" class="level4">
+<h4 class="anchored" data-anchor-id="basic-definition">Basic Definition</h4>
+<p>p.83 <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.</p>
 <p>A Ring <span class="math inline">\(A\)</span> is a set, together with two laws of composition called multiplication and addition respectively, and written as a product and as a sum respectively, satisfying the following conditions</p>
 <p>(R1) With respect to addition, <span class="math inline">\(A\)</span> is a commutative group.</p>
 <p>(R2) The multiplication is associative, and has a unit element.</p>
 <p>(R3) For all <span class="math inline">\(x,y,z \in A\)</span>, we have <span class="math inline">\((x+y)z = xz + yz\)</span> and <span class="math inline">\(z(x+y) = zx + zy\)</span>. This is called distributivity.</p>
 <p>We denote the unit element for addition by <span class="math inline">\(0\)</span> and the unit element for multiplication by <span class="math inline">\(1\)</span>.</p>
 <p>We say <span class="math inline">\(A\)</span> is commutative if <span class="math inline">\(xy = yx\)</span> for all <span class="math inline">\(x,y \in A\)</span>.</p>
-</details>
+</section>
+<section id="ring-homomorphism" class="level4">
+<h4 class="anchored" data-anchor-id="ring-homomorphism">Ring Homomorphism</h4>
+<p>p.88 <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span></p>
+<p>By a ring-homomorphism, one means a mapping <span class="math inline">\(f: A \to B\)</span> where <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> are rings, and such that <span class="math inline">\(f\)</span> is a monoid-homomorphism for the multiplicative structures on <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> and also a monoid-homomorphism for the additive structure.</p>
+</section></details>
 <details>
 <summary>
 Convolution Product
@@ -322,7 +357,8 @@ Group, subgroup
 <summary>
 Group Homomorphism, Isomorphism, Automorphism, Endomorphism
 </summary>
-<p>Let <span class="math inline">\(G, G'\)</span> be monoids. A homomorphism is a mapping <span class="math inline">\(f: G \to G'\)</span> such that <span class="math inline">\(f(xy) = f(x)f(y)\)</span> for all <span class="math inline">\(x,y \in G\)</span>. If in addition <span class="math inline">\(G, G'\)</span> are groups, then <span class="math inline">\(f\)</span> is called a group homomorphism.</p>
+<p>p.10 <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.</p>
+<p>Let <span class="math inline">\(G, G'\)</span> be monoids. A homomorphism is a mapping <span class="math inline">\(f: G \to G'\)</span> such that <span class="math inline">\(f(xy) = f(x)f(y)\)</span> for all <span class="math inline">\(x,y \in G\)</span> and the identity of <span class="math inline">\(G\)</span> is mapped to the identity of <span class="math inline">\(G'\)</span>. If in addition <span class="math inline">\(G, G'\)</span> are groups, then <span class="math inline">\(f\)</span> is called a group homomorphism.</p>
 <p>A homomophism <span class="math inline">\(f: G \to G'\)</span> is called an isomorphism if there exists a homomorphism <span class="math inline">\(g: G' \to G\)</span> such that <span class="math inline">\(f \circ g\)</span> and <span class="math inline">\(g \circ f\)</span> are the identity mappings (in <span class="math inline">\(G'\)</span> and <span class="math inline">\(G\)</span> respectively).</p>
 <p>An isomorphism <span class="math inline">\(f: G \to G\)</span> is called an automorphism.</p>
 <p>A homomorphism of <span class="math inline">\(G\)</span> into itself is called an endomorphism.</p>
@@ -452,7 +488,13 @@ Ideal
 
 
 
-</main> <!-- /main -->
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-LangAlgebra" class="csl-entry" role="listitem">
+Lang, Serge. 2002. <em>Algebra</em>. Springer.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
