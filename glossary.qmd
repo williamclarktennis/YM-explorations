@@ -31,6 +31,7 @@ $$G \times S \ni (x,s) \mapsto \pi_x(s) =: xs \in S.$$
 </details>
 
 <details><summary> Algebra </summary>
+p. 121 @LangAlgebra.
 
 Let $A$ be a commutative ring. 
 Let $E$, $F$ be modules. 
@@ -56,6 +57,27 @@ By an $A$-algebra, we mean
 a module $E$ together with a bilinear map 
 $g: E \times E \to E$. 
 We view such a map as a law of composition on $E$.
+
+We note that the group ring $A[G]$ (or monoid ring when $G$ is a monoid)
+is an $A$-algebra, also called the group (or monoid) algebra. 
+Actually the group algebra can be viewed as a special 
+case of the following situation. 
+
+Let $f: A \to B$ be a ring homomorphism such that $f(A)$
+is contained in the center of $B$, i.e., 
+$f(a)$ commutes with every element of $B$ for every $a \in A$.
+Then we may view $B$ as an $A$-module (how?), defining
+the operation of $A$ on $B$ by the map 
+$$(a,b) \mapsto f(a)b$$
+for all $a \in A$ and $b \in B$.
+The axioms for a module are trivially satisfied (why?), and the 
+multiplicative law of composition $B \times B \to B$ (what is this? $B$
+is a-priori a ring, so it is just the multiplicative law)
+is clearly bilinear (i.e. $A$-bilinear). In this book, unless otherwise
+specified, by an algebra over $A$, we shall always mean a ring
+homomorphism as above. We say that the algebra is finitely-generated
+if $B$ is finitely generated as a ring over $f(A)$.
+
 
 A non-commutative, non-associative algebra is one for which 
 the law of composition $g$ is non-commutative: 
@@ -113,6 +135,10 @@ A vector space is always free.
 
 <details><summary> Ring </summary>
 
+#### Basic Definition
+
+p.83 @LangAlgebra.
+
 A Ring $A$ is a set, together with 
 two laws of composition called multiplication 
 and addition respectively, 
@@ -130,6 +156,16 @@ We denote the unit element for addition by $0$ and
 the unit element for multiplication by $1$.
 
 We say $A$ is commutative if $xy = yx$ for all $x,y \in A$.
+
+#### Ring Homomorphism
+
+p.88 @LangAlgebra
+
+By a ring-homomorphism, one means a mapping $f: A \to B$
+where $A$, $B$ are rings, and such that $f$ is a monoid-homomorphism
+for the multiplicative structures on $A$ and $B$ and 
+also a monoid-homomorphism for the additive structure. 
+
 
 </details>
 
@@ -326,10 +362,14 @@ under taking inverses and the law of composition, and contains the unit element.
 
 <details><summary> Group Homomorphism, Isomorphism, Automorphism, Endomorphism </summary>
 
+p.10 @LangAlgebra.
+
 Let $G, G'$ be monoids.
 A homomorphism is a mapping 
 $f: G \to G'$ such that 
-$f(xy) = f(x)f(y)$ for all $x,y \in G$. 
+$f(xy) = f(x)f(y)$ for all $x,y \in G$
+and the identity of $G$ is mapped to the 
+identity of $G'$.
 If in addition $G, G'$ are groups, 
 then $f$ is called a group homomorphism.
 
