@@ -1,0 +1,9 @@
+---
+title: "Relevant Events"
+bibliography: references.bib
+---
+
+- On April 14 the Haar integral will be discussed in Schwede's seminar, Tuesday 14:15 in SR 1.007.
+- On May 12, principle bundles will be discussed in Schwede's seminar, Tuesday 14:15 in SR 1.007.
+
+

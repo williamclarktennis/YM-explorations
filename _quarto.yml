@@ -21,6 +21,7 @@ website:
           - href: def-list-chatterjee.qmd
           - href: glossary.qmd
           - href: glossary1.qmd
+          - href: thesis-relevant-events.qmd
 
 format:
   html:

@@ -23,10 +23,35 @@ All linear maps and modules are $R$-linear.
 
 ##### From Chapter 13: Matrices and Linear Maps
 
+Section 1. Matrices.
+
 - trace of a matrix $A$ with entries in $R$. Page 505.
+
+Section 3. Matrices and Linear Maps
+
 - "if $E$ is a module over $R$, then $R$ may be viewed
 as a ring of endomorphisms of $E$" Page 508.
 - trace of a linear map $f: E \to E$. Page 511.
+
+Section 4. Determinants
+
+- $R$-multilinear map $f: E_1 \times \cdots \times E_n \to
+F$ where $F$ is a module. Page 511.
+- Alternating multilinear map. Page 511.
+- A multilinear map taking its value in $R$ is called
+a multilinear form. This suggest that a bilinear form
+is a map $f: E_1 \times E_2 \to R$.
+Page 512.
+- $n \times n$ determinant, $\det: Mat_n(R) \to R$. Page 513.
+- $L_a^n(E,F)$ - set of $n$-multilinear alternating
+maps of $E$ into $F$. If $F = R$, we also write
+$L_a^n(E,R) = L_a^n(E)$. It is a module over $R$ (why?). Page 517.
+- 1 element basis of $L_a^n(E)$, namely $\delta_1.$ Page 517.
+- determinant of a linear map $f: E \to E$, 
+where $E$ is a free module over $R$. Page 520.
+
+Section 5. Duality.
+
 
 
 ##### From Chapter 15: Structure of Bilinear Forms
