@@ -28,3 +28,13 @@ A configuration is a map $U: E_\Lambda \to U(N)$, where we also
 define $U(y,x) = U(x,y)^*$ for $(x,y) \in E_\Lambda$.
 
 </details>
+
+### Section 13. Lattice Maxwell Theory
+
+<details>
+
+<summary> Quadratic form </summary>
+
+
+
+</details>
