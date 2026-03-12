@@ -9,6 +9,90 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 12, 2026
+
+#### Transformation formula
+
+I need to get a grip on the transformation formula.
+
+Let $(\Omega_1, \beta_1, \mu_1)$
+and $(\Omega_2, \beta_2, \mu_2)$ be two measure spaces. 
+
+One situation is where we have a function on the first space
+and we integrate against the measure $\mu_1$. This is
+$$\int_{\Omega_1} f \, d \mu_1,$$
+where $\text{dom} f = \Omega_1$.
+If the variable of integration is denoted by
+$x$, that is, $x$ varies in the space $\Omega_1$, 
+then we write
+$$\int_{\Omega_1} f(x) \, d\mu_1(x).$$
+
+The transformation formula comes in when we introduce a new 
+variable in terms of the old one, and integrate over the 
+associated pushforward measure. 
+This is implemented via a measurable function $y(x) : \Omega_1 \to \Omega_2$
+where we assume that $y$ is bijective for ease of things.
+And we also take $\mu_2$ as the pushforward of $\mu_1$ by the measurable 
+$y(\cdot)$: for $B \in \beta_2$, 
+$$\mu_2(B) = y_*(\mu_1)(B) = \mu_1(y^{-1}(B)).$$
+Then the transformation formula is:
+$$
+\int_{\Omega_1} f \, d\mu_1 = \int_{y(\Omega_1)} f \circ y^{-1} \, d\mu_2
+$$ {#eq-trans1}
+which we can also be written as
+$$\int_{\Omega_1} f(x) \, d\mu_1(x) = \int_{y(\Omega_1)} (f \circ y^{-1})(y) \, d\mu_2(y)$$
+
+Let's illustrate this with an example where
+the new variable is a scaling of the old variable. 
+Suppose $f(x) = \sin ( \lvert 5 x \rvert)$ where $x \in \mathbb R^n$.
+Let $y(x) = 5x$. Then $x = y/5$, or $y^{-1}(y) = y/5$.
+Then by the formula @eq-trans1,
+\begin{align*}
+\int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x) &= 
+\int_{B_{25}(0)} \sin (\lVert 5 (y^{-1}(y)) \rVert) d\mu_2(y)\\
+&= \int_{B_{25}(0)} \sin (\lVert 5 (y/5) \rVert) d\mu_2(y)\\
+&= \int_{B_{25}(0)} \sin (\lVert y \rVert) d\mu_2(y).
+\end{align*}
+
+One complaint is that the usual 
+transformation formula for pushforward measure is written
+$$
+\int_{\Omega_1} f \circ y \, d\mu_1 = \int_{y(\Omega_1)} f \, d\mu_2.
+$$ {#eq-trans2}
+
+In the preview example, one could simply view the function 
+$\sin(\lVert 5(\cdot) \rVert )$
+as a composition of $f(\cdot) = \sin(\lVert \cdot \rVert)$
+and $y (\cdot) = 5(\cdot)$, and then you get the same result
+in one step by @eq-trans2: 
+$$\int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x) 
+= \int_{B_{25}(0)} \sin (\lVert y \rVert) d\mu_2(y).$$
+
+But typically, in the literature at least, 
+one encounters an integral where the integrand
+can not so easily be viewed as a composition, 
+but simplifying one part is at least clear:
+$$\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x),$$
+and then followed by the statement: 
+"we make the change of variable $y(x) = 5x$."
+In this case, I find it easier to just think: 
+$f(x) = \lVert x \rVert \sin(\lVert 5 x \rVert)$ and then it is 
+easy to see by replacing each $x$ with $y^{-1}(y)$ that
+$(f \circ y^{-1})(y) = \lVert y/5 \rVert \sin (\lVert y \rVert)$, 
+and then by the first transformation formula @eq-trans1, 
+we get
+$$\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x)
+ = \int_{B_{25}(0)} \lVert y/5 \rVert \sin (\lVert y \rVert) d\mu_2(y).$$
+
+But, thankfully, @eq-trans2 implies @eq-trans1. 
+Indeed, letting $f' = f \circ y^{-1}$, we see that 
+\begin{align*}
+\int_{\Omega_1} f \, d\mu_1 &= \int_{\Omega_1} f' \circ y \, d\mu_1\\
+&= \int_{y(\Omega_1)} f' \, d\mu_2 \\
+&= \int_{y(\Omega_1)} f \circ y^{-1} \, d\mu_2,
+\end{align*}
+where we used @eq-trans2 in the second equality.
+
 ### March 11, 2026
 
 I'm collecting stuff from @LangAlgebra that I find relevant
