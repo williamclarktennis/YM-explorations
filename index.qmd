@@ -15,6 +15,39 @@ I felt bad about myself after I accidentally
 looked at Prof. Dr. Huybrecht's Linear Algebra 2 exam from 
 2023, so I'm going to try to learn the exam by the end of today.
 
+The following passage in @LangAlgebra is useful for the @Chatterjee2016 paper.
+It begins on Page 597. 
+
+"For exercises 9,10 and 11, we let $E$ be a non-zero
+finite dimensional vector space over $\mathbb R$, with a 
+symmetric positive definite scalar product $g$, which gives 
+rise to a norm $\lvert \cdot \rvert$ on $E$.
+
+Let $A: E \to E$ be a symmetric endomorphism of $E$ with 
+respect to $g$. Define $A \ge 0$ to mean $\langle Ax, x \rangle
+:= g(Ax,x) \ge 0$ 
+for all $x \in E$.
+
+9. (a) Show that $A \ge 0$ if and only if all eigenvalues of $A$
+belonging to non-zero eigenvectors are $\ge 0$. Both in the Hermitian
+case and the symmetric case, one says that $A$ is semipositive if 
+$A \ge 0$, and positive definite if $\langle Ax, x \rangle > 0$ 
+for all $x \ne 0$. 
+
+(b) Show that an automorphism $A$ of $E$ can be written 
+in a unique way as a product $A = UP$ where $U$ is real unitary, 
+(that is $U^T U = I$), and $P$ is symmetric positive definite.
+For two hermitian or symmetric endomorphisms $A, B,$ define 
+$A \ge B$ to mean $A - B \ge 0$ and similarly for $A > B$. 
+Suppose $A > 0$. Show that there are two real numbers 
+$\alpha > 0$ and $\beta > 0$ such that $\alpha I \le A \le \beta I$.
+"
+
+Exercise 10 and 11 involve the exponential map and are also relevant for
+@Chatterjee2016.
+
+
+
 ### March 12, 2026
 
 #### Transformation formula

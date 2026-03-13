@@ -38,5 +38,104 @@ of elements of $S$. We shall call $N$ the submodule generated
 by $S$, and we call $S$ a set of generators or $N$. 
 We sometimes write $N = A \langle S \rangle$.
 
+</details>
+
+<details><summary> Orthogonal group of matrices </summary>
+
+According to Wikipedia, we have that for a field $F$ and 
+a dimension $n$, 
+$$
+O(n,F) = \{Q \in \text{GL}(n,F) \mid Q^TQ = QQ^T = I \}.
+$$
+
+According to @LangAlgebra page 535, the group of automorphisms
+of a symmetric form on a vector space is called the orthogonal
+group of the form. 
+
+Lang continues with the following on page 536. 
+There is a standard form described over the real numbers in 
+terms of coordinates by
+$$f(x,x) = x_1^2 + \cdots + x_n^2$$
+and over $\mathbb C$ by 
+$$f(x,x) = x_1 \overline{x_1} + \cdots + x_n \overline{x_n}$$
+and over the quaternions $K$ by the same formula 
+as in the complex case.
+The group of automorphisms of this form would be called the unitary group, 
+and would be denoted by $U_n$.
+The points of this group in the reals (respectively, complex, resp. quaternions)
+would be denoted by 
+$$U_n(\mathbb R) \hspace{0.5 in} U_n(\mathbb C) \hspace{0.5 in} U_n(K),$$
+and these three groups would be called the 
+real unitary group (resp. complex unitary group, resp. quaternion
+unitary group).
+
+On page 533 of @LangAlgebra, the following is written. 
+Let $f: E \times E \to R$ be sesquilinear. By an automorphism of $f$ 
+we shall mean a linear automorphism $A: E \to E$ such that 
+$$\langle Ax, Ay \rangle = \langle x, y \rangle,$$
+just as for bilinear forms. The meaning of this equation is 
+explained by page 522: $\langle x,y \rangle$ or $\langle x, y \rangle$
+is written instead of $f(x,y)$.
+
+Note also Proposition 7.1 on page 533 of @LangAlgebra. 
+Let $f: E \times E \to R$ be a non-singular sesquilinear form. 
+Let $A: E \to E$ be a linear map. Then $A$ is an automorphism of $f$
+if and only if $A^* A = id$, and $A$ is invertible.
+
+On page 551 of @LangAlgebra, it is written that $O(n) = U_n(\mathbb R)$.
+
+</details>
+
+<details><summary> Symplectic Group </summary>
+
+The group of automorphisms of an alternating form on a vector space 
+is called the symplectic group of the form (@LangAlgebra page 535). 
+Recall that a matrix $M$ is said to be alternating if 
+$M^t = -M$ and the diagonal elements of $M$ are 0 (@LangAlgebra page 530).
+Recall also that a bilinear form $f: E \times E \to R$ is said to 
+be alternating if $f(x,x) = 0$ for all $x \in E$ (@LangAlgebra page 530).
+
+Prop 6.5. Let $E$ be a free module of dimension $n$ over $R$, and let
+$\mathcal{B}$ be a fixed basis. The map 
+$$f \mapsto M_{\mathcal{B}}^{\mathcal{B}}(f)$$
+induces an isomorphism between the module of alternating forms 
+on $E \times E$ and the module of alternating $n \times n$ matrices 
+over $R$. (@LangAlgebra page 530).
+
+If $f$ is the standard alternating form whose matrix is 
+$$
+\begin{bmatrix}
+0 & I_n \\
+I_n & 0
+\end{bmatrix}
+$$
+one might denote its group of automorphisms by $A_{2n}$ and call it the
+alternating form group (@LangAlgebra p. 536).
+
+Here is exercise 22-3 of @LeeSM. 
+The real symplectic group is the subgroup $\text{Sp}(2n,\mathbb R) \subset
+\text{GL}(2n, \mathbb R)$ consisting of all $2n \times 2n$ matrices that 
+leave the standard symplectic tensor $\omega = \sum_{i=1}^n dx^i \wedge dy^i$
+invariant, that is, the set of invertible linear maps $Z: \mathbb R^{2n} \to 
+\mathbb R^{2n}$ such that $\omega(Zx, Zy) = \omega(x,y)$ for all $x,y \in
+\mathbb R^{2n}$.
+
+(a) Show that $Z \in \text{Sp}(2n, \mathbb R)$ if and only if it takes 
+the standard basis to a symplectic basis. 
+(b) Show that $Z \in \text{Sp}(2n, \mathbb R)$ if and only if $Z^TJZ = J$, 
+where $J$ is the $2n \times 2n$ block diagonal matrix 
+$$J = \begin{bmatrix}
+j & \cdots & 0\\
+\vdots & \ddots & \vdots \\
+0 & \cdots & j
+\end{bmatrix}$$
+with copies of the $2 \times 2$ block $j = \begin{bmatrix} 0 & 1 \\ 
+-1 & 0 \end{bmatrix}$ along the main diagonal, and zeros
+elsewhere. 
+(c) Show that $\text{Sp}(2n, \mathbb R)$ is an embedded Lie subgroup
+of $\text{GL}(2n, \mathbb R)$, and determine its dimension. 
+(d) Determine the Lie algebra of $\text{Sp}(2n, \mathbb R)$ as a subalgebra 
+of $\mathfrak{gl}(2n, \mathbb R)$.
+(e) Is $\text{Sp}(2n, \mathbb R)$ compact?
 
 </details>
