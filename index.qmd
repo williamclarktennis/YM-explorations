@@ -9,6 +9,12 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 13, 2026
+
+I felt bad about myself after I accidentally
+looked at Prof. Dr. Huybrecht's Linear Algebra 2 exam from 
+2023, so I'm going to try to learn the exam by the end of today.
+
 ### March 12, 2026
 
 #### Transformation formula
