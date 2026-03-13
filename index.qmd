@@ -175,6 +175,14 @@ where $E$ is a free module over $R$. Page 520.
 
 Section 5. Duality.
 
+- $R$-bilinear form $f: E \times F \to R$ (522)
+- write $\langle x,y \rangle$ for $f(x,y)$ (522)
+- $x \perp y$ if $\langle x,y \rangle = 0$ (522)
+- kernel of a bilinear form $f$ on the left (resp. right) (522)
+- non-degenerate bilinear form on the left (resp. right) (522)
+- the set of all bilinear maps of $E \times F$ into $R$ is 
+denoted by $L^2(E,F;R)$ (523)
+- dual module of $F$, denoted by $Hom_R(F,R)$ (523)
 
 
 ##### From Chapter 15: Structure of Bilinear Forms
