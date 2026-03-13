@@ -217,7 +217,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#march-11-2026" id="toc-march-11-2026" class="nav-link active" data-scroll-target="#march-11-2026">March 11, 2026</a></li>
+  <li><a href="#march-13-2026" id="toc-march-13-2026" class="nav-link active" data-scroll-target="#march-13-2026">March 13, 2026</a></li>
+  <li><a href="#march-12-2026" id="toc-march-12-2026" class="nav-link" data-scroll-target="#march-12-2026">March 12, 2026</a></li>
+  <li><a href="#march-11-2026" id="toc-march-11-2026" class="nav-link" data-scroll-target="#march-11-2026">March 11, 2026</a></li>
   </ul>
 </nav>
     </div>
@@ -243,6 +245,53 @@ window.Quarto = {
 </header>
 
 
+<section id="march-13-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-13-2026">March 13, 2026</h3>
+<p>I felt bad about myself after I accidentally looked at Prof.&nbsp;Dr.&nbsp;Huybrecht’s Linear Algebra 2 exam from 2023, so I’m going to try to learn the exam by the end of today.</p>
+<p>The following passage in <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> is useful for the <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> paper. It begins on Page 597.</p>
+<p>“For exercises 9,10 and 11, we let <span class="math inline">\(E\)</span> be a non-zero finite dimensional vector space over <span class="math inline">\(\mathbb R\)</span>, with a symmetric positive definite scalar product <span class="math inline">\(g\)</span>, which gives rise to a norm <span class="math inline">\(\lvert \cdot \rvert\)</span> on <span class="math inline">\(E\)</span>.</p>
+<p>Let <span class="math inline">\(A: E \to E\)</span> be a symmetric endomorphism of <span class="math inline">\(E\)</span> with respect to <span class="math inline">\(g\)</span>. Define <span class="math inline">\(A \ge 0\)</span> to mean <span class="math inline">\(\langle Ax, x \rangle
+:= g(Ax,x) \ge 0\)</span> for all <span class="math inline">\(x \in E\)</span>.</p>
+<ol start="9" type="1">
+<li><ol type="a">
+<li>Show that <span class="math inline">\(A \ge 0\)</span> if and only if all eigenvalues of <span class="math inline">\(A\)</span> belonging to non-zero eigenvectors are <span class="math inline">\(\ge 0\)</span>. Both in the Hermitian case and the symmetric case, one says that <span class="math inline">\(A\)</span> is semipositive if <span class="math inline">\(A \ge 0\)</span>, and positive definite if <span class="math inline">\(\langle Ax, x \rangle &gt; 0\)</span> for all <span class="math inline">\(x \ne 0\)</span>.</li>
+</ol></li>
+</ol>
+<ol start="2" type="a">
+<li>Show that an automorphism <span class="math inline">\(A\)</span> of <span class="math inline">\(E\)</span> can be written in a unique way as a product <span class="math inline">\(A = UP\)</span> where <span class="math inline">\(U\)</span> is real unitary, (that is <span class="math inline">\(U^T U = I\)</span>), and <span class="math inline">\(P\)</span> is symmetric positive definite. For two hermitian or symmetric endomorphisms <span class="math inline">\(A, B,\)</span> define <span class="math inline">\(A \ge B\)</span> to mean <span class="math inline">\(A - B \ge 0\)</span> and similarly for <span class="math inline">\(A &gt; B\)</span>. Suppose <span class="math inline">\(A &gt; 0\)</span>. Show that there are two real numbers <span class="math inline">\(\alpha &gt; 0\)</span> and <span class="math inline">\(\beta &gt; 0\)</span> such that <span class="math inline">\(\alpha I \le A \le \beta I\)</span>. ”</li>
+</ol>
+<p>Exercise 10 and 11 involve the exponential map and are also relevant for <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+</section>
+<section id="march-12-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-12-2026">March 12, 2026</h3>
+<section id="transformation-formula" class="level4">
+<h4 class="anchored" data-anchor-id="transformation-formula">Transformation formula</h4>
+<p>I need to get a grip on the transformation formula.</p>
+<p>Let <span class="math inline">\((\Omega_1, \beta_1, \mu_1)\)</span> and <span class="math inline">\((\Omega_2, \beta_2, \mu_2)\)</span> be two measure spaces.</p>
+<p>One situation is where we have a function on the first space and we integrate against the measure <span class="math inline">\(\mu_1\)</span>. This is <span class="math display">\[\int_{\Omega_1} f \, d \mu_1,\]</span> where <span class="math inline">\(\text{dom} f = \Omega_1\)</span>. If the variable of integration is denoted by <span class="math inline">\(x\)</span>, that is, <span class="math inline">\(x\)</span> varies in the space <span class="math inline">\(\Omega_1\)</span>, then we write <span class="math display">\[\int_{\Omega_1} f(x) \, d\mu_1(x).\]</span></p>
+<p>The transformation formula comes in when we introduce a new variable in terms of the old one, and integrate over the associated pushforward measure. This is implemented via a measurable function <span class="math inline">\(y(x) : \Omega_1 \to \Omega_2\)</span> where we assume that <span class="math inline">\(y\)</span> is bijective for ease of things. And we also take <span class="math inline">\(\mu_2\)</span> as the pushforward of <span class="math inline">\(\mu_1\)</span> by the measurable <span class="math inline">\(y(\cdot)\)</span>: for <span class="math inline">\(B \in \beta_2\)</span>, <span class="math display">\[\mu_2(B) = y_*(\mu_1)(B) = \mu_1(y^{-1}(B)).\]</span> Then the transformation formula is: <span id="eq-trans1"><span class="math display">\[
+\int_{\Omega_1} f \, d\mu_1 = \int_{y(\Omega_1)} f \circ y^{-1} \, d\mu_2
+\tag{1}\]</span></span> which we can also be written as <span class="math display">\[\int_{\Omega_1} f(x) \, d\mu_1(x) = \int_{y(\Omega_1)} (f \circ y^{-1})(y) \, d\mu_2(y)\]</span></p>
+<p>Let’s illustrate this with an example where the new variable is a scaling of the old variable. Suppose <span class="math inline">\(f(x) = \sin ( \lvert 5 x \rvert)\)</span> where <span class="math inline">\(x \in \mathbb R^n\)</span>. Let <span class="math inline">\(y(x) = 5x\)</span>. Then <span class="math inline">\(x = y/5\)</span>, or <span class="math inline">\(y^{-1}(y) = y/5\)</span>. Then by the formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;1</a>, <span class="math display">\[\begin{align*}
+\int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x) &amp;=
+\int_{B_{25}(0)} \sin (\lVert 5 (y^{-1}(y)) \rVert) d\mu_2(y)\\
+&amp;= \int_{B_{25}(0)} \sin (\lVert 5 (y/5) \rVert) d\mu_2(y)\\
+&amp;= \int_{B_{25}(0)} \sin (\lVert y \rVert) d\mu_2(y).
+\end{align*}\]</span></p>
+<p>One complaint is that the usual transformation formula for pushforward measure is written <span id="eq-trans2"><span class="math display">\[
+\int_{\Omega_1} f \circ y \, d\mu_1 = \int_{y(\Omega_1)} f \, d\mu_2.
+\tag{2}\]</span></span></p>
+<p>In the preview example, one could simply view the function <span class="math inline">\(\sin(\lVert 5(\cdot) \rVert )\)</span> as a composition of <span class="math inline">\(f(\cdot) = \sin(\lVert \cdot \rVert)\)</span> and <span class="math inline">\(y (\cdot) = 5(\cdot)\)</span>, and then you get the same result in one step by <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;2</a>: <span class="math display">\[\int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x)
+= \int_{B_{25}(0)} \sin (\lVert y \rVert) d\mu_2(y).\]</span></p>
+<p>But typically, in the literature at least, one encounters an integral where the integrand can not so easily be viewed as a composition, but simplifying one part is at least clear: <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x),\]</span> and then followed by the statement: “we make the change of variable <span class="math inline">\(y(x) = 5x\)</span>.” In this case, I find it easier to just think: <span class="math inline">\(f(x) = \lVert x \rVert \sin(\lVert 5 x \rVert)\)</span> and then it is easy to see by replacing each <span class="math inline">\(x\)</span> with <span class="math inline">\(y^{-1}(y)\)</span> that <span class="math inline">\((f \circ y^{-1})(y) = \lVert y/5 \rVert \sin (\lVert y \rVert)\)</span>, and then by the first transformation formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;1</a>, we get <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x)
+= \int_{B_{25}(0)} \lVert y/5 \rVert \sin (\lVert y \rVert) d\mu_2(y).\]</span></p>
+<p>But, thankfully, <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;2</a> implies <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;1</a>. Indeed, letting <span class="math inline">\(f' = f \circ y^{-1}\)</span>, we see that <span class="math display">\[\begin{align*}
+\int_{\Omega_1} f \, d\mu_1 &amp;= \int_{\Omega_1} f' \circ y \, d\mu_1\\
+&amp;= \int_{y(\Omega_1)} f' \, d\mu_2 \\
+&amp;= \int_{y(\Omega_1)} f \circ y^{-1} \, d\mu_2,
+\end{align*}\]</span> where we used <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;2</a> in the second equality.</p>
+</section>
+</section>
 <section id="march-11-2026" class="level3">
 <h3 class="anchored" data-anchor-id="march-11-2026">March 11, 2026</h3>
 <p>I’m collecting stuff from <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> that I find relevant for my thesis.</p>
@@ -283,6 +332,9 @@ F\)</span> where <span class="math inline">\(F\)</span> is a module. Page 511.</
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">From Chapter 15: Structure of Bilinear Forms</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
+Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
+</div>
 <div id="ref-LangAlgebra" class="csl-entry" role="listitem">
 Lang, Serge. 2002. <em>Algebra</em>. Springer.
 </div>
