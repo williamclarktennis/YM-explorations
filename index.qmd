@@ -9,6 +9,82 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 14, 2026
+
+Let me note that Chapter 7 of @Miller is relevant for
+@BrenneckeCQFT. 
+
+Let me also note that pages 211 and 212 in @Miller seem relevant 
+for defininig Haar measure on $U(N)$ in @Chatterjee2016
+and for some sections in @BrenneckeCQFT.
+
+Beginning on page 206 of @Miller is 
+section 6.1 titled Invariant Measures on Lie Groups. This is 
+relevant for @Chatterjee2016 and some sections of @BrenneckeCQFT. 
+It would also be helpful to understand integrals on
+manifolds, which is chapter 16 in @LeeSM. In order to understand
+Chapter 16, I need some familiarity with differential forms, 
+which depends on the algebraic construction of alternating forms
+and defining a smooth structure there. I am working on that.
+
+Page 173 of @Miller shows that $U(N)$ is a real Lie group
+and gives the Lie algebra to $U(N)$. The Lie algebra result 
+is Theorem 5.12, and the proof is analagous to 
+the proof of Theorem 5.11, which appears on page 172. 
+Theorem 5.13, whose proof ends on page 174, also looks interesting.
+
+Is there something in @Miller that shows how to 
+prove something is a Lie group, in more detail than 
+on page 173?
+Some relevant remarks appear on Page 165. 
+It points out the difference between local linear Lie groups 
+and Lie groups. Apparently it takes a lot of pages to 
+clarify the analytic manifold condition, and page 165 shows
+how to get around this issue.
+
+Section 5.1 of @Miller, titled the exponential of a matrix, 
+runs from page 152 to page 162. 
+It gives a seemingly self-contained treatment of 
+the analytic/differential structure in matrix normed spaces. 
+It ends with Theorem 5.5, the Baker Campbell Hausdorff formula, 
+which is relevant to @Chatterjee2016. 
+I'd like to read that section.
+
+On page 99 of @Miller, two sided ideals are defined, which could 
+be useful for understanding the construction of the alternating product 
+in @Warner. 
+
+Page 94 of @Miller seems relevant for @BrenneckeCQFT, in particular
+the lemmas concerning irreducibility.
+
+Page 80 of @Miller defines the tensor product of two representations
+$T$ and $T'$ of $V$ and $V'$ resp., acting on the tensor product 
+$V \otimes V'$.
+
+Page 79 of @Miller defines the tensor product in a down to earth way.
+
+On page 74 of @Miller, it is written that 
+the trace of the matrix of a representation
+defines a so called character of a representation. I wonder 
+if this connects to the role of the trace in the definition 
+of the Wilson action. 
+
+Group algebra or group ring is defined on page 64 of @Miller. 
+
+Chapter 3, Group representation theory, of @Miller
+seems like good reading as a supplement to @BrenneckeCQFT. 
+It begins on page 61. 
+
+Section 2.6, Lattice groups, beginning on page 34 of @Miller, 
+could be relevant, but most likely not. 
+
+Section 2.1: The Orthogonal Group in Three Space. p. 16 -19. 
+Section 2.2: The Euclidean group. P. 20 - 23. 
+Section 2.3: Symmetry and the Discrete Subgroups of $E(3)$. p. 23 - 27. 
+
+Section 1.4: Transformation Groups. p. 8 - 13.
+
+
 ### March 13, 2026
 
 I felt bad about myself after I accidentally

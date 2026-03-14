@@ -138,4 +138,16 @@ of $\text{GL}(2n, \mathbb R)$, and determine its dimension.
 of $\mathfrak{gl}(2n, \mathbb R)$.
 (e) Is $\text{Sp}(2n, \mathbb R)$ compact?
 
+The following is the notion of symplectic group from @Miller. 
+Let $J$ be the $2m \times 2m$ skew-symmetric matrix
+$$J = \begin{bmatrix} 0 & E_m \\ -E_m & 0 \end{bmatrix}.$$
+A symplectic matrix is a $2m \times 2m$ complex matrix $A$
+such that $A^t J A = J$. The symplectic group $Sp(m) = Sp(m, \mathbb C)$
+is the set of all $2m \times 2m$ symplectic matrices. (p. 174)
+More generally, we can consider $Sp(m)$ as the set of linear operators
+$A$ on a $2m$-dimensional complex vector space $V$ such that 
+$\langle Au, Av \rangle = \langle u, v \rangle$ for all $u,v \in V$, 
+where $\langle -, - \rangle$ is a non-singular skew-symmetric 
+bilinear form on $V$. (p. 344)
+
 </details>
