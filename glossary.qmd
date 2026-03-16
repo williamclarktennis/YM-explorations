@@ -113,6 +113,24 @@ have $1x = x$.
 Let $M$ be a module. By a submodule $N$ of $M$ we mean an additive
 subgroup such that $AN \subset N$. 
 
+For example, consider the subset of $M( 2 \times 2, \mathbb C)$, 
+the 2 by 2 complex matrices, given by 
+$$V = \{\alpha_1 B_1 + \alpha_2 B_2 + \alpha_3 B_3 \mid \alpha \in \mathbb R^3\},$$
+where $B_1 = \begin{bmatrix} i & 0 \\ 0  & -i \end{bmatrix}$,
+$B_2 = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$, and
+$B_3 = \begin{bmatrix} 0 & i \\ i & 0 \end{bmatrix}$.
+Note that $V$ is an abelian group under matrix addition.
+Furthermore, there is an operation of the ring $\mathbb R$
+on $V$, given by the usual multiplication 
+of a matrix by a scalar, and note that this is indeed
+a well-defined operation because multiplying by a real scalar
+is an operation which stays inside the group $V$ (this
+would not be the case for complex scalars.)
+Thus, we can view $V$ as an $\mathbb R$-module.
+If we view $M( 2 \times 2, \mathbb C)$ as an $\mathbb R-$module, 
+then we can say that $V$ is an $\mathbb R$-submodule 
+of $M( 2 \times 2, \mathbb C)$. 
+
 </details>
 
 

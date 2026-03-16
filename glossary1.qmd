@@ -106,7 +106,7 @@ If $f$ is the standard alternating form whose matrix is
 $$
 \begin{bmatrix}
 0 & I_n \\
-I_n & 0
+-I_n & 0
 \end{bmatrix}
 $$
 one might denote its group of automorphisms by $A_{2n}$ and call it the
@@ -149,5 +149,41 @@ $A$ on a $2m$-dimensional complex vector space $V$ such that
 $\langle Au, Av \rangle = \langle u, v \rangle$ for all $u,v \in V$, 
 where $\langle -, - \rangle$ is a non-singular skew-symmetric 
 bilinear form on $V$. (p. 344)
+
+</details>
+
+<details><summary> Special Group </summary>
+
+Let $Aut(f)$ denote the group of automorphisms
+of a (sesquilinear or bilinear) form $f: E \times E \to R$, where 
+$E$ is an $R-$module, and $R$ is a commutative ring. 
+(@LangAlgebra p. 536). 
+
+Suppose $f$ is the standard symmetric bilinear form described 
+over the real numbers 
+by $f(x,x) = x_1x_1 + \cdots + x_nx_n$.
+Then $Aut(f) = U_n(\mathbb R) = O(n, \mathbb R)$. 
+And the subgroup of $Aut(f)$ consisting of those elements
+whose determinant is 1 is denoted by $SU_n(\mathbb R) = SO_n(\mathbb R) =
+SO(n)$. This is called the special group. (@LangAlgebra p. 536).
+
+Similarly, we obtain the 
+special unitary group $SU(n) = SU_n(\mathbb C)$
+as the subgroup of $U(n) = U_n(\mathbb C) = Aut(f)$ 
+for $f(x,x) = x_1\overline{x_1} + \cdots + x_n \overline{x_n}$ the
+standard Hermitian sesquilinear form described in coordinates.
+(@LangAlgebra p. 536).
+
+Let $F$ be a field. Let $n$ be a positive integer. 
+By $GL_n(F)$ we mean the group of $n \times n$ invertible matrices
+over $F$. By $SL_n(F)$ we mean the subgroup of those matrices whose
+determinant is equal to 1. (@LangAlgebra p. 536).
+
+</details>
+
+
+<details><summary> $Aut(f)$ for $f$ a form on a vector space </summary>
+
+
 
 </details>
