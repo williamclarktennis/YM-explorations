@@ -11,6 +11,59 @@ bibliography: references.bib
 
 ### March 17, 2026
 
+#### Notes on types of plaquettes
+
+Either 0,2, or 3 of the edges of a plaquette
+are in $E_n^0$. 
+In other words, 4, 2, or 1 of the edges are $E_n^1$ edges.
+
+- Example of a plaquette with 4 edges in $E_n^1$. 
+Consider $d = 3$ and the plaquette
+$((1,1,1),1,2)$. 
+- Example of a plaquette with 2 edges in $E_n^1$.
+Consider $d = 2$ and the plaquette $((1,1),1,2)$.
+- Example of a plaquette with 1 edge in $E_n^1$. Consider
+$d = 2$ and $((0,0),1,2)$.
+
+Lemma. Let $(x,j,k) \in B_n'$. Then 
+$(x, x + e_k) \in E_n^0$ if and only if
+$(x + e_j, x + e_j + e_k) \in E_n^0$.
+
+Proof. That $(x + e_j, x + e_j + e_k) \in E_n^0$
+means that 
+$x + e_j = (x_1, \cdots, x_k, 0, \cdots, 0)$
+and $x + e_j + e_k = (x_1, \cdots, x_k + 1, 0, \cdots, 0)$
+for some $x_1, \cdots, x_k$ between $0$ and $n$.
+Hence, $x = (x_1, \cdots, x_j - 1, \cdots, x_k, 0, \cdots, 0)$
+and $x + e_k = (x_1, \cdots, x_j-1, \cdots, x_k + 1, 0 \cdots, 0)$
+which shows that $(x, x+ e_k) \in E_n^0$. The other 
+direction follows from the fact that $j< k$. q.e.d.
+
+Lemma. It is impossible for a plaquette $(x,j,k)$ to 
+have exactly one edge which is $E_n^0$.
+
+Proof. Suppose precisely one edge $e$ in a 
+plaquette $(x,j,k) \in B_n'$ is in $E_n^0$. 
+If $e = (x, x + e_j)$, then also 
+$(x, x + e_k) \in E_n^0$, a contradiction. 
+If $e = (x, x + e_k)$, 
+then also $(x + e_j, x + e_j + e_k) \in E_n^0$, 
+another contradiction. 
+If $e = (x + e_j, x + e_j + e_k)$, 
+then also $(x, x + e_k) \in E_n^0$, a contradiction. 
+If $e = (x + e_k, x + e_j + e_k)$, this is also a contradiction,
+because it violates the definition of $E_n^0$, since
+$j < k$. q.e.d.
+
+Lemma. A plaquette cannot have all 4 edges in $E_n^0$. 
+
+Proof. If $(x,j,k)$ is a plaquette, 
+then $(x+ e_k, x + e_j + e_k)$ is not an element 
+of $E_n^0$. q.e.d. 
+
+
+
+
 #### Following Chatterjee Lemma 13.1
 
 I made a structure to help me with this lemma: 
