@@ -11,6 +11,151 @@ bibliography: references.bib
 
 ### March 17, 2026
 
+#### Following Chatterjee Lemma 13.1
+
+I made a structure to help me with this lemma: 
+![$B_4$ when $d=3$](./pics/B4-d3.jpeg){width=80%}
+
+Lemma 13.1. For each $t \in T_E(B_n)$, 
+$$
+\frac{C_1}{n^{d+2}} \lVert t \rVert^2 \le M_{E,0,n}(t) \le C_2 \lVert t \rVert^2,
+$${#eq-lemma131}
+where $C_1$ and $C_2$ are positive constants 
+that depend only on $d$.
+
+Proof. First, extend $t$ to an element $s \in T(B_n)$ by defining $s(x,y) = 0$
+for $(x,y) \in E$ and $s(x,y) = t(x,y)$ for $(x,y) \in E_n \setminus E$.
+Then $M_{E,0,n}(t) = M_n(s)$.
+The upper bound follows easily from the definition of $M_n(s)$, 
+since each edge belongs to at most $C$ plaquettes, 
+where $C$ depends only on $d$. 
+
+(Why?
+Lemma. Each interior edge belongs to $(d-1) \cdot 2$ plaquettes.
+Proof. Let $(x,y) \in E_n$ be an interior edge.
+By definition of the lattice, $y = x + e_j$ for some 
+$j \in [d]$. The plaquettes containing the edge 
+$(x,y)$ can be enumerated by considering 
+the set $\{(x, x \pm e_k) \mid k \in [d], k \ne j\}$. 
+These edges correspond to all the plaquettes containing $(x,y)$, 
+and there are $(d-1) \cdot 2$ elements in this set. q.e.d.
+
+Furthermore, why does the upper bound follow?
+Note Jenson's inequality, which I take from
+@Mildorf.
+Let $f: \mathbb R \to \mathbb R$
+be a convex function. Then for any $x_1, \cdots, x_n \in I$, 
+and any non-negative reals $\omega_1, \cdots, \omega_n$, 
+$$
+\omega_1 f(x_1) + \cdots + \omega_n f(x_n) \ge (\omega_1 + \cdots + \omega_n) \cdot
+f(\frac{\omega_1x_1 + \cdots + \omega_n x_n}{\omega_1 + \cdots + \omega_n}).
+$$
+This inequality implies, using the convex function $f(x) = x^2$,
+that for $t_1, \cdots, t_4 \in \mathbb R$ we have
+$$
+t_1^2 + \cdots + t_4^2 \ge 4 \cdot \frac{(t_1 + t_2 - t_3 -t_4)^2}{(1+1+1+1)^2}.
+$$
+Then observe that 
+\begin{align*}
+M_n(s) &= \sum_{x,j,k \in B_n'} s(x,j,k)^2 \\
+&= \sum_{p \in \mathcal{P}} (s(p_1) + s(p_2) - s(p_3) - s(p_4))^2 \\
+&\le 4 \cdot \sum_{p \in \mathcal{P}} s(p_1)^2 + s(p_2)^2 + s(p_3)^2 + s(p_4)^2\\
+&= 4 \cdot \sum_{e \in E_n \setminus E} \psi(e) \cdot s(e)^2,
+\end{align*}
+where $\psi(e)$ is the number of times the edge $e$ appears in a plaquette.
+Then since $\psi(e) \le (d-1) \cdot 2$, we get 
+$$
+M_n(s) \le 4 \cdot (d-1) \cdot 2 \sum_{e \in E_n \setminus E}
+ s(e)^2 = 8 \cdot (d-1) \cdot \lVert t \rVert^2. 
+$$ 
+as needed.
+)
+
+For the lower bound, it suffices to prove by induction that 
+for each $(x,y) \in E_n$, 
+$$
+|s(x,y)| \le |x|_1 \sqrt{M_n(s)},
+$${#eq-sbound}
+because $|x|_1 \le dn$ for every $x \in B_n$.
+(Recall that $|x|_1$ denotes the $l_1$ norm of $x$.)
+
+(Why does this suffice for the lower bound?
+Suppose 
+$$
+|s(x,y)| \le |x|_1 \sqrt{M_n(s)}
+$$ 
+for all $(x,y) \in E_n.$ We want to show that there exists some positive
+constant $C_1$ depending only on $d$ such that 
+$$
+\frac{C_1}{n^{d+2}} \sum_{e \in E_n \setminus E} s(e)^2 \le M_{E,0,n}(t) = M_n(s).
+$$
+Squaring the assumption and using $|x|_1 \le dn$, we obtain
+$$
+\frac{1}{d^2n^2}|s(x,y)|^2 \le M_n(s).
+$$ 
+Integrating both sides over $E_n \setminus E$ with respect to counting measure yields
+$$
+M_n(s) \cdot |E_n \setminus E| = \sum_{e \in E_n \setminus E}
+M_n(s) \ge \frac{1}{d^2n^2} \sum_{e \in E_n \setminus E} s(e)^2,
+$$
+which implies, using $|E_n| \ge |E_n \setminus E|$, that
+$$
+M_n(s) \ge \frac{1}{|E_n|d^2n^2} \sum_{e \in E_n \setminus E} s(e)^2 = 
+\frac{1}{|E_n|d^2n^2} \lVert t \rVert^2.
+$$
+By Lemma 17.1 of @Chatterjee2016, 
+$|E_n| = dn^d-dn^{d-1} \le dn^d$, which implies
+$$
+M_n(s) \ge \frac{1}{d^3 n^{d+2}} \lVert t \rVert^2,
+$$
+as needed.
+)
+
+We will prove @eq-sbound by induction on $|x|_1$.
+This is clearly true if $|x|_1 = 0$, since every edge incident to the
+origin belongs to $E_n^0$, and $E_n^0 \subset E$. So assume that 
+$|x|_1 > 0$. Let $x_1, \cdots, x_d$ be the coordinates of $x$. 
+Then $y = x+e_j$ for some $j$. (Why? By definition of edge in the lattice.)
+Let $k$ be the largest index such that $x_k \ne 0$. 
+If $k \le j$ then $(x,y) \in E_n^0 \subset E$, and therefore
+$s(x,y) = 0$. So assume that $k > j$. Let 
+$$
+z := x - e_k.
+$$
+Then $(z,j,k) \in B_n'.$ (Why? Observe the picture.
+![Diagram of the situation](./pics/lemma13-1.jpeg){height=300}
+It should follow from the picture.)
+
+Now note that the edges $(z,z+e_k)$ and $(z+e_j, z+e_j+e_k)$
+belong to $E_n^0$. 
+Therefore, 
+\begin{align*}
+s(z,j,k) &= s(z,z+e_j) + s(z+e_j+e_k, z + e_k) \\
+&= s(z,z+e_j) - s(x,y).
+\end{align*}
+This can be written as 
+$$
+s(x,y) = s(z,z+e_j) - s(z,j,k).
+$$
+If $(z,z+e_j) \in E$, then $s(z,z+e_j) = 0$ and the above identity
+gives 
+$$
+|s(x,y)| = |s(z,j,k)| \le \sqrt{M_n(s)} \le |x|_1 \sqrt{M_n(s)}.
+$$
+If $(z,z+e_j) \not \in E$, then since $|z|_1 = |x|_1 - 1$, 
+the induction hypothesis implies that
+$$
+|s(z,z+e_j)| \le |z|_1 \sqrt{M_n(s)} = (|x|_1 - 1) \sqrt{M_n(s)},
+$$
+and therefore 
+\begin{align*}
+|s(x,y)| & \le |s(z,z+e_j)| + |s(z,j,k)|\\
+& \le (|x|_1 - 1) \sqrt{M_n(s)} + \sqrt{M_n(s)} = |x|_1 \sqrt{M_n(s)}.
+\end{align*}
+This completes the induction step. q.e.d.
+
+### March 16, 2026
+
 Here are some notes to fill in background information on @Chatterjee2016.
 
 $U(N)$ is a compact topological space. Let $U \in U(N)$. 
