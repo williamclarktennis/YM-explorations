@@ -217,7 +217,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#march-13-2026" id="toc-march-13-2026" class="nav-link active" data-scroll-target="#march-13-2026">March 13, 2026</a></li>
+  <li><a href="#march-17-2026" id="toc-march-17-2026" class="nav-link active" data-scroll-target="#march-17-2026">March 17, 2026</a></li>
+  <li><a href="#march-16-2026" id="toc-march-16-2026" class="nav-link" data-scroll-target="#march-16-2026">March 16, 2026</a></li>
+  <li><a href="#march-14-2026" id="toc-march-14-2026" class="nav-link" data-scroll-target="#march-14-2026">March 14, 2026</a></li>
+  <li><a href="#march-13-2026" id="toc-march-13-2026" class="nav-link" data-scroll-target="#march-13-2026">March 13, 2026</a></li>
   <li><a href="#march-12-2026" id="toc-march-12-2026" class="nav-link" data-scroll-target="#march-12-2026">March 12, 2026</a></li>
   <li><a href="#march-11-2026" id="toc-march-11-2026" class="nav-link" data-scroll-target="#march-11-2026">March 11, 2026</a></li>
   </ul>
@@ -245,6 +248,131 @@ window.Quarto = {
 </header>
 
 
+<section id="march-17-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-17-2026">March 17, 2026</h3>
+<section id="following-chatterjee-lemma-13.1" class="level4">
+<h4 class="anchored" data-anchor-id="following-chatterjee-lemma-13.1">Following Chatterjee Lemma 13.1</h4>
+<p>I made a structure to help me with this lemma: <img src="./pics/B4-d3.jpeg" class="img-fluid" style="width:80.0%" alt="B_4 when d=3"></p>
+<p>Lemma 13.1. For each <span class="math inline">\(t \in T_E(B_n)\)</span>, <span id="eq-lemma131"><span class="math display">\[
+\frac{C_1}{n^{d+2}} \lVert t \rVert^2 \le M_{E,0,n}(t) \le C_2 \lVert t \rVert^2,
+\tag{1}\]</span></span> where <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> are positive constants that depend only on <span class="math inline">\(d\)</span>.</p>
+<p>Proof. First, extend <span class="math inline">\(t\)</span> to an element <span class="math inline">\(s \in T(B_n)\)</span> by defining <span class="math inline">\(s(x,y) = 0\)</span> for <span class="math inline">\((x,y) \in E\)</span> and <span class="math inline">\(s(x,y) = t(x,y)\)</span> for <span class="math inline">\((x,y) \in E_n \setminus E\)</span>. Then <span class="math inline">\(M_{E,0,n}(t) = M_n(s)\)</span>. The upper bound follows easily from the definition of <span class="math inline">\(M_n(s)\)</span>, since each edge belongs to at most <span class="math inline">\(C\)</span> plaquettes, where <span class="math inline">\(C\)</span> depends only on <span class="math inline">\(d\)</span>.</p>
+<p>(Why? Lemma. Each interior edge belongs to <span class="math inline">\((d-1) \cdot 2\)</span> plaquettes. Proof. Let <span class="math inline">\((x,y) \in E_n\)</span> be an interior edge. By definition of the lattice, <span class="math inline">\(y = x + e_j\)</span> for some <span class="math inline">\(j \in [d]\)</span>. The plaquettes containing the edge <span class="math inline">\((x,y)\)</span> can be enumerated by considering the set <span class="math inline">\(\{(x, x \pm e_k) \mid k \in [d], k \ne j\}\)</span>. These edges correspond to all the plaquettes containing <span class="math inline">\((x,y)\)</span>, and there are <span class="math inline">\((d-1) \cdot 2\)</span> elements in this set. q.e.d.</p>
+<p>Furthermore, why does the upper bound follow? Note Jenson’s inequality, which I take from <span class="citation" data-cites="Mildorf">Mildorf (<a href="#ref-Mildorf" role="doc-biblioref">2005</a>)</span>. Let <span class="math inline">\(f: \mathbb R \to \mathbb R\)</span> be a convex function. Then for any <span class="math inline">\(x_1, \cdots, x_n \in I\)</span>, and any non-negative reals <span class="math inline">\(\omega_1, \cdots, \omega_n\)</span>, <span class="math display">\[
+\omega_1 f(x_1) + \cdots + \omega_n f(x_n) \ge (\omega_1 + \cdots + \omega_n) \cdot
+f(\frac{\omega_1x_1 + \cdots + \omega_n x_n}{\omega_1 + \cdots + \omega_n}).
+\]</span> This inequality implies, using the convex function <span class="math inline">\(f(x) = x^2\)</span>, that for <span class="math inline">\(t_1, \cdots, t_4 \in \mathbb R\)</span> we have <span class="math display">\[
+t_1^2 + \cdots + t_4^2 \ge 4 \cdot \frac{(t_1 + t_2 - t_3 -t_4)^2}{(1+1+1+1)^2}.
+\]</span> Then observe that <span class="math display">\[\begin{align*}
+M_n(s) &amp;= \sum_{x,j,k \in B_n'} s(x,j,k)^2 \\
+&amp;= \sum_{p \in \mathcal{P}} (s(p_1) + s(p_2) - s(p_3) - s(p_4))^2 \\
+&amp;\le 4 \cdot \sum_{p \in \mathcal{P}} s(p_1)^2 + s(p_2)^2 + s(p_3)^2 + s(p_4)^2\\
+&amp;= 4 \cdot \sum_{e \in E_n \setminus E} \psi(e) \cdot s(e)^2,
+\end{align*}\]</span> where <span class="math inline">\(\psi(e)\)</span> is the number of times the edge <span class="math inline">\(e\)</span> appears in a plaquette. Then since <span class="math inline">\(\psi(e) \le (d-1) \cdot 2\)</span>, we get <span class="math display">\[
+M_n(s) \le 4 \cdot (d-1) \cdot 2 \sum_{e \in E_n \setminus E}
+s(e)^2 = 8 \cdot (d-1) \cdot \lVert t \rVert^2.
+\]</span> as needed. )</p>
+<p>For the lower bound, it suffices to prove by induction that for each <span class="math inline">\((x,y) \in E_n\)</span>, <span id="eq-sbound"><span class="math display">\[
+|s(x,y)| \le |x|_1 \sqrt{M_n(s)},
+\tag{2}\]</span></span> because <span class="math inline">\(|x|_1 \le dn\)</span> for every <span class="math inline">\(x \in B_n\)</span>. (Recall that <span class="math inline">\(|x|_1\)</span> denotes the <span class="math inline">\(l_1\)</span> norm of <span class="math inline">\(x\)</span>.)</p>
+<p>(Why does this suffice for the lower bound? Suppose <span class="math display">\[
+|s(x,y)| \le |x|_1 \sqrt{M_n(s)}
+\]</span> for all <span class="math inline">\((x,y) \in E_n.\)</span> We want to show that there exists some positive constant <span class="math inline">\(C_1\)</span> depending only on <span class="math inline">\(d\)</span> such that <span class="math display">\[
+\frac{C_1}{n^{d+2}} \sum_{e \in E_n \setminus E} s(e)^2 \le M_{E,0,n}(t) = M_n(s).
+\]</span> Squaring the assumption and using <span class="math inline">\(|x|_1 \le dn\)</span>, we obtain <span class="math display">\[
+\frac{1}{d^2n^2}|s(x,y)|^2 \le M_n(s).
+\]</span> Integrating both sides over <span class="math inline">\(E_n \setminus E\)</span> with respect to counting measure yields <span class="math display">\[
+M_n(s) \cdot |E_n \setminus E| = \sum_{e \in E_n \setminus E}
+M_n(s) \ge \frac{1}{d^2n^2} \sum_{e \in E_n \setminus E} s(e)^2,
+\]</span> which implies, using <span class="math inline">\(|E_n| \ge |E_n \setminus E|\)</span>, that <span class="math display">\[
+M_n(s) \ge \frac{1}{|E_n|d^2n^2} \sum_{e \in E_n \setminus E} s(e)^2 =
+\frac{1}{|E_n|d^2n^2} \lVert t \rVert^2.
+\]</span> By Lemma 17.1 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>, <span class="math inline">\(|E_n| = dn^d-dn^{d-1} \le dn^d\)</span>, which implies <span class="math display">\[
+M_n(s) \ge \frac{1}{d^3 n^{d+2}} \lVert t \rVert^2,
+\]</span> as needed. )</p>
+<p>We will prove <a href="#eq-sbound" class="quarto-xref">Equation&nbsp;2</a> by induction on <span class="math inline">\(|x|_1\)</span>. This is clearly true if <span class="math inline">\(|x|_1 = 0\)</span>, since every edge incident to the origin belongs to <span class="math inline">\(E_n^0\)</span>, and <span class="math inline">\(E_n^0 \subset E\)</span>. So assume that <span class="math inline">\(|x|_1 &gt; 0\)</span>. Let <span class="math inline">\(x_1, \cdots, x_d\)</span> be the coordinates of <span class="math inline">\(x\)</span>. Then <span class="math inline">\(y = x+e_j\)</span> for some <span class="math inline">\(j\)</span>. (Why? By definition of edge in the lattice.) Let <span class="math inline">\(k\)</span> be the largest index such that <span class="math inline">\(x_k \ne 0\)</span>. If <span class="math inline">\(k \le j\)</span> then <span class="math inline">\((x,y) \in E_n^0 \subset E\)</span>, and therefore <span class="math inline">\(s(x,y) = 0\)</span>. So assume that <span class="math inline">\(k &gt; j\)</span>. Let <span class="math display">\[
+z := x - e_k.
+\]</span> Then <span class="math inline">\((z,j,k) \in B_n'.\)</span> (Why? Observe the picture. <img src="./pics/lemma13-1.jpeg" height="300" alt="Diagram of the situation"> It should follow from the picture.)</p>
+<p>Now note that the edges <span class="math inline">\((z,z+e_k)\)</span> and <span class="math inline">\((z+e_j, z+e_j+e_k)\)</span> belong to <span class="math inline">\(E_n^0\)</span>. Therefore, <span class="math display">\[\begin{align*}
+s(z,j,k) &amp;= s(z,z+e_j) + s(z+e_j+e_k, z + e_k) \\
+&amp;= s(z,z+e_j) - s(x,y).
+\end{align*}\]</span> This can be written as <span class="math display">\[
+s(x,y) = s(z,z+e_j) - s(z,j,k).
+\]</span> If <span class="math inline">\((z,z+e_j) \in E\)</span>, then <span class="math inline">\(s(z,z+e_j) = 0\)</span> and the above identity gives <span class="math display">\[
+|s(x,y)| = |s(z,j,k)| \le \sqrt{M_n(s)} \le |x|_1 \sqrt{M_n(s)}.
+\]</span> If <span class="math inline">\((z,z+e_j) \not \in E\)</span>, then since <span class="math inline">\(|z|_1 = |x|_1 - 1\)</span>, the induction hypothesis implies that <span class="math display">\[
+|s(z,z+e_j)| \le |z|_1 \sqrt{M_n(s)} = (|x|_1 - 1) \sqrt{M_n(s)},
+\]</span> and therefore <span class="math display">\[\begin{align*}
+|s(x,y)| &amp; \le |s(z,z+e_j)| + |s(z,j,k)|\\
+&amp; \le (|x|_1 - 1) \sqrt{M_n(s)} + \sqrt{M_n(s)} = |x|_1 \sqrt{M_n(s)}.
+\end{align*}\]</span> This completes the induction step. q.e.d.</p>
+</section>
+</section>
+<section id="march-16-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-16-2026">March 16, 2026</h3>
+<p>Here are some notes to fill in background information on <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p><span class="math inline">\(U(N)\)</span> is a compact topological space. Let <span class="math inline">\(U \in U(N)\)</span>. Then <span class="math inline">\(\lVert U \rVert_{HS} = \sqrt{Tr(U^*U)}\)</span> which is equal to <span class="math inline">\(\sqrt{Tr(I)}\)</span> which is equal to <span class="math inline">\(\sqrt{N}\)</span>. This shows that <span class="math inline">\(U(N)\)</span> is a bounded subset of <span class="math inline">\((M(N \times N, \mathbb C), \lVert \cdot \rVert_{HS})\)</span>. For closedness, consider the continuous map <span class="math inline">\(f: \mathbb C^{N \times N} \to \mathbb C^{N \times N}\)</span> given by <span class="math display">\[f(U) = U^*U - I\]</span> for all <span class="math inline">\(U \in \mathbb C^{N \times N}\)</span>. Then <span class="math inline">\(U(N) = f^{-1}(0)\)</span>, which shows that <span class="math inline">\(U(N)\)</span> is closed.</p>
+<p>Here is why the eigenvalues of a complex unitary matrix are of the form <span class="math inline">\(e^{i\theta}\)</span> for <span class="math inline">\(\theta \in \mathbb R\)</span>. Let <span class="math inline">\(U\)</span> be an <span class="math inline">\(N \times N\)</span> unitary matrix with complex entries. Let <span class="math inline">\((\lambda, v_{\lambda})\)</span> be an eigenvalue, eigenvector pair, so <span class="math inline">\(v_{\lambda} \ne 0\)</span>. It suffices to show that <span class="math inline">\(|\lambda|_{\mathbb C} = 1\)</span>- the complex modulus of the eigenvalue is equal to 1. Then with <span class="math display">\[\begin{align*}
+\lambda \lambda^* \langle v_\lambda, v_\lambda \rangle &amp;=\langle Uv_\lambda, Uv_\lambda \rangle \\
+&amp;= \langle v_\lambda, v_\lambda \rangle,
+\end{align*}\]</span> and <span class="math inline">\(\langle v_\lambda, v_\lambda \rangle \ne 0\)</span>, we have that <span class="math inline">\(\lambda \lambda^* = 1,\)</span> as desired.</p>
+<section id="positive-definite-quadratic-form" class="level4">
+<h4 class="anchored" data-anchor-id="positive-definite-quadratic-form">Positive Definite Quadratic Form</h4>
+<p>“<span class="math inline">\(M_{E,0,n}\)</span> is a positive definite quadratic form on the vector space <span class="math inline">\(T_{E}(B_n)\)</span>” (<span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> p.&nbsp;30).</p>
+<p>Let me see if the definition of a positive definite quadratic form from <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> agrees with the notion used in <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>By a quadratic form on an <span class="math inline">\(R\)</span>-module <span class="math inline">\(E\)</span>, where <span class="math inline">\(R\)</span> is a commutative ring, one means a homogeneous quadratic map <span class="math inline">\(f: E \to R\)</span>, with values in <span class="math inline">\(R\)</span> (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> p.&nbsp;575). If <span class="math inline">\(f: E \to F\)</span> is a mapping, where <span class="math inline">\(F\)</span> is an <span class="math inline">\(R\)</span>-module, we say that <span class="math inline">\(f\)</span> is quadratic (i.e.&nbsp;<span class="math inline">\(R\)</span>-quadratic) if there exists a symmetric bilinear map <span class="math inline">\(g: E \times E \to F\)</span> and a linear map <span class="math inline">\(h: E \to F\)</span> such that for all <span class="math inline">\(x \in E\)</span>, we have <span class="math display">\[
+f(x) = g(x,x) + h(x).
+\]</span> We call <span class="math inline">\(g\)</span> the bilinear map associated with <span class="math inline">\(f\)</span> and <span class="math inline">\(h\)</span> the linear map associated with <span class="math inline">\(f\)</span>. We say that a mapping <span class="math inline">\(f: E \to F\)</span> is homogeneous quadratic if it is quadratic and its associated linear map is 0 (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> p.&nbsp;574,575).</p>
+<p>Let <span class="math inline">\(E\)</span> be a module over a commutative ring <span class="math inline">\(R\)</span>. Let <span class="math inline">\(g: E \times E \to R\)</span> be a map. If <span class="math inline">\(g\)</span> is bilinear, we call <span class="math inline">\(g\)</span> a symmetric form if <span class="math inline">\(g(x,y) = g(y,x)\)</span> for all <span class="math inline">\(x \in E\)</span>. We shall write <span class="math inline">\(g(x,x) = x^2\)</span> (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> p.&nbsp;571).</p>
+<p>Now assume that <span class="math inline">\(R\)</span> is an ordered field, and <span class="math inline">\(E\)</span> is a vector space over <span class="math inline">\(R\)</span>. We say that a symmetric form <span class="math inline">\(g: E \times E \to R\)</span> is positive definite if <span class="math inline">\(g(x,x) = x^2 &gt; 0\)</span> for all <span class="math inline">\(x \in E\)</span>, <span class="math inline">\(x \ne 0\)</span> (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> p.&nbsp;578).</p>
+<p>While I couldn’t find the definition of a positive definite quadratic form explicitly in <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>, I think the natural definition is as follows. Let <span class="math inline">\(f: E \to R\)</span> be a quadratic form, and let <span class="math inline">\(g\)</span> be a symmetric bilinear map (form, actually, because the codomain is <span class="math inline">\(R\)</span>) associated with <span class="math inline">\(f\)</span>. Uniqueness would be helpful here, so let’s assume <span class="math inline">\(g\)</span> is unique, which could require additional assumptions on <span class="math inline">\(E\)</span>, <span class="math inline">\(R\)</span> or <span class="math inline">\(f\)</span>. Then we say the quadratic form <span class="math inline">\(f\)</span> is positive definite if the symmetric form <span class="math inline">\(g\)</span> is positive definite. This reads: <span class="math display">\[
+f \text{ is positive definite} \Leftrightarrow f(x)
+= g(x,x) &gt; 0 \text{ for all } x \in E, x \ne 0.
+\]</span></p>
+</section>
+<section id="a-linear-algebra-note." class="level4">
+<h4 class="anchored" data-anchor-id="a-linear-algebra-note.">A Linear algebra note.</h4>
+<p>Let <span class="math inline">\(g: E \times E \to \mathbb C\)</span> be a Hermitian sesquilinear form (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> p.&nbsp;579). That is, <span class="math inline">\(\langle x,y \rangle := g(x,y) = \overline{g(y,x)} = \overline{\langle y,x \rangle}\)</span> for all <span class="math inline">\(x,y \in E\)</span>.</p>
+<p>Lemma. The left kernel of <span class="math inline">\(g\)</span> is equal to the right kernel of <span class="math inline">\(g\)</span>.</p>
+<p>Proof. Let’s say <span class="math inline">\(g: E_1 \times E_2 \to \mathbb C\)</span>, where <span class="math inline">\(E_1 = E\)</span> and <span class="math inline">\(E_2 = E\)</span>. Then the left kernel of <span class="math inline">\(E\)</span> is equal to <span class="math inline">\(E_2^{\perp}\)</span>, and the right kernel of <span class="math inline">\(g\)</span> is equal to <span class="math inline">\(E_1^{\perp}\)</span>. Thus, it suffices to show that <span class="math inline">\(E_1^{\perp} = E_2^{\perp}.\)</span> <span class="math display">\[\begin{align*}
+E_1^{\perp} &amp;= \{ \text{elements of $E_2$ which are perp. to $E_1$} \} \\
+&amp;= \{ x \in E_2 \mid x \perp E_1 \} \\
+&amp;= \{ x \in E_2 \mid g(y,x) = 0 \, \forall y \in E_1 \} \\
+&amp;= \{ x \in E_2 \mid \overline{g(y,x)} = 0 \, \forall y \in E_1 \} \\
+&amp;= \{ x \in E_2 \mid g(x,y) = 0 \, \forall y \in E_1 \} \\
+&amp;= \{ x \in E_1 \mid g(x,y) = 0 \, \forall y \in E_2 \} \\
+&amp;= E_2^{\perp}.
+\end{align*}\]</span> q.e.d.</p>
+<p>We say <span class="math inline">\(g\)</span> is non-degenerate if it’s kernel is equal to <span class="math inline">\(\{0\}\)</span>.</p>
+<p>Lemma. If <span class="math inline">\(A: E \to E\)</span> is a <span class="math inline">\(\mathbb C\)</span> linear map such that <span class="math inline">\(\langle Ax,x \rangle = 0\)</span> for all <span class="math inline">\(x \in E\)</span>, and <span class="math inline">\(g\)</span> is non-degenerate, then <span class="math inline">\(A = 0\)</span>.</p>
+<p>Proof. By the polarization identity (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> p.&nbsp;580) and the assumption that <span class="math inline">\(\langle Ax,x \rangle = 0\)</span> for all <span class="math inline">\(x \in E\)</span>, it follows for arbitrary <span class="math inline">\(x,y \in E\)</span> that <span class="math display">\[
+\langle Ax,y \rangle + \langle Ay, x \rangle = 0
+\]</span> and <span class="math display">\[
+i \langle Ax, y \rangle - i \langle Ay,x \rangle = 0.
+\]</span> The second relation implies that <span class="math display">\[
+\langle Ax, y \rangle = \langle Ay, x \rangle.
+\]</span> Then adding this to the relation <span class="math inline">\(\langle Ax,y \rangle + \langle Ay, x \rangle = 0\)</span>, we see that <span class="math display">\[2 \langle Ax,y \rangle = 0.\]</span> If we let <span class="math inline">\(y\)</span> vary over all of <span class="math inline">\(E\)</span>, we see that <span class="math inline">\(Ax\)</span> is an element of the left kernel of <span class="math inline">\(g\)</span>. But the left kernel of <span class="math inline">\(g\)</span> is equal to <span class="math inline">\(\{0\}\)</span> by non-degeneracy, so <span class="math inline">\(Ax = 0\)</span>. q.e.d.</p>
+</section>
+</section>
+<section id="march-14-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-14-2026">March 14, 2026</h3>
+<p>Let me note that Chapter 7 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> is relevant for <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<p>Let me also note that pages 211 and 212 in <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> seem relevant for defininig Haar measure on <span class="math inline">\(U(N)\)</span> in <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> and for some sections in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<p>Beginning on page 206 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> is section 6.1 titled Invariant Measures on Lie Groups. This is relevant for <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> and some sections of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. It would also be helpful to understand integrals on manifolds, which is chapter 16 in <span class="citation" data-cites="LeeSM">Lee (<a href="#ref-LeeSM" role="doc-biblioref">2013</a>)</span>. In order to understand Chapter 16, I need some familiarity with differential forms, which depends on the algebraic construction of alternating forms and defining a smooth structure there. I am working on that.</p>
+<p>Page 173 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> shows that <span class="math inline">\(U(N)\)</span> is a real Lie group and gives the Lie algebra to <span class="math inline">\(U(N)\)</span>. The Lie algebra result is Theorem 5.12, and the proof is analagous to the proof of Theorem 5.11, which appears on page 172. Theorem 5.13, whose proof ends on page 174, also looks interesting.</p>
+<p>Is there something in <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> that shows how to prove something is a Lie group, in more detail than on page 173? Some relevant remarks appear on Page 165. It points out the difference between local linear Lie groups and Lie groups. Apparently it takes a lot of pages to clarify the analytic manifold condition, and page 165 shows how to get around this issue.</p>
+<p>Section 5.1 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span>, titled the exponential of a matrix, runs from page 152 to page 162. It gives a seemingly self-contained treatment of the analytic/differential structure in matrix normed spaces. It ends with Theorem 5.5, the Baker Campbell Hausdorff formula, which is relevant to <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>. I’d like to read that section.</p>
+<p>On page 99 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span>, two sided ideals are defined, which could be useful for understanding the construction of the alternating product in <span class="citation" data-cites="Warner">Warner (<a href="#ref-Warner" role="doc-biblioref">2000</a>)</span>.</p>
+<p>Page 94 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> seems relevant for <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>, in particular the lemmas concerning irreducibility.</p>
+<p>Page 80 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> defines the tensor product of two representations <span class="math inline">\(T\)</span> and <span class="math inline">\(T'\)</span> of <span class="math inline">\(V\)</span> and <span class="math inline">\(V'\)</span> resp., acting on the tensor product <span class="math inline">\(V \otimes V'\)</span>.</p>
+<p>Page 79 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> defines the tensor product in a down to earth way.</p>
+<p>On page 74 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span>, it is written that the trace of the matrix of a representation defines a so called character of a representation. I wonder if this connects to the role of the trace in the definition of the Wilson action.</p>
+<p>Group algebra or group ring is defined on page 64 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span>.</p>
+<p>Chapter 3, Group representation theory, of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> seems like good reading as a supplement to <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. It begins on page 61.</p>
+<p>Section 2.6, Lattice groups, beginning on page 34 of <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span>, could be relevant, but most likely not.</p>
+<p>Section 2.1: The Orthogonal Group in Three Space. p.&nbsp;16 -19. Section 2.2: The Euclidean group. P. 20 - 23. Section 2.3: Symmetry and the Discrete Subgroups of <span class="math inline">\(E(3)\)</span>. p.&nbsp;23 - 27.</p>
+<p>Section 1.4: Transformation Groups. p.&nbsp;8 - 13.</p>
+</section>
 <section id="march-13-2026" class="level3">
 <h3 class="anchored" data-anchor-id="march-13-2026">March 13, 2026</h3>
 <p>I felt bad about myself after I accidentally looked at Prof.&nbsp;Dr.&nbsp;Huybrecht’s Linear Algebra 2 exam from 2023, so I’m going to try to learn the exam by the end of today.</p>
@@ -271,8 +399,8 @@ window.Quarto = {
 <p>One situation is where we have a function on the first space and we integrate against the measure <span class="math inline">\(\mu_1\)</span>. This is <span class="math display">\[\int_{\Omega_1} f \, d \mu_1,\]</span> where <span class="math inline">\(\text{dom} f = \Omega_1\)</span>. If the variable of integration is denoted by <span class="math inline">\(x\)</span>, that is, <span class="math inline">\(x\)</span> varies in the space <span class="math inline">\(\Omega_1\)</span>, then we write <span class="math display">\[\int_{\Omega_1} f(x) \, d\mu_1(x).\]</span></p>
 <p>The transformation formula comes in when we introduce a new variable in terms of the old one, and integrate over the associated pushforward measure. This is implemented via a measurable function <span class="math inline">\(y(x) : \Omega_1 \to \Omega_2\)</span> where we assume that <span class="math inline">\(y\)</span> is bijective for ease of things. And we also take <span class="math inline">\(\mu_2\)</span> as the pushforward of <span class="math inline">\(\mu_1\)</span> by the measurable <span class="math inline">\(y(\cdot)\)</span>: for <span class="math inline">\(B \in \beta_2\)</span>, <span class="math display">\[\mu_2(B) = y_*(\mu_1)(B) = \mu_1(y^{-1}(B)).\]</span> Then the transformation formula is: <span id="eq-trans1"><span class="math display">\[
 \int_{\Omega_1} f \, d\mu_1 = \int_{y(\Omega_1)} f \circ y^{-1} \, d\mu_2
-\tag{1}\]</span></span> which we can also be written as <span class="math display">\[\int_{\Omega_1} f(x) \, d\mu_1(x) = \int_{y(\Omega_1)} (f \circ y^{-1})(y) \, d\mu_2(y)\]</span></p>
-<p>Let’s illustrate this with an example where the new variable is a scaling of the old variable. Suppose <span class="math inline">\(f(x) = \sin ( \lvert 5 x \rvert)\)</span> where <span class="math inline">\(x \in \mathbb R^n\)</span>. Let <span class="math inline">\(y(x) = 5x\)</span>. Then <span class="math inline">\(x = y/5\)</span>, or <span class="math inline">\(y^{-1}(y) = y/5\)</span>. Then by the formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;1</a>, <span class="math display">\[\begin{align*}
+\tag{3}\]</span></span> which we can also be written as <span class="math display">\[\int_{\Omega_1} f(x) \, d\mu_1(x) = \int_{y(\Omega_1)} (f \circ y^{-1})(y) \, d\mu_2(y)\]</span></p>
+<p>Let’s illustrate this with an example where the new variable is a scaling of the old variable. Suppose <span class="math inline">\(f(x) = \sin ( \lvert 5 x \rvert)\)</span> where <span class="math inline">\(x \in \mathbb R^n\)</span>. Let <span class="math inline">\(y(x) = 5x\)</span>. Then <span class="math inline">\(x = y/5\)</span>, or <span class="math inline">\(y^{-1}(y) = y/5\)</span>. Then by the formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;3</a>, <span class="math display">\[\begin{align*}
 \int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x) &amp;=
 \int_{B_{25}(0)} \sin (\lVert 5 (y^{-1}(y)) \rVert) d\mu_2(y)\\
 &amp;= \int_{B_{25}(0)} \sin (\lVert 5 (y/5) \rVert) d\mu_2(y)\\
@@ -280,16 +408,16 @@ window.Quarto = {
 \end{align*}\]</span></p>
 <p>One complaint is that the usual transformation formula for pushforward measure is written <span id="eq-trans2"><span class="math display">\[
 \int_{\Omega_1} f \circ y \, d\mu_1 = \int_{y(\Omega_1)} f \, d\mu_2.
-\tag{2}\]</span></span></p>
-<p>In the preview example, one could simply view the function <span class="math inline">\(\sin(\lVert 5(\cdot) \rVert )\)</span> as a composition of <span class="math inline">\(f(\cdot) = \sin(\lVert \cdot \rVert)\)</span> and <span class="math inline">\(y (\cdot) = 5(\cdot)\)</span>, and then you get the same result in one step by <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;2</a>: <span class="math display">\[\int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x)
+\tag{4}\]</span></span></p>
+<p>In the preview example, one could simply view the function <span class="math inline">\(\sin(\lVert 5(\cdot) \rVert )\)</span> as a composition of <span class="math inline">\(f(\cdot) = \sin(\lVert \cdot \rVert)\)</span> and <span class="math inline">\(y (\cdot) = 5(\cdot)\)</span>, and then you get the same result in one step by <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;4</a>: <span class="math display">\[\int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x)
 = \int_{B_{25}(0)} \sin (\lVert y \rVert) d\mu_2(y).\]</span></p>
-<p>But typically, in the literature at least, one encounters an integral where the integrand can not so easily be viewed as a composition, but simplifying one part is at least clear: <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x),\]</span> and then followed by the statement: “we make the change of variable <span class="math inline">\(y(x) = 5x\)</span>.” In this case, I find it easier to just think: <span class="math inline">\(f(x) = \lVert x \rVert \sin(\lVert 5 x \rVert)\)</span> and then it is easy to see by replacing each <span class="math inline">\(x\)</span> with <span class="math inline">\(y^{-1}(y)\)</span> that <span class="math inline">\((f \circ y^{-1})(y) = \lVert y/5 \rVert \sin (\lVert y \rVert)\)</span>, and then by the first transformation formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;1</a>, we get <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x)
+<p>But typically, in the literature at least, one encounters an integral where the integrand can not so easily be viewed as a composition, but simplifying one part is at least clear: <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x),\]</span> and then followed by the statement: “we make the change of variable <span class="math inline">\(y(x) = 5x\)</span>.” In this case, I find it easier to just think: <span class="math inline">\(f(x) = \lVert x \rVert \sin(\lVert 5 x \rVert)\)</span> and then it is easy to see by replacing each <span class="math inline">\(x\)</span> with <span class="math inline">\(y^{-1}(y)\)</span> that <span class="math inline">\((f \circ y^{-1})(y) = \lVert y/5 \rVert \sin (\lVert y \rVert)\)</span>, and then by the first transformation formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;3</a>, we get <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x)
 = \int_{B_{25}(0)} \lVert y/5 \rVert \sin (\lVert y \rVert) d\mu_2(y).\]</span></p>
-<p>But, thankfully, <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;2</a> implies <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;1</a>. Indeed, letting <span class="math inline">\(f' = f \circ y^{-1}\)</span>, we see that <span class="math display">\[\begin{align*}
+<p>But, thankfully, <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;4</a> implies <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;3</a>. Indeed, letting <span class="math inline">\(f' = f \circ y^{-1}\)</span>, we see that <span class="math display">\[\begin{align*}
 \int_{\Omega_1} f \, d\mu_1 &amp;= \int_{\Omega_1} f' \circ y \, d\mu_1\\
 &amp;= \int_{y(\Omega_1)} f' \, d\mu_2 \\
 &amp;= \int_{y(\Omega_1)} f \circ y^{-1} \, d\mu_2,
-\end{align*}\]</span> where we used <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;2</a> in the second equality.</p>
+\end{align*}\]</span> where we used <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;4</a> in the second equality.</p>
 </section>
 </section>
 <section id="march-11-2026" class="level3">
@@ -341,11 +469,26 @@ F\)</span> where <span class="math inline">\(F\)</span> is a module. Page 511.</
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">From Chapter 15: Structure of Bilinear Forms</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
+Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
+</div>
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
 </div>
 <div id="ref-LangAlgebra" class="csl-entry" role="listitem">
 Lang, Serge. 2002. <em>Algebra</em>. Springer.
+</div>
+<div id="ref-LeeSM" class="csl-entry" role="listitem">
+Lee, John. 2013. <em>An Introduction to Smooth Manifolds</em>. Springer.
+</div>
+<div id="ref-Mildorf" class="csl-entry" role="listitem">
+Mildorf, Thomas J. 2005. <span>“Olympiad Inequalities.”</span> Document.
+</div>
+<div id="ref-Warner" class="csl-entry" role="listitem">
+Warner, Frank W. 2000. <em>Foundations of Differentiable Manifolds and Lie Groups</em>. GTM. Springer.
+</div>
+<div id="ref-Miller" class="csl-entry" role="listitem">
+Willard Miller, Jr. 1972. <em>Symmetry Groups and Their Applications</em>. Academic Press.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
