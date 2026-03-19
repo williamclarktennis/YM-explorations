@@ -218,7 +218,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#section-2.-results." id="toc-section-2.-results." class="nav-link active" data-scroll-target="#section-2.-results.">Section 2. Results.</a></li>
-  <li><a href="#section-13.-lattice-maxwell-theory" id="toc-section-13.-lattice-maxwell-theory" class="nav-link" data-scroll-target="#section-13.-lattice-maxwell-theory">Section 13. Lattice Maxwell Theory</a></li>
+  <li><a href="#section-12.-some-standard-results-about-gaussian-measures" id="toc-section-12.-some-standard-results-about-gaussian-measures" class="nav-link" data-scroll-target="#section-12.-some-standard-results-about-gaussian-measures">Section 12. Some Standard Results about Gaussian Measures</a></li>
   </ul>
 </nav>
     </div>
@@ -246,6 +246,10 @@ window.Quarto = {
 
 <p>I am using formatting from this article: <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections" class="uri">https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections</a>.</p>
 <p>I am listing out relevant definitions from <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+<details>
+<summary>
+</summary>
+</details>
 <section id="section-2.-results." class="level3">
 <h3 class="anchored" data-anchor-id="section-2.-results.">Section 2. Results.</h3>
 <details>
@@ -256,12 +260,66 @@ lattice gauge theory on <span class="math inline">\(\epsilon \mathbb Z^d\)</span
 \text{ for some } k \in \mathbb Z\}\)</span>. Then <span class="math inline">\(\epsilon \mathbb Z^d = \{(a_1, \cdots, a_d) \in \mathbb R^d: a_i \in \epsilon \mathbb Z \}\)</span>. We say two vertices <span class="math inline">\(x,y \in \epsilon \mathbb Z^d\)</span> are adjacent if <span class="math inline">\(x = y \pm \epsilon e_i\)</span> for some <span class="math inline">\(i \in [d]\)</span>. In this case we write <span class="math inline">\(x \sim y\)</span>. Let <span class="math inline">\(\Lambda \subset \epsilon \mathbb Z^d\)</span> be a finite subset. Let <span class="math inline">\(E_{\Lambda} = \{(x,y) \in \Lambda^2: x \sim y \text{ and } x &lt; y \}\)</span>, where <span class="math inline">\(x &lt; y\)</span> means that <span class="math inline">\(\frac{1}{\epsilon} x &lt; \frac{1}{\epsilon} y\)</span> in the lexicographical ordering. A configuration is a map <span class="math inline">\(U: E_\Lambda \to U(N)\)</span>, where we also define <span class="math inline">\(U(y,x) = U(x,y)^*\)</span> for <span class="math inline">\((x,y) \in E_\Lambda\)</span>.</p>
 </details>
 </section>
-<section id="section-13.-lattice-maxwell-theory" class="level3">
-<h3 class="anchored" data-anchor-id="section-13.-lattice-maxwell-theory">Section 13. Lattice Maxwell Theory</h3>
+<section id="section-12.-some-standard-results-about-gaussian-measures" class="level3">
+<h3 class="anchored" data-anchor-id="section-12.-some-standard-results-about-gaussian-measures">Section 12. Some Standard Results about Gaussian Measures</h3>
 <details>
 <summary>
-Quadratic form
+Density
 </summary>
+<p>We follow section 7.4 of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>. Let <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> be measures on a measurable space <span class="math inline">\((\Omega, \mathcal{A})\)</span>. A measurable function <span class="math inline">\(f: \Omega \to [0, \infty)\)</span> is called a density of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>, if <span class="math display">\[
+\nu(A) := \int_{\Omega} f 1_A \, d\mu
+\]</span> for all <span class="math inline">\(A \in \mathcal{A}\)</span>. On the other hand, for a given measurable function <span class="math inline">\(f: \Omega \to [0,\infty)\)</span>, the above equation defines a measure <span class="math inline">\(\nu\)</span> on <span class="math inline">\((\Omega, \mathcal{A})\)</span>. In this second case, we write <span class="math display">\[
+\nu =: f\mu, \hspace{1 cm} f =: \frac{d\nu}{d\mu}.
+\]</span></p>
+<p>Given a measurable <span class="math inline">\(g: \Omega \to [0,\infty]\)</span>, integrating against <span class="math inline">\(d\nu\)</span> is the same as integrating against <span class="math inline">\(f d\mu\)</span>. This is theorem 4.15 <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>: Let <span class="math inline">\(f \mu\)</span> be the measure defined above. Then <span class="math inline">\(g \in \mathcal{L}^1(f \mu)\)</span> if and only if <span class="math inline">\((gf) \in \mathcal{L}^1(\mu)\)</span>. In this case, <span class="math display">\[
+\int g \, d(f\mu) = \int gf \, d\mu.
+\]</span></p>
+<p>There is also a uniqueness result, Theorem 7.29. Let <span class="math inline">\(\nu\)</span> be <span class="math inline">\(\sigma\)</span>-finite. Let <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> be two densities of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>. Then <span class="math inline">\(f_1 = f_2\)</span> <span class="math inline">\(\mu\)</span>-almost surely. In particular, the density <span class="math inline">\(\frac{d\nu}{d\mu}\)</span> is unique <span class="math inline">\(\mu\)</span>-almost surely. That is, there is a <span class="math inline">\(\mu\)</span>-null set <span class="math inline">\(N \in \mathcal{A}\)</span> such that <span class="math inline">\(\frac{d\nu}{d\mu}\)</span> is equal to any other given density function on the complement <span class="math inline">\(\Omega \setminus N\)</span>. (Not sure if I stated this uniqueness correctly)</p>
+</details>
+<details>
+<summary>
+Lebesgue Measure
+</summary>
+<p>The following is Theorem 1.55 of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>. There exists a uniquely defined measure <span class="math inline">\(\lambda^n\)</span> on <span class="math inline">\((\mathbb R^n,\mathcal{B}(\mathbb R^n))\)</span> with the property that <span class="math inline">\(\lambda^n((a,b]) = \prod_{i=1}^n (b_i - a_i)\)</span> for all <span class="math inline">\(a,b \in \mathbb R^n\)</span> with <span class="math inline">\(a&lt; b\)</span>. Furthermore, <span class="math inline">\(\lambda^n\)</span> is called Lebesgue measure on <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n))\)</span> or Lebesgue-Borel-measure.</p>
+</details>
+<details>
+<summary>
+Gaussian measure on <span class="math inline">\(\mathbb R^n\)</span>
+</summary>
+<p>Fix the Lebesgue measure space <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n),dx)\)</span>. Let <span class="math inline">\(\tau\)</span> be a probability measure on <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n))\)</span>.</p>
+<p>More logically rigorous is to say that <span class="math inline">\(\tau\)</span> is a Gaussian measure if there exists a constant <span class="math inline">\(C&gt; 0\)</span> and a degree two polynomial <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> such that <span class="math inline">\(Ce^{-P(\cdot)}: \mathbb R^n \to [0,\infty)\)</span> is a density of <span class="math inline">\(\tau\)</span> with respect to <span class="math inline">\(dx\)</span>: <span class="math display">\[
+\tau(A) = \int_{\mathbb R^n} Ce^{-P(x)} 1_A \, dx
+\]</span> for all <span class="math inline">\(A \in \mathcal{B}(\mathbb R^n).\)</span></p>
+<p>In this case we write <span class="math display">\[
+\frac{d\tau}{dx} = Ce^{-P(x)}.
+\]</span></p>
+<p>Suppose <span class="math inline">\(\tau\)</span> is a Gaussian measure with polynomial <span class="math inline">\(P\)</span>. Suppose <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is not integrable. Then by definition of integrability (Def 4.7 <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>, for example), it follows that <span class="math inline">\(\int_{\mathbb R^n} |Ce^{-P(x)}|dx = \infty,\)</span> which contradicts that <span class="math inline">\(\tau\)</span> is a probability measure on <span class="math inline">\(\mathbb R^n\)</span>. Hence, <span class="math inline">\(\tau\)</span> Gaussian implies that <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is integrable.</p>
+<p>Since <span class="math inline">\(C\)</span> is a finite constant, <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is integrable if and only if <span class="math inline">\(e^{-P(x)}\)</span> is integrable.</p>
+<p>Lemma (Criterion 12.1 <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>). The measurable function <span class="math inline">\(e^{-P(\cdot)}\)</span> is integrable if and only if there exists a positive constant <span class="math inline">\(c\)</span> and a positive constant <span class="math inline">\(R\)</span> such that <span class="math display">\[
+P(x) \ge c \lVert x \rVert^2
+\]</span> for all <span class="math inline">\(x \in \mathbb R^n\)</span> satisfying <span class="math inline">\(\lVert x \rVert \ge R\)</span>, where <span class="math inline">\(\lVert x \rVert = \sqrt{x_1^2 + \cdots + x_n^2}\)</span>.</p>
+<p>Lemma. If <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> is an arbitrary degree two polynomial, then there exists a matrix <span class="math inline">\(Q \in \mathbb R^{n \times n}\)</span>, a column vector <span class="math inline">\(v \in \mathbb R^n\)</span>, and a constant <span class="math inline">\(c \in \mathbb R\)</span> (not the same <span class="math inline">\(c\)</span> as above) such that <span class="math display">\[
+P(x) = x^T Q x + v^Tx + c.
+\]</span></p>
+<p>Lemma (Criterion 12.2 <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>). Suppose <span class="math inline">\(P(x) = x^T Q x + v^Tx + c\)</span>. Then the following are equivalent.</p>
+<ul>
+<li><span class="math inline">\(e^{-P(x)}\)</span> is integrable.</li>
+<li>There are positive constants <span class="math inline">\(C_1, R\)</span> such that <span class="math display">\[
+P(x) \ge C_1 \lVert x \rVert^2
+\]</span> for all <span class="math inline">\(\lVert x \rVert \ge R\)</span>.</li>
+<li><span class="math inline">\(Q\)</span> is a positive definite matrix. That is, <span class="math inline">\(Q\)</span> is symmetric and <span class="math inline">\(x^TQx &gt; 0\)</span> for all <span class="math inline">\(x \ne 0 \in \mathbb R^n\)</span>.</li>
+</ul>
+</details>
+<details>
+<summary>
+Positive Definite Matrix
+</summary>
+<p>Consider the <span class="math inline">\(\mathbb R\)</span> vector space <span class="math inline">\(\mathbb R^n\)</span>. Consider a symmetric <span class="math inline">\(\mathbb R\)</span>-bilinear form <span class="math inline">\(g: \mathbb R^n \times \mathbb R^n \to \mathbb R.\)</span> Recall that symmetry means <span class="math inline">\(g(x,y) = g(y,x)\)</span> for all <span class="math inline">\(x,y \in \mathbb R^n\)</span>. We say that <span class="math inline">\(g\)</span> is positive definite if <span class="math inline">\(0 &lt; g(X,X) =: X^2\)</span> for all <span class="math inline">\(X \ne 0\)</span> in <span class="math inline">\(\mathbb R^n\)</span> (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> Section Symmetric Forms over Ordered Fields). Let <span class="math inline">\(Q\)</span> be the matrix associated with the form <span class="math inline">\(g\)</span> relative to the standard basis <span class="math inline">\(B = \{e_1, \cdots, e_n\}\)</span>, that is, if <span class="math inline">\(x, y \in \mathbb R^n\)</span>, and in this case <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are already the column vectors of coordinates for themselves with respect to the standard basis, then <span class="math display">\[
+g(x,y) = x^T Q y.
+\]</span> (See Section Matrices and Bilinear Forms <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.) In this case we say that <span class="math inline">\(Q\)</span> is a positive definite matrix.</p>
+<p>Note also that <span class="math inline">\(Q\)</span> is implicitly a symmetric matrix, by the following result.</p>
+<p>Proposition 6.5 (Section Matrices and Bilinear Forms <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>). Let <span class="math inline">\(E\)</span> be a free module of dimension <span class="math inline">\(n\)</span> over a commutative ring <span class="math inline">\(R\)</span>, and let <span class="math inline">\(B\)</span> be a fixed basis. The map <span class="math inline">\(f \mapsto M_B^B(f)\)</span> induces an isomorphism between the module of symmetric bilinear forms on <span class="math inline">\(E \times E\)</span> and the module of symmetric <span class="math inline">\(n \times n\)</span> matrices over <span class="math inline">\(R\)</span>.</p>
+<p>In summary, <span class="math inline">\(Q\)</span> is a positive definite <span class="math inline">\(n \times n\)</span> matrix if and only if <span class="math inline">\(Q\)</span> has entries in <span class="math inline">\(\mathbb R\)</span>, <span class="math inline">\(Q = Q^T\)</span> (symmetry), and <span class="math inline">\(x^TQx &gt; 0\)</span> for all <span class="math inline">\(x \in \mathbb R^n\)</span> not equal to <span class="math inline">\(0\)</span>.</p>
 </details>
 
 
@@ -271,6 +329,12 @@ Quadratic form
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
+</div>
+<div id="ref-Klenke" class="csl-entry" role="listitem">
+Klenke, Achim. 2014. <em>Probability Theory, a Comprehensive Course</em>. 2nd Edition. Universitext. Springer.
+</div>
+<div id="ref-LangAlgebra" class="csl-entry" role="listitem">
+Lang, Serge. 2002. <em>Algebra</em>. Springer.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

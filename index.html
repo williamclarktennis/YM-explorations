@@ -217,7 +217,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#march-18-2026" id="toc-march-18-2026" class="nav-link active" data-scroll-target="#march-18-2026">March 18, 2026</a></li>
+  <li><a href="#march-19-2026" id="toc-march-19-2026" class="nav-link active" data-scroll-target="#march-19-2026">March 19, 2026</a></li>
+  <li><a href="#march-18-2026" id="toc-march-18-2026" class="nav-link" data-scroll-target="#march-18-2026">March 18, 2026</a></li>
   <li><a href="#march-17-2026" id="toc-march-17-2026" class="nav-link" data-scroll-target="#march-17-2026">March 17, 2026</a></li>
   <li><a href="#march-16-2026" id="toc-march-16-2026" class="nav-link" data-scroll-target="#march-16-2026">March 16, 2026</a></li>
   <li><a href="#march-14-2026" id="toc-march-14-2026" class="nav-link" data-scroll-target="#march-14-2026">March 14, 2026</a></li>
@@ -249,6 +250,16 @@ window.Quarto = {
 </header>
 
 
+<section id="march-19-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-19-2026">March 19, 2026</h3>
+<section id="annotation-of-paragraph-defining-lattice-maxwell-theory" class="level4">
+<h4 class="anchored" data-anchor-id="annotation-of-paragraph-defining-lattice-maxwell-theory">Annotation of Paragraph defining Lattice Maxwell theory</h4>
+<p>I follow page 31 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>By the lower bound from the above lemma (13.1) and the criterion (12.2) discussed in section 12, the quadratic form <span class="math inline">\(M_{E,0,n}\)</span> defines a Gaussian measure on <span class="math inline">\(T_E(B_n)\)</span>.</p>
+<p>(Why/How? The definition of a Gaussian measure <span class="math inline">\(\mu\)</span> given in section 12 is that <span class="math inline">\(\mu\)</span> is a probability measure on <span class="math inline">\(\mathbb R^n\)</span> (with which sigma algebra?) such that it has a density proportional to <span class="math inline">\(e^{-P(x)}\)</span> with respect to Lebesgue measure: $$</p>
+<p>$$ (Does absolute continuity with respect to Lebesgue measure force the sigma algebra of <span class="math inline">\(\tau\)</span> to be something?) )</p>
+</section>
+</section>
 <section id="march-18-2026" class="level3">
 <h3 class="anchored" data-anchor-id="march-18-2026">March 18, 2026</h3>
 <section id="lattice-maxwell-action-as-a-difference-of-dirichlet-forms" class="level4">
@@ -395,6 +406,39 @@ f(x) = g(x,x) + h(x).
 f \text{ is positive definite} \Leftrightarrow f(x)
 = g(x,x) &gt; 0 \text{ for all } x \in E, x \ne 0.
 \]</span></p>
+<p>Now let’s shift to the notation in <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>. Fix a positive integer <span class="math inline">\(n\)</span>. Consider the <span class="math inline">\(\mathbb R\)</span>-vector space of functions <span class="math inline">\(\mathbb R^{E_n}\)</span>. Let me recall the definition of the map <span class="math inline">\(M_n: \mathbb R^{E_n} \to
+\mathbb R\)</span>. For <span class="math inline">\(s \in \mathbb R^{E_n}\)</span> and a plaquette <span class="math inline">\(p = (x,j,k) \in B_n' = \mathcal{P}\)</span>, define <span class="math inline">\(s(p) = s(e^1) + s(e^2) - s(e^3) - s(e^4)\)</span>. Then <span class="math display">\[M_n(s) = \sum_{p \in \mathcal{P}} s(p)^2.\]</span> So far so good because <span class="math inline">\(M_n\)</span> does map into the ring <span class="math inline">\(\mathbb R\)</span>. Now the candidate for <span class="math inline">\(g: \mathbb R^{E_n} \times \mathbb R^{E_n} \to \mathbb R\)</span> is <span class="math display">\[g(s,t) = M_n(s,t) = \sum_{p \in \mathcal{P}} s(p)t(p).\]</span> Clearly <span class="math inline">\(M_n(s) = M_n(s,s)\)</span>, so it remains to show that <span class="math inline">\(M_n(\cdot, \cdot)\)</span> is <span class="math inline">\(\mathbb R\)</span>-bilinear and symmetric.</p>
+<p>Lemma. <span class="math inline">\(M_n(\cdot, \cdot): \mathbb R^{E_n} \times \mathbb R^{E_n} \to \mathbb R\)</span> is <span class="math inline">\(\mathbb R\)</span>-bilinear. It is also clearly symmetric.</p>
+<p>Proof. We check the first slot. Fix <span class="math inline">\(s,t,r \in \mathbb R^{E_n}\)</span>. Then <span class="math display">\[\begin{align*}
+M_n(s+t, r) &amp;= \sum_{p \in \mathcal{P}} (s+t)(p) \cdot r(p) \\
+&amp;= \sum_{p \in \mathcal{P}} ((s+t)(e^1) + (s+t)(e^2) - (s+t)(e^3) - (s+t)(e^4)) \cdot r(p) \\
+&amp;= \sum_{p \in \mathcal{P}} ((s(e^1) + s(e^2) - s(e^3) - s(e^4) + t(e^1) + t(e^2) - t(e^3) - t(e^4)) \cdot r(p) \\
+&amp;= \sum_{p \in \mathcal{P}} (s(p) + t(p)) \cdot r(p) \\
+&amp;= \sum_{p \in \mathcal{P}} s(p) r(p) + \sum_{p \in \mathcal{P}} t(p) r(p)\\
+&amp;= M_n(s,r) + M_n(t,r).
+\end{align*}\]</span> Next, fix <span class="math inline">\(\lambda \in \mathbb R\)</span>. <span class="math display">\[\begin{align*}
+M_n(\lambda t, r) &amp;= \sum_{p \in \mathcal{P}} (\lambda t)(p) \cdot r(p) \\
+&amp;= \sum_{p \in \mathcal{P}} ((\lambda t)(e^1)+ (\lambda t)(e^1) - (\lambda t)(e^1) - (\lambda t)(e^1)) \cdot r(p) \\
+&amp;= \sum_{p \in \mathcal{P}} (\lambda t(e^1)+ \lambda t(e^1) - \lambda t(e^1) - \lambda t(e^1)) \cdot r(p) \\
+&amp;= \sum_{p \in \mathcal{P}} \lambda(t(e^1)+ t(e^1) - t(e^1) - t(e^1)) \cdot r(p) \\
+&amp;= \lambda \sum_{p \in \mathcal{P}} t(p) \cdot r(p) \\
+&amp;= \lambda M_n(t,r).
+\end{align*}\]</span> q.e.d.</p>
+<p>Lemma. <span class="math inline">\(M_n: \mathbb R^{E_n} \to \mathbb R\)</span> is a quadratic form in the sense of Lang’s algebra book, but it is not positive definite in general.</p>
+<p>Proof. To show that it is not positive definite, fix consider <span class="math inline">\(B_2\)</span> in <span class="math inline">\(d = 2\)</span>. So there is only one plaquette. Call the edges <span class="math inline">\(e^1, e^2,e^3,e^4\)</span>, beginning with the edge to the right of the origin and traveling counter clockwise around the square. Let <span class="math inline">\(t \in \mathbb R^{E_2}\)</span> be given by <span class="math inline">\(t(e^1) = 1, t(e^2) = 1, t(e^3) = 1, t(e^4) = 1\)</span>. Then <span class="math inline">\(t \ne 0\)</span>, but <span class="math display">\[
+M_n(t,t) = (1+ 1-1-1)(1+1-1-1) = 0.
+\]</span> This shows that <span class="math inline">\(M_n\)</span> is not positive definite. q.e.d.</p>
+<p>Lemma. Fix <span class="math inline">\(E_n^0 \subset E \subset E_n\)</span>, and define <span class="math inline">\(M_{E,0,n}: \mathbb R^{E_n \setminus E} \to \mathbb R\)</span> via <span class="math display">\[
+M_{E,0,n}(t) = M_n(s)
+\]</span> for all <span class="math inline">\(t \in \mathbb R^{E_n \setminus E}\)</span>, where <span class="math inline">\(s \in \mathbb R^{E_n}\)</span> is defined by <span class="math display">\[s(x,y) = \begin{cases}
+0 &amp; \text{if } (x,y) \in E \\
+t(x,y) &amp; \text{if } (x,y) \in E_n \setminus E.
+\end{cases}.\]</span> Then <span class="math inline">\(M_{E,0,n}\)</span> is a quadratic form on <span class="math inline">\(\mathbb R^{E_n \setminus E}\)</span>.</p>
+<p>Proof. Define the symmetric bilinear form <span class="math inline">\(M_{E,0,n}: \mathbb R^{E_n \setminus E} \times \mathbb R^{E_n \setminus E} \to \mathbb R\)</span> by <span class="math display">\[
+M_{E,0,n}(t_1,t_2) = M_n(s_1,s_2)
+\]</span> where <span class="math inline">\(s_1,s_2\)</span> are extensions by 0 of <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> as above. Symmetry and bilinearity follow from symmetry and bilinearity of <span class="math inline">\(M_n\)</span>. q.e.d.</p>
+<p>Lemma. <span class="math inline">\(M_{E,0,n}\)</span> is a positive definite quadratic form.</p>
+<p>Proof. This is Lemma 13.1 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
 </section>
 <section id="a-linear-algebra-note." class="level4">
 <h4 class="anchored" data-anchor-id="a-linear-algebra-note.">A Linear algebra note.</h4>
