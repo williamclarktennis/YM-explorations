@@ -388,6 +388,87 @@ f \text{ is positive definite} \Leftrightarrow f(x)
 = g(x,x) > 0 \text{ for all } x \in E, x \ne 0.
 $$
 
+Now let's shift to the notation in @Chatterjee2016.
+Fix a positive integer $n$. 
+Consider the $\mathbb R$-vector space of functions
+$\mathbb R^{E_n}$. 
+Let me recall the definition of the map $M_n: \mathbb R^{E_n} \to
+\mathbb R$.
+For $s \in \mathbb R^{E_n}$
+and a plaquette $p = (x,j,k) \in B_n' = \mathcal{P}$,
+define $s(p) = s(e^1) + s(e^2) - s(e^3) - s(e^4)$.
+Then
+$$M_n(s) = \sum_{p \in \mathcal{P}} s(p)^2.$$
+So far so good because $M_n$ does map into the ring $\mathbb R$.
+Now the candidate for $g: \mathbb R^{E_n} \times \mathbb R^{E_n} \to \mathbb R$
+is 
+$$g(s,t) = M_n(s,t) = \sum_{p \in \mathcal{P}} s(p)t(p).$$
+Clearly $M_n(s) = M_n(s,s)$, so it remains to show that 
+$M_n(\cdot, \cdot)$ is $\mathbb R$-bilinear and symmetric.
+
+Lemma. $M_n(\cdot, \cdot): \mathbb R^{E_n} \times \mathbb R^{E_n} \to \mathbb R$
+is $\mathbb R$-bilinear. It is also clearly symmetric.
+
+Proof. We check the first slot. Fix $s,t,r \in \mathbb R^{E_n}$. Then
+\begin{align*}
+M_n(s+t, r) &= \sum_{p \in \mathcal{P}} (s+t)(p) \cdot r(p) \\
+&= \sum_{p \in \mathcal{P}} ((s+t)(e^1) + (s+t)(e^2) - (s+t)(e^3) - (s+t)(e^4)) \cdot r(p) \\
+&= \sum_{p \in \mathcal{P}} ((s(e^1) + s(e^2) - s(e^3) - s(e^4) + t(e^1) + t(e^2) - t(e^3) - t(e^4)) \cdot r(p) \\
+&= \sum_{p \in \mathcal{P}} (s(p) + t(p)) \cdot r(p) \\
+&= \sum_{p \in \mathcal{P}} s(p) r(p) + \sum_{p \in \mathcal{P}} t(p) r(p)\\
+&= M_n(s,r) + M_n(t,r).
+\end{align*}
+Next, fix $\lambda \in \mathbb R$.
+\begin{align*}
+M_n(\lambda t, r) &= \sum_{p \in \mathcal{P}} (\lambda t)(p) \cdot r(p) \\
+&= \sum_{p \in \mathcal{P}} ((\lambda t)(e^1)+ (\lambda t)(e^1) - (\lambda t)(e^1) - (\lambda t)(e^1)) \cdot r(p) \\
+&= \sum_{p \in \mathcal{P}} (\lambda t(e^1)+ \lambda t(e^1) - \lambda t(e^1) - \lambda t(e^1)) \cdot r(p) \\
+&= \sum_{p \in \mathcal{P}} \lambda(t(e^1)+ t(e^1) - t(e^1) - t(e^1)) \cdot r(p) \\
+&= \lambda \sum_{p \in \mathcal{P}} t(p) \cdot r(p) \\
+&= \lambda M_n(t,r).
+\end{align*}
+q.e.d.
+
+Lemma. $M_n: \mathbb R^{E_n} \to \mathbb R$ is a quadratic form in the sense of 
+Lang's algebra book, but it is not positive definite in general.
+
+Proof. To show that it is not positive definite, 
+fix consider $B_2$ in $d = 2$. So there is only one plaquette.
+Call the edges $e^1, e^2,e^3,e^4$, beginning with the edge to the right 
+of the origin and traveling counter clockwise around the square.
+Let $t \in \mathbb R^{E_2}$ be given by
+$t(e^1) = 1, t(e^2) = 1, t(e^3) = 1, t(e^4) = 1$. Then $t \ne 0$, but
+$$
+M_n(t,t) = (1+ 1-1-1)(1+1-1-1) = 0.
+$$
+This shows that $M_n$ is not positive definite. q.e.d. 
+
+Lemma. Fix $E_n^0 \subset E \subset E_n$, and define 
+$M_{E,0,n}: \mathbb R^{E_n \setminus E} \to \mathbb R$ via
+$$
+M_{E,0,n}(t) = M_n(s)
+$$
+for all $t \in \mathbb R^{E_n \setminus E}$, where
+$s \in \mathbb R^{E_n}$ is defined by
+$$s(x,y) = \begin{cases}
+0 & \text{if } (x,y) \in E \\
+t(x,y) & \text{if } (x,y) \in E_n \setminus E.
+\end{cases}.$$
+Then $M_{E,0,n}$ is a quadratic form on $\mathbb R^{E_n \setminus E}$.
+
+Proof. Define the symmetric bilinear form 
+$M_{E,0,n}: \mathbb R^{E_n \setminus E} \times \mathbb R^{E_n \setminus E} \to \mathbb R$
+by 
+$$
+M_{E,0,n}(t_1,t_2) = M_n(s_1,s_2)
+$$
+where $s_1,s_2$ are extensions by 0 of $t_1$ and $t_2$
+as above. Symmetry and bilinearity follow from 
+symmetry and bilinearity of $M_n$. q.e.d.
+
+Lemma. $M_{E,0,n}$ is a positive definite quadratic form.
+
+Proof. This is Lemma 13.1 of @Chatterjee2016.
 
 #### A Linear algebra note.
 
