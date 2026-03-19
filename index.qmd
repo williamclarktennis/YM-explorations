@@ -15,20 +15,39 @@ bibliography: references.bib
 
 I follow page 31 of @Chatterjee2016.
 
-By the lower bound from the above lemma (13.1)
+By the lower bound from the lemma (13.1)
 and the criterion (12.2) discussed in section 12, 
 the quadratic form $M_{E,0,n}$ defines a Gaussian measure on $T_E(B_n)$.
 
-(Why/How? The definition of a Gaussian measure $\mu$ given in section 12
-is that $\mu$ is a probability measure on $\mathbb R^n$ (with which 
-sigma algebra?) such that it has a density proportional to $e^{-P(x)}$
-with respect to Lebesgue measure: 
+(Let $E_n^0 \subset E \subset E_n$ and 
+recall that $T_E(B_n) = \mathbb R^{E_n \setminus E}$.
+Note $M_{E,0,n}$ corresponds to a symmetric bilinear form 
+$M_{E,0,n}: T_E(B_n) \times T_E(B_n) \to \mathbb R$. Let 
+$\mathfrak{B}$ denote the standard basis of $T_E(B_n)$.
+That is 
+$\mathfrak{B} = \{1_e \mid e \in E_n \setminus E\}$
+where $1_e$ denotes the indicator function for the edge $e$.
+Then the matrix of the bilinear form $M_{E,0,n}$,
+let's call it $Q_{E,0,n}$ satisfies the equation
 $$
+M_{E,0,n}(t,s) = t^T \cdot Q_{E,0,n} \cdot s,
+$$
+where on the right side, 
+$t$ denotes the column vector in $\mathbb R^{|E_n \setminus E|}$
+for the coordinates of $t$ with respect to the basis $\mathfrak{B}$, 
+and similarly for $s$. Equivalently, 
+$$
+Q_{E,0,n}(e_i,e_j) = M_{E,0,n}(1_{e_i},1_{e_j}),
+$$
+where $Q_{E,0,n}(e_i,e_j)$ denotes the $(e_i,e_j)$ entry 
+of $Q_{E,0,n}$ viewed as a matrix indexed by edges.
 
-$$
-(Does absolute continuity with respect to Lebesgue measure force
-the sigma algebra of $\tau$ to be something?)
-)
+All that was actually meaningless commentary because we can simply define 
+the function 
+$e^{-M_{E,0,n}(t)}: \mathbb R^{E_n \setminus E} \to \mathbb R,$
+and the fact that $M_{E,0,n}(t) = t^T Q_{E,0,n} t$ is positive definite, 
+implies that $e^{-M_{E,0,n}(t)}$ is integrable, and defines a density function 
+for a Gaussian measure $\tau_{E,0,n}$ with respect to Lebesgue measure.)
 
 ### March 18, 2026
 
