@@ -7,6 +7,12 @@ I am using formatting from this article: <https://docs.github.com/en/get-started
 
 I am listing out relevant definitions from @Chatterjee2016.
 
+<details>
+
+<summary>  </summary>
+
+</details>
+
 ### Section 2. Results.
 
 <details>
@@ -29,12 +35,165 @@ define $U(y,x) = U(x,y)^*$ for $(x,y) \in E_\Lambda$.
 
 </details>
 
-### Section 13. Lattice Maxwell Theory
+### Section 12. Some Standard Results about Gaussian Measures
 
 <details>
 
-<summary> Quadratic form </summary>
+<summary> Density </summary>
 
+We follow section 7.4 of @Klenke. 
+Let $\mu$ and $\nu$ be measures on a measurable space $(\Omega, \mathcal{A})$.
+A measurable function $f: \Omega \to [0, \infty)$ is called a density of 
+$\nu$ with respect to $\mu$, if 
+$$
+\nu(A) := \int_{\Omega} f 1_A \, d\mu
+$$
+for all $A \in \mathcal{A}$.
+On the other hand, for a given measurable function $f: \Omega \to [0,\infty)$,
+the above equation defines a measure $\nu$ on $(\Omega, \mathcal{A})$.
+In this second case, we write 
+$$
+\nu =: f\mu, \hspace{1 cm} f =: \frac{d\nu}{d\mu}.
+$$
 
+Given a measurable $g: \Omega \to [0,\infty]$, 
+integrating against $d\nu$ is the same as integrating against
+$f d\mu$. This is theorem 4.15 @Klenke: 
+Let $f \mu$ be the measure defined above. Then $g \in \mathcal{L}^1(f \mu)$
+if and only if $(gf) \in \mathcal{L}^1(\mu)$. In this case, 
+$$
+\int g \, d(f\mu) = \int gf \, d\mu.
+$$
+
+There is also a uniqueness result, Theorem 7.29.
+Let $\nu$ be $\sigma$-finite. Let $f_1$ and $f_2$ be two densities
+of $\nu$ with respect to $\mu$. Then $f_1 = f_2$ $\mu$-almost surely.
+In particular, the density $\frac{d\nu}{d\mu}$ is unique $\mu$-almost surely.
+That is, there is a $\mu$-null set $N \in \mathcal{A}$ such that 
+$\frac{d\nu}{d\mu}$ is equal to any other given density function on the complement
+$\Omega \setminus N$. (Not sure if I stated this uniqueness correctly)
+
+</details>
+
+<details>
+
+<summary> Lebesgue Measure </summary>
+
+The following is Theorem 1.55 of @Klenke. 
+There exists a uniquely defined measure $\lambda^n$ on 
+$(\mathbb R^n,\mathcal{B}(\mathbb R^n))$ with the property that
+$\lambda^n((a,b]) = \prod_{i=1}^n (b_i - a_i)$
+for all $a,b \in \mathbb R^n$ with $a< b$. Furthermore, $\lambda^n$ is called
+Lebesgue measure on $(\mathbb R^n, \mathcal{B}(\mathbb R^n))$
+or Lebesgue-Borel-measure.
+
+</details>
+
+<details>
+
+<summary> Gaussian measure on $\mathbb R^n$ </summary>
+
+Fix the Lebesgue measure space 
+$(\mathbb R^n, \mathcal{B}(\mathbb R^n),dx)$.
+Let $\tau$ be a probability measure on 
+$(\mathbb R^n, \mathcal{B}(\mathbb R^n))$.
+
+More logically rigorous is to say that
+$\tau$ is a Gaussian measure if
+there exists a constant $C> 0$ and a degree two polynomial
+$P: \mathbb R^n \to \mathbb R$ such that
+$Ce^{-P(\cdot)}: \mathbb R^n \to [0,\infty)$ is a density of 
+$\tau$ with respect to $dx$:
+$$
+\tau(A) = \int_{\mathbb R^n} Ce^{-P(x)} 1_A \, dx
+$$
+for all $A \in \mathcal{B}(\mathbb R^n).$
+
+In this case we write
+$$
+\frac{d\tau}{dx} = Ce^{-P(x)}.
+$$
+
+Suppose $\tau$ is a Gaussian measure with polynomial $P$.
+Suppose $Ce^{-P(\cdot)}$ is not integrable. Then by definition of 
+integrability (Def 4.7 @Klenke, for example), it follows that 
+$\int_{\mathbb R^n} |Ce^{-P(x)}|dx = \infty,$
+which contradicts that $\tau$ is a probability measure on $\mathbb R^n$.
+Hence, $\tau$ Gaussian implies that $Ce^{-P(\cdot)}$ is integrable.
+
+Since $C$ is a finite constant, $Ce^{-P(\cdot)}$ is integrable if and 
+only if $e^{-P(x)}$ is integrable.
+
+Lemma (Criterion 12.1 @Chatterjee2016). The measurable function $e^{-P(\cdot)}$
+is integrable if and only if 
+there exists a positive constant $c$ and a positive constant $R$ such that
+$$
+P(x) \ge c \lVert x \rVert^2
+$$
+for all $x \in \mathbb R^n$ satisfying $\lVert x \rVert \ge R$, 
+where $\lVert x \rVert = \sqrt{x_1^2 + \cdots + x_n^2}$.
+
+Lemma. If $P: \mathbb R^n \to \mathbb R$ is an arbitrary degree two 
+polynomial, then there exists a matrix $Q \in \mathbb R^{n \times n}$,
+a column vector $v \in \mathbb R^n$, and a constant $c \in \mathbb R$
+(not the same $c$ as above) such that
+$$
+P(x) = x^T Q x + v^Tx + c.
+$$
+
+Lemma (Criterion 12.2 @Chatterjee2016). Suppose 
+$P(x) = x^T Q x + v^Tx + c$. Then
+the following are equivalent.
+
+- $e^{-P(x)}$ is integrable.
+- There are positive constants $C_1, R$ such that 
+$$
+P(x) \ge C_1 \lVert x \rVert^2
+$$
+for all $\lVert x \rVert \ge R$.
+- $Q$ is a positive definite matrix. That is, $Q$ is symmetric
+and $x^TQx > 0$ for all $x \ne 0 \in \mathbb R^n$.
+
+</details>
+
+<details>
+
+<summary> Positive Definite Matrix </summary>
+
+Consider the $\mathbb R$ vector space 
+$\mathbb R^n$. Consider a symmetric 
+$\mathbb R$-bilinear form
+$g: \mathbb R^n \times \mathbb R^n \to \mathbb R.$
+Recall that symmetry means
+$g(x,y) = g(y,x)$ for all $x,y \in \mathbb R^n$.
+We say that $g$ is positive definite if 
+$0 < g(X,X) =: X^2$ for all $X \ne 0$ in $\mathbb R^n$ 
+(@LangAlgebra Section Symmetric Forms over Ordered Fields).
+Let $Q$ be the matrix associated with the form $g$
+relative to the standard basis 
+$B = \{e_1, \cdots, e_n\}$, that is, 
+if $x, y \in \mathbb R^n$, and in this case
+$x$ and $y$ are already the column vectors of coordinates
+for themselves with respect to the standard basis,
+then
+$$
+g(x,y) = x^T Q y.
+$$
+(See Section Matrices and Bilinear Forms @LangAlgebra.)
+In this case we say that $Q$ is a positive definite matrix.
+
+Note also that $Q$ is implicitly a symmetric matrix, by the
+following result.
+
+Proposition 6.5 (Section Matrices and Bilinear Forms @LangAlgebra).
+Let $E$ be a free module of dimension $n$ over a commutative ring $R$,
+and let $B$ be a fixed basis. The map $f \mapsto M_B^B(f)$
+induces an isomorphism between the module of symmetric bilinear forms
+on $E \times E$ and the module of symmetric $n \times n$ matrices
+over $R$.
+
+In summary, $Q$ is a positive definite $n \times n$ matrix
+if and only if $Q$ has entries in $\mathbb R$, $Q = Q^T$ (symmetry), 
+and $x^TQx > 0$ for all $x \in \mathbb R^n$ not equal to $0$.
 
 </details>

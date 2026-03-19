@@ -9,6 +9,27 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 19, 2026
+
+#### Annotation of Paragraph defining Lattice Maxwell theory
+
+I follow page 31 of @Chatterjee2016.
+
+By the lower bound from the above lemma (13.1)
+and the criterion (12.2) discussed in section 12, 
+the quadratic form $M_{E,0,n}$ defines a Gaussian measure on $T_E(B_n)$.
+
+(Why/How? The definition of a Gaussian measure $\mu$ given in section 12
+is that $\mu$ is a probability measure on $\mathbb R^n$ (with which 
+sigma algebra?) such that it has a density proportional to $e^{-P(x)}$
+with respect to Lebesgue measure: 
+$$
+
+$$
+(Does absolute continuity with respect to Lebesgue measure force
+the sigma algebra of $\tau$ to be something?)
+)
+
 ### March 18, 2026
 
 #### Lattice Maxwell Action as a difference of Dirichlet Forms
