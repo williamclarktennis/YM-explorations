@@ -311,11 +311,29 @@ SO(n)\)</span>. This is called the special group. (<span class="citation" data-c
 <span class="math inline">\(Aut(f)\)</span> for <span class="math inline">\(f\)</span> a form on a vector space
 </summary>
 </details>
+<details>
+<summary>
+Matrices Indexed by Objects
+</summary>
+<p>We follow the appendix in <span class="citation" data-cites="GrinbergReiner">Grinberg (<a href="#ref-GrinbergReiner" role="doc-biblioref">2020</a>)</span>.</p>
+<p>Let <span class="math inline">\(\mathbf k\)</span> be a commutative ring. (Why is commutativity needed?) For my use, it will usually be <span class="math inline">\(\mathbb R\)</span> or <span class="math inline">\(\mathbb C\)</span>.</p>
+<p>Let <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> be two sets of objects, for example, edges of a lattice.<br>
+An <span class="math inline">\(S \times T\)</span> matrix over <span class="math inline">\(\mathbf k\)</span> is a family <span class="math display">\[
+(a_{s,t})_{(s,t) \in S \times T}
+\]</span> where <span class="math inline">\(a_{s,t} \in \mathbf k\)</span> for all <span class="math inline">\((s,t) \in S \times T\)</span>. We can also view an <span class="math inline">\(S \times T\)</span> matrix as a function <span class="math inline">\(S \times T \to \mathbf k\)</span>. That is, <span class="math display">\[
+(a_{s,t})_{(s,t) \in S \times T} \in \mathbf{k}^{S \times T} =
+\text{Func}(S \times T, \mathbf k).
+\]</span></p>
+<p>The main idea is that each entry of an <span class="math inline">\(S \times T\)</span> matrix over <span class="math inline">\(\mathbf k\)</span> is uniquely identified by a pair <span class="math inline">\((s,t)\)</span>. This makes it easy to define matrix addition and scalar multiplication.</p>
+</details>
 
 
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-GrinbergReiner" class="csl-entry" role="listitem">
+Grinberg, Reiner. 2020. <em>Hopf Algebras in Combinatorics</em>.
+</div>
 <div id="ref-LangAlgebra" class="csl-entry" role="listitem">
 Lang, Serge. 2002. <em>Algebra</em>. Springer.
 </div>

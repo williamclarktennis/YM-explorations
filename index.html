@@ -217,7 +217,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#march-19-2026" id="toc-march-19-2026" class="nav-link active" data-scroll-target="#march-19-2026">March 19, 2026</a></li>
+  <li><a href="#march-20-2026" id="toc-march-20-2026" class="nav-link active" data-scroll-target="#march-20-2026">March 20, 2026</a></li>
+  <li><a href="#march-19-2026" id="toc-march-19-2026" class="nav-link" data-scroll-target="#march-19-2026">March 19, 2026</a></li>
   <li><a href="#march-18-2026" id="toc-march-18-2026" class="nav-link" data-scroll-target="#march-18-2026">March 18, 2026</a></li>
   <li><a href="#march-17-2026" id="toc-march-17-2026" class="nav-link" data-scroll-target="#march-17-2026">March 17, 2026</a></li>
   <li><a href="#march-16-2026" id="toc-march-16-2026" class="nav-link" data-scroll-target="#march-16-2026">March 16, 2026</a></li>
@@ -250,14 +251,89 @@ window.Quarto = {
 </header>
 
 
+<section id="march-20-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-20-2026">March 20, 2026</h3>
+<section id="determinants-of-matrices-indexed-by-objects-other-than-numbers" class="level4">
+<h4 class="anchored" data-anchor-id="determinants-of-matrices-indexed-by-objects-other-than-numbers">Determinants of Matrices Indexed by Objects other than numbers</h4>
+<p>I want to follow <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> section “Determinants” but replace matrices <span class="math inline">\((a_{ij})_{(i,j \in [n]^2)}\)</span> by <span class="math inline">\((a_{i,j})_{i,j \in E^2}\)</span> for an arbitrary set <span class="math inline">\(E\)</span>, without an ordering. My notion of matrices indexed by objects is from the appendix of <span class="citation" data-cites="GrinbergReiner">Grinberg (<a href="#ref-GrinbergReiner" role="doc-biblioref">2020</a>)</span>. I just want to be reassured that taking the determinant of matrices indexed by edges of a lattice does not depend on the ordering of the edges of the lattice. There is not an ordering on the edges mentioned in <span class="citation" data-cites="BrenneckeLattice">Brennecke (<a href="#ref-BrenneckeLattice" role="doc-biblioref">2025</a>)</span> nor <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>, and I am a bit uneasy about the covariance matrices and determinants related to the Gaussian measure defined on <span class="math inline">\(T_{E}(B_n)\)</span>. Because my notion of Gaussian measure uses the standard ordering of the standard basis of <span class="math inline">\(\mathbb R^n\)</span>. Although my notion of symmetric matrix does at least carry over to matrices indexed by unordered objects. Without further ado:</p>
+<p>Let <span class="math inline">\(R\)</span> be a commutative ring. The case of interest is <span class="math inline">\(R = \mathbb R\)</span>. Let <span class="math inline">\(n\)</span> be a positive integer. The case of interest is <span class="math inline">\(n = |E_{n'} \setminus E_{n'}^0|,\)</span> for the box of width <span class="math inline">\(n'\)</span>.</p>
+<p>Let <span class="math inline">\(E\)</span> be a set with cardinality <span class="math inline">\(n\)</span>. The case of interest is <span class="math inline">\(E = E_{n'} \setminus E_{n'}^0\)</span>. Let us take <span class="math inline">\(E\)</span> to be an unordered set.</p>
+<ul>
+<li><p>Definition. In analogy to <span class="math inline">\(\text{Mat}_n(R)\)</span>, let us denote the set of <span class="math inline">\(E \times E\)</span> matrices over <span class="math inline">\(R\)</span> by <span class="math inline">\(\text{Mat}_E(R) = R^{E \times E}.\)</span></p></li>
+<li><p>Definition. (Rows and Columns) Let <span class="math inline">\(A = (a_{e,o})_{(e,o) \in E^2}\)</span> be an element of <span class="math inline">\(\text{Mat}_E(R)\)</span>. For every <span class="math inline">\(e \in E\)</span>, we define the <span class="math inline">\(e\)</span>-th row of <span class="math inline">\(A\)</span>, denoted by a lower index <span class="math inline">\(A_e\)</span>, to be the <span class="math inline">\(\{1\} \times E\)</span> matrix <span class="math inline">\((a_{e,o})_{(i,o) \in \{1\} \times E}\)</span>. We define the <span class="math inline">\(e\)</span>-th column of <span class="math inline">\(A\)</span>, denoted by an upper index <span class="math inline">\(A^e\)</span>, to be the <span class="math inline">\(E \times \{1\}\)</span> matrix <span class="math inline">\((a_{o,e})_{(o,i) \in E \times \{1\}}\)</span>.</p></li>
+<li><p>Definition. (Identity <span class="math inline">\(E \times E\)</span> matrix) The identity matrix is given by <span class="math inline">\(I = (\delta_{e,o})_{(e,o) \in E^2}\)</span>.</p></li>
+</ul>
+<p>The following definition uses notions from the Section, Direct Products and Sums of Modules, <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.</p>
+<ul>
+<li>Definition. (Unordered Basis) Let <span class="math inline">\(F\)</span> be a module over <span class="math inline">\(R\)</span>. A subset <span class="math inline">\(S \subset F\)</span> is called linearly independent if whenever we have a linear combintion <span class="math inline">\(\sum_{i \in S} a_i x_i = 0,\)</span> then <span class="math inline">\(a_i = 0\)</span> for all <span class="math inline">\(i\)</span>. Let <span class="math inline">\(R \langle S \rangle\)</span> be the set of all <span class="math inline">\(R\)</span>-linear combinations of elements of <span class="math inline">\(S\)</span>. If <span class="math inline">\(R \langle S \rangle = F\)</span>, we say that <span class="math inline">\(S\)</span> generates <span class="math inline">\(F\)</span>. If <span class="math inline">\(S\)</span> is non-empty, generates <span class="math inline">\(F\)</span>, and is linearly independent, then we say <span class="math inline">\(S\)</span> is a basis of <span class="math inline">\(F\)</span>.</li>
+</ul>
+<p>One case of interest is <span class="math inline">\(F = \mathbb R^{E_{n'} \setminus E_{n'}^0} = T_0(B_{n'})\)</span>, which is an <span class="math inline">\(\mathbb R\)</span> vector space. A basis is the unordered family <span class="math inline">\((1_e)_{e \in E}\)</span>.</p>
+<p>Another case of interest is when <span class="math inline">\(S = \{s_e\}_{e \in E}\)</span>, is indexed by elements of <span class="math inline">\(E\)</span>, and <span class="math inline">\(S\)</span> is a basis of <span class="math inline">\(F\)</span>.</p>
+<ul>
+<li>Definition. (Column vector of an element of the module with respect to the basis) Let <span class="math inline">\(x \in F\)</span>, where <span class="math inline">\(F\)</span> is an <span class="math inline">\(R\)</span> module. Suppose <span class="math inline">\(\{s_e\}_{e \in E}\)</span> is an unordered basis of <span class="math inline">\(F\)</span>. Then <span class="math display">\[
+x = \sum_{e \in E} x_e s_e
+\]</span> with <span class="math inline">\(x_e \in R\)</span>. We call the unordered family <span class="math inline">\(\{x_e\}_{e \in E}\)</span> the components of <span class="math inline">\(x\)</span> with respect to the basis. We shall denote by <span class="math inline">\(X\)</span> the <span class="math inline">\(\{1\} \times E\)</span> column matrix <span class="math inline">\((x_{e})_{(i,e) \in \{1\} \times E}.\)</span> We call <span class="math inline">\(X\)</span> the column vector of <span class="math inline">\(x\)</span> with respect to the basis <span class="math inline">\(\{s_e\}_{e \in E}\)</span>.</li>
+</ul>
+<p>The determinant of <span class="math inline">\(n \times n\)</span> matrices is multilinear alternating when viewed as a function of the column vectors <span class="math inline">\(A^1, \cdots, A^n\)</span>. That is, <span class="math display">\[
+\det : R^{1 \times n} \times \cdots \times R^{1 \times n} \to R,
+\]</span> where <span class="math inline">\(R^{1 \times n}\)</span> is the <span class="math inline">\(R\)</span>-module of <span class="math inline">\(n\)</span> entry column vectors, is multilinear and alternating in the sense of the definition on page 511 of <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.</p>
+<p>Let’s write the definition of the determinant of <span class="math inline">\(n \times n\)</span> matrices over <span class="math inline">\(R\)</span>, then mimic the definition to define the determinant of <span class="math inline">\(E \times E\)</span> matrices over <span class="math inline">\(R\)</span>.</p>
+<ul>
+<li><p>Definition. By an <span class="math inline">\(n \times n\)</span> determinant, we shall mean a mapping <span class="math display">\[
+\det: \text{Mat}_n(R) \to R
+\]</span> also written as <span class="math inline">\(\det = D\)</span>, which is mulitlinear alternating in the above sense of the column vectors, and such that <span class="math inline">\(D(I) = 1\)</span>. (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> page 513).</p></li>
+<li><p>Definition. By an <span class="math inline">\(E \times E\)</span> determinant, we shall mean a mapping <span class="math display">\[
+\det: \text{Mat}_E(R) \to R
+\]</span> which viewed as a function of the column vectors <span class="math inline">\(A^{e}\)</span>, for <span class="math inline">\(e \in E\)</span>, is multilinear alternating, and such that <span class="math inline">\(\det(I) = 1\)</span>.</p></li>
+</ul>
+<p>It remains to develop multilinearity and alternating notions when there is not an ordering on the variables of a given multi-variable function.</p>
+<ul>
+<li>Definition. Let <span class="math inline">\((F_e)_{e \in E}\)</span> be <span class="math inline">\(R\)</span>-modules. A map <span class="math display">\[
+f: (F_e)_{e \in E} \to F
+\]</span> is <span class="math inline">\(R\)</span> multilinear if it is linear in each variable. That is, let <span class="math inline">\(e \in E\)</span>, and let <span class="math inline">\(x_{e'}\)</span> be fixed for <span class="math inline">\(e' \ne e\)</span>. Then the map <span class="math display">\[
+x \mapsto f(z)
+\]</span> where <span class="math inline">\(z_{i} = \begin{cases}
+x &amp; \text{if } i = e \\
+x_{e'} &amp; \text{if }i = e'
+\end{cases}\)</span>, is linear. It is alternating if, for any <span class="math inline">\(x = (x_e)_{e \in E} \in (F_e)_{e \in E}\)</span> such that there exist distinct elements <span class="math inline">\(e', e'' \in E\)</span> with <span class="math inline">\(x_{e'} = x_{e''}\)</span>, then it follows that <span class="math inline">\(f(x) = 0\)</span>.</li>
+</ul>
+<p>Lemma. Assume <span class="math inline">\(f: (F_e)_{e \in E} \to F\)</span> is multilinear and alternating. Let <span class="math inline">\(e', e'' \in E\)</span> be distinct. Let <span class="math inline">\(x,y \in (F_e)_{e \in E}\)</span> and suppose <span class="math display">\[
+y_e = \begin{cases}
+x_e &amp; \text{ if }e \ne e',e'' \\
+x_{e'} &amp; \text{ if }e = e'' \\
+x_{e''} &amp; \text{ if }e = e'.
+\end{cases}
+\]</span> Then <span class="math inline">\(f(x) = -f(y)\)</span>.</p>
+<p>Proof. Let <span class="math inline">\(z \in (F_e)_{e \in E}\)</span> be the element given by <span class="math display">\[z_e = \begin{cases}
+x_e &amp; \text{if } e \ne e', e''\\
+x_{e'} + y_{e'} = x_{e'} + x_{e''} &amp; \text{if } e = e'\\
+x_{e''} + y_{e''} = x_{e''} + x_{e'} &amp; \text{if } e = e''
+\end{cases}.\]</span> Then <span class="math inline">\(z\)</span> has two variables which are the same, so by definition of alternating, we have <span class="math inline">\(f(z) = 0\)</span>. By definition of multilinearity, <span class="math display">\[\begin{align*}
+0 &amp;= f(z) \\
+&amp;= f(z') + f(x) + f(y) + f(z''),
+\end{align*}\]</span> where <span class="math inline">\(z'_{e'} = x_{e'}\)</span>, <span class="math inline">\(z'_{e''} = x_{e'}\)</span>, and <span class="math inline">\(z'_{e} = x_e\)</span> for <span class="math inline">\(e \ne e', e''\)</span>, and <span class="math inline">\(z''_{e'} = x_{e''}\)</span>, <span class="math inline">\(z''_{e''} = x_{e''}\)</span>, and <span class="math inline">\(z''_e = x_e\)</span> for <span class="math inline">\(e \ne e',e''.\)</span> Again since <span class="math inline">\(z'\)</span> and <span class="math inline">\(z''\)</span> have duplicate entries, then we see that <span class="math inline">\(0 = f(x) + f(y)\)</span>. q.e.d.</p>
+</section>
+<section id="determinant" class="level4">
+<h4 class="anchored" data-anchor-id="determinant">Determinant</h4>
+<p>I actually think the above stuff I wrote for today is unnecessary. At the point when one wants to take a determinant, one can just put an arbitrary ordering on the edges, and take the determinant as usual. The determinant is invariant under choice of basis, so if you pick another ordering of the basis, you can get back and forth via an invertible permutation matrix, and the determinants end up being the same.</p>
+</section>
+<section id="polynomial" class="level4">
+<h4 class="anchored" data-anchor-id="polynomial">Polynomial</h4>
+<p>I guess one remaining confusion I have is the meaning of a polynomial function of some <span class="math inline">\(t \in \mathbb R^{E_n}\)</span>. At least when you have a 2nd degree polynomial <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span>, you can write <span class="math inline">\(P(x) = \sum_{i,j} a_{i,j} x_i x_j + \sum_{i} b_i x_i + c\)</span>. I guess this would generalize to: <span class="math display">\[P(t) = \sum_{e,e'} A_{e,e'} t(e)t(e') + \sum_{e} b(e) t(e) + c,\]</span> for <span class="math inline">\(P: \mathbb R^{E_n} \to \mathbb R\)</span>. Then if you needed to take the determinant of the matrix <span class="math inline">\(A \in \mathbb R^{E \times E}\)</span>, you could at that point fix some ordering of the edges, and proceed to find the determinant in the usual way.</p>
+</section>
+</section>
 <section id="march-19-2026" class="level3">
 <h3 class="anchored" data-anchor-id="march-19-2026">March 19, 2026</h3>
 <section id="annotation-of-paragraph-defining-lattice-maxwell-theory" class="level4">
 <h4 class="anchored" data-anchor-id="annotation-of-paragraph-defining-lattice-maxwell-theory">Annotation of Paragraph defining Lattice Maxwell theory</h4>
 <p>I follow page 31 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
-<p>By the lower bound from the above lemma (13.1) and the criterion (12.2) discussed in section 12, the quadratic form <span class="math inline">\(M_{E,0,n}\)</span> defines a Gaussian measure on <span class="math inline">\(T_E(B_n)\)</span>.</p>
-<p>(Why/How? The definition of a Gaussian measure <span class="math inline">\(\mu\)</span> given in section 12 is that <span class="math inline">\(\mu\)</span> is a probability measure on <span class="math inline">\(\mathbb R^n\)</span> (with which sigma algebra?) such that it has a density proportional to <span class="math inline">\(e^{-P(x)}\)</span> with respect to Lebesgue measure: $$</p>
-<p>$$ (Does absolute continuity with respect to Lebesgue measure force the sigma algebra of <span class="math inline">\(\tau\)</span> to be something?) )</p>
+<p>By the lower bound from the lemma (13.1) and the criterion (12.2) discussed in section 12, the quadratic form <span class="math inline">\(M_{E,0,n}\)</span> defines a Gaussian measure on <span class="math inline">\(T_E(B_n)\)</span>.</p>
+<p>(Let <span class="math inline">\(E_n^0 \subset E \subset E_n\)</span> and recall that <span class="math inline">\(T_E(B_n) = \mathbb R^{E_n \setminus E}\)</span>. Note <span class="math inline">\(M_{E,0,n}\)</span> corresponds to a symmetric bilinear form <span class="math inline">\(M_{E,0,n}: T_E(B_n) \times T_E(B_n) \to \mathbb R\)</span>. Let <span class="math inline">\(\mathfrak{B}\)</span> denote the standard basis of <span class="math inline">\(T_E(B_n)\)</span>. That is <span class="math inline">\(\mathfrak{B} = \{1_e \mid e \in E_n \setminus E\}\)</span> where <span class="math inline">\(1_e\)</span> denotes the indicator function for the edge <span class="math inline">\(e\)</span>. Then the matrix of the bilinear form <span class="math inline">\(M_{E,0,n}\)</span>, let’s call it <span class="math inline">\(Q_{E,0,n}\)</span> satisfies the equation <span class="math display">\[
+M_{E,0,n}(t,s) = t^T \cdot Q_{E,0,n} \cdot s,
+\]</span> where on the right side, <span class="math inline">\(t\)</span> denotes the column vector in <span class="math inline">\(\mathbb R^{|E_n \setminus E|}\)</span> for the coordinates of <span class="math inline">\(t\)</span> with respect to the basis <span class="math inline">\(\mathfrak{B}\)</span>, and similarly for <span class="math inline">\(s\)</span>. Equivalently, <span class="math display">\[
+Q_{E,0,n}(e_i,e_j) = M_{E,0,n}(1_{e_i},1_{e_j}),
+\]</span> where <span class="math inline">\(Q_{E,0,n}(e_i,e_j)\)</span> denotes the <span class="math inline">\((e_i,e_j)\)</span> entry of <span class="math inline">\(Q_{E,0,n}\)</span> viewed as a matrix indexed by edges.</p>
+<p>All that was actually meaningless commentary because we can simply define the function <span class="math inline">\(e^{-M_{E,0,n}(t)}: \mathbb R^{E_n \setminus E} \to \mathbb R,\)</span> and the fact that <span class="math inline">\(M_{E,0,n}(t) = t^T Q_{E,0,n} t\)</span> is positive definite, implies that <span class="math inline">\(e^{-M_{E,0,n}(t)}\)</span> is integrable, and defines a density function for a Gaussian measure <span class="math inline">\(\tau_{E,0,n}\)</span> with respect to Lebesgue measure.)</p>
 </section>
 </section>
 <section id="march-18-2026" class="level3">
@@ -587,6 +663,9 @@ Brennecke, Christian. 2025. <span>“On the Leading Order Term of the Lattice Ya
 </div>
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
+</div>
+<div id="ref-GrinbergReiner" class="csl-entry" role="listitem">
+Grinberg, Reiner. 2020. <em>Hopf Algebras in Combinatorics</em>.
 </div>
 <div id="ref-LangAlgebra" class="csl-entry" role="listitem">
 Lang, Serge. 2002. <em>Algebra</em>. Springer.
