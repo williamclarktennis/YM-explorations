@@ -9,6 +9,151 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 20, 2026
+
+#### Determinants of Matrices Indexed by Objects other than numbers
+
+I want to follow @LangAlgebra section "Determinants"
+but replace matrices $(a_{ij})_{(i,j \in [n]^2)}$ by
+$(a_{i,j})_{i,j \in E^2}$ for an arbitrary set $E$, without
+an ordering. 
+My notion of matrices indexed by objects is from the appendix of @GrinbergReiner.
+I just want to be reassured that taking 
+the determinant of matrices indexed by edges of a lattice 
+does not depend on the ordering of the edges of the lattice. 
+There is not an ordering on the edges mentioned in @BrenneckeLattice
+nor @Chatterjee2016, and I am a bit uneasy about 
+the covariance matrices and determinants related to the Gaussian measure
+defined on $T_{E}(B_n)$. Because my notion of Gaussian measure uses 
+the standard ordering of the standard basis of $\mathbb R^n$.
+Although my notion of symmetric matrix does at least carry over
+to matrices indexed by unordered objects. Without further ado:  
+
+Let $R$ be a commutative ring.
+The case of interest is $R = \mathbb R$.
+Let $n$ be a positive integer.
+The case of interest is $n = |E_{n'} \setminus E_{n'}^0|,$
+for the box of width $n'$.
+
+Let $E$ be a set with cardinality $n$. The case of 
+interest is $E = E_{n'} \setminus E_{n'}^0$.
+Let us take $E$ to be an unordered set.
+
+- Definition. In analogy to $\text{Mat}_n(R)$, let us denote the set 
+of $E \times E$ matrices over $R$ by
+$\text{Mat}_E(R) = R^{E \times E}.$
+
+- Definition. (Rows and Columns) Let $A = (a_{e,o})_{(e,o) \in E^2}$ be an 
+element of $\text{Mat}_E(R)$. For every $e \in E$, we define the $e$-th 
+row of $A$, denoted by a lower index $A_e$, to be the $\{1\} \times E$ matrix 
+$(a_{e,o})_{(i,o) \in \{1\} \times E}$. We define the $e$-th column of 
+$A$, denoted by an upper index $A^e$, to be the $E \times \{1\}$ matrix
+$(a_{o,e})_{(o,i) \in E \times \{1\}}$.
+
+- Definition. (Identity $E \times E$ matrix) The identity matrix
+is given by $I = (\delta_{e,o})_{(e,o) \in E^2}$.
+ 
+The following definition uses notions from the Section, 
+Direct Products and Sums of Modules, @LangAlgebra.
+
+- Definition. (Unordered Basis)
+Let $F$ be a module over $R$. A subset $S \subset F$ is called 
+linearly independent if whenever we have a linear combintion
+$\sum_{i \in S} a_i x_i = 0,$ then $a_i = 0$ for all $i$.
+Let $R \langle S \rangle$ be the set of all $R$-linear combinations
+of elements of $S$. If $R \langle S \rangle = F$, we say that 
+$S$ generates $F$. If $S$ is non-empty, generates $F$, and is linearly 
+independent, then we say $S$ is a basis of $F$. 
+
+One case of interest is $F = \mathbb R^{E_{n'} \setminus E_{n'}^0} = T_0(B_{n'})$,
+which is an $\mathbb R$ vector space. A basis is the unordered family
+$(1_e)_{e \in E}$.
+
+Another case of interest is when $S = \{s_e\}_{e \in E}$, 
+is indexed by elements of $E$, and $S$ is a basis of $F$.
+
+- Definition. (Column vector of an element of the module
+with respect to the basis) Let $x \in F$, where $F$ is an $R$ module.
+Suppose $\{s_e\}_{e \in E}$ is an unordered basis of $F$. 
+Then
+$$
+x = \sum_{e \in E} x_e s_e
+$$
+with $x_e \in R$. We call the unordered family $\{x_e\}_{e \in E}$ the components 
+of $x$ with respect to the basis. We shall denote by $X$ the 
+$\{1\} \times E$ column matrix $(x_{e})_{(i,e) \in \{1\} \times E}.$
+We call $X$ the column vector of $x$ with respect to the basis
+$\{s_e\}_{e \in E}$.
+
+The determinant of $n \times n$ matrices
+is multilinear alternating when viewed as a function of the column 
+vectors $A^1, \cdots, A^n$.
+That is, 
+$$
+\det : R^{1 \times n} \times \cdots \times R^{1 \times n} \to R, 
+$$
+where $R^{1 \times n}$ is the $R$-module of $n$ entry 
+column vectors, is multilinear and alternating in the sense 
+of the definition on page 511 of @LangAlgebra.
+
+Let's write the definition of the determinant of $n \times n$ 
+matrices over $R$, then mimic the definition to define the determinant
+of $E \times E$ matrices over $R$.
+
+- Definition. By an $n \times n$ determinant, we shall mean a mapping
+$$
+\det: \text{Mat}_n(R) \to R
+$$
+also written as $\det = D$, which is mulitlinear alternating 
+in the above sense of the column vectors, and such that $D(I) = 1$.
+(@LangAlgebra page 513).
+
+- Definition. By an $E \times E$ determinant, we shall mean a mapping
+$$
+\det: \text{Mat}_E(R) \to R
+$$
+which viewed as a function of the column vectors $A^{e}$, for $e \in E$, 
+is multilinear alternating, and such that $\det(I) = 1$.
+
+It remains to develop multilinearity and alternating notions
+when there is not an ordering on the variables of a given 
+multi-variable function. 
+
+- Definition. 
+Let $(F_e)_{e \in E}$ be $R$-modules. A map 
+$$
+f: (F_e)_{e \in E} \to F
+$$
+is $R$ multilinear if it is linear in each variable.
+That is, let $e \in E$, and let $x_{e'}$ be fixed for 
+$e' \ne e$. Then the map 
+$$
+x \mapsto f((x_{e'})_{e' \in E \setminus \{e\}}, x)
+$$
+is linear.
+It is alternating if, 
+for any $x = (x_e)_{e \in E} \in (F_e)_{e \in E}$ such that
+there exist distinct elements $e', e'' \in E$ with 
+$x_{e'} = x_{e''}$, then it follows that
+$f(x) = 0$.
+
+Lemma. Assume $f: (F_e)_{e \in E} \to F$
+is multilinear and alternating. 
+Let $e', e'' \in E$ be distinct. 
+Let $x,y \in (F_e)_{e \in E}$ and suppose
+$$
+y_e = \begin{cases}
+x_e & \text{ if }e \ne e',e'' \\
+x_{e'} & \text{ if }e = e'' \\
+x_{e''} & \text{ if }e = e'.
+\end{cases}
+$$
+Then $f(x) = -f(y)$.
+
+Proof. 
+
+
+
 ### March 19, 2026
 
 #### Annotation of Paragraph defining Lattice Maxwell theory

@@ -184,6 +184,32 @@ determinant is equal to 1. (@LangAlgebra p. 536).
 
 <details><summary> $Aut(f)$ for $f$ a form on a vector space </summary>
 
+</details>
 
+<details><summary> Matrices Indexed by Objects </summary>
+
+We follow the appendix in @GrinbergReiner.
+
+Let $\mathbf k$ be a commutative ring. (Why is 
+commutativity needed?) For my use, it will usually 
+be $\mathbb R$ or $\mathbb C$.
+
+Let $S$ and $T$ be two sets of objects, 
+for example, edges of a lattice.  
+An $S \times T$ matrix over $\mathbf k$ is a family
+$$
+(a_{s,t})_{(s,t) \in S \times T}
+$$
+where $a_{s,t} \in \mathbf k$ for all $(s,t) \in S \times T$.
+We can also view an $S \times T$ matrix as a function 
+$S \times T \to \mathbf k$. That is, 
+$$
+(a_{s,t})_{(s,t) \in S \times T} \in \mathbf{k}^{S \times T} = 
+\text{Func}(S \times T, \mathbf k).
+$$
+
+The main idea is that each entry of an $S \times T$ matrix over $\mathbf k$
+is uniquely identified by a pair $(s,t)$. 
+This makes it easy to define matrix addition and scalar multiplication.
 
 </details>
