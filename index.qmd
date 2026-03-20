@@ -128,9 +128,13 @@ is $R$ multilinear if it is linear in each variable.
 That is, let $e \in E$, and let $x_{e'}$ be fixed for 
 $e' \ne e$. Then the map 
 $$
-x \mapsto f((x_{e'})_{e' \in E \setminus \{e\}}, x)
+x \mapsto f(z)
 $$
-is linear.
+where $z_{i} = \begin{cases}
+x & \text{if } i = e \\
+x_{e'} & \text{if }i = e'
+\end{cases}$,
+is linear. 
 It is alternating if, 
 for any $x = (x_e)_{e \in E} \in (F_e)_{e \in E}$ such that
 there exist distinct elements $e', e'' \in E$ with 
@@ -150,9 +154,54 @@ x_{e''} & \text{ if }e = e'.
 $$
 Then $f(x) = -f(y)$.
 
-Proof. 
+Proof. Let
+$z \in (F_e)_{e \in E}$ be the element given by
+$$z_e = \begin{cases}
+x_e & \text{if } e \ne e', e''\\
+x_{e'} + y_{e'} = x_{e'} + x_{e''} & \text{if } e = e'\\
+x_{e''} + y_{e''} = x_{e''} + x_{e'} & \text{if } e = e''
+\end{cases}.$$
+Then $z$ has two variables which are the same, so by definition
+of alternating, we have
+$f(z) = 0$.
+By definition of multilinearity, 
+\begin{align*}
+0 &= f(z) \\
+&= f(z') + f(x) + f(y) + f(z''),
+\end{align*}
+where $z'_{e'} = x_{e'}$, 
+$z'_{e''} = x_{e'}$,
+and $z'_{e} = x_e$ for $e \ne e', e''$, 
+and $z''_{e'} = x_{e''}$, $z''_{e''} = x_{e''}$,
+and $z''_e = x_e$ for $e \ne e',e''.$
+Again since $z'$ and $z''$ have duplicate entries, 
+then we see that $0 = f(x) + f(y)$. q.e.d.
 
+#### Determinant
 
+I actually think the above stuff I wrote for today
+is unnecessary. At the point when one wants to take 
+a determinant, one can just put an arbitrary ordering 
+on the edges, and take the determinant as usual. 
+The determinant is invariant under choice of basis, 
+so if you pick another ordering of the basis, 
+you can get back and forth via an invertible permutation 
+matrix, and the determinants end up being the same.
+
+#### Polynomial
+
+I guess one remaining confusion I have
+is the meaning of a polynomial function of some $t \in \mathbb R^{E_n}$.
+At least when you have a 2nd degree polynomial $P: \mathbb R^n \to \mathbb R$, 
+you can write 
+$P(x) = \sum_{i,j} a_{i,j} x_i x_j + \sum_{i} b_i x_i + c$.
+I guess this would generalize to: 
+$$P(t) = \sum_{e,e'} A_{e,e'} t(e)t(e') + \sum_{e} b(e) t(e) + c,$$
+for $P: \mathbb R^{E_n} \to \mathbb R$.
+Then if you needed to take the determinant of the matrix
+$A \in \mathbb R^{E \times E}$, you could at that point
+fix some ordering of the edges, and proceed to find the determinant 
+in the usual way. 
 
 ### March 19, 2026
 
