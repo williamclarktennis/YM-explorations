@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wightman Axioms for free scalar quantum field – William’s Lattice YM Explorations</title>
+<title>Log Gases Seminar - Summer 2026 – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -216,15 +216,27 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a>
+  <ul class="collapse">
+  <li><a href="#talk-1-overview" id="toc-talk-1-overview" class="nav-link" data-scroll-target="#talk-1-overview">Talk 1 Overview</a></li>
+  <li><a href="#talk-2-overview-my-talk" id="toc-talk-2-overview-my-talk" class="nav-link" data-scroll-target="#talk-2-overview-my-talk">Talk 2 Overview (My Talk)</a></li>
+  <li><a href="#talk-3-overview" id="toc-talk-3-overview" class="nav-link" data-scroll-target="#talk-3-overview">Talk 3 Overview</a></li>
+  </ul></li>
+  <li><a href="#more-details" id="toc-more-details" class="nav-link" data-scroll-target="#more-details">More Details</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wightman Axioms for free scalar quantum field</h1>
+<h1 class="title">Log Gases Seminar - Summer 2026</h1>
 </div>
 
 
@@ -241,201 +253,64 @@ window.Quarto = {
 </header>
 
 
-<p>Article last updated: January 29, 2026</p>
-<p>I’m writing this article so that I can learn Theorem 3.1 of Prof.&nbsp;Christian Brennecke’s constructive quantum field theory notes <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. The statement of the theorem is as follows.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Theorem 3.1">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Theorem 3.1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider the strongly continuous unitary representation <span class="math inline">\(\Gamma(U)\)</span> (gamma of U) of <span class="math inline">\(\mathcal{P}_{+}^{\uparrow}\)</span> (P plus up) on <span class="math inline">\(\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))\)</span> (Bosonic Fock space built over <span class="math inline">\(L^2\)</span> of the mass shell of mass <span class="math inline">\(m\)</span>) with Fock space vacuum <span class="math inline">\(\Omega = (1,0,0,\cdots) \in \mathcal{H}\)</span> and let <span class="math inline">\(\phi = (\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}\)</span> (family of operators indexed by Schwartz functions on <span class="math inline">\(\mathbb R^4\)</span>) be defined as (3.14): <span class="math display">\[\begin{equation}
-\phi(f) = (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p + (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p^*.
-\end{equation}\]</span> Then <span class="math inline">\((\mathcal{H}, \Gamma(U), \Omega, \phi)\)</span> satisfies the Wightman axioms and <span class="math display">\[\begin{equation}
-(\square + m^2) \phi = 0
-\end{equation}\]</span> in the sense of operator-valued distributions.</p>
-</div>
-</div>
-<section id="the-operator-valued-distribution-3.14" class="level4">
-<h4 class="anchored" data-anchor-id="the-operator-valued-distribution-3.14">The operator valued distribution (3.14)</h4>
-<p>Let me clarify (3.14) for myself. Recall that the creation and annihilation operators depend on some function <span class="math inline">\(f \in L^2(\mathcal{M})\)</span>, where in this case <span class="math inline">\(\mathcal{M} = S_m^+\)</span>. Only once you have some <span class="math inline">\(f\)</span> can you talk about an operator from the infinite tensor product space <span class="math inline">\(\mathcal{F}_s\)</span> to itself. That is why I can write <span class="math display">\[\begin{equation}
-a(\sqrt{ 2 \pi } \tilde{f} ) : \mathcal{F}_s \to \mathcal{F}_s,
-\end{equation}\]</span> and this object is defined in section 2.4 in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
-<p>Next, I want to phrase (3.14) directly in terms of rigorously defined objects. I’ll use the identities <span class="math display">\[\begin{equation}
-a(f) =: \int_{\mathbb R^d} dx \overline{f}(x) a_x
-\end{equation}\]</span> and <span class="math display">\[\begin{equation}
-a^*(g) =: \int_{\mathbb R^d} dx g(x) a_x^*
-\end{equation}\]</span> found in section 2.4 of Brennecke’s notes. It follows that <span class="math display">\[\begin{equation}
-(2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p := a(\sqrt{2\pi} \overline{\tilde{f}}).
-\end{equation}\]</span> This is nice because now I can just refer back to section 2.4 to see how <span class="math inline">\(a(\sqrt{2\pi} \overline{\tilde{f}})\)</span> acts on a tensor product on some dense subset in the Fock space.</p>
-<p>In summary, (3.14) says <span class="math display">\[
-\phi(f) = \sqrt{2 \pi } a(\overline{\tilde{f}}) + \sqrt{2 \pi } a^*( \tilde{f}).
-\]</span> (where the constant factors of pi can be taken in and out of the annihilation and creation operators because <span class="math inline">\(a\)</span> and <span class="math inline">\(a^*\)</span> are linear in <span class="math inline">\(f \in L^2(\mathcal{M})\)</span>.)</p>
-<p>Let me also discuss the name “operator valued distribution.” An operator valued distribution is a family <span class="math inline">\((\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}\)</span>, where for each <span class="math inline">\(f \in \mathcal{S}(\mathbb R^4)\)</span>, the symbol <span class="math inline">\(\phi(f)\)</span> denotes a linear operator on some Hilbert space <span class="math inline">\(\mathcal{H}\)</span>. But how does this connect to another notion of a distribution, namely a map <span class="math inline">\(\Phi: \mathcal{S}(\mathbb R^4) \to \mathbb C\)</span>, with the stereotypical example being the dirac distribution <span class="math inline">\(\delta_0: \mathcal{S}(\mathbb R^4) \to \mathbb C\)</span> centered at <span class="math inline">\(0 \in \mathbb R^4\)</span>? To see the connection, observe that we can rewrite the quantum field <span class="math inline">\((\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}\)</span> as a map: <span class="math display">\[
-\Phi: \mathcal{S}(\mathbb R^4) \to \mathcal{L}(\mathcal{H}).
-\]</span> Rewriting in this way allows me to see that a quantum field is just a distribution, but with values in <span class="math inline">\(\mathcal{L}(\mathcal{H}) =
-\{f: \mathcal{H} \to \mathcal{H} \mid f \text{ linear} \}\)</span> instead of <span class="math inline">\(\mathbb C\)</span>.</p>
-<p>On this note, one situation that happens a lot is the following. One writes down an integral <span class="math display">\[
-\int_{\mathbb R^4}dp f(p) a^*_p,
-\]</span> and then says that the integral should be interpreted in a distributional sense (because the annihilation operator is not actually defined at each <span class="math inline">\(p\)</span>, and even if it were, the vector valued integral would be difficult to make sense of because the annihiliation operators are not bounded operators, so a Bochner interpretation is not immediate.) How is this connected to intepreting an analogous integral <span class="math display">\[
-\int_{\mathbb R^4} dp f(p) \delta_0(p)
-\]</span> in the sense of distributions? Well, the latter integral is actually defined by <span class="math display">\[
-\delta_0(f) =: \int_{\mathbb R^4} dp f(p) \delta_0(p),
-\]</span> because the delta function is not defined at the origin, and you can’t ignore the singularity at the origin (as you would for <span class="math inline">\(L^p\)</span> functions by ignoring null sets) because the null set <span class="math inline">\(\{0\}\)</span> actually affects the value of the integral. The main point is this, we’ve intepreted the original integral in a distributional sense, because <span class="math inline">\(\delta_0(f)\)</span> is a well-defined complex number: it is just <span class="math inline">\(\delta_0(f) = f(0) \in \mathbb C\)</span>. To see the analogy for the operator valued distributional case, just replace the <span class="math inline">\(\delta_0\)</span> by <span class="math inline">\(a\)</span> on the left hand side and the <span class="math inline">\(\delta_0(p)\)</span> inside the integral on the right hand side by <span class="math inline">\(a^*_p\)</span>. Then: <span class="math display">\[
-a(f) =: \int_{\mathbb R^4} dp f(p) a^*_p,
-\]</span> so the right hand side is defined by <span class="math inline">\(a(f)\)</span>, which is no longer a complex number, but an operator. This explains how the interpretations of the identities used above from section 2.4 of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span> are called ‘distributional interpretations.’</p>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<section id="talk-1-overview" class="level3">
+<h3 class="anchored" data-anchor-id="talk-1-overview">Talk 1 Overview</h3>
+<ul>
+<li>Title of Talk. Joint Distribution of eigenvalues of Gaussian random matrices</li>
+</ul>
+<p>Definitions.</p>
+<ul>
+<li><p>Definition (Gaussian Unitary Ensemble GUE).</p></li>
+<li><p>Definition (Gaussian Orthogonal Ensemble GOE).</p></li>
+</ul>
+<p>Propositions.</p>
+<ul>
+<li>Theorem 14.3 (<span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span>). This Theorem gives a complete description of the joint law of eigenvalues and eigenvectors of a <span class="math inline">\(GOE_n\)</span>. (Hence the title of the talk).
+<ol type="i">
+<li>The proof will be covered.</li>
+<li>What does the result say? It says two things. First, the distribution of the eigenvectors is Haar measure on the orthogonal matrix group <span class="math inline">\(O(n)\)</span>. Second, the joint law of eigenvalues is the product of a Gaussian density term and a Vandermonte determinant term.</li>
+</ol></li>
+</ul>
+<p>Where is the statement in section 2.5.1/2.5.2 of <span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>?</p>
+<ul>
+<li>Theorem 14.4 (<span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span>). This theorem gives a description of the joint law of the eigenvalues and eigenvectors of a <span class="math inline">\(GUE_n\)</span>.</li>
+</ul>
 </section>
-<section id="the-unitary-representation-gamma" class="level4">
-<h4 class="anchored" data-anchor-id="the-unitary-representation-gamma">The unitary representation Gamma</h4>
-<p>Consider the phrase “strongly continuous unitary representation <span class="math inline">\(\Gamma(U)\)</span> of <span class="math inline">\(\mathcal{P}_+^\uparrow\)</span> on <span class="math inline">\(\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))\)</span>.” We understand this phrase through the following discussion. Given an abstract group <span class="math inline">\(G\)</span> and a vector space <span class="math inline">\(V\)</span>, a unitary representation (of <span class="math inline">\(G\)</span> on <span class="math inline">\(V\)</span>) is a homomorphism <span class="math inline">\(\rho: G \to \mathcal{U}(V)\)</span>, where <span class="math inline">\(\mathcal{U}(V)\)</span> denotes the set of all unitary maps from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, equipped with composition as the multiplication operation (or matrix multiplication). What is a natural topology to put on <span class="math inline">\(\mathcal{U}(V)\)</span>? Perhaps an operator topology?</p>
-<p>Equipping <span class="math inline">\(G\)</span> with a topology, we say that <span class="math inline">\(\rho\)</span> is strongly continuous if for all <span class="math inline">\(v \in V\)</span> <span class="math display">\[G \ni g \mapsto \rho(g)v \in V\]</span> is continuous. For example, if <span class="math inline">\(G = SU(2)\)</span> and <span class="math inline">\(\iota : SU(2) \to U(2)\)</span> is a strongly continuous unitary representation of <span class="math inline">\(SU(2)\)</span> on <span class="math inline">\(\mathbb C^2\)</span>, then strong continuity means <span class="math display">\[SU(2) \ni A \mapsto Av \in \mathbb C^2\]</span> is continuous for all <span class="math inline">\(v \in \mathbb C^2\)</span>.</p>
-<p>Thus, <span class="math inline">\(\Gamma(U): \mathcal{P}_+^\uparrow \to \mathcal{U}(\mathcal{F}_s(L^2(S_m^+)))\)</span> should satisfy <span class="math display">\[\mathcal{P}_+^\uparrow \ni (a,L) \mapsto \Gamma(U)((a,L))v \in \mathcal{F}_s(L^2(S_m^+))\]</span> is continuous, where <span class="math inline">\(v\)</span> is a fixed and arbitrary element of the Bosonic Fock space built over the mass shell. Observe that <span class="math inline">\(\Gamma(U)((a,L))\)</span> is a unitary operator on Bosonic Fock space, so it makes sense that applying it to <span class="math inline">\(v\)</span> gives a Bosonic function. Observe that <span class="math inline">\(\Gamma(U)\)</span> is not a finite dimensional representation because Fock space is not finite dimensional.</p>
-<p>It turns out that the unitary representation Gamma actually has a name: the second quantization of the unitary representation <span class="math inline">\(U= (U(a,L))_{(a,L) \in \mathcal{P}_+^{\uparrow}}\)</span>. Thus, completely understanding <span class="math inline">\(\Gamma(U)\)</span> entails understanding the representation <span class="math inline">\(U\)</span> of the proper Poincaré group <span class="math inline">\(\mathcal{P}_+^{\uparrow}\)</span> on <span class="math inline">\(L^2\)</span> of the mass shell <span class="math inline">\(S_m^+\)</span>, which can be seen in definition (3.4) in the section on the quantization of a massive relativistic particle. To this end, let me look at the following exercise, which is Probem 3.1 (a) in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Exercise 1">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise 1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For <span class="math inline">\((a,L) \in \mathcal{P}_+^{\uparrow}\)</span>, let <span class="math inline">\(U(a,L)\)</span> be defined as in (3.4): for <span class="math inline">\(\psi \in L^2(S_m^+, \mathcal{B}(S_m^+), \lambda_m)\)</span>, we set <span class="math display">\[
-(U(a,L)\psi)(p) = e^{ip^{\mu}a_{\mu}} \psi(L^{-1}p)
-\]</span> for almost every <span class="math inline">\(p \in S_m^+\)</span> and for all <span class="math inline">\((a,L) \in \mathcal{P}_+^{\uparrow}\)</span>. Show that <span class="math inline">\(\mathcal{P}_+^\uparrow \ni (a,L) \mapsto U(a,L) \in \mathcal{U}(L^2(S_m^+))\)</span> defines a strongly continuous, unitary representation of <span class="math inline">\(\mathcal{P}_+^\uparrow\)</span> on <span class="math inline">\(L^2(S_m^+) = L^2(S_m^+, \mathcal{B}(S_m^+), \lambda_m)\)</span>.</p>
-</div>
-</div>
-<p>Proof. Step one is to verify the homomorphism property <span id="eq-1"><span class="math display">\[
-(U((a,L)(a',L'))\psi)(p) = ((U(a,L)U(a',L'))\psi)(p)
-\tag{1}\]</span></span> for all <span class="math inline">\((a,L), (a',L') \in \mathcal{P}_+^\uparrow\)</span>. By definition, <span class="math inline">\((a,L)(a',L') = (a+La', LL')\)</span>, so we make the appropriate substitution on the left hand side of <a href="#eq-1" class="quarto-xref">Equation&nbsp;1</a>. Then we have by (3.4) that <span class="math display">\[\begin{align*}
-(U(a+La', LL')\psi)(p) = e^{ip^\mu(a+La')_{\mu}}\psi((LL')^{-1}p).
-\end{align*}\]</span> We compute for the right hand side using (3.4): <span class="math display">\[\begin{align*}
-((U(a,L)U(a',L'))\psi)(p) &amp;= (U(a,L)(U(a',L')\psi(\cdot)))(p) &amp;&amp; \text{i.e. composition law}\\
-&amp;= (U(a,L)e^{i(\cdot)^\mu a'_{\mu}}\psi(L'^{-1} (\cdot)) )(p) \\
-&amp;= e^{ip^\mu a_{\mu}} e^{i(L^{-1}p)^\mu a'_{\mu}} \psi(L'^{-1}L^{-1}(p)) \\
-&amp;= e^{i (p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu)} \psi((LL')^{-1}p).
-\end{align*}\]</span> For the homomorphism property, it remains to prove that <span class="math display">\[
-p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu = p^\mu(a+La')_{\mu}.
-\]</span> Note the following facts and observations about</p>
-<section id="interlude-about-o13" class="level5">
-<h5 class="anchored" data-anchor-id="interlude-about-o13">Interlude about O(1,3)</h5>
-<p><span class="math inline">\(O(1,3)\)</span>, the group of isometries on Minkowski space, of which <span class="math inline">\(L\)</span> is an element by defintion of the Poincaré group. First, Minkowski space <span class="math inline">\(\mathbb R^4\)</span> is equipped with a bilinear form <span class="math inline">\(\eta = \text{diag}({1,-1,-1,-1})\)</span>, which means that <span class="math inline">\(\eta(x,y) = x^T \eta y\)</span>, where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are column vectors with 4 entries. Next, an isometry <span class="math inline">\(L \in O(1,3)\)</span> is a linear map <span class="math inline">\(\mathbb R^4 \to \mathbb R^4\)</span> that preserves the geometry in the sense that <span class="math inline">\(\eta(Lx,Ly) = \eta(x,y)\)</span> for all <span class="math inline">\(x,y \in \mathbb R^4\)</span>. Rewriting gives the equation <span class="math inline">\(x^TL^T\eta Ly = x^T\eta y\)</span> for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and by choosing <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> as the various combinations of basis vectors in order to single out the matrix entries of <span class="math inline">\(L^T\eta L\)</span> on the left and <span class="math inline">\(\eta\)</span> on the right, the isometry condition on <span class="math inline">\(L\)</span> can be expressed equivalently as <span class="math inline">\(L^T \eta L = \eta\)</span>. Another useful thing to note is that <span class="math inline">\(a^\mu b_\mu = a^T \eta b\)</span> for column vectors <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in <span class="math inline">\(\mathbb R^4\)</span>.</p>
+<section id="talk-2-overview-my-talk" class="level3">
+<h3 class="anchored" data-anchor-id="talk-2-overview-my-talk">Talk 2 Overview (My Talk)</h3>
+<p><span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span></p>
+<p>Definitions.</p>
+<ul>
+<li>Definition (<span class="math inline">\(\beta\)</span> ensemble).</li>
+</ul>
+<p>Propositions.</p>
+<ul>
+<li>Theorem 4.5.35 (<span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>).</li>
+</ul>
+<details>
+<summary>
+</summary>
+</details>
 </section>
-<section id="end-of-interlude-back-to-the-proof." class="level5">
-<h5 class="anchored" data-anchor-id="end-of-interlude-back-to-the-proof.">End of Interlude, back to the proof.</h5>
-<p>Let’s rewrite the equation <span class="math inline">\(p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu = p^\mu(a+La')_{\mu}\)</span> using <span class="math inline">\(\eta\)</span> as <span class="math display">\[
-p^T \eta a + (L^{-1}p)^T \eta a' = p^T \eta (a+La').
-\]</span> So we want to prove that this equation holds, given that <span class="math inline">\(L \in O(1,3)\)</span> and that <span class="math inline">\(p \in S_m^+\)</span>. By linearity and cancellation, the equation becomes <span class="math display">\[
-(L^{-1}p)^T \eta a' =  p^T \eta La'.
-\]</span> But using that <span class="math inline">\(L^{-1} \in O(1,3)\)</span>, which implies that <span class="math inline">\((L^{-1})^T \eta L^{-1} = \eta\)</span>, which implies <span class="math inline">\((L^{-1})^T \eta = \eta L\)</span>, gives confirmation. But why is <span class="math inline">\(L^{-1} \in O(1,3)?\)</span> Well, <span class="math inline">\(L \in
-O(1,3)\)</span> implies <span class="math inline">\(L^T \eta L = \eta\)</span>, which implies that <span class="math inline">\(\eta^T = L^T \eta^T L\)</span> because <span class="math inline">\(\eta\)</span> is symmetric, which implies that <span class="math inline">\(\eta^T L^{-1} = L^T \eta^T\)</span>, which implies that <span class="math inline">\((L^{-1})^T \eta = \eta L\)</span> after transposing both sides, which implies that <span class="math inline">\((L^{-1})^T \eta L^{-1}= \eta\)</span>, which implies that <span class="math inline">\(L^{-1} \in O(1,3)\)</span>. This concludes step one, the homomorphism property of the representation.</p>
-<p>Next, I’d like to check the unitary property, which states that for all <span class="math inline">\((a,L) \in \mathcal{P}_+^\uparrow\)</span>, that <span class="math inline">\(U(a,L)\)</span> is a unitary operator on <span class="math inline">\(L^2(S_m^+)\)</span>, which means that <span class="math display">\[
-\langle \psi, \phi \rangle_{L^2(S_m^+)} = \langle U(a,L) \psi, U(a,L) \phi \rangle_{L^2(S_m^+)}
-\]</span> for all <span class="math inline">\(\psi, \phi \in L^2(S_m^+)\)</span>.</p>
-<p>I’m not super sure if functions in <span class="math inline">\(L^2(S_m^+)\)</span> are supposed to have a codomain of <span class="math inline">\(\mathbb C\)</span>, but I’ll guess that for now based on the imaginary <span class="math inline">\(i\)</span> in the exponent in the formula (3.4).</p>
-<p><span class="math display">\[\begin{align*}
-\langle U(a,L) \psi, U(a,L) \phi \rangle_{L^2(S_m^+)} &amp;= \int_{S_m^+} d\lambda_m(p) \overline{U(a,L)\psi} (p) U(a,L) \phi (p)  \\
-&amp;= \int_{S_m^+} d \lambda_m(p) \overline{e^{ip^\mu a_\mu} \psi (L^{-1}p)} e^{ip^\mu a_\mu} \phi(L^{-1}p) \\
-&amp;= \int_{S_m^+} d \lambda_m(p)  e^{-ip^\mu a_\mu} \overline{ \psi (L^{-1}p)} e^{ip^\mu a_\mu} \phi(L^{-1}p) \\
-&amp;= \int_{S_m^+} d \lambda_m(p) \overline{ \psi (L^{-1}p)} \phi(L^{-1}p) \\
-&amp;= \int_{L^{-1}S_m^+} d (\lambda_m \circ L)(h) \overline {\psi(h)} \phi(h) &amp;&amp; \text{ change of variables }\\
-&amp;= \int_{S_m^+} d \lambda_m (h) \overline {\psi(h)} \phi(h) &amp;&amp; \text{ Lemma 3.1 of Brennecke's notes} \\
-&amp;= \langle \psi, \phi \rangle_{L^2(S_m^+)}.
-\end{align*}\]</span></p>
-<p>I still need to learn about why <span class="math inline">\(L^{-1}S_m^+ = S_m^+\)</span>.</p>
-<!--
-##### Interlude on proper Poincaré group
+<section id="talk-3-overview" class="level3">
+<h3 class="anchored" data-anchor-id="talk-3-overview">Talk 3 Overview</h3>
+</section>
+</section>
+<section id="more-details" class="level2">
 
-First, it will be helpful to understand the 
-following statement found on page 46 of @BrenneckeCQFT: 
-If $L \in O(1,3)$, then 
-$$
-\eta^{\mu \nu} L_{\mu \lambda} L_{\nu \kappa} = 
-\eta_{\lambda \kappa} = \eta^{\mu \nu } L_{\lambda \mu} L_{\kappa \nu}.
-$$
-The conclusion uses the Einstein summation 
-convention. As a simple example of that, consider 
-two matrices $A \in \mathbb F^{m \times n}$ and 
-$B \in \mathbb F^{n \times p}$. Then the formula
-for the $(\lambda,\kappa)$ entry, or in other words, the 
-$\lambda$-th row and $\kappa$-th column  of the product
-$AB$ is $AB_{\lambda \kappa} = \sum_{\nu = 1}^n A^{\lambda \nu}B_{\nu \kappa} = A^{\lambda \nu} B_{\nu \kappa}$,
-because entries that appear once up high and 
-once down low in the symbolism are taken to be summed over.
-
-To guide myself, let me ask: does $(L^T \eta L)_{\lambda \kappa} = \eta^{\mu \nu} L_{\mu \lambda} L_{\nu \kappa}$?
-We have 
-\begin{align*}
-(L^T \eta L)_{\lambda \kappa} &= ((L^T \eta) L)_{\lambda \kappa}\\
-&= (L^T \eta)^{\lambda \nu} L_{\nu \kappa} \\
-&= ((L^T)^{\lambda \mu} \eta_{\mu \nu}) L_{\nu \kappa} \\
-&= (L^{\mu \lambda} \eta_{\mu \nu}) L_{\nu \kappa} && \text{transpose def} \\
-&= (L^{\mu \lambda} \eta_{\nu \mu}) L_{\nu \kappa} && \eta \text{ symmetric} \\
-&= (\eta_{\nu \mu} L^{\mu \lambda}) L_{\nu \kappa} && \text{ multiplication commutative} \\
-&= \eta^{\nu \mu} L_{\mu \lambda} L_{\nu \kappa},
-\end{align*}
-so the answer is yes.
--->
-<!--
-First I want to distill the formula (3.14), 
-which is not exactly well-defined as written, 
-but corresponds to something that is well-defined.
-Thus, I will solve here an exercise in Brennecke's
-notes that I expect will transfer to 
-the situation of (3.14). The main theme will
-be to interpret things in a distributional sense. 
-
-::: {.callout-note title="Exercise 1"}
-Suppose that we define the free 
-scalar field $(\phi(f))_{f \in S(\mathbb R^4)}$ of mass $m > 0$ 
-by 
-\begin{equation}
-\phi(f) = \int_{\mathbb R} \frac{dt}{(2\pi)^{3/2}} \big(a(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) + a^*(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) \big).
-\end{equation}
-Identifying heuristically $\phi(f) = \int_{\mathbb R^4} dx \phi_x f(x)$, 
-show that this means that 
-\begin{equation}
-\phi_x = \int_{\mathbb R^3} \frac{dp}{(2\pi)^{3/2}} \left( \frac{e^{-i(\omega(p)t - p\mathbf x)}}{\sqrt{2\omega(p)}} a_p + \frac{e^{i(\omega(p)t - p \mathbf{x})}}{\sqrt{2\omega(p)}}a_p^*  \right)
-\end{equation}
-for all $x = (t, \mathbf x) \in \mathbb R^4$.
-:::
-
-I will use the identities
-\begin{equation}
-a(f) = \int_{\mathbb R^d} dx \overline{f}(x) a_x
-\end{equation}
-and 
-\begin{equation}
-a^*(g) = \int_{\mathbb R^d} dx g(x) a_x^*
-\end{equation}
-found in section 2.4 of Brennecke's notes. 
-They are motivated by the content of Chapter
-3 in @Talagrand, which is at most 30 pages of 
-reading. 
-
-
-The conjugate in the right hand side of the first
-identity comes from the fact that
-the map from $f \maps to a(f)$ is anti-linear. 
-Why would this imply the identity above? 
-Recall that a map
-which is anti-linear satisfies additivity
-and conjugate homogenity: $\text{map}(\lambda v) = \overline{}
--->
 
 
 
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
-Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">More Details</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Anderson2010" class="csl-entry" role="listitem">
+Anderson, G. W., A Guionnet, and O Zeitouni. 2010. <span>“An Introduction to Random Matrices.”</span> Cambridge Studies in Advanced Mathematics. Cambridge University Press. 2010. <a href="https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf">https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf</a>.
+</div>
+<div id="ref-Kemp2022" class="csl-entry" role="listitem">
+Kemp, T. 2022. <span>“Introduction to Random Matrix Theory.”</span> Lecture Notes. <a href="https://mathweb.ucsd.edu/~tkemp/RMT.Notes.pdf">mathweb.ucsd.edu/~tkemp/RMT.Notes.pdf</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
