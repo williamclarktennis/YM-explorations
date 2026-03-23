@@ -36,7 +36,7 @@ joint law of the eigenvalues and eigenvectors of a $GUE_n$.
 
 ### Talk 2 Overview (My Talk)
 
-@Anderson2010
+Title of talk. 
 
 Definitions. 
 
@@ -51,5 +51,7 @@ Propositions.
 </details>
 
 ### Talk 3 Overview
+
+
 
 ## More Details
