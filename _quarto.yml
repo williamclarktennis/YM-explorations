@@ -22,6 +22,7 @@ website:
           - href: glossary.qmd
           - href: glossary1.qmd
           - href: thesis-relevant-events.qmd
+          - href: log-gases-seminar.qmd
 
 format:
   html:

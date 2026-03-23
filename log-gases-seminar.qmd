@@ -1,0 +1,55 @@
+---
+title: "Log Gases Seminar - Summer 2026"
+bibliography: references.bib
+---
+
+## Summary
+
+### Talk 1 Overview
+
+- Title of Talk. Joint Distribution of eigenvalues
+of Gaussian random matrices
+
+Definitions. 
+
+- Definition (Gaussian Unitary Ensemble GUE).
+
+- Definition (Gaussian Orthogonal Ensemble GOE).
+
+Propositions.
+
+- Theorem 14.3 (@Kemp2022). This Theorem gives a complete description
+of the joint law of eigenvalues and eigenvectors of a $GOE_n$.
+(Hence the title of the talk).
+    i) The proof will be covered.
+    ii) What does the result say? It says two things. 
+    First, the distribution of the eigenvectors is Haar measure
+    on the orthogonal matrix group $O(n)$.
+    Second, the joint law of eigenvalues is the product of a Gaussian
+    density term and a Vandermonte determinant term. 
+
+Where is the statement in section 2.5.1/2.5.2 of @Anderson2010?
+
+
+- Theorem 14.4 (@Kemp2022). This theorem gives a description of the 
+joint law of the eigenvalues and eigenvectors of a $GUE_n$.
+
+### Talk 2 Overview (My Talk)
+
+@Anderson2010
+
+Definitions. 
+
+- Definition ($\beta$ ensemble). 
+
+Propositions.
+
+- Theorem 4.5.35 (@Anderson2010). 
+
+<details><summary>  </summary>
+
+</details>
+
+### Talk 3 Overview
+
+## More Details
