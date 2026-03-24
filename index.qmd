@@ -9,6 +9,138 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 24, 2026
+
+We follow @Chatterjee2016 section 12 and 13.
+
+Let $\tau$ be a Gaussian measure on $\mathbb R^n$. 
+Let $P: \mathbb R^n \to \mathbb R$
+be the associated degree two polynomial, where 
+$P(x) = x^T Q x + v^T x + c$ for $Q$ a positive definite symmetric matrix
+in $\mathbb R^{n \times n}$, $v \in \mathbb R^n$ a column vector, and
+$c \in \mathbb R$. That is,
+$$
+\frac{d\tau}{d\lambda}(x) = Ce^{-P(x)} d\lambda(x),
+$$
+where $\lambda$ is Lebesgue measure on $\mathbb R^n$,
+and $C$ is some constant.
+
+There is a standard way of writing the probability density function of a 
+Gaussian measure on $\mathbb R^n$, which is the following: 
+$$
+\frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}} \exp 
+\left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right).
+$$
+Here $\Sigma$ is an $n \times n$ positive definite (symmetric) matrix,
+$\mu \in \mathbb R^n$, and $\det \Sigma$ is the determinant of $\Sigma$.
+
+One question I have is: does 
+$$
+\mathbb R^n \ni x \mapsto (x-\mu)^T \Sigma^{-1} (x-\mu) \in \mathbb R
+$$
+define a symmetric bilinear form (via the diagonal)?
+
+- Lemma. If $\Sigma \in \mathbb R^{n \times n}$ is symmetric, then
+$\Sigma^{-1}$ is also symmetric.
+
+Proof. For a given $n \times n$ matrix $A$, 
+let $A_{ij}$ denote the $(n-1) \times (n-1)$ matrix
+obtained from $A$ by removing the $i$th row and the $j$th column.
+Let $b_{ij} = (-1)^{i+j} \det \Sigma_{ji}$, 
+for $(i,j) \in [n]^2$. Then by Proposition 4.16 in Chapter XIII of 
+@LangAlgebra, it follows that 
+$\Sigma^{-1} = \frac{1}{\det \Sigma} [b_{ij}]_{i,j \in [n]^2}.$
+We want to confirm that $b_{ij} = b_{ji}$, because this would imply
+that $\Sigma^{-1} = (\Sigma^{-1})^T.$
+To this end, note that $\Sigma = \Sigma^T$ implies that
+$\Sigma_{ij} = \Sigma_{ji}^T$. This is not so easy to see in my opinion, 
+but doing an example with a 5 by 5 symmetric matrix is convincing. 
+Otherwise one could proceed with a case analysis.
+Since $\det$ is invariant under taking the transpose, 
+it follows that 
+$\det(\Sigma_{ij}) = \det(\Sigma_{ji}^T) = \det(\Sigma_{ji})$, 
+so we conclude that $b_{ij} = b_{ji}$. q.e.d.
+
+- Lemma. Let $Q \in \mathbb R^{n \times n}$ be symmetric and invertible.
+Then $(Q^{-1})^T = (Q^T)^{-1}.$
+
+Proof. Since $Q$ is symmetric, then by the above lemma
+$Q^{-1} = (Q^{-1})^T$. But $Q = Q^T$, so by substitution under 
+the inverse sign
+on the left hand side of the equation $Q^{-1} = (Q^{-1})^T$,
+we see that 
+$(Q^{T})^{-1} = (Q^{-1})^T$. q.e.d.
+
+Note that $(A^T)^{-1} = (A^{-1})^T$ holds for all suitably sized matrices
+$A$ in a commutative ring $R$ (exercise 2(a) Chater XIII @LangAlgebra).
+
+
+- Lemma. Let $Q \in \mathbb R^{n \times n}$ be symmetric and let $x, \mu \in
+\mathbb R^n$ be column vectors. Then 
+$$
+(x - \mu)^T Q (x - \mu) = x^T Q x -2 \mu^T Q x + \mu^T Q\mu.
+$$
+
+Proof. Observe that the map 
+$$
+f(x,y): \mathbb R^n \times \mathbb R^n \ni (x,y) \mapsto x^TQy \in \mathbb R
+$$
+is a symmetric bilinear form. Hence,
+\begin{align*}
+(x - \mu)^T Q (x - \mu) &= f(x - \mu, x - \mu)\\
+&= f(x,x) - 2f(\mu, x) + f(\mu, \mu) \\
+&= x^T Q x -2 \mu^T Q x + \mu^T Q\mu,
+\end{align*}
+as desired. q.e.d. 
+
+- Lemma. Let $\tau$ be a Gaussian measure on $\mathbb R^n$
+with associated polynomial data
+$(P, Q, v, c),$ as above.  Then the density function $Ce^{-P(x)}$ 
+of $\tau$ with respect to Lebesgue measure can be written in the standard
+format by setting
+$$
+\Sigma := \frac{1}{2}Q^{-1} \text{ and } \mu := -\frac{1}{2} Q^{-1} v,
+$$
+and assuming that 
+$$
+C \exp(-c) = \frac{1}{(2\pi)^{n/2}(\det (\frac{1}{2} Q^{-1})^{1/2}} \exp \left( -\frac{1}{4} v^T Q^{-1} v \right)
+$$
+
+Proof. First note that $\Sigma^{-1} = 2Q$ is symmetric, since $Q$ is symmetric.
+Then by the previous lemma, 
+\begin{align*}
+\exp \left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) &= 
+\exp \left( - (x-\mu)^T Q (x-\mu) \right) \\
+&= \exp \left( -x^T Q x + 2 \mu^T Q x - \mu^T Q\mu \right)
+\end{align*}
+
+Next, note that
+\begin{align*}
+\mu^T &= (-\frac{1}{2} Q^{-1} v)^T \\
+&= -\frac{1}{2} v^T (Q^{-1})^T \\
+&= - \frac{1}{2} v^T (Q^T)^{-1} \\
+&= - \frac{1}{2} v^T Q^{-1} && Q \text{ is symmetric}.
+\end{align*}
+
+Then returning to the earlier equations, we have
+\begin{align*}
+\exp \left( -x^T Q x + 2 \mu^T Q x - \mu^T Q\mu \right) &= 
+\exp \left( -x^T Q x - v^T x - \frac{1}{4}v^T Q^{-1} v \right)
+\end{align*}
+
+Then multiplying the equation
+$$
+\exp \left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) =
+\exp \left( -x^T Q x - v^T x - \frac{1}{4}v^T Q^{-1} v \right)
+$$
+by $\frac{1}{(2\pi)^{n/2}(\det (\frac{1}{2} Q^{-1})^{1/2}}$ shows that
+$$
+\frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}} \exp 
+\left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) =
+Ce^{-P(x)},
+$$
+as desired. q.e.d.
+
 ### March 20, 2026
 
 #### Determinants of Matrices Indexed by Objects other than numbers
