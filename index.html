@@ -221,7 +221,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#march-20-2026" id="toc-march-20-2026" class="nav-link active" data-scroll-target="#march-20-2026">March 20, 2026</a></li>
+  <li><a href="#march-24-2026" id="toc-march-24-2026" class="nav-link active" data-scroll-target="#march-24-2026">March 24, 2026</a></li>
+  <li><a href="#march-20-2026" id="toc-march-20-2026" class="nav-link" data-scroll-target="#march-20-2026">March 20, 2026</a></li>
   <li><a href="#march-19-2026" id="toc-march-19-2026" class="nav-link" data-scroll-target="#march-19-2026">March 19, 2026</a></li>
   <li><a href="#march-18-2026" id="toc-march-18-2026" class="nav-link" data-scroll-target="#march-18-2026">March 18, 2026</a></li>
   <li><a href="#march-17-2026" id="toc-march-17-2026" class="nav-link" data-scroll-target="#march-17-2026">March 17, 2026</a></li>
@@ -255,6 +256,72 @@ window.Quarto = {
 </header>
 
 
+<section id="march-24-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-24-2026">March 24, 2026</h3>
+<p>We follow <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> section 12 and 13.</p>
+<p>Let <span class="math inline">\(\tau\)</span> be a Gaussian measure on <span class="math inline">\(\mathbb R^n\)</span>. Let <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> be the associated degree two polynomial, where <span class="math inline">\(P(x) = x^T Q x + v^T x + c\)</span> for <span class="math inline">\(Q\)</span> a positive definite symmetric matrix in <span class="math inline">\(\mathbb R^{n \times n}\)</span>, <span class="math inline">\(v \in \mathbb R^n\)</span> a column vector, and <span class="math inline">\(c \in \mathbb R\)</span>. That is, <span class="math display">\[
+\frac{d\tau}{d\lambda}(x) = Ce^{-P(x)} d\lambda(x),
+\]</span> where <span class="math inline">\(\lambda\)</span> is Lebesgue measure on <span class="math inline">\(\mathbb R^n\)</span>, and <span class="math inline">\(C\)</span> is some constant.</p>
+<p>There is a standard way of writing the probability density function of a Gaussian measure on <span class="math inline">\(\mathbb R^n\)</span>, which is the following: <span class="math display">\[
+\frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}} \exp
+\left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right).
+\]</span> Here <span class="math inline">\(\Sigma\)</span> is an <span class="math inline">\(n \times n\)</span> positive definite (symmetric) matrix, <span class="math inline">\(\mu \in \mathbb R^n\)</span>, and <span class="math inline">\(\det \Sigma\)</span> is the determinant of <span class="math inline">\(\Sigma\)</span>.</p>
+<p>One question I have is: does <span class="math display">\[
+\mathbb R^n \ni x \mapsto (x-\mu)^T \Sigma^{-1} (x-\mu) \in \mathbb R
+\]</span> define a symmetric bilinear form (via the diagonal)?</p>
+<ul>
+<li>Lemma. If <span class="math inline">\(\Sigma \in \mathbb R^{n \times n}\)</span> is symmetric, then <span class="math inline">\(\Sigma^{-1}\)</span> is also symmetric.</li>
+</ul>
+<p>Proof. For a given <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span>, let <span class="math inline">\(A_{ij}\)</span> denote the <span class="math inline">\((n-1) \times (n-1)\)</span> matrix obtained from <span class="math inline">\(A\)</span> by removing the <span class="math inline">\(i\)</span>th row and the <span class="math inline">\(j\)</span>th column. Let <span class="math inline">\(b_{ij} = (-1)^{i+j} \det \Sigma_{ji}\)</span>, for <span class="math inline">\((i,j) \in [n]^2\)</span>. Then by Proposition 4.16 in Chapter XIII of <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>, it follows that <span class="math inline">\(\Sigma^{-1} = \frac{1}{\det \Sigma} [b_{ij}]_{i,j \in [n]^2}.\)</span> We want to confirm that <span class="math inline">\(b_{ij} = b_{ji}\)</span>, because this would imply that <span class="math inline">\(\Sigma^{-1} = (\Sigma^{-1})^T.\)</span> To this end, note that <span class="math inline">\(\Sigma = \Sigma^T\)</span> implies that <span class="math inline">\(\Sigma_{ij} = \Sigma_{ji}^T\)</span>. This is not so easy to see in my opinion, but doing an example with a 5 by 5 symmetric matrix is convincing. Otherwise one could proceed with a case analysis. Since <span class="math inline">\(\det\)</span> is invariant under taking the transpose, it follows that <span class="math inline">\(\det(\Sigma_{ij}) = \det(\Sigma_{ji}^T) = \det(\Sigma_{ji})\)</span>, so we conclude that <span class="math inline">\(b_{ij} = b_{ji}\)</span>. q.e.d.</p>
+<ul>
+<li>Lemma. Let <span class="math inline">\(Q \in \mathbb R^{n \times n}\)</span> be symmetric and invertible. Then <span class="math inline">\((Q^{-1})^T = (Q^T)^{-1}.\)</span></li>
+</ul>
+<p>Proof. Since <span class="math inline">\(Q\)</span> is symmetric, then by the above lemma <span class="math inline">\(Q^{-1} = (Q^{-1})^T\)</span>. But <span class="math inline">\(Q = Q^T\)</span>, so by substitution under the inverse sign on the left hand side of the equation <span class="math inline">\(Q^{-1} = (Q^{-1})^T\)</span>, we see that <span class="math inline">\((Q^{T})^{-1} = (Q^{-1})^T\)</span>. q.e.d.</p>
+<p>Note that <span class="math inline">\((A^T)^{-1} = (A^{-1})^T\)</span> holds for all suitably sized matrices <span class="math inline">\(A\)</span> in a commutative ring <span class="math inline">\(R\)</span> (exercise 2(a) Chater XIII <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>).</p>
+<ul>
+<li>Lemma. Let <span class="math inline">\(Q \in \mathbb R^{n \times n}\)</span> be symmetric and let <span class="math inline">\(x, \mu \in
+\mathbb R^n\)</span> be column vectors. Then <span class="math display">\[
+(x - \mu)^T Q (x - \mu) = x^T Q x -2 \mu^T Q x + \mu^T Q\mu.
+\]</span></li>
+</ul>
+<p>Proof. Observe that the map <span class="math display">\[
+f(x,y): \mathbb R^n \times \mathbb R^n \ni (x,y) \mapsto x^TQy \in \mathbb R
+\]</span> is a symmetric bilinear form. Hence, <span class="math display">\[\begin{align*}
+(x - \mu)^T Q (x - \mu) &amp;= f(x - \mu, x - \mu)\\
+&amp;= f(x,x) - 2f(\mu, x) + f(\mu, \mu) \\
+&amp;= x^T Q x -2 \mu^T Q x + \mu^T Q\mu,
+\end{align*}\]</span> as desired. q.e.d.</p>
+<ul>
+<li>Lemma. Let <span class="math inline">\(\tau\)</span> be a Gaussian measure on <span class="math inline">\(\mathbb R^n\)</span> with associated polynomial data <span class="math inline">\((P, Q, v, c),\)</span> as above. Then the density function <span class="math inline">\(Ce^{-P(x)}\)</span> of <span class="math inline">\(\tau\)</span> with respect to Lebesgue measure can be written in the standard format by setting <span class="math display">\[
+\Sigma := \frac{1}{2}Q^{-1} \text{ and } \mu := -\frac{1}{2} Q^{-1} v,
+\]</span> and assuming that <span class="math display">\[
+C \exp(-c) = \frac{1}{(2\pi)^{n/2}(\det (\frac{1}{2} Q^{-1})^{1/2}} \exp \left( -\frac{1}{4} v^T Q^{-1} v \right)
+\]</span></li>
+</ul>
+<p>Proof. First note that <span class="math inline">\(\Sigma^{-1} = 2Q\)</span> is symmetric, since <span class="math inline">\(Q\)</span> is symmetric. Then by the previous lemma, <span class="math display">\[\begin{align*}
+\exp \left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) &amp;=
+\exp \left( - (x-\mu)^T Q (x-\mu) \right) \\
+&amp;= \exp \left( -x^T Q x + 2 \mu^T Q x - \mu^T Q\mu \right)
+\end{align*}\]</span></p>
+<p>Next, note that <span class="math display">\[\begin{align*}
+\mu^T &amp;= (-\frac{1}{2} Q^{-1} v)^T \\
+&amp;= -\frac{1}{2} v^T (Q^{-1})^T \\
+&amp;= - \frac{1}{2} v^T (Q^T)^{-1} \\
+&amp;= - \frac{1}{2} v^T Q^{-1} &amp;&amp; Q \text{ is symmetric}.
+\end{align*}\]</span></p>
+<p>Then returning to the earlier equations, we have <span class="math display">\[\begin{align*}
+\exp \left( -x^T Q x + 2 \mu^T Q x - \mu^T Q\mu \right) &amp;=
+\exp \left( -x^T Q x - v^T x - \frac{1}{4}v^T Q^{-1} v \right)
+\end{align*}\]</span></p>
+<p>Then multiplying the equation <span class="math display">\[
+\exp \left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) =
+\exp \left( -x^T Q x - v^T x - \frac{1}{4}v^T Q^{-1} v \right)
+\]</span> by <span class="math inline">\(\frac{1}{(2\pi)^{n/2}(\det (\frac{1}{2} Q^{-1})^{1/2}}\)</span> shows that <span class="math display">\[
+\frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}} \exp
+\left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) =
+Ce^{-P(x)},
+\]</span> as desired. q.e.d.</p>
+</section>
 <section id="march-20-2026" class="level3">
 <h3 class="anchored" data-anchor-id="march-20-2026">March 20, 2026</h3>
 <section id="determinants-of-matrices-indexed-by-objects-other-than-numbers" class="level4">
