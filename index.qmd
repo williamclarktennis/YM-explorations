@@ -88,8 +88,63 @@ I_2 = \int F[\langle P^* t, y \rangle] \exp [- \langle y, Dy \rangle] \, dy,
 $$
 where the integration is again extended over the whole $n$-dimensional
 space. Note that the Jacobian of the transformation from the $x$-coordinates
-to the $y$-coordinates is one, since the determinant of $P$ is one.
-Put $y = D^{-1/2} z$. The matrix $D^{-1/2}$ is the diagonal matrix whose
+to the $y$-coordinates is one, since the determinant of $P$ is one."
+
+##### Why?
+
+I want to show that the equality 
+$$
+\int F[\langle t, x \rangle] \exp [-\langle x, Ax \rangle] dx = 
+\int F[\langle P^* t, y \rangle] \exp [- \langle y, Dy \rangle] \, dy
+$$
+follows from my understanding of the change of variables formula.
+Let me use the formula
+$$
+\int_{\Omega_1} f(x) d\mu_1(x) = \int_{T(\Omega_1)} f \circ T^{-1} (y)\, dT_* \mu_1(y)
+$$
+where $T_*\mu_1(B) = \mu_1(T^{-1}(B))$ for $B \subset \Omega_2$, 
+and $T: \Omega_1 \to \Omega_2$. 
+
+We have 
+$$f(\cdot) = F[\langle t, \cdot \rangle] \exp[-\langle \cdot, A(\cdot) \rangle].$$
+Let $L_P: \mathbb R^n \to \mathbb R^n$ be the linear map
+$$
+L_P(u) = Pu
+$$
+and similarly for $L_{P^*}$. I only
+add this notation because when we need the determinant
+of the derivative of the map $x \mapsto Px$, it'll
+be more clear to write $\partial L_P$ rather than $\partial P$,
+where $\partial$ denotes the total derivative, since $D$ is already taken 
+in the notation. 
+We have 
+$$T( \cdot ) = L_{P^*}(\cdot).$$
+Hence, 
+$$T^{-1}(\cdot) = L_P (\cdot).$$
+Then the formula reads
+\begin{align*}
+\int F[\langle t, x \rangle] \exp [-\langle x, Ax \rangle] dx &=
+\int f(x) d\mu_1(x) \\
+&= \int f \circ T^{-1} (y)\, dT_* \mu_1(y) \\
+&= \int f(Py) \, dT_* \mu_1(y) \\
+&= \int F[\langle t, Py \rangle] \exp[-\langle Py, APy \rangle] \, dT_* \mu_1(y)\\
+&= \int F[\langle P^* t, y \rangle] \exp[-\langle y, P^* APy \rangle] \, dT_* \mu_1(y)\\
+&= \int F[\langle P^* t, y \rangle] \exp[-\langle y, Dy \rangle] \, dT_* \mu_1(y)\\
+\end{align*}
+
+To finish this off, note that
+$$
+\frac{dT_* \mu_1}{dLeb}(y) = |\det \partial|_y T^{-1}| = |\det P| = 1, 
+$$
+so that by definition of densities, we have 
+$$
+\int F[\langle P^* t, y \rangle] \exp[-\langle y, Dy \rangle] \, dT_* \mu_1(y) = 
+\int F[\langle P^* t, y \rangle] \exp[-\langle y, Dy \rangle] dy.
+$$
+
+##### Back to Friedman:
+
+"Put $y = D^{-1/2} z$. The matrix $D^{-1/2}$ is the diagonal matrix whose
 elements are the reciprocal of the positive square root of the elements 
 of $D$. Then 
 $$
