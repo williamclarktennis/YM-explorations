@@ -9,6 +9,187 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 25, 2026
+
+Today I want to learn about Gaussian integration. 
+The goals I have in mind are the following two statements. 
+Suppose $X = (X_1, \cdots, X_n)$ is a Gaussian distributed 
+random vector, with distribution denoted by
+$P_{X}$. Then $\mathbb E (X_j) = \mu_j$ and 
+$Cov (X_j,X_k) = \Sigma_{j,k}$, where $\mu \in \mathbb R^n$ and 
+$\Sigma \in \mathbb R^{n \times n}$
+satisfy
+$$
+\frac{dP_{X}}{d\lambda} (x) = \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}}
+\exp \left( -\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu) \right).
+$$
+To this end, I want to type out a crucial section, 
+"Evaluation of an Integral" from Chapter 2: "Spectral Theory of Operators"
+in the textbook @FriedmanApplied. Then I'll fill in some Whys? to 
+aid my understanding of that section.
+
+#### Evaluation of an Integral
+
+"In order to illustrate the 
+application of the theorems that have been proved about 
+quadratic forms, we shall evaluate the following $n$-dimensional
+integrals: 
+$$
+I_1 = \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty}
+\exp \left[ i \sum_{k=1}^n t_kx_k - \sum_{i=1}^n \sum_{j=1}^n a_{ij}x_ix_j \right] dx_1 \cdots dx_n,
+$$
+$$
+I_2 = \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty}
+ F \left[ \sum_{k=1}^n t_kx_k \right] \exp
+\left[ - \sum_{i=1}^n \sum_{j=1}^n a_{ij}x_ix_j \right] dx_1 \cdots dx_n.
+$$
+Here $F(u)$ is an arbitrary integrable function of the 
+variable $u$ over the interval $(-\infty, \infty)$. We assume that
+$a_{ij} = a_{ji}$ and, in order to insure that the integrals
+converge, we also assume that the quadratic form in the exponent
+is positive-definite. Let $A$ be the matrix whose elements are 
+$a_{ij}$, let $x$ be the vector whose components are $x_1, \cdots, x_n$,
+and let $t$ be the vector whose components are $t_1, \cdots, t_n$.
+Then the integrals $I_1$ and $I_2$ may be written as follows:
+$$
+I_1 = \int \exp [i \langle t, x \rangle - \langle x, Ax \rangle] dx,
+$$
+$$
+I_2 = \int F[\langle t, x \rangle] \exp [-\langle x, Ax \rangle] dx,
+$$
+where the integration is extended over the whole $n$-dimensional space.
+
+Before evaluating $I_1$ and $I_2$, we shall derive the following 
+well-known result (2.45):
+$$
+J = \int_{-\infty}^{\infty} e^{-at^2} dt = (\pi/a)^{1/2}.
+$$
+The proof of this follows from the fact that 
+$$
+J^2 = \int_{-\infty}^\infty e^{-at^2} dt \int_{-\infty}^\infty e^{-as^2} ds
+= \int \int e^{-a(s^2 + t^2)} ds \, dt,
+$$
+and by a transformation to polar coordinates, 
+$$
+J^2 = \int_0^{2\pi} \int_0^\infty e^{-ar^2} r \, dr \, d\theta = \pi/a. 
+$$
+Now let $P$ be the orthogonal transformation with determinant one
+(Problem 2.30) that diagonalizes $A$ so that 
+$$
+P^* A P = D,
+$$
+$D$ being a diagonal matrix with elements $\lambda_1, \cdots, \lambda_n$
+all greater than zero. Put $x = Py$; then
+$$
+I_1 = \int \exp [i \langle P^* t, y \rangle - \langle y, Dy \rangle]dy,
+$$
+$$
+I_2 = \int F[\langle P^* t, y \rangle] \exp [- \langle y, Dy \rangle] \, dy,
+$$
+where the integration is again extended over the whole $n$-dimensional
+space. Note that the Jacobian of the transformation from the $x$-coordinates
+to the $y$-coordinates is one, since the determinant of $P$ is one.
+Put $y = D^{-1/2} z$. The matrix $D^{-1/2}$ is the diagonal matrix whose
+elements are the reciprocal of the positive square root of the elements 
+of $D$. Then 
+$$
+I_1 = (\det D)^{-1/2} \int \exp [i \langle D^{-1/2} P^*t, z \rangle - \langle z, z \rangle] dz,
+$$
+$$
+I_2 = (\det D)^{-1/2} \int F[\langle D^{-1/2} P^* t, z \rangle] \exp[-\langle z, z \rangle ] dz.
+$$
+The integration is still over the entire $n$-dimensional space.
+
+In evaluating $I_1$, we shall try to complete the square in the 
+exponent by putting $z = w + b$ where $w$ is a variable vector
+and $b$ is a fixed vector. The exponent in $I_1$ becomes
+$$
+- \langle w, w \rangle - 2 \langle w, b \rangle - \langle b, b \rangle
++ i \langle s, w \rangle + i \langle s, b \rangle.
+$$
+Here we have written $s$ for the vector $D^{-1/2} P^* t$. If we put 
+$b = is/2$, the linear term in $w$ will vanish and the exponent reduces to
+$$
+- \langle w, w \rangle - \frac{\langle s, s \rangle}{4}.
+$$
+Using (2.45), we obtain
+\begin{align*}
+I_1 &= \det D^{-1/2} \exp [- \langle s, s \rangle / 4] 
+\int \exp [- \langle w, w \rangle ] dw \\
+&= (\pi)^{n/2} \det D^{-1/2} \cdot \exp [- \langle s, s \rangle / 4].
+\end{align*}
+Now, by (2.44) (the determinant of a matrix is equal to 
+the product of its eigenvalues), 
+$$
+\det D^{-1/2} = (\lambda_1 \cdots \lambda_n)^{-1/2} = (\det A)^{-1/2},
+$$
+and then (2.46)
+$$
+\langle s, s \rangle = \langle D^{-1/2} P^* t, D^{-1/2} P^* t \rangle
+= \langle t, PD^{-1}P^* t \rangle = \langle t, A^{-1} t \rangle
+$$
+since, from the definition of $D$, 
+$$
+D^{-1} = P^{-1} A^{-1} (P^*)^{-1}.
+$$
+We have, finally, the following result (2.47):
+$$
+I_1 = (\pi)^{n/2}(\det A)^{-1/2} \exp [- \langle t, A^{-1} t \rangle / 4].
+$$
+
+To complete the evaluation of $I_2$, we rotate the coordinate axes
+so that the first axis lies along the direction of the vector 
+$s = D^{-1/2} P^* t.$ This rotation is the result of a transformation
+by an orthogonal matrix of determinant one. Let $Q$ be this matrix 
+and $z = Qw$ the transformation; then 
+$$
+I_2 = \det D^{-1/2} \int F[\langle Q^* s, w \rangle] \exp [- \langle w, w \rangle] dw.
+$$
+Suppose that $w_1, \cdots, w_n$ are the components of $w$;
+then by definition of the transformation, $Q^* s$ has only its
+first component (call it $\alpha$) different 
+from zero; and hence 
+$$
+\langle Q^* s, w \rangle = \alpha w_1.
+$$
+Finally, by integration over $w_2, w_3, \cdots, w_n$ we find that
+(2.48)
+$$
+I_2 = (\pi)^{(n-1)/2}(\det A)^{-1/2} \int_{-\infty}^\infty F(\alpha u) e^{-u^2} du,
+$$
+where 
+$$
+\alpha^2 = \langle Q^* s, Q^* s \rangle = \langle s, s \rangle = 
+\langle t, A^{-1} t \rangle.
+$$
+We combine our results into 
+- Theorem 2.21. If $A$ is a positive definite self-adjoint matrix, then
+$$
+\int \exp [i \langle t, x \rangle - \langle x, Ax \rangle] dx =
+(\pi)^{n/2}(\det A)^{-1/2} \exp [- \langle t, A^{-1} t \rangle / 4]
+$$
+and 
+$$
+\int F[\langle t, x \rangle] \exp [-\langle x, Ax \rangle] dx =
+ (\pi)^{(n-1)/2}(\det A)^{-1/2} \int_{-\infty}^\infty F(\alpha u) e^{-u^2} du.
+$$
+Here the integrals on the left are extended over the entire
+$n$-dimensional space, and 
+$$
+\alpha^2 = \langle t, A^{-1} t \rangle.
+$$
+
+Problem 2.37. Show that 
+$$
+\int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} x_k x_m \exp
+\left[ -\sum_i \sum_j a_{ij} x_i x_j \right] dx_1 \cdots dx_n = 
+\frac{1}{2} \pi^{n/2} (\det A)^{-3/2} D_{km},
+$$
+when $D_{km}$ is the minor of $a_{km}$ in the matrix $A$.
+(Hint. Differentiate (2.47) with respect to $t_k$ 
+and $t_m$ and then put $t_1 = t_2 = \cdots = t_n = 0.$)
+"
+
 ### March 24, 2026
 
 We follow @Chatterjee2016 section 12 and 13.
