@@ -153,9 +153,37 @@ $$
 $$
 I_2 = (\det D)^{-1/2} \int F[\langle D^{-1/2} P^* t, z \rangle] \exp[-\langle z, z \rangle ] dz.
 $$
-The integration is still over the entire $n$-dimensional space.
+The integration is still over the entire $n$-dimensional space."
 
-In evaluating $I_1$, we shall try to complete the square in the 
+##### Why?
+
+I want to practice change of variables again, for $I_2$.
+
+Let $T$ denote the map $y \mapsto D^{1/2}y = z$.
+Then $T^{-1}$ is the map $z \mapsto D^{-1/2}z = y$.
+Also, let $f(\cdot) = F[\langle P^* t, \cdot \rangle] 
+\exp[-\langle \cdot, D(\cdot) \rangle].$
+Then the transformation formula and 
+the Radon Nikodym derivative reads: 
+\begin{align*}
+\int f(y) \, dLeb(y) &= \int f \circ T^{-1}(z) \, (dT_* Leb)(z)\\
+&= \int f(D^{-1/2}z) \, (dT_* Leb)(z)\\
+&= \int f(D^{-1/2}z) \, \frac{dT_* Leb}{dLeb(z)} dLeb(z) \\
+&= \int f(D^{-1/2}z) \, |\det \partial T^{-1}|_z| dz \\
+&= \int f(D^{-1/2}z) \, |\det D^{-1/2}| dz \\
+&= \int f(D^{-1/2}z) \, \left( \prod \frac{1}{\sqrt{\lambda_i}} \right) dz \\
+&= (\det D)^{-1/2} \int f(D^{-1/2}z) \, dz \\
+&= (\det D)^{-1/2} \int F[\langle P^* t, D^{-1/2}z \rangle] 
+\exp[-\langle D^{-1/2}z, DD^{-1/2}z \rangle] \, dz \\
+&= (\det D)^{-1/2} \int F[\langle D^{-1/2}P^* t, z \rangle] 
+\exp[-\langle z, D^{-1/2}DD^{-1/2}z \rangle] \, dz \\
+&= (\det D)^{-1/2} \int F[\langle D^{-1/2}P^* t, z \rangle] 
+\exp[-\langle z, z \rangle] \, dz.
+\end{align*}
+
+##### Back to Friedman, again.
+
+"In evaluating $I_1$, we shall try to complete the square in the 
 exponent by putting $z = w + b$ where $w$ is a variable vector
 and $b$ is a fixed vector. The exponent in $I_1$ becomes
 $$
@@ -207,6 +235,61 @@ from zero; and hence
 $$
 \langle Q^* s, w \rangle = \alpha w_1.
 $$
+
+##### Why? 
+
+Let $\vec{\cdot}$ denote abstract vectors in $\mathbb R^n$. 
+
+Let $\vec{w} \in \mathbb R^n$ be a vector which varies, as it is the vector 
+variable of integration. Let $\vec{s}$ be the vector whose 
+components in the standard basis 
+$E = \{\vec{e_1}, \cdots, \vec{e_n} \}$
+are $M_E(\vec{s}) = s = D^{-1/2}P^*t.$
+Here we use the notation $M_E(\vec{s})$, seen on page 
+509 of @LangAlgebra. 
+
+Let $f: \mathbb R^n \times \mathbb R^n \to \mathbb R$ be the
+standard form, that is, 
+$I_n = M_E^E(f) := (f(\vec{e_i},\vec{e_j}))_{i,j}$.
+Then if $\vec{x}, \vec{y} \in \mathbb R^n$, it follows that 
+$$
+\langle \vec{x}, \vec{y} \rangle := f(\vec{x}, \vec{y}) = M_E(\vec{x})^T M_E(\vec{y}).
+$$
+
+Let $L: \mathbb R^n \to \mathbb R^n$ be the 
+linear map/ isometry that sends $\vec{e_1} \mapsto \frac{\vec{s}}{\lVert \vec{s} \rVert}$
+and otherwise preserves orthogonality.
+This is just rotating the usual axes of our $n$-dimensional space
+so that the first axis aligns with the vector $\vec{s}$.
+Let $id: \mathbb R^n \to \mathbb R^n$ be the identity map.
+
+Furthermore, let
+$r_1 = L(e_1), \cdots, r_n = L(e_n).$ Then 
+$R = (r_1, \cdots, r_n)$ forms a basis of $\mathbb R^n$,
+and describes the new coordinate axes. 
+
+Then we have the following observations, which can be understood 
+by looking at page 509 of @LangAlgebra: 
+
+\begin{align*}
+Q &= M_E^E(L) = M_E^R(id) \\
+Q^* &= M_E^E(L^{-1}) = M_R^E(id).
+\end{align*}
+
+Note that, in words, $M_R^E(id)$ changes 
+a vector written in $E$-coordinates
+to the same vector, but written in $R$-coordinates. That is, 
+the superscript corresponds to the domain, and the subscript
+corresponds to the target.
+For example, if $\vec{x}$ is arbitrary, 
+then we have 
+$$
+M_R(\vec{x}) = M_R^E(id) M_E(\vec{x}).
+$$
+
+
+##### Back to Friedman:
+
 Finally, by integration over $w_2, w_3, \cdots, w_n$ we find that
 (2.48)
 $$
