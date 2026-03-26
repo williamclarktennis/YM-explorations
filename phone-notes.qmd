@@ -7,6 +7,18 @@ This file is edited from mobile.
 Do not overwrite without pulling first.
 -->
 
+### March 25, 2026
+
+For next Thursday I'm supposed to 
+present Lemma 10.2 and Lemma 13.1. 
+Also, I'm wondering if the characterization
+of the lattice Maxwell action as a difference
+of Dirichlet forms gives an alternative
+proof of Lemma 13.1. But for that I'd 
+need an upper bound on the 2nd term, 
+which would not be a bottom of the 
+spectrum thing. 
+
 ### February 20, 2026
 
 The matrix of the form 
