@@ -253,8 +253,16 @@ standard form, that is,
 $I_n = M_E^E(f) := (f(\vec{e_i},\vec{e_j}))_{i,j}$.
 Then if $\vec{x}, \vec{y} \in \mathbb R^n$, it follows that 
 $$
-\langle \vec{x}, \vec{y} \rangle := f(\vec{x}, \vec{y}) = M_E(\vec{x})^T M_E(\vec{y}).
+f(\vec{x}, \vec{y}) = M_E(\vec{x})^T M_E(\vec{y}).
 $$
+In fact, if $B$ is any other orthonormal basis of $\mathbb R^n$, we have
+that 
+$f(\vec{x}, \vec{y}) = M_B(\vec{x})^T M_B(\vec{y}).$
+This follows from section 6 in @LangAlgebra chapter 13. 
+On the other hand, we interpret the symbol 
+$\langle \cdot, \cdot \rangle$ to be an in-coordinates
+version of $f$. That is, $\langle Q^* s, w \rangle$
+just means $(Q^*s)^T w$. 
 
 Let $L: \mathbb R^n \to \mathbb R^n$ be the 
 linear map/ isometry that sends $\vec{e_1} \mapsto \frac{\vec{s}}{\lVert \vec{s} \rVert}$
@@ -287,6 +295,67 @@ $$
 M_R(\vec{x}) = M_R^E(id) M_E(\vec{x}).
 $$
 
+Since $\vec{r_1} = \frac{\vec{s}}{\lVert \vec{s} \rVert }$, we have that 
+$$
+M_R(\vec{s}) = \begin{bmatrix}
+\lVert s \rVert \\
+0  \\
+\vdots \\
+0
+\end{bmatrix}.
+$$
+In particular, $Q^*s$ is just $\vec{s}$ in $R$-coordinates, 
+because 
+$$
+Q^*s = M_R^E(id) M_E(\vec{s}) = M_R(\vec{s}).
+$$
+As Friedman alludes to when he says
+"suppose that $w_1, \cdots, w_n$ are the components of $w$"
+after already rotating the coordinate axes, we note that 
+$$w = M_R(\vec{w}).$$
+In summary, we have 
+shown that $Q^*s$ are $R$-coordinates of the vector $\vec{s}$ 
+and $w$ are the $R$-coordinates of the vector $\vec{w}$.
+Since the first axis, $\vec{r_1}$ is parallel to $\vec{s}$ 
+and all other axes $\vec{r_j}$ for $j \ne 1$ are perpendicular to $\vec{s}$, 
+we see that 
+\begin{align*}
+f(\vec{s}, \vec{w}) &= \sum_{i=1}^n f(\vec{s}, w_i \vec{r_i}) \\
+&= f(\vec{s},w_1 \vec{r_1}) \\
+&= f(\lVert \vec{s} \rVert \vec{r_1}, w_1 \vec{r_1}) \\
+&= \lVert \vec{s} \rVert w_1 f(\vec{r_1}, \vec{r_1})\\
+&= \lVert \vec{s} \rVert w_1 && \text{def of orthonormal basis}.
+\end{align*}
+
+But $f(\vec{s}, \vec{w}) = M_R(\vec{s})^T M_R(\vec{w}) = (Q^*  s)^T w = \langle Q^* s, w \rangle$,
+which shows that $\langle Q^* s, w \rangle = \lVert \vec{s} \rVert w_1,$
+as desired.
+
+We can also interpret
+$Q^*s$ and $w$ as $E$-coordinates of some vectors. What are these vectors?
+Observe that 
+$$
+Q^*s = M_E^E(L^{-1}) M_E(\vec{s}) = M_E(L^{-1}\vec{s}),
+$$
+and since $I_n = M_E^R(L^{-1}),$
+$$
+w = M_R(\vec{w}) = M_E^R(L^{-1}) M_R(\vec{w}) = M_E(L^{-1}\vec{w}).
+$$
+This shows that 
+$Q^*s$ are the $E$-coordinates 
+for the vector $L^{-1}\vec{s} \in \mathbb R^n$ and 
+$w$ are the $E$-coodinates for the vector $L^{-1}\vec{w}$.
+
+From here, we can also conclude that $\langle Q^*s, w \rangle = \lVert s \rVert w_1.$
+
+Indeed, since $L^{-1}$ is an isometry,
+\begin{align*}
+\lVert \vec{s} \rVert w_1 &= f(\vec{s}, \vec{w}) \\
+&= f(L^{-1}\vec{s}, L^{-1}\vec{w}) \\
+&= M_E(L^{-1}\vec{s})^T M_E(L^{-1}\vec{w})\\
+&= \langle Q^* s, w \rangle,
+\end{align*}
+as desired. 
 
 ##### Back to Friedman:
 
