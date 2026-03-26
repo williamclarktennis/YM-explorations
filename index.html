@@ -323,8 +323,31 @@ L_P(u) = Pu
 I_1 = (\det D)^{-1/2} \int \exp [i \langle D^{-1/2} P^*t, z \rangle - \langle z, z \rangle] dz,
 \]</span> <span class="math display">\[
 I_2 = (\det D)^{-1/2} \int F[\langle D^{-1/2} P^* t, z \rangle] \exp[-\langle z, z \rangle ] dz.
-\]</span> The integration is still over the entire <span class="math inline">\(n\)</span>-dimensional space.</p>
-<p>In evaluating <span class="math inline">\(I_1\)</span>, we shall try to complete the square in the exponent by putting <span class="math inline">\(z = w + b\)</span> where <span class="math inline">\(w\)</span> is a variable vector and <span class="math inline">\(b\)</span> is a fixed vector. The exponent in <span class="math inline">\(I_1\)</span> becomes <span class="math display">\[
+\]</span> The integration is still over the entire <span class="math inline">\(n\)</span>-dimensional space.”</p>
+</section>
+<section id="why-1" class="level5">
+<h5 class="anchored" data-anchor-id="why-1">Why?</h5>
+<p>I want to practice change of variables again, for <span class="math inline">\(I_2\)</span>.</p>
+<p>Let <span class="math inline">\(T\)</span> denote the map <span class="math inline">\(y \mapsto D^{1/2}y = z\)</span>. Then <span class="math inline">\(T^{-1}\)</span> is the map <span class="math inline">\(z \mapsto D^{-1/2}z = y\)</span>. Also, let <span class="math inline">\(f(\cdot) = F[\langle P^* t, \cdot \rangle]
+\exp[-\langle \cdot, D(\cdot) \rangle].\)</span> Then the transformation formula and the Radon Nikodym derivative reads: <span class="math display">\[\begin{align*}
+\int f(y) \, dLeb(y) &amp;= \int f \circ T^{-1}(z) \, (dT_* Leb)(z)\\
+&amp;= \int f(D^{-1/2}z) \, (dT_* Leb)(z)\\
+&amp;= \int f(D^{-1/2}z) \, \frac{dT_* Leb}{dLeb(z)} dLeb(z) \\
+&amp;= \int f(D^{-1/2}z) \, |\det \partial T^{-1}|_z| dz \\
+&amp;= \int f(D^{-1/2}z) \, |\det D^{-1/2}| dz \\
+&amp;= \int f(D^{-1/2}z) \, \left( \prod \frac{1}{\sqrt{\lambda_i}} \right) dz \\
+&amp;= (\det D)^{-1/2} \int f(D^{-1/2}z) \, dz \\
+&amp;= (\det D)^{-1/2} \int F[\langle P^* t, D^{-1/2}z \rangle]
+\exp[-\langle D^{-1/2}z, DD^{-1/2}z \rangle] \, dz \\
+&amp;= (\det D)^{-1/2} \int F[\langle D^{-1/2}P^* t, z \rangle]
+\exp[-\langle z, D^{-1/2}DD^{-1/2}z \rangle] \, dz \\
+&amp;= (\det D)^{-1/2} \int F[\langle D^{-1/2}P^* t, z \rangle]
+\exp[-\langle z, z \rangle] \, dz.
+\end{align*}\]</span></p>
+</section>
+<section id="back-to-friedman-again." class="level5">
+<h5 class="anchored" data-anchor-id="back-to-friedman-again.">Back to Friedman, again.</h5>
+<p>“In evaluating <span class="math inline">\(I_1\)</span>, we shall try to complete the square in the exponent by putting <span class="math inline">\(z = w + b\)</span> where <span class="math inline">\(w\)</span> is a variable vector and <span class="math inline">\(b\)</span> is a fixed vector. The exponent in <span class="math inline">\(I_1\)</span> becomes <span class="math display">\[
 - \langle w, w \rangle - 2 \langle w, b \rangle - \langle b, b \rangle
 + i \langle s, w \rangle + i \langle s, b \rangle.
 \]</span> Here we have written <span class="math inline">\(s\)</span> for the vector <span class="math inline">\(D^{-1/2} P^* t\)</span>. If we put <span class="math inline">\(b = is/2\)</span>, the linear term in <span class="math inline">\(w\)</span> will vanish and the exponent reduces to <span class="math display">\[
@@ -347,7 +370,58 @@ I_1 = (\pi)^{n/2}(\det A)^{-1/2} \exp [- \langle t, A^{-1} t \rangle / 4].
 I_2 = \det D^{-1/2} \int F[\langle Q^* s, w \rangle] \exp [- \langle w, w \rangle] dw.
 \]</span> Suppose that <span class="math inline">\(w_1, \cdots, w_n\)</span> are the components of <span class="math inline">\(w\)</span>; then by definition of the transformation, <span class="math inline">\(Q^* s\)</span> has only its first component (call it <span class="math inline">\(\alpha\)</span>) different from zero; and hence <span class="math display">\[
 \langle Q^* s, w \rangle = \alpha w_1.
-\]</span> Finally, by integration over <span class="math inline">\(w_2, w_3, \cdots, w_n\)</span> we find that (2.48) <span class="math display">\[
+\]</span></p>
+</section>
+<section id="why-2" class="level5">
+<h5 class="anchored" data-anchor-id="why-2">Why?</h5>
+<p>Let <span class="math inline">\(\vec{\cdot}\)</span> denote abstract vectors in <span class="math inline">\(\mathbb R^n\)</span>.</p>
+<p>Let <span class="math inline">\(\vec{w} \in \mathbb R^n\)</span> be a vector which varies, as it is the vector variable of integration. Let <span class="math inline">\(\vec{s}\)</span> be the vector whose components in the standard basis <span class="math inline">\(E = \{\vec{e_1}, \cdots, \vec{e_n} \}\)</span> are <span class="math inline">\(M_E(\vec{s}) = s = D^{-1/2}P^*t.\)</span> Here we use the notation <span class="math inline">\(M_E(\vec{s})\)</span>, seen on page 509 of <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.</p>
+<p>Let <span class="math inline">\(f: \mathbb R^n \times \mathbb R^n \to \mathbb R\)</span> be the standard form, that is, <span class="math inline">\(I_n = M_E^E(f) := (f(\vec{e_i},\vec{e_j}))_{i,j}\)</span>. Then if <span class="math inline">\(\vec{x}, \vec{y} \in \mathbb R^n\)</span>, it follows that <span class="math display">\[
+f(\vec{x}, \vec{y}) = M_E(\vec{x})^T M_E(\vec{y}).
+\]</span> In fact, if <span class="math inline">\(B\)</span> is any other orthonormal basis of <span class="math inline">\(\mathbb R^n\)</span>, we have that <span class="math inline">\(f(\vec{x}, \vec{y}) = M_B(\vec{x})^T M_B(\vec{y}).\)</span> This follows from section 6 in <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> chapter 13. On the other hand, we interpret the symbol <span class="math inline">\(\langle \cdot, \cdot \rangle\)</span> to be an in-coordinates version of <span class="math inline">\(f\)</span>. That is, <span class="math inline">\(\langle Q^* s, w \rangle\)</span> just means <span class="math inline">\((Q^*s)^T w\)</span>.</p>
+<p>Let <span class="math inline">\(L: \mathbb R^n \to \mathbb R^n\)</span> be the linear map/ isometry that sends <span class="math inline">\(\vec{e_1} \mapsto \frac{\vec{s}}{\lVert \vec{s} \rVert}\)</span> and otherwise preserves orthogonality. This is just rotating the usual axes of our <span class="math inline">\(n\)</span>-dimensional space so that the first axis aligns with the vector <span class="math inline">\(\vec{s}\)</span>. Let <span class="math inline">\(id: \mathbb R^n \to \mathbb R^n\)</span> be the identity map.</p>
+<p>Furthermore, let <span class="math inline">\(r_1 = L(e_1), \cdots, r_n = L(e_n).\)</span> Then <span class="math inline">\(R = (r_1, \cdots, r_n)\)</span> forms a basis of <span class="math inline">\(\mathbb R^n\)</span>, and describes the new coordinate axes.</p>
+<p>Then we have the following observations, which can be understood by looking at page 509 of <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+Q &amp;= M_E^E(L) = M_E^R(id) \\
+Q^* &amp;= M_E^E(L^{-1}) = M_R^E(id).
+\end{align*}\]</span></p>
+<p>Note that, in words, <span class="math inline">\(M_R^E(id)\)</span> changes a vector written in <span class="math inline">\(E\)</span>-coordinates to the same vector, but written in <span class="math inline">\(R\)</span>-coordinates. That is, the superscript corresponds to the domain, and the subscript corresponds to the target. For example, if <span class="math inline">\(\vec{x}\)</span> is arbitrary, then we have <span class="math display">\[
+M_R(\vec{x}) = M_R^E(id) M_E(\vec{x}).
+\]</span></p>
+<p>Since <span class="math inline">\(\vec{r_1} = \frac{\vec{s}}{\lVert \vec{s} \rVert }\)</span>, we have that <span class="math display">\[
+M_R(\vec{s}) = \begin{bmatrix}
+\lVert s \rVert \\
+0  \\
+\vdots \\
+0
+\end{bmatrix}.
+\]</span> In particular, <span class="math inline">\(Q^*s\)</span> is just <span class="math inline">\(\vec{s}\)</span> in <span class="math inline">\(R\)</span>-coordinates, because <span class="math display">\[
+Q^*s = M_R^E(id) M_E(\vec{s}) = M_R(\vec{s}).
+\]</span> As Friedman alludes to when he says “suppose that <span class="math inline">\(w_1, \cdots, w_n\)</span> are the components of <span class="math inline">\(w\)</span>” after already rotating the coordinate axes, we note that <span class="math display">\[w = M_R(\vec{w}).\]</span> In summary, we have shown that <span class="math inline">\(Q^*s\)</span> are <span class="math inline">\(R\)</span>-coordinates of the vector <span class="math inline">\(\vec{s}\)</span> and <span class="math inline">\(w\)</span> are the <span class="math inline">\(R\)</span>-coordinates of the vector <span class="math inline">\(\vec{w}\)</span>. Since the first axis, <span class="math inline">\(\vec{r_1}\)</span> is parallel to <span class="math inline">\(\vec{s}\)</span> and all other axes <span class="math inline">\(\vec{r_j}\)</span> for <span class="math inline">\(j \ne 1\)</span> are perpendicular to <span class="math inline">\(\vec{s}\)</span>, we see that <span class="math display">\[\begin{align*}
+f(\vec{s}, \vec{w}) &amp;= \sum_{i=1}^n f(\vec{s}, w_i \vec{r_i}) \\
+&amp;= f(\vec{s},w_1 \vec{r_1}) \\
+&amp;= f(\lVert \vec{s} \rVert \vec{r_1}, w_1 \vec{r_1}) \\
+&amp;= \lVert \vec{s} \rVert w_1 f(\vec{r_1}, \vec{r_1})\\
+&amp;= \lVert \vec{s} \rVert w_1 &amp;&amp; \text{def of orthonormal basis}.
+\end{align*}\]</span></p>
+<p>But <span class="math inline">\(f(\vec{s}, \vec{w}) = M_R(\vec{s})^T M_R(\vec{w}) = (Q^*  s)^T w = \langle Q^* s, w \rangle\)</span>, which shows that <span class="math inline">\(\langle Q^* s, w \rangle = \lVert \vec{s} \rVert w_1,\)</span> as desired.</p>
+<p>We can also interpret <span class="math inline">\(Q^*s\)</span> and <span class="math inline">\(w\)</span> as <span class="math inline">\(E\)</span>-coordinates of some vectors. What are these vectors? Observe that <span class="math display">\[
+Q^*s = M_E^E(L^{-1}) M_E(\vec{s}) = M_E(L^{-1}\vec{s}),
+\]</span> and since <span class="math inline">\(I_n = M_E^R(L^{-1}),\)</span> <span class="math display">\[
+w = M_R(\vec{w}) = M_E^R(L^{-1}) M_R(\vec{w}) = M_E(L^{-1}\vec{w}).
+\]</span> This shows that <span class="math inline">\(Q^*s\)</span> are the <span class="math inline">\(E\)</span>-coordinates for the vector <span class="math inline">\(L^{-1}\vec{s} \in \mathbb R^n\)</span> and <span class="math inline">\(w\)</span> are the <span class="math inline">\(E\)</span>-coodinates for the vector <span class="math inline">\(L^{-1}\vec{w}\)</span>.</p>
+<p>From here, we can also conclude that <span class="math inline">\(\langle Q^*s, w \rangle = \lVert s \rVert w_1.\)</span></p>
+<p>Indeed, since <span class="math inline">\(L^{-1}\)</span> is an isometry, <span class="math display">\[\begin{align*}
+\lVert \vec{s} \rVert w_1 &amp;= f(\vec{s}, \vec{w}) \\
+&amp;= f(L^{-1}\vec{s}, L^{-1}\vec{w}) \\
+&amp;= M_E(L^{-1}\vec{s})^T M_E(L^{-1}\vec{w})\\
+&amp;= \langle Q^* s, w \rangle,
+\end{align*}\]</span> as desired.</p>
+</section>
+<section id="back-to-friedman-1" class="level5">
+<h5 class="anchored" data-anchor-id="back-to-friedman-1">Back to Friedman:</h5>
+<p>Finally, by integration over <span class="math inline">\(w_2, w_3, \cdots, w_n\)</span> we find that (2.48) <span class="math display">\[
 I_2 = (\pi)^{(n-1)/2}(\det A)^{-1/2} \int_{-\infty}^\infty F(\alpha u) e^{-u^2} du,
 \]</span> where <span class="math display">\[
 \alpha^2 = \langle Q^* s, Q^* s \rangle = \langle s, s \rangle =
