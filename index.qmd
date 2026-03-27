@@ -182,15 +182,65 @@ I'm going to type out this lemma, then fill in some Whys?
 later. This is Section 10 of @Chatterjee2016.
 
 "For $x \in \mathbb Z^d$, let $|x|_1$ denote 
+the $l^1$ notm of $x$, that is, the sum of the 
+absolute values of the coordinates of $x$. We need the following
+lemma, which shows that if the Wilson action of a configuration 
+$U \in U_0(B_n)$ is small, then $U(x,y)$ is close to $I$
+for every $(x,y) \in E_n$ such that $|x|_1$ is not too large."
 
+Here's a question:
+Why does this lemma not hold if $U \in U(B_n) \setminus U_0(B_n)?$
+Back to Chatterjee:
 
-- Lemma 10.2. Take any $n \ge 2.$ 
+One may call this a discrete nonlinear Poincaré inequality.
+
+- "Lemma 10.2. Take any $n \ge 2.$ 
 For any $U \in U_0(B_n)$ and any $(x,y) \in E_n$,
 $$
 \lVert I - U(x,y) \rVert \le (2|x|_1 S_{B_n}(U))^{1/2}.
 $$
 
-Proof. 
+Proof. We will prove by induction on $|x|_1$ that for every
+$(x,y) \in E_n$, $\lVert I - U(x,y) \rVert$ is bounded
+above by the sum of $\lVert I - U(z,j,k) \rVert$ over $(z,j,k) \in B(x)$
+where $B(x)$ is a subset of $B_n'$ of size $\le |x|_1$.
+This is clearly true if $|x|_1 = 0$, since every edge incident 
+to the origin belongs to $E_n^0$. Now take any $(x,y) \in E_n$
+and suppose that the claim has been proved for every $(x',y') \in E_n$
+with $|x'|_1 < |x|_1$. Let $x_1, \cdots, x_d$ be the coordinates
+of $x$. Then $y = x + e_j$ for some $j$. Let $k$ be the largest index
+such that $x_k \ne 0$. If $k \le j$ then $(x,y) \in E_n^0$ which is the 
+trivial case. Therefore assume that $k > j$. Let $z:= x - e_k$. 
+Then $(z,j,k) \in B_n'$. Note that the edges $(z,z+e_k)$ and 
+$(z + e_j, z + e_j + e_k)$ belong to $E_n^0$. Therefore
+
+\begin{align*}
+U(z,j,k) &= U(z+e_j+ e_k, z + e_k) \\
+&= U(z, z+e_j) U(x,y)^{-1}.
+\end{align*}
+
+By Lemma 7.3, this gives 
+\begin{align*}
+\lVert I - U(x,y) \rVert &= \lVert I - U(z,j,k)^{-1} U(z,z+e_j) \rVert \\
+&= \lVert U(z,j,k)^{-1} (U(z,j,k) - U(z,z+e_j)) \rVert \\
+&= \lVert U(z,j,k) - U(z,z+e_j) \rVert \\
+&\le \lVert I - U(z,j,k) \rVert + \lVert I - U(z,z+e_j) \rVert.
+\end{align*}
+
+Since $|z|_1 = |x|_1 = 1$, this completes the induction step. 
+Thus, for any $(x,y) \in E_n$, there exists a set $B(x) \subset B_n'$
+of size $\le |x|_1$ such that 
+$$
+\lVert I - U(x,y) \rVert \le \sum_{(z,j,k) \in B(x)} \lVert I - U(z,j,k) \rVert.
+$$
+Applying the Cauchy-Schwarz inequality and Lemma 7.2,
+this gives 
+\begin{align*}
+\lVert I - U(x,y) \rVert & \le 
+\left( |B(x)| \sum_{(z,j,k) \in B(x)} \lVert I - U(z,j,k) \rVert^2 \right)^{1/2}\\
+&\le (2 |x|_1 S_{B_n}(U))^{1/2}.
+\end{align*}
+This completes the proof of the lemma.
 "
 
 ### March 25, 2026
