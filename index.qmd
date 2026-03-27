@@ -9,6 +9,190 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 26, 2026
+
+Let $X = (X_1, \cdots, X_n)$ be a Gaussian distributed 
+random vector. 
+In other words, there is a vector $\mu \in \mathbb R^n$
+and a positive definite symmetric martrix $\Sigma \in \mathbb R^{n \times n}$
+such that 
+$$
+\mathbb P[X \in B] = \int_B dx \, \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left( \frac{1}{2} (x - \mu)^T \Sigma^{-1} (x-\mu) \right),
+$$
+for all $B \in \mathcal{B}(\mathbb R^n)$, and
+where $dx$ denotes Lebesgue measure on $\mathbb R^n$.
+
+- Proposition. $\mathbb E (X_1) = \mu_1$, where $X_1: \Omega \to \mathbb R$
+is the composition $\pi_1 \circ X: \Omega \to \mathbb R$ of the random vector 
+$X: \Omega \to \mathbb R^n$
+and the coordinate function $\pi_1: \mathbb R^n \to \mathbb R$ given by
+$\mathbb R^n \ni x \mapsto x_1 \in \mathbb R$. Furthermore, $\mu_1$ is the first
+entry of the vector $\mu = (\mu_1, \cdots, \mu_n).$
+
+Proof. First observe:
+\begin{align*}
+\mathbb E[X_1] &= \int_{\Omega} d\mathbb P[\omega] \, X_1(\omega) \\
+&= \int_{\Omega} d\mathbb P[\omega] \, (\pi_1 \circ X)(\omega) \\
+&= \int_{X(\Omega)} dX_* \mathbb P [x] \, \pi_1(x)  \\
+&= \int_{\mathbb R^n} \frac{dX_* \mathbb P}{d\text{Leb}}(x) dx \, \pi_1(x)  \\
+&= \int_{\mathbb R^n} dx \, x_1 \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left( -\frac{1}{2} (x - \mu)^T \Sigma^{-1} (x-\mu) \right).
+\end{align*}
+
+We make the change of 
+variables $x = y + \mu$, which means that we are changing
+variables using the measurable map $T: x \mapsto x - \mu$, and the 
+pushforward measure $dy = dT_* (dx)$. This results in 
+\begin{align*}
+\mathbb E[X_1] &= \int_{\mathbb R^n} dT_*Leb(\cdot) \, \pi_1 (T^{-1}(\cdot)) \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left( -\frac{1}{2} (T^{-1}(\cdot) - \mu)^T \Sigma^{-1} (T^{-1}(\cdot)-\mu) \right)\\
+&= \int_{\mathbb R^n} dy \, (y_1 + \mu_1) \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left( -\frac{1}{2} y^T \Sigma^{-1} y \right).
+\end{align*}
+
+Next, we break up the integral into two parts, setting
+$$
+I_1 = \int_{\mathbb R^n} dy \, y_1 \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} y^T \Sigma^{-1} y \right).
+$$
+and
+$$
+I_2 = \int_{\mathbb R^n} dy \, \mu_1 \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} y^T \Sigma^{-1} y \right),
+$$
+such that 
+$$
+\mathbb E[X_1] = I_1 + I_2. 
+$$
+Note that $\frac{I_2}{\mu_1} = \mathbb P[X \in \mathbb R^n] = 1$, which implies that 
+$I_2 = \mu_1$. It remains to compute $I_1$.
+
+Let $\langle \cdot, \cdot \rangle: \mathbb R^n \times \mathbb R^n \to \mathbb R$
+denote the dot product, which is a non-singular bilinear form on $\mathbb R^n$.
+Since $(\cdot)^T \Sigma^{-1} (\cdot): \mathbb R^n \times \mathbb R^n \to \mathbb R$
+is a bilinear form, there exists a matrix $A$ such that 
+$$
+x^T\Sigma^{-1}y = \langle Ax, y \rangle
+$$
+for all $x,y \in \mathbb R^n$, 
+using the isomorphism 
+$$
+L(\mathbb R^n, \mathbb R^n; \mathbb R) \leftrightarrow End_{\mathbb R}(\mathbb R^n).
+$$
+We see that $A = \Sigma^{-1}$, since $(\Sigma^{-1})^T = \Sigma^{-1}$.
+This justifies writing
+$$
+I_1 = \int_{\mathbb R^n} dy \, \langle e_1, y \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle y, \Sigma^{-1}y \rangle \right),
+$$
+where $e_1 = (1,0, \cdots, 0)^T.$
+There exists a matrix $P \in SO(n)$ such that 
+$$
+\Sigma^{-1} = PDP^T,
+$$
+where $D = \text{diag}(\lambda_1, \cdots, \lambda_n)$
+for the positive eigenvalues of the matrix $\Sigma^{-1}$.
+The positivity of these eigenvalues follows from the 
+fact that $\Sigma$ is a positive definite matrix.
+Next, we make the change of variables $y = Pz$, which gives 
+us 
+\begin{align*}
+I_1 &= \int_{\mathbb R^n} dy \, \langle e_1, y \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle y, \Sigma^{-1}y \rangle \right) \\
+&= \int_{\mathbb R^n} dz \, \langle e_1, Pz \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle Pz, \Sigma^{-1}Pz \rangle \right) \\
+&= \int_{\mathbb R^n} dz \, \langle P^Te_1, z \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle z, P^T\Sigma^{-1}Pz \rangle \right) \\
+&= \int_{\mathbb R^n} dz \, \langle P^Te_1, z \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle z, Dz \rangle \right).
+\end{align*}
+
+Then we make the change of variables $z = D^{-1/2}u$, where
+$D^{-1/2} = \text{diag}(\lambda_1^{-1/2}, \cdots, \lambda_n^{-1/2}).$
+Then the pushforward measure with respect to this change of variables
+has a Radon Nikodym derivative given by 
+$$
+| \det D^{-1/2}| = \frac{1}{\sqrt{\lambda_1 \cdots \lambda_n}} = 
+\frac{1}{\sqrt{\det{\Sigma^{-1}}}} = \sqrt{\det \Sigma}.
+$$
+
+Then
+\begin{align*}
+I_1 &= \int_{\mathbb R^n} dz \, \langle P^Te_1, z \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle z, Dz \rangle \right) \\
+&= \int_{\mathbb R^n} du \, \langle P^Te_1, D^{-1/2}u \rangle \frac{(\det \Sigma)^{1/2}}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle D^{-1/2}u, DD^{-1/2}u \rangle \right) \\
+&= \int_{\mathbb R^n} du \, \langle D^{-1/2}P^Te_1, u \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle u, D^{-1/2}DD^{-1/2}u \rangle \right) \\
+&= \int_{\mathbb R^n} du \, \langle D^{-1/2}P^Te_1, u \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle u, u \rangle \right).
+\end{align*}
+
+Next, let $Q \in SO(n)$ such that $Q^T(D^{-1/2}P^Te_1) = \lVert D^{-1/2}P^Te_1 \rVert e_1$,
+where $\lVert x \rVert = \sqrt{x_1^2 + \cdots + x_n^2}.$
+Then making the change of variables $u = Qv$, 
+we have
+\begin{align*}
+I_1 &= \int_{\mathbb R^n} du \, \langle D^{-1/2}P^Te_1, u \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle u, u \rangle \right) \\
+&= \int_{\mathbb R^n} dv \, \langle D^{-1/2}P^Te_1, Qv \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle Qv, Qv \rangle \right) \\
+&= \int_{\mathbb R^n} dv \, \langle Q^TD^{-1/2}P^Te_1, v \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle v, Q^TQv \rangle \right) \\
+&= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{\mathbb R^n} dv \, \langle e_1, v \rangle
+\exp \left(- \frac{1}{2} \langle v, v \rangle \right) \\
+&= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{\mathbb R^n} dv \, v_1
+\exp \left(- \frac{1}{2} \langle v, v \rangle \right).
+\end{align*}
+
+Then applying Fubini's theorem, we have
+\begin{align*}
+I_1 &= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{\mathbb R^n} dv \, v_1
+\exp \left(- \frac{1}{2} \sum_{i=1}^n v_i^2 \right) \\
+&= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{-\infty}^\infty dv_1 \left( \cdots \int_{-\infty}^{\infty} dv_{n-1} 
+\left( \int_{-\infty}^\infty  dv_n \, v_1
+\exp \left(- \frac{1}{2} \sum_{i=1}^n v_i^2 \right) \right) \cdots \right)\\
+&= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{-\infty}^\infty dv_1 \left( \cdots \int_{-\infty}^{\infty} dv_{n-1} \left( v_1
+\exp \left(- \frac{1}{2} \sum_{i=1}^{n-1} v_i^2 \right)
+\int_{-\infty}^\infty  dv_n \,
+\exp \left(- \frac{1}{2} v_n^2 \right) \right) \cdots \right)\\
+&= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{-\infty}^\infty dv_1 \left( \cdots \int_{-\infty}^{\infty} dv_{n-1} \left( v_1
+\exp \left(- \frac{1}{2} \sum_{i=1}^{n-1} v_i^2 \right)
+\sqrt{2\pi} \right) \cdots \right)\\
+&= \frac{\lVert D^{-1/2}P^Te_1 \rVert \sqrt{2\pi}^{n-1}}{(2\pi)^{n/2}}
+\int_{-\infty}^\infty dv_1 \, v_1 \exp \left( - \frac{1}{2} v_1^2 \right) \\
+&= 0,
+\end{align*}
+where the last step follows. Thus, 
+$$
+\mathbb E[X_1] = I_1 + I_2 = I_2 = \mu_1,
+$$
+as desired. q.e.d.
+
+#### Lemma 10.2 Chatterjee
+
+I'm going to type out this lemma, then fill in some Whys?
+later. This is Section 10 of @Chatterjee2016.
+
+"For $x \in \mathbb Z^d$, let $|x|_1$ denote 
+
+
+- Lemma 10.2. Take any $n \ge 2.$ 
+For any $U \in U_0(B_n)$ and any $(x,y) \in E_n$,
+$$
+\lVert I - U(x,y) \rVert \le (2|x|_1 S_{B_n}(U))^{1/2}.
+$$
+
+Proof. 
+"
+
 ### March 25, 2026
 
 Today I want to learn about Gaussian integration. 
