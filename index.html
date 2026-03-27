@@ -221,7 +221,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#march-25-2026" id="toc-march-25-2026" class="nav-link active" data-scroll-target="#march-25-2026">March 25, 2026</a></li>
+  <li><a href="#march-26-2026" id="toc-march-26-2026" class="nav-link active" data-scroll-target="#march-26-2026">March 26, 2026</a></li>
+  <li><a href="#march-25-2026" id="toc-march-25-2026" class="nav-link" data-scroll-target="#march-25-2026">March 25, 2026</a></li>
   <li><a href="#march-24-2026" id="toc-march-24-2026" class="nav-link" data-scroll-target="#march-24-2026">March 24, 2026</a></li>
   <li><a href="#march-20-2026" id="toc-march-20-2026" class="nav-link" data-scroll-target="#march-20-2026">March 20, 2026</a></li>
   <li><a href="#march-19-2026" id="toc-march-19-2026" class="nav-link" data-scroll-target="#march-19-2026">March 19, 2026</a></li>
@@ -257,6 +258,139 @@ window.Quarto = {
 </header>
 
 
+<section id="march-26-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-26-2026">March 26, 2026</h3>
+<p>Let <span class="math inline">\(X = (X_1, \cdots, X_n)\)</span> be a Gaussian distributed random vector. In other words, there is a vector <span class="math inline">\(\mu \in \mathbb R^n\)</span> and a positive definite symmetric martrix <span class="math inline">\(\Sigma \in \mathbb R^{n \times n}\)</span> such that <span class="math display">\[
+\mathbb P[X \in B] = \int_B dx \, \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left( \frac{1}{2} (x - \mu)^T \Sigma^{-1} (x-\mu) \right),
+\]</span> for all <span class="math inline">\(B \in \mathcal{B}(\mathbb R^n)\)</span>, and where <span class="math inline">\(dx\)</span> denotes Lebesgue measure on <span class="math inline">\(\mathbb R^n\)</span>.</p>
+<ul>
+<li>Proposition. <span class="math inline">\(\mathbb E (X_1) = \mu_1\)</span>, where <span class="math inline">\(X_1: \Omega \to \mathbb R\)</span> is the composition <span class="math inline">\(\pi_1 \circ X: \Omega \to \mathbb R\)</span> of the random vector <span class="math inline">\(X: \Omega \to \mathbb R^n\)</span> and the coordinate function <span class="math inline">\(\pi_1: \mathbb R^n \to \mathbb R\)</span> given by <span class="math inline">\(\mathbb R^n \ni x \mapsto x_1 \in \mathbb R\)</span>. Furthermore, <span class="math inline">\(\mu_1\)</span> is the first entry of the vector <span class="math inline">\(\mu = (\mu_1, \cdots, \mu_n).\)</span></li>
+</ul>
+<p>Proof. First observe: <span class="math display">\[\begin{align*}
+\mathbb E[X_1] &amp;= \int_{\Omega} d\mathbb P[\omega] \, X_1(\omega) \\
+&amp;= \int_{\Omega} d\mathbb P[\omega] \, (\pi_1 \circ X)(\omega) \\
+&amp;= \int_{X(\Omega)} dX_* \mathbb P [x] \, \pi_1(x)  \\
+&amp;= \int_{\mathbb R^n} \frac{dX_* \mathbb P}{d\text{Leb}}(x) dx \, \pi_1(x)  \\
+&amp;= \int_{\mathbb R^n} dx \, x_1 \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left( -\frac{1}{2} (x - \mu)^T \Sigma^{-1} (x-\mu) \right).
+\end{align*}\]</span></p>
+<p>We make the change of variables <span class="math inline">\(x = y + \mu\)</span>, which means that we are changing variables using the measurable map <span class="math inline">\(T: x \mapsto x - \mu\)</span>, and the pushforward measure <span class="math inline">\(dy = dT_* (dx)\)</span>. This results in <span class="math display">\[\begin{align*}
+\mathbb E[X_1] &amp;= \int_{\mathbb R^n} dT_*Leb(\cdot) \, \pi_1 (T^{-1}(\cdot)) \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left( -\frac{1}{2} (T^{-1}(\cdot) - \mu)^T \Sigma^{-1} (T^{-1}(\cdot)-\mu) \right)\\
+&amp;= \int_{\mathbb R^n} dy \, (y_1 + \mu_1) \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left( -\frac{1}{2} y^T \Sigma^{-1} y \right).
+\end{align*}\]</span></p>
+<p>Next, we break up the integral into two parts, setting <span class="math display">\[
+I_1 = \int_{\mathbb R^n} dy \, y_1 \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} y^T \Sigma^{-1} y \right).
+\]</span> and <span class="math display">\[
+I_2 = \int_{\mathbb R^n} dy \, \mu_1 \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} y^T \Sigma^{-1} y \right),
+\]</span> such that <span class="math display">\[
+\mathbb E[X_1] = I_1 + I_2.
+\]</span> Note that <span class="math inline">\(\frac{I_2}{\mu_1} = \mathbb P[X \in \mathbb R^n] = 1\)</span>, which implies that <span class="math inline">\(I_2 = \mu_1\)</span>. It remains to compute <span class="math inline">\(I_1\)</span>.</p>
+<p>Let <span class="math inline">\(\langle \cdot, \cdot \rangle: \mathbb R^n \times \mathbb R^n \to \mathbb R\)</span> denote the dot product, which is a non-singular bilinear form on <span class="math inline">\(\mathbb R^n\)</span>. Since <span class="math inline">\((\cdot)^T \Sigma^{-1} (\cdot): \mathbb R^n \times \mathbb R^n \to \mathbb R\)</span> is a bilinear form, there exists a matrix <span class="math inline">\(A\)</span> such that <span class="math display">\[
+x^T\Sigma^{-1}y = \langle Ax, y \rangle
+\]</span> for all <span class="math inline">\(x,y \in \mathbb R^n\)</span>, using the isomorphism <span class="math display">\[
+L(\mathbb R^n, \mathbb R^n; \mathbb R) \leftrightarrow End_{\mathbb R}(\mathbb R^n).
+\]</span> We see that <span class="math inline">\(A = \Sigma^{-1}\)</span>, since <span class="math inline">\((\Sigma^{-1})^T = \Sigma^{-1}\)</span>. This justifies writing <span class="math display">\[
+I_1 = \int_{\mathbb R^n} dy \, \langle e_1, y \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle y, \Sigma^{-1}y \rangle \right),
+\]</span> where <span class="math inline">\(e_1 = (1,0, \cdots, 0)^T.\)</span> There exists a matrix <span class="math inline">\(P \in SO(n)\)</span> such that <span class="math display">\[
+\Sigma^{-1} = PDP^T,
+\]</span> where <span class="math inline">\(D = \text{diag}(\lambda_1, \cdots, \lambda_n)\)</span> for the positive eigenvalues of the matrix <span class="math inline">\(\Sigma^{-1}\)</span>. The positivity of these eigenvalues follows from the fact that <span class="math inline">\(\Sigma\)</span> is a positive definite matrix. Next, we make the change of variables <span class="math inline">\(y = Pz\)</span>, which gives us <span class="math display">\[\begin{align*}
+I_1 &amp;= \int_{\mathbb R^n} dy \, \langle e_1, y \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle y, \Sigma^{-1}y \rangle \right) \\
+&amp;= \int_{\mathbb R^n} dz \, \langle e_1, Pz \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle Pz, \Sigma^{-1}Pz \rangle \right) \\
+&amp;= \int_{\mathbb R^n} dz \, \langle P^Te_1, z \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle z, P^T\Sigma^{-1}Pz \rangle \right) \\
+&amp;= \int_{\mathbb R^n} dz \, \langle P^Te_1, z \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle z, Dz \rangle \right).
+\end{align*}\]</span></p>
+<p>Then we make the change of variables <span class="math inline">\(z = D^{-1/2}u\)</span>, where <span class="math inline">\(D^{-1/2} = \text{diag}(\lambda_1^{-1/2}, \cdots, \lambda_n^{-1/2}).\)</span> Then the pushforward measure with respect to this change of variables has a Radon Nikodym derivative given by <span class="math display">\[
+| \det D^{-1/2}| = \frac{1}{\sqrt{\lambda_1 \cdots \lambda_n}} =
+\frac{1}{\sqrt{\det{\Sigma^{-1}}}} = \sqrt{\det \Sigma}.
+\]</span></p>
+<p>Then <span class="math display">\[\begin{align*}
+I_1 &amp;= \int_{\mathbb R^n} dz \, \langle P^Te_1, z \rangle \frac{1}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle z, Dz \rangle \right) \\
+&amp;= \int_{\mathbb R^n} du \, \langle P^Te_1, D^{-1/2}u \rangle \frac{(\det \Sigma)^{1/2}}{(2\pi)^{n/2}(\det \Sigma)^{1/2}}
+\exp \left(- \frac{1}{2} \langle D^{-1/2}u, DD^{-1/2}u \rangle \right) \\
+&amp;= \int_{\mathbb R^n} du \, \langle D^{-1/2}P^Te_1, u \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle u, D^{-1/2}DD^{-1/2}u \rangle \right) \\
+&amp;= \int_{\mathbb R^n} du \, \langle D^{-1/2}P^Te_1, u \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle u, u \rangle \right).
+\end{align*}\]</span></p>
+<p>Next, let <span class="math inline">\(Q \in SO(n)\)</span> such that <span class="math inline">\(Q^T(D^{-1/2}P^Te_1) = \lVert D^{-1/2}P^Te_1 \rVert e_1\)</span>, where <span class="math inline">\(\lVert x \rVert = \sqrt{x_1^2 + \cdots + x_n^2}.\)</span> Then making the change of variables <span class="math inline">\(u = Qv\)</span>, we have <span class="math display">\[\begin{align*}
+I_1 &amp;= \int_{\mathbb R^n} du \, \langle D^{-1/2}P^Te_1, u \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle u, u \rangle \right) \\
+&amp;= \int_{\mathbb R^n} dv \, \langle D^{-1/2}P^Te_1, Qv \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle Qv, Qv \rangle \right) \\
+&amp;= \int_{\mathbb R^n} dv \, \langle Q^TD^{-1/2}P^Te_1, v \rangle \frac{1}{(2\pi)^{n/2}}
+\exp \left(- \frac{1}{2} \langle v, Q^TQv \rangle \right) \\
+&amp;= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{\mathbb R^n} dv \, \langle e_1, v \rangle
+\exp \left(- \frac{1}{2} \langle v, v \rangle \right) \\
+&amp;= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{\mathbb R^n} dv \, v_1
+\exp \left(- \frac{1}{2} \langle v, v \rangle \right).
+\end{align*}\]</span></p>
+<p>Then applying Fubini’s theorem, we have <span class="math display">\[\begin{align*}
+I_1 &amp;= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{\mathbb R^n} dv \, v_1
+\exp \left(- \frac{1}{2} \sum_{i=1}^n v_i^2 \right) \\
+&amp;= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{-\infty}^\infty dv_1 \left( \cdots \int_{-\infty}^{\infty} dv_{n-1}
+\left( \int_{-\infty}^\infty  dv_n \, v_1
+\exp \left(- \frac{1}{2} \sum_{i=1}^n v_i^2 \right) \right) \cdots \right)\\
+&amp;= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{-\infty}^\infty dv_1 \left( \cdots \int_{-\infty}^{\infty} dv_{n-1} \left( v_1
+\exp \left(- \frac{1}{2} \sum_{i=1}^{n-1} v_i^2 \right)
+\int_{-\infty}^\infty  dv_n \,
+\exp \left(- \frac{1}{2} v_n^2 \right) \right) \cdots \right)\\
+&amp;= \frac{\lVert D^{-1/2}P^Te_1 \rVert}{(2\pi)^{n/2}}
+\int_{-\infty}^\infty dv_1 \left( \cdots \int_{-\infty}^{\infty} dv_{n-1} \left( v_1
+\exp \left(- \frac{1}{2} \sum_{i=1}^{n-1} v_i^2 \right)
+\sqrt{2\pi} \right) \cdots \right)\\
+&amp;= \frac{\lVert D^{-1/2}P^Te_1 \rVert \sqrt{2\pi}^{n-1}}{(2\pi)^{n/2}}
+\int_{-\infty}^\infty dv_1 \, v_1 \exp \left( - \frac{1}{2} v_1^2 \right) \\
+&amp;= 0,
+\end{align*}\]</span> where the last step follows. Thus, <span class="math display">\[
+\mathbb E[X_1] = I_1 + I_2 = I_2 = \mu_1,
+\]</span> as desired. q.e.d.</p>
+<section id="lemma-10.2-chatterjee" class="level4">
+<h4 class="anchored" data-anchor-id="lemma-10.2-chatterjee">Lemma 10.2 Chatterjee</h4>
+<p>I’m going to type out this lemma, then fill in some Whys? later. This is Section 10 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>“For <span class="math inline">\(x \in \mathbb Z^d\)</span>, let <span class="math inline">\(|x|_1\)</span> denote the <span class="math inline">\(l^1\)</span> notm of <span class="math inline">\(x\)</span>, that is, the sum of the absolute values of the coordinates of <span class="math inline">\(x\)</span>. We need the following lemma, which shows that if the Wilson action of a configuration <span class="math inline">\(U \in U_0(B_n)\)</span> is small, then <span class="math inline">\(U(x,y)\)</span> is close to <span class="math inline">\(I\)</span> for every <span class="math inline">\((x,y) \in E_n\)</span> such that <span class="math inline">\(|x|_1\)</span> is not too large.”</p>
+<p>Here’s a question: Why does this lemma not hold if <span class="math inline">\(U \in U(B_n) \setminus U_0(B_n)?\)</span> Back to Chatterjee:</p>
+<p>One may call this a discrete nonlinear Poincaré inequality.</p>
+<ul>
+<li>“Lemma 10.2. Take any <span class="math inline">\(n \ge 2.\)</span> For any <span class="math inline">\(U \in U_0(B_n)\)</span> and any <span class="math inline">\((x,y) \in E_n\)</span>, <span class="math display">\[
+\lVert I - U(x,y) \rVert \le (2|x|_1 S_{B_n}(U))^{1/2}.
+\]</span></li>
+</ul>
+<p>Proof. We will prove by induction on <span class="math inline">\(|x|_1\)</span> that for every <span class="math inline">\((x,y) \in E_n\)</span>, <span class="math inline">\(\lVert I - U(x,y) \rVert\)</span> is bounded above by the sum of <span class="math inline">\(\lVert I - U(z,j,k) \rVert\)</span> over <span class="math inline">\((z,j,k) \in B(x)\)</span> where <span class="math inline">\(B(x)\)</span> is a subset of <span class="math inline">\(B_n'\)</span> of size <span class="math inline">\(\le |x|_1\)</span>. This is clearly true if <span class="math inline">\(|x|_1 = 0\)</span>, since every edge incident to the origin belongs to <span class="math inline">\(E_n^0\)</span>. Now take any <span class="math inline">\((x,y) \in E_n\)</span> and suppose that the claim has been proved for every <span class="math inline">\((x',y') \in E_n\)</span> with <span class="math inline">\(|x'|_1 &lt; |x|_1\)</span>. Let <span class="math inline">\(x_1, \cdots, x_d\)</span> be the coordinates of <span class="math inline">\(x\)</span>. Then <span class="math inline">\(y = x + e_j\)</span> for some <span class="math inline">\(j\)</span>. Let <span class="math inline">\(k\)</span> be the largest index such that <span class="math inline">\(x_k \ne 0\)</span>. If <span class="math inline">\(k \le j\)</span> then <span class="math inline">\((x,y) \in E_n^0\)</span> which is the trivial case. Therefore assume that <span class="math inline">\(k &gt; j\)</span>. Let <span class="math inline">\(z:= x - e_k\)</span>. Then <span class="math inline">\((z,j,k) \in B_n'\)</span>. Note that the edges <span class="math inline">\((z,z+e_k)\)</span> and <span class="math inline">\((z + e_j, z + e_j + e_k)\)</span> belong to <span class="math inline">\(E_n^0\)</span>. Therefore</p>
+<p><span class="math display">\[\begin{align*}
+U(z,j,k) &amp;= U(z+e_j+ e_k, z + e_k) \\
+&amp;= U(z, z+e_j) U(x,y)^{-1}.
+\end{align*}\]</span></p>
+<p>By Lemma 7.3, this gives <span class="math display">\[\begin{align*}
+\lVert I - U(x,y) \rVert &amp;= \lVert I - U(z,j,k)^{-1} U(z,z+e_j) \rVert \\
+&amp;= \lVert U(z,j,k)^{-1} (U(z,j,k) - U(z,z+e_j)) \rVert \\
+&amp;= \lVert U(z,j,k) - U(z,z+e_j) \rVert \\
+&amp;\le \lVert I - U(z,j,k) \rVert + \lVert I - U(z,z+e_j) \rVert.
+\end{align*}\]</span></p>
+<p>Since <span class="math inline">\(|z|_1 = |x|_1 = 1\)</span>, this completes the induction step. Thus, for any <span class="math inline">\((x,y) \in E_n\)</span>, there exists a set <span class="math inline">\(B(x) \subset B_n'\)</span> of size <span class="math inline">\(\le |x|_1\)</span> such that <span class="math display">\[
+\lVert I - U(x,y) \rVert \le \sum_{(z,j,k) \in B(x)} \lVert I - U(z,j,k) \rVert.
+\]</span> Applying the Cauchy-Schwarz inequality and Lemma 7.2, this gives <span class="math display">\[\begin{align*}
+\lVert I - U(x,y) \rVert &amp; \le
+\left( |B(x)| \sum_{(z,j,k) \in B(x)} \lVert I - U(z,j,k) \rVert^2 \right)^{1/2}\\
+&amp;\le (2 |x|_1 S_{B_n}(U))^{1/2}.
+\end{align*}\]</span> This completes the proof of the lemma. ”</p>
+</section>
+</section>
 <section id="march-25-2026" class="level3">
 <h3 class="anchored" data-anchor-id="march-25-2026">March 25, 2026</h3>
 <p>Today I want to learn about Gaussian integration. The goals I have in mind are the following two statements. Suppose <span class="math inline">\(X = (X_1, \cdots, X_n)\)</span> is a Gaussian distributed random vector, with distribution denoted by <span class="math inline">\(P_{X}\)</span>. Then <span class="math inline">\(\mathbb E (X_j) = \mu_j\)</span> and <span class="math inline">\(Cov (X_j,X_k) = \Sigma_{j,k}\)</span>, where <span class="math inline">\(\mu \in \mathbb R^n\)</span> and <span class="math inline">\(\Sigma \in \mathbb R^{n \times n}\)</span> satisfy <span class="math display">\[
