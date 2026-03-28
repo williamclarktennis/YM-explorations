@@ -149,6 +149,48 @@ y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} = \Sigma_{j,k}.
 $$
 This completes the proof.
 
+#### More on Section 12 Chatterjee
+
+We follow @Chatterjee2016 section 12. 
+
+- Lemma. Suppose $X = (X_1, \cdots, X_n)$ is a Gaussian random vector
+with mean $\mu$ and covariance $\Sigma$.
+Let $A \subset \{1,\cdots, n\}$. Then the $\mathbb R^A$-valued random 
+vector $X_A := (X_j)_{j \in A}$ also has a Gaussian distribution, 
+with mean $\mu_A := (\mu_j)_{j \in A}$ and covariance matrix
+$\Sigma_A := (\Sigma_{j,k})_{j,k \in A}.$
+
+Proof. 
+
+- Lemma. Suppose $X = (X_1, \cdots, X_n)$ is a Gaussian random vector
+with mean $\mu$ and covariance $\Sigma$. Let $A \subset \{1,\cdots, n\}$.
+Then for any $x_A \in \mathbb R^A$, 
+$$
+\frac{1}{(2\pi)^{|A|/2} b^{|A|/2}} \exp 
+\left( - \frac{1}{2a} \lVert x_A - \mu_A \rVert^2 \right)
+\le \frac{1}{(2\pi)^{|A|/2} \det(\Sigma_A)^{1/2}} \exp 
+\left( - \frac{1}{2} (x_A - \mu_A)^T \Sigma_A^{-1} (x - \mu_A) \right),
+$$
+where $a$ and $b$ denote the minimum and maximum eigenvalues of $\Sigma$.
+
+Proof. 
+
+- Lemma. Suppose $X = (X_1, \cdots, X_n)$ is a Gaussian random vector
+with mean $\mu$ and covariance $\Sigma$. Let $b$ be the maximum eigenvalue
+of $\Sigma$. Then for any $j \in [n]$, 
+$\text{Var}(X_j) \le b.$
+
+Proof.
+
+- Lemma. Suppose $X = (X_1, \cdots, X_n)$ is a Gaussian random vector
+with mean $\mu$ and covariance $\Sigma$. Let $b$ be the largest eigenvalue
+of $\Sigma$. Then for any $x \ge 0$ and $\theta \ge 0$, it follows that 
+$$
+\sum_{j=1}^n \mathbb P(X_j - \mu_j \ge x)
+\le e^{-\theta x} \sum_{j=1}^{n} \mathbb E(e^{\theta (X_j - \mu_j)}).
+$$
+
+
 ### March 26, 2026
 
 Let $X = (X_1, \cdots, X_n)$ be a Gaussian distributed 
