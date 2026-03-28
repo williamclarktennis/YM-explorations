@@ -9,6 +9,146 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### March 27, 2026
+
+- Proposition. Let $X = (X_1, \cdots, X_n)$ be a Gaussian distributed
+random vector with mean $\mu$ and covariance $\Sigma$, 
+which is a positive definite matrix. Then, for $j,k \in [n]$, we have
+$$
+\Sigma_{j,k} = \text{Cov}(X_j,X_k) = \mathbb E[X_jX_k] -
+\mathbb E[X_j] \mathbb E[X_k].
+$$
+
+Proof. By a change of variables $x = y + \mu$, we have 
+\begin{align*}
+E[X_jX_k] &= \int_{\mathbb R^n}dx \, x_j x_k \exp 
+\left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1}
+(x- \mu) \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}}\\
+&= \int_{\mathbb R^n}dy \, (y_j+\mu_j)(y_k+\mu_k) \exp 
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} \\
+&= \int_{\mathbb R^n}dy \, (y_jy_k+\mu_jy_k+\mu_ky_j + \mu_k\mu_j) \exp 
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} \\
+\end{align*}
+We view the last expression as a sum of four integrals.
+We observe that the integral with integrand 
+$\mu_j y_k$ corresponds to $\mu_j E[Y_k]$ 
+for a Gaussian vector $Y = (Y_1, \cdots, Y_n)$ with 
+mean vector $0$, and by yesterday's post, we have
+$E[Y_k] = 0$, such that $\mu_j E[Y_k] = 0$. 
+Similarly, the integral with integrand $\mu_k y_j$
+evaluates to $0$. Meanwhile, the integral with integrand 
+$\mu_j \mu_k$ is just a constant function integrated 
+against a Gaussian probability measure, so evaluates to 
+$\mu_j \mu_k$. Thus we find that 
+$$
+E[X_jX_k] = \mu_j\mu_k + \int_{\mathbb R^n}dy \, y_jy_k \exp 
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}}.
+$$
+From yesterday's lemma, we have $E[X_j] = \mu_j$ and $E[X_k] = \mu_k$, 
+so we have
+\begin{align*}
+\text{Cov}(X_j,X_k) &= E[X_jX_k] - E[X_j]E[X_k] \\
+&= \int_{\mathbb R^n}dy \, y_jy_k \exp 
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}}.
+\end{align*}
+It remains to show that 
+$$
+\int_{\mathbb R^n}dy \, y_jy_k \exp 
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} = \Sigma_{j,k}.
+$$
+To do so, we will use the strategy given in Problem 2.37 of @FriedmanApplied,
+which I typed about on March 25, 2026.
+Let me first describe the approach, and for short let 
+$J_1$ denote the integral of $y \mapsto y_jy_k$ against 
+the Gaussian measure with 0 mean and covariance $\Sigma$ over 
+all of $\mathbb R^n$ (the left hand side in the equation above).
+We will see that there is a function $\mathbb R^n \ni t \mapsto f(t) \in \mathbb R$
+such that 
+$\frac{\partial}{\partial t_k} \frac{\partial}{\partial t_j}|_{t=0} f(t) = -J_1$. 
+On the other hand, $f(t)$ will admit a formula that, upon 
+partial differentiation in direction $j$ and $k$, results in $\Sigma_{j,k}$.
+Here are the details.
+
+By (2.47) of @FriedmanApplied on page 106 (see March 25th post),
+letting $A := \frac{1}{2} \Sigma^{-1}$, which is positive definite
+and symmetric, 
+we have the equality
+$$
+\int_{\mathbb R^n} dy \, \exp \left( i \sum_{l=1}^n t_ly_l - 
+\langle y, A y \rangle \right)
+= (\pi)^{n/2} (\det A)^{-1/2}
+\exp \left( - \langle t, A^{-1} t 
+\rangle \cdot \frac{1}{4} \right),
+$${#eq-247}
+for all $t = (t_1, \cdots, t_n)^T \in \mathbb R^n$.
+Partial differentiation $\frac{\partial}{\partial t_j}$ of
+the left hand side yields
+$$
+\int_{\mathbb R^n} dy \, iy_j \exp \left( i \sum_{l=1}^n t_ly_l - 
+\langle y, A y \rangle \right).
+$$
+Partial differentiation $\frac{\partial}{\partial t_k}$
+of this new left hand side yields
+$$
+\int_{\mathbb R^n} dy \, -y_j y_k \exp \left( i \sum_{l=1}^n t_ly_l - 
+\langle y, A y \rangle \right).
+$$
+Setting $t = 0$, we obtain on the left hand side
+$$
+-\int_{\mathbb R^n} dy \, y_j y_k \exp \left( - 
+\langle y, A y \rangle \right).
+$$
+Now let's work on the right hand side of @eq-247.
+Note that $\langle t, A^{-1} t \rangle = \sum_{l,m=1}^n (A^{-1})_{l,m} t_l t_m$.
+Then with regards to partial differentiation $\frac{\partial}{\partial t_j}$,
+we obtain
+$$
+(\pi)^{n/2} (\det A)^{-1/2} \exp \left( - \langle t, A^{-1} t 
+\rangle \cdot \frac{1}{4} \right) \times 
+\left[ -2t_j \cdot \frac{1}{4} \cdot (A^{-1})_{j,j} -2 \cdot \sum_{l \ne j}^n t_l (A^{-1})_{j,l} \cdot \frac{1}{4} \right].
+$$
+Then partial differentiation $\frac{\partial}{\partial_k}$ yields
+\begin{align*}
+(\pi)^{n/2} (\det A)^{-1/2} \exp \left( - \langle t, A^{-1} t 
+\rangle \cdot \frac{1}{4} \right) \times \\
+\left[ -2t_k \cdot \frac{1}{4} \cdot (A^{-1})_{j,j} -2 \cdot 
+\sum_{l \ne k}^n t_l (A^{-1})_{k,l} \cdot \frac{1}{4} \right] \times \\
+\left[ -2t_j \cdot \frac{1}{4} \cdot (A^{-1})_{j,j} -2 \cdot 
+\sum_{l \ne j}^n t_l (A^{-1})_{j,l} \cdot \frac{1}{4} \right] + \\
+(\pi)^{n/2} (\det A)^{-1/2} \exp \left( - \langle t, A^{-1} t 
+\rangle \cdot \frac{1}{4} \right) \times \left(-2 (A^{-1})_{j,k} \cdot \frac{1}{4} \right).
+\end{align*}
+Then setting $t = 0$ yields
+$$
+(\pi)^{n/2} (\det A)^{-1/2} \left(-2 (A^{-1})_{j,k} \cdot \frac{1}{4} \right).
+$$
+Since $A = \frac{1}{2} \Sigma^{-1}$, it follows that 
+$A^{-1} = 2 \Sigma$. Furthermore, we also infer that 
+$(\det A)^{-1/2} = (\det \Sigma)^{1/2} \cdot 2^{n/2}$, by multilinearity
+of the determinant. This yields, on the right hand side, 
+$$
+(2 \pi)^{n/2} (\det \Sigma)^{1/2} \left(-2 (2 \Sigma)_{j,k} \cdot \frac{1}{4} \right) = 
+-(2 \pi)^{n/2} (\det \Sigma)^{1/2} (\Sigma)_{j,k}.
+$$
+Equating the two sides, we have 
+$$
+-\int_{\mathbb R^n} dy \, y_j y_k \exp \left( - 
+\langle y, \frac{1}{2} \Sigma^{-1} y \rangle \right) =
+-(2 \pi)^{n/2} (\det \Sigma)^{1/2} (\Sigma)_{j,k},
+$$
+from which we conclude 
+$$
+\int_{\mathbb R^n}dy \, y_jy_k \exp 
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} = \Sigma_{j,k}.
+$$
+This completes the proof.
+
 ### March 26, 2026
 
 Let $X = (X_1, \cdots, X_n)$ be a Gaussian distributed 
