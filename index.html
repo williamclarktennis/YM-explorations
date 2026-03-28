@@ -221,7 +221,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#march-26-2026" id="toc-march-26-2026" class="nav-link active" data-scroll-target="#march-26-2026">March 26, 2026</a></li>
+  <li><a href="#march-27-2026" id="toc-march-27-2026" class="nav-link active" data-scroll-target="#march-27-2026">March 27, 2026</a></li>
+  <li><a href="#march-26-2026" id="toc-march-26-2026" class="nav-link" data-scroll-target="#march-26-2026">March 26, 2026</a></li>
   <li><a href="#march-25-2026" id="toc-march-25-2026" class="nav-link" data-scroll-target="#march-25-2026">March 25, 2026</a></li>
   <li><a href="#march-24-2026" id="toc-march-24-2026" class="nav-link" data-scroll-target="#march-24-2026">March 24, 2026</a></li>
   <li><a href="#march-20-2026" id="toc-march-20-2026" class="nav-link" data-scroll-target="#march-20-2026">March 20, 2026</a></li>
@@ -258,6 +259,81 @@ window.Quarto = {
 </header>
 
 
+<section id="march-27-2026" class="level3">
+<h3 class="anchored" data-anchor-id="march-27-2026">March 27, 2026</h3>
+<ul>
+<li>Proposition. Let <span class="math inline">\(X = (X_1, \cdots, X_n)\)</span> be a Gaussian distributed random vector with mean <span class="math inline">\(\mu\)</span> and covariance <span class="math inline">\(\Sigma\)</span>, which is a positive definite matrix. Then, for <span class="math inline">\(j,k \in [n]\)</span>, we have <span class="math display">\[
+\Sigma_{j,k} = \text{Cov}(X_j,X_k) = \mathbb E[X_jX_k] -
+\mathbb E[X_j] \mathbb E[X_k].
+\]</span></li>
+</ul>
+<p>Proof. By a change of variables <span class="math inline">\(x = y + \mu\)</span>, we have <span class="math display">\[\begin{align*}
+E[X_jX_k] &amp;= \int_{\mathbb R^n}dx \, x_j x_k \exp
+\left( -\frac{1}{2} (x-\mu)^T \Sigma^{-1}
+(x- \mu) \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}}\\
+&amp;= \int_{\mathbb R^n}dy \, (y_j+\mu_j)(y_k+\mu_k) \exp
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} \\
+&amp;= \int_{\mathbb R^n}dy \, (y_jy_k+\mu_jy_k+\mu_ky_j + \mu_k\mu_j) \exp
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} \\
+\end{align*}\]</span> We view the last expression as a sum of four integrals. We observe that the integral with integrand <span class="math inline">\(\mu_j y_k\)</span> corresponds to <span class="math inline">\(\mu_j E[Y_k]\)</span> for a Gaussian vector <span class="math inline">\(Y = (Y_1, \cdots, Y_n)\)</span> with mean vector <span class="math inline">\(0\)</span>, and by yesterday’s post, we have <span class="math inline">\(E[Y_k] = 0\)</span>, such that <span class="math inline">\(\mu_j E[Y_k] = 0\)</span>. Similarly, the integral with integrand <span class="math inline">\(\mu_k y_j\)</span> evaluates to <span class="math inline">\(0\)</span>. Meanwhile, the integral with integrand <span class="math inline">\(\mu_j \mu_k\)</span> is just a constant function integrated against a Gaussian probability measure, so evaluates to <span class="math inline">\(\mu_j \mu_k\)</span>. Thus we find that <span class="math display">\[
+E[X_jX_k] = \mu_j\mu_k + \int_{\mathbb R^n}dy \, y_jy_k \exp
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}}.
+\]</span> From yesterday’s lemma, we have <span class="math inline">\(E[X_j] = \mu_j\)</span> and <span class="math inline">\(E[X_k] = \mu_k\)</span>, so we have <span class="math display">\[\begin{align*}
+\text{Cov}(X_j,X_k) &amp;= E[X_jX_k] - E[X_j]E[X_k] \\
+&amp;= \int_{\mathbb R^n}dy \, y_jy_k \exp
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}}.
+\end{align*}\]</span> It remains to show that <span class="math display">\[
+\int_{\mathbb R^n}dy \, y_jy_k \exp
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} = \Sigma_{j,k}.
+\]</span> To do so, we will use the strategy given in Problem 2.37 of <span class="citation" data-cites="FriedmanApplied">Friedman (<a href="#ref-FriedmanApplied" role="doc-biblioref">1956</a>)</span>, which I typed about on March 25, 2026. Let me first describe the approach, and for short let <span class="math inline">\(J_1\)</span> denote the integral of <span class="math inline">\(y \mapsto y_jy_k\)</span> against the Gaussian measure with 0 mean and covariance <span class="math inline">\(\Sigma\)</span> over all of <span class="math inline">\(\mathbb R^n\)</span> (the left hand side in the equation above). We will see that there is a function <span class="math inline">\(\mathbb R^n \ni t \mapsto f(t) \in \mathbb R\)</span> such that <span class="math inline">\(\frac{\partial}{\partial t_k} \frac{\partial}{\partial t_j}|_{t=0} f(t) = -J_1\)</span>. On the other hand, <span class="math inline">\(f(t)\)</span> will admit a formula that, upon partial differentiation in direction <span class="math inline">\(j\)</span> and <span class="math inline">\(k\)</span>, results in <span class="math inline">\(\Sigma_{j,k}\)</span>. Here are the details.</p>
+<p>By (2.47) of <span class="citation" data-cites="FriedmanApplied">Friedman (<a href="#ref-FriedmanApplied" role="doc-biblioref">1956</a>)</span> on page 106 (see March 25th post), letting <span class="math inline">\(A := \frac{1}{2} \Sigma^{-1}\)</span>, which is positive definite and symmetric, we have the equality <span id="eq-247"><span class="math display">\[
+\int_{\mathbb R^n} dy \, \exp \left( i \sum_{l=1}^n t_ly_l -
+\langle y, A y \rangle \right)
+= (\pi)^{n/2} (\det A)^{-1/2}
+\exp \left( - \langle t, A^{-1} t
+\rangle \cdot \frac{1}{4} \right),
+\tag{1}\]</span></span> for all <span class="math inline">\(t = (t_1, \cdots, t_n)^T \in \mathbb R^n\)</span>. Partial differentiation <span class="math inline">\(\frac{\partial}{\partial t_j}\)</span> of the left hand side yields <span class="math display">\[
+\int_{\mathbb R^n} dy \, iy_j \exp \left( i \sum_{l=1}^n t_ly_l -
+\langle y, A y \rangle \right).
+\]</span> Partial differentiation <span class="math inline">\(\frac{\partial}{\partial t_k}\)</span> of this new left hand side yields <span class="math display">\[
+\int_{\mathbb R^n} dy \, -y_j y_k \exp \left( i \sum_{l=1}^n t_ly_l -
+\langle y, A y \rangle \right).
+\]</span> Setting <span class="math inline">\(t = 0\)</span>, we obtain on the left hand side <span class="math display">\[
+-\int_{\mathbb R^n} dy \, y_j y_k \exp \left( -
+\langle y, A y \rangle \right).
+\]</span> Now let’s work on the right hand side of <a href="#eq-247" class="quarto-xref">Equation&nbsp;1</a>. Note that <span class="math inline">\(\langle t, A^{-1} t \rangle = \sum_{l,m=1}^n (A^{-1})_{l,m} t_l t_m\)</span>. Then with regards to partial differentiation <span class="math inline">\(\frac{\partial}{\partial t_j}\)</span>, we obtain <span class="math display">\[
+(\pi)^{n/2} (\det A)^{-1/2} \exp \left( - \langle t, A^{-1} t
+\rangle \cdot \frac{1}{4} \right) \times
+\left[ -2t_j \cdot \frac{1}{4} \cdot (A^{-1})_{j,j} -2 \cdot \sum_{l \ne j}^n t_l (A^{-1})_{j,l} \cdot \frac{1}{4} \right].
+\]</span> Then partial differentiation <span class="math inline">\(\frac{\partial}{\partial_k}\)</span> yields <span class="math display">\[\begin{align*}
+(\pi)^{n/2} (\det A)^{-1/2} \exp \left( - \langle t, A^{-1} t
+\rangle \cdot \frac{1}{4} \right) \times \\
+\left[ -2t_k \cdot \frac{1}{4} \cdot (A^{-1})_{j,j} -2 \cdot
+\sum_{l \ne k}^n t_l (A^{-1})_{k,l} \cdot \frac{1}{4} \right] \times \\
+\left[ -2t_j \cdot \frac{1}{4} \cdot (A^{-1})_{j,j} -2 \cdot
+\sum_{l \ne j}^n t_l (A^{-1})_{j,l} \cdot \frac{1}{4} \right] + \\
+(\pi)^{n/2} (\det A)^{-1/2} \exp \left( - \langle t, A^{-1} t
+\rangle \cdot \frac{1}{4} \right) \times \left(-2 (A^{-1})_{j,k} \cdot \frac{1}{4} \right).
+\end{align*}\]</span> Then setting <span class="math inline">\(t = 0\)</span> yields <span class="math display">\[
+(\pi)^{n/2} (\det A)^{-1/2} \left(-2 (A^{-1})_{j,k} \cdot \frac{1}{4} \right).
+\]</span> Since <span class="math inline">\(A = \frac{1}{2} \Sigma^{-1}\)</span>, it follows that <span class="math inline">\(A^{-1} = 2 \Sigma\)</span>. Furthermore, we also infer that <span class="math inline">\((\det A)^{-1/2} = (\det \Sigma)^{1/2} \cdot 2^{n/2}\)</span>, by multilinearity of the determinant. This yields, on the right hand side, <span class="math display">\[
+(2 \pi)^{n/2} (\det \Sigma)^{1/2} \left(-2 (2 \Sigma)_{j,k} \cdot \frac{1}{4} \right) =
+-(2 \pi)^{n/2} (\det \Sigma)^{1/2} (\Sigma)_{j,k}.
+\]</span> Equating the two sides, we have <span class="math display">\[
+-\int_{\mathbb R^n} dy \, y_j y_k \exp \left( -
+\langle y, \frac{1}{2} \Sigma^{-1} y \rangle \right) =
+-(2 \pi)^{n/2} (\det \Sigma)^{1/2} (\Sigma)_{j,k},
+\]</span> from which we conclude <span class="math display">\[
+\int_{\mathbb R^n}dy \, y_jy_k \exp
+\left( -\frac{1}{2} y^T \Sigma^{-1}
+y \right) \cdot \frac{1}{(2\pi)^{n/2} (\det \Sigma)^{1/2}} = \Sigma_{j,k}.
+\]</span> This completes the proof.</p>
+</section>
 <section id="march-26-2026" class="level3">
 <h3 class="anchored" data-anchor-id="march-26-2026">March 26, 2026</h3>
 <p>Let <span class="math inline">\(X = (X_1, \cdots, X_n)\)</span> be a Gaussian distributed random vector. In other words, there is a vector <span class="math inline">\(\mu \in \mathbb R^n\)</span> and a positive definite symmetric martrix <span class="math inline">\(\Sigma \in \mathbb R^{n \times n}\)</span> such that <span class="math display">\[
@@ -800,7 +876,7 @@ s(p)t(p) &amp;= s(e^1)t(e^1) - s(e^1)t(e^3) - s(e^3)t(e^1) + s(e^3)t(e^3) \\
 <p>I made a structure to help me with this lemma: <img src="./pics/B4-d3.jpeg" class="img-fluid" style="width:80.0%" alt="B_4 when d=3"></p>
 <p>Lemma 13.1. For each <span class="math inline">\(t \in T_E(B_n)\)</span>, <span id="eq-lemma131"><span class="math display">\[
 \frac{C_1}{n^{d+2}} \lVert t \rVert^2 \le M_{E,0,n}(t) \le C_2 \lVert t \rVert^2,
-\tag{1}\]</span></span> where <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> are positive constants that depend only on <span class="math inline">\(d\)</span>.</p>
+\tag{2}\]</span></span> where <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> are positive constants that depend only on <span class="math inline">\(d\)</span>.</p>
 <p>Proof. First, extend <span class="math inline">\(t\)</span> to an element <span class="math inline">\(s \in T(B_n)\)</span> by defining <span class="math inline">\(s(x,y) = 0\)</span> for <span class="math inline">\((x,y) \in E\)</span> and <span class="math inline">\(s(x,y) = t(x,y)\)</span> for <span class="math inline">\((x,y) \in E_n \setminus E\)</span>. Then <span class="math inline">\(M_{E,0,n}(t) = M_n(s)\)</span>. The upper bound follows easily from the definition of <span class="math inline">\(M_n(s)\)</span>, since each edge belongs to at most <span class="math inline">\(C\)</span> plaquettes, where <span class="math inline">\(C\)</span> depends only on <span class="math inline">\(d\)</span>.</p>
 <p>(Why? Lemma. Each interior edge belongs to <span class="math inline">\((d-1) \cdot 2\)</span> plaquettes. Proof. Let <span class="math inline">\((x,y) \in E_n\)</span> be an interior edge. By definition of the lattice, <span class="math inline">\(y = x + e_j\)</span> for some <span class="math inline">\(j \in [d]\)</span>. The plaquettes containing the edge <span class="math inline">\((x,y)\)</span> can be enumerated by considering the set <span class="math inline">\(\{(x, x \pm e_k) \mid k \in [d], k \ne j\}\)</span>. These edges correspond to all the plaquettes containing <span class="math inline">\((x,y)\)</span>, and there are <span class="math inline">\((d-1) \cdot 2\)</span> elements in this set. q.e.d.</p>
 <p>Furthermore, why does the upper bound follow? Note Jenson’s inequality, which I take from <span class="citation" data-cites="Mildorf">Mildorf (<a href="#ref-Mildorf" role="doc-biblioref">2005</a>)</span>. Let <span class="math inline">\(f: \mathbb R \to \mathbb R\)</span> be a convex function. Then for any <span class="math inline">\(x_1, \cdots, x_n \in I\)</span>, and any non-negative reals <span class="math inline">\(\omega_1, \cdots, \omega_n\)</span>, <span class="math display">\[
@@ -819,7 +895,7 @@ s(e)^2 = 8 \cdot (d-1) \cdot \lVert t \rVert^2.
 \]</span> as needed. )</p>
 <p>For the lower bound, it suffices to prove by induction that for each <span class="math inline">\((x,y) \in E_n\)</span>, <span id="eq-sbound"><span class="math display">\[
 |s(x,y)| \le |x|_1 \sqrt{M_n(s)},
-\tag{2}\]</span></span> because <span class="math inline">\(|x|_1 \le dn\)</span> for every <span class="math inline">\(x \in B_n\)</span>. (Recall that <span class="math inline">\(|x|_1\)</span> denotes the <span class="math inline">\(l_1\)</span> norm of <span class="math inline">\(x\)</span>.)</p>
+\tag{3}\]</span></span> because <span class="math inline">\(|x|_1 \le dn\)</span> for every <span class="math inline">\(x \in B_n\)</span>. (Recall that <span class="math inline">\(|x|_1\)</span> denotes the <span class="math inline">\(l_1\)</span> norm of <span class="math inline">\(x\)</span>.)</p>
 <p>(Why does this suffice for the lower bound? Suppose <span class="math display">\[
 |s(x,y)| \le |x|_1 \sqrt{M_n(s)}
 \]</span> for all <span class="math inline">\((x,y) \in E_n.\)</span> We want to show that there exists some positive constant <span class="math inline">\(C_1\)</span> depending only on <span class="math inline">\(d\)</span> such that <span class="math display">\[
@@ -835,7 +911,7 @@ M_n(s) \ge \frac{1}{|E_n|d^2n^2} \sum_{e \in E_n \setminus E} s(e)^2 =
 \]</span> By Lemma 17.1 of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>, <span class="math inline">\(|E_n| = dn^d-dn^{d-1} \le dn^d\)</span>, which implies <span class="math display">\[
 M_n(s) \ge \frac{1}{d^3 n^{d+2}} \lVert t \rVert^2,
 \]</span> as needed. )</p>
-<p>We will prove <a href="#eq-sbound" class="quarto-xref">Equation&nbsp;2</a> by induction on <span class="math inline">\(|x|_1\)</span>. This is clearly true if <span class="math inline">\(|x|_1 = 0\)</span>, since every edge incident to the origin belongs to <span class="math inline">\(E_n^0\)</span>, and <span class="math inline">\(E_n^0 \subset E\)</span>. So assume that <span class="math inline">\(|x|_1 &gt; 0\)</span>. Let <span class="math inline">\(x_1, \cdots, x_d\)</span> be the coordinates of <span class="math inline">\(x\)</span>. Then <span class="math inline">\(y = x+e_j\)</span> for some <span class="math inline">\(j\)</span>. (Why? By definition of edge in the lattice.) Let <span class="math inline">\(k\)</span> be the largest index such that <span class="math inline">\(x_k \ne 0\)</span>. If <span class="math inline">\(k \le j\)</span> then <span class="math inline">\((x,y) \in E_n^0 \subset E\)</span>, and therefore <span class="math inline">\(s(x,y) = 0\)</span>. So assume that <span class="math inline">\(k &gt; j\)</span>. Let <span class="math display">\[
+<p>We will prove <a href="#eq-sbound" class="quarto-xref">Equation&nbsp;3</a> by induction on <span class="math inline">\(|x|_1\)</span>. This is clearly true if <span class="math inline">\(|x|_1 = 0\)</span>, since every edge incident to the origin belongs to <span class="math inline">\(E_n^0\)</span>, and <span class="math inline">\(E_n^0 \subset E\)</span>. So assume that <span class="math inline">\(|x|_1 &gt; 0\)</span>. Let <span class="math inline">\(x_1, \cdots, x_d\)</span> be the coordinates of <span class="math inline">\(x\)</span>. Then <span class="math inline">\(y = x+e_j\)</span> for some <span class="math inline">\(j\)</span>. (Why? By definition of edge in the lattice.) Let <span class="math inline">\(k\)</span> be the largest index such that <span class="math inline">\(x_k \ne 0\)</span>. If <span class="math inline">\(k \le j\)</span> then <span class="math inline">\((x,y) \in E_n^0 \subset E\)</span>, and therefore <span class="math inline">\(s(x,y) = 0\)</span>. So assume that <span class="math inline">\(k &gt; j\)</span>. Let <span class="math display">\[
 z := x - e_k.
 \]</span> Then <span class="math inline">\((z,j,k) \in B_n'.\)</span> (Why? Observe the picture. <img src="./pics/lemma13-1.jpeg" height="300" alt="Diagram of the situation"> It should follow from the picture.)</p>
 <p>Now note that the edges <span class="math inline">\((z,z+e_k)\)</span> and <span class="math inline">\((z+e_j, z+e_j+e_k)\)</span> belong to <span class="math inline">\(E_n^0\)</span>. Therefore, <span class="math display">\[\begin{align*}
@@ -977,8 +1053,8 @@ i \langle Ax, y \rangle - i \langle Ay,x \rangle = 0.
 <p>One situation is where we have a function on the first space and we integrate against the measure <span class="math inline">\(\mu_1\)</span>. This is <span class="math display">\[\int_{\Omega_1} f \, d \mu_1,\]</span> where <span class="math inline">\(\text{dom} f = \Omega_1\)</span>. If the variable of integration is denoted by <span class="math inline">\(x\)</span>, that is, <span class="math inline">\(x\)</span> varies in the space <span class="math inline">\(\Omega_1\)</span>, then we write <span class="math display">\[\int_{\Omega_1} f(x) \, d\mu_1(x).\]</span></p>
 <p>The transformation formula comes in when we introduce a new variable in terms of the old one, and integrate over the associated pushforward measure. This is implemented via a measurable function <span class="math inline">\(y(x) : \Omega_1 \to \Omega_2\)</span> where we assume that <span class="math inline">\(y\)</span> is bijective for ease of things. And we also take <span class="math inline">\(\mu_2\)</span> as the pushforward of <span class="math inline">\(\mu_1\)</span> by the measurable <span class="math inline">\(y(\cdot)\)</span>: for <span class="math inline">\(B \in \beta_2\)</span>, <span class="math display">\[\mu_2(B) = y_*(\mu_1)(B) = \mu_1(y^{-1}(B)).\]</span> Then the transformation formula is: <span id="eq-trans1"><span class="math display">\[
 \int_{\Omega_1} f \, d\mu_1 = \int_{y(\Omega_1)} f \circ y^{-1} \, d\mu_2
-\tag{3}\]</span></span> which we can also be written as <span class="math display">\[\int_{\Omega_1} f(x) \, d\mu_1(x) = \int_{y(\Omega_1)} (f \circ y^{-1})(y) \, d\mu_2(y)\]</span></p>
-<p>Let’s illustrate this with an example where the new variable is a scaling of the old variable. Suppose <span class="math inline">\(f(x) = \sin ( \lvert 5 x \rvert)\)</span> where <span class="math inline">\(x \in \mathbb R^n\)</span>. Let <span class="math inline">\(y(x) = 5x\)</span>. Then <span class="math inline">\(x = y/5\)</span>, or <span class="math inline">\(y^{-1}(y) = y/5\)</span>. Then by the formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;3</a>, <span class="math display">\[\begin{align*}
+\tag{4}\]</span></span> which we can also be written as <span class="math display">\[\int_{\Omega_1} f(x) \, d\mu_1(x) = \int_{y(\Omega_1)} (f \circ y^{-1})(y) \, d\mu_2(y)\]</span></p>
+<p>Let’s illustrate this with an example where the new variable is a scaling of the old variable. Suppose <span class="math inline">\(f(x) = \sin ( \lvert 5 x \rvert)\)</span> where <span class="math inline">\(x \in \mathbb R^n\)</span>. Let <span class="math inline">\(y(x) = 5x\)</span>. Then <span class="math inline">\(x = y/5\)</span>, or <span class="math inline">\(y^{-1}(y) = y/5\)</span>. Then by the formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;4</a>, <span class="math display">\[\begin{align*}
 \int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x) &amp;=
 \int_{B_{25}(0)} \sin (\lVert 5 (y^{-1}(y)) \rVert) d\mu_2(y)\\
 &amp;= \int_{B_{25}(0)} \sin (\lVert 5 (y/5) \rVert) d\mu_2(y)\\
@@ -986,16 +1062,16 @@ i \langle Ax, y \rangle - i \langle Ay,x \rangle = 0.
 \end{align*}\]</span></p>
 <p>One complaint is that the usual transformation formula for pushforward measure is written <span id="eq-trans2"><span class="math display">\[
 \int_{\Omega_1} f \circ y \, d\mu_1 = \int_{y(\Omega_1)} f \, d\mu_2.
-\tag{4}\]</span></span></p>
-<p>In the preview example, one could simply view the function <span class="math inline">\(\sin(\lVert 5(\cdot) \rVert )\)</span> as a composition of <span class="math inline">\(f(\cdot) = \sin(\lVert \cdot \rVert)\)</span> and <span class="math inline">\(y (\cdot) = 5(\cdot)\)</span>, and then you get the same result in one step by <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;4</a>: <span class="math display">\[\int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x)
+\tag{5}\]</span></span></p>
+<p>In the preview example, one could simply view the function <span class="math inline">\(\sin(\lVert 5(\cdot) \rVert )\)</span> as a composition of <span class="math inline">\(f(\cdot) = \sin(\lVert \cdot \rVert)\)</span> and <span class="math inline">\(y (\cdot) = 5(\cdot)\)</span>, and then you get the same result in one step by <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;5</a>: <span class="math display">\[\int_{B_5(0)} \sin(\lVert 5 x \rVert) d\mu_1(x)
 = \int_{B_{25}(0)} \sin (\lVert y \rVert) d\mu_2(y).\]</span></p>
-<p>But typically, in the literature at least, one encounters an integral where the integrand can not so easily be viewed as a composition, but simplifying one part is at least clear: <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x),\]</span> and then followed by the statement: “we make the change of variable <span class="math inline">\(y(x) = 5x\)</span>.” In this case, I find it easier to just think: <span class="math inline">\(f(x) = \lVert x \rVert \sin(\lVert 5 x \rVert)\)</span> and then it is easy to see by replacing each <span class="math inline">\(x\)</span> with <span class="math inline">\(y^{-1}(y)\)</span> that <span class="math inline">\((f \circ y^{-1})(y) = \lVert y/5 \rVert \sin (\lVert y \rVert)\)</span>, and then by the first transformation formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;3</a>, we get <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x)
+<p>But typically, in the literature at least, one encounters an integral where the integrand can not so easily be viewed as a composition, but simplifying one part is at least clear: <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x),\]</span> and then followed by the statement: “we make the change of variable <span class="math inline">\(y(x) = 5x\)</span>.” In this case, I find it easier to just think: <span class="math inline">\(f(x) = \lVert x \rVert \sin(\lVert 5 x \rVert)\)</span> and then it is easy to see by replacing each <span class="math inline">\(x\)</span> with <span class="math inline">\(y^{-1}(y)\)</span> that <span class="math inline">\((f \circ y^{-1})(y) = \lVert y/5 \rVert \sin (\lVert y \rVert)\)</span>, and then by the first transformation formula <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;4</a>, we get <span class="math display">\[\int_{B_5(0)} \lVert x \rVert \sin(\lVert 5 x \rVert) d\mu_1(x)
 = \int_{B_{25}(0)} \lVert y/5 \rVert \sin (\lVert y \rVert) d\mu_2(y).\]</span></p>
-<p>But, thankfully, <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;4</a> implies <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;3</a>. Indeed, letting <span class="math inline">\(f' = f \circ y^{-1}\)</span>, we see that <span class="math display">\[\begin{align*}
+<p>But, thankfully, <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;5</a> implies <a href="#eq-trans1" class="quarto-xref">Equation&nbsp;4</a>. Indeed, letting <span class="math inline">\(f' = f \circ y^{-1}\)</span>, we see that <span class="math display">\[\begin{align*}
 \int_{\Omega_1} f \, d\mu_1 &amp;= \int_{\Omega_1} f' \circ y \, d\mu_1\\
 &amp;= \int_{y(\Omega_1)} f' \, d\mu_2 \\
 &amp;= \int_{y(\Omega_1)} f \circ y^{-1} \, d\mu_2,
-\end{align*}\]</span> where we used <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;4</a> in the second equality.</p>
+\end{align*}\]</span> where we used <a href="#eq-trans2" class="quarto-xref">Equation&nbsp;5</a> in the second equality.</p>
 </section>
 </section>
 <section id="march-11-2026" class="level3">
