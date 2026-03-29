@@ -183,12 +183,27 @@ $\text{Var}(X_j) \le b.$
 Proof.
 
 - Lemma. Suppose $X = (X_1, \cdots, X_n)$ is a Gaussian random vector
-with mean $\mu$ and covariance $\Sigma$. Let $b$ be the largest eigenvalue
-of $\Sigma$. Then for any $x \ge 0$ and $\theta \ge 0$, it follows that 
+with mean $\mu$ and covariance $\Sigma$. Then for any $x \ge 0$ and 
+$\theta \ge 0$, it follows that 
 $$
 \sum_{j=1}^n \mathbb P(X_j - \mu_j \ge x)
 \le e^{-\theta x} \sum_{j=1}^{n} \mathbb E(e^{\theta (X_j - \mu_j)}).
 $$
+
+Proof. 
+
+- Lemma. Suppose $X = (X_1, \cdots, X_n)$ is a Gaussian random vector
+with mean $\mu$ and covariance $\Sigma$. Let $b$ be the largest eigenvalue
+of $\Sigma$. Then for any $\theta > 0$, we have
+$$
+\mathbb E[e^{\theta (X_j - \mu_j)}] = e^{\theta^2 \text{Var}(X_j)\cdot \frac{1}{2}}.
+$$
+
+Remarks. See example 15.33 in @Klenke. See also section 4.3: 
+Moment generating and characteristic functions in Prof. Eberle's 
+Probability Theory notes (v. 2. Feb 2024.)
+
+Proof. 
 
 
 ### March 26, 2026
