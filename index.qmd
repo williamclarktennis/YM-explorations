@@ -9,6 +9,7 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+
 ### March 27, 2026
 
 - Proposition. Let $X = (X_1, \cdots, X_n)$ be a Gaussian distributed
