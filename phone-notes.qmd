@@ -7,6 +7,16 @@ This file is edited from mobile.
 Do not overwrite without pulling first.
 -->
 
+### April 9, 2026
+
+Can axial guage fixing be viewed 
+as a change of coordinates in analogy to 
+a rotation in R3? I'm thinking of the rotations
+used in the Gaussian integral computation in
+Friedman's book. And I'm also thinking
+of the change of measure formula in 
+measure theory. 
+
 ### March 25, 2026
 
 For next Thursday I'm supposed to 
