@@ -7,6 +7,31 @@ This file is edited from mobile.
 Do not overwrite without pulling first.
 -->
 
+### April 10, 2026
+
+Idea to find formula. 
+Need Lie algebra of SU(2). 
+Reduce leading term of log of partition
+function of the coupled theory 
+to integrals over small balls.
+Can we use the axial gauge? 
+That is, is the Wilson action
+coupled with the Higgs mechanism
+going to behave nicely with regards
+to gauge transforms?
+Replace integration over Lie group
+to integration over Lie algebra. 
+This is where you get the edge count 
+terms and the Radon Nikodym correction term.
+Do we have a formula for
+the volume of SU(2) as a submanifold?
+Which Maxwell action will do the trick?
+Does the coupling impact the leading order
+approximation?
+To guess the formula, can't we just
+assume that the Maxwell theory 
+describes the leading order behavior?
+
 ### April 9, 2026
 
 Can axial guage fixing be viewed 
