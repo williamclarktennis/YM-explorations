@@ -225,12 +225,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a>
-  <ul class="collapse">
-  <li><a href="#talk-1-overview" id="toc-talk-1-overview" class="nav-link" data-scroll-target="#talk-1-overview">Talk 1 Overview</a></li>
-  <li><a href="#talk-2-overview-my-talk" id="toc-talk-2-overview-my-talk" class="nav-link" data-scroll-target="#talk-2-overview-my-talk">Talk 2 Overview (My Talk)</a></li>
-  <li><a href="#talk-3-overview" id="toc-talk-3-overview" class="nav-link" data-scroll-target="#talk-3-overview">Talk 3 Overview</a></li>
-  </ul></li>
+  <li><a href="#talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" id="toc-talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" class="nav-link active" data-scroll-target="#talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices">Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)</a></li>
+  <li><a href="#talk-2-beta-ensembles-and-tridiagonal-random-matrices" id="toc-talk-2-beta-ensembles-and-tridiagonal-random-matrices" class="nav-link" data-scroll-target="#talk-2-beta-ensembles-and-tridiagonal-random-matrices">Talk 2 (<span class="math inline">\(\beta\)</span>-ensembles and tridiagonal random matrices)</a></li>
+  <li><a href="#talk-3-limit-of-empirical" id="toc-talk-3-limit-of-empirical" class="nav-link" data-scroll-target="#talk-3-limit-of-empirical">Talk 3 (Limit of empirical )</a></li>
   <li><a href="#more-details" id="toc-more-details" class="nav-link" data-scroll-target="#more-details">More Details</a></li>
   </ul>
 </nav>
@@ -257,50 +254,138 @@ window.Quarto = {
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<section id="talk-1-overview" class="level3">
-<h3 class="anchored" data-anchor-id="talk-1-overview">Talk 1 Overview</h3>
-<ul>
-<li>Title of Talk. Joint Distribution of eigenvalues of Gaussian random matrices</li>
-</ul>
-<p>Definitions.</p>
-<ul>
-<li><p>Definition (Gaussian Unitary Ensemble GUE).</p></li>
-<li><p>Definition (Gaussian Orthogonal Ensemble GOE).</p></li>
-</ul>
-<p>Propositions.</p>
-<ul>
-<li>Theorem 14.3 (<span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span>). This Theorem gives a complete description of the joint law of eigenvalues and eigenvectors of a <span class="math inline">\(GOE_n\)</span>. (Hence the title of the talk).
-<ol type="i">
-<li>The proof will be covered.</li>
-<li>What does the result say? It says two things. First, the distribution of the eigenvectors is Haar measure on the orthogonal matrix group <span class="math inline">\(O(n)\)</span>. Second, the joint law of eigenvalues is the product of a Gaussian density term and a Vandermonte determinant term.</li>
-</ol></li>
-</ul>
+<section id="talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices">Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)</h3>
+<section id="definitions." class="level4">
+<h4 class="anchored" data-anchor-id="definitions.">Definitions.</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition of GOE in Kemp's notes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition of GOE in Kemp’s notes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(j \ge k \ge 1,\)</span> let <span class="math inline">\(\{B_{j,k}\}\)</span> and <span class="math inline">\(\{B'_{j,k}\}\)</span> be two families of independent <span class="math inline">\(N(0,1)\)</span> random variables (independent from each other as well). We define a Gaussian Orthogonal Ensemble GOE(n) to be the sequence of Wigner matrices with <span class="math inline">\(X_n\)</span> with <span class="math display">\[
+[X_n]_{jk} = [X_n]_{kj} = n^{-1/2} \frac{1}{\sqrt{2}} B_{jk}, \hspace{0.1cm}1 \le j &lt; k \le n
+\]</span> <span class="math display">\[
+[X_n]_{jj} = n^{-1/2} B_{jj}, \hspace{0.1cm}1 \le j \le n.
+\]</span> See <span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span> page 67.</p>
+</div>
+</div>
+<p>This looks as follows: <span class="math display">\[
+\begin{bmatrix}
+n^{-1/2} \xi_{1,1} &amp; \cdots &amp; n^{-1/2}\frac{1}{\sqrt{2}}\xi_{1,N} \\
+&amp; \ddots &amp; \vdots \\
+&amp; &amp; n^{-1/2} \xi_{N,N}
+\end{bmatrix}.
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition of GUE in Kemp's notes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition of GUE in Kemp’s notes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(j \ge k \ge 1,\)</span> let <span class="math inline">\(\{B_{j,k}\}\)</span> and <span class="math inline">\(\{B'_{j,k}\}\)</span> be two families of independent <span class="math inline">\(N(0,1)\)</span> random variables (independent from each other as well). Let <span class="math inline">\(Z_n\)</span> be the <span class="math inline">\(n \times n\)</span> complex matrix whose entries are <span class="math display">\[
+[Z_n]_{jk} = \overline{[Z_n]_{kj}} = n^{-1/2} \frac{1}{\sqrt{2}} (B_{jk} + iB'_{jk}) , \hspace{0.1cm}1 \le j &lt; k \le n
+\]</span> <span class="math display">\[
+[Z_n]_{jj} = n^{-1/2} B_{jj}, \hspace{0.1cm}1 \le j \le n.
+\]</span> The sequence <span class="math inline">\(Z_n\)</span> is called a Gaussian Unitary Ensemble. See <span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span> page 67.</p>
+</div>
+</div>
+</section>
+<section id="propositions." class="level4">
+<h4 class="anchored" data-anchor-id="propositions.">Propositions.</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="Theorem 14.3 Kemp">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Theorem 14.3 Kemp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(X_n\)</span> be a GOE(n) with (any) orthogonal digonalization <span class="math inline">\(\sqrt{n}X_n = Q_n^T \Lambda_n Q_n\)</span> where the entries of <span class="math inline">\(\Lambda_n\)</span> increase from top to bottom. Then <span class="math inline">\(Q_n\)</span> and <span class="math inline">\(\Lambda_n\)</span> are independent. The distribution of <span class="math inline">\(Q_n\)</span> is the Haar measure on the orthogonal group <span class="math inline">\(O(n)\)</span>. The eigenvalue matrix <span class="math inline">\(\Lambda_n\)</span> taking values (a.s.) in <span class="math inline">\(\text{diag}_&lt; (n)\)</span>, has a law with probability density <span class="math display">\[
+c_n e^{-\frac{1}{2} \text{Tr} (\Lambda^2)} |\Delta(\Lambda)| =
+c_n e^{-\frac{1}{2} (\lambda_1^2 + \cdots + \lambda_n^2)}
+\prod_{1 \le i &lt; j \le n} (\lambda_j - \lambda_n)
+\]</span> for some constant <span class="math inline">\(c_n\)</span>. See <span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span> page 82.</p>
+</div>
+</div>
+<p>Proof idea (see page 81 in <span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span>). Recall the meaning of the display <span class="math inline">\(\mathbb P [X_N \in B]\)</span> for <span class="math inline">\(B \subset \mathbb R^{\frac{(N+1)N}{2}}.\)</span> This is the law of the entries of a GOE(n) matrix. Since <span class="math inline">\(X_N\)</span> is Hermitian, rewrite this as <span class="math inline">\(\mathbb P [Q_n^T \Lambda_n Q_n \in B].\)</span> Pretend that <span class="math inline">\(B\)</span> is a set of symmetric matrices <span class="math inline">\(B = \{Q^T \Lambda Q: Q, \Lambda \}.\)</span> Using Fubnini, pretend that <span class="math inline">\(Q_n\)</span> is fixed, consider a slice set of <span class="math inline">\(B\)</span> by the fixed matrix <span class="math inline">\(Q_n\)</span>: <span class="math display">\[
+B_{Q_n} = \{ Q_n^T \Lambda Q_n: \Lambda \in \text{diag}_&lt;(N)\},
+\]</span> (or, in the language of probability, condition on <span class="math inline">\(Q_n\)</span>), and finally conjugate by <span class="math inline">\(Q_n\)</span>: <span class="math display">\[
+\mathbb P [Q_n^T \Lambda_n Q_n \in B_{Q_n}] =
+\mathbb P [\Lambda_n \in Q_n B_{Q_n} Q_n^T] =
+\mathbb P [\Lambda_n \in \{\Lambda \in \text{diag}_&lt;(N) \}].
+\]</span> On the right hand side is the joint law of the eigenvalues of the matrix <span class="math inline">\(X_N\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Theorem 14.4 Kemp">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Theorem 14.4 Kemp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(Z_n\)</span> be a GUE(n) with (any) unitary digonalization <span class="math inline">\(\sqrt{n}Z_n = U_n^* \Lambda_n U_n\)</span> where the entries of <span class="math inline">\(\Lambda_n\)</span> increase from top to bottom. Then <span class="math inline">\(U_n\)</span> and <span class="math inline">\(\Lambda_n\)</span> are independent. The distribution of <span class="math inline">\(U_n\)</span> is the Haar measure on the unitary group <span class="math inline">\(U(n)\)</span>. The eigenvalue matrix <span class="math inline">\(\Lambda_n\)</span> taking values (a.s.) in <span class="math inline">\(\text{diag}_&lt; (n)\)</span>, has a law with probability density <span class="math display">\[
+c_n e^{-\frac{1}{2} \text{Tr} (\Lambda^2)} \Delta(\Lambda)^2 =
+c_n e^{-\frac{1}{2} (\lambda_1^2 + \cdots + \lambda_n^2)}
+\prod_{1 \le i &lt; j \le n} (\lambda_j - \lambda_n)^2
+\]</span> for some constant <span class="math inline">\(c_n\)</span>. See <span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span> page 82.</p>
+</div>
+</div>
 <p>Where is the statement in section 2.5.1/2.5.2 of <span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>?</p>
 <ul>
 <li>Theorem 14.4 (<span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span>). This theorem gives a description of the joint law of the eigenvalues and eigenvectors of a <span class="math inline">\(GUE_n\)</span>.</li>
 </ul>
 </section>
-<section id="talk-2-overview-my-talk" class="level3">
-<h3 class="anchored" data-anchor-id="talk-2-overview-my-talk">Talk 2 Overview (My Talk)</h3>
-<p>Title of talk.</p>
-<p>Definitions.</p>
-<ul>
-<li>Definition (<span class="math inline">\(\beta\)</span> ensemble).</li>
-</ul>
-<p>Propositions.</p>
-<ul>
-<li>Theorem 4.5.35 (<span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>).</li>
-</ul>
-<details>
-<summary>
-</summary>
-</details>
 </section>
-<section id="talk-3-overview" class="level3">
-<h3 class="anchored" data-anchor-id="talk-3-overview">Talk 3 Overview</h3>
+<section id="talk-2-beta-ensembles-and-tridiagonal-random-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="talk-2-beta-ensembles-and-tridiagonal-random-matrices">Talk 2 (<span class="math inline">\(\beta\)</span>-ensembles and tridiagonal random matrices)</h3>
+<section id="definitions.-1" class="level4">
+<h4 class="anchored" data-anchor-id="definitions.-1">Definitions.</h4>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled" title="Definition of $\beta$-ensemble">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition of <span class="math inline">\(\beta\)</span>-ensemble
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 </section>
+<section id="propositions.-1" class="level4">
+<h4 class="anchored" data-anchor-id="propositions.-1">Propositions.</h4>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled" title="Theorem 4.5.35 in Anderson">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Theorem 4.5.35 in Anderson
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</section>
+<section id="talk-3-limit-of-empirical" class="level3">
+<h3 class="anchored" data-anchor-id="talk-3-limit-of-empirical">Talk 3 (Limit of empirical )</h3>
 </section>
 <section id="more-details" class="level2">
 
