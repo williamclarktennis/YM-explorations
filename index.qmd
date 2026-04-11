@@ -16,3 +16,30 @@ Consider section 1.4 in @chatterjee2026.
 - Question: Can you write down a formula
 for the leading order term of the free energy using
 techniques from @Chatterjee2016?
+
+Work on this question especially when my 
+log-gases talk is over. (That is, in May).
+Quickly resolving this question would
+mean solving it by mid-May, after a couple
+of weeks of working on it.
+
+Outline until September 1, 2026. 
+
+1. Go through Section 11 and Section 17 of @Chatterjee2016 
+step by step by the end of April.
+2. As soon as this is finished, think about how 
+to summarize the paper as an introduction section 
+to my thesis. Work on this in May.
+3. The rest of the thesis
+will just be filling in the details of @Chatterjee2016's 
+paper in my own voice. Work
+on this in May, June, and July.
+
+Thus, the thesis should be finished by the end of July,
+more or less, with August to spare.
+
+Also for April: prepare my log-gases talk on May 7th.
+
+July will be busy with the CQFT exam preparation.
+April, May, and June will also require some work with
+the CQFT course, but less work than the seminar.

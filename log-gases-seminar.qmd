@@ -3,30 +3,122 @@ title: "Log Gases Seminar - Summer 2026"
 bibliography: references.bib
 ---
 
-## Summary
 
-### Talk 1 Overview
 
-- Title of Talk. Joint Distribution of eigenvalues
-of Gaussian random matrices
+### Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)
 
-Definitions. 
+#### Definitions. 
 
-- Definition (Gaussian Unitary Ensemble GUE).
+::: {.callout-note title="Definition of GOE in Kemp's notes"}
 
-- Definition (Gaussian Orthogonal Ensemble GOE).
+For $j \ge k \ge 1,$ let $\{B_{j,k}\}$
+and $\{B'_{j,k}\}$ be two families of 
+independent $N(0,1)$ random variables 
+(independent from each other as well).
+We define a Gaussian Orthogonal Ensemble
+GOE(n) to be the sequence of Wigner matrices 
+with $X_n$ with 
+$$
+[X_n]_{jk} = [X_n]_{kj} = n^{-1/2} \frac{1}{\sqrt{2}} B_{jk}, \hspace{0.1cm}1 \le j < k \le n
+$$
+$$
+[X_n]_{jj} = n^{-1/2} B_{jj}, \hspace{0.1cm}1 \le j \le n.
+$$
+See @Kemp2022 page 67.
+:::
 
-Propositions.
+This looks as follows:
+$$
+\begin{bmatrix}
+n^{-1/2} \xi_{1,1} & \cdots & n^{-1/2}\frac{1}{\sqrt{2}}\xi_{1,N} \\
+ & \ddots & \vdots \\
+ & & n^{-1/2} \xi_{N,N}
+\end{bmatrix}.
+$$
 
-- Theorem 14.3 (@Kemp2022). This Theorem gives a complete description
-of the joint law of eigenvalues and eigenvectors of a $GOE_n$.
-(Hence the title of the talk).
-    i) The proof will be covered.
-    ii) What does the result say? It says two things. 
-    First, the distribution of the eigenvectors is Haar measure
-    on the orthogonal matrix group $O(n)$.
-    Second, the joint law of eigenvalues is the product of a Gaussian
-    density term and a Vandermonte determinant term. 
+::: {.callout-note title="Definition of GUE in Kemp's notes"}
+
+For $j \ge k \ge 1,$ let $\{B_{j,k}\}$
+and $\{B'_{j,k}\}$ be two families of 
+independent $N(0,1)$ random variables 
+(independent from each other as well).
+Let $Z_n$ be the $n \times n$ complex 
+matrix whose entries are
+$$
+[Z_n]_{jk} = \overline{[Z_n]_{kj}} = n^{-1/2} \frac{1}{\sqrt{2}} (B_{jk} + iB'_{jk}) , \hspace{0.1cm}1 \le j < k \le n
+$$
+$$
+[Z_n]_{jj} = n^{-1/2} B_{jj}, \hspace{0.1cm}1 \le j \le n.
+$$
+The sequence $Z_n$ is called a Gaussian Unitary Ensemble.
+See @Kemp2022 page 67.
+:::
+
+
+#### Propositions.
+
+::: {.callout-note title="Theorem 14.3 Kemp"}
+
+Let $X_n$ be a GOE(n) with (any) orthogonal
+digonalization $\sqrt{n}X_n = Q_n^T \Lambda_n Q_n$
+where the entries of $\Lambda_n$ increase from top
+to bottom. Then $Q_n$ and $\Lambda_n$ are independent.
+The distribution of $Q_n$ is the Haar measure on the 
+orthogonal group $O(n)$. The eigenvalue matrix
+$\Lambda_n$ taking values (a.s.) in $\text{diag}_< (n)$,
+has a law with probability density 
+$$
+c_n e^{-\frac{1}{2} \text{Tr} (\Lambda^2)} |\Delta(\Lambda)| =
+c_n e^{-\frac{1}{2} (\lambda_1^2 + \cdots + \lambda_n^2)} 
+\prod_{1 \le i < j \le n} (\lambda_j - \lambda_n)
+$$
+for some constant $c_n$. See @Kemp2022 page 82.
+:::
+
+Proof idea (see page 81 in @Kemp2022).
+Recall the meaning of the display
+$\mathbb P [X_N \in B]$ for 
+$B \subset \mathbb R^{\frac{(N+1)N}{2}}.$
+This is the law of the entries of a GOE(n) 
+matrix. 
+Since $X_N$ is Hermitian, rewrite this as 
+$\mathbb P [Q_n^T \Lambda_n Q_n \in B].$
+Pretend that $B$ is a set of symmetric matrices
+$B = \{Q^T \Lambda Q: Q, \Lambda \}.$
+Using Fubnini, pretend that $Q_n$ is fixed,
+consider a slice set of $B$ by the fixed matrix $Q_n$:
+$$
+B_{Q_n} = \{ Q_n^T \Lambda Q_n: \Lambda \in \text{diag}_<(N)\},
+$$
+(or, in the language of probability, condition on $Q_n$), and finally
+conjugate by $Q_n$:
+$$
+\mathbb P [Q_n^T \Lambda_n Q_n \in B_{Q_n}] = 
+\mathbb P [\Lambda_n \in Q_n B_{Q_n} Q_n^T] =
+\mathbb P [\Lambda_n \in \{\Lambda \in \text{diag}_<(N) \}].
+$$
+On the right hand side is the joint law of 
+the eigenvalues of the matrix $X_N$. 
+
+::: {.callout-note title="Theorem 14.4 Kemp"}
+
+Let $Z_n$ be a GUE(n) with (any) unitary
+digonalization $\sqrt{n}Z_n = U_n^* \Lambda_n U_n$
+where the entries of $\Lambda_n$ increase from top
+to bottom. Then $U_n$ and $\Lambda_n$ are independent.
+The distribution of $U_n$ is the Haar measure on the 
+unitary group $U(n)$. The eigenvalue matrix
+$\Lambda_n$ taking values (a.s.) in $\text{diag}_< (n)$,
+has a law with probability density 
+$$
+c_n e^{-\frac{1}{2} \text{Tr} (\Lambda^2)} \Delta(\Lambda)^2 =
+c_n e^{-\frac{1}{2} (\lambda_1^2 + \cdots + \lambda_n^2)} 
+\prod_{1 \le i < j \le n} (\lambda_j - \lambda_n)^2
+$$
+for some constant $c_n$. See @Kemp2022 page 82.
+:::
+
+
 
 Where is the statement in section 2.5.1/2.5.2 of @Anderson2010?
 
@@ -34,23 +126,21 @@ Where is the statement in section 2.5.1/2.5.2 of @Anderson2010?
 - Theorem 14.4 (@Kemp2022). This theorem gives a description of the 
 joint law of the eigenvalues and eigenvectors of a $GUE_n$.
 
-### Talk 2 Overview (My Talk)
+### Talk 2 ($\beta$-ensembles and tridiagonal random matrices)
 
-Title of talk. 
+#### Definitions. 
 
-Definitions. 
+::: {.callout-note title="Definition of $\beta$-ensemble"}
 
-- Definition ($\beta$ ensemble). 
+:::
+ 
+#### Propositions.
 
-Propositions.
+::: {.callout-note title="Theorem 4.5.35 in Anderson"}
 
-- Theorem 4.5.35 (@Anderson2010). 
+::: 
 
-<details><summary>  </summary>
-
-</details>
-
-### Talk 3 Overview
+### Talk 3 (Limit of empirical )
 
 
 
