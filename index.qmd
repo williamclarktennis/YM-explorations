@@ -9,6 +9,126 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### April 12, 2026
+
+Smooth immersions are maps whose differentials
+are injective everywhere. Smooth embeddings are 
+injective smooth immersions that are also 
+homeomorphisms onto their images. Smooth immersions
+and embeddings are key ingredients in the theory of
+submanifolds. 
+
+The rank of a linear map $L: V \to W$ is the dimension
+of its range: $\dim L(V)$. Given two linear maps
+$L_1, L_2$, we can find two change of basis 
+maps $B_1, B_2$ such that $L_1 = B_1 \circ L_2 \circ B_2$
+if and only if the rank of $L_1$ and $L_2$ is the same.
+
+The rank of a smooth map between manifolds
+$F: M \to N$ at a point $p$
+is the rank of the differential of that smooth
+map at the point $p$. 
+
+A linear map is injective if and only if its kernel 
+is the $\{0\}$ space. Equivalently, a linear map
+$L: V \to W$ is injective if and only if
+$\dim L(V) = \dim V$, because then no dimensions
+are left for the kernel. 
+
+A smooth map has constant rank if its rank at every point
+on the manifold is the same. A smooth map $F$ of 
+constant rank also has full rank
+if the rank of its differential at all points
+is as large as possible: either equal to the dimension
+of its domain or codomain. 
+By logic, smooth immersions are 
+smooth maps of constant rank and 
+of full rank whose rank is equal to 
+the dimension of the tangent space of the domain manifold.
+
+The mapping $\iota: SU(2) \to \mathbb C^{2 \times 2} \cong
+\mathbb R^8$ is smooth provided that for every coordinate system
+$\xi$ in $SU(2)$ and $\eta$ in $\mathbb C^{2 \times 2}$, the coordinate
+expression $\eta \circ \iota \circ \xi^{-1}$ is Euclidean smooth
+and defined on an open set of $\mathbb R^3$.
+
+We have $C^{\infty}(M) = \{f: M \to \mathbb R: f \text{ smooth in the 
+sense of manifold theory} \}$. 
+
+Let $M$ be a topological space and let $N \subset M$. 
+The subspace topology on $N$ is the collection: 
+$\{ N \cap U: U \text{ is open in } M\}$.
+
+Let $E$ be a module over a commutative ring $R$. 
+Let $g: E \times E \to R$ be a map. 
+If $g$ is bilinear, we call $g$ a symmetric 
+form if $g(x,y) = g(y,x)$ for all $x,y \in E$.
+If $R$ has an automorphism of order 2
+written $a \mapsto \overline{a}$, we say $g$
+is a Hermitian form if it is linear in its 
+first variable, antilinear in its second, and 
+$g(x,y) = \overline{g(y,x)}$. In either case, we call
+$g$ a scalar product.
+
+What is a left-invariant vector field on $SU(2)$?
+Why does the tangent space 
+$T_A SU(2) = A \cdot \mathfrak{su}(2)$
+for $A \in SU(2)$?
+
+Let $\mathfrak{X}(M)$ denote the set of all 
+smooth vector fields on $M$. Note that 
+$C^\infty(M)$ is a commutative ring, 
+with addition given by pointwise addition
+of functions, and multiplication given by pointwise
+multiplication of functions. It is
+not a field because a smooth function
+which takes the value $0$ somewhere 
+is not invertible in the sense 
+of multiplication. Then $\mathfrak{X}(M)$
+is a $C^\infty(M)$-module. To verify this, think
+about why $\mathfrak{X}(M)$ is a group
+under pointwise addition. Then think about
+how a smooth function $f \in C^{\infty}(M)$ acts
+on a vector field, and think about why $(f + g)V =
+fV + gV$ follows from pointwise considerations.
+This module has a basis given by
+the smooth sections
+$(\partial_i)_{i = 1}^n$. So 
+the coefficients in a linear combination would be smooth
+functions on $M$.
+
+A derivation on $C^{\infty}(M)$ is a function
+$D: C^{\infty}(M) \to C^{\infty}(M)$ that is 
+$\mathbb R$-linear and Leibnizian. 
+If $V \in \mathfrak{X}(M)$ is a vector field, 
+then the map $\Psi: C^{\infty}(M) \ni f \mapsto Vf \in C^{\infty}(M)$
+is a derivation.
+Let's check that $\Psi$ is Leibnizian. 
+Let $f,g \in C^{\infty}(M)$. 
+Fix $p \in M$. Then $V_p \in T_p M$. By definition 
+of tangent vector at $p$, we note that 
+$\Psi(fg)(p) = V_p(fg) = f(p) V_p(g) + V_p(f) g(p) 
+= f(p) \Psi(g)(p) + \Psi(f)(p) g(p),$
+so the Leibnizian property holds pointwise. 
+
+Every derivation comes from a vector field.
+Fix a derivation $D: C^{\infty}(M) \to C^{\infty}(M)$.
+Notice that when $p$ is a point on the manifold $M$, then
+$C^{\infty}(M) \ni f \mapsto (Df)(p) \in \mathbb R$ 
+if a rule assigning functions to real numbers. 
+Recall that a vector field $V \in \mathfrak{X}(M)$, 
+at each point on the manifold, assigns functions
+to real numbers. So we suppose that
+if $V$ does exist, then it should satisfy
+$V_p f = (Df)(p)$. The class of smooth functions are
+rich enough to determine $V_p$ based on this requirement.
+
+How do we view $Vf$ as a smooth function when $V$ is a
+vector field and when $f$ is a smooth function?
+
+How can we consider vector fields as derivations 
+$C^{\infty}(M) \to C^{\infty}(M)$?
+
 ### April 9, 2026
 
 Consider section 1.4 in @chatterjee2026.
