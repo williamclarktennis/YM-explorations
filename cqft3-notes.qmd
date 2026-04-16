@@ -1,0 +1,12 @@
+---
+title: "CQFT3 Notes"
+bibliography: references.bib
+---
+
+I will compile my notes for the course
+Introduction to Constructive Quantum Field Theory 
+Part 3 on this page.
+
+### Link to Scanned Handwritten Notes
+
+- [Lecture 1 Scan. April 15.](https://drive.google.com/drive/u/0/folders/1pIWspBZtL7bRy5OIYvteUJMcYOkP-NoG). 

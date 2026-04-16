@@ -24,6 +24,7 @@ website:
           - href: glossary1.qmd
           - href: thesis-relevant-events.qmd
           - href: log-gases-seminar.qmd
+          - href: cqft3-notes.qmd
 
 format:
   html:

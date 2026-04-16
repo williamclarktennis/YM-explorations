@@ -9,6 +9,95 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+### April 15, 2026
+
+I need Theorem 6.1 in @Chatterjee2016 but for SU(2). 
+
+Here is one link: <https://www2.math.uconn.edu/~gordina/UniformDoublingSU2.pdf>.
+Proposition 3.1 looks relevant. 
+
+In the following link, Section 6, which has a parametrization of SU(2)
+and a Jacobian, could also be useful: 
+<https://drops.dagstuhl.de/storage/00lipics/lipics-vol152-csl2020/LIPIcs.CSL.2020.34/LIPIcs.CSL.2020.34.pdf>.
+
+The Euler angle parametrization on page 7 of the
+following is nice: 
+<https://arxiv.org/pdf/2511.14397>.
+
+Page 19 of <https://web.math.ku.dk/~jakobsen/replie/compact-work.pdf>
+shows how to use a formula for Haar integral with regards to 
+SU(2). Page 3 gives a pretty definitive description
+of integration over SU(2) with Haar measure 
+using spherical coordinates.
+
+Here's Pontryagin's treatment of Top Groups. 
+<https://rexresearch1.com/TopologyLibrary/TopologicalGroupsPontrjagin.pdf>.
+
+This link is directly Weyl's formula for SU(2): 
+<https://www.math.utah.edu/~milicic/Math_6260/weyl_character.pdf>. 
+But I'm not quite sure how to interpret some stuff in there. 
+
+This link discusses computations
+for Haar integrals: 
+<https://mathoverflow.net/questions/36025/explicit-computations-using-the-haar-measure#:~:text=15%20Answers,unitary%20group%20has%20volume%201.>
+
+Section 4 in these notes are all about SU(2): 
+<https://www.math.uzh.ch/gorodnik/lg17/Lie_Groups_Lecture_Notes.pdf>. 
+
+This shows how to recrusively 
+obtain parametrizations of SU(2), SU(3), etc: 
+<https://arxiv.org/pdf/1708.00735>. 
+
+This link describes Haar measure as well: 
+<https://pennylane.ai/qml/demos/tutorial_haar_measure#deguise2018>.
+
+Page 31 of the following has a proof
+that su(N) is the Lie Algebra of SU(N), 
+and has the Weyl formula's for SO(N), but
+unfortunately not for SU(N). But there 
+is a general formula that could be interesting.
+<https://case.edu/artsci/math/esmeckes/Haar_book.pdf>. 
+
+Computing using Haar measure on SU(2): 
+<https://arxiv.org/pdf/1103.3408>. 
+
+See also here for Weyl's formula: 
+<http://staff.ustc.edu.cn/~wangzuoq/Courses/13F-Lie/Notes/Lec%2027.pdf>. 
+
+Weyl's integration formula: 
+<https://en.wikipedia.org/wiki/Weyl_integration_formula>.
+And the Maximal Torus: 
+<https://en.wikipedia.org/wiki/Maximal_torus>. 
+
+### April 13, 2026
+
+Here's a Putnam problem that I'm thinking about. 
+It is Problem A6 of 1985.
+
+If $p(x) = a_0 + a_1 x + \cdots + a_m x^m$ is a polynomial
+with real coefficients $a_i$, then set
+$$\Gamma(p(x)) = a_0^2 + \cdots + a_m^2.$$
+Let $f(x) = 3x^2 + 7x + 2$. Find, with proof, a polynomial
+$g(x)$ with real coefficients such that 
+i) $g(0) = 1$, and 
+ii) $\Gamma(f(x)^n) = \Gamma(g(x)^n)$
+for every integer $n$.
+
+
+Why am I thinking about a Putnam problem?
+Well-known mathematicians still publish about them. 
+Also Richard Feynman and David Mumford were Putnam fellows.
+I've noticed during my 2.5 years in Bonn the difference
+between moving too slowly during a math study session
+and being dynamic and quick enough. I've brute forced
+a lot of study sessions to my own detriment. As I've recently
+been more successful in my studies, being dynamic with my 
+study sessions has been a key change. But I still 
+get stubborn and fall into boring loops and get
+pedantic - moving too slow. 
+I think Putnam problems will give me a good feel for the mental 
+agility needed for research problems. 
+
 ### April 12, 2026
 
 Smooth immersions are maps whose differentials
