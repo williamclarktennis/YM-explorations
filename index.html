@@ -229,7 +229,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#april-15-2026" id="toc-april-15-2026" class="nav-link active" data-scroll-target="#april-15-2026">April 15, 2026</a></li>
+  <li><a href="#april-19-2026" id="toc-april-19-2026" class="nav-link active" data-scroll-target="#april-19-2026">April 19, 2026</a></li>
+  <li><a href="#april-16-2026" id="toc-april-16-2026" class="nav-link" data-scroll-target="#april-16-2026">April 16, 2026</a></li>
+  <li><a href="#april-15-2026" id="toc-april-15-2026" class="nav-link" data-scroll-target="#april-15-2026">April 15, 2026</a></li>
   <li><a href="#april-13-2026" id="toc-april-13-2026" class="nav-link" data-scroll-target="#april-13-2026">April 13, 2026</a></li>
   <li><a href="#april-12-2026" id="toc-april-12-2026" class="nav-link" data-scroll-target="#april-12-2026">April 12, 2026</a></li>
   <li><a href="#april-9-2026" id="toc-april-9-2026" class="nav-link" data-scroll-target="#april-9-2026">April 9, 2026</a></li>
@@ -258,6 +260,155 @@ window.Quarto = {
 </header>
 
 
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand\mcy{{\mathcal{Y}}}
+\newcommand{\R}{\mathbb{R}}
+\def\*#1{\mathbf{#1}}
+\]</span></p>
+</div>
+<section id="april-19-2026" class="level3">
+<h3 class="anchored" data-anchor-id="april-19-2026">April 19, 2026</h3>
+<section id="question-about-lemma-4.5.37-in-intro-to-random-matrices." class="level4">
+<h4 class="anchored" data-anchor-id="question-about-lemma-4.5.37-in-intro-to-random-matrices.">Question about Lemma 4.5.37 in Intro to Random Matrices.</h4>
+<p>Consider the inputs to Lemma 4.5.37 in <span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>. Let <span class="math inline">\(P_{\* a}\)</span>, <span class="math inline">\(P_{\*b}\)</span> be the laws of <span class="math inline">\(\* a\)</span>, <span class="math inline">\(\* b\)</span> on <span class="math inline">\(\mathbb R^N\)</span> and <span class="math inline">\(\mathbb R_+^{N-1}\)</span> respectively. And let <span class="math inline">\(P_{\* d}\)</span> and <span class="math inline">\(P_{\* u}\)</span> be the laws of <span class="math inline">\(\* d\)</span> and <span class="math inline">\(\* u\)</span> on <span class="math inline">\(\Delta_N^c\)</span> and <span class="math inline">\(S_+^{N-1}\)</span> respectively. Furthermore, let <span class="math inline">\(g: \R^N \times \R_+^{N-1} \to \R\)</span> be a test function. We view <span class="math inline">\(g\)</span> as a function of a tridiagonal matrix, parametrized by <span class="math inline">\(\* a\)</span> and <span class="math inline">\(\* b\)</span>.</p>
+<ul>
+<li>Question: Does it follow that <span class="math display">\[
+\int_{\R^N \times \R_+^{N-1}} g(\*a, \*b) \, d(P_{\* a} \otimes P_{\* b})
+= \int_{\Delta_N^c \times S_{+}^{N-1}} g(\*a(\* d, \* u), \*b(\* d, \*u ))
+\, d(P_{\* d} \otimes P_{\* u})?
+\]</span></li>
+</ul>
+<p>Next, if the above question is answered affirmatively, how can I argue that it does hold? As far as I know, evidence that is does hold goes as follows. First <span class="math inline">\(P_{\* a} \otimes P_{\* b}\)</span> is the law of the entries of a tridiagonal <span class="math inline">\(\beta = 1\)</span> ensemble matrix; let it be denoted by <span class="math inline">\(H\)</span>. We know that <span class="math inline">\(H = (H_1 \cdots H_N) U D U^T (H_1 \cdots H_N)^T\)</span>, where <span class="math inline">\(X = UDU^T\)</span> is a GOE(N) matrix with <span class="math inline">\(D = \text{diag}(\* d)\)</span>, <span class="math inline">\(U\)</span> is the unique orthogonal matrix with positive first row, which happens to be <span class="math inline">\(\* u\)</span>, and <span class="math inline">\(H_i\)</span> are the successive Householder transformations employed in the proof of Thm 4.5.35. By the form of the <span class="math inline">\(H_i\)</span>, with left most column all zeros except for the top entry, and top most row equal to all zeros except for the left most entry, it follows that the first row of <span class="math inline">\((H_1 \cdots H_N) U\)</span> is equal to the first row of <span class="math inline">\(U\)</span>. Hence the first row of <span class="math inline">\((H_1 \cdots H_N) U\)</span> is also <span class="math inline">\(\* u\)</span>. Also, by the bijective correspondence between <span class="math inline">\((\* a, \*b)\)</span> and <span class="math inline">\((\* d, \* u)\)</span>, it seems true that <span class="math inline">\(\* u\)</span> parametrizes the orthogonal matrices <span class="math inline">\(O\)</span> involved in the decomposition <span class="math inline">\(H = ODO^T\)</span>. To say this in another way, let <span class="math display">\[\begin{align*}
+A &amp;= \{O \in O(N): O \text{ has positive first row and there exists a}\\
+&amp; \text{diagonal matrix } D \text{ with diagonal } \*d \in \Delta_N^c \text{ such that } \\
+&amp; ODO^T \text{ is a tridiagonal matrix with positive off-diagonal}\}.
+\end{align*}\]</span> Then it would seem that integrating over <span class="math inline">\(A\)</span> with Haar measure on <span class="math inline">\(O(N)\)</span> is the same as integrating over <span class="math inline">\(S_+^{N-1}\)</span> with the law of <span class="math inline">\(\* u\)</span>. The upshot of this discussion is that we are now in a position more similar to that of equation (14.10) in <span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span>, for instance. Now let <span class="math inline">\(C\)</span> be a constant of proportionality whose value may change from term to term. It seems true, first and foremost based on the fact that <span class="math inline">\(P_{\* d}\)</span> is the law of the eigenvalues of <span class="math inline">\(H\)</span>, but also based on the computations in <span class="citation" data-cites="Kemp2022">Kemp (<a href="#ref-Kemp2022" role="doc-biblioref">2022</a>)</span> Section 14 or even the proof of Theorem 2.5.2 in <span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>, that <span class="math display">\[
+\int_{\R^N \times \R_+^{N-1}} g(\*a, \*b) \, d(P_{\* a} \otimes P_{\* b})
+= C \int_{\Delta_N^c \times A} g(ODO^T)
+\, d(P_{\* d} \otimes Haar_{O(N)}(O))
+\]</span> and by the parametrization by <span class="math inline">\(\* u\)</span> discussion, we would also have <span class="math display">\[
+\int_{\Delta_N^c \times A} g(UDU^T)
+\, d(P_{\* d} \otimes Haar_{O(N)}(U))
+= C \int_{\Delta_N^c \times S_+^{N-1}} g(\* d, \* u)
+\, d(P_{\* d} \otimes P_{\* u}).
+\]</span></p>
+<p>Why do I care? We can show using other arguments that <span class="math display">\[\begin{align*}
+\int_{\R^N \times \R_+^{N-1}} g(\*a, \*b) \, d(P_{\* a} \otimes P_{\* b}) &amp;=
+\int_{\Delta_N^c \times S_+^{N-1}} g(\* d, \* u) e^{-\sum d_i^2/4} \prod b_i^{i-1} \cdot J d \* d \, d\* u,
+\end{align*}\]</span> where <span class="math inline">\(d \* d\)</span> denotes Lebesgue measure on <span class="math inline">\(\Delta_N^c\)</span> and <span class="math inline">\(d\* u\)</span> denotes uniform surface measure on <span class="math inline">\(S_+^{N-1}\)</span>. Meanwhile <span class="math display">\[
+\int_{\Delta_N^c \times S_{+}^{N-1}} g(\*a(\* d, \* u), \*b(\* d, \*u ))
+\, d(P_{\* d} \otimes P_{\* u}) = \int_{\Delta_N^c \times S_{+}^{N-1}}
+g(\*a(\* d, \* u) \Delta (\* d) e^{-\sum d_i^2/4} d\*d d \*u
+\]</span> by the fact that <span class="math inline">\(\* d\)</span> is the diagonal of a GOE matrix <span class="math inline">\(X\)</span> in the proof of Lemma 5.4.37, and <span class="math inline">\(\* u\)</span> is a row in an orthogonal matrix which is distributed according to Haar measure. The above being true for arbitrary test functions suggests that <span class="math display">\[
+e^{-\sum d_i^2/4} \prod b_i^{i-1} \cdot J = \Delta (\* d) e^{-\sum d_i^2/4},
+\]</span> which would imply Lemma 5.4.37.</p>
+</section>
+<section id="unorganized-thoughts-about-section-4.5-in-intro-to-random-matrices-by-anderson" class="level4">
+<h4 class="anchored" data-anchor-id="unorganized-thoughts-about-section-4.5-in-intro-to-random-matrices-by-anderson">Unorganized Thoughts about Section 4.5 in Intro to Random Matrices by Anderson</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="Lemma 4.5.37 in Anderson">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Lemma 4.5.37 in Anderson
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The map <span class="math inline">\((\vec{a}, \vec{b}) \mapsto (\vec{d}, \vec{v})\)</span> from <span class="math inline">\(\mathbb R^N \times \mathbb R_+^{(N-1)}\)</span> to <span class="math inline">\(\Delta_N^c \times S_+^{N-1}\)</span> is a bijection, whose Jacobian <span class="math inline">\(J\)</span> is proportional to <span class="math display">\[
+\frac{\Delta(\vec{d})}{\prod_{i=1}^{N-1} b_i^{i-1}}.
+\]</span></p>
+</div>
+</div>
+<p>Proof. The first step is to argue that the above map is a bijection. Before that, we argue that it is well-defined.</p>
+<p>The next step is to evaluate the Jacobian. We will not proceed rigorously because that would require geometric notions. Note that <span class="math inline">\((4.5.2)\)</span> and the definition of the map above suggest that one could find the Jacobian through implicit differentiation of a set of algebraic equations. But there’s a slicker way. The trick is to proceed probabilistically. We view <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> as random entries of a random tridiagonal matrix <span class="math inline">\(H \in T_N\)</span> in the case <span class="math inline">\(\beta = 1\)</span>, where <span class="math inline">\(H\)</span> is obtained from a random GOE(N) matrix <span class="math inline">\(X\)</span> through successive Householder rotations employed in the proof of Theorem 4.5.35.</p>
+<p>Next, except on a set of measure <span class="math inline">\(0\)</span>, the eigenvalues of <span class="math inline">\(X\)</span> are distinct (i.e.&nbsp;simple), and in this case we can write <span class="math inline">\(X = UDU^T\)</span> uniquely where <span class="math inline">\(D\)</span> is diagonal (with entries <span class="math inline">\(\vec{d}\)</span>) with decreasing entries down the diagonal, and <span class="math inline">\(U\)</span> is the orthogonal matrix with the first row <span class="math inline">\(\vec{u}\)</span> having non-negative entries. Furthermore, except on a set of measure 0, the entries of <span class="math inline">\(\vec{u}\)</span> are strictly positive.</p>
+<p>Let’s fix some notions ahead of the computations. We let <span class="math inline">\(P_H\)</span> denote the law of the entries of <span class="math inline">\(H\)</span> on <span class="math inline">\(\mathbb R^N \times \mathbb R_+^{N-1}\)</span>. In other words, by independence, <span class="math inline">\(P_H =
+P_{\vec{a}} \otimes P_{\vec{b}}\)</span>, where <span class="math inline">\(P_{\vec{a}}\)</span> is the law of the random diagonal vector <span class="math inline">\(\vec{a}\)</span> on <span class="math inline">\(\mathbb R^N\)</span>, and <span class="math inline">\(P_{\vec{b}}\)</span> is the law of the random off-diagonal vector <span class="math inline">\(\vec{b}\)</span> on <span class="math inline">\(\mathbb R_+^{N-1}\)</span>. Note that <span class="math inline">\(\vec{b}\)</span> is strictly positive except on a set of measure 0 because each entry of <span class="math inline">\(\vec{b}\)</span> is a <span class="math inline">\(\chi\)</span> random variable.</p>
+<p>We let <span class="math inline">\(P_{\vec{d}}\)</span> denote the law of <span class="math inline">\(\vec{d}\)</span>, that is, <span class="math inline">\((d_1 &gt; d_2 &gt; \cdots &gt; d_N)\)</span>, on <span class="math inline">\(\Delta_N^c\)</span>. We let <span class="math inline">\(P_{\vec{u}}\)</span> denote the law of <span class="math inline">\(\vec{u}\)</span> on <span class="math inline">\(S_+^{N-1}\)</span>.</p>
+<p>Next, let’s write down the densities that are known.</p>
+<p>Let <span class="math inline">\(g\)</span> be a test function which depends only on the eigenvalues of <span class="math inline">\(H\)</span>.</p>
+<p>We have the following equality: <span class="math display">\[
+\int_{\mathbb R^N \times \mathbb R_+^{N-1}}
+g(H) dP_H(H) = \int_{\Delta_N^c} g(\vec{d}) dP_{\vec{d}}(\vec{d}).
+\]</span></p>
+<p>Let <span class="math inline">\(g: \Delta_N^c \times S_+^{N-1} \to \mathbb R\)</span> be a test function. The law of the eigenvalues <span class="math inline">\(\vec{d}\)</span> on <span class="math inline">\(\Delta_N^c\)</span> is denoted by <span class="math inline">\(P_\vec{d}\)</span>, while the law of <span class="math inline">\(\vec{u}\)</span> on <span class="math inline">\(S_+^{N+1}\)</span> is denoted <span class="math inline">\(P_\vec{u}\)</span>.</p>
+<p>By Theorem 2.5.2 and Corollary 2.5.4 in <span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>, <span class="math display">\[
+d(P_\vec{d} \otimes P_{\vec{u}}) (\vec{d},\vec{u})= \Delta(\vec{d})
+e^{-\sum \frac{d_i^2}{4}} \left (\prod_{i=1}^N dd_i \right ) \otimes
+\sigma(u)
+\]</span> where <span class="math inline">\(\left (\prod_{i=1}^N dd_i \right )\)</span> denotes Lebesgue measure on <span class="math inline">\(\Delta_N^c\)</span> and <span class="math inline">\(\sigma\)</span> denotes uniform measure on <span class="math inline">\(S_+^{N-1}\)</span>.</p>
+<p>As a result, <span class="math display">\[
+\int_{\Delta_N^c \times S_+^{N-1}} g(d,u)
+\Delta(d) \, e^{-\sum \frac{d_i^2}{4}}
+\, \left (\prod_{i=1}^N dd_i \right ) \otimes
+\sigma(u) =
+\int_{\Delta_N^c \times S_+^{N-1}} g(d,u) \,
+d(P_d \otimes P_u)
+\]</span></p>
+<p>Next, since <span class="math inline">\(d\)</span> and <span class="math inline">\(u\)</span> parameterize the tridiagonal matrices <span class="math inline">\(H\)</span> with diagonal <span class="math inline">\(a\)</span> and positive off-diagonal <span class="math inline">\(b\)</span>, we see that <span class="math display">\[
+\int_{\Delta_N^c \times S_+^{N-1}} g(d,u) \,
+d(P_d \otimes P_u) =
+\int_{\mathbb R^N \times \mathbb R^{N-1}_+} g(H)
+\, d(P_a \otimes P_b).
+\]</span></p>
+</section>
+</section>
+<section id="april-16-2026" class="level3">
+<h3 class="anchored" data-anchor-id="april-16-2026">April 16, 2026</h3>
+<p>On March 12, 2026, I got a grip on the change of variables formula. See that post.</p>
+<p>But now I need more of a shorthand because the reality is that I don’t apply change of variables that often, so I keep forgetting all of the formalism.</p>
+<p>Here’s what I usually use. Let <span class="math inline">\(T: A \subset \mathbb R^n \to T(A) \subset \mathbb R^n\)</span> be injective. We start off with the integral <span class="math display">\[
+\int_A f(x) \, d\mathcal{L}^n(x).
+\]</span> We make the change of variable <span class="math inline">\(x = T^{-1}(y)\)</span>, for example, <span class="math inline">\(x = y + \mu\)</span> or <span class="math inline">\(x = Qy\)</span> for some matrix <span class="math inline">\(Q\)</span>. Then we get <span class="math display">\[
+\int_A f(x) \, d\mathcal{L}^n(x) = \int_{T(A)} f(T^{-1}(y)) \, dT_*\mathcal{L}^n (y).
+\]</span> For example, we would get <span class="math display">\[
+\int_A f(x) \, d\mathcal{L}^n(x) = \int_{Q^{-1}(A)} f(Qy) \, dQ^{-1}_*\mathcal{L}^n (y).
+\]</span> Then the pushforward has a Radon Nikodym derivative: <span class="math display">\[
+\frac{dT_* \mathcal{L}^{n}}{d \mathcal{L}^n}(y) = |\det D_{|_y} T^{-1}|,
+\]</span> so we get <span class="math display">\[
+\int_A f(x) \, d\mathcal{L}^n(x) =
+\int_{T(A)} f(T^{-1}(y)) \, |\det D_{|_y} T^{-1}| \, d{L}^n (y).
+\]</span> In the example, it would be <span class="math display">\[
+\int_A f(x) \, d\mathcal{L}^n(x) = \int_{Q^{-1}(A)} f(Qy) \, |\det Q| \, d\mathcal{L}^n (y).
+\]</span></p>
+<p>So now let me look into a shorthand notation. Consider first using vector notation, and assume we are using Lebesgue measure: <span class="math display">\[
+\int_A f(\vec{x}) \, d\vec{x}.
+\]</span> Next, make the change of variable <span class="math inline">\(\vec{x} = \vec{x}(\vec{y})\)</span>. Note how, now, <span class="math inline">\(\vec{x} = T^{-1}\)</span>. Then forget about the middle step where we only had pushforward of <span class="math inline">\(d \vec{x}\)</span> by the map <span class="math inline">\(T: \vec{x} \mapsto \vec{y}\)</span>. Instead jump to the Radon Nikodym derivative step. Immediately write the Jacobian <span class="math display">\[
+J = |\det D_{\vec{y}} \vec{x}|.
+\]</span> Then we get <span class="math display">\[
+\int_A f(\vec{x}) \, d \vec{x} =
+\int_{\vec{y}(A)} f( \vec{x} (\vec{y})) \, J \, d \vec{y}.
+\]</span></p>
+<p>Let’s look at some example. Consider the change of variable <span class="math inline">\(\vec{x} = Q^* \vec{y} + a\)</span>. Then we get <span class="math display">\[
+\int_{A} f(\vec{x}) \, d \vec{x} =
+\int_{Q(A - a)} f(Q^* \vec{y}) \, |\det{Q^*}| \, d\vec{y}.
+\]</span></p>
+<p>Here’s a more complicated example that I’m working on right now.</p>
+<p>We have a bijection <span class="math display">\[
+\mathbb R^N \times \mathbb R_+^{(N-1)} \ni (\vec{a}, \vec{b})
+\mapsto (\vec{d}, \vec{v}) \in \Delta_N^c \times S_+^{N-1},
+\]</span> where <span class="math inline">\(\Delta_N^c\)</span> is a subset of <span class="math inline">\(\mathbb R^N\)</span> and <span class="math inline">\(S_+^{N-1}\)</span> are the points on the unit sphere in <span class="math inline">\(\mathbb R^N\)</span> whose first coordinate is positive. Let’s denote the forward direction of the above bijection <span class="math display">\[
+(\vec{d}(\vec{a}, \vec{b}), \vec{v}(\vec{a}, \vec{b})).
+\]</span> Then in my application we have the integral (for some <span class="math inline">\(A \subset \Delta_N^c \times S_+^{N-1}\)</span>) <span class="math display">\[
+\int_A d \vec{d} \, d \vec{u}  \, C \, \Delta(\vec{d}) \,
+\exp \left (- \sum_{i=1}^N \frac{d_i^2}{4} \right).
+\]</span> Basically, we want to replace <span class="math inline">\(d_i\)</span> by <span class="math inline">\(\vec{d}(\vec{a}, \vec{b})_i\)</span>, and integrate over <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span>. Let’s see what the cookbook from above gives us.</p>
+<p>Step 1. We make the change of variable <span class="math inline">\((\vec{d}, \vec{u}) = (\vec{d}(\vec{a}, \vec{b}), \vec{u}(\vec{a}, \vec{b})).\)</span></p>
+<p>Step 2. The Jacobian is <span class="math display">\[
+J = |\det D_{(\vec{a}, \vec{b})} (\vec{d}(\cdot, \cdot), \vec{u}(\cdot, \cdot))|.
+\]</span></p>
+<p>Step 3. The new region of integration is <span class="math inline">\((\vec{a}, \vec{b})(A)\)</span>.</p>
+<p>We end up with <span class="math display">\[
+\int_A d \vec{d} \, d \vec{u}  \, C \, \Delta(\vec{d}) \,
+\exp \left (- \sum_{i=1}^N \frac{d_i^2}{4} \right) =
+\int_{(\vec{a}, \vec{b})(A)} J d\vec{a} \, d \vec{b} \,
+C \, \Delta(\vec{d}(\vec{a}, \vec{b}))
+\exp \left( - \sum_{i=1}^N \frac{\vec{d}(\vec{a}, \vec{b})_i^2}{4}   \right).
+\]</span></p>
+<p>The next step is to use Fubini and note that, when <span class="math inline">\(\vec{a}\)</span> is a variable of integration and <span class="math inline">\(\vec{b}\)</span> is fixed, then <span class="math inline">\(\vec{d}(\vec{a}, \vec{b})\)</span> varies like…</p>
+</section>
 <section id="april-15-2026" class="level3">
 <h3 class="anchored" data-anchor-id="april-15-2026">April 15, 2026</h3>
 <p>I need Theorem 6.1 in <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span> but for SU(2).</p>
@@ -326,11 +477,17 @@ fV + gV\)</span> follows from pointwise considerations. This module has a basis 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Anderson2010" class="csl-entry" role="listitem">
+Anderson, G. W., A Guionnet, and O Zeitouni. 2010. <span>“An Introduction to Random Matrices.”</span> Cambridge Studies in Advanced Mathematics. Cambridge University Press. 2010. <a href="https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf">https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf</a>.
+</div>
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
 </div>
 <div id="ref-chatterjee2026" class="csl-entry" role="listitem">
 ———. 2026. <span>“A Scaling Limit of <span class="math inline">\(\mathrm{SU}(2)\)</span> Lattice Yang-Mills-Higgs Theory.”</span> <a href="https://arxiv.org/abs/2401.10507">https://arxiv.org/abs/2401.10507</a>.
+</div>
+<div id="ref-Kemp2022" class="csl-entry" role="listitem">
+Kemp, T. 2022. <span>“Introduction to Random Matrix Theory.”</span> Lecture Notes. <a href="https://mathweb.ucsd.edu/~tkemp/RMT.Notes.pdf">mathweb.ucsd.edu/~tkemp/RMT.Notes.pdf</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

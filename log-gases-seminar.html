@@ -231,8 +231,6 @@ window.Quarto = {
   <ul>
   <li><a href="#talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" id="toc-talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" class="nav-link active" data-scroll-target="#talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices">Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)</a></li>
   <li><a href="#talk-2-beta-ensembles-and-tridiagonal-random-matrices" id="toc-talk-2-beta-ensembles-and-tridiagonal-random-matrices" class="nav-link" data-scroll-target="#talk-2-beta-ensembles-and-tridiagonal-random-matrices">Talk 2 (<span class="math inline">\(\beta\)</span>-ensembles and tridiagonal random matrices)</a></li>
-  <li><a href="#talk-3-limit-of-empirical" id="toc-talk-3-limit-of-empirical" class="nav-link" data-scroll-target="#talk-3-limit-of-empirical">Talk 3 (Limit of empirical )</a></li>
-  <li><a href="#more-details" id="toc-more-details" class="nav-link" data-scroll-target="#more-details">More Details</a></li>
   </ul>
 </nav>
     </div>
@@ -258,6 +256,14 @@ window.Quarto = {
 </header>
 
 
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand\mcy{{\mathcal{Y}}}
+\newcommand{\R}{\mathbb{R}}
+\def\*#1{\mathbf{#1}}
+\]</span></p>
+</div>
+<p>Will this work? <span class="math inline">\(\mcy = 3\)</span>. <span class="math inline">\(\mathcal{Y}\)</span>. <span class="math inline">\(\R\)</span> <span class="math inline">\(\* v\)</span></p>
 <section id="talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" class="level3">
 <h3 class="anchored" data-anchor-id="talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices">Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)</h3>
 <section id="definitions." class="level4">
@@ -386,19 +392,32 @@ c_n e^{-\frac{1}{2} (\lambda_1^2 + \cdots + \lambda_n^2)}
 
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled" title="Lemma 4.5.37 in Anderson">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Lemma 4.5.37 in Anderson
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The map <span class="math inline">\((\vec{a}, \vec{b}) \mapsto (\vec{d}, \vec{v})\)</span> from <span class="math inline">\(\mathbb R^N \times \mathbb R_+^{(N-1)}\)</span> to <span class="math inline">\(\Delta_N^c \times S_+^{N-1}\)</span> is a bijection, whose Jacobian <span class="math inline">\(J\)</span> is proportional to <span class="math display">\[
+\frac{\Delta(\vec{d})}{\prod_{i=1}^{N-1} b_i^{i-1}}.
+\]</span></p>
+</div>
+</div>
+<p>Proof.</p>
+<p>Why does the following equality hold: <span class="math display">\[
+\int_{\Delta_N^c \times S_+^{N-1}} g(\mathbf{d}, )
+\]</span></p>
+
+
+
 </section>
 </section>
-<section id="talk-3-limit-of-empirical" class="level3">
-<h3 class="anchored" data-anchor-id="talk-3-limit-of-empirical">Talk 3 (Limit of empirical )</h3>
-</section>
-<section id="more-details" class="level2">
 
-
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">More Details</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Anderson2010" class="csl-entry" role="listitem">
 Anderson, G. W., A Guionnet, and O Zeitouni. 2010. <span>“An Introduction to Random Matrices.”</span> Cambridge Studies in Advanced Mathematics. Cambridge University Press. 2010. <a href="https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf">https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf</a>.
 </div>
