@@ -9,6 +9,340 @@ bibliography: references.bib
 # jupyter: python3
 ---
 
+::: {.hidden}
+$$
+\newcommand\mcy{{\mathcal{Y}}}
+\newcommand{\R}{\mathbb{R}}
+\def\*#1{\mathbf{#1}}
+$$
+:::
+
+### April 19, 2026
+
+#### Question about Lemma 4.5.37 in Intro to Random Matrices.
+
+Consider the inputs to Lemma 4.5.37 in @Anderson2010.
+Let $P_{\* a}$, $P_{\*b}$ be the laws of $\* a$, $\* b$ on $\mathbb R^N$
+and $\mathbb R_+^{N-1}$ respectively.
+And let $P_{\* d}$ and $P_{\* u}$ be the laws of 
+$\* d$ and $\* u$ on $\Delta_N^c$ and $S_+^{N-1}$ respectively.
+Furthermore, let 
+$g: \R^N \times \R_+^{N-1} \to \R$ be a test function. 
+We view $g$ as a function of a tridiagonal 
+matrix, parametrized by $\* a$ and $\* b$.
+
+- Question: Does it follow that
+$$
+\int_{\R^N \times \R_+^{N-1}} g(\*a, \*b) \, d(P_{\* a} \otimes P_{\* b})
+= \int_{\Delta_N^c \times S_{+}^{N-1}} g(\*a(\* d, \* u), \*b(\* d, \*u )) 
+\, d(P_{\* d} \otimes P_{\* u})?
+$$ 
+
+Next, if the above 
+question is answered affirmatively, 
+how can I argue that it does hold? 
+As far as I know, evidence that is does hold goes as follows. 
+First $P_{\* a} \otimes P_{\* b}$ is the law of the entries
+of a tridiagonal $\beta = 1$ ensemble matrix; let it be denoted
+by $H$. We know that $H = (H_1 \cdots H_N) U D U^T (H_1 \cdots H_N)^T$, 
+where $X = UDU^T$ is a GOE(N) matrix with $D = \text{diag}(\* d)$, 
+$U$ is the unique 
+orthogonal matrix with positive first row,
+which happens to be $\* u$, and $H_i$ are the successive
+Householder transformations employed in the proof of Thm 4.5.35. 
+By the form of the $H_i$, with left most column all zeros except for the top entry, 
+and top most row equal to all zeros except for the left most entry,
+it follows that the first row of $(H_1 \cdots H_N) U$ is equal to 
+the first row of $U$. Hence the first row of $(H_1 \cdots H_N) U$
+is also $\* u$. Also, by the bijective correspondence between
+$(\* a, \*b)$ and $(\* d, \* u)$, it seems true that 
+$\* u$ parametrizes the orthogonal matrices $O$ involved in the 
+decomposition $H = ODO^T$.
+To say this in another way, let 
+\begin{align*}
+A &= \{O \in O(N): O \text{ has positive first row and there exists a}\\
+& \text{diagonal matrix } D \text{ with diagonal } \*d \in \Delta_N^c \text{ such that } \\
+& ODO^T \text{ is a tridiagonal matrix with positive off-diagonal}\}.
+\end{align*}
+Then it would seem that 
+integrating over $A$ with Haar measure on $O(N)$ is 
+the same as integrating over $S_+^{N-1}$ with the law of $\* u$. The upshot of 
+this discussion is that we are now in a position more similar to that 
+of equation (14.10) in @Kemp2022, for instance.
+Now let $C$ be a constant of 
+proportionality whose value may change from term to term. 
+It seems true,
+first and foremost based on the fact that $P_{\* d}$ is the law
+of the eigenvalues of $H$, but also based on the computations in 
+@Kemp2022 Section 14 or even the proof of Theorem 2.5.2 in @Anderson2010, that
+$$
+\int_{\R^N \times \R_+^{N-1}} g(\*a, \*b) \, d(P_{\* a} \otimes P_{\* b})
+= C \int_{\Delta_N^c \times A} g(ODO^T) 
+\, d(P_{\* d} \otimes Haar_{O(N)}(O))
+$$
+and by the parametrization by $\* u$ discussion, we would also have
+$$
+\int_{\Delta_N^c \times A} g(UDU^T) 
+\, d(P_{\* d} \otimes Haar_{O(N)}(U))
+= C \int_{\Delta_N^c \times S_+^{N-1}} g(\* d, \* u) 
+\, d(P_{\* d} \otimes P_{\* u}). 
+$$
+
+Why do I care? 
+We can show using other arguments that
+\begin{align*}
+\int_{\R^N \times \R_+^{N-1}} g(\*a, \*b) \, d(P_{\* a} \otimes P_{\* b}) &=
+\int_{\Delta_N^c \times S_+^{N-1}} g(\* d, \* u) e^{-\sum d_i^2/4} \prod b_i^{i-1} \cdot J d \* d \, d\* u,
+\end{align*}
+where $d \* d$ denotes Lebesgue measure on $\Delta_N^c$ and 
+$d\* u$ denotes uniform surface measure on $S_+^{N-1}$. 
+Meanwhile 
+$$
+\int_{\Delta_N^c \times S_{+}^{N-1}} g(\*a(\* d, \* u), \*b(\* d, \*u )) 
+\, d(P_{\* d} \otimes P_{\* u}) = \int_{\Delta_N^c \times S_{+}^{N-1}} 
+g(\*a(\* d, \* u) \Delta (\* d) e^{-\sum d_i^2/4} d\*d d \*u
+$$
+by the fact that $\* d$ is the diagonal of a GOE matrix $X$
+in the proof of Lemma 5.4.37, and $\* u$ is a row in an orthogonal matrix
+which is distributed according to Haar measure. 
+The above being true for arbitrary test functions suggests
+that 
+$$
+e^{-\sum d_i^2/4} \prod b_i^{i-1} \cdot J = \Delta (\* d) e^{-\sum d_i^2/4},
+$$
+which would imply Lemma 5.4.37.
+
+
+#### Unorganized Thoughts about Section 4.5 in Intro to Random Matrices by Anderson
+
+::: {.callout-note title="Lemma 4.5.37 in Anderson"}
+The map $(\vec{a}, \vec{b}) \mapsto (\vec{d}, \vec{v})$
+from $\mathbb R^N \times \mathbb R_+^{(N-1)}$ to 
+$\Delta_N^c \times S_+^{N-1}$ is a bijection, whose Jacobian
+$J$ is proportional to 
+$$
+\frac{\Delta(\vec{d})}{\prod_{i=1}^{N-1} b_i^{i-1}}.
+$$
+::: 
+
+Proof. The first step is to argue that the above map
+is a bijection. Before that, we argue that it is well-defined.
+
+The next step is to evaluate the Jacobian.
+We will not proceed rigorously because that would 
+require geometric notions. Note that 
+$(4.5.2)$ and the definition of the map
+above suggest that one could find the Jacobian through
+implicit differentiation of a set of algebraic equations.
+But there's a slicker way. 
+The trick is to proceed probabilistically. 
+We view $\vec{a}$ and $\vec{b}$ as random
+entries of a random tridiagonal matrix
+$H \in T_N$ in the case $\beta = 1$, 
+where $H$ is obtained from a 
+random GOE(N) matrix $X$ through successive Householder 
+rotations employed in the proof of Theorem 4.5.35.
+
+Next, except on a set of measure $0$,
+the eigenvalues of $X$ are distinct (i.e. simple),
+and in this case we can write 
+$X = UDU^T$ uniquely where $D$ is diagonal
+(with entries $\vec{d}$)
+with decreasing entries down the diagonal, and 
+$U$ is the orthogonal matrix
+with the first row $\vec{u}$ having non-negative
+entries. Furthermore, except on a set of measure 
+0, the entries of $\vec{u}$ are strictly positive.
+
+Let's fix some notions ahead of the computations.
+We let $P_H$ denote the law of the entries of $H$ on
+$\mathbb R^N \times \mathbb R_+^{N-1}$.
+In other words, by independence, $P_H = 
+P_{\vec{a}} \otimes P_{\vec{b}}$, where
+$P_{\vec{a}}$ is the law of the random diagonal
+vector $\vec{a}$ on $\mathbb R^N$, and 
+$P_{\vec{b}}$ is the law of the random off-diagonal
+vector $\vec{b}$ on $\mathbb R_+^{N-1}$.
+Note that $\vec{b}$ is strictly positive 
+except on a set of measure 0 because each entry of 
+$\vec{b}$ is a $\chi$ random variable.
+
+We let $P_{\vec{d}}$ denote the law of 
+$\vec{d}$, that is, $(d_1 > d_2 > \cdots > d_N)$, on
+$\Delta_N^c$. 
+We let $P_{\vec{u}}$ denote the law of $\vec{u}$
+on $S_+^{N-1}$.
+
+Next, let's write down the densities that are known.
+
+Let $g$ be a test function which depends only on the eigenvalues 
+of $H$. 
+
+We have the following equality:
+$$
+\int_{\mathbb R^N \times \mathbb R_+^{N-1}} 
+g(H) dP_H(H) = \int_{\Delta_N^c} g(\vec{d}) dP_{\vec{d}}(\vec{d}).
+$$
+
+Let $g: \Delta_N^c \times S_+^{N-1} \to \mathbb R$ be a test function.
+The law of the eigenvalues $\vec{d}$ on $\Delta_N^c$ is denoted
+by $P_\vec{d}$, while the law of 
+$\vec{u}$ on $S_+^{N+1}$ is denoted 
+$P_\vec{u}$. 
+
+By Theorem 2.5.2 and Corollary 2.5.4 in @Anderson2010,
+$$
+d(P_\vec{d} \otimes P_{\vec{u}}) (\vec{d},\vec{u})= \Delta(\vec{d}) 
+e^{-\sum \frac{d_i^2}{4}} \left (\prod_{i=1}^N dd_i \right ) \otimes
+\sigma(u)
+$$
+where $\left (\prod_{i=1}^N dd_i \right )$ denotes 
+Lebesgue measure on $\Delta_N^c$ and $\sigma$ denotes 
+uniform measure on $S_+^{N-1}$.
+
+As a result, 
+$$
+\int_{\Delta_N^c \times S_+^{N-1}} g(d,u) 
+\Delta(d) \, e^{-\sum \frac{d_i^2}{4}}
+\, \left (\prod_{i=1}^N dd_i \right ) \otimes
+\sigma(u) = 
+\int_{\Delta_N^c \times S_+^{N-1}} g(d,u) \, 
+d(P_d \otimes P_u)
+$$
+
+Next, since $d$ and $u$ parameterize the tridiagonal
+matrices $H$ with diagonal $a$ and positive off-diagonal $b$,
+we see that
+$$
+\int_{\Delta_N^c \times S_+^{N-1}} g(d,u) \, 
+d(P_d \otimes P_u) = 
+\int_{\mathbb R^N \times \mathbb R^{N-1}_+} g(H)
+\, d(P_a \otimes P_b). 
+$$
+
+### April 16, 2026
+
+On March 12, 2026, I got a grip on the change
+of variables formula. See that post. 
+
+But now I need more of a shorthand because
+the reality is that I don't apply change of variables
+that often, so I keep forgetting all of the formalism.
+
+Here's what I usually use. Let 
+$T: A \subset \mathbb R^n \to T(A) \subset \mathbb R^n$ 
+be injective. We start off with the integral
+$$
+\int_A f(x) \, d\mathcal{L}^n(x).
+$$
+We make the change of variable $x = T^{-1}(y)$, 
+for example, $x = y + \mu$ or $x = Qy$ for some matrix $Q$.
+Then we get
+$$
+\int_A f(x) \, d\mathcal{L}^n(x) = \int_{T(A)} f(T^{-1}(y)) \, dT_*\mathcal{L}^n (y).
+$$
+For example, we would get
+$$
+\int_A f(x) \, d\mathcal{L}^n(x) = \int_{Q^{-1}(A)} f(Qy) \, dQ^{-1}_*\mathcal{L}^n (y).
+$$
+Then the pushforward has a Radon Nikodym derivative: 
+$$
+\frac{dT_* \mathcal{L}^{n}}{d \mathcal{L}^n}(y) = |\det D_{|_y} T^{-1}|,
+$$
+so we get 
+$$
+\int_A f(x) \, d\mathcal{L}^n(x) = 
+\int_{T(A)} f(T^{-1}(y)) \, |\det D_{|_y} T^{-1}| \, d{L}^n (y).
+$$
+In the example, it would be
+$$
+\int_A f(x) \, d\mathcal{L}^n(x) = \int_{Q^{-1}(A)} f(Qy) \, |\det Q| \, d\mathcal{L}^n (y).
+$$
+
+So now let me look into a shorthand notation. 
+Consider first using vector notation, and assume 
+we are using Lebesgue measure:
+$$
+\int_A f(\vec{x}) \, d\vec{x}.
+$$
+Next, make the change of variable $\vec{x} = \vec{x}(\vec{y})$.
+Note how, now, $\vec{x} = T^{-1}$.
+Then forget about the middle step where
+we only had pushforward of $d \vec{x}$
+by the map $T: \vec{x} \mapsto \vec{y}$.
+Instead jump to the Radon Nikodym derivative step.
+Immediately write the Jacobian
+$$
+J = |\det D_{\vec{y}} \vec{x}|.
+$$
+Then we get
+$$
+\int_A f(\vec{x}) \, d \vec{x} = 
+\int_{\vec{y}(A)} f( \vec{x} (\vec{y})) \, J \, d \vec{y}.
+$$
+
+Let's look at some example. 
+Consider the change of variable
+$\vec{x} = Q^* \vec{y} + a$.
+Then we get
+$$
+\int_{A} f(\vec{x}) \, d \vec{x} = 
+\int_{Q(A - a)} f(Q^* \vec{y}) \, |\det{Q^*}| \, d\vec{y}.
+$$
+
+Here's a more complicated example that
+I'm working on right now.
+
+We have a bijection
+$$
+\mathbb R^N \times \mathbb R_+^{(N-1)} \ni (\vec{a}, \vec{b}) 
+\mapsto (\vec{d}, \vec{v}) \in \Delta_N^c \times S_+^{N-1},
+$$
+where $\Delta_N^c$ is a subset of 
+$\mathbb R^N$ and $S_+^{N-1}$ are the points
+on the unit sphere in $\mathbb R^N$ whose first coordinate 
+is positive. 
+Let's denote the forward direction of the above bijection
+$$
+(\vec{d}(\vec{a}, \vec{b}), \vec{v}(\vec{a}, \vec{b})).
+$$
+Then in my application we have the 
+integral (for some $A \subset \Delta_N^c \times S_+^{N-1}$)
+$$
+\int_A d \vec{d} \, d \vec{u}  \, C \, \Delta(\vec{d}) \,
+\exp \left (- \sum_{i=1}^N \frac{d_i^2}{4} \right).
+$$
+Basically, we want to replace $d_i$ by 
+$\vec{d}(\vec{a}, \vec{b})_i$, and integrate over
+$\vec{a}$ and $\vec{b}$. Let's see what the cookbook
+from above gives us.
+
+Step 1. We make the change of variable
+$(\vec{d}, \vec{u}) = (\vec{d}(\vec{a}, \vec{b}), \vec{u}(\vec{a}, \vec{b})).$
+
+Step 2. The Jacobian is 
+$$
+J = |\det D_{(\vec{a}, \vec{b})} (\vec{d}(\cdot, \cdot), \vec{u}(\cdot, \cdot))|.
+$$
+
+Step 3. The new region of integration is
+$(\vec{a}, \vec{b})(A)$. 
+
+We end up with 
+$$
+\int_A d \vec{d} \, d \vec{u}  \, C \, \Delta(\vec{d}) \,
+\exp \left (- \sum_{i=1}^N \frac{d_i^2}{4} \right) = 
+\int_{(\vec{a}, \vec{b})(A)} J d\vec{a} \, d \vec{b} \,
+C \, \Delta(\vec{d}(\vec{a}, \vec{b})) 
+\exp \left( - \sum_{i=1}^N \frac{\vec{d}(\vec{a}, \vec{b})_i^2}{4}   \right).
+$$
+
+The next step is to use Fubini and note that, 
+when $\vec{a}$ is a variable
+of integration and $\vec{b}$ is fixed, then 
+$\vec{d}(\vec{a}, \vec{b})$ varies like...
+
+
 ### April 15, 2026
 
 I need Theorem 6.1 in @Chatterjee2016 but for SU(2). 

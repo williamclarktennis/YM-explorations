@@ -3,6 +3,16 @@ title: "Log Gases Seminar - Summer 2026"
 bibliography: references.bib
 ---
 
+::: {.hidden}
+$$
+\newcommand\mcy{{\mathcal{Y}}}
+\newcommand{\R}{\mathbb{R}}
+\def\*#1{\mathbf{#1}}
+$$
+:::
+
+Will this work? $\mcy = 3$.
+$\mathcal{Y}$. $\R$ $\* v$
 
 
 ### Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)
@@ -140,8 +150,20 @@ joint law of the eigenvalues and eigenvectors of a $GUE_n$.
 
 ::: 
 
-### Talk 3 (Limit of empirical )
+::: {.callout-note title="Lemma 4.5.37 in Anderson"}
+The map $(\vec{a}, \vec{b}) \mapsto (\vec{d}, \vec{v})$
+from $\mathbb R^N \times \mathbb R_+^{(N-1)}$ to 
+$\Delta_N^c \times S_+^{N-1}$ is a bijection, whose Jacobian
+$J$ is proportional to 
+$$
+\frac{\Delta(\vec{d})}{\prod_{i=1}^{N-1} b_i^{i-1}}.
+$$
+::: 
 
+Proof. 
 
+Why does the following equality hold: 
+$$
+\int_{\Delta_N^c \times S_+^{N-1}} g(\mathbf{d}, )
+$$
 
-## More Details

@@ -12,3 +12,5 @@ This website is built using Quarto.
 
 Here is a guide on citations using biblatex: <https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex>.
 
+Here's how to define LaTeX shortcuts in quarto:
+<https://github.com/orgs/quarto-dev/discussions/1793>.
