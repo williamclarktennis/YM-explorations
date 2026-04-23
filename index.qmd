@@ -17,6 +17,11 @@ $$
 $$
 :::
 
+### April 21, 2026
+
+Question: How is the Dimitriu Edelman Theorem related to 
+the beta ensembles?
+
 ### April 19, 2026
 
 #### Question about Lemma 4.5.37 in Intro to Random Matrices.

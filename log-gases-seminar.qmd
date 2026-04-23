@@ -11,10 +11,6 @@ $$
 $$
 :::
 
-Will this work? $\mcy = 3$.
-$\mathcal{Y}$. $\R$ $\* v$
-
-
 ### Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)
 
 #### Definitions. 
@@ -167,3 +163,6 @@ $$
 \int_{\Delta_N^c \times S_+^{N-1}} g(\mathbf{d}, )
 $$
 
+### Link to my Handwritten Scanned Notes
+
+[Link to Scanned Notes](https://drive.google.com/drive/folders/1ywoU8MwSaGxhdZm9KTSGTVhmukdxgsSr?usp=sharing)
