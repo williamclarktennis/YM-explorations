@@ -166,3 +166,7 @@ $$
 ### Link to my Handwritten Scanned Notes
 
 [Link to Scanned Notes](https://drive.google.com/drive/folders/1ywoU8MwSaGxhdZm9KTSGTVhmukdxgsSr?usp=sharing)
+
+The 6th scan contains some computations regarding the 
+smooth map $f: x \mapsto \frac{x}{\lVert x \rVert}$ from 
+Proposition 4.1.12 in @Anderson2010. 
