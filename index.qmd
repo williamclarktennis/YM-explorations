@@ -17,3 +17,52 @@ $$
 $$
 :::
 
+### May 1, 2026
+
+Here is a report on an internet search from this morning.
+My initial goal was to look for applications
+of what I'm learning in @Dimitriu2018. 
+Therefore I looked on Google Scholar to see who
+had cited that paper. 
+The first one that caught my eye 
+was titled ["Tridiagonalizing random matrices"](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.126001) 
+written by Balasubramanian, Magan, and Wu, published in 
+2023 in Phy Rev Let D. Some of the computations
+in the paper looked familiar. 
+At least one the authors was associated with the
+[Sante Fe Institute](https://www.santafe.edu/), which I had
+never heard of before. This institute
+doesn't look relevant for me as a Master student, aside
+from the two research assistants they hired, who 
+are Master/Bachelor level. For the most part, it looks
+like it is geared towards post-docs, but at least it is promising
+that there are places outside academia for post-docs. 
+
+Next I clicked on the article, also citing Dimitriu and Edelman's article,
+titled ["Eigenvectors from eigenvalues: A survey of a basic identity in
+linear algebra"](https://arxiv.org/pdf/1908.03795) 
+written by 
+Denton, Parke, Tao, and Zhang. I was surprised to see 
+in an article on linear algebra that
+Denton, Parke, and Zhang were members of physics associations. 
+Denton, for instance, was a member of 
+[Brookhaven National Lab](https://www.bnl.gov/careers/) in Upton, NY.
+I didn't find any perfect matches
+for my background of a Master in Math and Bachelor
+in Math and CS, but I think there must be something.
+But the point is not so much to find a job, but
+to see that there is hope of finding something outside
+of corporate finance and corporate tech which 
+still uses technical skills, especially mathematics. 
+There was also [Fermi Forward](https://www.fermi-forward.org/)
+which is in Illinois. This lab is connected with U. Chicago, which
+is not relevant to my background, but is also connected to 
+U. Illinois Urbana Champaign, which might be relevant to me. 
+
+Another thing I learned is that there 
+is collaboration between national labs and 
+PhD candidates. For instance, [here](https://internships.fnal.gov/science-graduate-research-program-scgsr/).
+
+Perhaps more insightful is to look at, 
+for instance, the career path of [Denton](https://peterdenton.github.io/). 
+
