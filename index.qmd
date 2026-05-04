@@ -17,6 +17,15 @@ $$
 $$
 :::
 
+### May 4, 2026
+
+[Here](https://drive.google.com/drive/u/0/folders/1utG5S-e3Nzdyet0UWugVWob7riQ1aqAc)
+are some notes on the Frenet frame field of a curve. 
+We follow page 56 of O'Neills book on Elementary Differential Geometry.
+The idea is to take together the vecolity of the curve, 
+the acceleration, and the cross product of the acceleration
+and velocity to get a frame vector field.
+
 ### May 1, 2026
 
 Here is a report on an internet search from this morning.
@@ -66,3 +75,12 @@ PhD candidates. For instance, [here](https://internships.fnal.gov/science-gradua
 Perhaps more insightful is to look at, 
 for instance, the career path of [Denton](https://peterdenton.github.io/). 
 
+#### Other notes
+
+I don't understand "And in
+any case, from the unitary invariance of GUE, we see that even after
+conditioning on $D$, we may assume without loss of generality that $U$
+is drawn from the invariant Haar measure on $U(n)$. In particular, $U$
+and $D$ can be taken to be independent" on page 219 of Tao's Random matrix book.
+
+Update: he [responded](https://terrytao.wordpress.com/2010/02/23/254a-notes-6-gaussian-ensembles/comment-page-1/#comment-692464).
