@@ -1,0 +1,52 @@
+---
+title: "Navigation of Notes on Chatterjee's Leading Term Paper"
+bibliography: references.bib
+---
+
+::: {.hidden}
+$$
+\newcommand\mcy{{\mathcal{Y}}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\def\*#1{\mathbf{#1}}
+$$
+:::
+
+Done: 
+- checked March 2026 page for thesis relevant notes
+
+To-do:
+-
+
+### Miscellaneous
+
+- $U(N)$ is compact and eigenvalues have form $e^{i\theta}$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-16-2026)
+
+### Section 10
+
+- I typed out Lemma 10.2, but haven't gotten around to filling in the details yet in this link. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#lemma-10.2-chatterjee)
+
+### Section 12
+
+- @FriedmanApplied was useful for this section, and I filled in some details
+to a passage. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-25-2026)
+- Proof that $\E[X_j] = \mu_j$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-26-2026)
+- Proof that $\text{Cov}(X_j,X_k) = \Sigma_{jk}$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-27-2026)
+- Formulation of several lemmas on page 29. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#more-on-section-12-chatterjee)
+- Some details on the polynomial defining a Gaussian measure and linear algebra prerequisites. 
+For example, showed that the density of a Gaussian measure can be expressed in a standard format. 
+[Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-24-2026)
+- I discussed determinants for matrices indexed by unordered sets, which was a point of confusion 
+when looking at $\det \Sigma$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-20-2026)
+- Definition of polynomial $P: \R^{E_n} \to \R$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#polynomial)
+
+### Section 13
+
+- Lemma 13.1 Proof. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#following-chatterjee-lemma-13.1)
+- Defining positive definite quadratic forms using @LangAlgebra. 
+Proving that $M_n$ is symmetric and bilinear and quadratic, but not positive definite. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#positive-definite-quadratic-form)
+
+### Notes on Scaling Limit Paper
+
+- Guiding research question. [Link](https://williamclarktennis.github.io/YM-explorations/#april-9-2026)
+- Annotated bibliography of articles related to SU(2). [Link](https://williamclarktennis.github.io/YM-explorations/#april-15-2026)
