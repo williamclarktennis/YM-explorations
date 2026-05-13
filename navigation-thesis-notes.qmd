@@ -13,10 +13,14 @@ $$
 :::
 
 Done: 
+
 - checked March 2026 page for thesis relevant notes
+- checked April 2026 page
 
 To-do:
--
+
+- Check latex notes
+- Scan handwritten notes
 
 ### Miscellaneous
 
@@ -50,3 +54,4 @@ Proving that $M_n$ is symmetric and bilinear and quadratic, but not positive def
 
 - Guiding research question. [Link](https://williamclarktennis.github.io/YM-explorations/#april-9-2026)
 - Annotated bibliography of articles related to SU(2). [Link](https://williamclarktennis.github.io/YM-explorations/#april-15-2026)
+- scattered discussion of SU(2) and manifolds. [Link](https://williamclarktennis.github.io/YM-explorations/April2026.html#april-12-2026)
