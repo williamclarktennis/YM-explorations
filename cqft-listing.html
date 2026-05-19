@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Log Gases Seminar - Summer 2026 – William’s Lattice YM Explorations</title>
+<title>Intro to CQFT 1,2,3 – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,6 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -88,6 +70,35 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -239,24 +250,15 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#talk-0-introductory-talk-by-johannes-alt" id="toc-talk-0-introductory-talk-by-johannes-alt" class="nav-link active" data-scroll-target="#talk-0-introductory-talk-by-johannes-alt">Talk 0 (Introductory Talk by Johannes Alt)</a></li>
-  <li><a href="#talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" id="toc-talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" class="nav-link" data-scroll-target="#talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices">Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)</a></li>
-  <li><a href="#talk-2-beta-ensembles-and-tridiagonal-random-matrices" id="toc-talk-2-beta-ensembles-and-tridiagonal-random-matrices" class="nav-link" data-scroll-target="#talk-2-beta-ensembles-and-tridiagonal-random-matrices">Talk 2 (<span class="math inline">\(\beta\)</span>-ensembles and tridiagonal random matrices)</a></li>
-  <li><a href="#other-handwritten-scanned-notes" id="toc-other-handwritten-scanned-notes" class="nav-link" data-scroll-target="#other-handwritten-scanned-notes">Other Handwritten Scanned Notes</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Log Gases Seminar - Summer 2026</h1>
+<h1 class="title">Intro to CQFT 1,2,3</h1>
 </div>
 
 
@@ -273,39 +275,73 @@ window.Quarto = {
 </header>
 
 
-<div class="hidden">
-<p><span class="math display">\[
-\newcommand\mcy{{\mathcal{Y}}}
-\newcommand{\R}{\mathbb{R}}
-\def\*#1{\mathbf{#1}}
-\]</span></p>
+<p>The following pages host content related to the courses “Introduction to Constructive Quantum Field Theory” parts 1,2, and 3 held at Universität Bonn beginnning in the Summer Semester 2025.</p>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1779194768067" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="thumbnail"><a href="./cqft3-notes.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./cqft3-notes.html" class="no-external">CQFT3 Notes</a>
+</h3>
+<div class="delink listing-description"><a href="./cqft3-notes.html" class="no-external">
+I will compile my notes for the course Introduction to Constructive Quantum Field Theory Part 3 on this page.
+</a></div>
 </div>
-<section id="talk-0-introductory-talk-by-johannes-alt" class="level3">
-<h3 class="anchored" data-anchor-id="talk-0-introductory-talk-by-johannes-alt">Talk 0 (Introductory Talk by Johannes Alt)</h3>
-<p>See the file “Talk0logGases.pdf” in <a href="https://drive.google.com/drive/folders/1ywoU8MwSaGxhdZm9KTSGTVhmukdxgsSr?usp=sharing">Link to Scanned Notes</a>.</p>
-</section>
-<section id="talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" class="level3">
-<h3 class="anchored" data-anchor-id="talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices">Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)</h3>
-<p>See the file “Talk1LogGases.pdf” in <a href="https://drive.google.com/drive/folders/1ywoU8MwSaGxhdZm9KTSGTVhmukdxgsSr?usp=sharing">Link to Scanned Notes</a>.</p>
-</section>
-<section id="talk-2-beta-ensembles-and-tridiagonal-random-matrices" class="level3">
-<h3 class="anchored" data-anchor-id="talk-2-beta-ensembles-and-tridiagonal-random-matrices">Talk 2 (<span class="math inline">\(\beta\)</span>-ensembles and tridiagonal random matrices)</h3>
-<p>See the page <a href="https://williamclarktennis.github.io/YM-explorations/log-gases-my-talk.html">Here</a></p>
-</section>
-<section id="other-handwritten-scanned-notes" class="level3">
-<h3 class="anchored" data-anchor-id="other-handwritten-scanned-notes">Other Handwritten Scanned Notes</h3>
-<p><a href="https://drive.google.com/drive/folders/1ywoU8MwSaGxhdZm9KTSGTVhmukdxgsSr?usp=sharing">Link to Scanned Notes</a></p>
-<p>The 6th scan contains some computations regarding the smooth map <span class="math inline">\(f: x \mapsto \frac{x}{\lVert x \rVert}\)</span> from Proposition 4.1.12 in <span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>.</p>
-
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Anderson2010" class="csl-entry" role="listitem">
-Anderson, G. W., A Guionnet, and O Zeitouni. 2010. <span>“An Introduction to Random Matrices.”</span> Cambridge Studies in Advanced Mathematics. Cambridge University Press. 2010. <a href="https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf">https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf</a>.
+<div class="metadata">
+<a href="./cqft3-notes.html" class="no-external">
+</a>
 </div>
-</div></section></div></main> <!-- /main -->
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1769527896409" data-listing-reading-time-sort="6" data-listing-word-count-sort="1200">
+<div class="thumbnail"><a href="./list-cqft.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./list-cqft.html" class="no-external">List of results from CQFT 2</a>
+</h3>
+<div class="delink listing-description"><a href="./list-cqft.html" class="no-external">
+On this page, I will learn about the contents of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (2026)</span> via the method of lists.
+</a></div>
+</div>
+<div class="metadata">
+<a href="./list-cqft.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1769700639332" data-listing-reading-time-sort="11" data-listing-word-count-sort="2021">
+<div class="thumbnail"><a href="./KleinGordon.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./KleinGordon.html" class="no-external">Wightman Axioms for free scalar quantum field</a>
+</h3>
+<div class="delink listing-description"><a href="./KleinGordon.html" class="no-external">
+Article last updated: January 29, 2026
+</a></div>
+</div>
+<div class="metadata">
+<a href="./KleinGordon.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -130,18 +150,21 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Twitter-like feed</span></a>
   </li>  
   <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-top-pages" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Top pages</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-top-pages">    
+        <li>
+    <a class="dropdown-item" href="./log-gases-my-talk.html">
+ <span class="dropdown-text">Beta Ensembles &amp; Tridiagonal Random Matrices</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-other" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Other</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-other">    
-        <li>
-    <a class="dropdown-item" href="./KleinGordon.html">
- <span class="dropdown-text">Wightman Axioms for free scalar quantum field</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./list-cqft.html">
- <span class="dropdown-text">List of results from CQFT 2</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="./def-list-chatterjee.html">
  <span class="dropdown-text">Definitions in Chatterjee’s Leading Term Paper</span></a>
@@ -163,12 +186,16 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Log Gases Seminar - Summer 2026</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./cqft3-notes.html">
- <span class="dropdown-text">CQFT3 Notes</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./navigation-thesis-notes.html">
  <span class="dropdown-text">Navigation of Notes on Chatterjee’s Leading Term Paper</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ReadingStrategy.html">
+ <span class="dropdown-text">Reading Strategy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cqft-listing.html">
+ <span class="dropdown-text">Intro to CQFT 1,2,3</span></a>
   </li>  
     </ul>
   </li>
@@ -189,6 +216,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#link-to-scanned-handwritten-notes" id="toc-link-to-scanned-handwritten-notes" class="nav-link active" data-scroll-target="#link-to-scanned-handwritten-notes">Link to Scanned Handwritten Notes</a></li>
+  <li><a href="#reading-strategy" id="toc-reading-strategy" class="nav-link" data-scroll-target="#reading-strategy">Reading Strategy</a></li>
   </ul>
 </nav>
     </div>
@@ -220,11 +248,25 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://drive.google.com/drive/u/0/folders/1pIWspBZtL7bRy5OIYvteUJMcYOkP-NoG">Lecture 1 Scan. April 15.</a>.</li>
 </ul>
+</section>
+<section id="reading-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="reading-strategy">Reading Strategy</h3>
+<ul>
+<li>May 14, 2026: <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> Pages 152-153, up to and including Lemma 5.2. Also <span class="citation" data-cites="LeeSM">Lee (<a href="#ref-LeeSM" role="doc-biblioref">2013</a>)</span> Pages 150-152 up to and including Example 7.3 (g).</li>
+</ul>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-LeeSM" class="csl-entry" role="listitem">
+Lee, John. 2013. <em>An Introduction to Smooth Manifolds</em>. Springer.
+</div>
+<div id="ref-Miller" class="csl-entry" role="listitem">
+Willard Miller, Jr. 1972. <em>Symmetry Groups and Their Applications</em>. Academic Press.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

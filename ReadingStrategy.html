@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Log Gases Seminar - Summer 2026 – William’s Lattice YM Explorations</title>
+<title>Reading Strategy – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,35 +89,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -239,24 +210,15 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#talk-0-introductory-talk-by-johannes-alt" id="toc-talk-0-introductory-talk-by-johannes-alt" class="nav-link active" data-scroll-target="#talk-0-introductory-talk-by-johannes-alt">Talk 0 (Introductory Talk by Johannes Alt)</a></li>
-  <li><a href="#talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" id="toc-talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" class="nav-link" data-scroll-target="#talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices">Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)</a></li>
-  <li><a href="#talk-2-beta-ensembles-and-tridiagonal-random-matrices" id="toc-talk-2-beta-ensembles-and-tridiagonal-random-matrices" class="nav-link" data-scroll-target="#talk-2-beta-ensembles-and-tridiagonal-random-matrices">Talk 2 (<span class="math inline">\(\beta\)</span>-ensembles and tridiagonal random matrices)</a></li>
-  <li><a href="#other-handwritten-scanned-notes" id="toc-other-handwritten-scanned-notes" class="nav-link" data-scroll-target="#other-handwritten-scanned-notes">Other Handwritten Scanned Notes</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Log Gases Seminar - Summer 2026</h1>
+<h1 class="title">Reading Strategy</h1>
 </div>
 
 
@@ -273,37 +235,20 @@ window.Quarto = {
 </header>
 
 
-<div class="hidden">
-<p><span class="math display">\[
-\newcommand\mcy{{\mathcal{Y}}}
-\newcommand{\R}{\mathbb{R}}
-\def\*#1{\mathbf{#1}}
-\]</span></p>
-</div>
-<section id="talk-0-introductory-talk-by-johannes-alt" class="level3">
-<h3 class="anchored" data-anchor-id="talk-0-introductory-talk-by-johannes-alt">Talk 0 (Introductory Talk by Johannes Alt)</h3>
-<p>See the file “Talk0logGases.pdf” in <a href="https://drive.google.com/drive/folders/1ywoU8MwSaGxhdZm9KTSGTVhmukdxgsSr?usp=sharing">Link to Scanned Notes</a>.</p>
-</section>
-<section id="talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices" class="level3">
-<h3 class="anchored" data-anchor-id="talk-1-joint-distribution-of-eigenvalues-of-gaussian-random-matrices">Talk 1 (Joint Distribution of eigenvalues of Gaussian random matrices)</h3>
-<p>See the file “Talk1LogGases.pdf” in <a href="https://drive.google.com/drive/folders/1ywoU8MwSaGxhdZm9KTSGTVhmukdxgsSr?usp=sharing">Link to Scanned Notes</a>.</p>
-</section>
-<section id="talk-2-beta-ensembles-and-tridiagonal-random-matrices" class="level3">
-<h3 class="anchored" data-anchor-id="talk-2-beta-ensembles-and-tridiagonal-random-matrices">Talk 2 (<span class="math inline">\(\beta\)</span>-ensembles and tridiagonal random matrices)</h3>
-<p>See the page <a href="https://williamclarktennis.github.io/YM-explorations/log-gases-my-talk.html">Here</a></p>
-</section>
-<section id="other-handwritten-scanned-notes" class="level3">
-<h3 class="anchored" data-anchor-id="other-handwritten-scanned-notes">Other Handwritten Scanned Notes</h3>
-<p><a href="https://drive.google.com/drive/folders/1ywoU8MwSaGxhdZm9KTSGTVhmukdxgsSr?usp=sharing">Link to Scanned Notes</a></p>
-<p>The 6th scan contains some computations regarding the smooth map <span class="math inline">\(f: x \mapsto \frac{x}{\lVert x \rVert}\)</span> from Proposition 4.1.12 in <span class="citation" data-cites="Anderson2010">Anderson, Guionnet, and Zeitouni (<a href="#ref-Anderson2010" role="doc-biblioref">2010</a>)</span>.</p>
+<p>I believe that it’s good to strategically read stuff.</p>
+<ul>
+<li>May 14, 2026: <span class="citation" data-cites="Miller">Willard Miller (<a href="#ref-Miller" role="doc-biblioref">1972</a>)</span> Pages 152-153, up to and including Lemma 5.2. Also <span class="citation" data-cites="LeeSM">Lee (<a href="#ref-LeeSM" role="doc-biblioref">2013</a>)</span> Pages 150-152 up to and including Example 7.3 (g).</li>
+</ul>
 
 
 
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Anderson2010" class="csl-entry" role="listitem">
-Anderson, G. W., A Guionnet, and O Zeitouni. 2010. <span>“An Introduction to Random Matrices.”</span> Cambridge Studies in Advanced Mathematics. Cambridge University Press. 2010. <a href="https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf">https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf</a>.
+<div id="ref-LeeSM" class="csl-entry" role="listitem">
+Lee, John. 2013. <em>An Introduction to Smooth Manifolds</em>. Springer.
+</div>
+<div id="ref-Miller" class="csl-entry" role="listitem">
+Willard Miller, Jr. 1972. <em>Symmetry Groups and Their Applications</em>. Academic Press.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
