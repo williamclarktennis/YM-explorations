@@ -27,6 +27,8 @@ website:
           - href: log-gases-seminar.qmd
           - href: cqft3-notes.qmd
           - href: navigation-thesis-notes.qmd
+          - href: ReadingStrategy.qmd
+          - href: log-gases-talk1.qmd
 
 format:
   html:
