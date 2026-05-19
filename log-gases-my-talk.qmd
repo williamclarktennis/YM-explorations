@@ -1,7 +1,7 @@
 ---
-title: "Script: Beta Ensembles & Tridiagonal Random Matrices"
+title: "Beta Ensembles & Tridiagonal Random Matrices"
 author: "William Clark"
-date: "2026-05-07"
+date: "2026-05-19"
 bibliography: references.bib
 format:
   html:
@@ -25,20 +25,29 @@ $$
 ### Introduction {#sec-Intro}
 
 These notes are primarily based
-on Section 4.5 in @Anderson2010. 
+on 
+@Dimitriu2018 and
+Section 4.5 in @Anderson2010, which presents the former
+paper.
+Sections 13 and 14 in
+@Kemp2022 also proved critical for understanding 
+the change of variables formulas.  
 
 
-This handout is based on Section 2.5, 2.6, and 4.5 in @Anderson2010, and on Sections 13 and 14 in
-@Kemp2022. We also refer to @Dimitriu2018. Throughout this handout, 
-$Z$ has referred to a constant whose value makes the associated term a probability
-density function or measure. Furthermore, we considered random
-elements on the probability space $(\Omega, \mathcal{F}, P)$.
-We also refered to $\mathcal{N}(\mu, \sigma)$ as the Gaussian distribution 
-on $\mathbb R$ with mean $\mu \in \mathbb R$ and variance 
-$\sigma > 0$. And the entry in the $i$th row and $j$th column of a matrix 
-$A$ was denoted $A_{ij}$. 
 
 ### Notation
+
+$Z$ refers to a constant whose value makes the associated term a probability
+density function or measure.
+We consider random objects in some ambient probability space
+$(\Omega, \mathcal{F}, P)$. 
+
+$\mathcal{N}(\mu, \sigma)$ is the Gaussian distribution 
+on $\mathbb R$ with mean $\mu \in \mathbb R$ and variance 
+$\sigma > 0$.
+
+The entry in the $i$th row and $j$th column of a matrix 
+$A$ is denoted $A_{ij}$. 
 
 Let $\R_+ = (0,\infty)$.
 

@@ -239,7 +239,7 @@ The pair consisting of $V \otimes W$ and $\phi$ is said to
 solve the universal mapping problem for bilinear maps 
 with domain $V \times W$. Moreoever, $V \otimes W$ and 
 $\phi$ are unique with this property in the sense 
-that if $X$ is a vector space and $\tilde{\phi} V \times W \to X$ 
+that if $X$ is a vector space and $\tilde{\phi}: V \times W \to X$ 
 a bilinear map with the above universal mapping property, 
 then there exists an isomorphism 
 $\alpha: V \otimes W \to X$ such that 
@@ -327,12 +327,12 @@ Then $\{e_i \otimes f_j: i = 1, \cdots, c \text{ and } j = 1, \cdots, d\}$
 is a basis of $V \otimes W$. 
 
 Further definitions.
-The tensor space $V_{r,w}$ of type $(t,s)$ associated
+The tensor space $V_{t,s}$ of type $(t,s)$ associated
 with $V$ is the vector space 
 $$
 V \otimes \cdots \otimes V \otimes V^* \otimes \cdots \otimes V^*
 $$
-with $r$ copies of $V$ and $s$ copies of $V^*$. 
+with $t$ copies of $V$ and $s$ copies of $V^*$. 
 The direct sum 
 $$ 
 T(V) = \sum_{r,s \ge 0} V_{r,s},
@@ -347,18 +347,18 @@ under $\otimes$ multiplication,
 where if $u = u_1 \otimes \cdots \otimes u_{r_1} \otimes u_1^* \otimes \cdots \otimes u_{s_1}^*$
 belongs to $V_{r_1, s_1}$ and 
 $v = v_1 \otimes \cdots \otimes v_{r_2} \otimes v_1^* \otimes \cdots \otimes v_{s_2}^*$
-belongs to $V_{r_2, s_2}$, then there 
+belongs to $V_{r_2, s_2}$, then their 
 product $u \otimes v$ is defined by
 $$
 u \otimes v = u_1 \otimes \cdots \otimes u_{r_1} \otimes v_1 \otimes \cdots \otimes v_{r_2} \otimes u_1^* \otimes \cdots \otimes u_{s_1}^* \otimes v_1^* \otimes \cdots \otimes v_{s_2}^*
 $$
 and belongs to $V_{r_1 + r_2, s_1 + s_2}$. 
 Tensors in a particular tensor space $V_{r,s}$
-are called homogeneous of degree $(r,w)$. A homogeneous tensor 
+are called homogeneous of degree $(r,s)$. A homogeneous tensor 
 (of degree (r,s) say) is called decomposable 
 if it can be written in the form 
 $$
-v_1 \otimes \cdots \otimes v_r \otimes v_1^* \otimes \cdots \otimes v_2^*
+v_1 \otimes \cdots \otimes v_r \otimes v_1^* \otimes \cdots \otimes v_s^*
 $$
 where $v_i \in V$ and $v_j^* \in V^*$.
 

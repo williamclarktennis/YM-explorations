@@ -1,0 +1,10 @@
+---
+title: "Reading Strategy"
+bibliography: references.bib
+---
+
+I believe that it's good to
+strategically read stuff.
+
+- May 14, 2026: @Miller Pages 152-153, up to and including Lemma 5.2.
+Also @LeeSM Pages 150-152 up to and including Example 7.3 (g).
