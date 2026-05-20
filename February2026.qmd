@@ -382,6 +382,22 @@ definition of the product of ideals.
 
 </details>
 
+:::{#rem-twosidedideal}
+
+Elements with two or more common entries ought to be 
+in the kernel $I(V)$ of the exterior algebra.
+How do you see that $v \otimes w \otimes v$ is generated 
+by elements of the form $x \otimes x$?
+
+First show that $v \otimes w + w \otimes v \in I(V)$. I.e. play
+around inside the second component of $I(V)$.
+
+Second, get to the third component of $I(V)$ by 
+right multiplying $v \otimes w + w \otimes v$ by $v$.
+Then do the math.
+
+:::
+
 It follows that 
 $$
 I(V) = \sum_{k=0}^{\infty} I_k(V),

@@ -1,5 +1,5 @@
 ---
-title: "Navigation of Notes on Chatterjee's Leading Term Paper"
+title: "Navigation of Thesis Notes"
 bibliography: references.bib
 ---
 
@@ -16,21 +16,163 @@ Done:
 
 - checked March 2026 page for thesis relevant notes
 - checked April 2026 page
+- Processed handwritten notes
 
 To-do:
 
 - Check latex notes
-- Scan handwritten notes
+- check feb 2026, jan 2026, and dec 2025 posts
 
-### Miscellaneous
+## Miscellaneous
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section-NotASection.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section-NotASection.pdf)
+:::
+
 
 - $U(N)$ is compact and eigenvalues have form $e^{i\theta}$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-16-2026)
 
-### Section 10
+## Section 1
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section1.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section1.pdf)
+:::
+
+## Section 2
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section2.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section2.pdf)
+:::
+
+## Section 3
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section3.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section3.pdf)
+:::
+
+## Section 4
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section4.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section4.pdf)
+:::
+
+## Section 6
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section6.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+<p> It appears you don't have a PDF plugin for this browser. You can 
+    <a href="pdfs/Chattj-Lead-TermYM-FE-Section6.pdf"> click here to download the PDF file. <\a></p>
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section6.pdf)
+:::
+
+## Section 7
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section7.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section7.pdf)
+:::
+
+## Section 8
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section8.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section8.pdf)
+:::
+
+## Section 9
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section9.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section9.pdf)
+:::
+
+## Section 10
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section10.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section10.pdf)
+:::
 
 - I typed out Lemma 10.2, but haven't gotten around to filling in the details yet in this link. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#lemma-10.2-chatterjee)
 
-### Section 12
+## Section 11
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section11.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section11.pdf)
+:::
+
+## Section 12
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section12.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section12.pdf)
+:::
 
 - @FriedmanApplied was useful for this section, and I filled in some details
 to a passage. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-25-2026)
@@ -44,13 +186,81 @@ For example, showed that the density of a Gaussian measure can be expressed in a
 when looking at $\det \Sigma$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-20-2026)
 - Definition of polynomial $P: \R^{E_n} \to \R$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#polynomial)
 
-### Section 13
+## Section 13
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section13.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section13.pdf)
+:::
 
 - Lemma 13.1 Proof. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#following-chatterjee-lemma-13.1)
 - Defining positive definite quadratic forms using @LangAlgebra. 
 Proving that $M_n$ is symmetric and bilinear and quadratic, but not positive definite. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#positive-definite-quadratic-form)
 
-### Notes on Scaling Limit Paper
+## Section 14
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section14.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section14.pdf)
+:::
+
+## Section 15
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section15.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section15.pdf)
+:::
+
+## Section 16
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section16.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section16.pdf)
+:::
+
+## Section 17
+
+```{=html}
+<object data= "pdfs/Chattj-Lead-TermYM-FE-Section17.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-Lead-TermYM-FE-Section17.pdf)
+:::
+
+## Notes on Scaling Limit Paper
+
+```{=html}
+<object data= "pdfs/Chattj-ScalingLimitSU(2)-notes.pdf" type="application/pdf"
+width="100%" height="100%" style="min-height:100vh;">
+</object>
+```
+
+:::{.hidden}
+![Notes](pdfs/Chattj-ScalingLimitSU(2)-notes.pdf)
+:::
 
 - Guiding research question. [Link](https://williamclarktennis.github.io/YM-explorations/#april-9-2026)
 - Annotated bibliography of articles related to SU(2). [Link](https://williamclarktennis.github.io/YM-explorations/#april-15-2026)
