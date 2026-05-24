@@ -16,3 +16,54 @@ Part 3 on this page.
 
 - May 14, 2026: @Miller Pages 152-153, up to and including Lemma 5.2.
 Also @LeeSM Pages 150-152 up to and including Example 7.3 (g).
+
+# Exam preparation
+
+For the exam, I'll need to be able to present the following 
+statements with their proofs from @BrenneckeCQFT.
+So far there are 16 results to present, and I've prepared for 0 of them.
+
+
+## Chapter 4
+
+### Lemma 4.5
+
+### Corollary 4.1 
+
+### Lemma 4.6
+
+## Chapter 5
+
+### Corollary 5.1
+
+### Theorem 5.2
+
+## Chapter 6.1 Gaussian Random Variables
+
+### Theorem 6.1
+
+### Lemma 6.1 
+
+### Theorem 6.2
+
+### Theorem 6.3
+
+### Corollary 6.1
+
+## Chapter 6.2 The Feynman-Kac Formula
+
+### Lemma 6.2 (Feynman-Kac Simple Case)
+
+### Theorem 6.4 (Feynman-Kac Formula)
+
+## Chapter 6.3 More on Gaussian Fields
+
+### Proposition 6.1 (Bochner's Theorem)
+
+### Lemma 6.3
+
+### Lemma 6.4
+
+### Theorem 6.5 (Minlos)
+
+Placeholder.

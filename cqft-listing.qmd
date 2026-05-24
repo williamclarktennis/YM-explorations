@@ -3,9 +3,9 @@ title: "Intro to CQFT 1,2,3"
 
 listing:
     contents: 
-        - "list-cqft.qmd"
+        - "cqft-2-results.qmd"
         - "cqft3-notes.qmd"
-        - "KleinGordon.qmd"
+        - "cqft-KleinGordon.qmd"
 ---
 
 The following pages host content 
