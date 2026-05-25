@@ -20,6 +20,45 @@ $$
 
 ## May 25, 2026
 
+### Thesis Workflow
+
+I'll use Uni. Bonn's .tex file for the title page
+of my thesis. Since I don't want to bother with integrating
+their tex conventions into my own, I'll just render the title page
+as a pdf, then insert those two title pages to my final submission. 
+
+I'll make a git repository with my latex code. 
+
+I'll have a common preamble amongst all the separate chapters.
+
+I'm using [this guy's](https://www.ravisagar.in/notes/how-get-directory-tree-structure-your-mac-terminal)
+advice for getting a display of the folder structure.
+
+See also [here](https://stackoverflow.com/questions/23989232/is-there-a-way-to-represent-a-directory-tree-in-a-github-readme-md).
+
+```bash
+thesis-test
+├── chapter1
+│   ├── chapter1.aux
+│   └── chapter1.tex
+├── chapter2
+│   ├── chapter2.aux
+│   └── chapter2.tex
+├── main.aux
+├── main.bbl
+├── main.bcf
+├── main.blg
+├── main.log
+├── main.out
+├── main.pdf
+├── main.run.xml
+├── main.synctex.gz
+├── main.tex
+└── references.bib
+```
+
+### Tex to Quarto
+
 I'll explain how to convert a latex project involving .tex and
 .bib files to a quarto website rendition. 
 
