@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yang-Mills Lattice Gauge Theory - William’s Explorations – William's Lattice YM Explorations</title>
+<title>List of results from CQFT 2 – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -140,7 +140,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -225,13 +225,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#may-25-2026" id="toc-may-25-2026" class="nav-link active" data-scroll-target="#may-25-2026">May 25, 2026</a>
-  <ul class="collapse">
-  <li><a href="#discussion-of-some-definitions" id="toc-discussion-of-some-definitions" class="nav-link" data-scroll-target="#discussion-of-some-definitions">Discussion of some definitions</a></li>
-  </ul></li>
-  <li><a href="#may-13-2026" id="toc-may-13-2026" class="nav-link" data-scroll-target="#may-13-2026">May 13, 2026</a></li>
-  <li><a href="#may-4-2026" id="toc-may-4-2026" class="nav-link" data-scroll-target="#may-4-2026">May 4, 2026</a></li>
-  <li><a href="#may-1-2026" id="toc-may-1-2026" class="nav-link" data-scroll-target="#may-1-2026">May 1, 2026</a></li>
+  <li><a href="#chapter-1-classical-mechanics" id="toc-chapter-1-classical-mechanics" class="nav-link active" data-scroll-target="#chapter-1-classical-mechanics">Chapter 1: Classical Mechanics</a></li>
+  <li><a href="#chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces" id="toc-chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces" class="nav-link" data-scroll-target="#chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces">Chapter 2.1: Mathematical Interlude: Locally Convex Topological Vector Spaces</a></li>
+  <li><a href="#chapter-2.2-distributions-and-tempered-distributions" id="toc-chapter-2.2-distributions-and-tempered-distributions" class="nav-link" data-scroll-target="#chapter-2.2-distributions-and-tempered-distributions">Chapter 2.2: Distributions and Tempered Distributions</a></li>
   </ul>
 </nav>
     </div>
@@ -240,7 +236,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Yang-Mills Lattice Gauge Theory - William’s Explorations</h1>
+<h1 class="title">List of results from CQFT 2</h1>
 </div>
 
 
@@ -257,147 +253,289 @@ window.Quarto = {
 </header>
 
 
-<div class="hidden">
+<p>On this page, I will learn about the contents of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span> via the method of lists.</p>
+<p>I apologize to Jaques Ellul for performing this technisized extraction of information.</p>
+<section id="chapter-1-classical-mechanics" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-1-classical-mechanics">Chapter 1: Classical Mechanics</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Result: Hamilton's equations from Classical Mechanics">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Result: Hamilton’s equations from Classical Mechanics
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math display">\[
-\newcommand\mcy{{\mathcal{Y}}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Tr}{\text{Tr}}
-\def\*#1{\mathbf{#1}}
+\frac{dx}{dt} = \nabla_p H, \hspace{0.5cm} \frac{dp}{dt} = - \nabla_x H
 \]</span></p>
 </div>
-<section id="may-25-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-25-2026">May 25, 2026</h2>
-<p>I’ll explain how to convert a latex project involving .tex and .bib files to a quarto website rendition.</p>
-<p>First you create your latex project on your local machine. Let’s say you have a &lt;script.tex&gt; file and a &lt;references.bib&gt; file, and a bunch of other files excreted during pdf rendering.</p>
-<p>Second, you make sure that your quarto website folder has a &lt;references.bib&gt; file that includes all the entries in the latex project’s &lt;references.bib&gt; file.</p>
-<p>Then you go to the website <a href="https://pandoc.org/app/" class="uri">https://pandoc.org/app/</a>. You upload your &lt;script.tex&gt; document into the engine. Then you click on &lt;latex (LaTeX)&gt; as the &lt;From:&gt; option and you choose &lt;markdown (Pandoc)&gt; as the &lt;To:&gt; option. Then you click convert and you save the resulting &lt;script.md&gt; file to your quarto website project.</p>
-<p>Then you just rename the file &lt;script.md&gt; to &lt;script.qmd&gt; and then proceed as usual in quarto.</p>
-<section id="discussion-of-some-definitions" class="level3">
-<h3 class="anchored" data-anchor-id="discussion-of-some-definitions">Discussion of some definitions</h3>
-<details>
-<summary>
-lattice gauge theory on <span class="math inline">\(\epsilon \mathbb Z^d\)</span>
-</summary>
-<p>Fix <span class="math inline">\(\epsilon &gt; 0\)</span>. We note <span class="math inline">\(\epsilon \mathbb Z = \{ a \in \mathbb R: a = \epsilon k
-\text{ for some } k \in \mathbb Z\}\)</span>. Then <span class="math inline">\(\epsilon \mathbb Z^d = \{(a_1, \cdots, a_d) \in \mathbb R^d: a_i \in \epsilon \mathbb Z \}\)</span>. We say two vertices <span class="math inline">\(x,y \in \epsilon \mathbb Z^d\)</span> are adjacent if <span class="math inline">\(x = y \pm \epsilon e_i\)</span> for some <span class="math inline">\(i \in [d]\)</span>. In this case we write <span class="math inline">\(x \sim y\)</span>. Let <span class="math inline">\(\Lambda \subset \epsilon \mathbb Z^d\)</span> be a finite subset. Let <span class="math inline">\(E_{\Lambda} = \{(x,y) \in \Lambda^2: x \sim y \text{ and } x &lt; y \}\)</span>, where <span class="math inline">\(x &lt; y\)</span> means that <span class="math inline">\(\frac{1}{\epsilon} x &lt; \frac{1}{\epsilon} y\)</span> in the lexicographical ordering. A configuration is a map <span class="math inline">\(U: E_\Lambda \to U(N)\)</span>, where we also define <span class="math inline">\(U(y,x) = U(x,y)^*\)</span> for <span class="math inline">\((x,y) \in E_\Lambda\)</span>.</p>
-</details>
-<details>
-<summary>
-Density
-</summary>
-<p>We follow section 7.4 of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>. Let <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> be measures on a measurable space <span class="math inline">\((\Omega, \mathcal{A})\)</span>. A measurable function <span class="math inline">\(f: \Omega \to [0, \infty)\)</span> is called a density of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>, if <span class="math display">\[
-\nu(A) := \int_{\Omega} f 1_A \, d\mu
-\]</span> for all <span class="math inline">\(A \in \mathcal{A}\)</span>. On the other hand, for a given measurable function <span class="math inline">\(f: \Omega \to [0,\infty)\)</span>, the above equation defines a measure <span class="math inline">\(\nu\)</span> on <span class="math inline">\((\Omega, \mathcal{A})\)</span>. In this second case, we write <span class="math display">\[
-\nu =: f\mu, \hspace{1 cm} f =: \frac{d\nu}{d\mu}.
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Maxwell's equations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Maxwell’s equations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\nabla \cdot E = \rho, \hspace{0.5cm} \nabla \times E = - \frac{1}{c} \partial_t B,
+\]</span> <span class="math display">\[
+\nabla \cdot B = 0, \hspace{0.5cm} \nabla \times B = \frac{1}{c}(\partial_t E + j)
 \]</span></p>
-<p>Given a measurable <span class="math inline">\(g: \Omega \to [0,\infty]\)</span>, integrating against <span class="math inline">\(d\nu\)</span> is the same as integrating against <span class="math inline">\(f d\mu\)</span>. This is theorem 4.15 <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>: Let <span class="math inline">\(f \mu\)</span> be the measure defined above. Then <span class="math inline">\(g \in \mathcal{L}^1(f \mu)\)</span> if and only if <span class="math inline">\((gf) \in \mathcal{L}^1(\mu)\)</span>. In this case, <span class="math display">\[
-\int g \, d(f\mu) = \int gf \, d\mu.
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Charge and Current Densities as Distributions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Charge and Current Densities as Distributions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+t \mapsto \rho(t,x) = e \delta_{x(t)} \in \mathcal{D}'(\mathbb R^3)
+\]</span> and <span class="math display">\[
+t \mapsto j(x,t) = e \delta_{x(t)} \frac{dx}{dt}(t) \in \mathcal{D}'(\mathbb R^3, \mathbb R^3)
 \]</span></p>
-<p>There is also a uniqueness result, Theorem 7.29. Let <span class="math inline">\(\nu\)</span> be <span class="math inline">\(\sigma\)</span>-finite. Let <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> be two densities of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>. Then <span class="math inline">\(f_1 = f_2\)</span> <span class="math inline">\(\mu\)</span>-almost surely. In particular, the density <span class="math inline">\(\frac{d\nu}{d\mu}\)</span> is unique <span class="math inline">\(\mu\)</span>-almost surely. That is, there is a <span class="math inline">\(\mu\)</span>-null set <span class="math inline">\(N \in \mathcal{A}\)</span> such that <span class="math inline">\(\frac{d\nu}{d\mu}\)</span> is equal to any other given density function on the complement <span class="math inline">\(\Omega \setminus N\)</span>. (Not sure if I stated this uniqueness correctly)</p>
-</details>
-<details>
-<summary>
-Lebesgue Measure
-</summary>
-<p>The following is Theorem 1.55 of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>. There exists a uniquely defined measure <span class="math inline">\(\lambda^n\)</span> on <span class="math inline">\((\mathbb R^n,\mathcal{B}(\mathbb R^n))\)</span> with the property that <span class="math inline">\(\lambda^n((a,b]) = \prod_{i=1}^n (b_i - a_i)\)</span> for all <span class="math inline">\(a,b \in \mathbb R^n\)</span> with <span class="math inline">\(a&lt; b\)</span>. Furthermore, <span class="math inline">\(\lambda^n\)</span> is called Lebesgue measure on <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n))\)</span> or Lebesgue-Borel-measure.</p>
-</details>
-<details>
-<summary>
-Gaussian measure on <span class="math inline">\(\mathbb R^n\)</span>
-</summary>
-<p>Fix the Lebesgue measure space <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n),dx)\)</span>. Let <span class="math inline">\(\tau\)</span> be a probability measure on <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n))\)</span>.</p>
-<p>More logically rigorous is to say that <span class="math inline">\(\tau\)</span> is a Gaussian measure if there exists a constant <span class="math inline">\(C&gt; 0\)</span> and a degree two polynomial <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> such that <span class="math inline">\(Ce^{-P(\cdot)}: \mathbb R^n \to [0,\infty)\)</span> is a density of <span class="math inline">\(\tau\)</span> with respect to <span class="math inline">\(dx\)</span>: <span class="math display">\[
-\tau(A) = \int_{\mathbb R^n} Ce^{-P(x)} 1_A \, dx
-\]</span> for all <span class="math inline">\(A \in \mathcal{B}(\mathbb R^n).\)</span></p>
-<p>In this case we write <span class="math display">\[
-\frac{d\tau}{dx} = Ce^{-P(x)}.
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Observables are conserved when Poisson bracket with Hamiltonian vanishes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Observables are conserved when Poisson bracket with Hamiltonian vanishes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\(F \in C^{\infty}(\mathcal{P})\)</span> and that <span class="math inline">\(\{F,H\} = 0\)</span>. Then <span class="math display">\[
+\frac{d}{dt} F \circ (x(t), p(t)) = 0.
 \]</span></p>
-<p>Suppose <span class="math inline">\(\tau\)</span> is a Gaussian measure with polynomial <span class="math inline">\(P\)</span>. Suppose <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is not integrable. Then by definition of integrability (Def 4.7 <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>, for example), it follows that <span class="math inline">\(\int_{\mathbb R^n} |Ce^{-P(x)}|dx = \infty,\)</span> which contradicts that <span class="math inline">\(\tau\)</span> is a probability measure on <span class="math inline">\(\mathbb R^n\)</span>. Hence, <span class="math inline">\(\tau\)</span> Gaussian implies that <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is integrable.</p>
-<p>Since <span class="math inline">\(C\)</span> is a finite constant, <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is integrable if and only if <span class="math inline">\(e^{-P(x)}\)</span> is integrable.</p>
-<p>Lemma (Criterion 12.1 <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>). The measurable function <span class="math inline">\(e^{-P(\cdot)}\)</span> is integrable if and only if there exists a positive constant <span class="math inline">\(c\)</span> and a positive constant <span class="math inline">\(R\)</span> such that <span class="math display">\[
-P(x) \ge c \lVert x \rVert^2
-\]</span> for all <span class="math inline">\(x \in \mathbb R^n\)</span> satisfying <span class="math inline">\(\lVert x \rVert \ge R\)</span>, where <span class="math inline">\(\lVert x \rVert = \sqrt{x_1^2 + \cdots + x_n^2}\)</span>.</p>
-<p>Lemma. If <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> is an arbitrary degree two polynomial, then there exists a matrix <span class="math inline">\(Q \in \mathbb R^{n \times n}\)</span>, a column vector <span class="math inline">\(v \in \mathbb R^n\)</span>, and a constant <span class="math inline">\(c \in \mathbb R\)</span> (not the same <span class="math inline">\(c\)</span> as above) such that <span class="math display">\[
-P(x) = x^T Q x + v^Tx + c.
+</div>
+</div>
+<p>In this case, <span class="math inline">\(F\)</span> is called a conserved quantity under the Hamiltonian dynamics.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Criterion to ensure vanishing of Poission Bracket with Hamiltonian">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Criterion to ensure vanishing of Poission Bracket with Hamiltonian
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(F \in C^{\infty}(\mathcal{P})\)</span> is invariant under the Hamiltionian flow associated to the Hamiltonian vector field <span class="math inline">\(X_H\)</span>, meaning that <span class="math display">\[
+\Phi_{X_H}(t,\cdot)^*F = F,
+\]</span> then <span class="math inline">\(\{F,H\} = 0\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hamiltionian vector field flows are coordinate transformations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Hamiltionian vector field flows are coordinate transformations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(F \in C^{\infty}(\mathcal{P})\)</span> be an observable (possibly the Hamiltonian). Then the flow, <span class="math inline">\(\Phi_{X_H}(t, \cdot)\)</span>, of the Hamiltonian vector field <span class="math inline">\(X_H = \mathbf{J} \nabla H\)</span> is equal to a canonical transformation <span class="math inline">\(\phi \in C^{\infty}(\mathcal{P}, \mathbb R^{2n})\)</span> for any time <span class="math inline">\(t\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Symmetry of Hamiltionian implies observable is conserved">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Symmetry of Hamiltionian implies observable is conserved
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(F \in C^{\infty}(\mathcal{P})\)</span>. If the Hamilitionian <span class="math inline">\(H\)</span> is invariant under the flow generated by <span class="math inline">\(X_F = \mathbf{J} \nabla F\)</span>, i.e., <span class="math display">\[
+H = \Phi_{X_F}(t, \cdot)^* H,
+\]</span> then <span class="math inline">\(\{F,H\} = 0\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-2.1-mathematical-interlude-locally-convex-topological-vector-spaces">Chapter 2.1: Mathematical Interlude: Locally Convex Topological Vector Spaces</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a locally convex topological vector space?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a locally convex topological vector space?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(X = (X,\mathbb K, +, \cdot, \tau)\)</span> be a topological vector space, which is the data of a vector space <span class="math inline">\((X, \mathbb K, +, \cdot)\)</span> together with a topology <span class="math inline">\(\tau\)</span> of open subsets of <span class="math inline">\(X\)</span> such that <span class="math inline">\(+\)</span> (addition) and <span class="math inline">\(\cdot\)</span> (scalar multiplication) are continuous (from the product topology in the case of addition).</p>
+<p>We don’t need any new data to say that <span class="math inline">\(X\)</span> is locally convex, but there must be a local base <span class="math inline">\(\mathcal{B}\)</span> whose elements are convex.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a local base at 0?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a local base at 0?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\((X,\tau)\)</span> be a topological vector space. A local base at <span class="math inline">\(0\)</span>, call it <span class="math inline">\(\mathcal{B}\)</span>, is the following: <span class="math inline">\(\mathcal{B} \subset \tau\)</span>, <span class="math inline">\(0 \in B\)</span> for all <span class="math inline">\(B \in \mathcal{B}\)</span>, and for any open subset <span class="math inline">\(A\)</span> containing <span class="math inline">\(0\)</span>, there exists some <span class="math inline">\(B \in \mathcal{B}\)</span> such that <span class="math inline">\(B \subset A\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="For locally convex definition, only need local base at 0.">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For locally convex definition, only need local base at 0.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\((X,\mathbb K, \tau)\)</span> is a topological vector space with a local base at <span class="math inline">\(0\)</span>, <span class="math inline">\(\mathcal{B}\)</span>, then <span class="math inline">\(\tau\)</span> is completely determined by <span class="math inline">\(\mathcal{B}\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a Semi-norm?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a Semi-norm?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A semi-norm on a vector space <span class="math inline">\(X\)</span> is a real-valued function <span class="math inline">\(p: X \to [0,\infty)\)</span> such that <span class="math inline">\(p(x+y) \le p(x) + p(y)\)</span> and <span class="math inline">\(p(\lambda x) = |\lambda|p(x)\)</span> for all <span class="math inline">\(x,y \in X\)</span> and <span class="math inline">\(\lambda \in \mathbb K\)</span>. In other words, <span class="math inline">\(p\)</span> would be a norm, other than for the possibility that <span class="math inline">\(p(x) = 0\)</span> when <span class="math inline">\(x \ne 0\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Consider a family of seminorms. When is it separating?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Consider a family of seminorms. When is it separating?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\(\mathcal{P} = (p_n)_{n \in \mathbb N}\)</span> is a family of seminorms, where <span class="math inline">\(p_n: X \to [0,\infty)\)</span> is a real-valued function on a <span class="math inline">\(\mathbb K\)</span>-vector space for all <span class="math inline">\(n\)</span>. Then <span class="math inline">\(\mathcal{P}\)</span> is said to be separating if for any <span class="math inline">\(x \ne 0\)</span> in <span class="math inline">\(X\)</span>, there is some <span class="math inline">\(p \in \mathcal{P}\)</span> such that <span class="math inline">\(p(x) \ne 0\)</span>. In particular, when two elements <span class="math inline">\(f, g \in X\)</span> are distinct, in that <span class="math inline">\(f - g \ne 0\)</span>, then <span class="math inline">\(\mathcal{P}\)</span> will know this, in the sense that at least one <span class="math inline">\(p\)</span> thinks that <span class="math inline">\(p(f-g) \ne p(0) = 0\)</span>.</p>
+</div>
+</div>
+<p>For example, consider the family of the Schwartz seminorms <span class="math inline">\(|\cdot|_{\alpha, \beta} = \sup_{x \in \mathbb R^n} |(x^{\alpha} \partial^{\beta} \varphi)(x)|\)</span>, indexed by multi indices <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>. Some of these seminorms might not be able to tell the difference between two Schwartz functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> in the sense that <span class="math inline">\(f - g \ne 0\)</span> and yet <span class="math inline">\(|f-g|_{\alpha, \beta} = 0\)</span>. For instance, polynomials, after taking enough derivatives, evaluate to the zero function, so they would vanish under the Schwartz semi norms for high enough <span class="math inline">\(|\beta|\)</span>. Moreover, the <span class="math inline">\(L^2\)</span> norm does not separate functions, but it does separate equivalence classes of functions.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="The space of Temperered Distributions arising as dual space of Schwarz functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The space of Temperered Distributions arising as dual space of Schwarz functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Schwarz functions on <span class="math inline">\(\mathbb R^n\)</span>, denoted <span class="math inline">\(\mathcal{S}(\mathbb R^n)\)</span>, with function addition and scalar multiplication, and with a locally convex topology generated by the separating family of seminorms <span class="math inline">\(|\cdot|_{\alpha,\beta}\)</span>, is a locally convex topological vector space.</p>
+<p>The dual space of <span class="math inline">\(\mathcal{S}(\mathbb R^n)\)</span>, denoted <span class="math inline">\(\mathcal{S}'(\mathbb R^n)\)</span> and called the space of tempered distributions, is the vector space of continuous (in the sense of the convex topology on Schwartz function space) linear functionals <span class="math inline">\(\Lambda: \mathcal{S}(\mathbb R^n) \to \mathbb C\)</span> under pointwise addition and scalar multiplication. Furthermore, this dual space comes with a topology that turns the space of tempered distributions from merely a vector space into a locally convex topological vector space. It is the topology generated by the family of seminorms <span class="math inline">\((\text{eval}_f)_{f \in S(\mathbb R^n)}\)</span> where <span class="math inline">\(\text{eval}_f: \mathcal{S}'(\mathbb R^n) \to [0,\infty)\)</span> is defined via <span class="math display">\[
+\text{eval}_f(\Lambda) = |\Lambda(f)|
+\]</span> for all test functions <span class="math inline">\(f \in \mathcal{S}(\mathbb R^n)\)</span>. This is precisely the weak* topology <span class="math inline">\(\sigma(X^*,X) = \sigma(S'(\mathbb R^n), S(\mathbb R^n))\)</span>.</p>
+</div>
+</div>
+<p>Recall that <span class="math inline">\(\sigma(X,X^*)\)</span> denotes a topology on the set <span class="math inline">\(X\)</span> determined by the following condition involving <span class="math inline">\(X^* = \{\Lambda: X \to \mathbb C, \Lambda \text{ linear and bounded}\}\)</span>. It is the weakest topology on <span class="math inline">\(X\)</span> such that the maps <span class="math inline">\(\text{eval}_\Lambda: X \to [0,\infty)\)</span> defined by <span class="math inline">\(\text{eval}_\Lambda(x) = |\Lambda(x)|\)</span> are continuous as <span class="math inline">\(\Lambda\)</span> ranges in <span class="math inline">\(X^*\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="The convex toplogy on Schwartz space is not the weak topology">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The convex toplogy on Schwartz space is not the weak topology
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\tau\)</span> denote the convex topology on <span class="math inline">\(\mathcal{S}(\mathbb R^n)\)</span> generated by the family of seminorms <span class="math inline">\(|\cdot|_{\alpha,\beta}\)</span>. Then <span class="math inline">\(\tau \ne \sigma(\mathcal{S}(\mathbb R^n), \mathcal{S}'(\mathbb R^n)),\)</span> the weak topology on Schwartz space with respect to the dual space of tempered distributions.</p>
+</div>
+</div>
+</section>
+<section id="chapter-2.2-distributions-and-tempered-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-2.2-distributions-and-tempered-distributions">Chapter 2.2: Distributions and Tempered Distributions</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="How do you identify a function by duality?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How do you identify a function by duality?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a function <span class="math inline">\(f\)</span>, we identify <span class="math inline">\(f\)</span> with <span class="math display">\[
+\Lambda_f: \text{Test Functions} \to \mathbb K, \hspace{0.5cm} \varphi \mapsto \int f \varphi.
 \]</span></p>
-<p>Lemma (Criterion 12.2 <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>). Suppose <span class="math inline">\(P(x) = x^T Q x + v^Tx + c\)</span>. Then the following are equivalent.</p>
-<ul>
-<li><span class="math inline">\(e^{-P(x)}\)</span> is integrable.</li>
-<li>There are positive constants <span class="math inline">\(C_1, R\)</span> such that <span class="math display">\[
-P(x) \ge C_1 \lVert x \rVert^2
-\]</span> for all <span class="math inline">\(\lVert x \rVert \ge R\)</span>.</li>
-<li><span class="math inline">\(Q\)</span> is a positive definite matrix. That is, <span class="math inline">\(Q\)</span> is symmetric and <span class="math inline">\(x^TQx &gt; 0\)</span> for all <span class="math inline">\(x \ne 0 \in \mathbb R^n\)</span>.</li>
-</ul>
-</details>
-<details>
-<summary>
-Positive Definite Matrix
-</summary>
-<p>Consider the <span class="math inline">\(\mathbb R\)</span> vector space <span class="math inline">\(\mathbb R^n\)</span>. Consider a symmetric <span class="math inline">\(\mathbb R\)</span>-bilinear form <span class="math inline">\(g: \mathbb R^n \times \mathbb R^n \to \mathbb R.\)</span> Recall that symmetry means <span class="math inline">\(g(x,y) = g(y,x)\)</span> for all <span class="math inline">\(x,y \in \mathbb R^n\)</span>. We say that <span class="math inline">\(g\)</span> is positive definite if <span class="math inline">\(0 &lt; g(X,X) =: X^2\)</span> for all <span class="math inline">\(X \ne 0\)</span> in <span class="math inline">\(\mathbb R^n\)</span> (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> Section Symmetric Forms over Ordered Fields). Let <span class="math inline">\(Q\)</span> be the matrix associated with the form <span class="math inline">\(g\)</span> relative to the standard basis <span class="math inline">\(B = \{e_1, \cdots, e_n\}\)</span>, that is, if <span class="math inline">\(x, y \in \mathbb R^n\)</span>, and in this case <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are already the column vectors of coordinates for themselves with respect to the standard basis, then <span class="math display">\[
-g(x,y) = x^T Q y.
-\]</span> (See Section Matrices and Bilinear Forms <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.) In this case we say that <span class="math inline">\(Q\)</span> is a positive definite matrix.</p>
-<p>Note also that <span class="math inline">\(Q\)</span> is implicitly a symmetric matrix, by the following result.</p>
-<p>Proposition 6.5 (Section Matrices and Bilinear Forms <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>). Let <span class="math inline">\(E\)</span> be a free module of dimension <span class="math inline">\(n\)</span> over a commutative ring <span class="math inline">\(R\)</span>, and let <span class="math inline">\(B\)</span> be a fixed basis. The map <span class="math inline">\(f \mapsto M_B^B(f)\)</span> induces an isomorphism between the module of symmetric bilinear forms on <span class="math inline">\(E \times E\)</span> and the module of symmetric <span class="math inline">\(n \times n\)</span> matrices over <span class="math inline">\(R\)</span>.</p>
-<p>In summary, <span class="math inline">\(Q\)</span> is a positive definite <span class="math inline">\(n \times n\)</span> matrix if and only if <span class="math inline">\(Q\)</span> has entries in <span class="math inline">\(\mathbb R\)</span>, <span class="math inline">\(Q = Q^T\)</span> (symmetry), and <span class="math inline">\(x^TQx &gt; 0\)</span> for all <span class="math inline">\(x \in \mathbb R^n\)</span> not equal to <span class="math inline">\(0\)</span>.</p>
-</details>
-</section>
-</section>
-<section id="may-13-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-13-2026">May 13, 2026</h2>
-<p>In constrast to the notion of Lebesgue measure on <span class="math inline">\(T_N^{(1)}\)</span> used above, the following notion uses an isometry between <span class="math inline">\(T_N^{(1)}\)</span> equipped with Hilbert Schmidt norm and <span class="math inline">\(\R^{2N-1}\)</span> equipped with the Euclidean norm.</p>
-<p><em>Definition.</em> Alternative Lebesgue Measure on <span class="math inline">\(T_N^{(1)}\)</span>. In this definition, we view <span class="math inline">\(T_N^{(1)}\)</span> as an <span class="math inline">\(\R\)</span>-vector space endowed with the Hilbert Schmidt norm <span class="math inline">\(\lVert M \rVert = \sqrt{\Tr(M^TM)}\)</span>, which, by the way, is induced by the scalar product <span class="math inline">\((A,B) = \Tr(A^TB).\)</span> We consider the topology on <span class="math inline">\(T_N^{(1)}\)</span> generated by open balls <span class="math inline">\(b(Y, r) = \{X \in T_N^{(1)}: \lVert X - Y \rVert &lt; r\}\)</span>, namely the topology induced by the Hilbert Schmidt norm. Then we consider the Borel sigma algebra on <span class="math inline">\(T_N^{(1)}\)</span> which is generated by the open sets in the topology above. We also view <span class="math inline">\(\R^{2N-1}\)</span> as an <span class="math inline">\(\R\)</span>-vector space with the Euclidean norm <span class="math inline">\(\Vert x \rVert = \sqrt{\sum_{i} x_i^2}\)</span>. There is an isometry <span class="math display">\[
-\Phi: T_N^{(1)} \to \R^{2N-1}
-\]</span> given by <span class="math display">\[
-T_N^{(1)} \ni \begin{bmatrix}
-a_N &amp; \frac{1}{\sqrt{2}}b_{N-1} &amp; &amp;  &amp;  \\
-\frac{1}{\sqrt{2}} b_{N-1} &amp; a_{N-1} &amp; \frac{1}{\sqrt{2}} b_{N-2} &amp;  &amp; \\
-&amp; \frac{1}{\sqrt{2}} b_{N-2} &amp; &amp; &amp; \\
-&amp; &amp; \ddots&amp; \ddots &amp; \\
-&amp; &amp; \frac{1}{\sqrt{2}} b_2&amp; a_2&amp;\frac{1}{\sqrt{2}} b_1 \\
-&amp; &amp; &amp; \frac{1}{\sqrt{2}} b_1&amp; a_1
-\end{bmatrix} = T \mapsto (a,b) \in \mathbb R^{2N-1}.
-\]</span> Fix <span class="math inline">\(T \in T_N^{(1)}\)</span> as above. Then <span class="math display">\[\begin{align*}
-\lVert T \rVert^2 &amp;= \Tr(T^TT) = \Tr(T^2) \\
-&amp;= \left(a_N^2 + \left(\frac{b_{N-1}}{\sqrt{2}}\right)^2\right) + \left(\left(\frac{b_{N-1}}{\sqrt{2}}\right)^2 + a_{N-1}^2 + \left(\frac{b_{N-2}}{\sqrt{2}}\right)^2\right) + \cdots \\
-&amp;= \sum_{i=1}^N a_i^2 + 2 \sum_{i=1}^{N-1} b_i^2/2\\
-&amp;= \lVert (a,b) \rVert^2 = \lVert \Phi(T) \rVert^2,
-\end{align*}\]</span> which shows that <span class="math inline">\(\Phi\)</span> is an isometry, and that the <span class="math inline">\(\sqrt{2}^{-1}\)</span> factor was needed to preserve the isometric correspondence. We define Lebesgue measure on <span class="math inline">\(T_N^{(1)}\)</span>, which we denote by <span class="math inline">\(l_{T_N}\)</span>, such that <span class="math inline">\(l_{T_N} = \Phi^* (\mathcal{L}_{\R^{2N-1}})\)</span>, the pullback of <span class="math inline">\(2N-1\)</span> dimensional Lebesgue measure by the map <span class="math inline">\(\Phi\)</span>. That is, for a Borel subset <span class="math inline">\(B \in \mathcal{B}(T_N^{(1)})\)</span>, we have <span class="math display">\[
-l_{T_N}(B) = \mathcal{L}_{\R^{2N-1}}(\Phi(B)).
-\]</span> In addition, we note that the pushforward of <span class="math inline">\(l_{T_N}\)</span> by <span class="math inline">\(\Phi\)</span>, denoted by <span class="math inline">\(\Phi_* l_{T_N},\)</span> is equal to <span class="math inline">\(\mathcal{L}_{\R^{2N-1}}.\)</span></p>
-<p><em>End Definition</em></p>
-</section>
-<section id="may-4-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-4-2026">May 4, 2026</h2>
-<p><a href="https://drive.google.com/drive/u/0/folders/1utG5S-e3Nzdyet0UWugVWob7riQ1aqAc">Here</a> are some notes on the Frenet frame field of a curve. We follow page 56 of O’Neills book on Elementary Differential Geometry. The idea is to take together the vecolity of the curve, the acceleration, and the cross product of the acceleration and velocity to get a frame vector field.</p>
-</section>
-<section id="may-1-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-1-2026">May 1, 2026</h2>
-<p>Here is a report on an internet search from this morning. My initial goal was to look for applications of what I’m learning in <span class="citation" data-cites="Dimitriu2018">Dumitriu and Edelman (<a href="#ref-Dimitriu2018" role="doc-biblioref">2018</a>)</span>. Therefore I looked on Google Scholar to see who had cited that paper. The first one that caught my eye was titled <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.126001">“Tridiagonalizing random matrices”</a> written by Balasubramanian, Magan, and Wu, published in 2023 in Phy Rev Let D. Some of the computations in the paper looked familiar. At least one the authors was associated with the <a href="https://www.santafe.edu/">Sante Fe Institute</a>, which I had never heard of before. This institute doesn’t look relevant for me as a Master student, aside from the two research assistants they hired, who are Master/Bachelor level. For the most part, it looks like it is geared towards post-docs, but at least it is promising that there are places outside academia for post-docs.</p>
-<p>Next I clicked on the article, also citing Dimitriu and Edelman’s article, titled <a href="https://arxiv.org/pdf/1908.03795">“Eigenvectors from eigenvalues: A survey of a basic identity in linear algebra”</a> written by Denton, Parke, Tao, and Zhang. I was surprised to see in an article on linear algebra that Denton, Parke, and Zhang were members of physics associations. Denton, for instance, was a member of <a href="https://www.bnl.gov/careers/">Brookhaven National Lab</a> in Upton, NY. I didn’t find any perfect matches for my background of a Master in Math and Bachelor in Math and CS, but I think there must be something. But the point is not so much to find a job, but to see that there is hope of finding something outside of corporate finance and corporate tech which still uses technical skills, especially mathematics. There was also <a href="https://www.fermi-forward.org/">Fermi Forward</a> which is in Illinois. This lab is connected with U. Chicago, which is not relevant to my background, but is also connected to U. Illinois Urbana Champaign, which might be relevant to me.</p>
-<p>Another thing I learned is that there is collaboration between national labs and PhD candidates. For instance, <a href="https://internships.fnal.gov/science-graduate-research-program-scgsr/">here</a>.</p>
-<p>Perhaps more insightful is to look at, for instance, the career path of <a href="https://peterdenton.github.io/">Denton</a>.</p>
-<section id="other-notes" class="level4">
-<h4 class="anchored" data-anchor-id="other-notes">Other notes</h4>
-<p>I don’t understand “And in any case, from the unitary invariance of GUE, we see that even after conditioning on <span class="math inline">\(D\)</span>, we may assume without loss of generality that <span class="math inline">\(U\)</span> is drawn from the invariant Haar measure on <span class="math inline">\(U(n)\)</span>. In particular, <span class="math inline">\(U\)</span> and <span class="math inline">\(D\)</span> can be taken to be independent” on page 219 of Tao’s Random matrix book.</p>
-<p>Update: he <a href="https://terrytao.wordpress.com/2010/02/23/254a-notes-6-gaussian-ensembles/comment-page-1/#comment-692464">responded</a>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is irregularity for a distribution?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is irregularity for a distribution?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Dirac distribution, centered at a point <span class="math inline">\(x \in \Omega \subset \mathbb R^n\)</span>, is the prime example of an “irregular” distribution, because there is no “nice” function <span class="math inline">\(f\)</span> such that <span class="math inline">\(\delta_x = f (= \Lambda_f)\)</span> in the sense of duality/distributions.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a singularity in the context of the theory of distributions?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a singularity in the context of the theory of distributions?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the Dirac distribution <span class="math inline">\(\delta_{x_0}\)</span>. Then you can define heuristally <span class="math inline">\(\delta_{x_0}(x \ne x_0) = 0\)</span> and <span class="math inline">\(\delta_{x_0}(x_0) = \infty\)</span>, and in this case, there is a singularity at <span class="math inline">\(x_0\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What is the regularity of tempered distributions?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is the regularity of tempered distributions?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In short, tempered distributions correspond (via duality) to (weak) derivatives of polynomially bounded continuous functions.</p>
+<p>The precise statement is as follows. Let <span class="math inline">\(\Lambda \in \mathcal{S}'(\mathbb R^n)\)</span>. Then there exists a polynomially bounded and continuous function <span class="math inline">\(f \in C(\mathbb R^n)\)</span> such that <span class="math display">\[\partial^{\alpha}f = \Lambda,\]</span> which, means that <span class="math display">\[\Lambda(\cdot) = \partial^{\alpha} \Lambda_f(\cdot) := (-1)^{|\alpha|} \Lambda(f \partial^{\alpha}(\cdot)),
+\]</span> which means the for any Schwartz function <span class="math inline">\(\phi \in \mathcal{S}(\mathbb R^n)\)</span>, <span class="math display">\[
+\Lambda(\phi) = (-1)^{|\alpha|} \int_{\mathbb R^n} dx f(x) (\partial^{\alpha} \phi)(x)
+\]</span></p>
+</div>
+</div>
+<p>(I got confused by <span class="math inline">\((\partial^{\alpha} \phi)(x)\)</span>, so for that just remember that for real-valued functions, the partial derivative at a point is just a number, not a linear map.)</p>
+<p>For example, the Dirac delta function centered at <span class="math inline">\(0\)</span>, as a tempered distribition on <span class="math inline">\(\mathbb R\)</span>, is the 2nd weak/distributional derivative of <span class="math inline">\(\max{(0,x)}\)</span>. This is because <span class="math inline">\(\delta_0\)</span> is the weak derivative of the Heaviside function <span class="math inline">\(H(x) = \chi_{[0,\infty]}\)</span>, which is the weak derivative of <span class="math inline">\(\max{(0,x)}\)</span>.</p>
 
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
-Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
-</div>
-<div id="ref-Dimitriu2018" class="csl-entry" role="listitem">
-Dumitriu, and Edelman. 2018. <span>“Matrix Models for Beta Ensembles.”</span> 2018. <a href="https://arxiv.org/abs/math-ph/0206043v1">https://arxiv.org/abs/math-ph/0206043v1</a>.
-</div>
-<div id="ref-Klenke" class="csl-entry" role="listitem">
-Klenke, Achim. 2014. <em>Probability Theory, a Comprehensive Course</em>. 2nd Edition. Universitext. Springer.
-</div>
-<div id="ref-LangAlgebra" class="csl-entry" role="listitem">
-Lang, Serge. 2002. <em>Algebra</em>. Springer.
+<div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
+Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

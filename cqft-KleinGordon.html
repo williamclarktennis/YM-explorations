@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yang-Mills Lattice Gauge Theory - William’s Explorations – William's Lattice YM Explorations</title>
+<title>Wightman Axioms for free scalar quantum field – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -140,7 +140,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -220,27 +220,15 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#may-25-2026" id="toc-may-25-2026" class="nav-link active" data-scroll-target="#may-25-2026">May 25, 2026</a>
-  <ul class="collapse">
-  <li><a href="#discussion-of-some-definitions" id="toc-discussion-of-some-definitions" class="nav-link" data-scroll-target="#discussion-of-some-definitions">Discussion of some definitions</a></li>
-  </ul></li>
-  <li><a href="#may-13-2026" id="toc-may-13-2026" class="nav-link" data-scroll-target="#may-13-2026">May 13, 2026</a></li>
-  <li><a href="#may-4-2026" id="toc-may-4-2026" class="nav-link" data-scroll-target="#may-4-2026">May 4, 2026</a></li>
-  <li><a href="#may-1-2026" id="toc-may-1-2026" class="nav-link" data-scroll-target="#may-1-2026">May 1, 2026</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Yang-Mills Lattice Gauge Theory - William’s Explorations</h1>
+<h1 class="title">Wightman Axioms for free scalar quantum field</h1>
 </div>
 
 
@@ -257,129 +245,192 @@ window.Quarto = {
 </header>
 
 
-<div class="hidden">
-<p><span class="math display">\[
-\newcommand\mcy{{\mathcal{Y}}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Tr}{\text{Tr}}
-\def\*#1{\mathbf{#1}}
-\]</span></p>
+<p>Article last updated: January 29, 2026</p>
+<p>I’m writing this article so that I can learn Theorem 3.1 of Prof.&nbsp;Christian Brennecke’s constructive quantum field theory notes <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>. The statement of the theorem is as follows.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Theorem 3.1">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<section id="may-25-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-25-2026">May 25, 2026</h2>
-<p>I’ll explain how to convert a latex project involving .tex and .bib files to a quarto website rendition.</p>
-<p>First you create your latex project on your local machine. Let’s say you have a &lt;script.tex&gt; file and a &lt;references.bib&gt; file, and a bunch of other files excreted during pdf rendering.</p>
-<p>Second, you make sure that your quarto website folder has a &lt;references.bib&gt; file that includes all the entries in the latex project’s &lt;references.bib&gt; file.</p>
-<p>Then you go to the website <a href="https://pandoc.org/app/" class="uri">https://pandoc.org/app/</a>. You upload your &lt;script.tex&gt; document into the engine. Then you click on &lt;latex (LaTeX)&gt; as the &lt;From:&gt; option and you choose &lt;markdown (Pandoc)&gt; as the &lt;To:&gt; option. Then you click convert and you save the resulting &lt;script.md&gt; file to your quarto website project.</p>
-<p>Then you just rename the file &lt;script.md&gt; to &lt;script.qmd&gt; and then proceed as usual in quarto.</p>
-<section id="discussion-of-some-definitions" class="level3">
-<h3 class="anchored" data-anchor-id="discussion-of-some-definitions">Discussion of some definitions</h3>
-<details>
-<summary>
-lattice gauge theory on <span class="math inline">\(\epsilon \mathbb Z^d\)</span>
-</summary>
-<p>Fix <span class="math inline">\(\epsilon &gt; 0\)</span>. We note <span class="math inline">\(\epsilon \mathbb Z = \{ a \in \mathbb R: a = \epsilon k
-\text{ for some } k \in \mathbb Z\}\)</span>. Then <span class="math inline">\(\epsilon \mathbb Z^d = \{(a_1, \cdots, a_d) \in \mathbb R^d: a_i \in \epsilon \mathbb Z \}\)</span>. We say two vertices <span class="math inline">\(x,y \in \epsilon \mathbb Z^d\)</span> are adjacent if <span class="math inline">\(x = y \pm \epsilon e_i\)</span> for some <span class="math inline">\(i \in [d]\)</span>. In this case we write <span class="math inline">\(x \sim y\)</span>. Let <span class="math inline">\(\Lambda \subset \epsilon \mathbb Z^d\)</span> be a finite subset. Let <span class="math inline">\(E_{\Lambda} = \{(x,y) \in \Lambda^2: x \sim y \text{ and } x &lt; y \}\)</span>, where <span class="math inline">\(x &lt; y\)</span> means that <span class="math inline">\(\frac{1}{\epsilon} x &lt; \frac{1}{\epsilon} y\)</span> in the lexicographical ordering. A configuration is a map <span class="math inline">\(U: E_\Lambda \to U(N)\)</span>, where we also define <span class="math inline">\(U(y,x) = U(x,y)^*\)</span> for <span class="math inline">\((x,y) \in E_\Lambda\)</span>.</p>
-</details>
-<details>
-<summary>
-Density
-</summary>
-<p>We follow section 7.4 of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>. Let <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> be measures on a measurable space <span class="math inline">\((\Omega, \mathcal{A})\)</span>. A measurable function <span class="math inline">\(f: \Omega \to [0, \infty)\)</span> is called a density of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>, if <span class="math display">\[
-\nu(A) := \int_{\Omega} f 1_A \, d\mu
-\]</span> for all <span class="math inline">\(A \in \mathcal{A}\)</span>. On the other hand, for a given measurable function <span class="math inline">\(f: \Omega \to [0,\infty)\)</span>, the above equation defines a measure <span class="math inline">\(\nu\)</span> on <span class="math inline">\((\Omega, \mathcal{A})\)</span>. In this second case, we write <span class="math display">\[
-\nu =: f\mu, \hspace{1 cm} f =: \frac{d\nu}{d\mu}.
-\]</span></p>
-<p>Given a measurable <span class="math inline">\(g: \Omega \to [0,\infty]\)</span>, integrating against <span class="math inline">\(d\nu\)</span> is the same as integrating against <span class="math inline">\(f d\mu\)</span>. This is theorem 4.15 <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>: Let <span class="math inline">\(f \mu\)</span> be the measure defined above. Then <span class="math inline">\(g \in \mathcal{L}^1(f \mu)\)</span> if and only if <span class="math inline">\((gf) \in \mathcal{L}^1(\mu)\)</span>. In this case, <span class="math display">\[
-\int g \, d(f\mu) = \int gf \, d\mu.
-\]</span></p>
-<p>There is also a uniqueness result, Theorem 7.29. Let <span class="math inline">\(\nu\)</span> be <span class="math inline">\(\sigma\)</span>-finite. Let <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> be two densities of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>. Then <span class="math inline">\(f_1 = f_2\)</span> <span class="math inline">\(\mu\)</span>-almost surely. In particular, the density <span class="math inline">\(\frac{d\nu}{d\mu}\)</span> is unique <span class="math inline">\(\mu\)</span>-almost surely. That is, there is a <span class="math inline">\(\mu\)</span>-null set <span class="math inline">\(N \in \mathcal{A}\)</span> such that <span class="math inline">\(\frac{d\nu}{d\mu}\)</span> is equal to any other given density function on the complement <span class="math inline">\(\Omega \setminus N\)</span>. (Not sure if I stated this uniqueness correctly)</p>
-</details>
-<details>
-<summary>
-Lebesgue Measure
-</summary>
-<p>The following is Theorem 1.55 of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>. There exists a uniquely defined measure <span class="math inline">\(\lambda^n\)</span> on <span class="math inline">\((\mathbb R^n,\mathcal{B}(\mathbb R^n))\)</span> with the property that <span class="math inline">\(\lambda^n((a,b]) = \prod_{i=1}^n (b_i - a_i)\)</span> for all <span class="math inline">\(a,b \in \mathbb R^n\)</span> with <span class="math inline">\(a&lt; b\)</span>. Furthermore, <span class="math inline">\(\lambda^n\)</span> is called Lebesgue measure on <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n))\)</span> or Lebesgue-Borel-measure.</p>
-</details>
-<details>
-<summary>
-Gaussian measure on <span class="math inline">\(\mathbb R^n\)</span>
-</summary>
-<p>Fix the Lebesgue measure space <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n),dx)\)</span>. Let <span class="math inline">\(\tau\)</span> be a probability measure on <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n))\)</span>.</p>
-<p>More logically rigorous is to say that <span class="math inline">\(\tau\)</span> is a Gaussian measure if there exists a constant <span class="math inline">\(C&gt; 0\)</span> and a degree two polynomial <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> such that <span class="math inline">\(Ce^{-P(\cdot)}: \mathbb R^n \to [0,\infty)\)</span> is a density of <span class="math inline">\(\tau\)</span> with respect to <span class="math inline">\(dx\)</span>: <span class="math display">\[
-\tau(A) = \int_{\mathbb R^n} Ce^{-P(x)} 1_A \, dx
-\]</span> for all <span class="math inline">\(A \in \mathcal{B}(\mathbb R^n).\)</span></p>
-<p>In this case we write <span class="math display">\[
-\frac{d\tau}{dx} = Ce^{-P(x)}.
-\]</span></p>
-<p>Suppose <span class="math inline">\(\tau\)</span> is a Gaussian measure with polynomial <span class="math inline">\(P\)</span>. Suppose <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is not integrable. Then by definition of integrability (Def 4.7 <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>, for example), it follows that <span class="math inline">\(\int_{\mathbb R^n} |Ce^{-P(x)}|dx = \infty,\)</span> which contradicts that <span class="math inline">\(\tau\)</span> is a probability measure on <span class="math inline">\(\mathbb R^n\)</span>. Hence, <span class="math inline">\(\tau\)</span> Gaussian implies that <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is integrable.</p>
-<p>Since <span class="math inline">\(C\)</span> is a finite constant, <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is integrable if and only if <span class="math inline">\(e^{-P(x)}\)</span> is integrable.</p>
-<p>Lemma (Criterion 12.1 <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>). The measurable function <span class="math inline">\(e^{-P(\cdot)}\)</span> is integrable if and only if there exists a positive constant <span class="math inline">\(c\)</span> and a positive constant <span class="math inline">\(R\)</span> such that <span class="math display">\[
-P(x) \ge c \lVert x \rVert^2
-\]</span> for all <span class="math inline">\(x \in \mathbb R^n\)</span> satisfying <span class="math inline">\(\lVert x \rVert \ge R\)</span>, where <span class="math inline">\(\lVert x \rVert = \sqrt{x_1^2 + \cdots + x_n^2}\)</span>.</p>
-<p>Lemma. If <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> is an arbitrary degree two polynomial, then there exists a matrix <span class="math inline">\(Q \in \mathbb R^{n \times n}\)</span>, a column vector <span class="math inline">\(v \in \mathbb R^n\)</span>, and a constant <span class="math inline">\(c \in \mathbb R\)</span> (not the same <span class="math inline">\(c\)</span> as above) such that <span class="math display">\[
-P(x) = x^T Q x + v^Tx + c.
-\]</span></p>
-<p>Lemma (Criterion 12.2 <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>). Suppose <span class="math inline">\(P(x) = x^T Q x + v^Tx + c\)</span>. Then the following are equivalent.</p>
-<ul>
-<li><span class="math inline">\(e^{-P(x)}\)</span> is integrable.</li>
-<li>There are positive constants <span class="math inline">\(C_1, R\)</span> such that <span class="math display">\[
-P(x) \ge C_1 \lVert x \rVert^2
-\]</span> for all <span class="math inline">\(\lVert x \rVert \ge R\)</span>.</li>
-<li><span class="math inline">\(Q\)</span> is a positive definite matrix. That is, <span class="math inline">\(Q\)</span> is symmetric and <span class="math inline">\(x^TQx &gt; 0\)</span> for all <span class="math inline">\(x \ne 0 \in \mathbb R^n\)</span>.</li>
-</ul>
-</details>
-<details>
-<summary>
-Positive Definite Matrix
-</summary>
-<p>Consider the <span class="math inline">\(\mathbb R\)</span> vector space <span class="math inline">\(\mathbb R^n\)</span>. Consider a symmetric <span class="math inline">\(\mathbb R\)</span>-bilinear form <span class="math inline">\(g: \mathbb R^n \times \mathbb R^n \to \mathbb R.\)</span> Recall that symmetry means <span class="math inline">\(g(x,y) = g(y,x)\)</span> for all <span class="math inline">\(x,y \in \mathbb R^n\)</span>. We say that <span class="math inline">\(g\)</span> is positive definite if <span class="math inline">\(0 &lt; g(X,X) =: X^2\)</span> for all <span class="math inline">\(X \ne 0\)</span> in <span class="math inline">\(\mathbb R^n\)</span> (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> Section Symmetric Forms over Ordered Fields). Let <span class="math inline">\(Q\)</span> be the matrix associated with the form <span class="math inline">\(g\)</span> relative to the standard basis <span class="math inline">\(B = \{e_1, \cdots, e_n\}\)</span>, that is, if <span class="math inline">\(x, y \in \mathbb R^n\)</span>, and in this case <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are already the column vectors of coordinates for themselves with respect to the standard basis, then <span class="math display">\[
-g(x,y) = x^T Q y.
-\]</span> (See Section Matrices and Bilinear Forms <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.) In this case we say that <span class="math inline">\(Q\)</span> is a positive definite matrix.</p>
-<p>Note also that <span class="math inline">\(Q\)</span> is implicitly a symmetric matrix, by the following result.</p>
-<p>Proposition 6.5 (Section Matrices and Bilinear Forms <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>). Let <span class="math inline">\(E\)</span> be a free module of dimension <span class="math inline">\(n\)</span> over a commutative ring <span class="math inline">\(R\)</span>, and let <span class="math inline">\(B\)</span> be a fixed basis. The map <span class="math inline">\(f \mapsto M_B^B(f)\)</span> induces an isomorphism between the module of symmetric bilinear forms on <span class="math inline">\(E \times E\)</span> and the module of symmetric <span class="math inline">\(n \times n\)</span> matrices over <span class="math inline">\(R\)</span>.</p>
-<p>In summary, <span class="math inline">\(Q\)</span> is a positive definite <span class="math inline">\(n \times n\)</span> matrix if and only if <span class="math inline">\(Q\)</span> has entries in <span class="math inline">\(\mathbb R\)</span>, <span class="math inline">\(Q = Q^T\)</span> (symmetry), and <span class="math inline">\(x^TQx &gt; 0\)</span> for all <span class="math inline">\(x \in \mathbb R^n\)</span> not equal to <span class="math inline">\(0\)</span>.</p>
-</details>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Theorem 3.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the strongly continuous unitary representation <span class="math inline">\(\Gamma(U)\)</span> (gamma of U) of <span class="math inline">\(\mathcal{P}_{+}^{\uparrow}\)</span> (P plus up) on <span class="math inline">\(\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))\)</span> (Bosonic Fock space built over <span class="math inline">\(L^2\)</span> of the mass shell of mass <span class="math inline">\(m\)</span>) with Fock space vacuum <span class="math inline">\(\Omega = (1,0,0,\cdots) \in \mathcal{H}\)</span> and let <span class="math inline">\(\phi = (\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}\)</span> (family of operators indexed by Schwartz functions on <span class="math inline">\(\mathbb R^4\)</span>) be defined as (3.14): <span class="math display">\[\begin{equation}
+\phi(f) = (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p + (2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p^*.
+\end{equation}\]</span> Then <span class="math inline">\((\mathcal{H}, \Gamma(U), \Omega, \phi)\)</span> satisfies the Wightman axioms and <span class="math display">\[\begin{equation}
+(\square + m^2) \phi = 0
+\end{equation}\]</span> in the sense of operator-valued distributions.</p>
+</div>
+</div>
+<section id="the-operator-valued-distribution-3.14" class="level4">
+<h4 class="anchored" data-anchor-id="the-operator-valued-distribution-3.14">The operator valued distribution (3.14)</h4>
+<p>Let me clarify (3.14) for myself. Recall that the creation and annihilation operators depend on some function <span class="math inline">\(f \in L^2(\mathcal{M})\)</span>, where in this case <span class="math inline">\(\mathcal{M} = S_m^+\)</span>. Only once you have some <span class="math inline">\(f\)</span> can you talk about an operator from the infinite tensor product space <span class="math inline">\(\mathcal{F}_s\)</span> to itself. That is why I can write <span class="math display">\[\begin{equation}
+a(\sqrt{ 2 \pi } \tilde{f} ) : \mathcal{F}_s \to \mathcal{F}_s,
+\end{equation}\]</span> and this object is defined in section 2.4 in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<p>Next, I want to phrase (3.14) directly in terms of rigorously defined objects. I’ll use the identities <span class="math display">\[\begin{equation}
+a(f) =: \int_{\mathbb R^d} dx \overline{f}(x) a_x
+\end{equation}\]</span> and <span class="math display">\[\begin{equation}
+a^*(g) =: \int_{\mathbb R^d} dx g(x) a_x^*
+\end{equation}\]</span> found in section 2.4 of Brennecke’s notes. It follows that <span class="math display">\[\begin{equation}
+(2\pi)^{1/2} \int_{S_m^+} \lambda_m(dp) \tilde{f}(p) a_p := a(\sqrt{2\pi} \overline{\tilde{f}}).
+\end{equation}\]</span> This is nice because now I can just refer back to section 2.4 to see how <span class="math inline">\(a(\sqrt{2\pi} \overline{\tilde{f}})\)</span> acts on a tensor product on some dense subset in the Fock space.</p>
+<p>In summary, (3.14) says <span class="math display">\[
+\phi(f) = \sqrt{2 \pi } a(\overline{\tilde{f}}) + \sqrt{2 \pi } a^*( \tilde{f}).
+\]</span> (where the constant factors of pi can be taken in and out of the annihilation and creation operators because <span class="math inline">\(a\)</span> and <span class="math inline">\(a^*\)</span> are linear in <span class="math inline">\(f \in L^2(\mathcal{M})\)</span>.)</p>
+<p>Let me also discuss the name “operator valued distribution.” An operator valued distribution is a family <span class="math inline">\((\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}\)</span>, where for each <span class="math inline">\(f \in \mathcal{S}(\mathbb R^4)\)</span>, the symbol <span class="math inline">\(\phi(f)\)</span> denotes a linear operator on some Hilbert space <span class="math inline">\(\mathcal{H}\)</span>. But how does this connect to another notion of a distribution, namely a map <span class="math inline">\(\Phi: \mathcal{S}(\mathbb R^4) \to \mathbb C\)</span>, with the stereotypical example being the dirac distribution <span class="math inline">\(\delta_0: \mathcal{S}(\mathbb R^4) \to \mathbb C\)</span> centered at <span class="math inline">\(0 \in \mathbb R^4\)</span>? To see the connection, observe that we can rewrite the quantum field <span class="math inline">\((\phi(f))_{f \in \mathcal{S}(\mathbb R^4)}\)</span> as a map: <span class="math display">\[
+\Phi: \mathcal{S}(\mathbb R^4) \to \mathcal{L}(\mathcal{H}).
+\]</span> Rewriting in this way allows me to see that a quantum field is just a distribution, but with values in <span class="math inline">\(\mathcal{L}(\mathcal{H}) =
+\{f: \mathcal{H} \to \mathcal{H} \mid f \text{ linear} \}\)</span> instead of <span class="math inline">\(\mathbb C\)</span>.</p>
+<p>On this note, one situation that happens a lot is the following. One writes down an integral <span class="math display">\[
+\int_{\mathbb R^4}dp f(p) a^*_p,
+\]</span> and then says that the integral should be interpreted in a distributional sense (because the annihilation operator is not actually defined at each <span class="math inline">\(p\)</span>, and even if it were, the vector valued integral would be difficult to make sense of because the annihiliation operators are not bounded operators, so a Bochner interpretation is not immediate.) How is this connected to intepreting an analogous integral <span class="math display">\[
+\int_{\mathbb R^4} dp f(p) \delta_0(p)
+\]</span> in the sense of distributions? Well, the latter integral is actually defined by <span class="math display">\[
+\delta_0(f) =: \int_{\mathbb R^4} dp f(p) \delta_0(p),
+\]</span> because the delta function is not defined at the origin, and you can’t ignore the singularity at the origin (as you would for <span class="math inline">\(L^p\)</span> functions by ignoring null sets) because the null set <span class="math inline">\(\{0\}\)</span> actually affects the value of the integral. The main point is this, we’ve intepreted the original integral in a distributional sense, because <span class="math inline">\(\delta_0(f)\)</span> is a well-defined complex number: it is just <span class="math inline">\(\delta_0(f) = f(0) \in \mathbb C\)</span>. To see the analogy for the operator valued distributional case, just replace the <span class="math inline">\(\delta_0\)</span> by <span class="math inline">\(a\)</span> on the left hand side and the <span class="math inline">\(\delta_0(p)\)</span> inside the integral on the right hand side by <span class="math inline">\(a^*_p\)</span>. Then: <span class="math display">\[
+a(f) =: \int_{\mathbb R^4} dp f(p) a^*_p,
+\]</span> so the right hand side is defined by <span class="math inline">\(a(f)\)</span>, which is no longer a complex number, but an operator. This explains how the interpretations of the identities used above from section 2.4 of <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span> are called ‘distributional interpretations.’</p>
 </section>
+<section id="the-unitary-representation-gamma" class="level4">
+<h4 class="anchored" data-anchor-id="the-unitary-representation-gamma">The unitary representation Gamma</h4>
+<p>Consider the phrase “strongly continuous unitary representation <span class="math inline">\(\Gamma(U)\)</span> of <span class="math inline">\(\mathcal{P}_+^\uparrow\)</span> on <span class="math inline">\(\mathcal{H} = \mathcal{F}_s(L^2(S_m^+))\)</span>.” We understand this phrase through the following discussion. Given an abstract group <span class="math inline">\(G\)</span> and a vector space <span class="math inline">\(V\)</span>, a unitary representation (of <span class="math inline">\(G\)</span> on <span class="math inline">\(V\)</span>) is a homomorphism <span class="math inline">\(\rho: G \to \mathcal{U}(V)\)</span>, where <span class="math inline">\(\mathcal{U}(V)\)</span> denotes the set of all unitary maps from <span class="math inline">\(V\)</span> to <span class="math inline">\(V\)</span>, equipped with composition as the multiplication operation (or matrix multiplication). What is a natural topology to put on <span class="math inline">\(\mathcal{U}(V)\)</span>? Perhaps an operator topology?</p>
+<p>Equipping <span class="math inline">\(G\)</span> with a topology, we say that <span class="math inline">\(\rho\)</span> is strongly continuous if for all <span class="math inline">\(v \in V\)</span> <span class="math display">\[G \ni g \mapsto \rho(g)v \in V\]</span> is continuous. For example, if <span class="math inline">\(G = SU(2)\)</span> and <span class="math inline">\(\iota : SU(2) \to U(2)\)</span> is a strongly continuous unitary representation of <span class="math inline">\(SU(2)\)</span> on <span class="math inline">\(\mathbb C^2\)</span>, then strong continuity means <span class="math display">\[SU(2) \ni A \mapsto Av \in \mathbb C^2\]</span> is continuous for all <span class="math inline">\(v \in \mathbb C^2\)</span>.</p>
+<p>Thus, <span class="math inline">\(\Gamma(U): \mathcal{P}_+^\uparrow \to \mathcal{U}(\mathcal{F}_s(L^2(S_m^+)))\)</span> should satisfy <span class="math display">\[\mathcal{P}_+^\uparrow \ni (a,L) \mapsto \Gamma(U)((a,L))v \in \mathcal{F}_s(L^2(S_m^+))\]</span> is continuous, where <span class="math inline">\(v\)</span> is a fixed and arbitrary element of the Bosonic Fock space built over the mass shell. Observe that <span class="math inline">\(\Gamma(U)((a,L))\)</span> is a unitary operator on Bosonic Fock space, so it makes sense that applying it to <span class="math inline">\(v\)</span> gives a Bosonic function. Observe that <span class="math inline">\(\Gamma(U)\)</span> is not a finite dimensional representation because Fock space is not finite dimensional.</p>
+<p>It turns out that the unitary representation Gamma actually has a name: the second quantization of the unitary representation <span class="math inline">\(U= (U(a,L))_{(a,L) \in \mathcal{P}_+^{\uparrow}}\)</span>. Thus, completely understanding <span class="math inline">\(\Gamma(U)\)</span> entails understanding the representation <span class="math inline">\(U\)</span> of the proper Poincaré group <span class="math inline">\(\mathcal{P}_+^{\uparrow}\)</span> on <span class="math inline">\(L^2\)</span> of the mass shell <span class="math inline">\(S_m^+\)</span>, which can be seen in definition (3.4) in the section on the quantization of a massive relativistic particle. To this end, let me look at the following exercise, which is Probem 3.1 (a) in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Exercise 1">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Exercise 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\((a,L) \in \mathcal{P}_+^{\uparrow}\)</span>, let <span class="math inline">\(U(a,L)\)</span> be defined as in (3.4): for <span class="math inline">\(\psi \in L^2(S_m^+, \mathcal{B}(S_m^+), \lambda_m)\)</span>, we set <span class="math display">\[
+(U(a,L)\psi)(p) = e^{ip^{\mu}a_{\mu}} \psi(L^{-1}p)
+\]</span> for almost every <span class="math inline">\(p \in S_m^+\)</span> and for all <span class="math inline">\((a,L) \in \mathcal{P}_+^{\uparrow}\)</span>. Show that <span class="math inline">\(\mathcal{P}_+^\uparrow \ni (a,L) \mapsto U(a,L) \in \mathcal{U}(L^2(S_m^+))\)</span> defines a strongly continuous, unitary representation of <span class="math inline">\(\mathcal{P}_+^\uparrow\)</span> on <span class="math inline">\(L^2(S_m^+) = L^2(S_m^+, \mathcal{B}(S_m^+), \lambda_m)\)</span>.</p>
+</div>
+</div>
+<p>Proof. Step one is to verify the homomorphism property <span id="eq-1"><span class="math display">\[
+(U((a,L)(a',L'))\psi)(p) = ((U(a,L)U(a',L'))\psi)(p)
+\tag{1}\]</span></span> for all <span class="math inline">\((a,L), (a',L') \in \mathcal{P}_+^\uparrow\)</span>. By definition, <span class="math inline">\((a,L)(a',L') = (a+La', LL')\)</span>, so we make the appropriate substitution on the left hand side of <a href="#eq-1" class="quarto-xref">Equation&nbsp;1</a>. Then we have by (3.4) that <span class="math display">\[\begin{align*}
+(U(a+La', LL')\psi)(p) = e^{ip^\mu(a+La')_{\mu}}\psi((LL')^{-1}p).
+\end{align*}\]</span> We compute for the right hand side using (3.4): <span class="math display">\[\begin{align*}
+((U(a,L)U(a',L'))\psi)(p) &amp;= (U(a,L)(U(a',L')\psi(\cdot)))(p) &amp;&amp; \text{i.e. composition law}\\
+&amp;= (U(a,L)e^{i(\cdot)^\mu a'_{\mu}}\psi(L'^{-1} (\cdot)) )(p) \\
+&amp;= e^{ip^\mu a_{\mu}} e^{i(L^{-1}p)^\mu a'_{\mu}} \psi(L'^{-1}L^{-1}(p)) \\
+&amp;= e^{i (p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu)} \psi((LL')^{-1}p).
+\end{align*}\]</span> For the homomorphism property, it remains to prove that <span class="math display">\[
+p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu = p^\mu(a+La')_{\mu}.
+\]</span> Note the following facts and observations about</p>
+<section id="interlude-about-o13" class="level5">
+<h5 class="anchored" data-anchor-id="interlude-about-o13">Interlude about O(1,3)</h5>
+<p><span class="math inline">\(O(1,3)\)</span>, the group of isometries on Minkowski space, of which <span class="math inline">\(L\)</span> is an element by defintion of the Poincaré group. First, Minkowski space <span class="math inline">\(\mathbb R^4\)</span> is equipped with a bilinear form <span class="math inline">\(\eta = \text{diag}({1,-1,-1,-1})\)</span>, which means that <span class="math inline">\(\eta(x,y) = x^T \eta y\)</span>, where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are column vectors with 4 entries. Next, an isometry <span class="math inline">\(L \in O(1,3)\)</span> is a linear map <span class="math inline">\(\mathbb R^4 \to \mathbb R^4\)</span> that preserves the geometry in the sense that <span class="math inline">\(\eta(Lx,Ly) = \eta(x,y)\)</span> for all <span class="math inline">\(x,y \in \mathbb R^4\)</span>. Rewriting gives the equation <span class="math inline">\(x^TL^T\eta Ly = x^T\eta y\)</span> for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and by choosing <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> as the various combinations of basis vectors in order to single out the matrix entries of <span class="math inline">\(L^T\eta L\)</span> on the left and <span class="math inline">\(\eta\)</span> on the right, the isometry condition on <span class="math inline">\(L\)</span> can be expressed equivalently as <span class="math inline">\(L^T \eta L = \eta\)</span>. Another useful thing to note is that <span class="math inline">\(a^\mu b_\mu = a^T \eta b\)</span> for column vectors <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in <span class="math inline">\(\mathbb R^4\)</span>.</p>
 </section>
-<section id="may-13-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-13-2026">May 13, 2026</h2>
-<p>In constrast to the notion of Lebesgue measure on <span class="math inline">\(T_N^{(1)}\)</span> used above, the following notion uses an isometry between <span class="math inline">\(T_N^{(1)}\)</span> equipped with Hilbert Schmidt norm and <span class="math inline">\(\R^{2N-1}\)</span> equipped with the Euclidean norm.</p>
-<p><em>Definition.</em> Alternative Lebesgue Measure on <span class="math inline">\(T_N^{(1)}\)</span>. In this definition, we view <span class="math inline">\(T_N^{(1)}\)</span> as an <span class="math inline">\(\R\)</span>-vector space endowed with the Hilbert Schmidt norm <span class="math inline">\(\lVert M \rVert = \sqrt{\Tr(M^TM)}\)</span>, which, by the way, is induced by the scalar product <span class="math inline">\((A,B) = \Tr(A^TB).\)</span> We consider the topology on <span class="math inline">\(T_N^{(1)}\)</span> generated by open balls <span class="math inline">\(b(Y, r) = \{X \in T_N^{(1)}: \lVert X - Y \rVert &lt; r\}\)</span>, namely the topology induced by the Hilbert Schmidt norm. Then we consider the Borel sigma algebra on <span class="math inline">\(T_N^{(1)}\)</span> which is generated by the open sets in the topology above. We also view <span class="math inline">\(\R^{2N-1}\)</span> as an <span class="math inline">\(\R\)</span>-vector space with the Euclidean norm <span class="math inline">\(\Vert x \rVert = \sqrt{\sum_{i} x_i^2}\)</span>. There is an isometry <span class="math display">\[
-\Phi: T_N^{(1)} \to \R^{2N-1}
-\]</span> given by <span class="math display">\[
-T_N^{(1)} \ni \begin{bmatrix}
-a_N &amp; \frac{1}{\sqrt{2}}b_{N-1} &amp; &amp;  &amp;  \\
-\frac{1}{\sqrt{2}} b_{N-1} &amp; a_{N-1} &amp; \frac{1}{\sqrt{2}} b_{N-2} &amp;  &amp; \\
-&amp; \frac{1}{\sqrt{2}} b_{N-2} &amp; &amp; &amp; \\
-&amp; &amp; \ddots&amp; \ddots &amp; \\
-&amp; &amp; \frac{1}{\sqrt{2}} b_2&amp; a_2&amp;\frac{1}{\sqrt{2}} b_1 \\
-&amp; &amp; &amp; \frac{1}{\sqrt{2}} b_1&amp; a_1
-\end{bmatrix} = T \mapsto (a,b) \in \mathbb R^{2N-1}.
-\]</span> Fix <span class="math inline">\(T \in T_N^{(1)}\)</span> as above. Then <span class="math display">\[\begin{align*}
-\lVert T \rVert^2 &amp;= \Tr(T^TT) = \Tr(T^2) \\
-&amp;= \left(a_N^2 + \left(\frac{b_{N-1}}{\sqrt{2}}\right)^2\right) + \left(\left(\frac{b_{N-1}}{\sqrt{2}}\right)^2 + a_{N-1}^2 + \left(\frac{b_{N-2}}{\sqrt{2}}\right)^2\right) + \cdots \\
-&amp;= \sum_{i=1}^N a_i^2 + 2 \sum_{i=1}^{N-1} b_i^2/2\\
-&amp;= \lVert (a,b) \rVert^2 = \lVert \Phi(T) \rVert^2,
-\end{align*}\]</span> which shows that <span class="math inline">\(\Phi\)</span> is an isometry, and that the <span class="math inline">\(\sqrt{2}^{-1}\)</span> factor was needed to preserve the isometric correspondence. We define Lebesgue measure on <span class="math inline">\(T_N^{(1)}\)</span>, which we denote by <span class="math inline">\(l_{T_N}\)</span>, such that <span class="math inline">\(l_{T_N} = \Phi^* (\mathcal{L}_{\R^{2N-1}})\)</span>, the pullback of <span class="math inline">\(2N-1\)</span> dimensional Lebesgue measure by the map <span class="math inline">\(\Phi\)</span>. That is, for a Borel subset <span class="math inline">\(B \in \mathcal{B}(T_N^{(1)})\)</span>, we have <span class="math display">\[
-l_{T_N}(B) = \mathcal{L}_{\R^{2N-1}}(\Phi(B)).
-\]</span> In addition, we note that the pushforward of <span class="math inline">\(l_{T_N}\)</span> by <span class="math inline">\(\Phi\)</span>, denoted by <span class="math inline">\(\Phi_* l_{T_N},\)</span> is equal to <span class="math inline">\(\mathcal{L}_{\R^{2N-1}}.\)</span></p>
-<p><em>End Definition</em></p>
-</section>
-<section id="may-4-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-4-2026">May 4, 2026</h2>
-<p><a href="https://drive.google.com/drive/u/0/folders/1utG5S-e3Nzdyet0UWugVWob7riQ1aqAc">Here</a> are some notes on the Frenet frame field of a curve. We follow page 56 of O’Neills book on Elementary Differential Geometry. The idea is to take together the vecolity of the curve, the acceleration, and the cross product of the acceleration and velocity to get a frame vector field.</p>
-</section>
-<section id="may-1-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-1-2026">May 1, 2026</h2>
-<p>Here is a report on an internet search from this morning. My initial goal was to look for applications of what I’m learning in <span class="citation" data-cites="Dimitriu2018">Dumitriu and Edelman (<a href="#ref-Dimitriu2018" role="doc-biblioref">2018</a>)</span>. Therefore I looked on Google Scholar to see who had cited that paper. The first one that caught my eye was titled <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.126001">“Tridiagonalizing random matrices”</a> written by Balasubramanian, Magan, and Wu, published in 2023 in Phy Rev Let D. Some of the computations in the paper looked familiar. At least one the authors was associated with the <a href="https://www.santafe.edu/">Sante Fe Institute</a>, which I had never heard of before. This institute doesn’t look relevant for me as a Master student, aside from the two research assistants they hired, who are Master/Bachelor level. For the most part, it looks like it is geared towards post-docs, but at least it is promising that there are places outside academia for post-docs.</p>
-<p>Next I clicked on the article, also citing Dimitriu and Edelman’s article, titled <a href="https://arxiv.org/pdf/1908.03795">“Eigenvectors from eigenvalues: A survey of a basic identity in linear algebra”</a> written by Denton, Parke, Tao, and Zhang. I was surprised to see in an article on linear algebra that Denton, Parke, and Zhang were members of physics associations. Denton, for instance, was a member of <a href="https://www.bnl.gov/careers/">Brookhaven National Lab</a> in Upton, NY. I didn’t find any perfect matches for my background of a Master in Math and Bachelor in Math and CS, but I think there must be something. But the point is not so much to find a job, but to see that there is hope of finding something outside of corporate finance and corporate tech which still uses technical skills, especially mathematics. There was also <a href="https://www.fermi-forward.org/">Fermi Forward</a> which is in Illinois. This lab is connected with U. Chicago, which is not relevant to my background, but is also connected to U. Illinois Urbana Champaign, which might be relevant to me.</p>
-<p>Another thing I learned is that there is collaboration between national labs and PhD candidates. For instance, <a href="https://internships.fnal.gov/science-graduate-research-program-scgsr/">here</a>.</p>
-<p>Perhaps more insightful is to look at, for instance, the career path of <a href="https://peterdenton.github.io/">Denton</a>.</p>
-<section id="other-notes" class="level4">
-<h4 class="anchored" data-anchor-id="other-notes">Other notes</h4>
-<p>I don’t understand “And in any case, from the unitary invariance of GUE, we see that even after conditioning on <span class="math inline">\(D\)</span>, we may assume without loss of generality that <span class="math inline">\(U\)</span> is drawn from the invariant Haar measure on <span class="math inline">\(U(n)\)</span>. In particular, <span class="math inline">\(U\)</span> and <span class="math inline">\(D\)</span> can be taken to be independent” on page 219 of Tao’s Random matrix book.</p>
-<p>Update: he <a href="https://terrytao.wordpress.com/2010/02/23/254a-notes-6-gaussian-ensembles/comment-page-1/#comment-692464">responded</a>.</p>
+<section id="end-of-interlude-back-to-the-proof." class="level5">
+<h5 class="anchored" data-anchor-id="end-of-interlude-back-to-the-proof.">End of Interlude, back to the proof.</h5>
+<p>Let’s rewrite the equation <span class="math inline">\(p^\mu a_\mu + (L^{-1}p)^\mu a'_\mu = p^\mu(a+La')_{\mu}\)</span> using <span class="math inline">\(\eta\)</span> as <span class="math display">\[
+p^T \eta a + (L^{-1}p)^T \eta a' = p^T \eta (a+La').
+\]</span> So we want to prove that this equation holds, given that <span class="math inline">\(L \in O(1,3)\)</span> and that <span class="math inline">\(p \in S_m^+\)</span>. By linearity and cancellation, the equation becomes <span class="math display">\[
+(L^{-1}p)^T \eta a' =  p^T \eta La'.
+\]</span> But using that <span class="math inline">\(L^{-1} \in O(1,3)\)</span>, which implies that <span class="math inline">\((L^{-1})^T \eta L^{-1} = \eta\)</span>, which implies <span class="math inline">\((L^{-1})^T \eta = \eta L\)</span>, gives confirmation. But why is <span class="math inline">\(L^{-1} \in O(1,3)?\)</span> Well, <span class="math inline">\(L \in
+O(1,3)\)</span> implies <span class="math inline">\(L^T \eta L = \eta\)</span>, which implies that <span class="math inline">\(\eta^T = L^T \eta^T L\)</span> because <span class="math inline">\(\eta\)</span> is symmetric, which implies that <span class="math inline">\(\eta^T L^{-1} = L^T \eta^T\)</span>, which implies that <span class="math inline">\((L^{-1})^T \eta = \eta L\)</span> after transposing both sides, which implies that <span class="math inline">\((L^{-1})^T \eta L^{-1}= \eta\)</span>, which implies that <span class="math inline">\(L^{-1} \in O(1,3)\)</span>. This concludes step one, the homomorphism property of the representation.</p>
+<p>Next, I’d like to check the unitary property, which states that for all <span class="math inline">\((a,L) \in \mathcal{P}_+^\uparrow\)</span>, that <span class="math inline">\(U(a,L)\)</span> is a unitary operator on <span class="math inline">\(L^2(S_m^+)\)</span>, which means that <span class="math display">\[
+\langle \psi, \phi \rangle_{L^2(S_m^+)} = \langle U(a,L) \psi, U(a,L) \phi \rangle_{L^2(S_m^+)}
+\]</span> for all <span class="math inline">\(\psi, \phi \in L^2(S_m^+)\)</span>.</p>
+<p>I’m not super sure if functions in <span class="math inline">\(L^2(S_m^+)\)</span> are supposed to have a codomain of <span class="math inline">\(\mathbb C\)</span>, but I’ll guess that for now based on the imaginary <span class="math inline">\(i\)</span> in the exponent in the formula (3.4).</p>
+<p><span class="math display">\[\begin{align*}
+\langle U(a,L) \psi, U(a,L) \phi \rangle_{L^2(S_m^+)} &amp;= \int_{S_m^+} d\lambda_m(p) \overline{U(a,L)\psi} (p) U(a,L) \phi (p)  \\
+&amp;= \int_{S_m^+} d \lambda_m(p) \overline{e^{ip^\mu a_\mu} \psi (L^{-1}p)} e^{ip^\mu a_\mu} \phi(L^{-1}p) \\
+&amp;= \int_{S_m^+} d \lambda_m(p)  e^{-ip^\mu a_\mu} \overline{ \psi (L^{-1}p)} e^{ip^\mu a_\mu} \phi(L^{-1}p) \\
+&amp;= \int_{S_m^+} d \lambda_m(p) \overline{ \psi (L^{-1}p)} \phi(L^{-1}p) \\
+&amp;= \int_{L^{-1}S_m^+} d (\lambda_m \circ L)(h) \overline {\psi(h)} \phi(h) &amp;&amp; \text{ change of variables }\\
+&amp;= \int_{S_m^+} d \lambda_m (h) \overline {\psi(h)} \phi(h) &amp;&amp; \text{ Lemma 3.1 of Brennecke's notes} \\
+&amp;= \langle \psi, \phi \rangle_{L^2(S_m^+)}.
+\end{align*}\]</span></p>
+<p>I still need to learn about why <span class="math inline">\(L^{-1}S_m^+ = S_m^+\)</span>.</p>
+<!--
+##### Interlude on proper Poincaré group
+
+First, it will be helpful to understand the 
+following statement found on page 46 of @BrenneckeCQFT: 
+If $L \in O(1,3)$, then 
+$$
+\eta^{\mu \nu} L_{\mu \lambda} L_{\nu \kappa} = 
+\eta_{\lambda \kappa} = \eta^{\mu \nu } L_{\lambda \mu} L_{\kappa \nu}.
+$$
+The conclusion uses the Einstein summation 
+convention. As a simple example of that, consider 
+two matrices $A \in \mathbb F^{m \times n}$ and 
+$B \in \mathbb F^{n \times p}$. Then the formula
+for the $(\lambda,\kappa)$ entry, or in other words, the 
+$\lambda$-th row and $\kappa$-th column  of the product
+$AB$ is $AB_{\lambda \kappa} = \sum_{\nu = 1}^n A^{\lambda \nu}B_{\nu \kappa} = A^{\lambda \nu} B_{\nu \kappa}$,
+because entries that appear once up high and 
+once down low in the symbolism are taken to be summed over.
+
+To guide myself, let me ask: does $(L^T \eta L)_{\lambda \kappa} = \eta^{\mu \nu} L_{\mu \lambda} L_{\nu \kappa}$?
+We have 
+\begin{align*}
+(L^T \eta L)_{\lambda \kappa} &= ((L^T \eta) L)_{\lambda \kappa}\\
+&= (L^T \eta)^{\lambda \nu} L_{\nu \kappa} \\
+&= ((L^T)^{\lambda \mu} \eta_{\mu \nu}) L_{\nu \kappa} \\
+&= (L^{\mu \lambda} \eta_{\mu \nu}) L_{\nu \kappa} && \text{transpose def} \\
+&= (L^{\mu \lambda} \eta_{\nu \mu}) L_{\nu \kappa} && \eta \text{ symmetric} \\
+&= (\eta_{\nu \mu} L^{\mu \lambda}) L_{\nu \kappa} && \text{ multiplication commutative} \\
+&= \eta^{\nu \mu} L_{\mu \lambda} L_{\nu \kappa},
+\end{align*}
+so the answer is yes.
+-->
+<!--
+First I want to distill the formula (3.14), 
+which is not exactly well-defined as written, 
+but corresponds to something that is well-defined.
+Thus, I will solve here an exercise in Brennecke's
+notes that I expect will transfer to 
+the situation of (3.14). The main theme will
+be to interpret things in a distributional sense. 
+
+::: {.callout-note title="Exercise 1"}
+Suppose that we define the free 
+scalar field $(\phi(f))_{f \in S(\mathbb R^4)}$ of mass $m > 0$ 
+by 
+\begin{equation}
+\phi(f) = \int_{\mathbb R} \frac{dt}{(2\pi)^{3/2}} \big(a(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) + a^*(e^{i\omega t} \sqrt{2 \omega}^{-1} \hat{f}(t,\cdot/(2\pi))) \big).
+\end{equation}
+Identifying heuristically $\phi(f) = \int_{\mathbb R^4} dx \phi_x f(x)$, 
+show that this means that 
+\begin{equation}
+\phi_x = \int_{\mathbb R^3} \frac{dp}{(2\pi)^{3/2}} \left( \frac{e^{-i(\omega(p)t - p\mathbf x)}}{\sqrt{2\omega(p)}} a_p + \frac{e^{i(\omega(p)t - p \mathbf{x})}}{\sqrt{2\omega(p)}}a_p^*  \right)
+\end{equation}
+for all $x = (t, \mathbf x) \in \mathbb R^4$.
+:::
+
+I will use the identities
+\begin{equation}
+a(f) = \int_{\mathbb R^d} dx \overline{f}(x) a_x
+\end{equation}
+and 
+\begin{equation}
+a^*(g) = \int_{\mathbb R^d} dx g(x) a_x^*
+\end{equation}
+found in section 2.4 of Brennecke's notes. 
+They are motivated by the content of Chapter
+3 in @Talagrand, which is at most 30 pages of 
+reading. 
+
+
+The conjugate in the right hand side of the first
+identity comes from the fact that
+the map from $f \maps to a(f)$ is anti-linear. 
+Why would this imply the identity above? 
+Recall that a map
+which is anti-linear satisfies additivity
+and conjugate homogenity: $\text{map}(\lambda v) = \overline{}
+-->
 
 
 
@@ -387,17 +438,8 @@ l_{T_N}(B) = \mathcal{L}_{\R^{2N-1}}(\Phi(B)).
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
-Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
-</div>
-<div id="ref-Dimitriu2018" class="csl-entry" role="listitem">
-Dumitriu, and Edelman. 2018. <span>“Matrix Models for Beta Ensembles.”</span> 2018. <a href="https://arxiv.org/abs/math-ph/0206043v1">https://arxiv.org/abs/math-ph/0206043v1</a>.
-</div>
-<div id="ref-Klenke" class="csl-entry" role="listitem">
-Klenke, Achim. 2014. <em>Probability Theory, a Comprehensive Course</em>. 2nd Edition. Universitext. Springer.
-</div>
-<div id="ref-LangAlgebra" class="csl-entry" role="listitem">
-Lang, Serge. 2002. <em>Algebra</em>. Springer.
+<div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
+Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

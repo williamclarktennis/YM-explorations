@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yang-Mills Lattice Gauge Theory - William’s Explorations – William's Lattice YM Explorations</title>
+<title>My interpretation of Section 11 Chatterjee Paper – William’s Lattice YM Explorations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -140,7 +140,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -179,10 +179,25 @@ window.Quarto = {
 <span class="menu-text">Twitter-like feed</span></a>
   </li>  
   <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-top-pages" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Top pages</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-top-pages">    
+        <li>
+    <a class="dropdown-item" href="./log-gases-my-talk.html">
+ <span class="dropdown-text">Beta Ensembles &amp; Tridiagonal Random Matrices</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-other" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Other</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-other">    
+        <li>
+    <a class="dropdown-item" href="./def-list-chatterjee.html">
+ <span class="dropdown-text">Definitions in Chatterjee’s Leading Term Paper</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./glossary.html">
  <span class="dropdown-text">Glossary of Common Terms</span></a>
@@ -192,20 +207,36 @@ window.Quarto = {
  <span class="dropdown-text">Glossary of Common Terms 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./log-gases-seminar.html">
- <span class="dropdown-text">Log Gases Seminar - Summer 2026</span></a>
+    <a class="dropdown-item" href="./thesis-relevant-events.html">
+ <span class="dropdown-text">Relevant Events</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./log-gases-my-talk.html">
- <span class="dropdown-text">Beta Ensembles &amp; Tridiagonal Random Matrices</span></a>
+    <a class="dropdown-item" href="./log-gases-seminar.html">
+ <span class="dropdown-text">Log Gases Seminar - Summer 2026</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./navigation-thesis-notes.html">
  <span class="dropdown-text">Navigation of Thesis Notes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./ReadingStrategy.html">
+ <span class="dropdown-text">Reading Strategy</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./cqft-listing.html">
  <span class="dropdown-text">Intro to CQFT 1,2,3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./testing-pdf-tex-output.tex">
+ <span class="dropdown-text">My document</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./thesis-section11.html">
+ <span class="dropdown-text">My interpretation of Section 11 Chatterjee Paper</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./thesis-section11-latex-output.pdf">
+ <span class="dropdown-text">Section 11</span></a>
   </li>  
     </ul>
   </li>
@@ -220,27 +251,15 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#may-25-2026" id="toc-may-25-2026" class="nav-link active" data-scroll-target="#may-25-2026">May 25, 2026</a>
-  <ul class="collapse">
-  <li><a href="#discussion-of-some-definitions" id="toc-discussion-of-some-definitions" class="nav-link" data-scroll-target="#discussion-of-some-definitions">Discussion of some definitions</a></li>
-  </ul></li>
-  <li><a href="#may-13-2026" id="toc-may-13-2026" class="nav-link" data-scroll-target="#may-13-2026">May 13, 2026</a></li>
-  <li><a href="#may-4-2026" id="toc-may-4-2026" class="nav-link" data-scroll-target="#may-4-2026">May 4, 2026</a></li>
-  <li><a href="#may-1-2026" id="toc-may-1-2026" class="nav-link" data-scroll-target="#may-1-2026">May 1, 2026</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Yang-Mills Lattice Gauge Theory - William’s Explorations</h1>
+<h1 class="title">My interpretation of Section 11 Chatterjee Paper</h1>
 </div>
 
 
@@ -257,147 +276,21 @@ window.Quarto = {
 </header>
 
 
-<div class="hidden">
-<p><span class="math display">\[
-\newcommand\mcy{{\mathcal{Y}}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Tr}{\text{Tr}}
-\def\*#1{\mathbf{#1}}
-\]</span></p>
+<div id="thm-LieGrouptoLieAlgebra" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Lie Group to Lie Algebra)</strong></span> This is an adjusted version of <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>There exists a constant <span class="math inline">\(r_0\)</span> depending only on <span class="math inline">\(N\)</span> and <span class="math inline">\(d\)</span> such that for all <span class="math inline">\(r \le \frac{r_0}{4}\)</span>, we have <span class="math display">\[
+(2-e^{6r})^{C_N} \int_{b(0,r)} f(e^{iH}) d\lambda(H)
+\le \int_{B(0,2r)} f(U) d\sigma(U) \le (e^{6r})^{C_N} \int_{b(0,3r)} f(e^{iH}) d\lambda(H).
+\]</span> where <span class="math inline">\(f: U(N) \to [0,\infty]\)</span> is a Borel measurable function.</p>
 </div>
-<section id="may-25-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-25-2026">May 25, 2026</h2>
-<p>I’ll explain how to convert a latex project involving .tex and .bib files to a quarto website rendition.</p>
-<p>First you create your latex project on your local machine. Let’s say you have a &lt;script.tex&gt; file and a &lt;references.bib&gt; file, and a bunch of other files excreted during pdf rendering.</p>
-<p>Second, you make sure that your quarto website folder has a &lt;references.bib&gt; file that includes all the entries in the latex project’s &lt;references.bib&gt; file.</p>
-<p>Then you go to the website <a href="https://pandoc.org/app/" class="uri">https://pandoc.org/app/</a>. You upload your &lt;script.tex&gt; document into the engine. Then you click on &lt;latex (LaTeX)&gt; as the &lt;From:&gt; option and you choose &lt;markdown (Pandoc)&gt; as the &lt;To:&gt; option. Then you click convert and you save the resulting &lt;script.md&gt; file to your quarto website project.</p>
-<p>Then you just rename the file &lt;script.md&gt; to &lt;script.qmd&gt; and then proceed as usual in quarto.</p>
-<section id="discussion-of-some-definitions" class="level3">
-<h3 class="anchored" data-anchor-id="discussion-of-some-definitions">Discussion of some definitions</h3>
-<details>
-<summary>
-lattice gauge theory on <span class="math inline">\(\epsilon \mathbb Z^d\)</span>
-</summary>
-<p>Fix <span class="math inline">\(\epsilon &gt; 0\)</span>. We note <span class="math inline">\(\epsilon \mathbb Z = \{ a \in \mathbb R: a = \epsilon k
-\text{ for some } k \in \mathbb Z\}\)</span>. Then <span class="math inline">\(\epsilon \mathbb Z^d = \{(a_1, \cdots, a_d) \in \mathbb R^d: a_i \in \epsilon \mathbb Z \}\)</span>. We say two vertices <span class="math inline">\(x,y \in \epsilon \mathbb Z^d\)</span> are adjacent if <span class="math inline">\(x = y \pm \epsilon e_i\)</span> for some <span class="math inline">\(i \in [d]\)</span>. In this case we write <span class="math inline">\(x \sim y\)</span>. Let <span class="math inline">\(\Lambda \subset \epsilon \mathbb Z^d\)</span> be a finite subset. Let <span class="math inline">\(E_{\Lambda} = \{(x,y) \in \Lambda^2: x \sim y \text{ and } x &lt; y \}\)</span>, where <span class="math inline">\(x &lt; y\)</span> means that <span class="math inline">\(\frac{1}{\epsilon} x &lt; \frac{1}{\epsilon} y\)</span> in the lexicographical ordering. A configuration is a map <span class="math inline">\(U: E_\Lambda \to U(N)\)</span>, where we also define <span class="math inline">\(U(y,x) = U(x,y)^*\)</span> for <span class="math inline">\((x,y) \in E_\Lambda\)</span>.</p>
-</details>
-<details>
-<summary>
-Density
-</summary>
-<p>We follow section 7.4 of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>. Let <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> be measures on a measurable space <span class="math inline">\((\Omega, \mathcal{A})\)</span>. A measurable function <span class="math inline">\(f: \Omega \to [0, \infty)\)</span> is called a density of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>, if <span class="math display">\[
-\nu(A) := \int_{\Omega} f 1_A \, d\mu
-\]</span> for all <span class="math inline">\(A \in \mathcal{A}\)</span>. On the other hand, for a given measurable function <span class="math inline">\(f: \Omega \to [0,\infty)\)</span>, the above equation defines a measure <span class="math inline">\(\nu\)</span> on <span class="math inline">\((\Omega, \mathcal{A})\)</span>. In this second case, we write <span class="math display">\[
-\nu =: f\mu, \hspace{1 cm} f =: \frac{d\nu}{d\mu}.
-\]</span></p>
-<p>Given a measurable <span class="math inline">\(g: \Omega \to [0,\infty]\)</span>, integrating against <span class="math inline">\(d\nu\)</span> is the same as integrating against <span class="math inline">\(f d\mu\)</span>. This is theorem 4.15 <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>: Let <span class="math inline">\(f \mu\)</span> be the measure defined above. Then <span class="math inline">\(g \in \mathcal{L}^1(f \mu)\)</span> if and only if <span class="math inline">\((gf) \in \mathcal{L}^1(\mu)\)</span>. In this case, <span class="math display">\[
-\int g \, d(f\mu) = \int gf \, d\mu.
-\]</span></p>
-<p>There is also a uniqueness result, Theorem 7.29. Let <span class="math inline">\(\nu\)</span> be <span class="math inline">\(\sigma\)</span>-finite. Let <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> be two densities of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>. Then <span class="math inline">\(f_1 = f_2\)</span> <span class="math inline">\(\mu\)</span>-almost surely. In particular, the density <span class="math inline">\(\frac{d\nu}{d\mu}\)</span> is unique <span class="math inline">\(\mu\)</span>-almost surely. That is, there is a <span class="math inline">\(\mu\)</span>-null set <span class="math inline">\(N \in \mathcal{A}\)</span> such that <span class="math inline">\(\frac{d\nu}{d\mu}\)</span> is equal to any other given density function on the complement <span class="math inline">\(\Omega \setminus N\)</span>. (Not sure if I stated this uniqueness correctly)</p>
-</details>
-<details>
-<summary>
-Lebesgue Measure
-</summary>
-<p>The following is Theorem 1.55 of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>. There exists a uniquely defined measure <span class="math inline">\(\lambda^n\)</span> on <span class="math inline">\((\mathbb R^n,\mathcal{B}(\mathbb R^n))\)</span> with the property that <span class="math inline">\(\lambda^n((a,b]) = \prod_{i=1}^n (b_i - a_i)\)</span> for all <span class="math inline">\(a,b \in \mathbb R^n\)</span> with <span class="math inline">\(a&lt; b\)</span>. Furthermore, <span class="math inline">\(\lambda^n\)</span> is called Lebesgue measure on <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n))\)</span> or Lebesgue-Borel-measure.</p>
-</details>
-<details>
-<summary>
-Gaussian measure on <span class="math inline">\(\mathbb R^n\)</span>
-</summary>
-<p>Fix the Lebesgue measure space <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n),dx)\)</span>. Let <span class="math inline">\(\tau\)</span> be a probability measure on <span class="math inline">\((\mathbb R^n, \mathcal{B}(\mathbb R^n))\)</span>.</p>
-<p>More logically rigorous is to say that <span class="math inline">\(\tau\)</span> is a Gaussian measure if there exists a constant <span class="math inline">\(C&gt; 0\)</span> and a degree two polynomial <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> such that <span class="math inline">\(Ce^{-P(\cdot)}: \mathbb R^n \to [0,\infty)\)</span> is a density of <span class="math inline">\(\tau\)</span> with respect to <span class="math inline">\(dx\)</span>: <span class="math display">\[
-\tau(A) = \int_{\mathbb R^n} Ce^{-P(x)} 1_A \, dx
-\]</span> for all <span class="math inline">\(A \in \mathcal{B}(\mathbb R^n).\)</span></p>
-<p>In this case we write <span class="math display">\[
-\frac{d\tau}{dx} = Ce^{-P(x)}.
-\]</span></p>
-<p>Suppose <span class="math inline">\(\tau\)</span> is a Gaussian measure with polynomial <span class="math inline">\(P\)</span>. Suppose <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is not integrable. Then by definition of integrability (Def 4.7 <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>, for example), it follows that <span class="math inline">\(\int_{\mathbb R^n} |Ce^{-P(x)}|dx = \infty,\)</span> which contradicts that <span class="math inline">\(\tau\)</span> is a probability measure on <span class="math inline">\(\mathbb R^n\)</span>. Hence, <span class="math inline">\(\tau\)</span> Gaussian implies that <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is integrable.</p>
-<p>Since <span class="math inline">\(C\)</span> is a finite constant, <span class="math inline">\(Ce^{-P(\cdot)}\)</span> is integrable if and only if <span class="math inline">\(e^{-P(x)}\)</span> is integrable.</p>
-<p>Lemma (Criterion 12.1 <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>). The measurable function <span class="math inline">\(e^{-P(\cdot)}\)</span> is integrable if and only if there exists a positive constant <span class="math inline">\(c\)</span> and a positive constant <span class="math inline">\(R\)</span> such that <span class="math display">\[
-P(x) \ge c \lVert x \rVert^2
-\]</span> for all <span class="math inline">\(x \in \mathbb R^n\)</span> satisfying <span class="math inline">\(\lVert x \rVert \ge R\)</span>, where <span class="math inline">\(\lVert x \rVert = \sqrt{x_1^2 + \cdots + x_n^2}\)</span>.</p>
-<p>Lemma. If <span class="math inline">\(P: \mathbb R^n \to \mathbb R\)</span> is an arbitrary degree two polynomial, then there exists a matrix <span class="math inline">\(Q \in \mathbb R^{n \times n}\)</span>, a column vector <span class="math inline">\(v \in \mathbb R^n\)</span>, and a constant <span class="math inline">\(c \in \mathbb R\)</span> (not the same <span class="math inline">\(c\)</span> as above) such that <span class="math display">\[
-P(x) = x^T Q x + v^Tx + c.
-\]</span></p>
-<p>Lemma (Criterion 12.2 <span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span>). Suppose <span class="math inline">\(P(x) = x^T Q x + v^Tx + c\)</span>. Then the following are equivalent.</p>
-<ul>
-<li><span class="math inline">\(e^{-P(x)}\)</span> is integrable.</li>
-<li>There are positive constants <span class="math inline">\(C_1, R\)</span> such that <span class="math display">\[
-P(x) \ge C_1 \lVert x \rVert^2
-\]</span> for all <span class="math inline">\(\lVert x \rVert \ge R\)</span>.</li>
-<li><span class="math inline">\(Q\)</span> is a positive definite matrix. That is, <span class="math inline">\(Q\)</span> is symmetric and <span class="math inline">\(x^TQx &gt; 0\)</span> for all <span class="math inline">\(x \ne 0 \in \mathbb R^n\)</span>.</li>
-</ul>
-</details>
-<details>
-<summary>
-Positive Definite Matrix
-</summary>
-<p>Consider the <span class="math inline">\(\mathbb R\)</span> vector space <span class="math inline">\(\mathbb R^n\)</span>. Consider a symmetric <span class="math inline">\(\mathbb R\)</span>-bilinear form <span class="math inline">\(g: \mathbb R^n \times \mathbb R^n \to \mathbb R.\)</span> Recall that symmetry means <span class="math inline">\(g(x,y) = g(y,x)\)</span> for all <span class="math inline">\(x,y \in \mathbb R^n\)</span>. We say that <span class="math inline">\(g\)</span> is positive definite if <span class="math inline">\(0 &lt; g(X,X) =: X^2\)</span> for all <span class="math inline">\(X \ne 0\)</span> in <span class="math inline">\(\mathbb R^n\)</span> (<span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span> Section Symmetric Forms over Ordered Fields). Let <span class="math inline">\(Q\)</span> be the matrix associated with the form <span class="math inline">\(g\)</span> relative to the standard basis <span class="math inline">\(B = \{e_1, \cdots, e_n\}\)</span>, that is, if <span class="math inline">\(x, y \in \mathbb R^n\)</span>, and in this case <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are already the column vectors of coordinates for themselves with respect to the standard basis, then <span class="math display">\[
-g(x,y) = x^T Q y.
-\]</span> (See Section Matrices and Bilinear Forms <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>.) In this case we say that <span class="math inline">\(Q\)</span> is a positive definite matrix.</p>
-<p>Note also that <span class="math inline">\(Q\)</span> is implicitly a symmetric matrix, by the following result.</p>
-<p>Proposition 6.5 (Section Matrices and Bilinear Forms <span class="citation" data-cites="LangAlgebra">Lang (<a href="#ref-LangAlgebra" role="doc-biblioref">2002</a>)</span>). Let <span class="math inline">\(E\)</span> be a free module of dimension <span class="math inline">\(n\)</span> over a commutative ring <span class="math inline">\(R\)</span>, and let <span class="math inline">\(B\)</span> be a fixed basis. The map <span class="math inline">\(f \mapsto M_B^B(f)\)</span> induces an isomorphism between the module of symmetric bilinear forms on <span class="math inline">\(E \times E\)</span> and the module of symmetric <span class="math inline">\(n \times n\)</span> matrices over <span class="math inline">\(R\)</span>.</p>
-<p>In summary, <span class="math inline">\(Q\)</span> is a positive definite <span class="math inline">\(n \times n\)</span> matrix if and only if <span class="math inline">\(Q\)</span> has entries in <span class="math inline">\(\mathbb R\)</span>, <span class="math inline">\(Q = Q^T\)</span> (symmetry), and <span class="math inline">\(x^TQx &gt; 0\)</span> for all <span class="math inline">\(x \in \mathbb R^n\)</span> not equal to <span class="math inline">\(0\)</span>.</p>
-</details>
-</section>
-</section>
-<section id="may-13-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-13-2026">May 13, 2026</h2>
-<p>In constrast to the notion of Lebesgue measure on <span class="math inline">\(T_N^{(1)}\)</span> used above, the following notion uses an isometry between <span class="math inline">\(T_N^{(1)}\)</span> equipped with Hilbert Schmidt norm and <span class="math inline">\(\R^{2N-1}\)</span> equipped with the Euclidean norm.</p>
-<p><em>Definition.</em> Alternative Lebesgue Measure on <span class="math inline">\(T_N^{(1)}\)</span>. In this definition, we view <span class="math inline">\(T_N^{(1)}\)</span> as an <span class="math inline">\(\R\)</span>-vector space endowed with the Hilbert Schmidt norm <span class="math inline">\(\lVert M \rVert = \sqrt{\Tr(M^TM)}\)</span>, which, by the way, is induced by the scalar product <span class="math inline">\((A,B) = \Tr(A^TB).\)</span> We consider the topology on <span class="math inline">\(T_N^{(1)}\)</span> generated by open balls <span class="math inline">\(b(Y, r) = \{X \in T_N^{(1)}: \lVert X - Y \rVert &lt; r\}\)</span>, namely the topology induced by the Hilbert Schmidt norm. Then we consider the Borel sigma algebra on <span class="math inline">\(T_N^{(1)}\)</span> which is generated by the open sets in the topology above. We also view <span class="math inline">\(\R^{2N-1}\)</span> as an <span class="math inline">\(\R\)</span>-vector space with the Euclidean norm <span class="math inline">\(\Vert x \rVert = \sqrt{\sum_{i} x_i^2}\)</span>. There is an isometry <span class="math display">\[
-\Phi: T_N^{(1)} \to \R^{2N-1}
-\]</span> given by <span class="math display">\[
-T_N^{(1)} \ni \begin{bmatrix}
-a_N &amp; \frac{1}{\sqrt{2}}b_{N-1} &amp; &amp;  &amp;  \\
-\frac{1}{\sqrt{2}} b_{N-1} &amp; a_{N-1} &amp; \frac{1}{\sqrt{2}} b_{N-2} &amp;  &amp; \\
-&amp; \frac{1}{\sqrt{2}} b_{N-2} &amp; &amp; &amp; \\
-&amp; &amp; \ddots&amp; \ddots &amp; \\
-&amp; &amp; \frac{1}{\sqrt{2}} b_2&amp; a_2&amp;\frac{1}{\sqrt{2}} b_1 \\
-&amp; &amp; &amp; \frac{1}{\sqrt{2}} b_1&amp; a_1
-\end{bmatrix} = T \mapsto (a,b) \in \mathbb R^{2N-1}.
-\]</span> Fix <span class="math inline">\(T \in T_N^{(1)}\)</span> as above. Then <span class="math display">\[\begin{align*}
-\lVert T \rVert^2 &amp;= \Tr(T^TT) = \Tr(T^2) \\
-&amp;= \left(a_N^2 + \left(\frac{b_{N-1}}{\sqrt{2}}\right)^2\right) + \left(\left(\frac{b_{N-1}}{\sqrt{2}}\right)^2 + a_{N-1}^2 + \left(\frac{b_{N-2}}{\sqrt{2}}\right)^2\right) + \cdots \\
-&amp;= \sum_{i=1}^N a_i^2 + 2 \sum_{i=1}^{N-1} b_i^2/2\\
-&amp;= \lVert (a,b) \rVert^2 = \lVert \Phi(T) \rVert^2,
-\end{align*}\]</span> which shows that <span class="math inline">\(\Phi\)</span> is an isometry, and that the <span class="math inline">\(\sqrt{2}^{-1}\)</span> factor was needed to preserve the isometric correspondence. We define Lebesgue measure on <span class="math inline">\(T_N^{(1)}\)</span>, which we denote by <span class="math inline">\(l_{T_N}\)</span>, such that <span class="math inline">\(l_{T_N} = \Phi^* (\mathcal{L}_{\R^{2N-1}})\)</span>, the pullback of <span class="math inline">\(2N-1\)</span> dimensional Lebesgue measure by the map <span class="math inline">\(\Phi\)</span>. That is, for a Borel subset <span class="math inline">\(B \in \mathcal{B}(T_N^{(1)})\)</span>, we have <span class="math display">\[
-l_{T_N}(B) = \mathcal{L}_{\R^{2N-1}}(\Phi(B)).
-\]</span> In addition, we note that the pushforward of <span class="math inline">\(l_{T_N}\)</span> by <span class="math inline">\(\Phi\)</span>, denoted by <span class="math inline">\(\Phi_* l_{T_N},\)</span> is equal to <span class="math inline">\(\mathcal{L}_{\R^{2N-1}}.\)</span></p>
-<p><em>End Definition</em></p>
-</section>
-<section id="may-4-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-4-2026">May 4, 2026</h2>
-<p><a href="https://drive.google.com/drive/u/0/folders/1utG5S-e3Nzdyet0UWugVWob7riQ1aqAc">Here</a> are some notes on the Frenet frame field of a curve. We follow page 56 of O’Neills book on Elementary Differential Geometry. The idea is to take together the vecolity of the curve, the acceleration, and the cross product of the acceleration and velocity to get a frame vector field.</p>
-</section>
-<section id="may-1-2026" class="level2">
-<h2 class="anchored" data-anchor-id="may-1-2026">May 1, 2026</h2>
-<p>Here is a report on an internet search from this morning. My initial goal was to look for applications of what I’m learning in <span class="citation" data-cites="Dimitriu2018">Dumitriu and Edelman (<a href="#ref-Dimitriu2018" role="doc-biblioref">2018</a>)</span>. Therefore I looked on Google Scholar to see who had cited that paper. The first one that caught my eye was titled <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.126001">“Tridiagonalizing random matrices”</a> written by Balasubramanian, Magan, and Wu, published in 2023 in Phy Rev Let D. Some of the computations in the paper looked familiar. At least one the authors was associated with the <a href="https://www.santafe.edu/">Sante Fe Institute</a>, which I had never heard of before. This institute doesn’t look relevant for me as a Master student, aside from the two research assistants they hired, who are Master/Bachelor level. For the most part, it looks like it is geared towards post-docs, but at least it is promising that there are places outside academia for post-docs.</p>
-<p>Next I clicked on the article, also citing Dimitriu and Edelman’s article, titled <a href="https://arxiv.org/pdf/1908.03795">“Eigenvectors from eigenvalues: A survey of a basic identity in linear algebra”</a> written by Denton, Parke, Tao, and Zhang. I was surprised to see in an article on linear algebra that Denton, Parke, and Zhang were members of physics associations. Denton, for instance, was a member of <a href="https://www.bnl.gov/careers/">Brookhaven National Lab</a> in Upton, NY. I didn’t find any perfect matches for my background of a Master in Math and Bachelor in Math and CS, but I think there must be something. But the point is not so much to find a job, but to see that there is hope of finding something outside of corporate finance and corporate tech which still uses technical skills, especially mathematics. There was also <a href="https://www.fermi-forward.org/">Fermi Forward</a> which is in Illinois. This lab is connected with U. Chicago, which is not relevant to my background, but is also connected to U. Illinois Urbana Champaign, which might be relevant to me.</p>
-<p>Another thing I learned is that there is collaboration between national labs and PhD candidates. For instance, <a href="https://internships.fnal.gov/science-graduate-research-program-scgsr/">here</a>.</p>
-<p>Perhaps more insightful is to look at, for instance, the career path of <a href="https://peterdenton.github.io/">Denton</a>.</p>
-<section id="other-notes" class="level4">
-<h4 class="anchored" data-anchor-id="other-notes">Other notes</h4>
-<p>I don’t understand “And in any case, from the unitary invariance of GUE, we see that even after conditioning on <span class="math inline">\(D\)</span>, we may assume without loss of generality that <span class="math inline">\(U\)</span> is drawn from the invariant Haar measure on <span class="math inline">\(U(n)\)</span>. In particular, <span class="math inline">\(U\)</span> and <span class="math inline">\(D\)</span> can be taken to be independent” on page 219 of Tao’s Random matrix book.</p>
-<p>Update: he <a href="https://terrytao.wordpress.com/2010/02/23/254a-notes-6-gaussian-ensembles/comment-page-1/#comment-692464">responded</a>.</p>
+<p>By <a href="#thm-LieGrouptoLieAlgebra" class="quarto-xref">Theorem&nbsp;1</a>, we have proved the Yang-Mills conjecture.</p>
 
 
 
-</section>
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
-</div>
-<div id="ref-Dimitriu2018" class="csl-entry" role="listitem">
-Dumitriu, and Edelman. 2018. <span>“Matrix Models for Beta Ensembles.”</span> 2018. <a href="https://arxiv.org/abs/math-ph/0206043v1">https://arxiv.org/abs/math-ph/0206043v1</a>.
-</div>
-<div id="ref-Klenke" class="csl-entry" role="listitem">
-Klenke, Achim. 2014. <em>Probability Theory, a Comprehensive Course</em>. 2nd Edition. Universitext. Springer.
-</div>
-<div id="ref-LangAlgebra" class="csl-entry" role="listitem">
-Lang, Serge. 2002. <em>Algebra</em>. Springer.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -473,7 +366,7 @@ Lang, Serge. 2002. <em>Algebra</em>. Springer.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/williamclarktennis\.github\.io\/YM-explorations\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
