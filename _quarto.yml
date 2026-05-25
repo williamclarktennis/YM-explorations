@@ -16,19 +16,15 @@ website:
           - href: January2026.qmd
           - href: December2025.qmd
       - phone-notes.qmd
-      - text: "Top pages"
-        menu:
-          - href: log-gases-my-talk.qmd
       - text: "Other"
         menu: 
-          - href: def-list-chatterjee.qmd
           - href: glossary.qmd
           - href: glossary1.qmd
-          - href: thesis-relevant-events.qmd
           - href: log-gases-seminar.qmd
+          - href: log-gases-my-talk.qmd
           - href: navigation-thesis-notes.qmd
-          - href: ReadingStrategy.qmd
           - href: cqft-listing.qmd
+
 
 format:
   html:
