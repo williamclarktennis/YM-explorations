@@ -90,6 +90,18 @@ repository.
 The `main.tex` file will contain the latex preamble
 that all of the other sections use. 
 
+Here are instructions for a typical thesis writing session
+where I'm editing contents in `thesis-latex-project.`
+
+1. Click on the desired section's tex file. Say, `section.tex`.
+2. Write LaTeX code in the tex file.
+3. See how it looks by rendering the 
+`main.tex` file in the parent directory, as the `section.tex` file
+won't have any preamble.
+4. Save changes using git - `git status` then 
+`git add my_tex_file.tex` then `git commit -m update` then
+`git push origin`.
+
 If I want to present any of the contents of the 
 thesis in html form on my Website, then here are instructions for
 doing that. 
