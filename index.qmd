@@ -55,35 +55,55 @@ of my thesis. Since I don't want to bother with integrating
 their tex conventions into my own, I'll just render the title page
 as a pdf, then insert those two title pages to my final submission. 
 
-I'll make a git repository with my latex code. 
+I'll make a git repository with my latex code. The repository will
+be named `thesis-latex-project`.  
 
 I'll have a common preamble amongst all the separate chapters.
 
 I'm using [this guy's](https://www.ravisagar.in/notes/how-get-directory-tree-structure-your-mac-terminal)
 advice for getting a display of the folder structure.
-
 See also [here](https://stackoverflow.com/questions/23989232/is-there-a-way-to-represent-a-directory-tree-in-a-github-readme-md).
 
+So here is the current structure of the `thesis-latex-project`
+repository.
+
 ```bash
-thesis-test
-├── chapter1
-│   ├── chapter1.aux
-│   └── chapter1.tex
-├── chapter2
-│   ├── chapter2.aux
-│   └── chapter2.tex
-├── main.aux
-├── main.bbl
-├── main.bcf
-├── main.blg
-├── main.log
-├── main.out
-├── main.pdf
-├── main.run.xml
-├── main.synctex.gz
 ├── main.tex
-└── references.bib
+├── README.md
+├── references.bib
+├── section-Appendix
+│   └── section-Appendix.tex
+├── section-APrioriBounds
+│   └── section-APrioriBounds.tex
+├── section-LatticeMaxwell
+│   └── section-LatticeMaxwell.tex
+├── section-LieGrouptoLieAlgebra
+│   └── section-LieGrouptoLieAlgebra.tex
+├── section-Notation
+│   └── section-Notation.tex
+├── section1-introduction
+│   └── section1-introduction.tex
+└── section2-summary
+    └── section2-summary.tex
 ```
+
+The `main.tex` file will contain the latex preamble
+that all of the other sections use. 
+
+If I want to present any of the contents of the 
+thesis in html form on my Website, then here are instructions for
+doing that. 
+
+1. Navigate to the `latex-to-markdown` directory in my `masters-thesis-uni-bonn`
+directory.
+2. `mkdir todays-transfer` an empty subdirectory of `latex-to-markdown` directory.
+3. `cd todays-transfer`
+4. `touch todays-transfer.tex`
+5. Copy the latex preamble from the `main.tex` file in the `thesis-latex-project` folder.
+6. Paste into the `todays-transfer.tex` file.
+7. Copy the desired latex code from one of the many tex files in `thesis-latex-project`
+8. Paste into `todays-transfer.tex` file.
+9. Follow the directions below for converting from .tex to quarto.
 
 ### Tex to Quarto
 
