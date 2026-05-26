@@ -18,6 +18,34 @@ $$
 $$
 :::
 
+## May 26, 2026
+
+The electromagnetic field $F$ is a 2-form on $\R^4$.
+
+$F$ solves the abstractly formulated Maxwell's equations.
+
+These Maxwell equations are abstract because they are formulated in 
+a coordinate-free way. So if you pick a coordinate frame, you get
+the Maxwell equations in coordinates, which would involve curls and divs. 
+But picking coordinates shouldn't affect the physics, so 
+the Maxwell equations tell you the same thing even 
+in different coordinate frames. You would use the transformation
+law of the field to translate between different coordinate frames.
+
+$F = dA$ for some one form $A$ on $\R^4$.
+You might think that $F$ solving the Maxwell's 
+equation implies that $A$ solves the wave equation, but
+you'd be forgetting the missing Lorenz gauge.
+That's a scalar field $\chi$ on $\R^4$ whose differential
+$d \chi$ we add to $A$ so that $A' = A + d \chi$ *then* solves 
+the wave equation. 
+
+The Klein Gordon equation is the wave equation 
+with a solution $\phi$ which is a scalar field on $\R^4$.
+It's a toy version of the wave equation for $A'$.
+But the quantized version of it is already pretty heavy math.
+
+
 ## May 25, 2026
 
 ### Thesis Workflow
