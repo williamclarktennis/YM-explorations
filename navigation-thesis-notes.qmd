@@ -25,16 +25,23 @@ To-do:
 
 ## Miscellaneous
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section-NotASection.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
+:::
 
 :::{.hidden}
 ![Notes](pdfs/Chattj-Lead-TermYM-FE-Section-NotASection.pdf)
 :::
 
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section-NotASection.pdf', '_blank')">
+  View Handwritten Notes PDF on Miscellaneous
+</button>
+```
 
 - $U(N)$ is compact and eigenvalues have form $e^{i\theta}$. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-16-2026)
 
