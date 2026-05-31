@@ -18,6 +18,19 @@ $$
 $$
 :::
 
+## May 29, 2026
+
+### Notation Comparison for lattice theory
+
+:::{.hidden}
+To add a table, use three or more hyphens ( --- ) to create each column's header, and use pipes ( | ) to separate each column. For compatibility, you should also add a pipe on either end of the row. Cell widths can vary, as shown below. The rendered output will look the same.
+:::
+
+| @Chatterjee2016 | @BrenneckeLattice | @chatterjee2026 | Me | Notes |
+| ---- | ---- | ---- | ---- | ---- |
+| $B_n$ | $\Lambda_n$ | N/A |  | Vertices |
+| $G(B_n)$ | | $\Uptheta = G^\Lambda$ | $\mathrm U(N)^{\Lambda}$| Gauge transforms |
+
 ## May 26, 2026
 
 The electromagnetic field $F$ is a 2-form on $\R^4$.

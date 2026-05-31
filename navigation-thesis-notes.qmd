@@ -48,53 +48,62 @@ width="100%" height="100%" style="min-height:100vh;">
 ## Section 1
 
 ```{=html}
-<object data= "pdfs/Chattj-Lead-TermYM-FE-Section1.pdf" type="application/pdf"
-width="100%" height="100%" style="min-height:100vh;">
-</object>
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section1.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 1
+</button>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section1.pdf)
-:::
 
 ## Section 2
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section2.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section2.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section2.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 2
+</button>
+```
 
 ## Section 3
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section3.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section3.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section3.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 3
+</button>
+```
 
 ## Section 4
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section4.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section4.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section4.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 4
+</button>
+```
 
 ## Section 6
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section6.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
@@ -102,84 +111,111 @@ width="100%" height="100%" style="min-height:100vh;">
     <a href="pdfs/Chattj-Lead-TermYM-FE-Section6.pdf"> click here to download the PDF file. <\a></p>
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section6.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section6.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 6
+</button>
+```
 
 ## Section 7
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section7.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section7.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section7.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 7
+</button>
+```
 
 ## Section 8
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section8.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section8.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section8.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 8
+</button>
+```
 
 ## Section 9
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section9.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section9.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section9.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 9
+</button>
+```
 
 ## Section 10
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section10.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section10.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section10.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 10
+</button>
+```
 
 - I typed out Lemma 10.2, but haven't gotten around to filling in the details yet in this link. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#lemma-10.2-chatterjee)
 
 ## Section 11
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section11.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section11.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section11.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 11
+</button>
+```
 
 ## Section 12
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section12.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section12.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section12.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 12
+</button>
+```
 
 - @FriedmanApplied was useful for this section, and I filled in some details
 to a passage. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#march-25-2026)
@@ -195,15 +231,19 @@ when looking at $\det \Sigma$. [Link](https://williamclarktennis.github.io/YM-ex
 
 ## Section 13
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section13.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section13.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section13.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 13
+</button>
+```
 
 - Lemma 13.1 Proof. [Link](https://williamclarktennis.github.io/YM-explorations/March2026.html#following-chatterjee-lemma-13.1)
 - Defining positive definite quadratic forms using @LangAlgebra. 
@@ -211,63 +251,87 @@ Proving that $M_n$ is symmetric and bilinear and quadratic, but not positive def
 
 ## Section 14
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section14.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section14.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section14.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 14
+</button>
+```
 
 ## Section 15
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section15.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section15.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section15.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 15
+</button>
+```
+
 
 ## Section 16
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section16.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section16.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section16.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 16
+</button>
+```
+
 
 ## Section 17
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-Lead-TermYM-FE-Section17.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-Lead-TermYM-FE-Section17.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-Lead-TermYM-FE-Section17.pdf', '_blank')">
+  View Handwritten Notes PDF on Section 17
+</button>
+```
+
 
 ## Notes on Scaling Limit Paper
 
+:::{.hidden}
 ```{=html}
 <object data= "pdfs/Chattj-ScalingLimitSU(2)-notes.pdf" type="application/pdf"
 width="100%" height="100%" style="min-height:100vh;">
 </object>
 ```
-
-:::{.hidden}
-![Notes](pdfs/Chattj-ScalingLimitSU(2)-notes.pdf)
 :::
+
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/Chattj-ScalingLimitSU(2)-notes.pdf', '_blank')">
+  View Handwritten Notes PDF on Scaling Limit Paper
+</button>
+```
+
 
 - Guiding research question. [Link](https://williamclarktennis.github.io/YM-explorations/#april-9-2026)
 - Annotated bibliography of articles related to SU(2). [Link](https://williamclarktennis.github.io/YM-explorations/#april-15-2026)
