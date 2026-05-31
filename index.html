@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -225,8 +260,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#may-25-2026" id="toc-may-25-2026" class="nav-link active" data-scroll-target="#may-25-2026">May 25, 2026</a>
+  <li><a href="#may-29-2026" id="toc-may-29-2026" class="nav-link active" data-scroll-target="#may-29-2026">May 29, 2026</a>
   <ul class="collapse">
+  <li><a href="#notation-comparison-for-lattice-theory" id="toc-notation-comparison-for-lattice-theory" class="nav-link" data-scroll-target="#notation-comparison-for-lattice-theory">Notation Comparison for lattice theory</a></li>
+  </ul></li>
+  <li><a href="#may-26-2026" id="toc-may-26-2026" class="nav-link" data-scroll-target="#may-26-2026">May 26, 2026</a></li>
+  <li><a href="#may-25-2026" id="toc-may-25-2026" class="nav-link" data-scroll-target="#may-25-2026">May 25, 2026</a>
+  <ul class="collapse">
+  <li><a href="#thesis-workflow" id="toc-thesis-workflow" class="nav-link" data-scroll-target="#thesis-workflow">Thesis Workflow</a></li>
+  <li><a href="#tex-to-quarto" id="toc-tex-to-quarto" class="nav-link" data-scroll-target="#tex-to-quarto">Tex to Quarto</a></li>
   <li><a href="#discussion-of-some-definitions" id="toc-discussion-of-some-definitions" class="nav-link" data-scroll-target="#discussion-of-some-definitions">Discussion of some definitions</a></li>
   </ul></li>
   <li><a href="#may-13-2026" id="toc-may-13-2026" class="nav-link" data-scroll-target="#may-13-2026">May 13, 2026</a></li>
@@ -265,13 +307,112 @@ window.Quarto = {
 \def\*#1{\mathbf{#1}}
 \]</span></p>
 </div>
+<section id="may-29-2026" class="level2">
+<h2 class="anchored" data-anchor-id="may-29-2026">May 29, 2026</h2>
+<section id="notation-comparison-for-lattice-theory" class="level3">
+<h3 class="anchored" data-anchor-id="notation-comparison-for-lattice-theory">Notation Comparison for lattice theory</h3>
+<div class="hidden">
+<p>To add a table, use three or more hyphens ( — ) to create each column’s header, and use pipes ( | ) to separate each column. For compatibility, you should also add a pipe on either end of the row. Cell widths can vary, as shown below. The rendered output will look the same.</p>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="citation" data-cites="Chatterjee2016">Chatterjee (<a href="#ref-Chatterjee2016" role="doc-biblioref">2016</a>)</span></th>
+<th><span class="citation" data-cites="BrenneckeLattice">Brennecke (<a href="#ref-BrenneckeLattice" role="doc-biblioref">2025</a>)</span></th>
+<th><span class="citation" data-cites="chatterjee2026">Chatterjee (<a href="#ref-chatterjee2026" role="doc-biblioref">2026</a>)</span></th>
+<th>Me</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(B_n\)</span></td>
+<td><span class="math inline">\(\Lambda_n\)</span></td>
+<td>N/A</td>
+<td></td>
+<td>Vertices</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(G(B_n)\)</span></td>
+<td></td>
+<td><span class="math inline">\(\Uptheta = G^\Lambda\)</span></td>
+<td><span class="math inline">\(\mathrm U(N)^{\Lambda}\)</span></td>
+<td>Gauge transforms</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="may-26-2026" class="level2">
+<h2 class="anchored" data-anchor-id="may-26-2026">May 26, 2026</h2>
+<p>The electromagnetic field <span class="math inline">\(F\)</span> is a 2-form on <span class="math inline">\(\R^4\)</span>.</p>
+<p><span class="math inline">\(F\)</span> solves the abstractly formulated Maxwell’s equations.</p>
+<p>These Maxwell equations are abstract because they are formulated in a coordinate-free way. So if you pick a coordinate frame, you get the Maxwell equations in coordinates, which would involve curls and divs. But picking coordinates shouldn’t affect the physics, so the Maxwell equations tell you the same thing even in different coordinate frames. You would use the transformation law of the field to translate between different coordinate frames.</p>
+<p><span class="math inline">\(F = dA\)</span> for some one form <span class="math inline">\(A\)</span> on <span class="math inline">\(\R^4\)</span>. You might think that <span class="math inline">\(F\)</span> solving the Maxwell’s equation implies that <span class="math inline">\(A\)</span> solves the wave equation, but you’d be forgetting the missing Lorenz gauge. That’s a scalar field <span class="math inline">\(\chi\)</span> on <span class="math inline">\(\R^4\)</span> whose differential <span class="math inline">\(d \chi\)</span> we add to <span class="math inline">\(A\)</span> so that <span class="math inline">\(A' = A + d \chi\)</span> <em>then</em> solves the wave equation.</p>
+<p>The Klein Gordon equation is the wave equation with a solution <span class="math inline">\(\phi\)</span> which is a scalar field on <span class="math inline">\(\R^4\)</span>. It’s a toy version of the wave equation for <span class="math inline">\(A'\)</span>. But the quantized version of it is already pretty heavy math.</p>
+</section>
 <section id="may-25-2026" class="level2">
 <h2 class="anchored" data-anchor-id="may-25-2026">May 25, 2026</h2>
+<section id="thesis-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="thesis-workflow">Thesis Workflow</h3>
+<p>I’ll use Uni. Bonn’s .tex file for the title page of my thesis. Since I don’t want to bother with integrating their tex conventions into my own, I’ll just render the title page as a pdf, then insert those two title pages to my final submission.</p>
+<p>I’ll make a git repository with my latex code. The repository will be named <code>thesis-latex-project</code>.</p>
+<p>I’ll have a common preamble amongst all the separate chapters.</p>
+<p>I’m using <a href="https://www.ravisagar.in/notes/how-get-directory-tree-structure-your-mac-terminal">this guy’s</a> advice for getting a display of the folder structure. See also <a href="https://stackoverflow.com/questions/23989232/is-there-a-way-to-represent-a-directory-tree-in-a-github-readme-md">here</a>.</p>
+<p>So here is the current structure of the <code>thesis-latex-project</code> repository.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> main.tex</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> README.md</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> references.bib</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> section-Appendix</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── section-Appendix.tex</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> section-APrioriBounds</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── section-APrioriBounds.tex</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> section-LatticeMaxwell</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── section-LatticeMaxwell.tex</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> section-LieGrouptoLieAlgebra</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── section-LieGrouptoLieAlgebra.tex</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> section-Notation</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── section-Notation.tex</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> section1-introduction</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── section1-introduction.tex</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> section2-summary</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> section2-summary.tex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>main.tex</code> file will contain the latex preamble that all of the other sections use.</p>
+<p>Here are instructions for a typical thesis writing session where I’m editing contents in <code>thesis-latex-project.</code></p>
+<ol type="1">
+<li>Click on the desired section’s tex file. Say, <code>section.tex</code>.</li>
+<li>Write LaTeX code in the tex file.</li>
+<li>See how it looks by rendering the <code>main.tex</code> file in the parent directory, as the <code>section.tex</code> file won’t have any preamble.</li>
+<li>Save changes using git - <code>git status</code> then <code>git add my_tex_file.tex</code> then <code>git commit -m update</code> then <code>git push origin</code>.</li>
+</ol>
+<p>If I want to present any of the contents of the thesis in html form on my Website, then here are instructions for doing that.</p>
+<ol type="1">
+<li>Navigate to the <code>latex-to-markdown</code> directory in my <code>masters-thesis-uni-bonn</code> directory.</li>
+<li><code>mkdir todays-transfer</code> an empty subdirectory of <code>latex-to-markdown</code> directory.</li>
+<li><code>cd todays-transfer</code></li>
+<li><code>touch todays-transfer.tex</code></li>
+<li>Copy the latex preamble from the <code>main.tex</code> file in the <code>thesis-latex-project</code> folder.</li>
+<li>Paste into the <code>todays-transfer.tex</code> file.</li>
+<li>Copy the desired latex code from one of the many tex files in <code>thesis-latex-project</code></li>
+<li>Paste into <code>todays-transfer.tex</code> file.</li>
+<li>Follow the directions below for converting from .tex to quarto.</li>
+</ol>
+</section>
+<section id="tex-to-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="tex-to-quarto">Tex to Quarto</h3>
 <p>I’ll explain how to convert a latex project involving .tex and .bib files to a quarto website rendition.</p>
 <p>First you create your latex project on your local machine. Let’s say you have a &lt;script.tex&gt; file and a &lt;references.bib&gt; file, and a bunch of other files excreted during pdf rendering.</p>
 <p>Second, you make sure that your quarto website folder has a &lt;references.bib&gt; file that includes all the entries in the latex project’s &lt;references.bib&gt; file.</p>
 <p>Then you go to the website <a href="https://pandoc.org/app/" class="uri">https://pandoc.org/app/</a>. You upload your &lt;script.tex&gt; document into the engine. Then you click on &lt;latex (LaTeX)&gt; as the &lt;From:&gt; option and you choose &lt;markdown (Pandoc)&gt; as the &lt;To:&gt; option. Then you click convert and you save the resulting &lt;script.md&gt; file to your quarto website project.</p>
 <p>Then you just rename the file &lt;script.md&gt; to &lt;script.qmd&gt; and then proceed as usual in quarto.</p>
+</section>
 <section id="discussion-of-some-definitions" class="level3">
 <h3 class="anchored" data-anchor-id="discussion-of-some-definitions">Discussion of some definitions</h3>
 <details>
@@ -387,8 +528,14 @@ l_{T_N}(B) = \mathcal{L}_{\R^{2N-1}}(\Phi(B)).
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BrenneckeLattice" class="csl-entry" role="listitem">
+Brennecke, Christian. 2025. <span>“On the Leading Order Term of the Lattice Yang-Mills Free Energy.”</span>
+</div>
 <div id="ref-Chatterjee2016" class="csl-entry" role="listitem">
 Chatterjee, Sourav. 2016. <span>“The Leading Term of the Yang-Mills Free Energy.”</span>
+</div>
+<div id="ref-chatterjee2026" class="csl-entry" role="listitem">
+———. 2026. <span>“A Scaling Limit of <span class="math inline">\(\mathrm{SU}(2)\)</span> Lattice Yang-Mills-Higgs Theory.”</span> <a href="https://arxiv.org/abs/2401.10507">https://arxiv.org/abs/2401.10507</a>.
 </div>
 <div id="ref-Dimitriu2018" class="csl-entry" role="listitem">
 Dumitriu, and Edelman. 2018. <span>“Matrix Models for Beta Ensembles.”</span> 2018. <a href="https://arxiv.org/abs/math-ph/0206043v1">https://arxiv.org/abs/math-ph/0206043v1</a>.
