@@ -10,6 +10,7 @@ website:
       - about.qmd
       - text: "Monthly Archive"
         menu: 
+          - href: May2026.qmd
           - href: April2026.qmd
           - href: March2026.qmd
           - href: February2026.qmd

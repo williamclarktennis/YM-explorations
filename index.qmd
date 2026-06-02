@@ -18,447 +18,50 @@ $$
 $$
 :::
 
-## May 29, 2026
+## June 2, 2026
 
-### Notation Comparison for lattice theory
-
-:::{.hidden}
-To add a table, use three or more hyphens ( --- ) to create each column's header, and use pipes ( | ) to separate each column. For compatibility, you should also add a pipe on either end of the row. Cell widths can vary, as shown below. The rendered output will look the same.
-:::
-
-| @Chatterjee2016 | @BrenneckeLattice | @chatterjee2026 | Me | Notes |
-| ---- | ---- | ---- | ---- | ---- |
-| $B_n$ | $\Lambda_n$ | N/A |  | Vertices |
-| $G(B_n)$ | | $\Uptheta = G^\Lambda$ | $\mathrm U(N)^{\Lambda}$| Gauge transforms |
-
-## May 26, 2026
-
-The electromagnetic field $F$ is a 2-form on $\R^4$.
-
-$F$ solves the abstractly formulated Maxwell's equations.
-
-These Maxwell equations are abstract because they are formulated in 
-a coordinate-free way. So if you pick a coordinate frame, you get
-the Maxwell equations in coordinates, which would involve curls and divs. 
-But picking coordinates shouldn't affect the physics, so 
-the Maxwell equations tell you the same thing even 
-in different coordinate frames. You would use the transformation
-law of the field to translate between different coordinate frames.
-
-$F = dA$ for some one form $A$ on $\R^4$.
-You might think that $F$ solving the Maxwell's 
-equation implies that $A$ solves the wave equation, but
-you'd be forgetting the missing Lorenz gauge.
-That's a scalar field $\chi$ on $\R^4$ whose differential
-$d \chi$ we add to $A$ so that $A' = A + d \chi$ *then* solves 
-the wave equation. 
-
-The Klein Gordon equation is the wave equation 
-with a solution $\phi$ which is a scalar field on $\R^4$.
-It's a toy version of the wave equation for $A'$.
-But the quantized version of it is already pretty heavy math.
-
-
-## May 25, 2026
-
-### Thesis Workflow
-
-I'll use Uni. Bonn's .tex file for the title page
-of my thesis. Since I don't want to bother with integrating
-their tex conventions into my own, I'll just render the title page
-as a pdf, then insert those two title pages to my final submission. 
-
-I'll make a git repository with my latex code. The repository will
-be named `thesis-latex-project`.  
-
-I'll have a common preamble amongst all the separate chapters.
-
-I'm using [this guy's](https://www.ravisagar.in/notes/how-get-directory-tree-structure-your-mac-terminal)
-advice for getting a display of the folder structure.
-See also [here](https://stackoverflow.com/questions/23989232/is-there-a-way-to-represent-a-directory-tree-in-a-github-readme-md).
-
-So here is the current structure of the `thesis-latex-project`
-repository.
-
-```bash
-├── main.tex
-├── README.md
-├── references.bib
-├── section-Appendix
-│   └── section-Appendix.tex
-├── section-APrioriBounds
-│   └── section-APrioriBounds.tex
-├── section-LatticeMaxwell
-│   └── section-LatticeMaxwell.tex
-├── section-LieGrouptoLieAlgebra
-│   └── section-LieGrouptoLieAlgebra.tex
-├── section-Notation
-│   └── section-Notation.tex
-├── section1-introduction
-│   └── section1-introduction.tex
-└── section2-summary
-    └── section2-summary.tex
-```
-
-The `main.tex` file will contain the latex preamble
-that all of the other sections use. 
-
-Here are instructions for a typical thesis writing session
-where I'm editing contents in `thesis-latex-project.`
-
-1. Click on the desired section's tex file. Say, `section.tex`.
-2. Write LaTeX code in the tex file.
-3. See how it looks by rendering the 
-`main.tex` file in the parent directory, as the `section.tex` file
-won't have any preamble.
-4. Save changes using git - `git status` then 
-`git add my_tex_file.tex` then `git commit -m update` then
-`git push origin`.
-
-If I want to present any of the contents of the 
-thesis in html form on my Website, then here are instructions for
-doing that. 
-
-1. Navigate to the `latex-to-markdown` directory in my `masters-thesis-uni-bonn`
-directory.
-2. `mkdir todays-transfer` an empty subdirectory of `latex-to-markdown` directory.
-3. `cd todays-transfer`
-4. `touch todays-transfer.tex`
-5. Copy the latex preamble from the `main.tex` file in the `thesis-latex-project` folder.
-6. Paste into the `todays-transfer.tex` file.
-7. Copy the desired latex code from one of the many tex files in `thesis-latex-project`
-8. Paste into `todays-transfer.tex` file.
-9. Follow the directions below for converting from .tex to quarto.
-
-### Tex to Quarto
-
-I'll explain how to convert a latex project involving .tex and
-.bib files to a quarto website rendition. 
-
-First you create your latex project on your local machine. 
-Let's say you have a <script.tex> file and a <references.bib> file, 
-and a bunch of other files excreted during pdf rendering.
-
-Second, you make sure that your quarto website folder 
-has a <references.bib> file that includes all the entries in 
-the latex project's <references.bib> file. 
-
-Then you go to the website <https://pandoc.org/app/>. 
-You upload your <script.tex> document into the engine. 
-Then you click on <latex (LaTeX)> as the <From:> option
-and you choose <markdown (Pandoc)> as the <To:> option. 
-Then you click convert and you save the resulting <script.md>
-file to your quarto website project. 
-
-Then you just rename the file <script.md> to <script.qmd>
-and then proceed as usual in quarto.
-
-### Discussion of some definitions
-
-<details>
-
-<summary>lattice gauge theory on $\epsilon \mathbb Z^d$ </summary>
-
-Fix $\epsilon > 0$. 
-We note $\epsilon \mathbb Z = \{ a \in \mathbb R: a = \epsilon k
-\text{ for some } k \in \mathbb Z\}$. Then 
-$\epsilon \mathbb Z^d = \{(a_1, \cdots, a_d) \in \mathbb R^d: a_i \in \epsilon \mathbb Z \}$.
-We say two vertices $x,y \in \epsilon \mathbb Z^d$ are adjacent 
-if $x = y \pm \epsilon e_i$ for some $i \in [d]$. In this case 
-we write $x \sim y$.
-Let $\Lambda \subset \epsilon \mathbb Z^d$ be a finite subset. 
-Let $E_{\Lambda} = \{(x,y) \in \Lambda^2: x \sim y \text{ and } x < y \}$, 
-where $x < y$ means that $\frac{1}{\epsilon} x < \frac{1}{\epsilon} y$ in the 
-lexicographical ordering.
-A configuration is a map $U: E_\Lambda \to U(N)$, where we also
-define $U(y,x) = U(x,y)^*$ for $(x,y) \in E_\Lambda$.
-
-</details>
-
-<details>
-
-<summary> Density </summary>
-
-We follow section 7.4 of @Klenke. 
-Let $\mu$ and $\nu$ be measures on a measurable space $(\Omega, \mathcal{A})$.
-A measurable function $f: \Omega \to [0, \infty)$ is called a density of 
-$\nu$ with respect to $\mu$, if 
+Let $t \in \R^{E_n}$ be distributed according
+to the probability distribution
 $$
-\nu(A) := \int_{\Omega} f 1_A \, d\mu
+\frac{1}{Z_M(B_n)} \exp(-\frac{1}{2} M_n(t)) dl_{E_n^0, 1}(t),
 $$
-for all $A \in \mathcal{A}$.
-On the other hand, for a given measurable function $f: \Omega \to [0,\infty)$,
-the above equation defines a measure $\nu$ on $(\Omega, \mathcal{A})$.
-In this second case, we write 
+where 
+$$dl_{E_n^0, 1}(t) = \bigotimes_{e \in E_n^0} \text{Unif}_{\{0\}}(t_e) \otimes 
+\bigotimes_{e \in E_n^1} dl_1(t_e).
 $$
-\nu =: f\mu, \hspace{1 cm} f =: \frac{d\nu}{d\mu}.
+This probability distribution is called 
+lattice Maxwell theory on $B_n$ with boundary value 0.
+In other words, $t_e$ is determinstically equal to 0
+when $e \in E_n^0$ and is otherwise a random real number
+with distribution $\mathcal{N}(\mu_e, \sigma_e)$, 
+where $\mu_e$ and $\sigma_e$ can be computed from $M_n$.
+ 
+On the other hand, a Hermitian matrix $H \in H(N)$ can be 
+parameterized using $N^2$ variables by writing the 
+$(j, k)^{\text {th }}$ entry of $H$ as
+$$
+x_{j k}= \begin{cases}y_{j j} & \text { if } j=k, \\ \left(z_{j k}+\mathrm{i} w_{j k}\right) / \sqrt{2} & \text { if } j<k, \\ \left(z_{k j}-\mathrm{i} w_{k j}\right) / \sqrt{2} & \text { if } j>k,\end{cases}
+$$
+as illustrated by
+$$
+\begin{bmatrix}
+y_{11} & & & \frac{z_{jk} + iw_{jk}}{\sqrt{2}} \\
+ & \ddots & &  \\
+ & &  &  \\
+\frac{z_{jk} - iw_{jk}}{\sqrt{2}} & & & y_{NN}
+\end{bmatrix}.
 $$
 
-Given a measurable $g: \Omega \to [0,\infty]$, 
-integrating against $d\nu$ is the same as integrating against
-$f d\mu$. This is theorem 4.15 @Klenke: 
-Let $f \mu$ be the measure defined above. Then $g \in \mathcal{L}^1(f \mu)$
-if and only if $(gf) \in \mathcal{L}^1(\mu)$. In this case, 
-$$
-\int g \, d(f\mu) = \int gf \, d\mu.
-$$
+Then the $N^2$ parameters are $\left(y_{j j}\right)_{1 \leq j \leq N},\left(z_{j k}\right)_{1 \leq j<k \leq N}$, and $\left(w_{j k}\right)_{1 \leq j<k \leq N}$.
 
-There is also a uniqueness result, Theorem 7.29.
-Let $\nu$ be $\sigma$-finite. Let $f_1$ and $f_2$ be two densities
-of $\nu$ with respect to $\mu$. Then $f_1 = f_2$ $\mu$-almost surely.
-In particular, the density $\frac{d\nu}{d\mu}$ is unique $\mu$-almost surely.
-That is, there is a $\mu$-null set $N \in \mathcal{A}$ such that 
-$\frac{d\nu}{d\mu}$ is equal to any other given density function on the complement
-$\Omega \setminus N$. (Not sure if I stated this uniqueness correctly)
+Let $(t^{(jk)})_{1 \le j \le k \le N}$ be $N^2$
+mutually independent lattice Maxwell fields, arranged 
+in some arbitrary way. That is, for each $j,k$ with 
+$1 \le j \le k \le N$, we have that $(t_e^{(jk)})_{e \in E_n}$
+has the law above. 
 
-</details>
-
-<details>
-
-<summary> Lebesgue Measure </summary>
-
-The following is Theorem 1.55 of @Klenke. 
-There exists a uniquely defined measure $\lambda^n$ on 
-$(\mathbb R^n,\mathcal{B}(\mathbb R^n))$ with the property that
-$\lambda^n((a,b]) = \prod_{i=1}^n (b_i - a_i)$
-for all $a,b \in \mathbb R^n$ with $a< b$. Furthermore, $\lambda^n$ is called
-Lebesgue measure on $(\mathbb R^n, \mathcal{B}(\mathbb R^n))$
-or Lebesgue-Borel-measure.
-
-</details>
-
-<details>
-
-<summary> Gaussian measure on $\mathbb R^n$ </summary>
-
-Fix the Lebesgue measure space 
-$(\mathbb R^n, \mathcal{B}(\mathbb R^n),dx)$.
-Let $\tau$ be a probability measure on 
-$(\mathbb R^n, \mathcal{B}(\mathbb R^n))$.
-
-More logically rigorous is to say that
-$\tau$ is a Gaussian measure if
-there exists a constant $C> 0$ and a degree two polynomial
-$P: \mathbb R^n \to \mathbb R$ such that
-$Ce^{-P(\cdot)}: \mathbb R^n \to [0,\infty)$ is a density of 
-$\tau$ with respect to $dx$:
-$$
-\tau(A) = \int_{\mathbb R^n} Ce^{-P(x)} 1_A \, dx
-$$
-for all $A \in \mathcal{B}(\mathbb R^n).$
-
-In this case we write
-$$
-\frac{d\tau}{dx} = Ce^{-P(x)}.
-$$
-
-Suppose $\tau$ is a Gaussian measure with polynomial $P$.
-Suppose $Ce^{-P(\cdot)}$ is not integrable. Then by definition of 
-integrability (Def 4.7 @Klenke, for example), it follows that 
-$\int_{\mathbb R^n} |Ce^{-P(x)}|dx = \infty,$
-which contradicts that $\tau$ is a probability measure on $\mathbb R^n$.
-Hence, $\tau$ Gaussian implies that $Ce^{-P(\cdot)}$ is integrable.
-
-Since $C$ is a finite constant, $Ce^{-P(\cdot)}$ is integrable if and 
-only if $e^{-P(x)}$ is integrable.
-
-Lemma (Criterion 12.1 @Chatterjee2016). The measurable function $e^{-P(\cdot)}$
-is integrable if and only if 
-there exists a positive constant $c$ and a positive constant $R$ such that
-$$
-P(x) \ge c \lVert x \rVert^2
-$$
-for all $x \in \mathbb R^n$ satisfying $\lVert x \rVert \ge R$, 
-where $\lVert x \rVert = \sqrt{x_1^2 + \cdots + x_n^2}$.
-
-Lemma. If $P: \mathbb R^n \to \mathbb R$ is an arbitrary degree two 
-polynomial, then there exists a matrix $Q \in \mathbb R^{n \times n}$,
-a column vector $v \in \mathbb R^n$, and a constant $c \in \mathbb R$
-(not the same $c$ as above) such that
-$$
-P(x) = x^T Q x + v^Tx + c.
-$$
-
-Lemma (Criterion 12.2 @Chatterjee2016). Suppose 
-$P(x) = x^T Q x + v^Tx + c$. Then
-the following are equivalent.
-
-- $e^{-P(x)}$ is integrable.
-- There are positive constants $C_1, R$ such that 
-$$
-P(x) \ge C_1 \lVert x \rVert^2
-$$
-for all $\lVert x \rVert \ge R$.
-- $Q$ is a positive definite matrix. That is, $Q$ is symmetric
-and $x^TQx > 0$ for all $x \ne 0 \in \mathbb R^n$.
-
-</details>
-
-<details>
-
-<summary> Positive Definite Matrix </summary>
-
-Consider the $\mathbb R$ vector space 
-$\mathbb R^n$. Consider a symmetric 
-$\mathbb R$-bilinear form
-$g: \mathbb R^n \times \mathbb R^n \to \mathbb R.$
-Recall that symmetry means
-$g(x,y) = g(y,x)$ for all $x,y \in \mathbb R^n$.
-We say that $g$ is positive definite if 
-$0 < g(X,X) =: X^2$ for all $X \ne 0$ in $\mathbb R^n$ 
-(@LangAlgebra Section Symmetric Forms over Ordered Fields).
-Let $Q$ be the matrix associated with the form $g$
-relative to the standard basis 
-$B = \{e_1, \cdots, e_n\}$, that is, 
-if $x, y \in \mathbb R^n$, and in this case
-$x$ and $y$ are already the column vectors of coordinates
-for themselves with respect to the standard basis,
-then
-$$
-g(x,y) = x^T Q y.
-$$
-(See Section Matrices and Bilinear Forms @LangAlgebra.)
-In this case we say that $Q$ is a positive definite matrix.
-
-Note also that $Q$ is implicitly a symmetric matrix, by the
-following result.
-
-Proposition 6.5 (Section Matrices and Bilinear Forms @LangAlgebra).
-Let $E$ be a free module of dimension $n$ over a commutative ring $R$,
-and let $B$ be a fixed basis. The map $f \mapsto M_B^B(f)$
-induces an isomorphism between the module of symmetric bilinear forms
-on $E \times E$ and the module of symmetric $n \times n$ matrices
-over $R$.
-
-In summary, $Q$ is a positive definite $n \times n$ matrix
-if and only if $Q$ has entries in $\mathbb R$, $Q = Q^T$ (symmetry), 
-and $x^TQx > 0$ for all $x \in \mathbb R^n$ not equal to $0$.
-
-</details>
-
-
-## May 13, 2026
-
-In constrast to the notion of Lebesgue measure on $T_N^{(1)}$ used
-above, the following notion uses an isometry between
-$T_N^{(1)}$ equipped with Hilbert Schmidt norm and $\R^{2N-1}$ equipped
-with the Euclidean norm.
-
-*Definition.* Alternative Lebesgue Measure on $T_N^{(1)}$.
-In this definition, we view $T_N^{(1)}$ as an $\R$-vector space endowed with
-the Hilbert Schmidt norm $\lVert M \rVert = \sqrt{\Tr(M^TM)}$, which, by the way, is induced
-by the scalar product $(A,B) = \Tr(A^TB).$ 
-We consider the topology on $T_N^{(1)}$ generated by 
-open balls $b(Y, r) = \{X \in T_N^{(1)}: \lVert X - Y \rVert < r\}$, 
-namely the topology induced by the Hilbert Schmidt norm.
-Then we consider the Borel sigma algebra on $T_N^{(1)}$
-which is generated by the open sets in the topology above.
-We also view $\R^{2N-1}$ as an 
-$\R$-vector space with the Euclidean norm $\Vert x \rVert = \sqrt{\sum_{i} x_i^2}$.
-There is an isometry 
-$$
-\Phi: T_N^{(1)} \to \R^{2N-1} 
-$$
-given by
-$$
-T_N^{(1)} \ni \begin{bmatrix}
-a_N & \frac{1}{\sqrt{2}}b_{N-1} & &  &  \\
-\frac{1}{\sqrt{2}} b_{N-1} & a_{N-1} & \frac{1}{\sqrt{2}} b_{N-2} &  & \\
- & \frac{1}{\sqrt{2}} b_{N-2} & & & \\
- & & \ddots& \ddots & \\
- & & \frac{1}{\sqrt{2}} b_2& a_2&\frac{1}{\sqrt{2}} b_1 \\
- & & & \frac{1}{\sqrt{2}} b_1& a_1
-\end{bmatrix} = T \mapsto (a,b) \in \mathbb R^{2N-1}.
-$$
-Fix $T \in T_N^{(1)}$ as above. 
-Then 
-\begin{align*}
-\lVert T \rVert^2 &= \Tr(T^TT) = \Tr(T^2) \\
-&= \left(a_N^2 + \left(\frac{b_{N-1}}{\sqrt{2}}\right)^2\right) + \left(\left(\frac{b_{N-1}}{\sqrt{2}}\right)^2 + a_{N-1}^2 + \left(\frac{b_{N-2}}{\sqrt{2}}\right)^2\right) + \cdots \\ 
-&= \sum_{i=1}^N a_i^2 + 2 \sum_{i=1}^{N-1} b_i^2/2\\
-&= \lVert (a,b) \rVert^2 = \lVert \Phi(T) \rVert^2,
-\end{align*}
-which shows that $\Phi$ is an isometry, 
-and that the $\sqrt{2}^{-1}$ factor was needed
-to preserve the isometric correspondence.
-We define Lebesgue measure on $T_N^{(1)}$, which we denote by $l_{T_N}$, such that
-$l_{T_N} = \Phi^* (\mathcal{L}_{\R^{2N-1}})$, the 
-pullback of $2N-1$ dimensional Lebesgue measure
-by the map $\Phi$. That is, 
-for a Borel subset $B \in \mathcal{B}(T_N^{(1)})$, we have
-$$
-l_{T_N}(B) = \mathcal{L}_{\R^{2N-1}}(\Phi(B)).
-$$ 
-In addition, we note that 
-the pushforward of $l_{T_N}$ by $\Phi$, denoted by 
-$\Phi_* l_{T_N},$ is equal to $\mathcal{L}_{\R^{2N-1}}.$
-
-*End Definition*
-
-## May 4, 2026
-
-[Here](https://drive.google.com/drive/u/0/folders/1utG5S-e3Nzdyet0UWugVWob7riQ1aqAc)
-are some notes on the Frenet frame field of a curve. 
-We follow page 56 of O'Neills book on Elementary Differential Geometry.
-The idea is to take together the vecolity of the curve, 
-the acceleration, and the cross product of the acceleration
-and velocity to get a frame vector field.
-
-## May 1, 2026
-
-Here is a report on an internet search from this morning.
-My initial goal was to look for applications
-of what I'm learning in @Dimitriu2018. 
-Therefore I looked on Google Scholar to see who
-had cited that paper. 
-The first one that caught my eye 
-was titled ["Tridiagonalizing random matrices"](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.126001) 
-written by Balasubramanian, Magan, and Wu, published in 
-2023 in Phy Rev Let D. Some of the computations
-in the paper looked familiar. 
-At least one the authors was associated with the
-[Sante Fe Institute](https://www.santafe.edu/), which I had
-never heard of before. This institute
-doesn't look relevant for me as a Master student, aside
-from the two research assistants they hired, who 
-are Master/Bachelor level. For the most part, it looks
-like it is geared towards post-docs, but at least it is promising
-that there are places outside academia for post-docs. 
-
-Next I clicked on the article, also citing Dimitriu and Edelman's article,
-titled ["Eigenvectors from eigenvalues: A survey of a basic identity in
-linear algebra"](https://arxiv.org/pdf/1908.03795) 
-written by 
-Denton, Parke, Tao, and Zhang. I was surprised to see 
-in an article on linear algebra that
-Denton, Parke, and Zhang were members of physics associations. 
-Denton, for instance, was a member of 
-[Brookhaven National Lab](https://www.bnl.gov/careers/) in Upton, NY.
-I didn't find any perfect matches
-for my background of a Master in Math and Bachelor
-in Math and CS, but I think there must be something.
-But the point is not so much to find a job, but
-to see that there is hope of finding something outside
-of corporate finance and corporate tech which 
-still uses technical skills, especially mathematics. 
-There was also [Fermi Forward](https://www.fermi-forward.org/)
-which is in Illinois. This lab is connected with U. Chicago, which
-is not relevant to my background, but is also connected to 
-U. Illinois Urbana Champaign, which might be relevant to me. 
-
-Another thing I learned is that there 
-is collaboration between national labs and 
-PhD candidates. For instance, [here](https://internships.fnal.gov/science-graduate-research-program-scgsr/).
-
-Perhaps more insightful is to look at, 
-for instance, the career path of [Denton](https://peterdenton.github.io/). 
-
-#### Other notes
-
-I don't understand "And in
-any case, from the unitary invariance of GUE, we see that even after
-conditioning on $D$, we may assume without loss of generality that $U$
-is drawn from the invariant Haar measure on $U(n)$. In particular, $U$
-and $D$ can be taken to be independent" on page 219 of Tao's Random matrix book.
-
-Update: he [responded](https://terrytao.wordpress.com/2010/02/23/254a-notes-6-gaussian-ensembles/comment-page-1/#comment-692464).
+Based on the definition of Lebesgue measure on $H(N)$, one sees
+that the law of 
+$H(t^{(jk)})$ is just the joint law of the $t^{(jk)}$, and is 
+thus just the $N^2$ fold product of the law of scalar Maxwell theory
+by independence of the $t^{(jk)}$.
