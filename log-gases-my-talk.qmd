@@ -1787,8 +1787,6 @@ the proof of @lem-LemmaJacobian.
 
 ## Theorem 1.78 in @Klenke
 
-[]
-
 Let $(\Omega', \mathcal{A}')$ be a measurable space and let 
 $\Omega$ be a non-empty set. Let $X: \Omega \to \Omega'$ be
 a map. The preimage 
