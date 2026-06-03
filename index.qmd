@@ -277,6 +277,86 @@ $$
 \mathcal{B}_{\R^{N^2}} \subset \sigma(\Psi_H). 
 $$
 
+Let $H \in H(N)^{|E_n|}$ be a random Hermitian configuration
+drawn according to the measure
+$$
+\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
+$$
+This means that 
+$$
+\mathbb P(H \in A) = \int_A \frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
+$$
+for any Borel subset $A \in \mathcal{B}_{H(N)^{|E_n^1|}}$.
+
+Note that
+$$
+\prod_{e \in E_n} \Psi_H: (\R^{N^2})^{|E_n|} \to H(N)^{|E_n|}. 
+$$
+See [Product Map](https://planetmath.org/productmap). 
+Let's just assume without proof that
+$$
+\sigma(\prod_{e \in E_n} \Psi_H) = \mathcal{B}_{\R^{N^2|E_n|}}
+$$
+
+We claim based on the above computations that 
+
+\begin{equation}
+\begin{gathered}
+\int_A \frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H) = \\
+\frac{1}{Z_H}
+\int_{(\prod_{e \in E_n} \Psi_H)^{-1}(A)} 
+ \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_{N^2}(y_e, z_e, w_e).
+\end{gathered}
+\end{equation}
+
+But now I think we can't proceed to break up the integral 
+into products, so we might have to resort to cylinder sets. 
+But why do we want to break up the integral into products anyways?
+I want to obtain something like 
+$$
+\mathbb P(H \in A) = \mathbb P((y,z,w) \in (\prod_{e \in E_n} \Psi_H)^{-1}(A)). 
+$$
+for all $A$ Borel subsets of $H(N)^{E_n}$, 
+where $(y, z, w)$ are $N^2$ lattice Maxwell fields. 
+This would show that the law of $N^2$ copies of 
+lattice Maxwell fields is the pushforward or pullback (which one?)
+of the law of Hermitian lattice theory. 
+
+If pushforward, then we'd have
+$$
+(y,z,w)^* \mathbb P = (\prod_{e \in E_n} \Psi_H)^* (H^* \mathbb P). 
+$$
+That would mean
+$$
+\mathbb P ((y,z,w) \in A) = (H^* \mathbb P)((\prod_{e \in E_n} \Psi_H)^{-1}(A)) = \mathbb P(H \in (\prod_{e \in E_n} \Psi_H)^{-1}(A)),
+$$
+which is not what we want. 
+If pullback, then we'd have
+$$
+\mathbb P ((y,z,w) \in A) = (H^* \mathbb P)(\prod_{e \in E_n} \Psi_H(A)) = \mathbb P(H \in \prod_{e \in E_n} \Psi_H(A)), 
+$$
+which is better. 
+
+:::{#lem-HermitianMaxwellComparison}
+
+The joint law $((t^{(i)})_{i=1}^{N^2})^* \mathbb P$ of $N^2$ indepedent lattice
+Maxwell scalar configurations on $(\R^{N^2})^{|E_n|}$
+is equal to the pullback of the law 
+$H^* \mathbb P$ of Hermitian 
+lattice Maxwell theory by the map $\prod_{e \in E_n} \Psi_H$. 
+
+:::
+
+So we are showing that two proability laws are equal to eachother.
+
 
 ## June 2, 2026
 
