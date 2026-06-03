@@ -18,6 +18,167 @@ $$
 $$
 :::
 
+## June 3, 2026
+
+Let $H = (H_e)_{e \in E_n} \in H(N)^{E_n}$ be a random 
+Hermitian configuration distributed according to the law
+$$
+\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H)
+$$
+where 
+$$
+d\lambda_{E_n^0}(H) = \bigotimes_{e \in E_n^0} \text{Unif}_{\{0\}}
+\otimes \bigotimes_{e \in E_n^1} d \lambda(H),
+$$
+where $d\lambda(H)$ denotes Lebesgue measure on $H(N)$.
+In particular, let 
+$$
+\Psi_H: \R^{N^2} \to H(N)
+$$
+be the map
+\begin{equation}
+\begin{gathered}
+(y,z,w) = (\left(y_{j j}\right)_{1 \leq j \leq N}, 
+\left(z_{j k}\right)_{1 \leq j<k \leq N}, \left(w_{j k}\right)_{1 \leq j<k \leq N}) \\
+\mapsto \begin{bmatrix}
+y_{11} & & & \frac{z_{jk} + iw_{jk}}{\sqrt{2}} \\
+ & \ddots & &  \\
+ & &  &  \\
+\frac{z_{jk} - iw_{jk}}{\sqrt{2}} & & & y_{NN}
+\end{bmatrix}.
+\end{gathered}
+\end{equation}
+
+Then $d\lambda(H)$ is equal to 
+the pushforward of $l_{N^2}$, $N^2$-dimensional
+Lebesgue measure, by the map $\Psi_H$: 
+$$
+\lambda = \Psi_H^* l_{N^2} = l_{N^2} \circ \Psi_H^{-1}.
+$$
+In particular, if $f$ is some integrable function of $H \in H(N)$, 
+then 
+$$
+\int f(H) d\lambda(H) = \int f(\Psi_H(y,w,z)) dl_{N^2}(y,w,z).
+$$
+
+Let $B \in \mathcal{B}(H(N)^{E_n})$ be a Borel 
+subset of Hermitian configuration space. (Or do 
+we need to take a cylinder set?)
+Then 
+$$
+\mathbb P(H \in B) = \int_{B} \frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
+$$
+(How do you integrate against uniform measure on the $E_n^0$ edges?)
+Fix $p \in P(B_n)$.
+Then 
+$$
+H_p = H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4},
+$$
+where the $p_i$ are the edges comprising the plaquette
+$p$. We have separate parameters $(y_{p_i}, z_{p_i}, w_{p_i})$ 
+for each of the four Hermitian matrices associated to the plaquette.
+Note that $y_{p_i} \in \R^N$, $z_{p_i} \in \R^{N(N-1)/2}$, and $w_{p_i} \in \R^{N(N-1)/2}$. 
+We write
+$$
+H_{p_i} = \Psi_H(y_{p_i}, z_{p_i}, w_{p_i})
+$$
+for each plaquette edge $p_i$. Then by linearity of $\Psi_H$, we have
+$$
+H_{p} = \Psi_H \left( y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4} \right). 
+$$
+
+Then since $\Psi_H$ is an isometry between $\R^{N^2}$ equipped with the Euclidean norm
+and $H(N)$ equipped with the Hilbert Schmidt norm, we 
+have
+\begin{equation}
+\begin{gathered}
+\lVert H_p \rVert^2 = \lVert (y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4}) \rVert^2 \\
+= \sum_{i=1}^N (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 + 
+\sum_{1 \le i < j \le N} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 \\
++ \sum_{1 \le i < j \le N} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2
+\end{gathered}
+\end{equation}
+Then we write
+\begin{equation}
+\begin{gathered}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 =
+\sum_{p \in P(B_n)} \sum_{i=1}^N (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 + \\
+\sum_{p \in P(B_n)} \sum_{1 \le i < j \le N} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 + \\
+\sum_{p \in P(B_n)} \sum_{1 \le i < j \le N} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2 \\
+= \sum_{i=1}^N \sum_{p \in P(B_n)} (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 + \\
+\sum_{1 \le i < j \le N} \sum_{p \in P(B_n)} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 + \\
+\sum_{1 \le i < j \le N} \sum_{p \in P(B_n)} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2 \\
+= \sum_{i=1}^N \sum_{p \in P(B_n)} (y_{p}^{ii})^2 + \\
+\sum_{1 \le i < j \le N} \sum_{p \in P(B_n)} (z_p^{ij})^2 +\\
+\sum_{1 \le i < j \le N} \sum_{p \in P(B_n)} (w_p^{ij})^2.
+\end{gathered}
+\end{equation}
+Then we have
+\begin{equation}
+\begin{gathered}
+\exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) = \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).
+\end{gathered}
+\end{equation}
+Next we have
+\begin{equation}
+\begin{gathered}
+d\lambda_{E_n^0}(H) = \prod_{e \in E_n^1} d\lambda(H_e) \\
+= \prod_{e \in E_n^1} d\Psi_H^* l_{N^2}(H_e)
+\end{gathered}
+\end{equation}
+Fixing an edge $e \in E_n^1$, we have 
+\begin{equation}
+\begin{gathered}
+\int f(H_e) d\Psi_H^* l_{N^2}(H_e) = \int f(\Psi_H(y_e, z_e, w_e)) dl_{N^2}(y_e, z_e, w_e),
+\end{gathered}
+\end{equation}
+so if we iterate this by freezing all other edge variables 
+one at a time, we obtain
+\begin{equation}
+\begin{gathered}
+\int \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H) = \\
+\int \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_{N^2}(y_e, z_e, w_e)
+\end{gathered}
+\end{equation}
+But if we integrate first over the edges and then over the 
+$N^2$ dimensions of $\R^{N^2}$, meaning use
+\begin{equation}
+\begin{gathered}
+\prod_{e \in E_n^1} dl_{N^2}(y_e, z_e, w_e) = 
+\prod_{1 \le i \le N} \prod_{e \in E_n^1} dl_1(y_e^{ii}) \otimes \\
+\prod_{1 \le i < j \le N} \prod_{e \in E_n^1} dl_1(z_e^{ij}) \otimes \\
+\prod_{1 \le i < j \le N} \prod_{e \in E_n^1} dl_1(w_e^{ij}),
+\end{gathered}
+\end{equation}
+then we have 
+\begin{equation}
+\begin{gathered}
+\int \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H) = \\
+\prod_{1 \le i \le N} \int \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \prod_{e \in E_n^1} dl_1(y_e^{ii}) \times \\
+\prod_{1 \le i < j \le N} \int \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_1(z_e^{ij}) \times \\
+\prod_{1 \le i < j \le N} \int 
+\exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_1(w_e^{ij}) \\
+\end{gathered}
+\end{equation}
+
 ## June 2, 2026
 
 Let $t \in \R^{E_n}$ be distributed according
