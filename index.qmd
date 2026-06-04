@@ -18,6 +18,186 @@ $$
 $$
 :::
 
+## June 4, 2026
+
+### Notes on Chapter 14 of Klenke
+
+Lemma 14.7 (@Klenke) 
+Let $\emptyset \neq J \subset I$. Then $X_J^I$ is measurable with respect to $\mathcal{A}_I-\mathcal{A}_J$.
+
+Proof. For any $j \in J$, 
+$X_j$ is measurable with respect to $\mathcal{A} - \mathcal{A}_j$
+by definition of the product $\sigma$ algebra, Definition 14.4.
+But $X_j = X_j^J \circ X_J^I$ as functions, 
+so therefore we can replace $X_j$ by $X_j^J \circ X_J^I$ in the 
+previous sentence. To conclude measurability of 
+$X_J^I$, we need to apply the following result of @Klenke: 
+
+Corollary 1.82 (Measurability of composed maps) Let $I$ be a nonempty index set and let $(\Omega, \mathcal{A}),\left(\Omega^{\prime}, \mathcal{A}^{\prime}\right)$ and $\left(\Omega_i, \mathcal{A}_i\right)$ be measurable spaces for any $i \in I$. Further, let $\left(X_i: i \in I\right)$ be a family of measurable maps $X_i: \Omega^{\prime} \rightarrow \Omega_i$ with $\mathcal{A}^{\prime}=\sigma\left(X_i: i \in I \right)$. Then the following holds: A map $Y: \Omega \rightarrow \Omega^{\prime}$ is $\mathcal{A}-\mathcal{A}^{\prime}$-measurable if and only if $X_i \circ Y$ is $\mathcal{A}-\mathcal{A}_i$-measurable for all $i \in I$.
+
+We want to show that $X_J^I$ is measurable with respect to 
+$\mathcal{A}_I-\mathcal{A}_J$. Does $\mathcal{A}'$ in the corollary
+correspond to $\mathcal{A}_J$? For that we would need that 
+$\mathcal{A}_J = \sigma(X_j^J: j \in J)$. Luckily this is
+true by inspection of Definition 14.4.
+It is easy to see that the conclusion of Corollary 1.82 
+corresponds to the conlusion we wanted to obtain. QED.
+
+
+
+Definition 14.9 (Cylinder sets @Klenke) For any $i \in I$, let $\mathcal{E}_i \subset \mathcal{A}_i$ be a subclass of the class of measurable sets.
+
+For any $A \in \mathcal{A}_J, X_J^{-1}(A) \subset \Omega$ is called a cylinder set with base $J$. The set of such cylinder sets is denoted by $\mathcal{Z}_J$. In particular, if $A=\prod_{j \in J} A_j$ for certain $A_j \in \mathcal{A}_j$, then $X_J^{-1}(A)$ is called a rectangular cylinder with base $J$. The set of such rectangular cylinders will be denoted by $\mathcal{Z}_J^R$. The set of such rectangular cylinders for which in addition $A_j \in \mathcal{E}_j$ for all $j \in J$ holds will be denoted by $\mathcal{Z}_J^{\mathcal{E}, R}$.
+
+Write
+$$
+\begin{equation*}
+\mathcal{Z}=\bigcup_{J \subset I \text { finite }} \mathcal{Z}_J, \tag{14.3}
+\end{equation*}
+$$
+and similarly define $\mathcal{Z}^R$ and $\mathcal{Z}^{\mathcal{E}, R}$. Further, define
+$$
+\mathcal{Z}_*^R=\bigcup_{N=1}^{\infty}\left\{\bigcup_{n=1}^N A_n: A_1, \ldots, A_N \in \mathcal{Z}^R\right\}
+$$
+and similarly $\mathcal{Z}_*^{\mathcal{E}, R}$.
+
+Remark 14.10 Every $\mathcal{Z}_J$ is a $\sigma$-algebra, and $\mathcal{Z}$ and $\mathcal{Z}_*^R$ are algebras. Furthermore, $\bigotimes_{i \in I} \mathcal{A}_i=\sigma(\mathcal{Z})$.
+
+Lemma 14.11. If every $\mathcal{E}_i$ is a $\pi$-system, 
+then $\mathcal{Z}^{\mathcal{E}, R}$ is a $\pi$-system.
+
+Proof. First we recall the definition of a $\pi$-system. 
+It is a collection of sets $\mathcal{A}$ that is intersection closed, 
+meaning that $A \cap B \in \mathcal{A}$ whenever
+$A, B \in \mathcal{A}$.
+Next, we write down the definition of $\mathcal{Z}^{\mathcal{E}, R}:$
+$$
+\mathcal{Z}^{\mathcal{E}, R} = \bigcup_{J \subset I \text{ finite}} 
+\mathcal{Z}_J^{\mathcal{E}, R}.
+$$
+An element of the set $\mathcal{Z}^{\mathcal{E}, R}$ is 
+some rectangular cylinder set for some base $J$, where
+we have the extra requirement involving the $\mathcal{E}_i$.
+We take $A, B \in \mathcal{Z}^{\mathcal{E}, R}$.
+Then $A \in \mathcal{Z}_J^{\mathcal{E}, R}$ for some base $J \subset I$ which is finite
+and $B \in \mathcal{Z}_{J'}^{\mathcal{E}, R}$ for some other base $J' \subset I$
+which is also finite.
+Furthermore, $A$ is the preimage of 
+some cartesian product $\prod_{j \in J} A_j$
+under the canonical projection 
+$X_J^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J} \Omega_j$. 
+In addition, all the $A_j$ must be elements of $\mathcal{E}_j$. 
+Likewise, $B$ is the preimage of some cartesian product 
+$\prod_{j \in J'} B_j$ under the canonical projection 
+$X_{J'}^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J'} \Omega_j$.
+As before, we also require that the $B_j$ are elements of $\mathcal{E}_j$.
+
+At this point, we've completely unraveled the definition of the statement
+$$
+A, B \in \mathcal{Z}^{\mathcal{E}, R}.
+$$
+Next we explore the definition of the 
+set $A \cap B$. For a point $\omega \in \Omega = \prod_{i \in I} \Omega_i$
+to be both in $A$ and $B$, we see that $\omega(j) \in A_j$ for all $j \in J$
+and $\omega(j) \in B_j$ for all $j \in J'$.
+This is only potentially problematic when $j \in J'':= J \cap J'$.
+Let's write $C_j := A_j \cap B_j$ for all $j \in J''$.
+Next, consider the set 
+$$
+\left( \prod_{j \in J''} C_j \right) \times
+\left( \prod_{j \in J \setminus J''} A_j \right) \times
+\left( \prod_{j \in J' \setminus J''} B_j \right).
+$$
+We see that $A \cap B$ is the preimage 
+of the previous set under the canonical 
+projection 
+$X_{J \cup J'}^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J \cup J'} \Omega_j$
+And since the $\mathcal{E}_j$ are $\pi$-systems, we see that
+$C_j \in \mathcal{E}_j$ for all $j \in J''$.
+Hence, $A \cap B$ is a rectangular cylinder set 
+with base $J \cup J'$, which is slightly surprising, 
+because I would have thought that $A \cap B$ would have base $J \cap J'$. QED.
+
+Consider now the situation of finitely many $\sigma$-finite measure spaces ( $\Omega_i, \mathcal{A}_i, \mu_i$ ), $i=1, \ldots, n$, where $n \in \mathbb{N}$.
+
+Lemma 14.13 Let $A \in \mathcal{A}_1 \otimes \mathcal{A}_2$ and let $f: \Omega_1 \times \Omega_2 \rightarrow \overline{\mathbb{R}}$ be an $\mathcal{A}_1 \otimes \mathcal{A}_2$ measurable map. Then, for all $\tilde{\omega}_1 \in \Omega_1$ and $\tilde{\omega}_2 \in \Omega_2$,
+$$
+\begin{aligned}
+& A_{\tilde{\omega}_1}:=\left\{\omega_2 \in \Omega_2:\left(\tilde{\omega}_1, \omega_2\right) \in A\right\} \in \mathcal{A}_2 \\
+& A_{\tilde{\omega}_2}:=\left\{\omega_1 \in \Omega_1:\left(\omega_1, \tilde{\omega}_2\right) \in A\right\} \in \mathcal{A}_1 \\
+& f_{\tilde{\omega}_1}: \Omega_2 \rightarrow \overline{\mathbb{R}}, \quad \omega_2 \mapsto f\left(\tilde{\omega}_1, \omega_2\right) \quad \text { is } \mathcal{A}_2 \text {-measurable }, \\
+& f_{\tilde{\omega}_2}: \Omega_1 \rightarrow \overline{\mathbb{R}}, \quad \omega_1 \mapsto f\left(\omega_1, \tilde{\omega}_2\right) \quad \text { is } \mathcal{A}_1 \text {-measurable } .
+\end{aligned}
+$$
+
+Proof. Let's start with the first
+statement, showing that a certain cross-section 
+is a measurable set. Fix $\tilde{\omega}_1 \in \Omega_1$.
+If we can exhibit $A_{\tilde{\omega}_1}$ as the preimage 
+of a measurable set under some measurable map with domain 
+$(\Omega_2, \mathcal{A}_2)$, then we 
+are done. Let's guess the map 
+$$\iota: (\Omega_2, \mathcal{A}_2) \to (\Omega_1 \times \Omega_2, \mathcal{A}_1 \otimes \mathcal{A}_2)$$
+given by $\iota(\omega_2) \mapsto (\tilde{\omega}_1, \omega_2)$. 
+Then the preimage of the measurable set $A$ under this map
+is $A_{\tilde{\omega}_1}$. But we still need to check
+that $\iota$ is a measurable map. We can use Corollary 1.82 for that task.
+We let $X_1(\omega_1, \omega_2) = \omega_1$ and $X_2(\omega_1, \omega_2) = \omega_2$, 
+and then we note that $\mathcal{A}_1 \otimes \mathcal{A}_2$ is equal to 
+the smallest sigma algebra such that $X_1$ is $\mathcal{A}_1 \otimes \mathcal{A}_2 - \mathcal{A}_1$
+measurable and $X_2$ is $\mathcal{A}_1 \otimes \mathcal{A}_2 - \mathcal{A}_2$ measurable, 
+a fact that is needed for applying Corollary 1.82. 
+
+Note that $X_1 \circ \iota$ is constantly $\tilde{\omega}_1$, and is hence
+$\mathcal{A}_2 - \mathcal{A}_1$ measurable. Also, 
+$X_2 \circ \iota$ is just the identity map, and is hence
+$\mathcal{A}_2 - \mathcal{A}_2$ measurable. Then 
+Corollary 1.82 shows that $\iota$ is $\mathcal{A}_2 - \mathcal{A}_1 \otimes \mathcal{A}_2$ 
+measurable. This proves the first statement. We leave the other statements 
+for another life.
+
+### $N^2$ copies of scalar Maxwell configurations versus Hermitian Maxwell Configurations
+
+For each $1 \le i \le N$, let 
+$$
+\R^{|E_n^1|} \ni (y_e^{(ii)})_{e \in E_n} = y^{ii} \sim \frac{1}{Z_M(B_n)}
+\exp \left( -\frac{1}{2} \sum_{p \in P(B_n)} (y^{ii}_p)^2 \right)
+dl_{|E_n^1|}(y^{ii})
+$$
+be a random
+scalar Maxwell configuration.
+We instantiate $N^2- N$ other random scalar Maxwell
+configurations notated, for each $1 \le j < k \le N$,
+as
+$z^{(ij)} = (z_e^{(ij)})_{e \in E_n} \in \R^{|E_n^1|}$
+and $w^{(ij)} = (w_e^{(ij)})_{e \in E_n} \in \R^{|E_n^1|}$.
+Here we are using the shorthand $\R^{|E_n^1|} := \R^{|E_n^1|} \times \{0\}^{E_n^0}$
+and 
+$$
+dl_{|E_n^1|}(y^{ii}) = \left( \prod_{e \in E_n^1} dl_1(y^{ii}_e) \right) 
+\otimes \left( \prod_{e \in E_n^0} d\text{Unif}_{\{0\}}(y^{ii}_e) \right),
+$$
+where $dl_1$ denotes 1-dimensional Lebesgue measure.
+Each of the above configurations can be viewed
+as $|E_n^1|$ dimensional Gaussian vectors. 
+
+Assume that the above $N^2$ scalar Maxwell
+configurations are independent of one another.
+As a shorthand, let us write
+$y = (y^{(ii)})_{1 \le i \le N}$, 
+$z = (z^{ij})_{1 \le i < j \le N}$, and 
+$w = (w^{ij})_{1 \le i < j \le N}$. 
+Then by independence we have for 
+the joint variable $(y,z,w) \in \R^{N^2 |E_n^1|}$
+that 
+$$
+\mathbb P((y,z,w) \in A) = \int_A \frac{1}{Z_M(B_n)^{N^2}} \prod_{i=1}^{N^2} 
+\exp \left(-\frac{1}{2} \sum_{p \in P(B_n)} (t^{(i)}_p)^2 \right)
+d l_{N^2|E_n^1|}(t)
+$$
+if $A \in \mathcal{B}_{\R^{N^2|E_n^1|}}$. 
+
+
 ## June 3, 2026
 
 Let $H = (H_e)_{e \in E_n} \in H(N)^{E_n}$ be a random 
@@ -356,6 +536,34 @@ lattice Maxwell theory by the map $\prod_{e \in E_n} \Psi_H$.
 :::
 
 So we are showing that two proability laws are equal to eachother.
+
+Let $X_1, \cdots, X_n$ be $n$ independent real random variables
+with densities $f_1: \R \to \R$, $f_2: \R \to \R$, $\cdots,$ $f_n: \R \to \R$
+repsectively.
+
+Then the joint density function of the joint variable
+$(X_1, \cdots, X_n)$ is $f(x_1, \cdots, x_n) = 
+f_1(x_1)f_2(x_2) \cdots f_n(x_n)$. This means that for any 
+Borel subset $A \in \mathcal{B}_{\R^n}$, we have
+$$
+\mathbb P(X \in A) = \int_A f_1(x_1)f_2(x_2) \cdots f_n(x_n) dx_1 \cdots dx_n.
+$$
+
+Let $X_1: \Omega \to \R^2$ and $X_2: \Omega \to \R^3$
+with densities $f_1: \R^2 \to \R$ and $f_2: \R^3 \to \R$
+respectively.
+If $X_1$ and $X_2$ are independent, then the 
+joint density function of $(X_1,X_2)$ is given 
+by $f(x_1, x_2, x_3, x_4, x_5) = f_1(x_1, x_2) f_2(x_3, x_4, x_5)$.
+How do you know this?
+
+For each $1 \le i \le N^2$, 
+Let $t^{(i)} \in \R^{|E_n|}$ be distributed according 
+to lattice Maxwell theory. 
+Then for each $i$, the probability density function 
+of $t^{(i)}$ is 
+$$\frac{1}{Z_M(B_n)} \exp(-\frac{1}{2} M_n(t^{(i)})).$$
+
 
 
 ## June 2, 2026
