@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yang-Mills Lattice Gauge Theory - William’s Explorations – William's Lattice YM Explorations</title>
+<title>’Tis the Yang-Mills Lattice – 'Tis the YM Lattice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -110,7 +130,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">William’s Lattice YM Explorations</span>
+    <span class="navbar-title">’Tis the YM Lattice</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -209,7 +229,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#june-3-2026" id="toc-june-3-2026" class="nav-link active" data-scroll-target="#june-3-2026">June 3, 2026</a></li>
+  <li><a href="#june-4-2026" id="toc-june-4-2026" class="nav-link active" data-scroll-target="#june-4-2026">June 4, 2026</a>
+  <ul class="collapse">
+  <li><a href="#notes-on-chapter-14-of-klenke" id="toc-notes-on-chapter-14-of-klenke" class="nav-link" data-scroll-target="#notes-on-chapter-14-of-klenke">Notes on Chapter 14 of Klenke</a></li>
+  <li><a href="#n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations" id="toc-n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations" class="nav-link" data-scroll-target="#n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations"><span class="math inline">\(N^2\)</span> copies of scalar Maxwell configurations versus Hermitian Maxwell Configurations</a></li>
+  </ul></li>
+  <li><a href="#june-3-2026" id="toc-june-3-2026" class="nav-link" data-scroll-target="#june-3-2026">June 3, 2026</a></li>
   <li><a href="#june-2-2026" id="toc-june-2-2026" class="nav-link" data-scroll-target="#june-2-2026">June 2, 2026</a></li>
   </ul>
 </nav>
@@ -219,7 +244,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Yang-Mills Lattice Gauge Theory - William’s Explorations</h1>
+<h1 class="title">’Tis the Yang-Mills Lattice</h1>
 </div>
 
 
@@ -244,6 +269,185 @@ window.Quarto = {
 \def\*#1{\mathbf{#1}}
 \]</span></p>
 </div>
+<section id="june-4-2026" class="level2">
+<h2 class="anchored" data-anchor-id="june-4-2026">June 4, 2026</h2>
+<section id="notes-on-chapter-14-of-klenke" class="level3">
+<h3 class="anchored" data-anchor-id="notes-on-chapter-14-of-klenke">Notes on Chapter 14 of Klenke</h3>
+<p>Lemma 14.7 (<span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>) Let <span class="math inline">\(\emptyset \neq J \subset I\)</span>. Then <span class="math inline">\(X_J^I\)</span> is measurable with respect to <span class="math inline">\(\mathcal{A}_I-\mathcal{A}_J\)</span>.</p>
+<p>Proof. For any <span class="math inline">\(j \in J\)</span>, <span class="math inline">\(X_j\)</span> is measurable with respect to <span class="math inline">\(\mathcal{A} - \mathcal{A}_j\)</span> by definition of the product <span class="math inline">\(\sigma\)</span> algebra, Definition 14.4. But <span class="math inline">\(X_j = X_j^J \circ X_J^I\)</span> as functions, so therefore we can replace <span class="math inline">\(X_j\)</span> by <span class="math inline">\(X_j^J \circ X_J^I\)</span> in the previous sentence. To conclude measurability of <span class="math inline">\(X_J^I\)</span>, we need to apply the following result of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>:</p>
+<p>Corollary 1.82 (Measurability of composed maps) Let <span class="math inline">\(I\)</span> be a nonempty index set and let <span class="math inline">\((\Omega, \mathcal{A}),\left(\Omega^{\prime}, \mathcal{A}^{\prime}\right)\)</span> and <span class="math inline">\(\left(\Omega_i, \mathcal{A}_i\right)\)</span> be measurable spaces for any <span class="math inline">\(i \in I\)</span>. Further, let <span class="math inline">\(\left(X_i: i \in I\right)\)</span> be a family of measurable maps <span class="math inline">\(X_i: \Omega^{\prime} \rightarrow \Omega_i\)</span> with <span class="math inline">\(\mathcal{A}^{\prime}=\sigma\left(X_i: i \in I \right)\)</span>. Then the following holds: A map <span class="math inline">\(Y: \Omega \rightarrow \Omega^{\prime}\)</span> is <span class="math inline">\(\mathcal{A}-\mathcal{A}^{\prime}\)</span>-measurable if and only if <span class="math inline">\(X_i \circ Y\)</span> is <span class="math inline">\(\mathcal{A}-\mathcal{A}_i\)</span>-measurable for all <span class="math inline">\(i \in I\)</span>.</p>
+<p>We want to show that <span class="math inline">\(X_J^I\)</span> is measurable with respect to <span class="math inline">\(\mathcal{A}_I-\mathcal{A}_J\)</span>. Does <span class="math inline">\(\mathcal{A}'\)</span> in the corollary correspond to <span class="math inline">\(\mathcal{A}_J\)</span>? For that we would need that <span class="math inline">\(\mathcal{A}_J = \sigma(X_j^J: j \in J)\)</span>. Luckily this is true by inspection of Definition 14.4. It is easy to see that the conclusion of Corollary 1.82 corresponds to the conlusion we wanted to obtain. QED.</p>
+<p>Definition 14.9 (Cylinder sets <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>) For any <span class="math inline">\(i \in I\)</span>, let <span class="math inline">\(\mathcal{E}_i \subset \mathcal{A}_i\)</span> be a subclass of the class of measurable sets.</p>
+<p>For any <span class="math inline">\(A \in \mathcal{A}_J, X_J^{-1}(A) \subset \Omega\)</span> is called a cylinder set with base <span class="math inline">\(J\)</span>. The set of such cylinder sets is denoted by <span class="math inline">\(\mathcal{Z}_J\)</span>. In particular, if <span class="math inline">\(A=\prod_{j \in J} A_j\)</span> for certain <span class="math inline">\(A_j \in \mathcal{A}_j\)</span>, then <span class="math inline">\(X_J^{-1}(A)\)</span> is called a rectangular cylinder with base <span class="math inline">\(J\)</span>. The set of such rectangular cylinders will be denoted by <span class="math inline">\(\mathcal{Z}_J^R\)</span>. The set of such rectangular cylinders for which in addition <span class="math inline">\(A_j \in \mathcal{E}_j\)</span> for all <span class="math inline">\(j \in J\)</span> holds will be denoted by <span class="math inline">\(\mathcal{Z}_J^{\mathcal{E}, R}\)</span>.</p>
+<p>Write <span class="math display">\[
+\begin{equation*}
+\mathcal{Z}=\bigcup_{J \subset I \text { finite }} \mathcal{Z}_J, \tag{14.3}
+\end{equation*}
+\]</span> and similarly define <span class="math inline">\(\mathcal{Z}^R\)</span> and <span class="math inline">\(\mathcal{Z}^{\mathcal{E}, R}\)</span>. Further, define <span class="math display">\[
+\mathcal{Z}_*^R=\bigcup_{N=1}^{\infty}\left\{\bigcup_{n=1}^N A_n: A_1, \ldots, A_N \in \mathcal{Z}^R\right\}
+\]</span> and similarly <span class="math inline">\(\mathcal{Z}_*^{\mathcal{E}, R}\)</span>.</p>
+<p>Remark 14.10 Every <span class="math inline">\(\mathcal{Z}_J\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra, and <span class="math inline">\(\mathcal{Z}\)</span> and <span class="math inline">\(\mathcal{Z}_*^R\)</span> are algebras. Furthermore, <span class="math inline">\(\bigotimes_{i \in I} \mathcal{A}_i=\sigma(\mathcal{Z})\)</span>.</p>
+<p>Lemma 14.11. If every <span class="math inline">\(\mathcal{E}_i\)</span> is a <span class="math inline">\(\pi\)</span>-system, then <span class="math inline">\(\mathcal{Z}^{\mathcal{E}, R}\)</span> is a <span class="math inline">\(\pi\)</span>-system.</p>
+<p>Proof. First we recall the definition of a <span class="math inline">\(\pi\)</span>-system. It is a collection of sets <span class="math inline">\(\mathcal{A}\)</span> that is intersection closed, meaning that <span class="math inline">\(A \cap B \in \mathcal{A}\)</span> whenever <span class="math inline">\(A, B \in \mathcal{A}\)</span>. Next, we write down the definition of <span class="math inline">\(\mathcal{Z}^{\mathcal{E}, R}:\)</span> <span class="math display">\[
+\mathcal{Z}^{\mathcal{E}, R} = \bigcup_{J \subset I \text{ finite}}
+\mathcal{Z}_J^{\mathcal{E}, R}.
+\]</span> An element of the set <span class="math inline">\(\mathcal{Z}^{\mathcal{E}, R}\)</span> is some rectangular cylinder set for some base <span class="math inline">\(J\)</span>, where we have the extra requirement involving the <span class="math inline">\(\mathcal{E}_i\)</span>. We take <span class="math inline">\(A, B \in \mathcal{Z}^{\mathcal{E}, R}\)</span>. Then <span class="math inline">\(A \in \mathcal{Z}_J^{\mathcal{E}, R}\)</span> for some base <span class="math inline">\(J \subset I\)</span> which is finite and <span class="math inline">\(B \in \mathcal{Z}_{J'}^{\mathcal{E}, R}\)</span> for some other base <span class="math inline">\(J' \subset I\)</span> which is also finite. Furthermore, <span class="math inline">\(A\)</span> is the preimage of some cartesian product <span class="math inline">\(\prod_{j \in J} A_j\)</span> under the canonical projection <span class="math inline">\(X_J^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J} \Omega_j\)</span>. In addition, all the <span class="math inline">\(A_j\)</span> must be elements of <span class="math inline">\(\mathcal{E}_j\)</span>. Likewise, <span class="math inline">\(B\)</span> is the preimage of some cartesian product <span class="math inline">\(\prod_{j \in J'} B_j\)</span> under the canonical projection <span class="math inline">\(X_{J'}^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J'} \Omega_j\)</span>. As before, we also require that the <span class="math inline">\(B_j\)</span> are elements of <span class="math inline">\(\mathcal{E}_j\)</span>.</p>
+<p>At this point, we’ve completely unraveled the definition of the statement <span class="math display">\[
+A, B \in \mathcal{Z}^{\mathcal{E}, R}.
+\]</span> Next we explore the definition of the set <span class="math inline">\(A \cap B\)</span>. For a point <span class="math inline">\(\omega \in \Omega = \prod_{i \in I} \Omega_i\)</span> to be both in <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we see that <span class="math inline">\(\omega(j) \in A_j\)</span> for all <span class="math inline">\(j \in J\)</span> and <span class="math inline">\(\omega(j) \in B_j\)</span> for all <span class="math inline">\(j \in J'\)</span>. This is only potentially problematic when <span class="math inline">\(j \in J'':= J \cap J'\)</span>. Let’s write <span class="math inline">\(C_j := A_j \cap B_j\)</span> for all <span class="math inline">\(j \in J''\)</span>. Next, consider the set <span class="math display">\[
+\left( \prod_{j \in J''} C_j \right) \times
+\left( \prod_{j \in J \setminus J''} A_j \right) \times
+\left( \prod_{j \in J' \setminus J''} B_j \right).
+\]</span> We see that <span class="math inline">\(A \cap B\)</span> is the preimage of the previous set under the canonical projection <span class="math inline">\(X_{J \cup J'}^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J \cup J'} \Omega_j\)</span> And since the <span class="math inline">\(\mathcal{E}_j\)</span> are <span class="math inline">\(\pi\)</span>-systems, we see that <span class="math inline">\(C_j \in \mathcal{E}_j\)</span> for all <span class="math inline">\(j \in J''\)</span>. Hence, <span class="math inline">\(A \cap B\)</span> is a rectangular cylinder set with base <span class="math inline">\(J \cup J'\)</span>, which is slightly surprising, because I would have thought that <span class="math inline">\(A \cap B\)</span> would have base <span class="math inline">\(J \cap J'\)</span>. QED.</p>
+<p>Consider now the situation of finitely many <span class="math inline">\(\sigma\)</span>-finite measure spaces ( <span class="math inline">\(\Omega_i, \mathcal{A}_i, \mu_i\)</span> ), <span class="math inline">\(i=1, \ldots, n\)</span>, where <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+<p>Lemma 14.13 Let <span class="math inline">\(A \in \mathcal{A}_1 \otimes \mathcal{A}_2\)</span> and let <span class="math inline">\(f: \Omega_1 \times \Omega_2 \rightarrow \overline{\mathbb{R}}\)</span> be an <span class="math inline">\(\mathcal{A}_1 \otimes \mathcal{A}_2\)</span> measurable map. Then, for all <span class="math inline">\(\tilde{\omega}_1 \in \Omega_1\)</span> and <span class="math inline">\(\tilde{\omega}_2 \in \Omega_2\)</span>, <span class="math display">\[
+\begin{aligned}
+&amp; A_{\tilde{\omega}_1}:=\left\{\omega_2 \in \Omega_2:\left(\tilde{\omega}_1, \omega_2\right) \in A\right\} \in \mathcal{A}_2 \\
+&amp; A_{\tilde{\omega}_2}:=\left\{\omega_1 \in \Omega_1:\left(\omega_1, \tilde{\omega}_2\right) \in A\right\} \in \mathcal{A}_1 \\
+&amp; f_{\tilde{\omega}_1}: \Omega_2 \rightarrow \overline{\mathbb{R}}, \quad \omega_2 \mapsto f\left(\tilde{\omega}_1, \omega_2\right) \quad \text { is } \mathcal{A}_2 \text {-measurable }, \\
+&amp; f_{\tilde{\omega}_2}: \Omega_1 \rightarrow \overline{\mathbb{R}}, \quad \omega_1 \mapsto f\left(\omega_1, \tilde{\omega}_2\right) \quad \text { is } \mathcal{A}_1 \text {-measurable } .
+\end{aligned}
+\]</span></p>
+<p>Proof. Let’s start with the first statement, showing that a certain cross-section is a measurable set. Fix <span class="math inline">\(\tilde{\omega}_1 \in \Omega_1\)</span>. If we can exhibit <span class="math inline">\(A_{\tilde{\omega}_1}\)</span> as the preimage of a measurable set under some measurable map with domain <span class="math inline">\((\Omega_2, \mathcal{A}_2)\)</span>, then we are done. Let’s guess the map <span class="math display">\[\iota: (\Omega_2, \mathcal{A}_2) \to (\Omega_1 \times \Omega_2, \mathcal{A}_1 \otimes \mathcal{A}_2)\]</span> given by <span class="math inline">\(\iota(\omega_2) \mapsto (\tilde{\omega}_1, \omega_2)\)</span>. Then the preimage of the measurable set <span class="math inline">\(A\)</span> under this map is <span class="math inline">\(A_{\tilde{\omega}_1}\)</span>. But we still need to check that <span class="math inline">\(\iota\)</span> is a measurable map. We can use Corollary 1.82 for that task. We let <span class="math inline">\(X_1(\omega_1, \omega_2) = \omega_1\)</span> and <span class="math inline">\(X_2(\omega_1, \omega_2) = \omega_2\)</span>, and then we note that <span class="math inline">\(\mathcal{A}_1 \otimes \mathcal{A}_2\)</span> is equal to the smallest sigma algebra such that <span class="math inline">\(X_1\)</span> is <span class="math inline">\(\mathcal{A}_1 \otimes \mathcal{A}_2 - \mathcal{A}_1\)</span> measurable and <span class="math inline">\(X_2\)</span> is <span class="math inline">\(\mathcal{A}_1 \otimes \mathcal{A}_2 - \mathcal{A}_2\)</span> measurable, a fact that is needed for applying Corollary 1.82.</p>
+<p>Note that <span class="math inline">\(X_1 \circ \iota\)</span> is constantly <span class="math inline">\(\tilde{\omega}_1\)</span>, and is hence <span class="math inline">\(\mathcal{A}_2 - \mathcal{A}_1\)</span> measurable. Also, <span class="math inline">\(X_2 \circ \iota\)</span> is just the identity map, and is hence <span class="math inline">\(\mathcal{A}_2 - \mathcal{A}_2\)</span> measurable. Then Corollary 1.82 shows that <span class="math inline">\(\iota\)</span> is <span class="math inline">\(\mathcal{A}_2 - \mathcal{A}_1 \otimes \mathcal{A}_2\)</span> measurable. This proves the first statement. We leave the other statements for another life.</p>
+</section>
+<section id="n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations" class="level3">
+<h3 class="anchored" data-anchor-id="n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations"><span class="math inline">\(N^2\)</span> copies of scalar Maxwell configurations versus Hermitian Maxwell Configurations</h3>
+<p>For each <span class="math inline">\(1 \le i \le N\)</span>, let <span class="math display">\[
+\R^{|E_n^1|} \ni (y_e^{(ii)})_{e \in E_n} = y^{ii} \sim \frac{1}{Z_M(B_n)}
+\exp \left( -\frac{1}{2} \sum_{p \in P(B_n)} (y^{ii}_p)^2 \right)
+dl_{|E_n^1|}(y^{ii})
+\]</span> be a random scalar Maxwell configuration. We instantiate <span class="math inline">\(N^2- N\)</span> other random scalar Maxwell configurations notated, for each <span class="math inline">\(1 \le j &lt; k \le N\)</span>, as <span class="math inline">\(z^{(ij)} = (z_e^{(ij)})_{e \in E_n} \in \R^{|E_n^1|}\)</span> and <span class="math inline">\(w^{(ij)} = (w_e^{(ij)})_{e \in E_n} \in \R^{|E_n^1|}\)</span>. Here we are using the shorthand <span class="math inline">\(\R^{|E_n^1|} := \R^{|E_n^1|} \times \{0\}^{E_n^0}\)</span> and <span class="math display">\[
+dl_{|E_n^1|}(y^{ii}) = \left( \prod_{e \in E_n^1} dl_1(y^{ii}_e) \right)
+\otimes \left( \prod_{e \in E_n^0} d\text{Unif}_{\{0\}}(y^{ii}_e) \right),
+\]</span> where <span class="math inline">\(dl_1\)</span> denotes 1-dimensional Lebesgue measure. Each of the above configurations can be viewed as <span class="math inline">\(|E_n^1|\)</span> dimensional Gaussian vectors.</p>
+<p>Assume that the above <span class="math inline">\(N^2\)</span> scalar Maxwell configurations are independent of one another. As a shorthand, let us write <span class="math inline">\(y = (y^{(ii)})_{1 \le i \le N}\)</span>, <span class="math inline">\(z = (z^{ij})_{1 \le i &lt; j \le N}\)</span>, and <span class="math inline">\(w = (w^{ij})_{1 \le i &lt; j \le N}\)</span>. Then by independence we have for the joint variable <span class="math inline">\((y,z,w) \in \R^{N^2 |E_n^1|}\)</span> that <span class="math display">\[\begin{equation}
+\begin{gathered}
+\mathbb P((y,z,w) \in A) =
+\int_A \frac{1}{Z_M(B_n)^{N^2}}
+\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) d l_{|E_n^1|}(y^{ii})  \times \\ % end of first group
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) d l_{|E_n^1|}(z^{ij}) \times \\ % end of second group
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) d l_{|E_n^1|}(w^{ij}),             % end of third group
+\end{gathered}
+\end{equation}\]</span> if <span class="math inline">\(A \in \mathcal{B}_{\R^{N^2|E_n^1|}}\)</span>.</p>
+<p>Let <span class="math inline">\(H = (H_e)_{e \in E_n} \in H(N)^{E_n^1}\)</span> (where <span class="math inline">\(H(N)^{E_n^1}\)</span> is shorthand for <span class="math inline">\(H(N)^{E_n^1} \times \{0\}^{E_n^0}\)</span>) be a random Maxwell Hermitian configuration distributed according to the law <span class="math display">\[
+\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^1}(H)
+\]</span> where <span class="math display">\[
+d\lambda_{E_n^1}(H) = \bigotimes_{e \in E_n^0} \text{Unif}_{\{0\}}
+\otimes \bigotimes_{e \in E_n^1} d \lambda(H),
+\]</span> where <span class="math inline">\(d\lambda(H)\)</span> denotes Lebesgue measure on <span class="math inline">\(H(N)\)</span>.</p>
+<p>Lemma. With <span class="math inline">\((y,z,w)\)</span> and <span class="math inline">\(H\)</span> as above, we have <span class="math display">\[
+\mathbb P ((y,z,w) \in A) = \mathbb P(H \in \Psi_H^{|E_n^1|}(A))
+\]</span> for all <span class="math inline">\(A \in \mathcal{B}_{\R^{N^2|E_n^1|}}\)</span>.</p>
+<section id="proof-attempt-1." class="level4">
+<h4 class="anchored" data-anchor-id="proof-attempt-1.">Proof Attempt 1.</h4>
+<p>Proof. We begin with <span class="math display">\[\begin{equation}
+\begin{gathered}
+\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{\Psi_H^{|E_n^1|} (A)}
+d\lambda_{E_n^1}(H) \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4} \rVert^2 \right).
+\end{gathered}
+\end{equation}\]</span> Then we make the change of variable <span class="math display">\[
+H_e = \Psi_H(y_e, z_e, w_e)
+\]</span> for each <span class="math inline">\(e \in E_n^1\)</span>. Note that <span class="math display">\[\begin{equation}
+\begin{gathered}
+\Psi_H(y_p, z_p, w_p) = \Psi_H \left( y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4} \right)\\
+= H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4} = H_p.
+\end{gathered}
+\end{equation}\]</span> by linearity of <span class="math inline">\(\Psi_H\)</span>. Then with the change of variable we obtain <span class="math display">\[\begin{equation}
+\begin{gathered}
+\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{A}
+dl_{N^2|E_n^1|}(y,z,w) \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 \right).
+\end{gathered}
+\end{equation}\]</span> Then since <span class="math inline">\(\Psi_H\)</span> is an isometry between <span class="math inline">\(\R^{N^2}\)</span> equipped with the Euclidean norm and <span class="math inline">\(H(N)\)</span> equipped with the Hilbert Schmidt norm, we have <span class="math display">\[\begin{equation}
+\begin{gathered}
+\lVert \Psi_H(y_p,z_p,w_p) \rVert^2 = \lVert (y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4}) \rVert^2 \\
+= \sum_{i=1}^N (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 +
+\sum_{1 \le i &lt; j \le N} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 \\
++ \sum_{1 \le i &lt; j \le N} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2.
+\end{gathered}
+\end{equation}\]</span> Then using Fubini’s theorem for finite sums to exchange the sum over plaquettes <span class="math inline">\(\sum_{p \in P(B_n)}\)</span> with the sum over indices, such as <span class="math inline">\(\sum_{1 \le i \le N}\)</span>, we obtain <span class="math display">\[\begin{equation}
+\begin{gathered}
+\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 =
+\sum_{i=1}^N \sum_{p \in P(B_n)} (y_{p}^{ii})^2 + \\
+\sum_{1 \le i &lt; j \le N} \sum_{p \in P(B_n)} (z_p^{ij})^2 +\\
+\sum_{1 \le i &lt; j \le N} \sum_{p \in P(B_n)} (w_p^{ij})^2.
+\end{gathered}
+\end{equation}\]</span> Then we notice that <span class="math display">\[\begin{equation}
+\begin{gathered}
+\exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 \right) = \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).
+\end{gathered}
+\end{equation}\]</span> As a result, <span class="math display">\[\begin{equation}
+\begin{gathered}
+\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{A}
+dl_{N^2|E_n^1|}(y,z,w) \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right),
+\end{gathered}
+\end{equation}\]</span> where the last expression is equal to <span class="math inline">\(\mathbb P((y,z,w) \in A)\)</span> because our proof simultaneously showed that <span class="math display">\[\begin{equation}
+\begin{gathered}
+Z_H(B_n) = \int_{H(N)^{E_n^1}} d\lambda_{E_n^1}(H) \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right)\\
+= \int_{\R^{N^2|E_n^1|}} dl_{N^2|E_n^1|}(t^1, \cdots, t^{N^2})
+\prod_{i=1}^{N^2}
+\exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (t^i_p)^2 \right)\\
+= \prod_{i=1}^{N^2} \int_{\R^{|E_n^1|}} dl_{|E_n^1|}(t^i) \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (t^i_p)^2 \right)\\
+= Z_M(B_n)^{N^2}.
+\end{gathered}
+\end{equation}\]</span> This concludes the proof. QED.</p>
+</section>
+<section id="proof-attempt-2." class="level4">
+<h4 class="anchored" data-anchor-id="proof-attempt-2.">Proof attempt 2.</h4>
+<p>Proof. We begin with <span class="math display">\[\begin{equation}
+\begin{gathered}
+\mathbb P((y,z,w) \in A) =
+\frac{1}{Z_M(B_n)^{N^2}}
+\int_A
+d l_{|E_n^1|N^2}(y,z,w)
+\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right)  \times \\ % end of first group
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\ % end of second group
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).             % end of third group
+\end{gathered}
+\end{equation}\]</span> Then we make the change of variable <span class="math display">\[(\Psi_H^{-1}(H_e))_{e \in E_n^1} = \left( \Psi_H^{|E_n^1|} \right)^{-1} (H) = (y,z,w),\]</span> which means that for each <span class="math inline">\(e \in E_n^1\)</span>, we have <span class="math display">\[
+(H_e)^{jk} = (\Psi_H(y_e, z_e, w_e))^{jk} = \begin{cases}y_e^{j j} &amp; \text { if } j=k, \\
+\left(z_e^{j k}+\mathrm{i} w_e^{j k}\right) / \sqrt{2} &amp; \text { if } j&lt;k, \\
+\left(z_e^{k j}-\mathrm{i} w_e^{k j}\right) / \sqrt{2} &amp; \text { if } j&gt;k,\end{cases}
+\]</span> and for <span class="math inline">\(e \in E_n^0\)</span> we have <span class="math inline">\(H_e = 0 \in H(N)\)</span>. Then <span class="math display">\[\begin{equation}
+\begin{gathered}
+\mathbb P((y,z,w) \in A) =
+\frac{1}{Z_M(B_n)^{N^2}}
+\int_{\Psi_H^{|E_n^1|}(A)}
+d l_{|E_n^1|N^2}(y,z,w)
+\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right)  \times \\ % end of first group
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\ % end of second group
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).             % end of third group
+\end{gathered}
+\end{equation}\]</span></p>
+</section>
+</section>
+</section>
 <section id="june-3-2026" class="level2">
 <h2 class="anchored" data-anchor-id="june-3-2026">June 3, 2026</h2>
 <p>Let <span class="math inline">\(H = (H_e)_{e \in E_n} \in H(N)^{E_n}\)</span> be a random Hermitian configuration distributed according to the law <span class="math display">\[
@@ -351,6 +555,80 @@ d\lambda_{E_n^0}(H) = \prod_{e \in E_n^1} d\lambda(H_e) \\
 \sum_{p \in P(B_n)} (w_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_1(w_e^{ij}) \\
 \end{gathered}
 \end{equation}\]</span></p>
+<p>I want to see that the joint law of <span class="math inline">\(N^2\)</span> independent lattice Maxwell configurations is the same as the law of a Hermitian configuration distributed according to the law <span class="math display">\[
+\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
+\]</span> I suppose that <span class="math inline">\(N^2\)</span> indepdendent lattice Maxwell configurations would be in <span class="math inline">\((\R^{N^2})^{E_n^1}\)</span>, where it is <span class="math inline">\(E_n^1\)</span> because the <span class="math inline">\(E_n^0\)</span> edges are deterministically set to 0.</p>
+<p>For each <span class="math inline">\(1 \le i \le N\)</span>, let <span class="math inline">\((y_e^{ii})_{e \in E_n}\)</span> be a random lattice Maxwell configuration, taking values in <span class="math inline">\(\R^{E_n^1}\)</span>. And for each <span class="math inline">\(1 \le i &lt; j \le N\)</span>, let <span class="math inline">\((z_e^{ii})_{e \in E_n}\)</span> and <span class="math inline">\((w_e^{ii})_{e \in E_n}\)</span> be random lattice Maxwell configurations, also taking values in <span class="math inline">\(\R^{E_n^1}\)</span>.</p>
+<p>What is the definition of the joint law of these random variables? It is a probability measure <span class="math inline">\(P\)</span> on <span class="math inline">\((\R^{N^2})^{E_n}\)</span> satisfying <span class="math display">\[
+\mathbb P((y^{ii}, z^{ij}, w^{ij}) \in A) = P(A).
+\]</span> for any Borel subset <span class="math inline">\(A\)</span> in the Borel sigma algebra on <span class="math inline">\((\R^{N^2})^{E_n}\)</span>.</p>
+<p><span class="math inline">\(\Psi_H: \R^{N^2} \to H(N)\)</span> is an isometry, so it is also bi-continuous. Therefore <span class="math inline">\(\R^{N^2}\)</span> and <span class="math inline">\(H(N)\)</span> are homeomorphic, so their Borel Sigma algebras should be related to each other. And if we write down the product map <span class="math inline">\(\prod_{e \in E_n} \Psi_H\)</span>, then we have a homeomorphism between <span class="math inline">\(H(N)^{E_n}\)</span> and <span class="math inline">\((\R^{N^2})^{E_n}\)</span>.</p>
+<div id="lem-thm1.78Klenke" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (Theorem 1.78 in <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>)</strong></span> Let <span class="math inline">\((\Omega', \mathcal{A}')\)</span> be a measurable space and let <span class="math inline">\(\Omega\)</span> be a non-empty set. Let <span class="math inline">\(X: \Omega \to \Omega'\)</span> be a map. The preimage <span class="math display">\[
+X^{-1}(\mathcal{A}') := \{ X^{-1}(A') : A' \in \mathcal{A}' \}
+\]</span> is the smallest <span class="math inline">\(\sigma\)</span>-algebra with respect to which <span class="math inline">\(X\)</span> is measurable. We say that <span class="math inline">\(\sigma(X):= X^{-1}(\mathcal{A}')\)</span> is the <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\(\Omega\)</span> that is generated by <span class="math inline">\(X\)</span>.</p>
+</div>
+<p>Let us identify <span class="math inline">\((\R^{N^2})^{E_n}\)</span> with <span class="math inline">\(\R^{N^2|E_n|}\)</span>. Let us also identify <span class="math inline">\(H(N)^{E_n}\)</span> with <span class="math inline">\(H(N)^{|E_n|}\)</span>. Note that <span class="math display">\[(H(N)^{|E_n|}, \mathcal{B}_{H(N)^{|E_n|}})\]</span> is a measurable space, where <span class="math inline">\(\mathcal{B}_{H(N)^{|E_n|}}\)</span> denotes the Borel sigma algebra on <span class="math inline">\(H(N)^{|E_n|}\)</span>. If <span class="math inline">\(\mathcal{B}_{\R^{N^2|E_n^1}}\)</span> denotes the Borel sigma algebra on <span class="math inline">\(\R^{N^2|E_n^1|}\)</span>, does it follow that <span class="math display">\[
+\sigma(\prod_{e \in E_n} \Psi_H) = \mathcal{B}_{\R^{N^2|E_n^1}}?
+\]</span></p>
+<p>Or an easier question is as follows. Consider the measurable space <span class="math inline">\((H(N), \mathcal{B}_{H(N)})\)</span>. Does it follow that <span class="math display">\[
+\sigma(\Psi_H) = \mathcal{B}_{\R^{N^2}}?
+\]</span> Note that <span class="math inline">\(\mathcal{B}_{\R^{N^2}}\)</span> is the intersection of all sigma algebras which contain the standard topology on <span class="math inline">\(\R^{N^2}\)</span> as a subcollection. Meanwhile, the left hand side <span class="math inline">\(\sigma(\Psi_H)\)</span> is the intersection of all sigma algebras <span class="math inline">\(\sigma_*\)</span> with the proporty that <span class="math inline">\(\Psi_H: (\R^{N^2}, \sigma_*) \to (H(N), \mathcal{B}_{H(N)})\)</span> is measurable.</p>
+<p>There is likely an easy direction based on the above two sentences. Here is a question. If <span class="math inline">\(\sigma_*\)</span> is a sigma algebra on <span class="math inline">\(\R^{N^2}\)</span> which contains the standard topology <span class="math inline">\(\tau_{\R^{N^2}}\)</span> as a subcollection, does it follow that <span class="math inline">\(\Psi_H: (\R^{N^2}, \sigma_*) \to (H(N), \mathcal{B}_{H(N)})\)</span> is measurable? If the answer is yes, then it would mean <span class="math inline">\(\mathcal{B}_{\R^{N^2}} \supset \sigma(\Psi_H)\)</span> because then <span class="math inline">\(\mathcal{B}_{\R^{N^2}}\)</span> would be an intersection over a subfamily of the family which <span class="math inline">\(\sigma(\Psi_H)\)</span> is an intersection of. And the answer is indeed yes because it is enough for measurability of the map <span class="math inline">\(\Psi_H: (\R^{N^2}, \sigma_*) \to (H(N), \mathcal{B}_{H(N)})\)</span> to check that <span class="math inline">\(\Psi_H^{-1}(B) \in \sigma_*\)</span> for every open set <span class="math inline">\(B \in \mathcal{B}_{H(N)}\)</span>, which does hold by continuity of the map <span class="math inline">\(\Psi_H\)</span>. Thus, <span class="math display">\[
+\mathcal{B}_{\R^{N^2}} \supset \sigma(\Psi_H).
+\]</span></p>
+<p>But <span class="math inline">\(\Psi_H^{-1}(\tau_{H(N)}) = \tau_{\R^{N^2}}\)</span> because <span class="math inline">\(\Psi_H\)</span> is a homeomorphism, so every sigma algebra <span class="math inline">\(\sigma_*\)</span> with the property that <span class="math inline">\(\Psi_H: (\R^{N^2}, \sigma_*) \to (H(N), \mathcal{B}_{H(N)})\)</span> is measurable must contain <span class="math inline">\(\tau_{\R^{N^2}}\)</span> as a subcollection. Hence, <span class="math display">\[
+\mathcal{B}_{\R^{N^2}} \subset \sigma(\Psi_H).
+\]</span></p>
+<p>Let <span class="math inline">\(H \in H(N)^{|E_n|}\)</span> be a random Hermitian configuration drawn according to the measure <span class="math display">\[
+\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
+\]</span> This means that <span class="math display">\[
+\mathbb P(H \in A) = \int_A \frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
+\]</span> for any Borel subset <span class="math inline">\(A \in \mathcal{B}_{H(N)^{|E_n^1|}}\)</span>.</p>
+<p>Note that <span class="math display">\[
+\prod_{e \in E_n} \Psi_H: (\R^{N^2})^{|E_n|} \to H(N)^{|E_n|}.
+\]</span> See <a href="https://planetmath.org/productmap">Product Map</a>. Let’s just assume without proof that <span class="math display">\[
+\sigma(\prod_{e \in E_n} \Psi_H) = \mathcal{B}_{\R^{N^2|E_n|}}
+\]</span></p>
+<p>We claim based on the above computations that</p>
+<p><span class="math display">\[\begin{equation}
+\begin{gathered}
+\int_A \frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H) = \\
+\frac{1}{Z_H}
+\int_{(\prod_{e \in E_n} \Psi_H)^{-1}(A)}
+\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
+\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_{N^2}(y_e, z_e, w_e).
+\end{gathered}
+\end{equation}\]</span></p>
+<p>But now I think we can’t proceed to break up the integral into products, so we might have to resort to cylinder sets. But why do we want to break up the integral into products anyways? I want to obtain something like <span class="math display">\[
+\mathbb P(H \in A) = \mathbb P((y,z,w) \in (\prod_{e \in E_n} \Psi_H)^{-1}(A)).
+\]</span> for all <span class="math inline">\(A\)</span> Borel subsets of <span class="math inline">\(H(N)^{E_n}\)</span>, where <span class="math inline">\((y, z, w)\)</span> are <span class="math inline">\(N^2\)</span> lattice Maxwell fields. This would show that the law of <span class="math inline">\(N^2\)</span> copies of lattice Maxwell fields is the pushforward or pullback (which one?) of the law of Hermitian lattice theory.</p>
+<p>If pushforward, then we’d have <span class="math display">\[
+(y,z,w)^* \mathbb P = (\prod_{e \in E_n} \Psi_H)^* (H^* \mathbb P).
+\]</span> That would mean <span class="math display">\[
+\mathbb P ((y,z,w) \in A) = (H^* \mathbb P)((\prod_{e \in E_n} \Psi_H)^{-1}(A)) = \mathbb P(H \in (\prod_{e \in E_n} \Psi_H)^{-1}(A)),
+\]</span> which is not what we want. If pullback, then we’d have <span class="math display">\[
+\mathbb P ((y,z,w) \in A) = (H^* \mathbb P)(\prod_{e \in E_n} \Psi_H(A)) = \mathbb P(H \in \prod_{e \in E_n} \Psi_H(A)),
+\]</span> which is better.</p>
+<div id="lem-HermitianMaxwellComparison" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2</strong></span> The joint law <span class="math inline">\(((t^{(i)})_{i=1}^{N^2})^* \mathbb P\)</span> of <span class="math inline">\(N^2\)</span> indepedent lattice Maxwell scalar configurations on <span class="math inline">\((\R^{N^2})^{|E_n|}\)</span> is equal to the pullback of the law <span class="math inline">\(H^* \mathbb P\)</span> of Hermitian lattice Maxwell theory by the map <span class="math inline">\(\prod_{e \in E_n} \Psi_H\)</span>.</p>
+</div>
+<p>So we are showing that two proability laws are equal to eachother.</p>
+<p>Let <span class="math inline">\(X_1, \cdots, X_n\)</span> be <span class="math inline">\(n\)</span> independent real random variables with densities <span class="math inline">\(f_1: \R \to \R\)</span>, <span class="math inline">\(f_2: \R \to \R\)</span>, <span class="math inline">\(\cdots,\)</span> <span class="math inline">\(f_n: \R \to \R\)</span> repsectively.</p>
+<p>Then the joint density function of the joint variable <span class="math inline">\((X_1, \cdots, X_n)\)</span> is <span class="math inline">\(f(x_1, \cdots, x_n) =
+f_1(x_1)f_2(x_2) \cdots f_n(x_n)\)</span>. This means that for any Borel subset <span class="math inline">\(A \in \mathcal{B}_{\R^n}\)</span>, we have <span class="math display">\[
+\mathbb P(X \in A) = \int_A f_1(x_1)f_2(x_2) \cdots f_n(x_n) dx_1 \cdots dx_n.
+\]</span></p>
+<p>Let <span class="math inline">\(X_1: \Omega \to \R^2\)</span> and <span class="math inline">\(X_2: \Omega \to \R^3\)</span> with densities <span class="math inline">\(f_1: \R^2 \to \R\)</span> and <span class="math inline">\(f_2: \R^3 \to \R\)</span> respectively. If <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent, then the joint density function of <span class="math inline">\((X_1,X_2)\)</span> is given by <span class="math inline">\(f(x_1, x_2, x_3, x_4, x_5) = f_1(x_1, x_2) f_2(x_3, x_4, x_5)\)</span>. How do you know this?</p>
+<p>For each <span class="math inline">\(1 \le i \le N^2\)</span>, Let <span class="math inline">\(t^{(i)} \in \R^{|E_n|}\)</span> be distributed according to lattice Maxwell theory. Then for each <span class="math inline">\(i\)</span>, the probability density function of <span class="math inline">\(t^{(i)}\)</span> is <span class="math display">\[\frac{1}{Z_M(B_n)} \exp(-\frac{1}{2} M_n(t^{(i)})).\]</span></p>
 </section>
 <section id="june-2-2026" class="level2">
 <h2 class="anchored" data-anchor-id="june-2-2026">June 2, 2026</h2>
@@ -374,9 +652,14 @@ y_{11} &amp; &amp; &amp; \frac{z_{jk} + iw_{jk}}{\sqrt{2}} \\
 <p>Based on the definition of Lebesgue measure on <span class="math inline">\(H(N)\)</span>, one sees that the law of <span class="math inline">\(H(t^{(jk)})\)</span> is just the joint law of the <span class="math inline">\(t^{(jk)}\)</span>, and is thus just the <span class="math inline">\(N^2\)</span> fold product of the law of scalar Maxwell theory by independence of the <span class="math inline">\(t^{(jk)}\)</span>.</p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Klenke" class="csl-entry" role="listitem">
+Klenke, Achim. 2014. <em>Probability Theory, a Comprehensive Course</em>. 2nd Edition. Universitext. Springer.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
