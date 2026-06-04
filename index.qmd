@@ -190,12 +190,179 @@ $w = (w^{ij})_{1 \le i < j \le N}$.
 Then by independence we have for 
 the joint variable $(y,z,w) \in \R^{N^2 |E_n^1|}$
 that 
-$$
-\mathbb P((y,z,w) \in A) = \int_A \frac{1}{Z_M(B_n)^{N^2}} \prod_{i=1}^{N^2} 
-\exp \left(-\frac{1}{2} \sum_{p \in P(B_n)} (t^{(i)}_p)^2 \right)
-d l_{N^2|E_n^1|}(t)
-$$
+\begin{equation}
+\begin{gathered}
+\mathbb P((y,z,w) \in A) = 
+\int_A \frac{1}{Z_M(B_n)^{N^2}} 
+\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) d l_{|E_n^1|}(y^{ii})  \times \\ % end of first group
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) d l_{|E_n^1|}(z^{ij}) \times \\ % end of second group
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) d l_{|E_n^1|}(w^{ij}),             % end of third group
+\end{gathered}
+\end{equation}
 if $A \in \mathcal{B}_{\R^{N^2|E_n^1|}}$. 
+
+Let $H = (H_e)_{e \in E_n} \in H(N)^{E_n^1}$ (where
+$H(N)^{E_n^1}$ is shorthand for $H(N)^{E_n^1} \times \{0\}^{E_n^0}$) be a random 
+Maxwell Hermitian configuration distributed according to the law
+$$
+\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^1}(H)
+$$
+where 
+$$
+d\lambda_{E_n^1}(H) = \bigotimes_{e \in E_n^0} \text{Unif}_{\{0\}}
+\otimes \bigotimes_{e \in E_n^1} d \lambda(H),
+$$
+where $d\lambda(H)$ denotes Lebesgue measure on $H(N)$.
+
+Lemma. With $(y,z,w)$ and $H$ as above, 
+we have 
+$$
+\mathbb P ((y,z,w) \in A) = \mathbb P(H \in \Psi_H^{|E_n^1|}(A))
+$$
+for all $A \in \mathcal{B}_{\R^{N^2|E_n^1|}}$.
+
+#### Proof Attempt 1.
+
+Proof. We begin with 
+\begin{equation}
+\begin{gathered}
+\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{\Psi_H^{|E_n^1|} (A)} 
+ d\lambda_{E_n^1}(H) \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4} \rVert^2 \right). 
+\end{gathered}
+\end{equation}
+Then we make the change of variable
+$$
+H_e = \Psi_H(y_e, z_e, w_e)
+$$
+for each $e \in E_n^1$.
+Note that 
+\begin{equation}
+\begin{gathered}
+\Psi_H(y_p, z_p, w_p) = \Psi_H \left( y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4} \right)\\
+= H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4} = H_p.
+\end{gathered}
+\end{equation}
+by linearity of $\Psi_H$.
+Then with the change of variable we obtain
+\begin{equation}
+\begin{gathered}
+\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{A} 
+ dl_{N^2|E_n^1|}(y,z,w) \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 \right). 
+\end{gathered}
+\end{equation}
+Then since $\Psi_H$ is an isometry between $\R^{N^2}$ equipped with the Euclidean norm
+and $H(N)$ equipped with the Hilbert Schmidt norm, we 
+have
+\begin{equation}
+\begin{gathered}
+\lVert \Psi_H(y_p,z_p,w_p) \rVert^2 = \lVert (y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4}) \rVert^2 \\
+= \sum_{i=1}^N (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 + 
+\sum_{1 \le i < j \le N} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 \\
++ \sum_{1 \le i < j \le N} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2.
+\end{gathered}
+\end{equation}
+Then using Fubini's theorem for finite sums to 
+exchange the sum over plaquettes $\sum_{p \in P(B_n)}$
+with the sum over indices, such as $\sum_{1 \le i \le N}$, we obtain
+\begin{equation}
+\begin{gathered}
+\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 = 
+\sum_{i=1}^N \sum_{p \in P(B_n)} (y_{p}^{ii})^2 + \\
+\sum_{1 \le i < j \le N} \sum_{p \in P(B_n)} (z_p^{ij})^2 +\\
+\sum_{1 \le i < j \le N} \sum_{p \in P(B_n)} (w_p^{ij})^2.
+\end{gathered}
+\end{equation}
+Then we notice that
+\begin{equation}
+\begin{gathered}
+\exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 \right) = \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).
+\end{gathered}
+\end{equation}
+As a result, 
+\begin{equation}
+\begin{gathered}
+\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{A} 
+ dl_{N^2|E_n^1|}(y,z,w) \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right), 
+\end{gathered}
+\end{equation}
+where the last expression is 
+equal to $\mathbb P((y,z,w) \in A)$ because 
+our proof simultaneously showed
+that 
+\begin{equation}
+\begin{gathered}
+Z_H(B_n) = \int_{H(N)^{E_n^1}} d\lambda_{E_n^1}(H) \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right)\\
+= \int_{\R^{N^2|E_n^1|}} dl_{N^2|E_n^1|}(t^1, \cdots, t^{N^2}) 
+\prod_{i=1}^{N^2} 
+\exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (t^i_p)^2 \right)\\
+= \prod_{i=1}^{N^2} \int_{\R^{|E_n^1|}} dl_{|E_n^1|}(t^i) \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (t^i_p)^2 \right)\\
+= Z_M(B_n)^{N^2}.
+\end{gathered}
+\end{equation}
+This concludes the proof. QED.
+
+#### Proof attempt 2.
+Proof. 
+We begin with
+\begin{equation}
+\begin{gathered}
+\mathbb P((y,z,w) \in A) = 
+\frac{1}{Z_M(B_n)^{N^2}}
+\int_A
+d l_{|E_n^1|N^2}(y,z,w)
+\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right)  \times \\ % end of first group
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\ % end of second group
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).             % end of third group
+\end{gathered}
+\end{equation}
+Then we make the change of variable
+$$(\Psi_H^{-1}(H_e))_{e \in E_n^1} = \left( \Psi_H^{|E_n^1|} \right)^{-1} (H) = (y,z,w),$$
+which means that for each $e \in E_n^1$, we have
+$$
+(H_e)^{jk} = (\Psi_H(y_e, z_e, w_e))^{jk} = \begin{cases}y_e^{j j} & \text { if } j=k, \\
+\left(z_e^{j k}+\mathrm{i} w_e^{j k}\right) / \sqrt{2} & \text { if } j<k, \\
+\left(z_e^{k j}-\mathrm{i} w_e^{k j}\right) / \sqrt{2} & \text { if } j>k,\end{cases}
+$$
+and for $e \in E_n^0$ we have $H_e = 0 \in H(N)$.
+Then
+\begin{equation}
+\begin{gathered}
+\mathbb P((y,z,w) \in A) = 
+\frac{1}{Z_M(B_n)^{N^2}}
+\int_{\Psi_H^{|E_n^1|}(A)}
+d l_{|E_n^1|N^2}(y,z,w)
+\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right)  \times \\ % end of first group
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\ % end of second group
+\prod_{1 \le i < j \le N} \exp \left( - \frac{1}{2}
+\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).             % end of third group
+\end{gathered}
+\end{equation}
+
 
 
 ## June 3, 2026
