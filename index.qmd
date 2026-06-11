@@ -18,6 +18,93 @@ $$
 $$
 :::
 
+## June 10, 2026
+
+:::{#lem-symmetric-bilinear-form}
+Let $\mathrm{H}(N)$ be the set of Hermitian matrices equipped
+with $\R$-scalar multiplication and matrix addition, turning it
+into an $\R$-vector space. Then the function 
+$$(H,R) \mapsto \Re (\Tr(H^*R))$$
+defines a symmetric bilinear form on $\mathrm{H}(N)$.
+:::
+
+Let $E_n^1 \subset E_n$.
+Let $(\mathrm{H}(N))^{E_n^1}$ be the set of all 
+Hermitian configurations. 
+
+:::{#lem-hermitian-configs-as-R-vec-space}
+Under pointwise addition and pointwise $\R$ scalar
+multiplication, $(\mathrm{H}(N))^{E_n^1}$ becomes 
+an $\R$ vector space. 
+:::
+
+Proof. 
+Let $H, R \in (\mathrm{H}(N))^{E_n^1}$. Then 
+$(H + R)_e = H_e + R_e \in \mathrm{H}(N)$.
+The zero element is the Hermitian configuration 
+with all zero matrices on the edges. 
+The additive inverse of a given configuration is
+just the additive inverse on each edge. 
+And scalar multiplication is defined as follows: 
+$\lambda H = (\lambda H_e)_{e \in E_n^1}$.
+QED.
+
+:::{#lem-hermitian-configs-bilinear-form}
+The function 
+$$
+(H, R) \mapsto \sum_{p \in \mathcal{P}(\Lambda_n)} \Re (\Tr(H_p^*R_p))
+$$
+where $H_p = H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4}$
+defines a symmetric bilinear form 
+$M_{H}: \mathrm{H}(N)^{E_n^1} \times \mathrm{H}(N)^{E_n^1} \to \R$.
+:::
+
+:::{#lem-hermitian-configs-pos-def-quad-form}
+The diagonal of $M_H$, also denoted by $M_H$, defined by
+$$
+\mathrm{H}(N)^{E_n^1} \ni R \mapsto M_H(R, R)
+$$
+is a positive definite quadratic form. 
+In particular, 
+$$
+e^{-\frac{1}{2}M_H(R)} \prod_{e \in E_n^1} d\lambda(R_e)
+$$
+defines a Gaussian measure on $\mathrm{H}(N)^{E_n^1}.$
+:::
+
+Let us define 
+$$
+\langle H, R \rangle_{\mathrm{H}(N)^{E_n^1}} = \sum_{e \in E_n^1} \Re ( \Tr (H_e^* R_e)).
+$$
+Then there ought to exist 
+some mathematical object $L$ such that 
+$$
+\langle H, LR \rangle_{\mathrm{H}(N)^{E_n^1}} = M_H(H, R)
+$$
+for all $H, R \in \mathrm{H}(N)^{E_n^1}$.
+
+Let $t_{i, e} \in \R^{N^2|E_n^1|}$.
+
+Consider the map 
+$$
+\R^{N^2|E_n^1|} \times \R^{N^2|E_n^1|} \ni (t_{i, e}, s_{i, e}) \mapsto
+\sum_{i=1}^{N^2} \sum_{p \in \mathcal{P}(B_n)} t_{i,p} s_{i,p} \in \R
+$$
+where $t_{i,p} = t_{i,p_1} + t_{i,p_2} - t_{i,p_3} - t_{i,p_4}$
+for any $i \in [N^2]$.
+Let's call this map $M_{\R^{N^2|E_n^1|}}$.
+Calling it's diagonal by the same name, then
+$$
+e^{-\frac{1}{2} M_{\R^{N^2|E_n^1|}} (X)} \prod_{i=1}^{N^2} \prod_{e \in E_n^1} dl{X_{i,e}}
+$$
+defines a Gaussian measure on $\R^{N^2|E_n^1|}$.
+This measure is equal to 
+the product measure
+$$
+\bigotimes_{i=1}^{N^2} \tau_n,
+$$
+where $\tau_n$ denotes the lattice Maxwell measure on $\R^{|E_n^1|}$.
+
 ## June 4, 2026
 
 ### Notes on Chapter 14 of Klenke
