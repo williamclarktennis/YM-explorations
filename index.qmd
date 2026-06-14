@@ -77,13 +77,57 @@ is positive definite.
 Therefore $\langle \, \cdot \, , \, \cdot \, \rangle$ defines
 an inner product on $\C^{N \times N}$. QED.
 
-**Lemma**. *Let $X_1, \cdots, X_k$ be $k$ matrices in $\C^{N \times N}$.
+**Lemma**. *Let $X_1, \cdots, X_k$ be $k \ge 2$ matrices in $\C^{N \times N}$.
 Then 
 $$|\Re \Tr X_1 \cdots X_k| \le \lVert X_1 \rVert \cdots \lVert X_k \rVert,$$
 where $\lVert \, \cdot \, \rVert$ denotes the Hilbert Schmidt norm 
-induced by the inner product $\langle A ,B \rangle = \Tr(A^*B)$ defined in the above lemma.*
+induced by the inner product $\langle A ,B \rangle = \Tr(A^*B)$ defined in the above lemma.
+That is, $\lVert \, \cdot \, \rVert = \sqrt{\langle \, \cdot \, , \, \cdot \, \rangle}.$*
 
-Proof. QED.
+**Remark**. This result does not hold when $k=1$. 
+The idea is that the square root of $N$ term 
+in the inequality $|\cdot|_1 \le \sqrt{N} |\cdot |_2$ is actually needed.
+For an example, 
+consider the matrix $X_1 = \begin{bmatrix}0.5 & 0 \\ 0 & 0.5 \end{bmatrix} \in \C^{2 \times 2}$.
+Then $\Re \Tr X_1 = 1$. On the other hand, 
+$\lVert X_1 \rVert = \sqrt{0.5}$. 
+
+Proof. 
+We proceed by induction. The base case is $k=2$.
+Suppose $z = \Tr X_1X_2$. Then $|\Re z| \le |z|$. 
+Therefore
+$|\Re \Tr X_1X_2 | \le |\Tr X_1 X_2|$.
+Let $X = X_1^*$, so that $X^* = X_1$.
+Then we have 
+$|\Tr X_1 X_2| = |\langle X, X_2 \rangle|$.
+By the Cauchy Schwarz inequality, we have
+$|\langle X, X_2 \rangle| \le \lVert X \rVert \lVert X_2 \rVert$.
+But $\lVert X \rVert = \lVert X_1 \rVert$ because 
+$\lVert X \rVert^2 = \langle X, X \rangle = \Tr X^* X 
+= \Tr X X^* = \Tr X_1^* X_1 = \langle X_1, X_1 \rangle = \lVert X_1 \rVert^2$.
+Tracing back the steps, we have 
+$| \Re \Tr X_1 X_2 | \le \lVert X_1 \rVert \lVert X_2 \rVert.$
+This settles the base case.
+
+For the inductive step, assume that we have proven the claim 
+for some $k \ge 2$.
+Let $X_1, \cdots, X_{k+1}$ be given. 
+Observe that $X_1 \cdots X_k \in \C^{N \times N}$
+so we can treat it as one matrix. That is, let $X = X_1 \cdots X_k$.
+Then we have 
+$|\Re \Tr X_1 \cdots X_{k+1} | = | \Re \Tr X X_{k+1} |$. 
+The latter term satisfies $| \Re \Tr X X_{k+1} | \le \lVert X \rVert \lVert X_{k+1} \rVert$
+by the base case.
+Then by an induction argument applied to the inequality 
+$\lVert Z Y \rVert \le \lVert Z \rVert \lVert Y \rVert$ for matrices
+$X,Y$, we obtain 
+$\lVert X \rVert \le \lVert X_1 \rVert \cdots \lVert X_k \rVert$.
+Therefore, 
+$$
+|\Re \Tr X_1 \cdots X_{k+1} | \le \lVert X_1 \rVert \cdots \lVert X_k \rVert \lVert X_{k+1} \rVert,
+$$
+which completes the induction step. 
+Thus, the lemma is proved. QED.
 
 **Assumptions for the following lemmas.**
     *Let $p \in \mathcal{P}(\Lambda_n)$ be a plaquette.
@@ -115,11 +159,119 @@ Proof. QED.
 **Lemma**. 
     *We have
     $$
-    \left|\frac{1}{2} \lVert H_p \rVert^2 - \phi(R_p) \right| \le C \eta^3,
+    \left|\phi(R_p) - \frac{1}{2} \lVert H_p \rVert^2  \right| \le C \eta^3,
     $$
     where the constant $C > 0$ depends only on $N$.*
 
 Proof. 
+    First we expand $\phi(R_p)$, which satisfies 
+    \begin{equation*}
+        \begin{aligned}
+            \phi(R_p) = \Re \Tr (I - (I + iH_1 - H_1^2/2) \times \\
+            (I + iH_2 - H_2^2/2) \times (I - iH_3 - H_3^2/2) \\
+            \times (I - iH_4 - H_4^2/2) ).
+        \end{aligned}
+    \end{equation*}
+    The product $R_p = R_1 R_2 R_3 R_4$ will have 
+    $3 \times 3 \times 3 \times 3 = 81$ terms, which
+    we classify based on how many matrices $H_j$ appear in each one.
+
+First we begin with terms without any matrices $H_j$.
+There is one term that is equal to $I$. 
+
+Then we move to linear terms with one matrix $H_j$.
+There are four terms of the form $i H_j$ up to a sign. The contribution
+is $X_{\text{lin}} := i(H_1 + H_2 - H_3 - H_4).$
+
+Then we move to the quadratic terms with two matrices $H_j$.
+There are $\binom{4}{2} = 6$ mixed terms 
+of the form $zH_kH_j$ where $k < j$ and $z \in \{-1,1\}$, and then $4$ homogeneous 
+terms of the form $-\frac{1}{2}H_j^2$.
+The contribution is
+$$
+X_{\text{quad}} := -\frac{1}{2}(H_1^2 + H_2^2 + H_3^2 + H_4^2) -H_1H_2 + H_1H_3 + H_1H_4 + H_2H_3 + H_2H_4 - H_3H_4.
+$$
+
+There are also cubic, quartic, quintic, sextic, septic, and octic terms, but
+their contribution will be absorbed into the upper bound $C\eta^3$ after
+an application of the previous lemma. But let us denote by
+$X_{\text{cubic}+} \in \C^{N \times N}$ the sum of these 66 higher order terms.
+
+We have 
+$$
+R_p = I + X_{\text{lin}} + X_{\text{quad}} + X_{\text{cubic}+}
+$$
+and therefore
+$$
+\Re \Tr ( I - R_p ) = - \Re \Tr (X_{\text{lin}}) - \Re \Tr (X_{\text{quad}}) - \Re \Tr (X_{\text{cubic}+})
+$$
+First we show that 
+$\Re \Tr (X_{\text{lin}}) = 0$. 
+Recall that the trace of a matrix is equal to the sum of 
+its eigenvalues. Since the eigenvalues of $H_p = H_1 + H_2 - H_3 - H_4$
+are real as $H_p$ is a Hermitian matrix, it follows that the eigenvalues of $i(H_1 + H_2 - H_3 - H_4)$
+are all imaginary. Taking the real part of the trace, we get zero, as desired.
+
+Next, we show that 
+$$-\Re \Tr (X_{\text{quad}}) = \frac{1}{2}\lVert H_1 + H_2 - H_3 - H_4 \rVert^2.$$
+Since $H_p$ is Hermitian, 
+we get that $H_p = H_p^*$. Therefore $\lVert H_p \rVert^2$ is equal to
+$\Tr(H_p^*H_p) = \Tr H_p^2.$ Note that $H_p^2$ in expanded form has 16 terms. 
+Note that 12 of these terms are mixed and of the form $zH_iH_j$
+for $z \in \{-1,1\}$, and 4 are homogeneous of the form $H_i^2$.
+In particular, we have
+\begin{equation*}
+    \begin{aligned}
+        H_p^2 = (H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4) \\
+        + (H_2H_1 - H_3H_1 - H_4H_1 - H_3H_2 - H_4H_2 + H_3H_4) + \\
+        + (H_1^2 + H_2^2 + H_3^2 + H_4^2),
+    \end{aligned}
+\end{equation*}
+where in the second line we've written the oppositely ordered terms
+compared to the first line, and the third line contains the homogeneous terms.
+We obtain the same value by taking the trace of the first and second lines
+above on the right hand side because of the identity $\Tr(AB) = \Tr(BA)$.
+Therefore, 
+\begin{equation*}
+    \begin{aligned}
+        \frac{1}{2} \Tr(H_p^2) = \frac{1}{2} \cdot 2 \Tr(H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4) \\
+        + \frac{1}{2} \Tr (H_1^2 + H_2^2 + H_3^2 + H_4^2).
+    \end{aligned}
+\end{equation*}
+The expression on the left hand side is equal to $\frac{1}{2} \lVert H_p \rVert^2$,
+which is a real number. Therefore, applying $\Re$ to the 
+right hand side of the equation does nothing. That is, 
+\begin{align*}
+    \frac{1}{2} \lVert H_p \rVert^2 = \Re \Tr(H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4)\\
+     + \frac{1}{2} \Re \Tr (H_1^2 + H_2^2 + H_3^2 + H_4^2).
+\end{align*}
+Then we recognize that the right hand side is equal to 
+$-\Re \Tr X_{\text{quad}},$ which is what we wanted to show.
+
+Then to conclude the lemma, we write
+\begin{align*}
+    \left|\phi(R_p) - \frac{1}{2} \lVert H_p \rVert^2  \right| &= 
+    \left| \Re \Tr ( I - R_p ) - \frac{1}{2} \lVert H_p \rVert^2 \right| \\
+    &= \left|  - \Re \Tr X_{\text{cubic}+}  \right| \\
+    & \le \sum |\Re \Tr \, zH^{k \ge 3}|.
+\end{align*}
+where in the last line, the sum is over the 66
+higher order terms, and $H^{k \ge 3}$ stands 
+for a higher order term of the form $H_{i_1} H_{i_2} \cdots H_{i_k}$
+for $i_1, \cdots, i_k \in \{1,2,3,4\}$ and $z$ stands for a
+coefficient which satisfies $|z| \le 1$. 
+Then by an application of the lemma above and the fact that 
+$\lVert H_j \rVert \le \eta \le 1$ for all 
+$j = 1,2,3,4$ and that $\eta^k \le \eta^3$ whenever $k \ge 3$, 
+we have
+$$
+\sum |\Re \Tr \, zH^{k \ge 3}| \le 66 \times \eta^3 = C \eta^{3}.
+$$
+Note that the constant $C$ does not really depend on $N$, but
+it is easier to say that it depends only on $N$ rather than 
+to say what it does not depend on. 
+This concludes the proof. QED.
+
 
 **Lemma**.
     *We have 
