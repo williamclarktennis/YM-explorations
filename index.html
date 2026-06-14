@@ -229,7 +229,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#june-4-2026" id="toc-june-4-2026" class="nav-link active" data-scroll-target="#june-4-2026">June 4, 2026</a>
+  <li><a href="#june-14-2026" id="toc-june-14-2026" class="nav-link active" data-scroll-target="#june-14-2026">June 14, 2026</a></li>
+  <li><a href="#june-10-2026" id="toc-june-10-2026" class="nav-link" data-scroll-target="#june-10-2026">June 10, 2026</a></li>
+  <li><a href="#june-4-2026" id="toc-june-4-2026" class="nav-link" data-scroll-target="#june-4-2026">June 4, 2026</a>
   <ul class="collapse">
   <li><a href="#notes-on-chapter-14-of-klenke" id="toc-notes-on-chapter-14-of-klenke" class="nav-link" data-scroll-target="#notes-on-chapter-14-of-klenke">Notes on Chapter 14 of Klenke</a></li>
   <li><a href="#n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations" id="toc-n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations" class="nav-link" data-scroll-target="#n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations"><span class="math inline">\(N^2\)</span> copies of scalar Maxwell configurations versus Hermitian Maxwell Configurations</a></li>
@@ -265,10 +267,71 @@ window.Quarto = {
 <p><span class="math display">\[
 \newcommand\mcy{{\mathcal{Y}}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\Tr}{\text{Tr}}
 \def\*#1{\mathbf{#1}}
 \]</span></p>
 </div>
+<section id="june-14-2026" class="level2">
+<h2 class="anchored" data-anchor-id="june-14-2026">June 14, 2026</h2>
+<p>We want to show that <span class="math inline">\(\lVert H_i \rVert \le \eta\)</span> for all <span class="math inline">\(i \in [3]\)</span> implies that <span class="math inline">\(|\Tr(H_1H_2H_3)| &lt; \eta^3.\)</span></p>
+<p>Lemma. <em>The function <span class="math inline">\(\langle A, B \rangle = \Tr (A^*B)\)</span> defines an inner product on the <span class="math inline">\(\R\)</span> or <span class="math inline">\(\C\)</span> vector space <span class="math inline">\(\C^{N \times N}\)</span>.</em></p>
+<p>Proof. Let us consider first <span class="math inline">\(\C^{N \times N}\)</span> as a <span class="math inline">\(\C\)</span> vector space. Let us check the axioms in definition 2.1 on page 9 of <span class="citation" data-cites="Alt2012">Alt (<a href="#ref-Alt2012" role="doc-biblioref">2012</a>)</span>, except that we will use anti-linearity in the first slot (the physicist’s convention).</p>
+<p>Let <span class="math inline">\(\alpha \in \C\)</span> and consider <span class="math inline">\(A, B \in \C^{N \times N}\)</span>. We have <span class="math display">\[\langle \alpha A, B \rangle = \Tr((\alpha A)^* B) = \alpha^* \Tr(A^* B) = \alpha^* \langle A, B \rangle.\]</span></p>
+<p>We also have <span class="math display">\[\langle A, \alpha B \rangle = \Tr((A^* (\alpha B)) = \alpha \langle A, B \rangle.\]</span></p>
+<p>And if <span class="math inline">\(A,B,C \in \C^{N \times N}\)</span>, we have <span class="math display">\[\langle A + C, B \rangle = \Tr((A+C)^* B) = \Tr(A^*B + C^*B) = \Tr(A^*B) + \Tr(C^*B) = \langle A, B \rangle + \langle C, B \rangle.\]</span></p>
+<p>Similarly, <span class="math display">\[\langle A, C+B \rangle = \langle A, B \rangle + \langle A, C \rangle.\]</span> Up to this point we have shown that <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> is a sesequilinear form.</p>
+<p>Next, for <span class="math inline">\(A, B \in \C^{N \times N}\)</span>, we have <span class="math display">\[\begin{equation*}
+    \begin{aligned}
+        \overline{\langle A, B \rangle} = \overline{\Tr(A^*B)} = \sum_{i=1}^N \overline{(A^*B)_{ii}} \\
+        = \sum_{i=1}^N \sum_{j=1}^N \overline{(A^*)_{ij} B_{ji}}
+        = \sum_{i=1}^N \sum_{j=1}^N \overline{\overline{(A_{ji})} B_{ji}} \\
+        = \sum_{i=1}^N \sum_{j=1}^N (A_{ji}) \overline{B_{ji}}
+        = \sum_{i=1}^N \sum_{j=1}^N (B^*)_{ij} (A_{ji})  \\
+        = \sum_{i=1}^N (B^* A)_{ii} = \Tr(B^*A) = \langle B, A \rangle,
+    \end{aligned}
+\end{equation*}\]</span> which shows symmetry.</p>
+<p>Next, for <span class="math inline">\(A \ne 0 \in \C^{N \times N}\)</span>, we have <span class="math display">\[\begin{align*}
+    \langle A, A \rangle = \Tr(A^* A) = \sum_{i,j=1}^N \lVert A_{ij} \rVert^2 &gt; 0.
+\end{align*}\]</span> Since <span class="math inline">\(\langle 0, 0 \rangle = 0\)</span>, this shows that <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> is positive definite. Therefore <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> defines an inner product on <span class="math inline">\(\C^{N \times N}\)</span>.</p>
+</section>
+<section id="june-10-2026" class="level2">
+<h2 class="anchored" data-anchor-id="june-10-2026">June 10, 2026</h2>
+<div id="lem-symmetric-bilinear-form" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1</strong></span> Let <span class="math inline">\(\mathrm{H}(N)\)</span> be the set of Hermitian matrices equipped with <span class="math inline">\(\R\)</span>-scalar multiplication and matrix addition, turning it into an <span class="math inline">\(\R\)</span>-vector space. Then the function <span class="math display">\[(H,R) \mapsto \Re (\Tr(H^*R))\]</span> defines a symmetric bilinear form on <span class="math inline">\(\mathrm{H}(N)\)</span>.</p>
+</div>
+<p>Let <span class="math inline">\(E_n^1 \subset E_n\)</span>. Let <span class="math inline">\((\mathrm{H}(N))^{E_n^1}\)</span> be the set of all Hermitian configurations.</p>
+<div id="lem-hermitian-configs-as-R-vec-space" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2</strong></span> Under pointwise addition and pointwise <span class="math inline">\(\R\)</span> scalar multiplication, <span class="math inline">\((\mathrm{H}(N))^{E_n^1}\)</span> becomes an <span class="math inline">\(\R\)</span> vector space.</p>
+</div>
+<p>Proof. Let <span class="math inline">\(H, R \in (\mathrm{H}(N))^{E_n^1}\)</span>. Then <span class="math inline">\((H + R)_e = H_e + R_e \in \mathrm{H}(N)\)</span>. The zero element is the Hermitian configuration with all zero matrices on the edges. The additive inverse of a given configuration is just the additive inverse on each edge. And scalar multiplication is defined as follows: <span class="math inline">\(\lambda H = (\lambda H_e)_{e \in E_n^1}\)</span>. QED.</p>
+<div id="lem-hermitian-configs-bilinear-form" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 3</strong></span> The function <span class="math display">\[
+(H, R) \mapsto \sum_{p \in \mathcal{P}(\Lambda_n)} \Re (\Tr(H_p^*R_p))
+\]</span> where <span class="math inline">\(H_p = H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4}\)</span> defines a symmetric bilinear form <span class="math inline">\(M_{H}: \mathrm{H}(N)^{E_n^1} \times \mathrm{H}(N)^{E_n^1} \to \R\)</span>.</p>
+</div>
+<div id="lem-hermitian-configs-pos-def-quad-form" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 4</strong></span> The diagonal of <span class="math inline">\(M_H\)</span>, also denoted by <span class="math inline">\(M_H\)</span>, defined by <span class="math display">\[
+\mathrm{H}(N)^{E_n^1} \ni R \mapsto M_H(R, R)
+\]</span> is a positive definite quadratic form. In particular, <span class="math display">\[
+e^{-\frac{1}{2}M_H(R)} \prod_{e \in E_n^1} d\lambda(R_e)
+\]</span> defines a Gaussian measure on <span class="math inline">\(\mathrm{H}(N)^{E_n^1}.\)</span></p>
+</div>
+<p>Let us define <span class="math display">\[
+\langle H, R \rangle_{\mathrm{H}(N)^{E_n^1}} = \sum_{e \in E_n^1} \Re ( \Tr (H_e^* R_e)).
+\]</span> Then there ought to exist some mathematical object <span class="math inline">\(L\)</span> such that <span class="math display">\[
+\langle H, LR \rangle_{\mathrm{H}(N)^{E_n^1}} = M_H(H, R)
+\]</span> for all <span class="math inline">\(H, R \in \mathrm{H}(N)^{E_n^1}\)</span>.</p>
+<p>Let <span class="math inline">\(t_{i, e} \in \R^{N^2|E_n^1|}\)</span>.</p>
+<p>Consider the map <span class="math display">\[
+\R^{N^2|E_n^1|} \times \R^{N^2|E_n^1|} \ni (t_{i, e}, s_{i, e}) \mapsto
+\sum_{i=1}^{N^2} \sum_{p \in \mathcal{P}(B_n)} t_{i,p} s_{i,p} \in \R
+\]</span> where <span class="math inline">\(t_{i,p} = t_{i,p_1} + t_{i,p_2} - t_{i,p_3} - t_{i,p_4}\)</span> for any <span class="math inline">\(i \in [N^2]\)</span>. Let’s call this map <span class="math inline">\(M_{\R^{N^2|E_n^1|}}\)</span>. Calling it’s diagonal by the same name, then <span class="math display">\[
+e^{-\frac{1}{2} M_{\R^{N^2|E_n^1|}} (X)} \prod_{i=1}^{N^2} \prod_{e \in E_n^1} dl{X_{i,e}}
+\]</span> defines a Gaussian measure on <span class="math inline">\(\R^{N^2|E_n^1|}\)</span>. This measure is equal to the product measure <span class="math display">\[
+\bigotimes_{i=1}^{N^2} \tau_n,
+\]</span> where <span class="math inline">\(\tau_n\)</span> denotes the lattice Maxwell measure on <span class="math inline">\(\R^{|E_n^1|}\)</span>.</p>
+</section>
 <section id="june-4-2026" class="level2">
 <h2 class="anchored" data-anchor-id="june-4-2026">June 4, 2026</h2>
 <section id="notes-on-chapter-14-of-klenke" class="level3">
@@ -565,7 +628,7 @@ d\lambda_{E_n^0}(H) = \prod_{e \in E_n^1} d\lambda(H_e) \\
 \]</span> for any Borel subset <span class="math inline">\(A\)</span> in the Borel sigma algebra on <span class="math inline">\((\R^{N^2})^{E_n}\)</span>.</p>
 <p><span class="math inline">\(\Psi_H: \R^{N^2} \to H(N)\)</span> is an isometry, so it is also bi-continuous. Therefore <span class="math inline">\(\R^{N^2}\)</span> and <span class="math inline">\(H(N)\)</span> are homeomorphic, so their Borel Sigma algebras should be related to each other. And if we write down the product map <span class="math inline">\(\prod_{e \in E_n} \Psi_H\)</span>, then we have a homeomorphism between <span class="math inline">\(H(N)^{E_n}\)</span> and <span class="math inline">\((\R^{N^2})^{E_n}\)</span>.</p>
 <div id="lem-thm1.78Klenke" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 1 (Theorem 1.78 in <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>)</strong></span> Let <span class="math inline">\((\Omega', \mathcal{A}')\)</span> be a measurable space and let <span class="math inline">\(\Omega\)</span> be a non-empty set. Let <span class="math inline">\(X: \Omega \to \Omega'\)</span> be a map. The preimage <span class="math display">\[
+<p><span class="theorem-title"><strong>Lemma 5 (Theorem 1.78 in <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>)</strong></span> Let <span class="math inline">\((\Omega', \mathcal{A}')\)</span> be a measurable space and let <span class="math inline">\(\Omega\)</span> be a non-empty set. Let <span class="math inline">\(X: \Omega \to \Omega'\)</span> be a map. The preimage <span class="math display">\[
 X^{-1}(\mathcal{A}') := \{ X^{-1}(A') : A' \in \mathcal{A}' \}
 \]</span> is the smallest <span class="math inline">\(\sigma\)</span>-algebra with respect to which <span class="math inline">\(X\)</span> is measurable. We say that <span class="math inline">\(\sigma(X):= X^{-1}(\mathcal{A}')\)</span> is the <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\(\Omega\)</span> that is generated by <span class="math inline">\(X\)</span>.</p>
 </div>
@@ -619,7 +682,7 @@ X^{-1}(\mathcal{A}') := \{ X^{-1}(A') : A' \in \mathcal{A}' \}
 \mathbb P ((y,z,w) \in A) = (H^* \mathbb P)(\prod_{e \in E_n} \Psi_H(A)) = \mathbb P(H \in \prod_{e \in E_n} \Psi_H(A)),
 \]</span> which is better.</p>
 <div id="lem-HermitianMaxwellComparison" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 2</strong></span> The joint law <span class="math inline">\(((t^{(i)})_{i=1}^{N^2})^* \mathbb P\)</span> of <span class="math inline">\(N^2\)</span> indepedent lattice Maxwell scalar configurations on <span class="math inline">\((\R^{N^2})^{|E_n|}\)</span> is equal to the pullback of the law <span class="math inline">\(H^* \mathbb P\)</span> of Hermitian lattice Maxwell theory by the map <span class="math inline">\(\prod_{e \in E_n} \Psi_H\)</span>.</p>
+<p><span class="theorem-title"><strong>Lemma 6</strong></span> The joint law <span class="math inline">\(((t^{(i)})_{i=1}^{N^2})^* \mathbb P\)</span> of <span class="math inline">\(N^2\)</span> indepedent lattice Maxwell scalar configurations on <span class="math inline">\((\R^{N^2})^{|E_n|}\)</span> is equal to the pullback of the law <span class="math inline">\(H^* \mathbb P\)</span> of Hermitian lattice Maxwell theory by the map <span class="math inline">\(\prod_{e \in E_n} \Psi_H\)</span>.</p>
 </div>
 <p>So we are showing that two proability laws are equal to eachother.</p>
 <p>Let <span class="math inline">\(X_1, \cdots, X_n\)</span> be <span class="math inline">\(n\)</span> independent real random variables with densities <span class="math inline">\(f_1: \R \to \R\)</span>, <span class="math inline">\(f_2: \R \to \R\)</span>, <span class="math inline">\(\cdots,\)</span> <span class="math inline">\(f_n: \R \to \R\)</span> repsectively.</p>
@@ -656,6 +719,9 @@ y_{11} &amp; &amp; &amp; \frac{z_{jk} + iw_{jk}}{\sqrt{2}} \\
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Alt2012" class="csl-entry" role="listitem">
+Alt, Wilhelm. 2012. <em>Linear Functional Analysis: An Application-Oriented Introduction</em>. Translated by Robert Nürnberg. Universitext.
+</div>
 <div id="ref-Klenke" class="csl-entry" role="listitem">
 Klenke, Achim. 2014. <em>Probability Theory, a Comprehensive Course</em>. 2nd Edition. Universitext. Springer.
 </div>
