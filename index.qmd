@@ -27,13 +27,14 @@ $i \in [3]$
 implies that
 $|\Tr(H_1H_2H_3)| < \eta^3.$
 
-Lemma. *The function 
+**Lemma**. *The function 
 $\langle A, B \rangle = \Tr (A^*B)$
 defines an inner product on 
 the $\R$ or $\C$ vector space $\C^{N \times N}$.*
 
 Proof.
 Let us consider first $\C^{N \times N}$ as a $\C$ vector space.
+We leave the $\R$ proof for another life.
 Let us check the axioms in definition 2.1 on page 9 of @Alt2012, 
 except that we will use anti-linearity in the first slot (the physicist's
 convention).
@@ -74,9 +75,60 @@ Since $\langle 0, 0 \rangle = 0$,
 this shows that $\langle \, \cdot \, , \, \cdot \, \rangle$ 
 is positive definite. 
 Therefore $\langle \, \cdot \, , \, \cdot \, \rangle$ defines
-an inner product on $\C^{N \times N}$.
+an inner product on $\C^{N \times N}$. QED.
 
+**Lemma**. *Let $X_1, \cdots, X_k$ be $k$ matrices in $\C^{N \times N}$.
+Then 
+$$|\Re \Tr X_1 \cdots X_k| \le \lVert X_1 \rVert \cdots \lVert X_k \rVert,$$
+where $\lVert \, \cdot \, \rVert$ denotes the Hilbert Schmidt norm 
+induced by the inner product $\langle A ,B \rangle = \Tr(A^*B)$ defined in the above lemma.*
 
+Proof. QED.
+
+**Assumptions for the following lemmas.**
+    *Let $p \in \mathcal{P}(\Lambda_n)$ be a plaquette.
+    Let $U \in \mathrm{U}(N)^{E_n}$ be a unitary configuration. 
+    Let $U_1 = U_{p_1}$, $U_2 = U_{p_2}$, $U_3= U_{p_3}$, and $U_4 = U_{p_4}$.
+    Suppose $H_1, H_2, H_3, H_4 \in \mathrm{H}(N)$ satisfy
+    $e^{iH_1} = U_{p_1}$, $e^{iH_2} = U_{p_2}$, $e^{iH_3} = U_{p_3}$, 
+    and $e^{iH_4} = U_{p_4}$.
+    Suppose that 
+    $$
+    H_p = H_1 + H_2 - H_3 - H_4.
+    $$
+    Let
+    \begin{equation}
+        \begin{aligned}
+            R_1 &= I + iH_1 - H_1^2/2 \\
+            R_2 &= I + iH_2 - H_2^2/2 \\
+            R_3 &= I - iH_3 - H_3^2/2 \\
+            R_4 &= I - iH_4 - H_4^2/2 \\
+        \end{aligned}
+    \end{equation}
+    and suppose 
+    $$
+    R_p = R_1R_2R_3R_4.
+    $$
+    Suppose that $\lVert H_i \rVert \le \eta \le 1$ for all $i = 1, 2, 3, 4$.
+    Suppose also that $\phi(X) = \Re \Tr (I - X)$ for any $X \in \C^{N \times N}$.*
+
+**Lemma**. 
+    *We have
+    $$
+    \left|\frac{1}{2} \lVert H_p \rVert^2 - \phi(R_p) \right| \le C \eta^3,
+    $$
+    where the constant $C > 0$ depends only on $N$.*
+
+Proof. 
+
+**Lemma**.
+    *We have 
+    $$
+    \left| \phi(U_p) - \frac{1}{2} \lVert H_p \rVert^2 \right| \le C \eta^3,
+    $$
+    where the constant $C > 0$ depends only on $N$.*
+
+Proof. 
 
 ## June 10, 2026
 
