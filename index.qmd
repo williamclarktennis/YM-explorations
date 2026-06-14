@@ -13,10 +13,70 @@ bibliography: references.bib
 $$
 \newcommand\mcy{{\mathcal{Y}}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\Tr}{\text{Tr}}
 \def\*#1{\mathbf{#1}}
 $$
 :::
+
+## June 14, 2026
+
+We want to show that
+$\lVert H_i \rVert \le \eta$ for all
+$i \in [3]$
+implies that
+$|\Tr(H_1H_2H_3)| < \eta^3.$
+
+Lemma. *The function 
+$\langle A, B \rangle = \Tr (A^*B)$
+defines an inner product on 
+the $\R$ or $\C$ vector space $\C^{N \times N}$.*
+
+Proof.
+Let us consider first $\C^{N \times N}$ as a $\C$ vector space.
+Let us check the axioms in definition 2.1 on page 9 of @Alt2012, 
+except that we will use anti-linearity in the first slot (the physicist's
+convention).
+
+Let $\alpha \in \C$ and consider $A, B \in \C^{N \times N}$.
+We have 
+$$\langle \alpha A, B \rangle = \Tr((\alpha A)^* B) = \alpha^* \Tr(A^* B) = \alpha^* \langle A, B \rangle.$$
+
+We also have
+$$\langle A, \alpha B \rangle = \Tr((A^* (\alpha B)) = \alpha \langle A, B \rangle.$$
+
+And if $A,B,C \in \C^{N \times N}$, we have
+$$\langle A + C, B \rangle = \Tr((A+C)^* B) = \Tr(A^*B + C^*B) = \Tr(A^*B) + \Tr(C^*B) = \langle A, B \rangle + \langle C, B \rangle.$$
+
+Similarly, 
+$$\langle A, C+B \rangle = \langle A, B \rangle + \langle A, C \rangle.$$
+Up to this point we have shown that 
+$\langle \, \cdot \, , \, \cdot \, \rangle$ is a sesequilinear form.
+
+Next, for $A, B \in \C^{N \times N}$, we have
+\begin{equation*}
+    \begin{aligned}
+        \overline{\langle A, B \rangle} = \overline{\Tr(A^*B)} = \sum_{i=1}^N \overline{(A^*B)_{ii}} \\
+        = \sum_{i=1}^N \sum_{j=1}^N \overline{(A^*)_{ij} B_{ji}}
+        = \sum_{i=1}^N \sum_{j=1}^N \overline{\overline{(A_{ji})} B_{ji}} \\
+        = \sum_{i=1}^N \sum_{j=1}^N (A_{ji}) \overline{B_{ji}}
+        = \sum_{i=1}^N \sum_{j=1}^N (B^*)_{ij} (A_{ji})  \\
+        = \sum_{i=1}^N (B^* A)_{ii} = \Tr(B^*A) = \langle B, A \rangle,
+    \end{aligned}
+\end{equation*}
+which shows symmetry.
+
+Next, for $A \ne 0 \in \C^{N \times N}$, we have
+\begin{align*}
+    \langle A, A \rangle = \Tr(A^* A) = \sum_{i,j=1}^N \lVert A_{ij} \rVert^2 > 0.
+\end{align*}
+Since $\langle 0, 0 \rangle = 0$, 
+this shows that $\langle \, \cdot \, , \, \cdot \, \rangle$ 
+is positive definite. 
+Therefore $\langle \, \cdot \, , \, \cdot \, \rangle$ defines
+an inner product on $\C^{N \times N}$.
+
+
 
 ## June 10, 2026
 
