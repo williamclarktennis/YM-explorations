@@ -281,6 +281,73 @@ This concludes the proof. QED.
     where the constant $C > 0$ depends only on $N$.*
 
 Proof. 
+    We want to show that $\phi(U_p) = \Re \Tr (I - U_p)$
+    is $C \eta^3$-close to $\frac{1}{2} \lVert H_p \rVert^2.$
+    But the previous lemma says that $\frac{1}{2} \lVert H_p \rVert^2$
+    is $C\eta^3$ close to $\phi(R_p)$, so it suffices to 
+    prove that $\phi(R_p)$ is $C\eta^3$ close to $\phi(U_p)$, that is, 
+    $|\phi(U_p) - \phi(R_p)| \le C\eta^3$ 
+    where $C$ depends only on $N$.
+
+We have
+$$
+\begin{aligned}
+\phi\left(U_p\right)-\phi\left(R_p\right) & =\operatorname{Tr}(I)-\operatorname{Re}\left(\operatorname{Tr}\left(U_p\right)\right)-\operatorname{Tr}(I)+\operatorname{Re}\left(\operatorname{Tr}\left(R_p\right)\right) \\
+& =\operatorname{Re}(\operatorname{Tr}(\operatorname{R_p}))-\operatorname{Re} (\operatorname{Tr} (U_p)) .
+\end{aligned}
+$$
+
+Since $\operatorname{Re}\left(z+z_1\right)=\operatorname{Re} z+\operatorname{Re} z_1$ for complex number $z, z_1$, and $\operatorname{Tr}(A-B)=\operatorname{Tr}(A)-\operatorname{Tr}(B)$ for $A, B \in \mathbb{C}^{N\times N}$, we get
+$$
+\phi\left(u_p\right)-\phi\left(R_p\right)=\operatorname{Re}\left(\operatorname{Tr}\left(R_p-U_p\right)\right) .
+$$
+
+By telescoping, we have
+$$
+\begin{aligned}
+R_p-U_p & =\left(R_1-U_1\right) R_2 R_3 R_4 \\
+& +U_1\left(R_2-U_2\right) R_3 R_4 \\
+& +U_1 U_2\left(R_3-U_3^*\right) R_4 \\
+& +U_1 U_2 U_3^*\left(R_4-U_4^*\right).
+\end{aligned}
+$$
+
+Then by additivity of $\operatorname{Re}(\cdot)$ and $\operatorname{Tr}(\cdot)$, we have
+$$
+\begin{aligned}
+\operatorname{Re} \operatorname{Tr}( R_p-U_p )& = \operatorname{Re} \operatorname{Tr}(\left(R_1-U_1\right) R_2 R_3 R_4) \\
+& +\operatorname{Re} \operatorname{Tr}(U_1\left(R_2-U_2\right) R_3 R_4) \\
+& +\operatorname{Re} \operatorname{Tr}(U_1 U_2\left(R_3-U_3^*\right) R_4) \\
+& +\operatorname{Re} \operatorname{Tr}(U_1 U_2 U_3^*\left(R_4-U_4^*\right)).
+\end{aligned}
+$$
+
+Then we obtain by an application of Lemma ? that
+$$
+\begin{aligned}
+\left|\phi\left(U_p\right)-\phi\left(R_p\right)\right| \le & \left\|R_1-U_1\right\|\left\|R_2\right\|\left\|R_3 \right\|\left\|R_4\right\| \\
+& +\left\|U_1\right\|\left\|R_2-U_2\right\|\left\|R_3\right\|\left\|R_4\right\| \\
+& +\left\|U_1\right\|\left\|U_2\right\|\left\|R_3-U_3^*\right\|\left\|R_4\right\| \\
+& +\left\|U_1\right\|\left\|U_2\right\|\left\|U_3^*\right\|\left\|R_4-U_4^*\right\|.
+\end{aligned}
+$$
+
+By Lemma ?, we have that $R_j$ is truly a quadratic approximation
+for $U_j$, that is, 
+$\lVert R_j - U_j \rVert \le \frac{\lVert H_j \rVert^3}{6} \le \frac{\eta^{3}}{6}$ when $j=1,2$.
+And likewise we have
+$\lVert R_j - U_j^* \rVert \le \eta^{3}/6$ when $j = 3,4$.
+Since $\lVert I \rVert = \sqrt{N}$
+and $\lVert H_j \rVert$ is small for each $j=1,2,3,4$, 
+then the size of $R_j$ is close to the size of the identity matrix $I$,
+which means that $\lVert R_j \rVert \le C$ where $C$ depends only on $N$.
+Lastly, we know that $\lVert U_j \rVert = \sqrt{N}$ for each $j$,
+so we obtain from the previous display the new bound
+$$
+\left|\phi\left(U_p\right)-\phi\left(R_p\right)\right| \le C \eta^3,
+$$
+as desired.
+
 
 ## June 10, 2026
 
