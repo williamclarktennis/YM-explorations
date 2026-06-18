@@ -19,6 +19,51 @@ $$
 $$
 :::
 
+## June 18, 2026
+
+Let us see why
+$\log(U)^* = - \log(U)$
+for $U \in \mathrm{U}(N) \cap b(I, 1)$, 
+where
+$\log(U) = \sum_{n=1}^\infty (-1)^{n+1} \frac{(U-I)^n}{n}.$
+
+Let $U = VDV^*$ be an eigendecomposition for $U$, 
+where $D = \text{diag}(e^{i\theta_1}, \cdots, e^{i\theta_N})$,
+for $\theta_1, \cdots, \theta_N \in (-\pi, \pi)$, 
+and $V \in \mathrm{U}(N)$.
+
+Note that $(VDV^* - I) = V(DV^* - V^*) = V(D-I)V^*$
+by unitarity of $V$. 
+Then also by unitarity, we have
+$(V(D-I)V^*)^n = V(D-I)^nV^*$, 
+for $n$ a positive integer.
+
+Using these observations, we have
+\begin{align*}
+    \log(VDV^*) &= \lim_{N \to \infty} \sum_{n=1}^N (-1)^{n+1} \frac{V(D-I)^nV^*}{n}\\
+    &= V \log(D) V^*,
+\end{align*}
+and we know that
+$\log(D) = \text{diag} (\log (\lambda_1), \cdots, \log(\lambda_N))$, 
+where $\lambda_j = e^{i \theta_j}$.
+Using the principal branch of the logarithm, and 
+employing the fact that 
+$\theta_j \ne \pi$ (since $U \in b(I, 1)$), 
+we have $\log(\lambda_j) = i \theta_j$ for all $j=1, \cdots, N$.
+
+Note that $\log(D)^* = \text{diag}(-i\theta_1, \cdots, -i\theta_n)$, 
+which, in turn, is equal to $-\log(D)$.
+
+Therefore, we have 
+\begin{align*}
+    \log(U)^*  &= (V \log(D) V^*)^* \\
+    &= V \log(D)^* V^* \\
+    &= -V \log(D) V^* \\
+    &= - \log(U).
+\end{align*}
+
+Therefore, $\log(U)$ is skew-Hermitian whenever $U \in \mathrm{U}(N) \cap b(I, 1)$.
+
 ## June 14, 2026
 
 We want to show that
