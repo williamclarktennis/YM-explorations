@@ -229,7 +229,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#june-14-2026" id="toc-june-14-2026" class="nav-link active" data-scroll-target="#june-14-2026">June 14, 2026</a></li>
+  <li><a href="#june-18-2026" id="toc-june-18-2026" class="nav-link active" data-scroll-target="#june-18-2026">June 18, 2026</a></li>
+  <li><a href="#june-14-2026" id="toc-june-14-2026" class="nav-link" data-scroll-target="#june-14-2026">June 14, 2026</a></li>
   <li><a href="#june-10-2026" id="toc-june-10-2026" class="nav-link" data-scroll-target="#june-10-2026">June 10, 2026</a></li>
   <li><a href="#june-4-2026" id="toc-june-4-2026" class="nav-link" data-scroll-target="#june-4-2026">June 4, 2026</a>
   <ul class="collapse">
@@ -272,11 +273,32 @@ window.Quarto = {
 \def\*#1{\mathbf{#1}}
 \]</span></p>
 </div>
+<section id="june-18-2026" class="level2">
+<h2 class="anchored" data-anchor-id="june-18-2026">June 18, 2026</h2>
+<p>Let us see why <span class="math inline">\(\log(U)^* = - \log(U)\)</span> for <span class="math inline">\(U \in \mathrm{U}(N) \cap b(I, 1)\)</span>, where <span class="math inline">\(\log(U) = \sum_{n=1}^\infty (-1)^{n+1} \frac{(U-I)^n}{n}.\)</span></p>
+<p>Let <span class="math inline">\(U = VDV^*\)</span> be an eigendecomposition for <span class="math inline">\(U\)</span>, where <span class="math inline">\(D = \text{diag}(e^{i\theta_1}, \cdots, e^{i\theta_N})\)</span>, for <span class="math inline">\(\theta_1, \cdots, \theta_N \in (-\pi, \pi)\)</span>, and <span class="math inline">\(V \in \mathrm{U}(N)\)</span>.</p>
+<p>Here is why <span class="math inline">\(e^{i \theta_j} \ne -1\)</span> for all <span class="math inline">\(j = 1, \cdots, N\)</span>. First note that <span class="math inline">\((VDV^* - I) = V(DV^* - V^*) = V(D-I)V^*\)</span> by unitarity of <span class="math inline">\(V\)</span>. Hence, <span class="math inline">\(\lVert I - U \rVert = \lVert I - D \rVert\)</span>. We have <span class="math inline">\(\lVert I - D \rVert^2 = \sum_{jk} |(I-D)_{jk}|^2\)</span>. Suppose <span class="math inline">\(e^{i\theta_m} = -1\)</span> at entry <span class="math inline">\(mm\)</span> in <span class="math inline">\(D\)</span>. Then <span class="math inline">\(|(I-D)_{mm}|^2 = |2|^2 = 4.\)</span> Then we have <span class="math display">\[\begin{align*}
+    \lVert I - D \rVert^2 = \sum_{jk}|(I-D)_{jk}|^2 \ge 4.
+\end{align*}\]</span> But <span class="math inline">\(U \in b(I,1)\)</span>, and we have a contradiction. This will be helpful when we consider the principal branch of the logarithm, which is defined on <span class="math inline">\(\C \setminus (-\infty, 0]\)</span>.</p>
+<p>For seeing how matrices <span class="math inline">\(V\)</span> pass through the logarithm, we note that <span class="math inline">\((V(D-I)V^*)^n = V(D-I)^nV^*\)</span>, for <span class="math inline">\(n\)</span> a positive integer. Then we have <span class="math display">\[\begin{align*}
+    \log(VDV^*) &amp;= \lim_{N \to \infty} \sum_{n=1}^N (-1)^{n+1} \frac{V(D-I)^nV^*}{n}\\
+    &amp;= V \log(D) V^*.
+\end{align*}\]</span></p>
+<p>We know that <span class="math inline">\(\log(D) = \text{diag} (\log (\lambda_1), \cdots, \log(\lambda_N))\)</span>, where <span class="math inline">\(\lambda_j = e^{i \theta_j}\)</span>. Using the principal branch of the logarithm, and employing the fact that <span class="math inline">\(\theta_j \ne \pi\)</span> (since <span class="math inline">\(U \in b(I, 1)\)</span>), we have <span class="math inline">\(\log(\lambda_j) = i \theta_j\)</span> for all <span class="math inline">\(j=1, \cdots, N\)</span>.</p>
+<p>Note that <span class="math inline">\(\log(D)^* = \text{diag}(-i\theta_1, \cdots, -i\theta_n)\)</span>, which, in turn, is equal to <span class="math inline">\(-\log(D)\)</span>.</p>
+<p>Therefore, we have <span class="math display">\[\begin{align*}
+    \log(U)^*  &amp;= (V \log(D) V^*)^* \\
+    &amp;= V \log(D)^* V^* \\
+    &amp;= -V \log(D) V^* \\
+    &amp;= - \log(U).
+\end{align*}\]</span></p>
+<p>Therefore, <span class="math inline">\(\log(U)\)</span> is skew-Hermitian whenever <span class="math inline">\(U \in \mathrm{U}(N) \cap b(I, 1)\)</span>.</p>
+</section>
 <section id="june-14-2026" class="level2">
 <h2 class="anchored" data-anchor-id="june-14-2026">June 14, 2026</h2>
 <p>We want to show that <span class="math inline">\(\lVert H_i \rVert \le \eta\)</span> for all <span class="math inline">\(i \in [3]\)</span> implies that <span class="math inline">\(|\Tr(H_1H_2H_3)| &lt; \eta^3.\)</span></p>
-<p>Lemma. <em>The function <span class="math inline">\(\langle A, B \rangle = \Tr (A^*B)\)</span> defines an inner product on the <span class="math inline">\(\R\)</span> or <span class="math inline">\(\C\)</span> vector space <span class="math inline">\(\C^{N \times N}\)</span>.</em></p>
-<p>Proof. Let us consider first <span class="math inline">\(\C^{N \times N}\)</span> as a <span class="math inline">\(\C\)</span> vector space. Let us check the axioms in definition 2.1 on page 9 of <span class="citation" data-cites="Alt2012">Alt (<a href="#ref-Alt2012" role="doc-biblioref">2012</a>)</span>, except that we will use anti-linearity in the first slot (the physicist’s convention).</p>
+<p><strong>Lemma</strong>. <em>The function <span class="math inline">\(\langle A, B \rangle = \Tr (A^*B)\)</span> defines an inner product on the <span class="math inline">\(\R\)</span> or <span class="math inline">\(\C\)</span> vector space <span class="math inline">\(\C^{N \times N}\)</span>.</em></p>
+<p>Proof. Let us consider first <span class="math inline">\(\C^{N \times N}\)</span> as a <span class="math inline">\(\C\)</span> vector space. We leave the <span class="math inline">\(\R\)</span> proof for another life. Let us check the axioms in definition 2.1 on page 9 of <span class="citation" data-cites="Alt2012">Alt (<a href="#ref-Alt2012" role="doc-biblioref">2012</a>)</span>, except that we will use anti-linearity in the first slot (the physicist’s convention).</p>
 <p>Let <span class="math inline">\(\alpha \in \C\)</span> and consider <span class="math inline">\(A, B \in \C^{N \times N}\)</span>. We have <span class="math display">\[\langle \alpha A, B \rangle = \Tr((\alpha A)^* B) = \alpha^* \Tr(A^* B) = \alpha^* \langle A, B \rangle.\]</span></p>
 <p>We also have <span class="math display">\[\langle A, \alpha B \rangle = \Tr((A^* (\alpha B)) = \alpha \langle A, B \rangle.\]</span></p>
 <p>And if <span class="math inline">\(A,B,C \in \C^{N \times N}\)</span>, we have <span class="math display">\[\langle A + C, B \rangle = \Tr((A+C)^* B) = \Tr(A^*B + C^*B) = \Tr(A^*B) + \Tr(C^*B) = \langle A, B \rangle + \langle C, B \rangle.\]</span></p>
@@ -293,7 +315,110 @@ window.Quarto = {
 \end{equation*}\]</span> which shows symmetry.</p>
 <p>Next, for <span class="math inline">\(A \ne 0 \in \C^{N \times N}\)</span>, we have <span class="math display">\[\begin{align*}
     \langle A, A \rangle = \Tr(A^* A) = \sum_{i,j=1}^N \lVert A_{ij} \rVert^2 &gt; 0.
-\end{align*}\]</span> Since <span class="math inline">\(\langle 0, 0 \rangle = 0\)</span>, this shows that <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> is positive definite. Therefore <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> defines an inner product on <span class="math inline">\(\C^{N \times N}\)</span>.</p>
+\end{align*}\]</span> Since <span class="math inline">\(\langle 0, 0 \rangle = 0\)</span>, this shows that <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> is positive definite. Therefore <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> defines an inner product on <span class="math inline">\(\C^{N \times N}\)</span>. QED.</p>
+<p><strong>Lemma</strong>. <em>Let <span class="math inline">\(X_1, \cdots, X_k\)</span> be <span class="math inline">\(k \ge 2\)</span> matrices in <span class="math inline">\(\C^{N \times N}\)</span>. Then <span class="math display">\[|\Re \Tr X_1 \cdots X_k| \le \lVert X_1 \rVert \cdots \lVert X_k \rVert,\]</span> where <span class="math inline">\(\lVert \, \cdot \, \rVert\)</span> denotes the Hilbert Schmidt norm induced by the inner product <span class="math inline">\(\langle A ,B \rangle = \Tr(A^*B)\)</span> defined in the above lemma. That is, <span class="math inline">\(\lVert \, \cdot \, \rVert = \sqrt{\langle \, \cdot \, , \, \cdot \, \rangle}.\)</span></em></p>
+<p><strong>Remark</strong>. This result does not hold when <span class="math inline">\(k=1\)</span>. The idea is that the square root of <span class="math inline">\(N\)</span> term in the inequality <span class="math inline">\(|\cdot|_1 \le \sqrt{N} |\cdot |_2\)</span> is actually needed. For an example, consider the matrix <span class="math inline">\(X_1 = \begin{bmatrix}0.5 &amp; 0 \\ 0 &amp; 0.5 \end{bmatrix} \in \C^{2 \times 2}\)</span>. Then <span class="math inline">\(\Re \Tr X_1 = 1\)</span>. On the other hand, <span class="math inline">\(\lVert X_1 \rVert = \sqrt{0.5}\)</span>.</p>
+<p>Proof. We proceed by induction. The base case is <span class="math inline">\(k=2\)</span>. Suppose <span class="math inline">\(z = \Tr X_1X_2\)</span>. Then <span class="math inline">\(|\Re z| \le |z|\)</span>. Therefore <span class="math inline">\(|\Re \Tr X_1X_2 | \le |\Tr X_1 X_2|\)</span>. Let <span class="math inline">\(X = X_1^*\)</span>, so that <span class="math inline">\(X^* = X_1\)</span>. Then we have <span class="math inline">\(|\Tr X_1 X_2| = |\langle X, X_2 \rangle|\)</span>. By the Cauchy Schwarz inequality, we have <span class="math inline">\(|\langle X, X_2 \rangle| \le \lVert X \rVert \lVert X_2 \rVert\)</span>. But <span class="math inline">\(\lVert X \rVert = \lVert X_1 \rVert\)</span> because <span class="math inline">\(\lVert X \rVert^2 = \langle X, X \rangle = \Tr X^* X
+= \Tr X X^* = \Tr X_1^* X_1 = \langle X_1, X_1 \rangle = \lVert X_1 \rVert^2\)</span>. Tracing back the steps, we have <span class="math inline">\(| \Re \Tr X_1 X_2 | \le \lVert X_1 \rVert \lVert X_2 \rVert.\)</span> This settles the base case.</p>
+<p>For the inductive step, assume that we have proven the claim for some <span class="math inline">\(k \ge 2\)</span>. Let <span class="math inline">\(X_1, \cdots, X_{k+1}\)</span> be given. Observe that <span class="math inline">\(X_1 \cdots X_k \in \C^{N \times N}\)</span> so we can treat it as one matrix. That is, let <span class="math inline">\(X = X_1 \cdots X_k\)</span>. Then we have <span class="math inline">\(|\Re \Tr X_1 \cdots X_{k+1} | = | \Re \Tr X X_{k+1} |\)</span>. The latter term satisfies <span class="math inline">\(| \Re \Tr X X_{k+1} | \le \lVert X \rVert \lVert X_{k+1} \rVert\)</span> by the base case. Then by an induction argument applied to the inequality <span class="math inline">\(\lVert Z Y \rVert \le \lVert Z \rVert \lVert Y \rVert\)</span> for matrices <span class="math inline">\(X,Y\)</span>, we obtain <span class="math inline">\(\lVert X \rVert \le \lVert X_1 \rVert \cdots \lVert X_k \rVert\)</span>. Therefore, <span class="math display">\[
+|\Re \Tr X_1 \cdots X_{k+1} | \le \lVert X_1 \rVert \cdots \lVert X_k \rVert \lVert X_{k+1} \rVert,
+\]</span> which completes the induction step. Thus, the lemma is proved. QED.</p>
+<p><strong>Assumptions for the following lemmas.</strong> <em>Let <span class="math inline">\(p \in \mathcal{P}(\Lambda_n)\)</span> be a plaquette. Let <span class="math inline">\(U \in \mathrm{U}(N)^{E_n}\)</span> be a unitary configuration. Let <span class="math inline">\(U_1 = U_{p_1}\)</span>, <span class="math inline">\(U_2 = U_{p_2}\)</span>, <span class="math inline">\(U_3= U_{p_3}\)</span>, and <span class="math inline">\(U_4 = U_{p_4}\)</span>. Suppose <span class="math inline">\(H_1, H_2, H_3, H_4 \in \mathrm{H}(N)\)</span> satisfy <span class="math inline">\(e^{iH_1} = U_{p_1}\)</span>, <span class="math inline">\(e^{iH_2} = U_{p_2}\)</span>, <span class="math inline">\(e^{iH_3} = U_{p_3}\)</span>, and <span class="math inline">\(e^{iH_4} = U_{p_4}\)</span>. Suppose that <span class="math display">\[
+    H_p = H_1 + H_2 - H_3 - H_4.
+    \]</span> Let <span class="math display">\[\begin{equation}
+        \begin{aligned}
+            R_1 &amp;= I + iH_1 - H_1^2/2 \\
+            R_2 &amp;= I + iH_2 - H_2^2/2 \\
+            R_3 &amp;= I - iH_3 - H_3^2/2 \\
+            R_4 &amp;= I - iH_4 - H_4^2/2 \\
+        \end{aligned}
+    \end{equation}\]</span> and suppose <span class="math display">\[
+    R_p = R_1R_2R_3R_4.
+    \]</span> Suppose that <span class="math inline">\(\lVert H_i \rVert \le \eta \le 1\)</span> for all <span class="math inline">\(i = 1, 2, 3, 4\)</span>. Suppose also that <span class="math inline">\(\phi(X) = \Re \Tr (I - X)\)</span> for any <span class="math inline">\(X \in \C^{N \times N}\)</span>.</em></p>
+<p><strong>Lemma</strong>. <em>We have <span class="math display">\[
+    \left|\phi(R_p) - \frac{1}{2} \lVert H_p \rVert^2  \right| \le C \eta^3,
+    \]</span> where the constant <span class="math inline">\(C &gt; 0\)</span> depends only on <span class="math inline">\(N\)</span>.</em></p>
+<p>Proof. First we expand <span class="math inline">\(\phi(R_p)\)</span>, which satisfies <span class="math display">\[\begin{equation*}
+        \begin{aligned}
+            \phi(R_p) = \Re \Tr (I - (I + iH_1 - H_1^2/2) \times \\
+            (I + iH_2 - H_2^2/2) \times (I - iH_3 - H_3^2/2) \\
+            \times (I - iH_4 - H_4^2/2) ).
+        \end{aligned}
+    \end{equation*}\]</span> The product <span class="math inline">\(R_p = R_1 R_2 R_3 R_4\)</span> will have <span class="math inline">\(3 \times 3 \times 3 \times 3 = 81\)</span> terms, which we classify based on how many matrices <span class="math inline">\(H_j\)</span> appear in each one.</p>
+<p>First we begin with terms without any matrices <span class="math inline">\(H_j\)</span>. There is one term that is equal to <span class="math inline">\(I\)</span>.</p>
+<p>Then we move to linear terms with one matrix <span class="math inline">\(H_j\)</span>. There are four terms of the form <span class="math inline">\(i H_j\)</span> up to a sign. The contribution is <span class="math inline">\(X_{\text{lin}} := i(H_1 + H_2 - H_3 - H_4).\)</span></p>
+<p>Then we move to the quadratic terms with two matrices <span class="math inline">\(H_j\)</span>. There are <span class="math inline">\(\binom{4}{2} = 6\)</span> mixed terms of the form <span class="math inline">\(zH_kH_j\)</span> where <span class="math inline">\(k &lt; j\)</span> and <span class="math inline">\(z \in \{-1,1\}\)</span>, and then <span class="math inline">\(4\)</span> homogeneous terms of the form <span class="math inline">\(-\frac{1}{2}H_j^2\)</span>. The contribution is <span class="math display">\[
+X_{\text{quad}} := -\frac{1}{2}(H_1^2 + H_2^2 + H_3^2 + H_4^2) -H_1H_2 + H_1H_3 + H_1H_4 + H_2H_3 + H_2H_4 - H_3H_4.
+\]</span></p>
+<p>There are also cubic, quartic, quintic, sextic, septic, and octic terms, but their contribution will be absorbed into the upper bound <span class="math inline">\(C\eta^3\)</span> after an application of the previous lemma. But let us denote by <span class="math inline">\(X_{\text{cubic}+} \in \C^{N \times N}\)</span> the sum of these 66 higher order terms.</p>
+<p>We have <span class="math display">\[
+R_p = I + X_{\text{lin}} + X_{\text{quad}} + X_{\text{cubic}+}
+\]</span> and therefore <span class="math display">\[
+\Re \Tr ( I - R_p ) = - \Re \Tr (X_{\text{lin}}) - \Re \Tr (X_{\text{quad}}) - \Re \Tr (X_{\text{cubic}+})
+\]</span> First we show that <span class="math inline">\(\Re \Tr (X_{\text{lin}}) = 0\)</span>. Recall that the trace of a matrix is equal to the sum of its eigenvalues. Since the eigenvalues of <span class="math inline">\(H_p = H_1 + H_2 - H_3 - H_4\)</span> are real as <span class="math inline">\(H_p\)</span> is a Hermitian matrix, it follows that the eigenvalues of <span class="math inline">\(i(H_1 + H_2 - H_3 - H_4)\)</span> are all imaginary. Taking the real part of the trace, we get zero, as desired.</p>
+<p>Next, we show that <span class="math display">\[-\Re \Tr (X_{\text{quad}}) = \frac{1}{2}\lVert H_1 + H_2 - H_3 - H_4 \rVert^2.\]</span> Since <span class="math inline">\(H_p\)</span> is Hermitian, we get that <span class="math inline">\(H_p = H_p^*\)</span>. Therefore <span class="math inline">\(\lVert H_p \rVert^2\)</span> is equal to <span class="math inline">\(\Tr(H_p^*H_p) = \Tr H_p^2.\)</span> Note that <span class="math inline">\(H_p^2\)</span> in expanded form has 16 terms. Note that 12 of these terms are mixed and of the form <span class="math inline">\(zH_iH_j\)</span> for <span class="math inline">\(z \in \{-1,1\}\)</span>, and 4 are homogeneous of the form <span class="math inline">\(H_i^2\)</span>. In particular, we have <span class="math display">\[\begin{equation*}
+    \begin{aligned}
+        H_p^2 = (H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4) \\
+        + (H_2H_1 - H_3H_1 - H_4H_1 - H_3H_2 - H_4H_2 + H_3H_4) + \\
+        + (H_1^2 + H_2^2 + H_3^2 + H_4^2),
+    \end{aligned}
+\end{equation*}\]</span> where in the second line we’ve written the oppositely ordered terms compared to the first line, and the third line contains the homogeneous terms. We obtain the same value by taking the trace of the first and second lines above on the right hand side because of the identity <span class="math inline">\(\Tr(AB) = \Tr(BA)\)</span>. Therefore, <span class="math display">\[\begin{equation*}
+    \begin{aligned}
+        \frac{1}{2} \Tr(H_p^2) = \frac{1}{2} \cdot 2 \Tr(H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4) \\
+        + \frac{1}{2} \Tr (H_1^2 + H_2^2 + H_3^2 + H_4^2).
+    \end{aligned}
+\end{equation*}\]</span> The expression on the left hand side is equal to <span class="math inline">\(\frac{1}{2} \lVert H_p \rVert^2\)</span>, which is a real number. Therefore, applying <span class="math inline">\(\Re\)</span> to the right hand side of the equation does nothing. That is, <span class="math display">\[\begin{align*}
+    \frac{1}{2} \lVert H_p \rVert^2 = \Re \Tr(H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4)\\
+     + \frac{1}{2} \Re \Tr (H_1^2 + H_2^2 + H_3^2 + H_4^2).
+\end{align*}\]</span> Then we recognize that the right hand side is equal to <span class="math inline">\(-\Re \Tr X_{\text{quad}},\)</span> which is what we wanted to show.</p>
+<p>Then to conclude the lemma, we write <span class="math display">\[\begin{align*}
+    \left|\phi(R_p) - \frac{1}{2} \lVert H_p \rVert^2  \right| &amp;=
+    \left| \Re \Tr ( I - R_p ) - \frac{1}{2} \lVert H_p \rVert^2 \right| \\
+    &amp;= \left|  - \Re \Tr X_{\text{cubic}+}  \right| \\
+    &amp; \le \sum |\Re \Tr \, zH^{k \ge 3}|.
+\end{align*}\]</span> where in the last line, the sum is over the 66 higher order terms, and <span class="math inline">\(H^{k \ge 3}\)</span> stands for a higher order term of the form <span class="math inline">\(H_{i_1} H_{i_2} \cdots H_{i_k}\)</span> for <span class="math inline">\(i_1, \cdots, i_k \in \{1,2,3,4\}\)</span> and <span class="math inline">\(z\)</span> stands for a coefficient which satisfies <span class="math inline">\(|z| \le 1\)</span>. Then by an application of the lemma above and the fact that <span class="math inline">\(\lVert H_j \rVert \le \eta \le 1\)</span> for all <span class="math inline">\(j = 1,2,3,4\)</span> and that <span class="math inline">\(\eta^k \le \eta^3\)</span> whenever <span class="math inline">\(k \ge 3\)</span>, we have <span class="math display">\[
+\sum |\Re \Tr \, zH^{k \ge 3}| \le 66 \times \eta^3 = C \eta^{3}.
+\]</span> Note that the constant <span class="math inline">\(C\)</span> does not really depend on <span class="math inline">\(N\)</span>, but it is easier to say that it depends only on <span class="math inline">\(N\)</span> rather than to say what it does not depend on. This concludes the proof. QED.</p>
+<p><strong>Lemma</strong>. <em>We have <span class="math display">\[
+    \left| \phi(U_p) - \frac{1}{2} \lVert H_p \rVert^2 \right| \le C \eta^3,
+    \]</span> where the constant <span class="math inline">\(C &gt; 0\)</span> depends only on <span class="math inline">\(N\)</span>.</em></p>
+<p>Proof. We want to show that <span class="math inline">\(\phi(U_p) = \Re \Tr (I - U_p)\)</span> is <span class="math inline">\(C \eta^3\)</span>-close to <span class="math inline">\(\frac{1}{2} \lVert H_p \rVert^2.\)</span> But the previous lemma says that <span class="math inline">\(\frac{1}{2} \lVert H_p \rVert^2\)</span> is <span class="math inline">\(C\eta^3\)</span> close to <span class="math inline">\(\phi(R_p)\)</span>, so it suffices to prove that <span class="math inline">\(\phi(R_p)\)</span> is <span class="math inline">\(C\eta^3\)</span> close to <span class="math inline">\(\phi(U_p)\)</span>, that is, <span class="math inline">\(|\phi(U_p) - \phi(R_p)| \le C\eta^3\)</span> where <span class="math inline">\(C\)</span> depends only on <span class="math inline">\(N\)</span>.</p>
+<p>We have <span class="math display">\[
+\begin{aligned}
+\phi\left(U_p\right)-\phi\left(R_p\right) &amp; =\operatorname{Tr}(I)-\operatorname{Re}\left(\operatorname{Tr}\left(U_p\right)\right)-\operatorname{Tr}(I)+\operatorname{Re}\left(\operatorname{Tr}\left(R_p\right)\right) \\
+&amp; =\operatorname{Re}(\operatorname{Tr}(\operatorname{R_p}))-\operatorname{Re} (\operatorname{Tr} (U_p)) .
+\end{aligned}
+\]</span></p>
+<p>Since <span class="math inline">\(\operatorname{Re}\left(z+z_1\right)=\operatorname{Re} z+\operatorname{Re} z_1\)</span> for complex number <span class="math inline">\(z, z_1\)</span>, and <span class="math inline">\(\operatorname{Tr}(A-B)=\operatorname{Tr}(A)-\operatorname{Tr}(B)\)</span> for <span class="math inline">\(A, B \in \mathbb{C}^{N\times N}\)</span>, we get <span class="math display">\[
+\phi\left(u_p\right)-\phi\left(R_p\right)=\operatorname{Re}\left(\operatorname{Tr}\left(R_p-U_p\right)\right) .
+\]</span></p>
+<p>By telescoping, we have <span class="math display">\[
+\begin{aligned}
+R_p-U_p &amp; =\left(R_1-U_1\right) R_2 R_3 R_4 \\
+&amp; +U_1\left(R_2-U_2\right) R_3 R_4 \\
+&amp; +U_1 U_2\left(R_3-U_3^*\right) R_4 \\
+&amp; +U_1 U_2 U_3^*\left(R_4-U_4^*\right).
+\end{aligned}
+\]</span></p>
+<p>Then by additivity of <span class="math inline">\(\operatorname{Re}(\cdot)\)</span> and <span class="math inline">\(\operatorname{Tr}(\cdot)\)</span>, we have <span class="math display">\[
+\begin{aligned}
+\operatorname{Re} \operatorname{Tr}( R_p-U_p )&amp; = \operatorname{Re} \operatorname{Tr}(\left(R_1-U_1\right) R_2 R_3 R_4) \\
+&amp; +\operatorname{Re} \operatorname{Tr}(U_1\left(R_2-U_2\right) R_3 R_4) \\
+&amp; +\operatorname{Re} \operatorname{Tr}(U_1 U_2\left(R_3-U_3^*\right) R_4) \\
+&amp; +\operatorname{Re} \operatorname{Tr}(U_1 U_2 U_3^*\left(R_4-U_4^*\right)).
+\end{aligned}
+\]</span></p>
+<p>Then we obtain by an application of Lemma ? that <span class="math display">\[
+\begin{aligned}
+\left|\phi\left(U_p\right)-\phi\left(R_p\right)\right| \le &amp; \left\|R_1-U_1\right\|\left\|R_2\right\|\left\|R_3 \right\|\left\|R_4\right\| \\
+&amp; +\left\|U_1\right\|\left\|R_2-U_2\right\|\left\|R_3\right\|\left\|R_4\right\| \\
+&amp; +\left\|U_1\right\|\left\|U_2\right\|\left\|R_3-U_3^*\right\|\left\|R_4\right\| \\
+&amp; +\left\|U_1\right\|\left\|U_2\right\|\left\|U_3^*\right\|\left\|R_4-U_4^*\right\|.
+\end{aligned}
+\]</span></p>
+<p>By Lemma ?, we have that <span class="math inline">\(R_j\)</span> is truly a quadratic approximation for <span class="math inline">\(U_j\)</span>, that is, <span class="math inline">\(\lVert R_j - U_j \rVert \le \frac{\lVert H_j \rVert^3}{6} \le \frac{\eta^{3}}{6}\)</span> when <span class="math inline">\(j=1,2\)</span>. And likewise we have <span class="math inline">\(\lVert R_j - U_j^* \rVert \le \eta^{3}/6\)</span> when <span class="math inline">\(j = 3,4\)</span>. Since <span class="math inline">\(\lVert I \rVert = \sqrt{N}\)</span> and <span class="math inline">\(\lVert H_j \rVert\)</span> is small for each <span class="math inline">\(j=1,2,3,4\)</span>, then the size of <span class="math inline">\(R_j\)</span> is close to the size of the identity matrix <span class="math inline">\(I\)</span>, which means that <span class="math inline">\(\lVert R_j \rVert \le C\)</span> where <span class="math inline">\(C\)</span> depends only on <span class="math inline">\(N\)</span>. Lastly, we know that <span class="math inline">\(\lVert U_j \rVert = \sqrt{N}\)</span> for each <span class="math inline">\(j\)</span>, so we obtain from the previous display the new bound <span class="math display">\[
+\left|\phi\left(U_p\right)-\phi\left(R_p\right)\right| \le C \eta^3,
+\]</span> as desired.</p>
 </section>
 <section id="june-10-2026" class="level2">
 <h2 class="anchored" data-anchor-id="june-10-2026">June 10, 2026</h2>
