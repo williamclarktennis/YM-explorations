@@ -32,18 +32,33 @@ where $D = \text{diag}(e^{i\theta_1}, \cdots, e^{i\theta_N})$,
 for $\theta_1, \cdots, \theta_N \in (-\pi, \pi)$, 
 and $V \in \mathrm{U}(N)$.
 
-Note that $(VDV^* - I) = V(DV^* - V^*) = V(D-I)V^*$
+Here is why $e^{i \theta_j} \ne -1$ for all $j = 1, \cdots, N$. 
+First note that $(VDV^* - I) = V(DV^* - V^*) = V(D-I)V^*$
 by unitarity of $V$. 
-Then also by unitarity, we have
+Hence, $\lVert I - U \rVert = \lVert I - D \rVert$. 
+We have $\lVert I - D \rVert^2 = \sum_{jk} |(I-D)_{jk}|^2$.
+Suppose $e^{i\theta_m} = -1$ at entry $mm$ in $D$.
+Then $|(I-D)_{mm}|^2 = |2|^2 = 4.$
+Then we have 
+\begin{align*}
+    \lVert I - D \rVert^2 = \sum_{jk}|(I-D)_{jk}|^2 \ge 4.
+\end{align*}
+But $U \in b(I,1)$, and we have a contradiction. 
+This will be helpful when we consider
+the principal branch of the logarithm, 
+which is defined on $\C \setminus (-\infty, 0]$. 
+
+For seeing how matrices $V$ pass through 
+the logarithm, we note that
 $(V(D-I)V^*)^n = V(D-I)^nV^*$, 
 for $n$ a positive integer.
-
-Using these observations, we have
+Then we have
 \begin{align*}
     \log(VDV^*) &= \lim_{N \to \infty} \sum_{n=1}^N (-1)^{n+1} \frac{V(D-I)^nV^*}{n}\\
-    &= V \log(D) V^*,
+    &= V \log(D) V^*.
 \end{align*}
-and we know that
+
+We know that
 $\log(D) = \text{diag} (\log (\lambda_1), \cdots, \log(\lambda_N))$, 
 where $\lambda_j = e^{i \theta_j}$.
 Using the principal branch of the logarithm, and 
