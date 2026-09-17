@@ -2,7 +2,12 @@
 title: "About"
 ---
 
-This website was created on December 9, 2025 to host stuff about my Master's thesis on and (hopefully) post-Master's exploration of YM lattice gauge theory, or more generally, the Yang Mills Millenium problem. 
+This website was created on December 9, 2025 to host stuff about my Master's thesis on and (hopefully) post-Master's exploration of YM lattice gauge theory, or more generally, the Yang Mills Millenium problem.
+
+From June 2026 - September 2026, I was writing 
+my Master thesis in a standalone document, therefore
+I did not update this page. I will soon post the thesis 
+here.
 
 ## Some developer details: 
 This website is built using Quarto.
