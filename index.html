@@ -153,6 +153,10 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-monthly-archive">    
         <li>
+    <a class="dropdown-item" href="./June2026.html">
+ <span class="dropdown-text">June 2026</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./May2026.html">
  <span class="dropdown-text">May 2026</span></a>
   </li>  
@@ -229,16 +233,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#june-18-2026" id="toc-june-18-2026" class="nav-link active" data-scroll-target="#june-18-2026">June 18, 2026</a></li>
-  <li><a href="#june-14-2026" id="toc-june-14-2026" class="nav-link" data-scroll-target="#june-14-2026">June 14, 2026</a></li>
-  <li><a href="#june-10-2026" id="toc-june-10-2026" class="nav-link" data-scroll-target="#june-10-2026">June 10, 2026</a></li>
-  <li><a href="#june-4-2026" id="toc-june-4-2026" class="nav-link" data-scroll-target="#june-4-2026">June 4, 2026</a>
+  <li><a href="#july-28-2026" id="toc-july-28-2026" class="nav-link active" data-scroll-target="#july-28-2026">July 28, 2026</a>
   <ul class="collapse">
-  <li><a href="#notes-on-chapter-14-of-klenke" id="toc-notes-on-chapter-14-of-klenke" class="nav-link" data-scroll-target="#notes-on-chapter-14-of-klenke">Notes on Chapter 14 of Klenke</a></li>
-  <li><a href="#n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations" id="toc-n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations" class="nav-link" data-scroll-target="#n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations"><span class="math inline">\(N^2\)</span> copies of scalar Maxwell configurations versus Hermitian Maxwell Configurations</a></li>
+  <li><a href="#problem-1." id="toc-problem-1." class="nav-link" data-scroll-target="#problem-1.">Problem 1.</a></li>
   </ul></li>
-  <li><a href="#june-3-2026" id="toc-june-3-2026" class="nav-link" data-scroll-target="#june-3-2026">June 3, 2026</a></li>
-  <li><a href="#june-2-2026" id="toc-june-2-2026" class="nav-link" data-scroll-target="#june-2-2026">June 2, 2026</a></li>
   </ul>
 </nav>
     </div>
@@ -269,586 +267,44 @@ window.Quarto = {
 \newcommand\mcy{{\mathcal{Y}}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Tr}{\text{Tr}}
 \def\*#1{\mathbf{#1}}
 \]</span></p>
 </div>
-<section id="june-18-2026" class="level2">
-<h2 class="anchored" data-anchor-id="june-18-2026">June 18, 2026</h2>
-<p>Let us see why <span class="math inline">\(\log(U)^* = - \log(U)\)</span> for <span class="math inline">\(U \in \mathrm{U}(N) \cap b(I, 1)\)</span>, where <span class="math inline">\(\log(U) = \sum_{n=1}^\infty (-1)^{n+1} \frac{(U-I)^n}{n}.\)</span></p>
-<p>Let <span class="math inline">\(U = VDV^*\)</span> be an eigendecomposition for <span class="math inline">\(U\)</span>, where <span class="math inline">\(D = \text{diag}(e^{i\theta_1}, \cdots, e^{i\theta_N})\)</span>, for <span class="math inline">\(\theta_1, \cdots, \theta_N \in (-\pi, \pi)\)</span>, and <span class="math inline">\(V \in \mathrm{U}(N)\)</span>.</p>
-<p>Here is why <span class="math inline">\(e^{i \theta_j} \ne -1\)</span> for all <span class="math inline">\(j = 1, \cdots, N\)</span>. First note that <span class="math inline">\((VDV^* - I) = V(DV^* - V^*) = V(D-I)V^*\)</span> by unitarity of <span class="math inline">\(V\)</span>. Hence, <span class="math inline">\(\lVert I - U \rVert = \lVert I - D \rVert\)</span>. We have <span class="math inline">\(\lVert I - D \rVert^2 = \sum_{jk} |(I-D)_{jk}|^2\)</span>. Suppose <span class="math inline">\(e^{i\theta_m} = -1\)</span> at entry <span class="math inline">\(mm\)</span> in <span class="math inline">\(D\)</span>. Then <span class="math inline">\(|(I-D)_{mm}|^2 = |2|^2 = 4.\)</span> Then we have <span class="math display">\[\begin{align*}
-    \lVert I - D \rVert^2 = \sum_{jk}|(I-D)_{jk}|^2 \ge 4.
-\end{align*}\]</span> But <span class="math inline">\(U \in b(I,1)\)</span>, and we have a contradiction. This will be helpful when we consider the principal branch of the logarithm, which is defined on <span class="math inline">\(\C \setminus (-\infty, 0]\)</span>.</p>
-<p>For seeing how matrices <span class="math inline">\(V\)</span> pass through the logarithm, we note that <span class="math inline">\((V(D-I)V^*)^n = V(D-I)^nV^*\)</span>, for <span class="math inline">\(n\)</span> a positive integer. Then we have <span class="math display">\[\begin{align*}
-    \log(VDV^*) &amp;= \lim_{N \to \infty} \sum_{n=1}^N (-1)^{n+1} \frac{V(D-I)^nV^*}{n}\\
-    &amp;= V \log(D) V^*.
-\end{align*}\]</span></p>
-<p>We know that <span class="math inline">\(\log(D) = \text{diag} (\log (\lambda_1), \cdots, \log(\lambda_N))\)</span>, where <span class="math inline">\(\lambda_j = e^{i \theta_j}\)</span>. Using the principal branch of the logarithm, and employing the fact that <span class="math inline">\(\theta_j \ne \pi\)</span> (since <span class="math inline">\(U \in b(I, 1)\)</span>), we have <span class="math inline">\(\log(\lambda_j) = i \theta_j\)</span> for all <span class="math inline">\(j=1, \cdots, N\)</span>.</p>
-<p>Note that <span class="math inline">\(\log(D)^* = \text{diag}(-i\theta_1, \cdots, -i\theta_n)\)</span>, which, in turn, is equal to <span class="math inline">\(-\log(D)\)</span>.</p>
-<p>Therefore, we have <span class="math display">\[\begin{align*}
-    \log(U)^*  &amp;= (V \log(D) V^*)^* \\
-    &amp;= V \log(D)^* V^* \\
-    &amp;= -V \log(D) V^* \\
-    &amp;= - \log(U).
-\end{align*}\]</span></p>
-<p>Therefore, <span class="math inline">\(\log(U)\)</span> is skew-Hermitian whenever <span class="math inline">\(U \in \mathrm{U}(N) \cap b(I, 1)\)</span>.</p>
-</section>
-<section id="june-14-2026" class="level2">
-<h2 class="anchored" data-anchor-id="june-14-2026">June 14, 2026</h2>
-<p>We want to show that <span class="math inline">\(\lVert H_i \rVert \le \eta\)</span> for all <span class="math inline">\(i \in [3]\)</span> implies that <span class="math inline">\(|\Tr(H_1H_2H_3)| &lt; \eta^3.\)</span></p>
-<p><strong>Lemma</strong>. <em>The function <span class="math inline">\(\langle A, B \rangle = \Tr (A^*B)\)</span> defines an inner product on the <span class="math inline">\(\R\)</span> or <span class="math inline">\(\C\)</span> vector space <span class="math inline">\(\C^{N \times N}\)</span>.</em></p>
-<p>Proof. Let us consider first <span class="math inline">\(\C^{N \times N}\)</span> as a <span class="math inline">\(\C\)</span> vector space. We leave the <span class="math inline">\(\R\)</span> proof for another life. Let us check the axioms in definition 2.1 on page 9 of <span class="citation" data-cites="Alt2012">Alt (<a href="#ref-Alt2012" role="doc-biblioref">2012</a>)</span>, except that we will use anti-linearity in the first slot (the physicist’s convention).</p>
-<p>Let <span class="math inline">\(\alpha \in \C\)</span> and consider <span class="math inline">\(A, B \in \C^{N \times N}\)</span>. We have <span class="math display">\[\langle \alpha A, B \rangle = \Tr((\alpha A)^* B) = \alpha^* \Tr(A^* B) = \alpha^* \langle A, B \rangle.\]</span></p>
-<p>We also have <span class="math display">\[\langle A, \alpha B \rangle = \Tr((A^* (\alpha B)) = \alpha \langle A, B \rangle.\]</span></p>
-<p>And if <span class="math inline">\(A,B,C \in \C^{N \times N}\)</span>, we have <span class="math display">\[\langle A + C, B \rangle = \Tr((A+C)^* B) = \Tr(A^*B + C^*B) = \Tr(A^*B) + \Tr(C^*B) = \langle A, B \rangle + \langle C, B \rangle.\]</span></p>
-<p>Similarly, <span class="math display">\[\langle A, C+B \rangle = \langle A, B \rangle + \langle A, C \rangle.\]</span> Up to this point we have shown that <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> is a sesequilinear form.</p>
-<p>Next, for <span class="math inline">\(A, B \in \C^{N \times N}\)</span>, we have <span class="math display">\[\begin{equation*}
-    \begin{aligned}
-        \overline{\langle A, B \rangle} = \overline{\Tr(A^*B)} = \sum_{i=1}^N \overline{(A^*B)_{ii}} \\
-        = \sum_{i=1}^N \sum_{j=1}^N \overline{(A^*)_{ij} B_{ji}}
-        = \sum_{i=1}^N \sum_{j=1}^N \overline{\overline{(A_{ji})} B_{ji}} \\
-        = \sum_{i=1}^N \sum_{j=1}^N (A_{ji}) \overline{B_{ji}}
-        = \sum_{i=1}^N \sum_{j=1}^N (B^*)_{ij} (A_{ji})  \\
-        = \sum_{i=1}^N (B^* A)_{ii} = \Tr(B^*A) = \langle B, A \rangle,
-    \end{aligned}
-\end{equation*}\]</span> which shows symmetry.</p>
-<p>Next, for <span class="math inline">\(A \ne 0 \in \C^{N \times N}\)</span>, we have <span class="math display">\[\begin{align*}
-    \langle A, A \rangle = \Tr(A^* A) = \sum_{i,j=1}^N \lVert A_{ij} \rVert^2 &gt; 0.
-\end{align*}\]</span> Since <span class="math inline">\(\langle 0, 0 \rangle = 0\)</span>, this shows that <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> is positive definite. Therefore <span class="math inline">\(\langle \, \cdot \, , \, \cdot \, \rangle\)</span> defines an inner product on <span class="math inline">\(\C^{N \times N}\)</span>. QED.</p>
-<p><strong>Lemma</strong>. <em>Let <span class="math inline">\(X_1, \cdots, X_k\)</span> be <span class="math inline">\(k \ge 2\)</span> matrices in <span class="math inline">\(\C^{N \times N}\)</span>. Then <span class="math display">\[|\Re \Tr X_1 \cdots X_k| \le \lVert X_1 \rVert \cdots \lVert X_k \rVert,\]</span> where <span class="math inline">\(\lVert \, \cdot \, \rVert\)</span> denotes the Hilbert Schmidt norm induced by the inner product <span class="math inline">\(\langle A ,B \rangle = \Tr(A^*B)\)</span> defined in the above lemma. That is, <span class="math inline">\(\lVert \, \cdot \, \rVert = \sqrt{\langle \, \cdot \, , \, \cdot \, \rangle}.\)</span></em></p>
-<p><strong>Remark</strong>. This result does not hold when <span class="math inline">\(k=1\)</span>. The idea is that the square root of <span class="math inline">\(N\)</span> term in the inequality <span class="math inline">\(|\cdot|_1 \le \sqrt{N} |\cdot |_2\)</span> is actually needed. For an example, consider the matrix <span class="math inline">\(X_1 = \begin{bmatrix}0.5 &amp; 0 \\ 0 &amp; 0.5 \end{bmatrix} \in \C^{2 \times 2}\)</span>. Then <span class="math inline">\(\Re \Tr X_1 = 1\)</span>. On the other hand, <span class="math inline">\(\lVert X_1 \rVert = \sqrt{0.5}\)</span>.</p>
-<p>Proof. We proceed by induction. The base case is <span class="math inline">\(k=2\)</span>. Suppose <span class="math inline">\(z = \Tr X_1X_2\)</span>. Then <span class="math inline">\(|\Re z| \le |z|\)</span>. Therefore <span class="math inline">\(|\Re \Tr X_1X_2 | \le |\Tr X_1 X_2|\)</span>. Let <span class="math inline">\(X = X_1^*\)</span>, so that <span class="math inline">\(X^* = X_1\)</span>. Then we have <span class="math inline">\(|\Tr X_1 X_2| = |\langle X, X_2 \rangle|\)</span>. By the Cauchy Schwarz inequality, we have <span class="math inline">\(|\langle X, X_2 \rangle| \le \lVert X \rVert \lVert X_2 \rVert\)</span>. But <span class="math inline">\(\lVert X \rVert = \lVert X_1 \rVert\)</span> because <span class="math inline">\(\lVert X \rVert^2 = \langle X, X \rangle = \Tr X^* X
-= \Tr X X^* = \Tr X_1^* X_1 = \langle X_1, X_1 \rangle = \lVert X_1 \rVert^2\)</span>. Tracing back the steps, we have <span class="math inline">\(| \Re \Tr X_1 X_2 | \le \lVert X_1 \rVert \lVert X_2 \rVert.\)</span> This settles the base case.</p>
-<p>For the inductive step, assume that we have proven the claim for some <span class="math inline">\(k \ge 2\)</span>. Let <span class="math inline">\(X_1, \cdots, X_{k+1}\)</span> be given. Observe that <span class="math inline">\(X_1 \cdots X_k \in \C^{N \times N}\)</span> so we can treat it as one matrix. That is, let <span class="math inline">\(X = X_1 \cdots X_k\)</span>. Then we have <span class="math inline">\(|\Re \Tr X_1 \cdots X_{k+1} | = | \Re \Tr X X_{k+1} |\)</span>. The latter term satisfies <span class="math inline">\(| \Re \Tr X X_{k+1} | \le \lVert X \rVert \lVert X_{k+1} \rVert\)</span> by the base case. Then by an induction argument applied to the inequality <span class="math inline">\(\lVert Z Y \rVert \le \lVert Z \rVert \lVert Y \rVert\)</span> for matrices <span class="math inline">\(X,Y\)</span>, we obtain <span class="math inline">\(\lVert X \rVert \le \lVert X_1 \rVert \cdots \lVert X_k \rVert\)</span>. Therefore, <span class="math display">\[
-|\Re \Tr X_1 \cdots X_{k+1} | \le \lVert X_1 \rVert \cdots \lVert X_k \rVert \lVert X_{k+1} \rVert,
-\]</span> which completes the induction step. Thus, the lemma is proved. QED.</p>
-<p><strong>Assumptions for the following lemmas.</strong> <em>Let <span class="math inline">\(p \in \mathcal{P}(\Lambda_n)\)</span> be a plaquette. Let <span class="math inline">\(U \in \mathrm{U}(N)^{E_n}\)</span> be a unitary configuration. Let <span class="math inline">\(U_1 = U_{p_1}\)</span>, <span class="math inline">\(U_2 = U_{p_2}\)</span>, <span class="math inline">\(U_3= U_{p_3}\)</span>, and <span class="math inline">\(U_4 = U_{p_4}\)</span>. Suppose <span class="math inline">\(H_1, H_2, H_3, H_4 \in \mathrm{H}(N)\)</span> satisfy <span class="math inline">\(e^{iH_1} = U_{p_1}\)</span>, <span class="math inline">\(e^{iH_2} = U_{p_2}\)</span>, <span class="math inline">\(e^{iH_3} = U_{p_3}\)</span>, and <span class="math inline">\(e^{iH_4} = U_{p_4}\)</span>. Suppose that <span class="math display">\[
-    H_p = H_1 + H_2 - H_3 - H_4.
-    \]</span> Let <span class="math display">\[\begin{equation}
-        \begin{aligned}
-            R_1 &amp;= I + iH_1 - H_1^2/2 \\
-            R_2 &amp;= I + iH_2 - H_2^2/2 \\
-            R_3 &amp;= I - iH_3 - H_3^2/2 \\
-            R_4 &amp;= I - iH_4 - H_4^2/2 \\
-        \end{aligned}
-    \end{equation}\]</span> and suppose <span class="math display">\[
-    R_p = R_1R_2R_3R_4.
-    \]</span> Suppose that <span class="math inline">\(\lVert H_i \rVert \le \eta \le 1\)</span> for all <span class="math inline">\(i = 1, 2, 3, 4\)</span>. Suppose also that <span class="math inline">\(\phi(X) = \Re \Tr (I - X)\)</span> for any <span class="math inline">\(X \in \C^{N \times N}\)</span>.</em></p>
-<p><strong>Lemma</strong>. <em>We have <span class="math display">\[
-    \left|\phi(R_p) - \frac{1}{2} \lVert H_p \rVert^2  \right| \le C \eta^3,
-    \]</span> where the constant <span class="math inline">\(C &gt; 0\)</span> depends only on <span class="math inline">\(N\)</span>.</em></p>
-<p>Proof. First we expand <span class="math inline">\(\phi(R_p)\)</span>, which satisfies <span class="math display">\[\begin{equation*}
-        \begin{aligned}
-            \phi(R_p) = \Re \Tr (I - (I + iH_1 - H_1^2/2) \times \\
-            (I + iH_2 - H_2^2/2) \times (I - iH_3 - H_3^2/2) \\
-            \times (I - iH_4 - H_4^2/2) ).
-        \end{aligned}
-    \end{equation*}\]</span> The product <span class="math inline">\(R_p = R_1 R_2 R_3 R_4\)</span> will have <span class="math inline">\(3 \times 3 \times 3 \times 3 = 81\)</span> terms, which we classify based on how many matrices <span class="math inline">\(H_j\)</span> appear in each one.</p>
-<p>First we begin with terms without any matrices <span class="math inline">\(H_j\)</span>. There is one term that is equal to <span class="math inline">\(I\)</span>.</p>
-<p>Then we move to linear terms with one matrix <span class="math inline">\(H_j\)</span>. There are four terms of the form <span class="math inline">\(i H_j\)</span> up to a sign. The contribution is <span class="math inline">\(X_{\text{lin}} := i(H_1 + H_2 - H_3 - H_4).\)</span></p>
-<p>Then we move to the quadratic terms with two matrices <span class="math inline">\(H_j\)</span>. There are <span class="math inline">\(\binom{4}{2} = 6\)</span> mixed terms of the form <span class="math inline">\(zH_kH_j\)</span> where <span class="math inline">\(k &lt; j\)</span> and <span class="math inline">\(z \in \{-1,1\}\)</span>, and then <span class="math inline">\(4\)</span> homogeneous terms of the form <span class="math inline">\(-\frac{1}{2}H_j^2\)</span>. The contribution is <span class="math display">\[
-X_{\text{quad}} := -\frac{1}{2}(H_1^2 + H_2^2 + H_3^2 + H_4^2) -H_1H_2 + H_1H_3 + H_1H_4 + H_2H_3 + H_2H_4 - H_3H_4.
+<section id="july-28-2026" class="level2">
+<h2 class="anchored" data-anchor-id="july-28-2026">July 28, 2026</h2>
+<p>In this post, I’m prototyping a page about bridging the gap between undergraduate calculus and research in Yang Mills quantum gauge theory.</p>
+<p>The motivation for this page is to help me overcome my lack of confidence in my calculus knowledge, which frequently causes me strife in my research into Yang Mills quantum gauge theory. The idea is to find a better solution than the following two reactions to this problem. The first reaction is to give up entirely on research into Yang Mills quantum gauge theory and focus purely on undergraduate level calculus. The second reaction is to deny that I lack some foundational knowledge in calculus, and press forward with increasing psychological strife into the modern papers on Yang Mills quantum theory.</p>
+<p>So my proposed solution is to find logical statements in modern papers on Yang Mills theory whose proofs or derivations are treatable with undergrad level calculus, after unraveling the definitions.</p>
+<p>Let me begin with an example.</p>
+<section id="problem-1." class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.">Problem 1.</h3>
+<p>This problem comes from the section on the <span class="math inline">\(\phi^4_2\)</span> model in <span class="citation" data-cites="BrenneckeCQFT">Brennecke (<a href="#ref-BrenneckeCQFT" role="doc-biblioref">2026</a>)</span>.</p>
+<p>Suppose <span class="math inline">\(f, g \in D(\mathbb T^2) =
+\{f \in C^\infty(\R^2, \C): f(x + k) = f(x) \forall k \in \Z^2 \}\)</span>. Show that <span class="math display">\[
+\left \langle f, \frac{1}{-\Delta + m^2} g
+\right \rangle_{L^2(\mathbb T^2, \C)}
+=
+\sum_{p \in 2\pi \Z^2} \frac{\overline{\hat{f}}(p) \hat{g}(p) }{|p|^2 + m^2}.
 \]</span></p>
-<p>There are also cubic, quartic, quintic, sextic, septic, and octic terms, but their contribution will be absorbed into the upper bound <span class="math inline">\(C\eta^3\)</span> after an application of the previous lemma. But let us denote by <span class="math inline">\(X_{\text{cubic}+} \in \C^{N \times N}\)</span> the sum of these 66 higher order terms.</p>
-<p>We have <span class="math display">\[
-R_p = I + X_{\text{lin}} + X_{\text{quad}} + X_{\text{cubic}+}
-\]</span> and therefore <span class="math display">\[
-\Re \Tr ( I - R_p ) = - \Re \Tr (X_{\text{lin}}) - \Re \Tr (X_{\text{quad}}) - \Re \Tr (X_{\text{cubic}+})
-\]</span> First we show that <span class="math inline">\(\Re \Tr (X_{\text{lin}}) = 0\)</span>. Recall that the trace of a matrix is equal to the sum of its eigenvalues. Since the eigenvalues of <span class="math inline">\(H_p = H_1 + H_2 - H_3 - H_4\)</span> are real as <span class="math inline">\(H_p\)</span> is a Hermitian matrix, it follows that the eigenvalues of <span class="math inline">\(i(H_1 + H_2 - H_3 - H_4)\)</span> are all imaginary. Taking the real part of the trace, we get zero, as desired.</p>
-<p>Next, we show that <span class="math display">\[-\Re \Tr (X_{\text{quad}}) = \frac{1}{2}\lVert H_1 + H_2 - H_3 - H_4 \rVert^2.\]</span> Since <span class="math inline">\(H_p\)</span> is Hermitian, we get that <span class="math inline">\(H_p = H_p^*\)</span>. Therefore <span class="math inline">\(\lVert H_p \rVert^2\)</span> is equal to <span class="math inline">\(\Tr(H_p^*H_p) = \Tr H_p^2.\)</span> Note that <span class="math inline">\(H_p^2\)</span> in expanded form has 16 terms. Note that 12 of these terms are mixed and of the form <span class="math inline">\(zH_iH_j\)</span> for <span class="math inline">\(z \in \{-1,1\}\)</span>, and 4 are homogeneous of the form <span class="math inline">\(H_i^2\)</span>. In particular, we have <span class="math display">\[\begin{equation*}
-    \begin{aligned}
-        H_p^2 = (H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4) \\
-        + (H_2H_1 - H_3H_1 - H_4H_1 - H_3H_2 - H_4H_2 + H_3H_4) + \\
-        + (H_1^2 + H_2^2 + H_3^2 + H_4^2),
-    \end{aligned}
-\end{equation*}\]</span> where in the second line we’ve written the oppositely ordered terms compared to the first line, and the third line contains the homogeneous terms. We obtain the same value by taking the trace of the first and second lines above on the right hand side because of the identity <span class="math inline">\(\Tr(AB) = \Tr(BA)\)</span>. Therefore, <span class="math display">\[\begin{equation*}
-    \begin{aligned}
-        \frac{1}{2} \Tr(H_p^2) = \frac{1}{2} \cdot 2 \Tr(H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4) \\
-        + \frac{1}{2} \Tr (H_1^2 + H_2^2 + H_3^2 + H_4^2).
-    \end{aligned}
-\end{equation*}\]</span> The expression on the left hand side is equal to <span class="math inline">\(\frac{1}{2} \lVert H_p \rVert^2\)</span>, which is a real number. Therefore, applying <span class="math inline">\(\Re\)</span> to the right hand side of the equation does nothing. That is, <span class="math display">\[\begin{align*}
-    \frac{1}{2} \lVert H_p \rVert^2 = \Re \Tr(H_1H_2 - H_1H_3 - H_1H_4 - H_2H_3 - H_2H_4 + H_3H_4)\\
-     + \frac{1}{2} \Re \Tr (H_1^2 + H_2^2 + H_3^2 + H_4^2).
-\end{align*}\]</span> Then we recognize that the right hand side is equal to <span class="math inline">\(-\Re \Tr X_{\text{quad}},\)</span> which is what we wanted to show.</p>
-<p>Then to conclude the lemma, we write <span class="math display">\[\begin{align*}
-    \left|\phi(R_p) - \frac{1}{2} \lVert H_p \rVert^2  \right| &amp;=
-    \left| \Re \Tr ( I - R_p ) - \frac{1}{2} \lVert H_p \rVert^2 \right| \\
-    &amp;= \left|  - \Re \Tr X_{\text{cubic}+}  \right| \\
-    &amp; \le \sum |\Re \Tr \, zH^{k \ge 3}|.
-\end{align*}\]</span> where in the last line, the sum is over the 66 higher order terms, and <span class="math inline">\(H^{k \ge 3}\)</span> stands for a higher order term of the form <span class="math inline">\(H_{i_1} H_{i_2} \cdots H_{i_k}\)</span> for <span class="math inline">\(i_1, \cdots, i_k \in \{1,2,3,4\}\)</span> and <span class="math inline">\(z\)</span> stands for a coefficient which satisfies <span class="math inline">\(|z| \le 1\)</span>. Then by an application of the lemma above and the fact that <span class="math inline">\(\lVert H_j \rVert \le \eta \le 1\)</span> for all <span class="math inline">\(j = 1,2,3,4\)</span> and that <span class="math inline">\(\eta^k \le \eta^3\)</span> whenever <span class="math inline">\(k \ge 3\)</span>, we have <span class="math display">\[
-\sum |\Re \Tr \, zH^{k \ge 3}| \le 66 \times \eta^3 = C \eta^{3}.
-\]</span> Note that the constant <span class="math inline">\(C\)</span> does not really depend on <span class="math inline">\(N\)</span>, but it is easier to say that it depends only on <span class="math inline">\(N\)</span> rather than to say what it does not depend on. This concludes the proof. QED.</p>
-<p><strong>Lemma</strong>. <em>We have <span class="math display">\[
-    \left| \phi(U_p) - \frac{1}{2} \lVert H_p \rVert^2 \right| \le C \eta^3,
-    \]</span> where the constant <span class="math inline">\(C &gt; 0\)</span> depends only on <span class="math inline">\(N\)</span>.</em></p>
-<p>Proof. We want to show that <span class="math inline">\(\phi(U_p) = \Re \Tr (I - U_p)\)</span> is <span class="math inline">\(C \eta^3\)</span>-close to <span class="math inline">\(\frac{1}{2} \lVert H_p \rVert^2.\)</span> But the previous lemma says that <span class="math inline">\(\frac{1}{2} \lVert H_p \rVert^2\)</span> is <span class="math inline">\(C\eta^3\)</span> close to <span class="math inline">\(\phi(R_p)\)</span>, so it suffices to prove that <span class="math inline">\(\phi(R_p)\)</span> is <span class="math inline">\(C\eta^3\)</span> close to <span class="math inline">\(\phi(U_p)\)</span>, that is, <span class="math inline">\(|\phi(U_p) - \phi(R_p)| \le C\eta^3\)</span> where <span class="math inline">\(C\)</span> depends only on <span class="math inline">\(N\)</span>.</p>
-<p>We have <span class="math display">\[
-\begin{aligned}
-\phi\left(U_p\right)-\phi\left(R_p\right) &amp; =\operatorname{Tr}(I)-\operatorname{Re}\left(\operatorname{Tr}\left(U_p\right)\right)-\operatorname{Tr}(I)+\operatorname{Re}\left(\operatorname{Tr}\left(R_p\right)\right) \\
-&amp; =\operatorname{Re}(\operatorname{Tr}(\operatorname{R_p}))-\operatorname{Re} (\operatorname{Tr} (U_p)) .
-\end{aligned}
-\]</span></p>
-<p>Since <span class="math inline">\(\operatorname{Re}\left(z+z_1\right)=\operatorname{Re} z+\operatorname{Re} z_1\)</span> for complex number <span class="math inline">\(z, z_1\)</span>, and <span class="math inline">\(\operatorname{Tr}(A-B)=\operatorname{Tr}(A)-\operatorname{Tr}(B)\)</span> for <span class="math inline">\(A, B \in \mathbb{C}^{N\times N}\)</span>, we get <span class="math display">\[
-\phi\left(u_p\right)-\phi\left(R_p\right)=\operatorname{Re}\left(\operatorname{Tr}\left(R_p-U_p\right)\right) .
-\]</span></p>
-<p>By telescoping, we have <span class="math display">\[
-\begin{aligned}
-R_p-U_p &amp; =\left(R_1-U_1\right) R_2 R_3 R_4 \\
-&amp; +U_1\left(R_2-U_2\right) R_3 R_4 \\
-&amp; +U_1 U_2\left(R_3-U_3^*\right) R_4 \\
-&amp; +U_1 U_2 U_3^*\left(R_4-U_4^*\right).
-\end{aligned}
-\]</span></p>
-<p>Then by additivity of <span class="math inline">\(\operatorname{Re}(\cdot)\)</span> and <span class="math inline">\(\operatorname{Tr}(\cdot)\)</span>, we have <span class="math display">\[
-\begin{aligned}
-\operatorname{Re} \operatorname{Tr}( R_p-U_p )&amp; = \operatorname{Re} \operatorname{Tr}(\left(R_1-U_1\right) R_2 R_3 R_4) \\
-&amp; +\operatorname{Re} \operatorname{Tr}(U_1\left(R_2-U_2\right) R_3 R_4) \\
-&amp; +\operatorname{Re} \operatorname{Tr}(U_1 U_2\left(R_3-U_3^*\right) R_4) \\
-&amp; +\operatorname{Re} \operatorname{Tr}(U_1 U_2 U_3^*\left(R_4-U_4^*\right)).
-\end{aligned}
-\]</span></p>
-<p>Then we obtain by an application of Lemma ? that <span class="math display">\[
-\begin{aligned}
-\left|\phi\left(U_p\right)-\phi\left(R_p\right)\right| \le &amp; \left\|R_1-U_1\right\|\left\|R_2\right\|\left\|R_3 \right\|\left\|R_4\right\| \\
-&amp; +\left\|U_1\right\|\left\|R_2-U_2\right\|\left\|R_3\right\|\left\|R_4\right\| \\
-&amp; +\left\|U_1\right\|\left\|U_2\right\|\left\|R_3-U_3^*\right\|\left\|R_4\right\| \\
-&amp; +\left\|U_1\right\|\left\|U_2\right\|\left\|U_3^*\right\|\left\|R_4-U_4^*\right\|.
-\end{aligned}
-\]</span></p>
-<p>By Lemma ?, we have that <span class="math inline">\(R_j\)</span> is truly a quadratic approximation for <span class="math inline">\(U_j\)</span>, that is, <span class="math inline">\(\lVert R_j - U_j \rVert \le \frac{\lVert H_j \rVert^3}{6} \le \frac{\eta^{3}}{6}\)</span> when <span class="math inline">\(j=1,2\)</span>. And likewise we have <span class="math inline">\(\lVert R_j - U_j^* \rVert \le \eta^{3}/6\)</span> when <span class="math inline">\(j = 3,4\)</span>. Since <span class="math inline">\(\lVert I \rVert = \sqrt{N}\)</span> and <span class="math inline">\(\lVert H_j \rVert\)</span> is small for each <span class="math inline">\(j=1,2,3,4\)</span>, then the size of <span class="math inline">\(R_j\)</span> is close to the size of the identity matrix <span class="math inline">\(I\)</span>, which means that <span class="math inline">\(\lVert R_j \rVert \le C\)</span> where <span class="math inline">\(C\)</span> depends only on <span class="math inline">\(N\)</span>. Lastly, we know that <span class="math inline">\(\lVert U_j \rVert = \sqrt{N}\)</span> for each <span class="math inline">\(j\)</span>, so we obtain from the previous display the new bound <span class="math display">\[
-\left|\phi\left(U_p\right)-\phi\left(R_p\right)\right| \le C \eta^3,
-\]</span> as desired.</p>
-</section>
-<section id="june-10-2026" class="level2">
-<h2 class="anchored" data-anchor-id="june-10-2026">June 10, 2026</h2>
-<div id="lem-symmetric-bilinear-form" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 1</strong></span> Let <span class="math inline">\(\mathrm{H}(N)\)</span> be the set of Hermitian matrices equipped with <span class="math inline">\(\R\)</span>-scalar multiplication and matrix addition, turning it into an <span class="math inline">\(\R\)</span>-vector space. Then the function <span class="math display">\[(H,R) \mapsto \Re (\Tr(H^*R))\]</span> defines a symmetric bilinear form on <span class="math inline">\(\mathrm{H}(N)\)</span>.</p>
-</div>
-<p>Let <span class="math inline">\(E_n^1 \subset E_n\)</span>. Let <span class="math inline">\((\mathrm{H}(N))^{E_n^1}\)</span> be the set of all Hermitian configurations.</p>
-<div id="lem-hermitian-configs-as-R-vec-space" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 2</strong></span> Under pointwise addition and pointwise <span class="math inline">\(\R\)</span> scalar multiplication, <span class="math inline">\((\mathrm{H}(N))^{E_n^1}\)</span> becomes an <span class="math inline">\(\R\)</span> vector space.</p>
-</div>
-<p>Proof. Let <span class="math inline">\(H, R \in (\mathrm{H}(N))^{E_n^1}\)</span>. Then <span class="math inline">\((H + R)_e = H_e + R_e \in \mathrm{H}(N)\)</span>. The zero element is the Hermitian configuration with all zero matrices on the edges. The additive inverse of a given configuration is just the additive inverse on each edge. And scalar multiplication is defined as follows: <span class="math inline">\(\lambda H = (\lambda H_e)_{e \in E_n^1}\)</span>. QED.</p>
-<div id="lem-hermitian-configs-bilinear-form" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 3</strong></span> The function <span class="math display">\[
-(H, R) \mapsto \sum_{p \in \mathcal{P}(\Lambda_n)} \Re (\Tr(H_p^*R_p))
-\]</span> where <span class="math inline">\(H_p = H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4}\)</span> defines a symmetric bilinear form <span class="math inline">\(M_{H}: \mathrm{H}(N)^{E_n^1} \times \mathrm{H}(N)^{E_n^1} \to \R\)</span>.</p>
-</div>
-<div id="lem-hermitian-configs-pos-def-quad-form" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 4</strong></span> The diagonal of <span class="math inline">\(M_H\)</span>, also denoted by <span class="math inline">\(M_H\)</span>, defined by <span class="math display">\[
-\mathrm{H}(N)^{E_n^1} \ni R \mapsto M_H(R, R)
-\]</span> is a positive definite quadratic form. In particular, <span class="math display">\[
-e^{-\frac{1}{2}M_H(R)} \prod_{e \in E_n^1} d\lambda(R_e)
-\]</span> defines a Gaussian measure on <span class="math inline">\(\mathrm{H}(N)^{E_n^1}.\)</span></p>
-</div>
-<p>Let us define <span class="math display">\[
-\langle H, R \rangle_{\mathrm{H}(N)^{E_n^1}} = \sum_{e \in E_n^1} \Re ( \Tr (H_e^* R_e)).
-\]</span> Then there ought to exist some mathematical object <span class="math inline">\(L\)</span> such that <span class="math display">\[
-\langle H, LR \rangle_{\mathrm{H}(N)^{E_n^1}} = M_H(H, R)
-\]</span> for all <span class="math inline">\(H, R \in \mathrm{H}(N)^{E_n^1}\)</span>.</p>
-<p>Let <span class="math inline">\(t_{i, e} \in \R^{N^2|E_n^1|}\)</span>.</p>
-<p>Consider the map <span class="math display">\[
-\R^{N^2|E_n^1|} \times \R^{N^2|E_n^1|} \ni (t_{i, e}, s_{i, e}) \mapsto
-\sum_{i=1}^{N^2} \sum_{p \in \mathcal{P}(B_n)} t_{i,p} s_{i,p} \in \R
-\]</span> where <span class="math inline">\(t_{i,p} = t_{i,p_1} + t_{i,p_2} - t_{i,p_3} - t_{i,p_4}\)</span> for any <span class="math inline">\(i \in [N^2]\)</span>. Let’s call this map <span class="math inline">\(M_{\R^{N^2|E_n^1|}}\)</span>. Calling it’s diagonal by the same name, then <span class="math display">\[
-e^{-\frac{1}{2} M_{\R^{N^2|E_n^1|}} (X)} \prod_{i=1}^{N^2} \prod_{e \in E_n^1} dl{X_{i,e}}
-\]</span> defines a Gaussian measure on <span class="math inline">\(\R^{N^2|E_n^1|}\)</span>. This measure is equal to the product measure <span class="math display">\[
-\bigotimes_{i=1}^{N^2} \tau_n,
-\]</span> where <span class="math inline">\(\tau_n\)</span> denotes the lattice Maxwell measure on <span class="math inline">\(\R^{|E_n^1|}\)</span>.</p>
-</section>
-<section id="june-4-2026" class="level2">
-<h2 class="anchored" data-anchor-id="june-4-2026">June 4, 2026</h2>
-<section id="notes-on-chapter-14-of-klenke" class="level3">
-<h3 class="anchored" data-anchor-id="notes-on-chapter-14-of-klenke">Notes on Chapter 14 of Klenke</h3>
-<p>Lemma 14.7 (<span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>) Let <span class="math inline">\(\emptyset \neq J \subset I\)</span>. Then <span class="math inline">\(X_J^I\)</span> is measurable with respect to <span class="math inline">\(\mathcal{A}_I-\mathcal{A}_J\)</span>.</p>
-<p>Proof. For any <span class="math inline">\(j \in J\)</span>, <span class="math inline">\(X_j\)</span> is measurable with respect to <span class="math inline">\(\mathcal{A} - \mathcal{A}_j\)</span> by definition of the product <span class="math inline">\(\sigma\)</span> algebra, Definition 14.4. But <span class="math inline">\(X_j = X_j^J \circ X_J^I\)</span> as functions, so therefore we can replace <span class="math inline">\(X_j\)</span> by <span class="math inline">\(X_j^J \circ X_J^I\)</span> in the previous sentence. To conclude measurability of <span class="math inline">\(X_J^I\)</span>, we need to apply the following result of <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>:</p>
-<p>Corollary 1.82 (Measurability of composed maps) Let <span class="math inline">\(I\)</span> be a nonempty index set and let <span class="math inline">\((\Omega, \mathcal{A}),\left(\Omega^{\prime}, \mathcal{A}^{\prime}\right)\)</span> and <span class="math inline">\(\left(\Omega_i, \mathcal{A}_i\right)\)</span> be measurable spaces for any <span class="math inline">\(i \in I\)</span>. Further, let <span class="math inline">\(\left(X_i: i \in I\right)\)</span> be a family of measurable maps <span class="math inline">\(X_i: \Omega^{\prime} \rightarrow \Omega_i\)</span> with <span class="math inline">\(\mathcal{A}^{\prime}=\sigma\left(X_i: i \in I \right)\)</span>. Then the following holds: A map <span class="math inline">\(Y: \Omega \rightarrow \Omega^{\prime}\)</span> is <span class="math inline">\(\mathcal{A}-\mathcal{A}^{\prime}\)</span>-measurable if and only if <span class="math inline">\(X_i \circ Y\)</span> is <span class="math inline">\(\mathcal{A}-\mathcal{A}_i\)</span>-measurable for all <span class="math inline">\(i \in I\)</span>.</p>
-<p>We want to show that <span class="math inline">\(X_J^I\)</span> is measurable with respect to <span class="math inline">\(\mathcal{A}_I-\mathcal{A}_J\)</span>. Does <span class="math inline">\(\mathcal{A}'\)</span> in the corollary correspond to <span class="math inline">\(\mathcal{A}_J\)</span>? For that we would need that <span class="math inline">\(\mathcal{A}_J = \sigma(X_j^J: j \in J)\)</span>. Luckily this is true by inspection of Definition 14.4. It is easy to see that the conclusion of Corollary 1.82 corresponds to the conlusion we wanted to obtain. QED.</p>
-<p>Definition 14.9 (Cylinder sets <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>) For any <span class="math inline">\(i \in I\)</span>, let <span class="math inline">\(\mathcal{E}_i \subset \mathcal{A}_i\)</span> be a subclass of the class of measurable sets.</p>
-<p>For any <span class="math inline">\(A \in \mathcal{A}_J, X_J^{-1}(A) \subset \Omega\)</span> is called a cylinder set with base <span class="math inline">\(J\)</span>. The set of such cylinder sets is denoted by <span class="math inline">\(\mathcal{Z}_J\)</span>. In particular, if <span class="math inline">\(A=\prod_{j \in J} A_j\)</span> for certain <span class="math inline">\(A_j \in \mathcal{A}_j\)</span>, then <span class="math inline">\(X_J^{-1}(A)\)</span> is called a rectangular cylinder with base <span class="math inline">\(J\)</span>. The set of such rectangular cylinders will be denoted by <span class="math inline">\(\mathcal{Z}_J^R\)</span>. The set of such rectangular cylinders for which in addition <span class="math inline">\(A_j \in \mathcal{E}_j\)</span> for all <span class="math inline">\(j \in J\)</span> holds will be denoted by <span class="math inline">\(\mathcal{Z}_J^{\mathcal{E}, R}\)</span>.</p>
-<p>Write <span class="math display">\[
-\begin{equation*}
-\mathcal{Z}=\bigcup_{J \subset I \text { finite }} \mathcal{Z}_J, \tag{14.3}
-\end{equation*}
-\]</span> and similarly define <span class="math inline">\(\mathcal{Z}^R\)</span> and <span class="math inline">\(\mathcal{Z}^{\mathcal{E}, R}\)</span>. Further, define <span class="math display">\[
-\mathcal{Z}_*^R=\bigcup_{N=1}^{\infty}\left\{\bigcup_{n=1}^N A_n: A_1, \ldots, A_N \in \mathcal{Z}^R\right\}
-\]</span> and similarly <span class="math inline">\(\mathcal{Z}_*^{\mathcal{E}, R}\)</span>.</p>
-<p>Remark 14.10 Every <span class="math inline">\(\mathcal{Z}_J\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra, and <span class="math inline">\(\mathcal{Z}\)</span> and <span class="math inline">\(\mathcal{Z}_*^R\)</span> are algebras. Furthermore, <span class="math inline">\(\bigotimes_{i \in I} \mathcal{A}_i=\sigma(\mathcal{Z})\)</span>.</p>
-<p>Lemma 14.11. If every <span class="math inline">\(\mathcal{E}_i\)</span> is a <span class="math inline">\(\pi\)</span>-system, then <span class="math inline">\(\mathcal{Z}^{\mathcal{E}, R}\)</span> is a <span class="math inline">\(\pi\)</span>-system.</p>
-<p>Proof. First we recall the definition of a <span class="math inline">\(\pi\)</span>-system. It is a collection of sets <span class="math inline">\(\mathcal{A}\)</span> that is intersection closed, meaning that <span class="math inline">\(A \cap B \in \mathcal{A}\)</span> whenever <span class="math inline">\(A, B \in \mathcal{A}\)</span>. Next, we write down the definition of <span class="math inline">\(\mathcal{Z}^{\mathcal{E}, R}:\)</span> <span class="math display">\[
-\mathcal{Z}^{\mathcal{E}, R} = \bigcup_{J \subset I \text{ finite}}
-\mathcal{Z}_J^{\mathcal{E}, R}.
-\]</span> An element of the set <span class="math inline">\(\mathcal{Z}^{\mathcal{E}, R}\)</span> is some rectangular cylinder set for some base <span class="math inline">\(J\)</span>, where we have the extra requirement involving the <span class="math inline">\(\mathcal{E}_i\)</span>. We take <span class="math inline">\(A, B \in \mathcal{Z}^{\mathcal{E}, R}\)</span>. Then <span class="math inline">\(A \in \mathcal{Z}_J^{\mathcal{E}, R}\)</span> for some base <span class="math inline">\(J \subset I\)</span> which is finite and <span class="math inline">\(B \in \mathcal{Z}_{J'}^{\mathcal{E}, R}\)</span> for some other base <span class="math inline">\(J' \subset I\)</span> which is also finite. Furthermore, <span class="math inline">\(A\)</span> is the preimage of some cartesian product <span class="math inline">\(\prod_{j \in J} A_j\)</span> under the canonical projection <span class="math inline">\(X_J^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J} \Omega_j\)</span>. In addition, all the <span class="math inline">\(A_j\)</span> must be elements of <span class="math inline">\(\mathcal{E}_j\)</span>. Likewise, <span class="math inline">\(B\)</span> is the preimage of some cartesian product <span class="math inline">\(\prod_{j \in J'} B_j\)</span> under the canonical projection <span class="math inline">\(X_{J'}^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J'} \Omega_j\)</span>. As before, we also require that the <span class="math inline">\(B_j\)</span> are elements of <span class="math inline">\(\mathcal{E}_j\)</span>.</p>
-<p>At this point, we’ve completely unraveled the definition of the statement <span class="math display">\[
-A, B \in \mathcal{Z}^{\mathcal{E}, R}.
-\]</span> Next we explore the definition of the set <span class="math inline">\(A \cap B\)</span>. For a point <span class="math inline">\(\omega \in \Omega = \prod_{i \in I} \Omega_i\)</span> to be both in <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we see that <span class="math inline">\(\omega(j) \in A_j\)</span> for all <span class="math inline">\(j \in J\)</span> and <span class="math inline">\(\omega(j) \in B_j\)</span> for all <span class="math inline">\(j \in J'\)</span>. This is only potentially problematic when <span class="math inline">\(j \in J'':= J \cap J'\)</span>. Let’s write <span class="math inline">\(C_j := A_j \cap B_j\)</span> for all <span class="math inline">\(j \in J''\)</span>. Next, consider the set <span class="math display">\[
-\left( \prod_{j \in J''} C_j \right) \times
-\left( \prod_{j \in J \setminus J''} A_j \right) \times
-\left( \prod_{j \in J' \setminus J''} B_j \right).
-\]</span> We see that <span class="math inline">\(A \cap B\)</span> is the preimage of the previous set under the canonical projection <span class="math inline">\(X_{J \cup J'}^I: \prod_{i \in I} \Omega_i \to \prod_{j \in J \cup J'} \Omega_j\)</span> And since the <span class="math inline">\(\mathcal{E}_j\)</span> are <span class="math inline">\(\pi\)</span>-systems, we see that <span class="math inline">\(C_j \in \mathcal{E}_j\)</span> for all <span class="math inline">\(j \in J''\)</span>. Hence, <span class="math inline">\(A \cap B\)</span> is a rectangular cylinder set with base <span class="math inline">\(J \cup J'\)</span>, which is slightly surprising, because I would have thought that <span class="math inline">\(A \cap B\)</span> would have base <span class="math inline">\(J \cap J'\)</span>. QED.</p>
-<p>Consider now the situation of finitely many <span class="math inline">\(\sigma\)</span>-finite measure spaces ( <span class="math inline">\(\Omega_i, \mathcal{A}_i, \mu_i\)</span> ), <span class="math inline">\(i=1, \ldots, n\)</span>, where <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
-<p>Lemma 14.13 Let <span class="math inline">\(A \in \mathcal{A}_1 \otimes \mathcal{A}_2\)</span> and let <span class="math inline">\(f: \Omega_1 \times \Omega_2 \rightarrow \overline{\mathbb{R}}\)</span> be an <span class="math inline">\(\mathcal{A}_1 \otimes \mathcal{A}_2\)</span> measurable map. Then, for all <span class="math inline">\(\tilde{\omega}_1 \in \Omega_1\)</span> and <span class="math inline">\(\tilde{\omega}_2 \in \Omega_2\)</span>, <span class="math display">\[
-\begin{aligned}
-&amp; A_{\tilde{\omega}_1}:=\left\{\omega_2 \in \Omega_2:\left(\tilde{\omega}_1, \omega_2\right) \in A\right\} \in \mathcal{A}_2 \\
-&amp; A_{\tilde{\omega}_2}:=\left\{\omega_1 \in \Omega_1:\left(\omega_1, \tilde{\omega}_2\right) \in A\right\} \in \mathcal{A}_1 \\
-&amp; f_{\tilde{\omega}_1}: \Omega_2 \rightarrow \overline{\mathbb{R}}, \quad \omega_2 \mapsto f\left(\tilde{\omega}_1, \omega_2\right) \quad \text { is } \mathcal{A}_2 \text {-measurable }, \\
-&amp; f_{\tilde{\omega}_2}: \Omega_1 \rightarrow \overline{\mathbb{R}}, \quad \omega_1 \mapsto f\left(\omega_1, \tilde{\omega}_2\right) \quad \text { is } \mathcal{A}_1 \text {-measurable } .
-\end{aligned}
-\]</span></p>
-<p>Proof. Let’s start with the first statement, showing that a certain cross-section is a measurable set. Fix <span class="math inline">\(\tilde{\omega}_1 \in \Omega_1\)</span>. If we can exhibit <span class="math inline">\(A_{\tilde{\omega}_1}\)</span> as the preimage of a measurable set under some measurable map with domain <span class="math inline">\((\Omega_2, \mathcal{A}_2)\)</span>, then we are done. Let’s guess the map <span class="math display">\[\iota: (\Omega_2, \mathcal{A}_2) \to (\Omega_1 \times \Omega_2, \mathcal{A}_1 \otimes \mathcal{A}_2)\]</span> given by <span class="math inline">\(\iota(\omega_2) \mapsto (\tilde{\omega}_1, \omega_2)\)</span>. Then the preimage of the measurable set <span class="math inline">\(A\)</span> under this map is <span class="math inline">\(A_{\tilde{\omega}_1}\)</span>. But we still need to check that <span class="math inline">\(\iota\)</span> is a measurable map. We can use Corollary 1.82 for that task. We let <span class="math inline">\(X_1(\omega_1, \omega_2) = \omega_1\)</span> and <span class="math inline">\(X_2(\omega_1, \omega_2) = \omega_2\)</span>, and then we note that <span class="math inline">\(\mathcal{A}_1 \otimes \mathcal{A}_2\)</span> is equal to the smallest sigma algebra such that <span class="math inline">\(X_1\)</span> is <span class="math inline">\(\mathcal{A}_1 \otimes \mathcal{A}_2 - \mathcal{A}_1\)</span> measurable and <span class="math inline">\(X_2\)</span> is <span class="math inline">\(\mathcal{A}_1 \otimes \mathcal{A}_2 - \mathcal{A}_2\)</span> measurable, a fact that is needed for applying Corollary 1.82.</p>
-<p>Note that <span class="math inline">\(X_1 \circ \iota\)</span> is constantly <span class="math inline">\(\tilde{\omega}_1\)</span>, and is hence <span class="math inline">\(\mathcal{A}_2 - \mathcal{A}_1\)</span> measurable. Also, <span class="math inline">\(X_2 \circ \iota\)</span> is just the identity map, and is hence <span class="math inline">\(\mathcal{A}_2 - \mathcal{A}_2\)</span> measurable. Then Corollary 1.82 shows that <span class="math inline">\(\iota\)</span> is <span class="math inline">\(\mathcal{A}_2 - \mathcal{A}_1 \otimes \mathcal{A}_2\)</span> measurable. This proves the first statement. We leave the other statements for another life.</p>
-</section>
-<section id="n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations" class="level3">
-<h3 class="anchored" data-anchor-id="n2-copies-of-scalar-maxwell-configurations-versus-hermitian-maxwell-configurations"><span class="math inline">\(N^2\)</span> copies of scalar Maxwell configurations versus Hermitian Maxwell Configurations</h3>
-<p>For each <span class="math inline">\(1 \le i \le N\)</span>, let <span class="math display">\[
-\R^{|E_n^1|} \ni (y_e^{(ii)})_{e \in E_n} = y^{ii} \sim \frac{1}{Z_M(B_n)}
-\exp \left( -\frac{1}{2} \sum_{p \in P(B_n)} (y^{ii}_p)^2 \right)
-dl_{|E_n^1|}(y^{ii})
-\]</span> be a random scalar Maxwell configuration. We instantiate <span class="math inline">\(N^2- N\)</span> other random scalar Maxwell configurations notated, for each <span class="math inline">\(1 \le j &lt; k \le N\)</span>, as <span class="math inline">\(z^{(ij)} = (z_e^{(ij)})_{e \in E_n} \in \R^{|E_n^1|}\)</span> and <span class="math inline">\(w^{(ij)} = (w_e^{(ij)})_{e \in E_n} \in \R^{|E_n^1|}\)</span>. Here we are using the shorthand <span class="math inline">\(\R^{|E_n^1|} := \R^{|E_n^1|} \times \{0\}^{E_n^0}\)</span> and <span class="math display">\[
-dl_{|E_n^1|}(y^{ii}) = \left( \prod_{e \in E_n^1} dl_1(y^{ii}_e) \right)
-\otimes \left( \prod_{e \in E_n^0} d\text{Unif}_{\{0\}}(y^{ii}_e) \right),
-\]</span> where <span class="math inline">\(dl_1\)</span> denotes 1-dimensional Lebesgue measure. Each of the above configurations can be viewed as <span class="math inline">\(|E_n^1|\)</span> dimensional Gaussian vectors.</p>
-<p>Assume that the above <span class="math inline">\(N^2\)</span> scalar Maxwell configurations are independent of one another. As a shorthand, let us write <span class="math inline">\(y = (y^{(ii)})_{1 \le i \le N}\)</span>, <span class="math inline">\(z = (z^{ij})_{1 \le i &lt; j \le N}\)</span>, and <span class="math inline">\(w = (w^{ij})_{1 \le i &lt; j \le N}\)</span>. Then by independence we have for the joint variable <span class="math inline">\((y,z,w) \in \R^{N^2 |E_n^1|}\)</span> that <span class="math display">\[\begin{equation}
-\begin{gathered}
-\mathbb P((y,z,w) \in A) =
-\int_A \frac{1}{Z_M(B_n)^{N^2}}
-\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) d l_{|E_n^1|}(y^{ii})  \times \\ % end of first group
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) d l_{|E_n^1|}(z^{ij}) \times \\ % end of second group
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) d l_{|E_n^1|}(w^{ij}),             % end of third group
-\end{gathered}
-\end{equation}\]</span> if <span class="math inline">\(A \in \mathcal{B}_{\R^{N^2|E_n^1|}}\)</span>.</p>
-<p>Let <span class="math inline">\(H = (H_e)_{e \in E_n} \in H(N)^{E_n^1}\)</span> (where <span class="math inline">\(H(N)^{E_n^1}\)</span> is shorthand for <span class="math inline">\(H(N)^{E_n^1} \times \{0\}^{E_n^0}\)</span>) be a random Maxwell Hermitian configuration distributed according to the law <span class="math display">\[
-\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^1}(H)
+<p>The formula, based on spectral calculus, for <span class="math inline">\(\frac{1}{-\Delta + m^2} g\)</span> is <span class="math display">\[
+(\frac{1}{-\Delta + m^2} g) (p) =
+\left( \mathcal{F}^{-1} \circ \left[ \frac{1}{|\cdot|^2 + m^2}
+\right] \circ \mathcal{F} \right) (p)
 \]</span> where <span class="math display">\[
-d\lambda_{E_n^1}(H) = \bigotimes_{e \in E_n^0} \text{Unif}_{\{0\}}
-\otimes \bigotimes_{e \in E_n^1} d \lambda(H),
-\]</span> where <span class="math inline">\(d\lambda(H)\)</span> denotes Lebesgue measure on <span class="math inline">\(H(N)\)</span>.</p>
-<p>Lemma. With <span class="math inline">\((y,z,w)\)</span> and <span class="math inline">\(H\)</span> as above, we have <span class="math display">\[
-\mathbb P ((y,z,w) \in A) = \mathbb P(H \in \Psi_H^{|E_n^1|}(A))
-\]</span> for all <span class="math inline">\(A \in \mathcal{B}_{\R^{N^2|E_n^1|}}\)</span>.</p>
-<section id="proof-attempt-1." class="level4">
-<h4 class="anchored" data-anchor-id="proof-attempt-1.">Proof Attempt 1.</h4>
-<p>Proof. We begin with <span class="math display">\[\begin{equation}
-\begin{gathered}
-\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{\Psi_H^{|E_n^1|} (A)}
-d\lambda_{E_n^1}(H) \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4} \rVert^2 \right).
-\end{gathered}
-\end{equation}\]</span> Then we make the change of variable <span class="math display">\[
-H_e = \Psi_H(y_e, z_e, w_e)
-\]</span> for each <span class="math inline">\(e \in E_n^1\)</span>. Note that <span class="math display">\[\begin{equation}
-\begin{gathered}
-\Psi_H(y_p, z_p, w_p) = \Psi_H \left( y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4} \right)\\
-= H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4} = H_p.
-\end{gathered}
-\end{equation}\]</span> by linearity of <span class="math inline">\(\Psi_H\)</span>. Then with the change of variable we obtain <span class="math display">\[\begin{equation}
-\begin{gathered}
-\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{A}
-dl_{N^2|E_n^1|}(y,z,w) \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 \right).
-\end{gathered}
-\end{equation}\]</span> Then since <span class="math inline">\(\Psi_H\)</span> is an isometry between <span class="math inline">\(\R^{N^2}\)</span> equipped with the Euclidean norm and <span class="math inline">\(H(N)\)</span> equipped with the Hilbert Schmidt norm, we have <span class="math display">\[\begin{equation}
-\begin{gathered}
-\lVert \Psi_H(y_p,z_p,w_p) \rVert^2 = \lVert (y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4}) \rVert^2 \\
-= \sum_{i=1}^N (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 +
-\sum_{1 \le i &lt; j \le N} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 \\
-+ \sum_{1 \le i &lt; j \le N} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2.
-\end{gathered}
-\end{equation}\]</span> Then using Fubini’s theorem for finite sums to exchange the sum over plaquettes <span class="math inline">\(\sum_{p \in P(B_n)}\)</span> with the sum over indices, such as <span class="math inline">\(\sum_{1 \le i \le N}\)</span>, we obtain <span class="math display">\[\begin{equation}
-\begin{gathered}
-\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 =
-\sum_{i=1}^N \sum_{p \in P(B_n)} (y_{p}^{ii})^2 + \\
-\sum_{1 \le i &lt; j \le N} \sum_{p \in P(B_n)} (z_p^{ij})^2 +\\
-\sum_{1 \le i &lt; j \le N} \sum_{p \in P(B_n)} (w_p^{ij})^2.
-\end{gathered}
-\end{equation}\]</span> Then we notice that <span class="math display">\[\begin{equation}
-\begin{gathered}
-\exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert \Psi_H(y_p, z_p, w_p) \rVert^2 \right) = \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).
-\end{gathered}
-\end{equation}\]</span> As a result, <span class="math display">\[\begin{equation}
-\begin{gathered}
-\mathbb P(H \in \Psi_H^{|E_n^1|} (A)) = \frac{1}{Z_H(B_n)} \int_{A}
-dl_{N^2|E_n^1|}(y,z,w) \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right),
-\end{gathered}
-\end{equation}\]</span> where the last expression is equal to <span class="math inline">\(\mathbb P((y,z,w) \in A)\)</span> because our proof simultaneously showed that <span class="math display">\[\begin{equation}
-\begin{gathered}
-Z_H(B_n) = \int_{H(N)^{E_n^1}} d\lambda_{E_n^1}(H) \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right)\\
-= \int_{\R^{N^2|E_n^1|}} dl_{N^2|E_n^1|}(t^1, \cdots, t^{N^2})
-\prod_{i=1}^{N^2}
-\exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (t^i_p)^2 \right)\\
-= \prod_{i=1}^{N^2} \int_{\R^{|E_n^1|}} dl_{|E_n^1|}(t^i) \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (t^i_p)^2 \right)\\
-= Z_M(B_n)^{N^2}.
-\end{gathered}
-\end{equation}\]</span> This concludes the proof. QED.</p>
-</section>
-<section id="proof-attempt-2." class="level4">
-<h4 class="anchored" data-anchor-id="proof-attempt-2.">Proof attempt 2.</h4>
-<p>Proof. We begin with <span class="math display">\[\begin{equation}
-\begin{gathered}
-\mathbb P((y,z,w) \in A) =
-\frac{1}{Z_M(B_n)^{N^2}}
-\int_A
-d l_{|E_n^1|N^2}(y,z,w)
-\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right)  \times \\ % end of first group
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\ % end of second group
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).             % end of third group
-\end{gathered}
-\end{equation}\]</span> Then we make the change of variable <span class="math display">\[(\Psi_H^{-1}(H_e))_{e \in E_n^1} = \left( \Psi_H^{|E_n^1|} \right)^{-1} (H) = (y,z,w),\]</span> which means that for each <span class="math inline">\(e \in E_n^1\)</span>, we have <span class="math display">\[
-(H_e)^{jk} = (\Psi_H(y_e, z_e, w_e))^{jk} = \begin{cases}y_e^{j j} &amp; \text { if } j=k, \\
-\left(z_e^{j k}+\mathrm{i} w_e^{j k}\right) / \sqrt{2} &amp; \text { if } j&lt;k, \\
-\left(z_e^{k j}-\mathrm{i} w_e^{k j}\right) / \sqrt{2} &amp; \text { if } j&gt;k,\end{cases}
-\]</span> and for <span class="math inline">\(e \in E_n^0\)</span> we have <span class="math inline">\(H_e = 0 \in H(N)\)</span>. Then <span class="math display">\[\begin{equation}
-\begin{gathered}
-\mathbb P((y,z,w) \in A) =
-\frac{1}{Z_M(B_n)^{N^2}}
-\int_{\Psi_H^{|E_n^1|}(A)}
-d l_{|E_n^1|N^2}(y,z,w)
-\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right)  \times \\ % end of first group
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\ % end of second group
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).             % end of third group
-\end{gathered}
-\end{equation}\]</span></p>
-</section>
-</section>
-</section>
-<section id="june-3-2026" class="level2">
-<h2 class="anchored" data-anchor-id="june-3-2026">June 3, 2026</h2>
-<p>Let <span class="math inline">\(H = (H_e)_{e \in E_n} \in H(N)^{E_n}\)</span> be a random Hermitian configuration distributed according to the law <span class="math display">\[
-\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H)
-\]</span> where <span class="math display">\[
-d\lambda_{E_n^0}(H) = \bigotimes_{e \in E_n^0} \text{Unif}_{\{0\}}
-\otimes \bigotimes_{e \in E_n^1} d \lambda(H),
-\]</span> where <span class="math inline">\(d\lambda(H)\)</span> denotes Lebesgue measure on <span class="math inline">\(H(N)\)</span>. In particular, let <span class="math display">\[
-\Psi_H: \R^{N^2} \to H(N)
-\]</span> be the map <span class="math display">\[\begin{equation}
-\begin{gathered}
-(y,z,w) = (\left(y_{j j}\right)_{1 \leq j \leq N},
-\left(z_{j k}\right)_{1 \leq j&lt;k \leq N}, \left(w_{j k}\right)_{1 \leq j&lt;k \leq N}) \\
-\mapsto \begin{bmatrix}
-y_{11} &amp; &amp; &amp; \frac{z_{jk} + iw_{jk}}{\sqrt{2}} \\
-&amp; \ddots &amp; &amp;  \\
-&amp; &amp;  &amp;  \\
-\frac{z_{jk} - iw_{jk}}{\sqrt{2}} &amp; &amp; &amp; y_{NN}
-\end{bmatrix}.
-\end{gathered}
-\end{equation}\]</span></p>
-<p>Then <span class="math inline">\(d\lambda(H)\)</span> is equal to the pushforward of <span class="math inline">\(l_{N^2}\)</span>, <span class="math inline">\(N^2\)</span>-dimensional Lebesgue measure, by the map <span class="math inline">\(\Psi_H\)</span>: <span class="math display">\[
-\lambda = \Psi_H^* l_{N^2} = l_{N^2} \circ \Psi_H^{-1}.
-\]</span> In particular, if <span class="math inline">\(f\)</span> is some integrable function of <span class="math inline">\(H \in H(N)\)</span>, then <span class="math display">\[
-\int f(H) d\lambda(H) = \int f(\Psi_H(y,w,z)) dl_{N^2}(y,w,z).
+(\mathcal{F}f)(p) = \frac{1}{(2\pi)^{d/2}} \int_{\R^d}
 \]</span></p>
-<p>Let <span class="math inline">\(B \in \mathcal{B}(H(N)^{E_n})\)</span> be a Borel subset of Hermitian configuration space. (Or do we need to take a cylinder set?) Then <span class="math display">\[
-\mathbb P(H \in B) = \int_{B} \frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
-\]</span> (How do you integrate against uniform measure on the <span class="math inline">\(E_n^0\)</span> edges?) Fix <span class="math inline">\(p \in P(B_n)\)</span>. Then <span class="math display">\[
-H_p = H_{p_1} + H_{p_2} - H_{p_3} - H_{p_4},
-\]</span> where the <span class="math inline">\(p_i\)</span> are the edges comprising the plaquette <span class="math inline">\(p\)</span>. We have separate parameters <span class="math inline">\((y_{p_i}, z_{p_i}, w_{p_i})\)</span> for each of the four Hermitian matrices associated to the plaquette. Note that <span class="math inline">\(y_{p_i} \in \R^N\)</span>, <span class="math inline">\(z_{p_i} \in \R^{N(N-1)/2}\)</span>, and <span class="math inline">\(w_{p_i} \in \R^{N(N-1)/2}\)</span>. We write <span class="math display">\[
-H_{p_i} = \Psi_H(y_{p_i}, z_{p_i}, w_{p_i})
-\]</span> for each plaquette edge <span class="math inline">\(p_i\)</span>. Then by linearity of <span class="math inline">\(\Psi_H\)</span>, we have <span class="math display">\[
-H_{p} = \Psi_H \left( y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4} \right).
-\]</span></p>
-<p>Then since <span class="math inline">\(\Psi_H\)</span> is an isometry between <span class="math inline">\(\R^{N^2}\)</span> equipped with the Euclidean norm and <span class="math inline">\(H(N)\)</span> equipped with the Hilbert Schmidt norm, we have <span class="math display">\[\begin{equation}
-\begin{gathered}
-\lVert H_p \rVert^2 = \lVert (y_{p_1} + y_{p_2} - y_{p_3} - y_{p_4}, z_{p_1} + z_{p_2} - z_{p_3} - z_{p_4}, w_{p_1} + w_{p_2} - w_{p_3} - w_{p_4}) \rVert^2 \\
-= \sum_{i=1}^N (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 +
-\sum_{1 \le i &lt; j \le N} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 \\
-+ \sum_{1 \le i &lt; j \le N} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2
-\end{gathered}
-\end{equation}\]</span> Then we write <span class="math display">\[\begin{equation}
-\begin{gathered}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 =
-\sum_{p \in P(B_n)} \sum_{i=1}^N (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 + \\
-\sum_{p \in P(B_n)} \sum_{1 \le i &lt; j \le N} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 + \\
-\sum_{p \in P(B_n)} \sum_{1 \le i &lt; j \le N} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2 \\
-= \sum_{i=1}^N \sum_{p \in P(B_n)} (y^{ii}_{p_1} + y^{ii}_{p_2} - y^{ii}_{p_3} - y^{ii}_{p_4})^2 + \\
-\sum_{1 \le i &lt; j \le N} \sum_{p \in P(B_n)} (z^{ij}_{p_1} + z^{ij}_{p_2} - z^{ij}_{p_3} - z^{ij}_{p_4})^2 + \\
-\sum_{1 \le i &lt; j \le N} \sum_{p \in P(B_n)} (w^{ij}_{p_1} + w^{ij}_{p_2} - w^{ij}_{p_3} - w^{ij}_{p_4})^2 \\
-= \sum_{i=1}^N \sum_{p \in P(B_n)} (y_{p}^{ii})^2 + \\
-\sum_{1 \le i &lt; j \le N} \sum_{p \in P(B_n)} (z_p^{ij})^2 +\\
-\sum_{1 \le i &lt; j \le N} \sum_{p \in P(B_n)} (w_p^{ij})^2.
-\end{gathered}
-\end{equation}\]</span> Then we have <span class="math display">\[\begin{equation}
-\begin{gathered}
-\exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) = \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right).
-\end{gathered}
-\end{equation}\]</span> Next we have <span class="math display">\[\begin{equation}
-\begin{gathered}
-d\lambda_{E_n^0}(H) = \prod_{e \in E_n^1} d\lambda(H_e) \\
-= \prod_{e \in E_n^1} d\Psi_H^* l_{N^2}(H_e)
-\end{gathered}
-\end{equation}\]</span> Fixing an edge <span class="math inline">\(e \in E_n^1\)</span>, we have <span class="math display">\[\begin{equation}
-\begin{gathered}
-\int f(H_e) d\Psi_H^* l_{N^2}(H_e) = \int f(\Psi_H(y_e, z_e, w_e)) dl_{N^2}(y_e, z_e, w_e),
-\end{gathered}
-\end{equation}\]</span> so if we iterate this by freezing all other edge variables one at a time, we obtain <span class="math display">\[\begin{equation}
-\begin{gathered}
-\int \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H) = \\
-\int \prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_{N^2}(y_e, z_e, w_e)
-\end{gathered}
-\end{equation}\]</span> But if we integrate first over the edges and then over the <span class="math inline">\(N^2\)</span> dimensions of <span class="math inline">\(\R^{N^2}\)</span>, meaning use <span class="math display">\[\begin{equation}
-\begin{gathered}
-\prod_{e \in E_n^1} dl_{N^2}(y_e, z_e, w_e) =
-\prod_{1 \le i \le N} \prod_{e \in E_n^1} dl_1(y_e^{ii}) \otimes \\
-\prod_{1 \le i &lt; j \le N} \prod_{e \in E_n^1} dl_1(z_e^{ij}) \otimes \\
-\prod_{1 \le i &lt; j \le N} \prod_{e \in E_n^1} dl_1(w_e^{ij}),
-\end{gathered}
-\end{equation}\]</span> then we have <span class="math display">\[\begin{equation}
-\begin{gathered}
-\int \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H) = \\
-\prod_{1 \le i \le N} \int \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \prod_{e \in E_n^1} dl_1(y_e^{ii}) \times \\
-\prod_{1 \le i &lt; j \le N} \int \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_1(z_e^{ij}) \times \\
-\prod_{1 \le i &lt; j \le N} \int
-\exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_1(w_e^{ij}) \\
-\end{gathered}
-\end{equation}\]</span></p>
-<p>I want to see that the joint law of <span class="math inline">\(N^2\)</span> independent lattice Maxwell configurations is the same as the law of a Hermitian configuration distributed according to the law <span class="math display">\[
-\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
-\]</span> I suppose that <span class="math inline">\(N^2\)</span> indepdendent lattice Maxwell configurations would be in <span class="math inline">\((\R^{N^2})^{E_n^1}\)</span>, where it is <span class="math inline">\(E_n^1\)</span> because the <span class="math inline">\(E_n^0\)</span> edges are deterministically set to 0.</p>
-<p>For each <span class="math inline">\(1 \le i \le N\)</span>, let <span class="math inline">\((y_e^{ii})_{e \in E_n}\)</span> be a random lattice Maxwell configuration, taking values in <span class="math inline">\(\R^{E_n^1}\)</span>. And for each <span class="math inline">\(1 \le i &lt; j \le N\)</span>, let <span class="math inline">\((z_e^{ii})_{e \in E_n}\)</span> and <span class="math inline">\((w_e^{ii})_{e \in E_n}\)</span> be random lattice Maxwell configurations, also taking values in <span class="math inline">\(\R^{E_n^1}\)</span>.</p>
-<p>What is the definition of the joint law of these random variables? It is a probability measure <span class="math inline">\(P\)</span> on <span class="math inline">\((\R^{N^2})^{E_n}\)</span> satisfying <span class="math display">\[
-\mathbb P((y^{ii}, z^{ij}, w^{ij}) \in A) = P(A).
-\]</span> for any Borel subset <span class="math inline">\(A\)</span> in the Borel sigma algebra on <span class="math inline">\((\R^{N^2})^{E_n}\)</span>.</p>
-<p><span class="math inline">\(\Psi_H: \R^{N^2} \to H(N)\)</span> is an isometry, so it is also bi-continuous. Therefore <span class="math inline">\(\R^{N^2}\)</span> and <span class="math inline">\(H(N)\)</span> are homeomorphic, so their Borel Sigma algebras should be related to each other. And if we write down the product map <span class="math inline">\(\prod_{e \in E_n} \Psi_H\)</span>, then we have a homeomorphism between <span class="math inline">\(H(N)^{E_n}\)</span> and <span class="math inline">\((\R^{N^2})^{E_n}\)</span>.</p>
-<div id="lem-thm1.78Klenke" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 5 (Theorem 1.78 in <span class="citation" data-cites="Klenke">Klenke (<a href="#ref-Klenke" role="doc-biblioref">2014</a>)</span>)</strong></span> Let <span class="math inline">\((\Omega', \mathcal{A}')\)</span> be a measurable space and let <span class="math inline">\(\Omega\)</span> be a non-empty set. Let <span class="math inline">\(X: \Omega \to \Omega'\)</span> be a map. The preimage <span class="math display">\[
-X^{-1}(\mathcal{A}') := \{ X^{-1}(A') : A' \in \mathcal{A}' \}
-\]</span> is the smallest <span class="math inline">\(\sigma\)</span>-algebra with respect to which <span class="math inline">\(X\)</span> is measurable. We say that <span class="math inline">\(\sigma(X):= X^{-1}(\mathcal{A}')\)</span> is the <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\(\Omega\)</span> that is generated by <span class="math inline">\(X\)</span>.</p>
-</div>
-<p>Let us identify <span class="math inline">\((\R^{N^2})^{E_n}\)</span> with <span class="math inline">\(\R^{N^2|E_n|}\)</span>. Let us also identify <span class="math inline">\(H(N)^{E_n}\)</span> with <span class="math inline">\(H(N)^{|E_n|}\)</span>. Note that <span class="math display">\[(H(N)^{|E_n|}, \mathcal{B}_{H(N)^{|E_n|}})\]</span> is a measurable space, where <span class="math inline">\(\mathcal{B}_{H(N)^{|E_n|}}\)</span> denotes the Borel sigma algebra on <span class="math inline">\(H(N)^{|E_n|}\)</span>. If <span class="math inline">\(\mathcal{B}_{\R^{N^2|E_n^1}}\)</span> denotes the Borel sigma algebra on <span class="math inline">\(\R^{N^2|E_n^1|}\)</span>, does it follow that <span class="math display">\[
-\sigma(\prod_{e \in E_n} \Psi_H) = \mathcal{B}_{\R^{N^2|E_n^1}}?
-\]</span></p>
-<p>Or an easier question is as follows. Consider the measurable space <span class="math inline">\((H(N), \mathcal{B}_{H(N)})\)</span>. Does it follow that <span class="math display">\[
-\sigma(\Psi_H) = \mathcal{B}_{\R^{N^2}}?
-\]</span> Note that <span class="math inline">\(\mathcal{B}_{\R^{N^2}}\)</span> is the intersection of all sigma algebras which contain the standard topology on <span class="math inline">\(\R^{N^2}\)</span> as a subcollection. Meanwhile, the left hand side <span class="math inline">\(\sigma(\Psi_H)\)</span> is the intersection of all sigma algebras <span class="math inline">\(\sigma_*\)</span> with the proporty that <span class="math inline">\(\Psi_H: (\R^{N^2}, \sigma_*) \to (H(N), \mathcal{B}_{H(N)})\)</span> is measurable.</p>
-<p>There is likely an easy direction based on the above two sentences. Here is a question. If <span class="math inline">\(\sigma_*\)</span> is a sigma algebra on <span class="math inline">\(\R^{N^2}\)</span> which contains the standard topology <span class="math inline">\(\tau_{\R^{N^2}}\)</span> as a subcollection, does it follow that <span class="math inline">\(\Psi_H: (\R^{N^2}, \sigma_*) \to (H(N), \mathcal{B}_{H(N)})\)</span> is measurable? If the answer is yes, then it would mean <span class="math inline">\(\mathcal{B}_{\R^{N^2}} \supset \sigma(\Psi_H)\)</span> because then <span class="math inline">\(\mathcal{B}_{\R^{N^2}}\)</span> would be an intersection over a subfamily of the family which <span class="math inline">\(\sigma(\Psi_H)\)</span> is an intersection of. And the answer is indeed yes because it is enough for measurability of the map <span class="math inline">\(\Psi_H: (\R^{N^2}, \sigma_*) \to (H(N), \mathcal{B}_{H(N)})\)</span> to check that <span class="math inline">\(\Psi_H^{-1}(B) \in \sigma_*\)</span> for every open set <span class="math inline">\(B \in \mathcal{B}_{H(N)}\)</span>, which does hold by continuity of the map <span class="math inline">\(\Psi_H\)</span>. Thus, <span class="math display">\[
-\mathcal{B}_{\R^{N^2}} \supset \sigma(\Psi_H).
-\]</span></p>
-<p>But <span class="math inline">\(\Psi_H^{-1}(\tau_{H(N)}) = \tau_{\R^{N^2}}\)</span> because <span class="math inline">\(\Psi_H\)</span> is a homeomorphism, so every sigma algebra <span class="math inline">\(\sigma_*\)</span> with the property that <span class="math inline">\(\Psi_H: (\R^{N^2}, \sigma_*) \to (H(N), \mathcal{B}_{H(N)})\)</span> is measurable must contain <span class="math inline">\(\tau_{\R^{N^2}}\)</span> as a subcollection. Hence, <span class="math display">\[
-\mathcal{B}_{\R^{N^2}} \subset \sigma(\Psi_H).
-\]</span></p>
-<p>Let <span class="math inline">\(H \in H(N)^{|E_n|}\)</span> be a random Hermitian configuration drawn according to the measure <span class="math display">\[
-\frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
-\]</span> This means that <span class="math display">\[
-\mathbb P(H \in A) = \int_A \frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H).
-\]</span> for any Borel subset <span class="math inline">\(A \in \mathcal{B}_{H(N)^{|E_n^1|}}\)</span>.</p>
-<p>Note that <span class="math display">\[
-\prod_{e \in E_n} \Psi_H: (\R^{N^2})^{|E_n|} \to H(N)^{|E_n|}.
-\]</span> See <a href="https://planetmath.org/productmap">Product Map</a>. Let’s just assume without proof that <span class="math display">\[
-\sigma(\prod_{e \in E_n} \Psi_H) = \mathcal{B}_{\R^{N^2|E_n|}}
-\]</span></p>
-<p>We claim based on the above computations that</p>
-<p><span class="math display">\[\begin{equation}
-\begin{gathered}
-\int_A \frac{1}{Z_H(B_n)} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} \lVert H_p \rVert^2 \right) d\lambda_{E_n^0}(H) = \\
-\frac{1}{Z_H}
-\int_{(\prod_{e \in E_n} \Psi_H)^{-1}(A)}
-\prod_{1 \le i \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (y_{p}^{ii})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (z_p^{ij})^2 \right) \times \\
-\prod_{1 \le i &lt; j \le N} \exp \left( - \frac{1}{2}
-\sum_{p \in P(B_n)} (w_p^{ij})^2 \right) \prod_{e \in E_n^1} dl_{N^2}(y_e, z_e, w_e).
-\end{gathered}
-\end{equation}\]</span></p>
-<p>But now I think we can’t proceed to break up the integral into products, so we might have to resort to cylinder sets. But why do we want to break up the integral into products anyways? I want to obtain something like <span class="math display">\[
-\mathbb P(H \in A) = \mathbb P((y,z,w) \in (\prod_{e \in E_n} \Psi_H)^{-1}(A)).
-\]</span> for all <span class="math inline">\(A\)</span> Borel subsets of <span class="math inline">\(H(N)^{E_n}\)</span>, where <span class="math inline">\((y, z, w)\)</span> are <span class="math inline">\(N^2\)</span> lattice Maxwell fields. This would show that the law of <span class="math inline">\(N^2\)</span> copies of lattice Maxwell fields is the pushforward or pullback (which one?) of the law of Hermitian lattice theory.</p>
-<p>If pushforward, then we’d have <span class="math display">\[
-(y,z,w)^* \mathbb P = (\prod_{e \in E_n} \Psi_H)^* (H^* \mathbb P).
-\]</span> That would mean <span class="math display">\[
-\mathbb P ((y,z,w) \in A) = (H^* \mathbb P)((\prod_{e \in E_n} \Psi_H)^{-1}(A)) = \mathbb P(H \in (\prod_{e \in E_n} \Psi_H)^{-1}(A)),
-\]</span> which is not what we want. If pullback, then we’d have <span class="math display">\[
-\mathbb P ((y,z,w) \in A) = (H^* \mathbb P)(\prod_{e \in E_n} \Psi_H(A)) = \mathbb P(H \in \prod_{e \in E_n} \Psi_H(A)),
-\]</span> which is better.</p>
-<div id="lem-HermitianMaxwellComparison" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 6</strong></span> The joint law <span class="math inline">\(((t^{(i)})_{i=1}^{N^2})^* \mathbb P\)</span> of <span class="math inline">\(N^2\)</span> indepedent lattice Maxwell scalar configurations on <span class="math inline">\((\R^{N^2})^{|E_n|}\)</span> is equal to the pullback of the law <span class="math inline">\(H^* \mathbb P\)</span> of Hermitian lattice Maxwell theory by the map <span class="math inline">\(\prod_{e \in E_n} \Psi_H\)</span>.</p>
-</div>
-<p>So we are showing that two proability laws are equal to eachother.</p>
-<p>Let <span class="math inline">\(X_1, \cdots, X_n\)</span> be <span class="math inline">\(n\)</span> independent real random variables with densities <span class="math inline">\(f_1: \R \to \R\)</span>, <span class="math inline">\(f_2: \R \to \R\)</span>, <span class="math inline">\(\cdots,\)</span> <span class="math inline">\(f_n: \R \to \R\)</span> repsectively.</p>
-<p>Then the joint density function of the joint variable <span class="math inline">\((X_1, \cdots, X_n)\)</span> is <span class="math inline">\(f(x_1, \cdots, x_n) =
-f_1(x_1)f_2(x_2) \cdots f_n(x_n)\)</span>. This means that for any Borel subset <span class="math inline">\(A \in \mathcal{B}_{\R^n}\)</span>, we have <span class="math display">\[
-\mathbb P(X \in A) = \int_A f_1(x_1)f_2(x_2) \cdots f_n(x_n) dx_1 \cdots dx_n.
-\]</span></p>
-<p>Let <span class="math inline">\(X_1: \Omega \to \R^2\)</span> and <span class="math inline">\(X_2: \Omega \to \R^3\)</span> with densities <span class="math inline">\(f_1: \R^2 \to \R\)</span> and <span class="math inline">\(f_2: \R^3 \to \R\)</span> respectively. If <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent, then the joint density function of <span class="math inline">\((X_1,X_2)\)</span> is given by <span class="math inline">\(f(x_1, x_2, x_3, x_4, x_5) = f_1(x_1, x_2) f_2(x_3, x_4, x_5)\)</span>. How do you know this?</p>
-<p>For each <span class="math inline">\(1 \le i \le N^2\)</span>, Let <span class="math inline">\(t^{(i)} \in \R^{|E_n|}\)</span> be distributed according to lattice Maxwell theory. Then for each <span class="math inline">\(i\)</span>, the probability density function of <span class="math inline">\(t^{(i)}\)</span> is <span class="math display">\[\frac{1}{Z_M(B_n)} \exp(-\frac{1}{2} M_n(t^{(i)})).\]</span></p>
-</section>
-<section id="june-2-2026" class="level2">
-<h2 class="anchored" data-anchor-id="june-2-2026">June 2, 2026</h2>
-<p>Let <span class="math inline">\(t \in \R^{E_n}\)</span> be distributed according to the probability distribution <span class="math display">\[
-\frac{1}{Z_M(B_n)} \exp(-\frac{1}{2} M_n(t)) dl_{E_n^0, 1}(t),
-\]</span> where <span class="math display">\[dl_{E_n^0, 1}(t) = \bigotimes_{e \in E_n^0} \text{Unif}_{\{0\}}(t_e) \otimes
-\bigotimes_{e \in E_n^1} dl_1(t_e).
-\]</span> This probability distribution is called lattice Maxwell theory on <span class="math inline">\(B_n\)</span> with boundary value 0. In other words, <span class="math inline">\(t_e\)</span> is determinstically equal to 0 when <span class="math inline">\(e \in E_n^0\)</span> and is otherwise a random real number with distribution <span class="math inline">\(\mathcal{N}(\mu_e, \sigma_e)\)</span>, where <span class="math inline">\(\mu_e\)</span> and <span class="math inline">\(\sigma_e\)</span> can be computed from <span class="math inline">\(M_n\)</span>.</p>
-<p>On the other hand, a Hermitian matrix <span class="math inline">\(H \in H(N)\)</span> can be parameterized using <span class="math inline">\(N^2\)</span> variables by writing the <span class="math inline">\((j, k)^{\text {th }}\)</span> entry of <span class="math inline">\(H\)</span> as <span class="math display">\[
-x_{j k}= \begin{cases}y_{j j} &amp; \text { if } j=k, \\ \left(z_{j k}+\mathrm{i} w_{j k}\right) / \sqrt{2} &amp; \text { if } j&lt;k, \\ \left(z_{k j}-\mathrm{i} w_{k j}\right) / \sqrt{2} &amp; \text { if } j&gt;k,\end{cases}
-\]</span> as illustrated by <span class="math display">\[
-\begin{bmatrix}
-y_{11} &amp; &amp; &amp; \frac{z_{jk} + iw_{jk}}{\sqrt{2}} \\
-&amp; \ddots &amp; &amp;  \\
-&amp; &amp;  &amp;  \\
-\frac{z_{jk} - iw_{jk}}{\sqrt{2}} &amp; &amp; &amp; y_{NN}
-\end{bmatrix}.
-\]</span></p>
-<p>Then the <span class="math inline">\(N^2\)</span> parameters are <span class="math inline">\(\left(y_{j j}\right)_{1 \leq j \leq N},\left(z_{j k}\right)_{1 \leq j&lt;k \leq N}\)</span>, and <span class="math inline">\(\left(w_{j k}\right)_{1 \leq j&lt;k \leq N}\)</span>.</p>
-<p>Let <span class="math inline">\((t^{(jk)})_{1 \le j \le k \le N}\)</span> be <span class="math inline">\(N^2\)</span> mutually independent lattice Maxwell fields, arranged in some arbitrary way. That is, for each <span class="math inline">\(j,k\)</span> with <span class="math inline">\(1 \le j \le k \le N\)</span>, we have that <span class="math inline">\((t_e^{(jk)})_{e \in E_n}\)</span> has the law above.</p>
-<p>Based on the definition of Lebesgue measure on <span class="math inline">\(H(N)\)</span>, one sees that the law of <span class="math inline">\(H(t^{(jk)})\)</span> is just the joint law of the <span class="math inline">\(t^{(jk)}\)</span>, and is thus just the <span class="math inline">\(N^2\)</span> fold product of the law of scalar Maxwell theory by independence of the <span class="math inline">\(t^{(jk)}\)</span>.</p>
+<p>I’m tempted to make a foray into Fourier theory after checking some course notes online. It looks to be a subject full of calculus problems.</p>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Alt2012" class="csl-entry" role="listitem">
-Alt, Wilhelm. 2012. <em>Linear Functional Analysis: An Application-Oriented Introduction</em>. Translated by Robert Nürnberg. Universitext.
-</div>
-<div id="ref-Klenke" class="csl-entry" role="listitem">
-Klenke, Achim. 2014. <em>Probability Theory, a Comprehensive Course</em>. 2nd Edition. Universitext. Springer.
+<div id="ref-BrenneckeCQFT" class="csl-entry" role="listitem">
+Brennecke, Christian. 2026. <span>“Introduction to Constructive Quantum Field Theory.”</span> Lecture Notes. <a href="https://www.iam.uni-bonn.de/users/brennecke/home">https://www.iam.uni-bonn.de/users/brennecke/home</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
