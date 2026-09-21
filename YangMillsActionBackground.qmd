@@ -1,0 +1,74 @@
+---
+title: "Geometric Background for the Yang-Mills Action"
+author: "William Clark"
+date: "September 21, 2026"
+bibliography: references.bib
+format:
+    html: 
+        toc: true
+number-sections: true
+---
+
+:::{.hidden}
+$$
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\UN}{\mathrm{U}(N)}
+\newcommand{\Tr}{\text{Tr}}
+$$
+:::
+
+### Introduction
+
+The objective of this article
+is to define
+the Yang Mills action, as written in Section 3 @Chatterjee2016, 
+omitting details along the 
+way which I am comfortable ignoring.
+
+Let $G$ be a compact Lie group, with 
+the case of interest being $G = \UN$.
+The Yang Mills action $S$ gives 
+a number for each input of a $G$
+connection form. 
+
+The formula is
+$$
+\begin{equation}
+    S(A) = \int_{\R^d} \Tr (F \wedge *F).
+\end{equation}
+$${#eq-YangMillsaction}
+In this formula, $A$ is a $G$ connection 
+form on $\R^d$. Meanwhile
+$F$ is the curvature form of $A$. And
+$*$ is the Hodge star operator.
+These notions
+of curvature, Hodge star operator, 
+and Lie group connection forms
+are buried deeply inside usual courses 
+in geometry, so this article has 
+its work cut out for itself.
+
+### Means/Media
+
+I will use LLMs (and remark where in the article they are being used),
+pdfs of textbooks (with citations), pen and paper to work
+out details myself, and video to present the article 
+in a digital and verbal manner. This article is delivered via 
+Quarto.
+
+### Step one: Locating the correct notions in the textbook literature.
+
+The first challenge is to locate
+the desired notions of connection form, curvature, 
+and Hodge star operator in 
+the mathematics or physics literature.
+We begin with the task of locating
+the notion of Lie group connection
+forms.
+
+
+
