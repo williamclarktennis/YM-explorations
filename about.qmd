@@ -5,17 +5,31 @@ title: "About"
 This website was created on December 9, 2025 to host stuff about my Master's thesis on and (hopefully) post-Master's exploration of YM lattice gauge theory, or more generally, the Yang Mills Millenium problem.
 
 From June 2026 - September 2026, I was writing 
-my Master thesis in a standalone document, therefore
-I did not update this page. I will soon post the thesis 
-here.
+my Master's thesis in a standalone document, therefore
+I did not update this website.
 
-## Some developer details: 
-This website is built using Quarto.
+## Stuff that I made during my research
 
-* Here are the instructions on how to render to github pages: <https://quarto.org/docs/publishing/github-pages.html#render-to-docs>. 
-* on how to implement page navigation: <https://quarto.org/docs/websites/website-navigation.html>
+### Master's Thesis
+I would like to further revise my master's thesis, 
+but the document that I submitted at Universität Bonn is here.
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('pdfs/submitted-master-thesis.pdf', '_blank')">
+  View Master's Thesis
+</button>
+```
 
-Here is a guide on citations using biblatex: <https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex>.
+### YouTube Videos
 
-Here's how to define LaTeX shortcuts in quarto:
-<https://github.com/orgs/quarto-dev/discussions/1793>.
+- 46 Minute [video](https://youtu.be/o__aNd_dJfI) in which I present Sourav Chatterjee's derivation of 
+the leading order formula for the $\mathrm{U}(N)$ lattice Yang Mills partition function. (September 2026)
+```{=html}
+<button type="button" class="btn btn-success" onclick="window.open('https://youtu.be/o__aNd_dJfI', '_blank')">
+  View Video
+</button>
+```
+
+
+- 2 hour 30 minute [video](https://youtu.be/hUaFmsPi5v0) in which I go through a proof
+of the computation of a Jacobian of a function arising in the study of the eigenvalues
+of a particular class of random matrices.
